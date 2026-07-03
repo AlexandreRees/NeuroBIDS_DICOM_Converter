@@ -1,0 +1,13 @@
+[console_scripts]
+neuro-anonymize = mri_anonymization.cli:main
+neuro-convert = neuro_pipeline.convert_to_bids:main
+neuro-deface = neuro_pipeline.defacing:main
+neuro-deidentify = neuro_pipeline.deidentify_dicom:main
+neuro-derivatives = neuro_pipeline.derivatives_build:main
+neuro-gate = neuro_pipeline.publication_gate:main
+neuro-inventory = neuro_pipeline.inventory:main
+neuro-mapping = neuro_pipeline.generate_mapping:main
+neuro-pipeline = neuro_pipeline.run_pipeline:main
+neuro-qc = neuro_pipeline.quality_control:main
+neuro-validate = neuro_pipeline.validate_dataset:main
+pipeline-gate = neuro_pipeline.publication_gate:main
