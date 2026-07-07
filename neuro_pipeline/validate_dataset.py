@@ -13,11 +13,22 @@ from pathlib import Path
 
 import pandas as pd
 
+from neuro_pipeline.bids_integrity import run_bids_integrity_checks, write_integrity_report
+from neuro_pipeline.raw_bids_guard import assert_raw_bids_immutable
 from neuro_pipeline.utils.cli import build_base_parser
+from neuro_pipeline.utils.execution_context import ExecutionContext
 from neuro_pipeline.utils.errors import FatalPipelineError
 from neuro_pipeline.utils.extensions import build_manifest, write_manifest
 from neuro_pipeline.utils.logging_config import configure_logging
+from neuro_pipeline.pipeline_steps import RESEARCH_STEP_NAMES
 from neuro_pipeline.utils.paths import ProjectPaths, resolve_project_root
+
+RESEARCH_STEPS_THROUGH_VALIDATION: list[str] = list(
+    RESEARCH_STEP_NAMES[: RESEARCH_STEP_NAMES.index("validate_dataset") + 1]
+)
+RESEARCH_STEPS_THROUGH_QC: list[str] = list(
+    RESEARCH_STEP_NAMES[: RESEARCH_STEP_NAMES.index("quality_control") + 1]
+)
 
 LOGGER = logging.getLogger(__name__)
 
@@ -274,6 +285,8 @@ def run_validation(
     validator_path: str | None,
     use_npx: bool,
     fail_on_error: bool,
+    strict_acquisitions: bool = False,
+    strict_geometry: bool = False,
 ) -> pd.DataFrame:
     """Validate BIDS dataset and write reports."""
     paths.ensure_metadata_dir()
@@ -282,6 +295,7 @@ def run_validation(
     paths.validate_writable(paths.derivatives / "validation")
 
     validate_bids_preflight(paths)
+    assert_raw_bids_immutable(paths)
 
     command_prefix = resolve_bids_validator(validator_path, use_npx)
     validator_version = get_validator_version(command_prefix)
@@ -334,17 +348,62 @@ def run_validation(
             f"BIDS validation reported {error_count} error(s)"
         )
 
+    integrity = run_bids_integrity_checks(paths)
+    integrity_path = paths.derivatives / "validation" / "bids_integrity_report.json"
+    write_integrity_report(integrity, integrity_path)
+    integrity_errors = sum(1 for item in integrity.findings if item.severity == "error")
+    LOGGER.info(
+        "BIDS integrity: passed=%s, %d errors, %d warnings",
+        integrity.passed,
+        integrity_errors,
+        sum(1 for item in integrity.findings if item.severity == "warning"),
+    )
+    if fail_on_error and not integrity.passed:
+        sample = "; ".join(item.message for item in integrity.findings[:5] if item.severity == "error")
+        raise FatalPipelineError(f"BIDS integrity checks failed: {sample}")
+
+    from neuro_pipeline.acquisition_consistency import run_acquisition_validation
+
+    acquisition_report = run_acquisition_validation(
+        paths,
+        fail_on_error=strict_acquisitions,
+    )
+    acquisition_errors = sum(1 for row in acquisition_report.rows if row.status == "error")
+    acquisition_missing = sum(1 for row in acquisition_report.rows if row.status == "missing")
+    LOGGER.info(
+        "Acquisition validation: passed=%s, errors=%d, missing=%d",
+        acquisition_report.passed,
+        acquisition_errors,
+        acquisition_missing,
+    )
+
+    from neuro_pipeline.conversion_geometry_validation import run_geometry_validation
+    from neuro_pipeline.derivatives_metadata import write_derivatives_dataset_description
+
+    geometry_report = run_geometry_validation(
+        paths,
+        fail_on_error=strict_geometry,
+    )
+    write_derivatives_dataset_description(paths)
+
+    context = ExecutionContext.capture(
+        project_root=paths.root,
+        parameters={
+            "fail_on_error": fail_on_error,
+            "use_npx": use_npx,
+            "strict_acquisitions": strict_acquisitions,
+            "strict_geometry": strict_geometry,
+        },
+        software_versions={"bids-validator": validator_version},
+    )
+    context.write_json(paths.metadata / "validate_dataset_context.json")
+
     manifest = build_manifest(
         paths.root,
-        steps_completed=[
-            "inventory",
-            "generate_mapping",
-            "deidentify_dicom",
-            "convert_to_bids",
-            "defacing",
-            "derivatives_build",
-            "validate_dataset",
-        ],
+        steps_completed=RESEARCH_STEPS_THROUGH_VALIDATION,
+        execution_context=context,
+        project_paths=paths,
+        parameters=context.parameters,
         extra={
             "bids_validator_version": validator_version,
             "bids_validator_returncode": result.returncode,
@@ -352,6 +411,14 @@ def run_validation(
             "validation_errors": error_count,
             "validation_warnings": warning_count,
             "validation_info": info_count,
+            "bids_integrity_passed": integrity.passed,
+            "bids_integrity_errors": integrity_errors,
+            "acquisition_validation_passed": acquisition_report.passed,
+            "acquisition_validation_errors": acquisition_errors,
+            "acquisition_validation_missing": acquisition_missing,
+            "geometry_validation_passed": geometry_report.passed,
+            "geometry_validation_errors": geometry_report.error_count,
+            "geometry_validation_warnings": geometry_report.warning_count,
         },
     )
     write_manifest(paths.pipeline_manifest_json, manifest)
@@ -380,6 +447,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Exit with fatal error when validator reports errors.",
     )
+    parser.add_argument(
+        "--strict-acquisitions",
+        action="store_true",
+        help="Fail when acquisition validation reports errors.",
+    )
+    parser.add_argument(
+        "--strict-geometry",
+        action="store_true",
+        help="Fail when DICOM → NIfTI geometry validation reports errors.",
+    )
     return parser.parse_args(argv)
 
 
@@ -404,6 +481,8 @@ def main(argv: list[str] | None = None) -> int:
             args.validator_path,
             args.use_npx,
             args.fail_on_error,
+            strict_acquisitions=args.strict_acquisitions,
+            strict_geometry=args.strict_geometry,
         )
     except FatalPipelineError as exc:
         LOGGER.error("FATAL: %s", exc.message)

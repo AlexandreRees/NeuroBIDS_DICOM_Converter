@@ -1,26 +1,19 @@
-"""Extension-point definitions for downstream neuroimaging tools.
-
-Future tools (MRIQC, fMRIPrep, QSIPrep) should read
-``metadata/pipeline_manifest.json`` and operate on paths declared here
-without modifying core pipeline scripts.
-"""
+"""Extension-point definitions for downstream neuroimaging tools."""
 
 from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, TYPE_CHECKING
 
-PIPELINE_VERSION = "1.0.0"
+if TYPE_CHECKING:
+    from neuro_pipeline.utils.execution_context import ExecutionContext
+    from neuro_pipeline.utils.paths import ProjectPaths
+
+PIPELINE_VERSION = "2.1.0"
 
 EXTENSION_HOOKS: dict[str, dict[str, str]] = {
-    "pydeface": {
-        "stage": "defacing",
-        "input_key": "raw_bids",
-        "output_key": "derivatives/neuro_pipeline",
-        "description": "Deface anatomical MRI volumes in the BIDS dataset.",
-    },
     "mriqc": {
         "stage": "post_qc",
         "input_key": "raw_bids",
@@ -39,6 +32,12 @@ EXTENSION_HOOKS: dict[str, dict[str, str]] = {
         "output_key": "derivatives/qsiprep",
         "description": "Preprocessing pipeline for diffusion MRI.",
     },
+    "release_anonymization": {
+        "stage": "public_release",
+        "input_key": "raw_bids",
+        "output_key": "anonymization_release/Public_Dataset",
+        "description": "PS3.15 anonymization for external dataset sharing.",
+    },
 }
 
 
@@ -47,6 +46,9 @@ def build_manifest(
     *,
     steps_completed: list[str] | None = None,
     extra: dict[str, Any] | None = None,
+    execution_context: ExecutionContext | None = None,
+    project_paths: ProjectPaths | None = None,
+    parameters: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build a machine-readable manifest for extension tools."""
     root = project_root.resolve()
@@ -57,28 +59,41 @@ def build_manifest(
         "paths": {
             "project_root": str(root),
             "raw_original": str(root / "raw_original"),
-            "staging": str(root / "staging"),
             "raw_bids": str(root / "raw_bids"),
             "metadata": str(root / "metadata"),
             "derivatives": str(derivatives),
+            "anonymization_release": str(root / "anonymization_release"),
+            "public_dataset": str(root / "anonymization_release" / "Public_Dataset"),
         },
         "artifacts": {
             "inventory": str(root / "metadata" / "inventory.csv"),
             "participant_mapping": str(root / "metadata" / "participant_mapping.csv"),
-            "deidentify_report": str(root / "metadata" / "deidentify_report.csv"),
             "conversion_report": str(derivatives / "conversion" / "conversion_report.csv"),
             "conversion_logs": str(derivatives / "conversion" / "logs"),
             "validation_report": str(derivatives / "validation" / "bids_validation_report.json"),
             "validation_summary": str(derivatives / "validation" / "bids_validation_summary.csv"),
+            "acquisition_validation": str(derivatives / "validation" / "acquisition_validation.csv"),
+            "geometry_validation": str(derivatives / "validation" / "geometry_validation.csv"),
             "qc_summary": str(derivatives / "qc" / "qc_summary.csv"),
             "qc_detail": str(derivatives / "qc" / "qc_detail.csv"),
-            "defacing_report": str(derivatives / "defacing" / "defacing_report.json"),
-            "publication_gate_report": str(root / "metadata" / "publication_gate_report.json"),
-            "publication_ready": str(root / "metadata" / "publication_ready.json"),
+            "pipeline_qc_summary": str(derivatives / "qc" / "pipeline_qc_summary.html"),
+            "derivatives_dataset_description": str(derivatives / "dataset_description.json"),
+            "release_ready": str(root / "metadata" / "release_ready.json"),
         },
         "steps_completed": steps_completed or [],
         "extension_hooks": EXTENSION_HOOKS,
     }
+    if execution_context is not None or project_paths is not None:
+        from neuro_pipeline.derivatives_metadata import build_provenance_block
+
+        paths = project_paths or __import__(
+            "neuro_pipeline.utils.paths", fromlist=["ProjectPaths"]
+        ).ProjectPaths(root=root)
+        manifest["provenance"] = build_provenance_block(
+            paths,
+            context=execution_context,
+            parameters=parameters,
+        )
     if extra:
         manifest.update(extra)
     return manifest

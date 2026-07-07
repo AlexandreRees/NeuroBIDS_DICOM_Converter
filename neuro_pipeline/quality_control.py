@@ -11,11 +11,18 @@ from pathlib import Path
 import nibabel as nib
 import pandas as pd
 
+from neuro_pipeline.raw_bids_guard import assert_raw_bids_immutable
+from neuro_pipeline.reports.generator import write_html_report, write_json_report
 from neuro_pipeline.utils.cli import build_base_parser
 from neuro_pipeline.utils.errors import FatalPipelineError
 from neuro_pipeline.utils.extensions import build_manifest, write_manifest
 from neuro_pipeline.utils.logging_config import configure_logging
+from neuro_pipeline.pipeline_steps import RESEARCH_STEP_NAMES
 from neuro_pipeline.utils.paths import ProjectPaths, resolve_project_root
+
+RESEARCH_STEPS_THROUGH_QC: list[str] = list(
+    RESEARCH_STEP_NAMES[: RESEARCH_STEP_NAMES.index("quality_control") + 1]
+)
 
 LOGGER = logging.getLogger(__name__)
 
@@ -202,6 +209,8 @@ def run_qc(paths: ProjectPaths) -> tuple[pd.DataFrame, pd.DataFrame]:
     if not paths.raw_bids.is_dir():
         raise FatalPipelineError(f"BIDS dataset not found: {paths.raw_bids}")
 
+    assert_raw_bids_immutable(paths)
+
     mapping = load_participant_mapping(paths.participant_mapping_csv)
     detail = pd.DataFrame(scan_bids_volumes(paths.raw_bids))
 
@@ -234,18 +243,39 @@ def run_qc(paths: ProjectPaths) -> tuple[pd.DataFrame, pd.DataFrame]:
     if fail_count > 0:
         raise FatalPipelineError(f"QC reported {fail_count} failed volume(s)")
 
+    qc_json = paths.derivatives / "qc" / "qc_report.json"
+    qc_html = paths.derivatives / "qc" / "qc_report.html"
+    report_payload = {
+        "volumes": len(detail),
+        "pass": pass_count,
+        "warn": warn_count,
+        "fail": fail_count,
+        "missing_subject_warnings": missing_warnings,
+    }
+    write_json_report(qc_json, report_payload)
+    write_html_report(
+        qc_html,
+        title="Neuro BIDS QC Report",
+        summary=report_payload,
+        sections=[
+            ("Volume Detail", detail.head(500).to_dict(orient="records")),
+            ("Session Summary", summary.to_dict(orient="records")),
+        ],
+    )
+    LOGGER.info("Wrote QC reports: %s, %s", qc_json, qc_html)
+
+    from neuro_pipeline.reports.pipeline_qc_summary import generate_pipeline_qc_summary_html
+    from neuro_pipeline.utils.execution_context import ExecutionContext
+
+    context = ExecutionContext.capture(project_root=paths.root)
+    context.write_json(paths.metadata / "quality_control_context.json")
+    generate_pipeline_qc_summary_html(paths)
+
     manifest = build_manifest(
         paths.root,
-        steps_completed=[
-            "inventory",
-            "generate_mapping",
-            "deidentify_dicom",
-            "convert_to_bids",
-            "defacing",
-            "derivatives_build",
-            "validate_dataset",
-            "quality_control",
-        ],
+        steps_completed=RESEARCH_STEPS_THROUGH_QC,
+        execution_context=context,
+        project_paths=paths,
         extra={
             "qc_volumes": len(detail),
             "qc_pass": pass_count,

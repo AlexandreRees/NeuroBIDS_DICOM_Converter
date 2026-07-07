@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Generate deterministic BIDS participant IDs from inventory."""
+"""Generate deterministic internal BIDS pseudonyms from inventory.
+
+This step assigns private participant/session labels (e.g. sub-001, ses-01)
+used throughout the research pipeline. It does **not** perform public-release
+anonymization — that is handled separately by mri_anonymization.
+"""
 
 from __future__ import annotations
 

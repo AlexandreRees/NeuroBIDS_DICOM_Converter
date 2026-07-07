@@ -9,10 +9,14 @@ import logging
 import sys
 from pathlib import Path
 
+from neuro_pipeline.derivatives_metadata import write_derivatives_dataset_description
+from neuro_pipeline.publication_metadata import write_citation_cff, write_default_license
+from neuro_pipeline.raw_bids_guard import lock_raw_bids
 from neuro_pipeline.utils.cli import build_base_parser
 from neuro_pipeline.utils.errors import FatalPipelineError
 from neuro_pipeline.utils.extensions import build_manifest, write_manifest
 from neuro_pipeline.utils.logging_config import configure_logging
+from neuro_pipeline.pipeline_steps import RESEARCH_STEP_NAMES
 from neuro_pipeline.utils.paths import ProjectPaths, resolve_project_root
 from neuro_pipeline.utils.raw_bids_purity import assert_raw_bids_purity, validate_raw_bids_purity
 
@@ -22,7 +26,6 @@ DERIVATIVES_SUBDIRS: tuple[str, ...] = (
     "conversion",
     "validation",
     "qc",
-    "defacing",
 )
 
 
@@ -60,24 +63,31 @@ def run_derivatives_build(paths: ProjectPaths) -> dict[str, object]:
     assert_raw_bids_purity(paths.raw_bids)
     LOGGER.info("raw_bids purity validated: no forbidden pipeline artifacts")
 
+    context = __import__(
+        "neuro_pipeline.utils.execution_context", fromlist=["ExecutionContext"]
+    ).ExecutionContext.capture(project_root=paths.root)
+    write_derivatives_dataset_description(paths, context=context)
+    dataset_version = f"research-{context.execution_id}"
+    lock_payload = lock_raw_bids(paths, dataset_version=dataset_version)
+    write_citation_cff(paths.raw_bids, title="Neuro BIDS Research Dataset", version=dataset_version)
+    write_default_license(paths.raw_bids)
+
     summary = {
         "derivatives_root": str(paths.derivatives.resolve()),
         "raw_bids_purity": "pass",
         "subdirectories": list(DERIVATIVES_SUBDIRS),
+        "raw_bids_locked": True,
+        "dataset_version": dataset_version,
+        "raw_bids_file_count": lock_payload.get("file_count", 0),
     }
     summary_path = paths.derivatives / "derivatives_build_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     manifest = build_manifest(
         paths.root,
-        steps_completed=[
-            "inventory",
-            "generate_mapping",
-            "deidentify_dicom",
-            "convert_to_bids",
-            "defacing",
-            "derivatives_build",
-        ],
+        steps_completed=list(RESEARCH_STEP_NAMES),
+        execution_context=context,
+        project_paths=paths,
         extra={"derivatives_build": summary},
     )
     write_manifest(paths.pipeline_manifest_json, manifest)

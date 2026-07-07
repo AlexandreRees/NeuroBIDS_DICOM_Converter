@@ -30,7 +30,7 @@ REQUIRED_METADATA: tuple[str, ...] = (
     "series_instance_uid",
     "modality",
 )
-#2 levels of issues : warning = small issue & error = major issue 
+#2 levels of issues : warning = small issue & error = major issue
 WARNING_SEVERITIES: frozenset[str] = frozenset({"warning", "error"})
 
 

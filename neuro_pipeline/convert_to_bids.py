@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert staged DICOM to BIDS using dcm2niix."""
+"""Convert source DICOM (raw_original) to BIDS using dcm2niix and mapping tables."""
 
 from __future__ import annotations
 
@@ -15,12 +15,26 @@ from pathlib import Path
 
 import pandas as pd
 
+from neuro_pipeline.bids_constants import BIDS_SPEC_VERSION
+from neuro_pipeline.publication_metadata import (
+    enrich_dataset_description,
+    validate_dataset_description,
+    write_changes_file,
+    write_research_readme,
+)
 from neuro_pipeline.utils.cli import build_base_parser
 from neuro_pipeline.utils.dicom_helpers import infer_bids_modality
+from neuro_pipeline.utils.execution_context import ExecutionContext
+from neuro_pipeline.utils.provenance import build_provenance_record, start_step_provenance
 from neuro_pipeline.utils.errors import FatalPipelineError
 from neuro_pipeline.utils.extensions import PIPELINE_VERSION, build_manifest, write_manifest
 from neuro_pipeline.utils.logging_config import configure_logging
+from neuro_pipeline.pipeline_steps import RESEARCH_STEP_NAMES
 from neuro_pipeline.utils.paths import ProjectPaths, resolve_project_root
+
+RESEARCH_STEPS_THROUGH_CONVERSION: list[str] = list(
+    RESEARCH_STEP_NAMES[: RESEARCH_STEP_NAMES.index("convert_to_bids") + 1]
+)
 
 LOGGER = logging.getLogger(__name__)
 
@@ -53,42 +67,26 @@ def load_session_mapping(paths: ProjectPaths) -> pd.DataFrame:
     return df
 
 
-def resolve_staging_session_dir(
-    staging_root: Path,
+def resolve_source_dicom(
     raw_original: Path,
-    participant_id: str,
-    source_subject_path: str,
-) -> Path:
-    """Resolve the staged DICOM directory for a participant session."""
-    subject_path = Path(source_subject_path)
-    try:
-        relative = subject_path.relative_to(raw_original)
-    except ValueError:
-        relative = Path(subject_path.name)
-    staging_dir = staging_root / participant_id / relative
-    if not staging_dir.is_dir():
-        raise FatalPipelineError(
-            f"Staged session directory not found: {staging_dir}"
-        )
-    return staging_dir
-
-
-def resolve_staged_representative_dicom(
-    staging_root: Path,
-    raw_original: Path,
-    participant_id: str,
     representative_dicom: str,
 ) -> Path:
-    """Resolve the staged path for a representative DICOM file."""
+    """Resolve a representative DICOM file under raw_original."""
     source_path = Path(representative_dicom)
+    if not source_path.is_file():
+        raise FatalPipelineError(f"Source DICOM not found: {source_path}")
     try:
-        relative = source_path.relative_to(raw_original)
-    except ValueError:
-        relative = Path(source_path.name)
-    staged_path = staging_root / participant_id / relative
-    if not staged_path.is_file():
-        raise FatalPipelineError(f"Staged DICOM not found: {staged_path}")
-    return staged_path
+        source_path.resolve().relative_to(raw_original.resolve())
+    except ValueError as exc:
+        raise FatalPipelineError(
+            f"Representative DICOM must lie under raw_original: {source_path}"
+        ) from exc
+    return source_path
+
+
+def resolve_dcm2niix_series_input(source_dicom: Path) -> Path:
+    """Return the directory passed to dcm2niix for one series."""
+    return source_dicom.parent
 
 
 def resolve_dcm2niix_binary(dcm2niix_path: str | None) -> str:
@@ -130,7 +128,7 @@ def write_dataset_description(paths: ProjectPaths) -> None:
     """Write BIDS dataset_description.json."""
     description = {
         "Name": "Neuro BIDS Pipeline Dataset",
-        "BIDSVersion": "1.8.0",
+        "BIDSVersion": BIDS_SPEC_VERSION,
         "DatasetType": "raw",
         "Authors": ["Neuro BIDS Pipeline"],
         "GeneratedBy": [
@@ -186,17 +184,37 @@ def derive_task_name(series_description: str) -> str:
     task_match = re.search(r"task[-_ ]?([a-z0-9]+)", description)
     if task_match:
         return task_match.group(1)
+    if re.search(r"rest\d?", description):
+        return "rest"
+    if re.search(r"movie\d?", description):
+        return "movie"
+    if re.search(r"fmri\d?", description):
+        return "fmri"
+    if re.search(r"control\d?", description):
+        return "control"
     if "rest" in description:
         return "rest"
     return "rest"
 
 
+def derive_anat_suffix(series_description: str) -> str:
+    """Derive BIDS anatomical suffix from series description."""
+    description = series_description.lower()
+    if "flair" in description:
+        return "FLAIR"
+    if re.search(r"\bt2w\b|\bt2\b", description):
+        return "T2w"
+    if "b1map" in description or "b1_map" in description:
+        return "TB1TFL"
+    return "T1w"
+
+
 def derive_fmap_direction(series_description: str) -> str:
     """Derive a BIDS phase-encoding direction label for fieldmaps."""
     description = series_description.lower()
-    if re.search(r"\bpa\b", description):
+    if re.search(r"[_\s-]pa\b|\bpa[_\s-]", description) or description.endswith("_pa"):
         return "PA"
-    if re.search(r"\bap\b", description):
+    if re.search(r"[_\s-]ap\b|\bap[_\s-]", description) or description.endswith("_ap"):
         return "AP"
     if re.search(r"\blr\b", description):
         return "LR"
@@ -215,7 +233,8 @@ def build_dcm2niix_filename(
     """Build a BIDS-safe dcm2niix output filename stem."""
     run_tag = f"run-{run_index:02d}"
     if bids_modality == "anat":
-        return f"{participant_id}_{session_label}_{run_tag}_T1w"
+        suffix = derive_anat_suffix(series_description)
+        return f"{participant_id}_{session_label}_{run_tag}_{suffix}"
     if bids_modality == "func":
         task = derive_task_name(series_description)
         return f"{participant_id}_{session_label}_task-{task}_{run_tag}_bold"
@@ -472,13 +491,11 @@ def convert_sessions(
         if run_index != starting_run_index:
             run_counters[modality_key] = run_index
 
-        staged_dicom = resolve_staged_representative_dicom(
-            paths.staging,
+        source_dicom = resolve_source_dicom(
             paths.raw_original,
-            participant_id,
             str(row["representative_dicom"]),
         )
-        source_input = staged_dicom
+        source_input = resolve_dcm2niix_series_input(source_dicom)
 
         if nifti_matches_stem(output_dir, filename):
             LOGGER.warning(
@@ -494,7 +511,7 @@ def convert_sessions(
                     "bids_modality": bids_modality,
                     "run_index": f"{run_index:02d}",
                     "expected_filename": filename,
-                    "source_staging_dicom": str(staged_dicom.resolve()),
+                    "source_dicom": str(source_dicom.resolve()),
                     "bids_output_dir": str(output_dir.resolve()),
                     "n_converted_files": "0",
                     "dcm2niix_returncode": "",
@@ -538,6 +555,29 @@ def convert_sessions(
             )
 
         nii_files = nifti_matches_stem(output_dir, filename)
+        audit_passed = ""
+        audit_errors = ""
+        if status == "success" and nii_files:
+            from neuro_pipeline.conversion_audit import audit_series_conversion
+
+            audit = audit_series_conversion(
+                participant_id=participant_id,
+                session_label=session_label,
+                series_instance_uid=series_instance_uid,
+                source_dicom=source_dicom,
+                nifti_path=nii_files[0],
+            )
+            audit_passed = str(audit.passed)
+            audit_errors = "; ".join(audit.errors)
+            if not audit.passed:
+                status = "failed"
+                LOGGER.error(
+                    "Conversion audit failed for %s %s: %s",
+                    participant_id,
+                    session_label,
+                    audit_errors,
+                )
+
         records.append(
             {
                 "participant_id": participant_id,
@@ -547,11 +587,13 @@ def convert_sessions(
                 "bids_modality": bids_modality,
                 "run_index": f"{run_index:02d}",
                 "expected_filename": filename,
-                "source_staging_dicom": str(staged_dicom.resolve()),
+                "source_dicom": str(source_dicom.resolve()),
                 "bids_output_dir": str(output_dir.resolve()),
                 "n_converted_files": str(len(nii_files)),
                 "dcm2niix_returncode": str(result.returncode),
                 "status": status,
+                "audit_passed": audit_passed,
+                "audit_errors": audit_errors,
                 "dcm2niix_stdout": result.stdout,
                 "dcm2niix_stderr": result.stderr,
             }
@@ -566,6 +608,8 @@ def convert_sessions(
 def run_conversion(
     paths: ProjectPaths,
     dcm2niix_path: str | None,
+    *,
+    strict_acquisitions: bool = False,
 ) -> pd.DataFrame:
     """Execute DICOM-to-BIDS conversion."""
     paths.ensure_metadata_dir()
@@ -585,38 +629,127 @@ def run_conversion(
 
     success_count = int((report["status"] == "success").sum()) if not report.empty else 0
     failed_count = int((report["status"] == "failed").sum()) if not report.empty else 0
+    audit_fail_count = 0
+    if not report.empty and "audit_passed" in report.columns:
+        audit_fail_count = int((report["audit_passed"] == "False").sum())
 
     if success_count == 0:
         raise FatalPipelineError("Conversion produced zero successful outputs")
 
     validate_bids_outputs(paths.raw_bids)
 
+    from neuro_pipeline.acquisition_consistency import run_acquisition_validation
+
+    acquisition_report = run_acquisition_validation(
+        paths,
+        fail_on_error=strict_acquisitions,
+    )
+    acquisition_errors = sum(1 for row in acquisition_report.rows if row.status == "error")
+    acquisition_missing = sum(1 for row in acquisition_report.rows if row.status == "missing")
+    if acquisition_report.t1_blocked_sessions:
+        LOGGER.warning(
+            "T1-dependent modalities blocked for: %s",
+            ", ".join(sorted(acquisition_report.t1_blocked_sessions)),
+        )
+    if not acquisition_report.passed:
+        LOGGER.warning(
+            "Acquisition validation reported %d error(s) and %d missing acquisition(s); "
+            "see %s (strict=%s)",
+            acquisition_errors,
+            acquisition_missing,
+            paths.acquisition_validation_csv,
+            strict_acquisitions,
+        )
+
+    audit_path = paths.derivatives / "conversion" / "conversion_audit.csv"
+    audit_path.parent.mkdir(parents=True, exist_ok=True)
+    if not report.empty:
+        audit_cols = [
+            col
+            for col in [
+                "participant_id",
+                "session_label",
+                "series_instance_uid",
+                "source_dicom",
+                "expected_filename",
+                "audit_passed",
+                "audit_errors",
+                "status",
+            ]
+            if col in report.columns
+        ]
+        report[audit_cols].to_csv(audit_path, index=False)
+
     report.to_csv(paths.conversion_report_csv, index=False)
+
+    context = ExecutionContext.capture(
+        project_root=paths.root,
+        parameters={"dcm2niix_path": dcm2niix_path},
+        software_versions={"dcm2niix": dcm2niix_version},
+    )
+    context.write_json(paths.metadata / "convert_to_bids_context.json")
+    provenance = start_step_provenance("convert_to_bids", context)
+    provenance.validation = {
+        "audit_failures": audit_fail_count,
+        "conversion_failures": failed_count,
+    }
+    provenance.add_record(
+        build_provenance_record(
+            step="convert_to_bids",
+            context=context,
+            input_paths=[paths.raw_original, paths.session_mapping_csv],
+            output_path=paths.conversion_report_csv,
+            parameters={"success_count": success_count, "failed_count": failed_count},
+        )
+    )
+    provenance.write_json(paths.metadata / "convert_to_bids_provenance.json")
+
+    dataset_version = f"research-{context.execution_id}"
+    enrich_dataset_description(
+        paths,
+        dataset_version=dataset_version,
+        extra_generated_by={"CodeURL": "https://github.com/neuro-bids-pipeline"},
+    )
+    dd_errors = validate_dataset_description(paths.dataset_description_json)
+    if dd_errors:
+        raise FatalPipelineError(
+            "dataset_description.json validation failed: " + "; ".join(dd_errors)
+        )
+    write_research_readme(paths)
+    write_changes_file(
+        paths.raw_bids,
+        version=dataset_version,
+        notes=[
+            f"Converted {success_count} series with dcm2niix {dcm2niix_version}",
+            f"Pipeline version {context.pipeline_version}, git {context.git_commit}",
+        ],
+    )
+
     LOGGER.info(
-        "Wrote conversion report: %s (%d rows, %d success, %d failed)",
+        "Wrote conversion report: %s (%d rows, %d success, %d failed, %d audit failures)",
         paths.conversion_report_csv,
         len(report),
         success_count,
         failed_count,
+        audit_fail_count,
     )
 
-    if failed_count > 0:
+    if failed_count > 0 or audit_fail_count > 0:
         raise FatalPipelineError(
-            f"Conversion failed for {failed_count} series; see {paths.conversion_report_csv}"
+            f"Conversion/audit failed: {failed_count} conversion, "
+            f"{audit_fail_count} audit; see {paths.conversion_report_csv}"
         )
 
     manifest = build_manifest(
         paths.root,
-        steps_completed=[
-            "inventory",
-            "generate_mapping",
-            "deidentify_dicom",
-            "convert_to_bids",
-        ],
+        steps_completed=[*RESEARCH_STEPS_THROUGH_CONVERSION],
         extra={
             "converted_sessions": success_count,
             "conversion_failed": failed_count,
             "dcm2niix_version": dcm2niix_version,
+            "acquisition_validation_passed": acquisition_report.passed,
+            "acquisition_validation_errors": acquisition_errors,
+            "acquisition_validation_missing": acquisition_missing,
         },
     )
     write_manifest(paths.pipeline_manifest_json, manifest)
@@ -627,13 +760,18 @@ def run_conversion(
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = build_base_parser(
-        description="Convert staged DICOM to BIDS using dcm2niix."
+        description="Convert raw_original DICOM to BIDS (raw_bids/) using dcm2niix."
     )
     parser.add_argument(
         "--dcm2niix-path",
         type=str,
         default=None,
         help="Path to dcm2niix executable (default: search PATH).",
+    )
+    parser.add_argument(
+        "--strict-acquisitions",
+        action="store_true",
+        help="Fail conversion if acquisition validation reports errors.",
     )
     return parser.parse_args(argv)
 
@@ -654,7 +792,11 @@ def main(argv: list[str] | None = None) -> int:
 
     LOGGER.info("Starting BIDS conversion for %s", paths.root)
     try:
-        run_conversion(paths, args.dcm2niix_path)
+        run_conversion(
+            paths,
+            args.dcm2niix_path,
+            strict_acquisitions=args.strict_acquisitions,
+        )
     except FatalPipelineError as exc:
         LOGGER.error("FATAL: %s", exc.message)
         return 1

@@ -22,13 +22,33 @@ class ProjectPaths:
 
     @property
     def staging(self) -> Path:
-        """Anonymized DICOM staging area."""
+        """Legacy directory (deprecated — research pipeline reads raw_original directly)."""
         return self.root / "staging"
 
     @property
     def raw_bids(self) -> Path:
-        """Final BIDS raw dataset root."""
+        """Canonical internal BIDS dataset for research analyses."""
         return self.root / "raw_bids"
+
+    @property
+    def anonymization_release(self) -> Path:
+        """Public-release pipeline output root (Public_Dataset + Private/)."""
+        return self.root / "anonymization_release"
+
+    @property
+    def public_dataset(self) -> Path:
+        """Anonymized BIDS dataset safe for external sharing."""
+        return self.anonymization_release / "Public_Dataset"
+
+    @property
+    def private_release(self) -> Path:
+        """Private release artifacts (mappings, date shifts) — never publish."""
+        return self.anonymization_release / "Private"
+
+    @property
+    def release_failed_files_csv(self) -> Path:
+        """Failed files from public-release anonymization."""
+        return self.private_release / "logs" / "failed_files.csv"
 
     @property
     def derivatives_root(self) -> Path:
@@ -72,7 +92,7 @@ class ProjectPaths:
 
     @property
     def participant_mapping_csv(self) -> Path:
-        """Source-to-BIDS participant mapping."""
+        """Private source-to-BIDS participant pseudonym mapping (never publish)."""
         return self.metadata / "participant_mapping.csv"
 
     @property
@@ -96,6 +116,21 @@ class ProjectPaths:
         return self.metadata / "pipeline_manifest.json"
 
     @property
+    def research_checkpoints_json(self) -> Path:
+        """Research pipeline step checkpoint store."""
+        return self.metadata / "research_checkpoints.json"
+
+    @property
+    def release_checkpoints_json(self) -> Path:
+        """Release pipeline step checkpoint store."""
+        return self.metadata / "release_checkpoints.json"
+
+    @property
+    def methods_md(self) -> Path:
+        """Manuscript-ready Methods section generated from pipeline provenance."""
+        return self.root / "docs" / "METHODS.md"
+
+    @property
     def deidentify_report_csv(self) -> Path:
         """Per-file de-identification report."""
         return self.metadata / "deidentify_report.csv"
@@ -109,6 +144,36 @@ class ProjectPaths:
     def conversion_logs_dir(self) -> Path:
         """dcm2niix per-series log directory."""
         return self.derivatives / "conversion" / "logs"
+
+    @property
+    def acquisition_validation_csv(self) -> Path:
+        """Per-acquisition validation detail report."""
+        return self.derivatives / "validation" / "acquisition_validation.csv"
+
+    @property
+    def acquisition_validation_json(self) -> Path:
+        """Machine-readable acquisition validation report."""
+        return self.derivatives / "validation" / "acquisition_validation.json"
+
+    @property
+    def acquisition_blocklist_json(self) -> Path:
+        """Per-session modality blocklist for downstream processing."""
+        return self.metadata / "acquisition_blocklist.json"
+
+    @property
+    def geometry_validation_csv(self) -> Path:
+        """DICOM → NIfTI geometry validation detail report."""
+        return self.derivatives / "validation" / "geometry_validation.csv"
+
+    @property
+    def pipeline_qc_summary_html(self) -> Path:
+        """Publication-ready HTML QC summary aggregating validation outputs."""
+        return self.derivatives / "qc" / "pipeline_qc_summary.html"
+
+    @property
+    def derivatives_dataset_description_json(self) -> Path:
+        """BIDS derivatives dataset_description.json."""
+        return self.derivatives / "dataset_description.json"
 
     @property
     def validation_report_json(self) -> Path:
@@ -136,19 +201,34 @@ class ProjectPaths:
         return self.derivatives / "defacing" / "defacing_report.json"
 
     @property
+    def release_gate_report_json(self) -> Path:
+        """Public-release gate report."""
+        return self.metadata / "release_gate_report.json"
+
+    @property
+    def release_blockers_csv(self) -> Path:
+        """Public-release gate blocker table."""
+        return self.metadata / "release_blockers.csv"
+
+    @property
+    def release_ready_json(self) -> Path:
+        """Public-release readiness flag."""
+        return self.metadata / "release_ready.json"
+
+    @property
     def publication_gate_report_json(self) -> Path:
-        """Publication gate full report."""
-        return self.metadata / "publication_gate_report.json"
+        """Deprecated alias — use release_gate_report_json."""
+        return self.release_gate_report_json
 
     @property
     def publication_blockers_csv(self) -> Path:
-        """Publication gate blocker table."""
-        return self.metadata / "publication_blockers.csv"
+        """Deprecated alias — use release_blockers_csv."""
+        return self.release_blockers_csv
 
     @property
     def publication_ready_json(self) -> Path:
-        """Publication readiness flag."""
-        return self.metadata / "publication_ready.json"
+        """Deprecated alias — use release_ready_json."""
+        return self.release_ready_json
 
     @property
     def master_log(self) -> Path:

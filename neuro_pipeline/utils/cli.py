@@ -13,8 +13,8 @@ def add_project_root_argument(parser: argparse.ArgumentParser) -> None:
         type=Path,
         default=None,
         help=(
-            "Root directory containing raw_original/, metadata/, staging/, "
-            "and raw_bids/. Defaults to the current working directory."
+            "Root directory containing raw_original/, metadata/, and raw_bids/. "
+            "Defaults to the current working directory."
         ),
     )
 
