@@ -5,8 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-
-COHORT_NAMES: tuple[str, ...] = ("Controls", "Data_ON", "Data_TON", "Glaucoma")
+from neuro_pipeline.config.constants import COHORT_NAMES
 
 
 @dataclass(frozen=True)
@@ -194,6 +193,48 @@ class ProjectPaths:
     def qc_detail_csv(self) -> Path:
         """Per-scan QC detail table."""
         return self.derivatives / "qc" / "qc_detail.csv"
+
+    @property
+    def mriqc_output_dir(self) -> Path:
+        """MRIQC IQM outputs (BIDS derivatives layout)."""
+        return self.derivatives_root / "mriqc"
+
+    @property
+    def mriqc_work_dir(self) -> Path:
+        """Scratch directory for MRIQC container working files."""
+        return self.metadata / "mriqc_work"
+
+    @property
+    def mriqc_config_yaml(self) -> Path:
+        """Optional project-local MRIQC configuration override."""
+        return self.metadata / "mriqc_config.yaml"
+
+    @property
+    def mriqc_log(self) -> Path:
+        """MRIQC step log file."""
+        return self.metadata / "mriqc.log"
+
+    @property
+    def mriqc_run_summary_json(self) -> Path:
+        """Global MRIQC execution summary."""
+        return self.mriqc_output_dir / "mriqc_run_summary.json"
+
+    @property
+    def mriqc_report_links_dir(self) -> Path:
+        """Linked/copied MRIQC HTML reports for the QC report bundle."""
+        return self.derivatives / "qc" / "mriqc_reports"
+
+    def mriqc_modality_output_dir(self, modality: str) -> Path:
+        """MRIQC outputs for one modality (independent BIDS derivatives subtree)."""
+        return self.mriqc_output_dir / modality
+
+    def mriqc_modality_work_dir(self, modality: str) -> Path:
+        """Scratch directory for one MRIQC modality run."""
+        return self.mriqc_work_dir / modality
+
+    def mriqc_modality_report_links_dir(self, modality: str) -> Path:
+        """Linked HTML reports for one MRIQC modality."""
+        return self.mriqc_report_links_dir / modality
 
     @property
     def defacing_report_json(self) -> Path:

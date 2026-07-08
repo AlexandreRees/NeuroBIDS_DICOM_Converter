@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-"""Deprecated alias for publication_gate — use neuro_pipeline.publication_gate."""
+"""Compatibility shim — import from neuro_pipeline.publication.prepublication_gate instead."""
 
-from __future__ import annotations
-
-import sys
-
-from neuro_pipeline.publication_gate import main
-
-if __name__ == "__main__":
-    sys.exit(main())
+from neuro_pipeline.publication.prepublication_gate import *  # noqa: F403

@@ -2,7 +2,7 @@
 
 from neuro_pipeline.utils.cli import build_base_parser
 from neuro_pipeline.utils.errors import FatalPipelineError, PipelineWarning
-from neuro_pipeline.utils.extensions import PIPELINE_VERSION, write_manifest
+from neuro_pipeline.config.extensions import PIPELINE_VERSION, write_manifest
 from neuro_pipeline.utils.logging_config import configure_logging
 from neuro_pipeline.utils.paths import COHORT_NAMES, ProjectPaths, resolve_project_root
 

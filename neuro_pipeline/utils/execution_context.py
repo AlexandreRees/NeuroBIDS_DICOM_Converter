@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from neuro_pipeline.utils.extensions import PIPELINE_VERSION
+from neuro_pipeline.config.constants import PIPELINE_VERSION
 
 
 @dataclass
