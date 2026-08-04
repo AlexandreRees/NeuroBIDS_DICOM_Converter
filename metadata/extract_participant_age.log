@@ -1,4 +1,0 @@
-2026-07-16 11:06:27 | WARNING  | __main__ | sub-055: missing T1 anatomical in ses-01
-2026-07-16 11:06:32 | INFO     | __main__ | Wrote /lustre07/scratch/alexrees/metadata/participant_age.tsv (84 participants, 83 with age)
-2026-07-16 11:07:26 | WARNING  | __main__ | sub-055: missing T1 anatomical in ses-01
-2026-07-16 11:07:28 | INFO     | __main__ | Wrote /lustre07/scratch/alexrees/metadata/participant_age.tsv (84 participants, 83 with age)

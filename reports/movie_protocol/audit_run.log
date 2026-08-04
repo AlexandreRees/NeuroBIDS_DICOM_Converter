@@ -1,6 +1,0 @@
-Scanning for 3-Movie_Data/*.m …
-Found 312 .m files
-PHI HIGH hits: 645
-Canonical scripts: {'main.m': '/lustre06/project/6001995/raw_original/Control/SUBC01-Session2-2023NOV08/SUBC01-Session-2023NOV08-MATLAB/3-Movie_Data/main.m', 'Show_movie.m': '/lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/3-Movie_Data/Show_movie.m'}
-Collecting BIDS movie BOLD + MATLAB logs…
-DONE verdict=OPTION A — PASS scripts=312 assigns=520 review=8

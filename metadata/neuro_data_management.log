@@ -1,8 +1,0 @@
-2026-07-15 17:50:12 | INFO     | __main__ | neuro_data_management starting
-2026-07-15 17:50:12 | INFO     | __main__ |   code_root       = /lustre07/scratch/alexrees/neuro_pipeline
-2026-07-15 17:50:12 | INFO     | __main__ |   data_root       = /lustre07/scratch/alexrees
-2026-07-15 17:50:12 | INFO     | __main__ |   raw_root        = /lustre07/scratch/alexrees/raw_original
-2026-07-15 17:50:12 | INFO     | __main__ |   output_dir      = /lustre07/scratch/alexrees/reports/data_management
-2026-07-15 17:50:12 | INFO     | __main__ |   mode            = fast
-2026-07-15 17:50:12 | INFO     | __main__ |   workers         = 2
-2026-07-15 17:50:12 | INFO     | __main__ |   cache           = True

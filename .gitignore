@@ -184,3 +184,33 @@ pizarro_env/
 # Per-subject deidentify shards (source IDs / generated dumps)
 reports/shards/
 reports/openneuro_release/*_console.log
+
+
+# Scientific Data public repository exclusions
+bids/
+sourcedata/
+incoming/
+derivatives/
+release_dataset/
+raw_original/
+raw_dicom/
+
+# HPC
+work/
+containers/
+.nextflow/
+venvs/
+*.log
+
+# Large imaging/data formats
+*.nii
+*.nii.gz
+*.dcm
+*.IMA
+*.puls
+*.resp
+*.ecg
+*.ext
+*.ext2
+*.pmu
+
