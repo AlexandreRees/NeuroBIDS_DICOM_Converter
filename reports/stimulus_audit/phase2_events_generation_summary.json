@@ -1,0 +1,30 @@
+{
+  "generated_at_utc": "2026-07-23T20:25:48Z",
+  "previous_events_before_phase2": 350,
+  "new_events_phase2_cumulative": 106,
+  "events_after": 456,
+  "total_task_fmri_bold": 507,
+  "remaining_without_events": 51,
+  "coverage_percent": 89.94,
+  "recovered": 456,
+  "remaining_impossible": 51,
+  "written_by_cohort_phase2": {
+    "Glaucoma": 71,
+    "DataTON": 8,
+    "Control": 4,
+    "DataON": 23
+  },
+  "remaining_by_cohort": {
+    "Control": 43,
+    "Glaucoma": 6,
+    "DataON": 2
+  },
+  "reason_groups": {
+    "ProtocolName\u2194BOLD not unique (or absent)": 34,
+    "non-unique scan_info / stim_order cardinality": 9,
+    "no grating Results (true archive gap or unmapped visit)": 8
+  },
+  "sub051_remaining_runs": 4,
+  "sub078_remaining_runs": 4,
+  "note": "Cumulative Phase-2 totals: first pass wrote 102 (non-Control); second pass wrote 4 (sub-004/ses-02 date rescue)."
+}

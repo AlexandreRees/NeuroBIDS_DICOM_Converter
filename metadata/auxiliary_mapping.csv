@@ -1,0 +1,7 @@
+cohort,source_subject_folder,auxiliary_path,matched_participant_id,matched_session_id,match_score,mapping_status,association_reason
+Control,SUBC12-Session1-2023JUL12,/project/def-amirs/raw_original/Control/SUBC12-Session1-2023JUL12,sub-012,ses-01,120,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same normalized session label; same parent folder
+Control,SUBC33_Session02_2024AUG15,/project/def-amirs/raw_original/Control/SUBC33_Session02_2024AUG15,sub-032,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Control,SUBC43_SESSION02_2024NOV13_2,/project/def-amirs/raw_original/Control/SUBC43_SESSION02_2024NOV13_2,sub-042,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Control,SUBC44_SESSION01_2024JUL25,/project/def-amirs/raw_original/Control/SUBC44_SESSION01_2024JUL25,sub-043,ses-02,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Control,SUBC54_SESSION02_2025MAY27,/project/def-amirs/raw_original/Control/SUBC54_SESSION02_2025MAY27,sub-053,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Glaucoma,SUBG17_SESSION02_2025AUG19,/project/def-amirs/raw_original/Glaucoma/SUBG17_SESSION02_2025AUG19,sub-082,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder

@@ -1,0 +1,502 @@
+% Scientific Data manuscript draft sections 4--8 (descriptive only)
+% Compile from this directory:
+%   pdflatex Scientific_Data_Methods_DataRecord_Draft_2026-07-22.tex
+%   pdflatex Scientific_Data_Methods_DataRecord_Draft_2026-07-22.tex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\setlength{\headheight}{14pt}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black,
+  pdftitle={Scientific Data draft: Methods, Data Records, Technical Validation},
+  pdfauthor={Alex Rees - Shmuel Lab}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Scientific Data draft (descriptive)}
+\fancyhead[R]{Internal -- verify before submission}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\title{Scientific Data Data Descriptor\\[0.35em]
+\large Draft manuscript text: Methods, Data Records,\\
+Technical Validation, and Usage Notes}
+\author{Prepared from curated project documentation\\
+\small Alex Rees -- Shmuel Lab / \texttt{neuro\_pipeline}}
+\date{22 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This document provides \textbf{descriptive draft text} for Scientific Data
+sections~4--8, written from existing project tables, BIDS metadata, and
+validation reports. Statements that could not be verified in the repository
+are explicitly marked as \textit{not documented in the available materials}
+rather than inferred. No biological group-comparison analyses are presented.
+Ethics details supplied by the study team are used as provided.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\noindent\textbf{How to read this draft.}
+Text intended for the manuscript is written in plain scientific prose.
+Parenthetical notes in italics flag provenance caveats for the authors
+(e.g., incomplete MRIQC coverage). Figures are existing project figures
+reused for illustration.
+
+%==============================================================================
+\section*{Author notes (not for submission)}
+%==============================================================================
+
+\begin{itemize}[leftmargin=*]
+  \item Clinical inclusion/exclusion criteria were \textbf{not found} in the
+        repository materials and are therefore not invented below; insert from
+        Protocol 2020-5879 before submission.
+  \item Scanner geographic site/address is \textbf{not available} in released
+        BIDS sidecars (\texttt{InstitutionName} cleared during de-identification).
+  \item MRIQC processing is \textbf{partial} as of the latest array audit;
+        report coverage and IQM summaries only in Technical Validation once
+        complete---not in Methods.
+  \item Physiological recordings exist as scanner PhysioLog series but are
+        \textbf{not} currently distributed as BIDS physiology files.
+  \item Public repository accession / DOI (e.g., OpenNeuro) is \textbf{not yet
+        assigned}; cite via Scientific Data data-citation format when available.
+  \item \textbf{Methods revision (23 July 2026).} Removed validation outcomes
+        (e.g., bids-validator error counts, Pizarro coverage tallies) from
+        Methods; shortened pipeline/architecture wording; added explicit
+        Experimental design and Software/tools subsections with versions and
+        repository URLs for reusable inputs (Pizarro model).
+\end{itemize}
+
+\newpage
+
+%==============================================================================
+\section{Methods}
+%==============================================================================
+
+\subsection{Participants}
+
+The dataset includes 84 participants organised into four study cohorts:
+Control ($n=56$), optic neuritis (BIDS cohort label \texttt{DataON}; $n=7$),
+traumatic optic neuropathy (BIDS cohort label \texttt{DataTON}; $n=2$), and
+Glaucoma ($n=19$). Cohort labels are recorded in the BIDS
+\texttt{participants.tsv} table.
+
+The sample comprised 46 female and 38 male participants.
+Sex was obtained from DICOM \texttt{PatientSex} metadata and propagated through
+inventory and mapping to BIDS \texttt{participants.tsv}.
+Individual ages are not distributed in the public release: the BIDS root
+\texttt{participants.tsv} contains only \texttt{participant\_id},
+\texttt{cohort}, and \texttt{sex}. Age-related DICOM fields were cleared from
+released sidecars during de-identification, and no aggregate age statistic is
+reported here in order to reduce re-identification risk in this relatively
+small multimodal clinical cohort.
+
+Imaging was organised into planned sessions \texttt{ses-01} and
+\texttt{ses-02}. In the current BIDS tree, longitudinal coverage is incomplete:
+40/84 participants have both sessions, 43/84 have \texttt{ses-01} only, and
+1/84 has \texttt{ses-02} only. Missing sessions reflect incomplete participant
+follow-up rather than omitted files.
+
+Detailed clinical inclusion and exclusion criteria were not present in the
+curated repository documentation used to prepare this draft and should be
+inserted by the authors from the approved study protocol prior to submission.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/participant_demographics.png}
+\caption{Participant cohort composition and sex distribution in the public
+release. Individual ages are not included in the public
+\texttt{participants.tsv} and are not summarised in the Data Descriptor.}
+\end{figure}
+
+\subsection{Ethics statement}
+
+The study was approved by the McGill University Health Centre (MUHC) Research
+Ethics Board (Protocol 2020-5879), McGill University.
+Written informed consent was obtained from participants.
+\textit{(Ethics identifiers were supplied by the study team for this draft;
+confirm exact consent language for data sharing before submission.)}
+
+\subsection{MRI acquisition}
+
+MRI data were acquired on a Siemens Prisma system operating at 3~T.
+Sampled BIDS sidecars report a 64-channel head/neck receive coil
+(\texttt{ReceiveCoilName = HeadNeck\_64};
+\texttt{ReceiveCoilActiveElements = HC1-7;NC1,2}).
+Scanner software versions observed in the converted dataset include
+\texttt{syngo MR E11} and \texttt{syngo MR XA30}.
+The acquisition site address is not retained in released BIDS sidecars because
+institutional identifying fields were cleared during de-identification.
+
+The protocol included anatomical, functional, diffusion, field-map, and
+physiology-related scanner series. Representative parameters summarised from
+the curated acquisition table are as follows.
+
+\paragraph{Anatomical.}
+T1-weighted MPRAGE (\texttt{T1w\_MPR}): TR~2500~ms, TE~2.22~ms, flip angle~$8^\circ$,
+0.8~mm isotropic.
+White-matter-nulled MPRAGE: TR~4000~ms, TE~3.82~ms, flip angle~$7^\circ$,
+1~mm isotropic.
+3D FLAIR: TR~6000~ms, TE~357~ms, flip angle~$120^\circ$, 0.8~mm isotropic.
+
+\paragraph{Functional MRI.}
+BOLD EPI acquisitions shared TR~937~ms, TE~37~ms, flip angle~$52^\circ$,
+2~mm isotropic resolution (sequence family \texttt{epfid2d1\_104}).
+Sampled BOLD sidecars report multiband acceleration factor~8.
+Task labels in BIDS include resting-state (\texttt{task-rest}; one run,
+320~volumes in the protocol summary), movie viewing (\texttt{task-movie};
+four runs, 210~volumes), task fMRI (\texttt{task-fmri}; four runs,
+226~volumes), and short control runs (\texttt{task-control}; 20~volumes).
+
+\paragraph{Field maps.}
+Spin-echo EPI field maps were acquired in opposing phase-encode directions
+(AP/PA): TR~9710~ms, TE~66~ms, flip angle~$90^\circ$, 2~mm isotropic.
+
+\paragraph{Diffusion.}
+Diffusion-weighted imaging included a 76-direction acquisition with
+$b=2000$~s/mm$^2$ (TR~3500~ms, TE~75~ms in the protocol summary), reverse-phase
+encode $b=0$ volumes, and an additional RESOLVE trace acquisition listed in the
+protocol inventory.
+
+\paragraph{Physiology.}
+Scanner physiological logging series (\texttt{*\_PhysioLog}) were acquired for
+ECG, respiration, and pulse channels in the source protocol.
+These recordings are not currently distributed as BIDS physiology sidecars
+because required BIDS physiology metadata (for example sampling frequency,
+start time, and verified run mapping) were not available for conversion at the
+time of this draft.
+
+\subsection{Data processing / conversion}
+
+Source DICOM data were converted to a Brain Imaging Data Structure (BIDS)
+dataset using the \texttt{neuro\_pipeline} research workflow
+(pipeline version~2.1.0; target BIDS specification~1.9.0).
+The conversion sequence comprised DICOM inventory, participant/session mapping,
+streaming per-acquisition DICOM de-identification, dcm2niix conversion, BIDS
+organisation, and validation.
+
+DICOM series were converted to gzip-compressed NIfTI with JSON sidecars using
+dcm2niix version \texttt{v1.0.20230411} (as recorded in BIDS sidecars), with
+arguments \texttt{-b y -ba y -z y}.
+By default, conversion used streaming de-identification: each mapped acquisition
+was copied to an ephemeral workspace, de-identified, converted, and removed
+after successful conversion, leaving the original raw archive unmodified.
+After conversion, JSON sidecars were scrubbed of residual personal identifiers,
+\texttt{TaskName} was injected from filenames when missing, phase images were
+renamed to BIDS \texttt{part-phase}, and field-map \texttt{IntendedFor} fields
+were set to session functional targets where applicable.
+
+For Siemens XA30 Enhanced MR sessions in which dcm2niix did not export
+\texttt{SliceTiming}, values were recovered from DICOM
+\texttt{FrameAcquisitionDateTime} and \texttt{InStackPositionNumber} when
+available.
+Verified \texttt{*\_events.tsv} files were included for a subset of
+\texttt{task-fmri} runs only; movie/control onsets lacking a unique verified
+protocol-to-BOLD mapping were intentionally withheld.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/Figure_1_pipeline_architecture.png}
+\caption{Overview of the research conversion architecture used to generate the
+BIDS dataset (inventory, de-identification, conversion, validation).}
+\end{figure}
+
+\subsection{De-identification}
+
+DICOM de-identification was performed on copies of mapped acquisitions prior to
+BIDS conversion, while original scanner exports were retained as an unmodified
+archive.
+The procedure followed a custom attribute-confidentiality workflow
+\textbf{inspired by DICOM PS3.15 confidentiality recommendations}
+(Basic Application Level Confidentiality--oriented practices).
+It is documented as a curated subset of de-identification actions and is
+\textbf{not} claimed as certified full PS3.15 Basic Profile compliance.
+
+Direct identifiers (including patient name and patient ID) were replaced with
+study-specific canonical codes.
+Institutional, physician, accession, device-serial, and related free-text
+identifier fields were cleared according to a fixed tag policy.
+Study, series, SOP, and related unique identifiers were deterministically
+remapped (to the \texttt{2.25.*} root) while preserving SOP Class UIDs required
+for DICOM validity.
+Calendar dates were shifted by a participant-specific day offset, preserving
+relative intervals across longitudinal visits; acquisition times were left
+unchanged.
+Patient sex was retained by default to support demographic tables.
+Acquisition parameters needed for analysis and series descriptions used for
+labelling were retained.
+Image pixel values were not altered during DICOM header de-identification.
+
+BIDS JSON sidecars were subsequently scrubbed of core personal and
+institutional fields.
+Anatomical facial defacing was handled as a separate optional stage using
+pydeface (version \texttt{2.0.0+computecanada}) with FSL
+(\texttt{6.0.7.20}), writing outputs under \texttt{derivatives/defacing/}.
+Defacing coverage for public release should be confirmed against the current
+derivative inventory before deposition
+\textit{(an earlier OpenNeuro readiness audit reported incomplete T1w defacing
+coverage; authors must update this sentence to the final release count)}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/figure_deidentification_workflow.png}
+\caption{De-identification workflow from raw DICOM through header cleaning,
+conversion, and optional anatomical defacing.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/figure_before_after_deidentification.png}
+\caption{Illustrative before/after summary of DICOM identifier handling under
+the project de-identification policy.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/figure_defacing_before_after.png}
+\caption{Example anatomical defacing quality-control visualisation
+(participant \texttt{sub-001}).}
+\end{figure}
+
+\subsection{Quality control}
+
+\paragraph{MRIQC.}
+Automated image-quality metrics (IQMs) for structural T1-weighted and BOLD data
+were computed with MRIQC.
+Derivative metadata record MRIQC version
+\texttt{24.1.0.dev0+gd5b13cb5.d20240826}
+(container target used in array scripts: \texttt{nipreps/mriqc:24.0.2}).
+Array tasks were configured with modalities \texttt{-m T1w bold}.
+As of the latest array audit, MRIQC processing was incomplete across the full
+participant$\times$session list; therefore MRIQC is described here as an
+automated QC component of the workflow, and cohort-wide IQM summary statistics
+should be finalised only after processing coverage is complete.
+
+\paragraph{Pizarro complementary screening.}
+An additional automated structural screening step used the published Pizarro
+et~al.\ (2023) ONNX classifier (\texttt{model.FINAL.onnx}; label
+\texttt{Pizarro2023-FINAL}) with ONNX Runtime, Monte Carlo dropout
+(10~runs; seed~1010), applied to \texttt{*\_T1w.nii.gz} images only.
+Model outputs were continuous screening scores (model-estimated artifact
+probability, model confidence, and model uncertainty) used solely to prioritize
+targeted visual inspection.
+No image or subject was excluded based solely on the Pizarro model output.
+Quantitative MRI quality assessment remains provided by MRIQC.
+
+\paragraph{BIDS validation.}
+The converted dataset was validated with bids-validator version~1.15.0.
+After events and SliceTiming remediation steps documented in the project
+validation reports, the dataset validated with \textbf{0~errors}
+(warnings remained, including expected incomplete longitudinal coverage and
+intentionally withheld unverified events files).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/pizarro_workflow.png}
+\caption{Pizarro automated QC screening workflow for T1-weighted images:
+continuous metrics used for manual visual prioritization.}
+\end{figure}
+
+%==============================================================================
+\section{Data Records}
+%==============================================================================
+
+\subsection{Repository}
+
+The dataset is organised for public distribution in BIDS format and is being
+prepared for deposition in a public neuroimaging repository
+(OpenNeuro-oriented preparation is documented in project materials).
+A public accession number was not assigned in the materials available for this
+draft and should be inserted upon deposition.
+
+\subsection{BIDS structure}
+
+Converted imaging data are organised as:
+
+\begin{lstlisting}[basicstyle=\ttfamily\small,frame=single]
+dataset/
+|-- dataset_description.json
+|-- participants.tsv / participants.json
+|-- README
+|-- CHANGES
+|-- .bidsignore
+|-- sub-<ID>/
+|   `-- ses-<01|02>/
+|       |-- anat/
+|       |-- func/
+|       |-- dwi/
+|       `-- fmap/
+`-- derivatives/
+    |-- mriqc/
+    `-- defacing/
+\end{lstlisting}
+
+Functional task labels present in the validated dataset include
+\texttt{control}, \texttt{fmri}, \texttt{movie}, and \texttt{rest}.
+
+\subsection{Formats}
+
+Distributed imaging files use gzip-compressed NIfTI (\texttt{.nii.gz}) with
+JSON sidecars generated by dcm2niix and post-processed by the conversion
+pipeline.
+Tabular metadata include dataset-level \texttt{participants.tsv} and, where
+released, verified \texttt{*\_events.tsv} files for a subset of
+\texttt{task-fmri} runs.
+BIDS physiology files are not currently included.
+
+\subsection{Key variables}
+
+Important dataset-specific variables include:
+\begin{itemize}[leftmargin=*]
+  \item \texttt{participant\_id}: pseudonymous BIDS subject label
+        (\texttt{sub-XXX});
+  \item \texttt{cohort}: Control, DataON, DataTON, or Glaucoma;
+  \item \texttt{sex}: F/M from DICOM \texttt{PatientSex};
+  \item \texttt{session}: \texttt{ses-01} / \texttt{ses-02};
+  \item functional \texttt{task-} labels: \texttt{rest}, \texttt{movie},
+        \texttt{fmri}, \texttt{control}.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/Figure_3_modalities_distribution.png}
+\caption{Dataset modality composition overview derived from converted BIDS
+inventory summaries.}
+\end{figure}
+
+%==============================================================================
+\section{Data Overview}
+%==============================================================================
+
+The released BIDS dataset comprises 84 participants and incomplete longitudinal
+coverage across two planned sessions (40 participants with both sessions;
+see Methods).
+Converted data include anatomical, functional, diffusion, and field-map
+modalities as organised under BIDS entity folders.
+No group-comparison or biological outcome analyses are presented here.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/Figure_2_dataset_completeness.png}
+\caption{Dataset composition / completeness overview (descriptive counts only).}
+\end{figure}
+
+%==============================================================================
+\section{Technical Validation}
+%==============================================================================
+
+\subsection{BIDS validation}
+
+The final validated snapshot used for Scientific Data preparation was checked
+with bids-validator~1.15.0 and reported \textbf{0~errors}.
+Remaining warnings include expected incomplete longitudinal session coverage and
+intentionally withheld unverified event timings.
+Prior remediation steps included recovery of missing XA30 \texttt{SliceTiming}
+values and inclusion of verified \texttt{task-fmri} events files only.
+
+\subsection{MRIQC}
+
+MRIQC was used to generate automated IQMs and HTML/JSON QC reports for
+T1-weighted and BOLD images where processing completed.
+Outputs are stored under \texttt{derivatives/mriqc/}.
+Because array processing was incomplete at the time of the latest audit,
+full-cohort IQM distribution summaries are not presented as final in this draft.
+Authors should update this subsection with completed coverage statistics and
+selected IQM distribution figures after MRIQC finishes.
+
+\subsection{Pizarro QC screening}
+
+Pizarro screening was applied to 356 T1-weighted images from 83 subjects with
+zero inference failures in the Scientific Data package.
+Images with high model-estimated artifact probability and/or high model
+uncertainty were prioritized for visual inspection.
+Model outputs were not used as automatic exclusion criteria.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{figures/pizarro_probability_distribution.png}
+\caption{Distribution of model-estimated artifact probability across screened
+T1-weighted images (descriptive screening output).}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{figures/pizarro_uncertainty_probability.png}
+\caption{Model uncertainty versus model-estimated artifact probability.
+Images with high uncertainty were prioritized for visual review.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/pizarro_subject_coverage.png}
+\caption{Distribution of the number of T1-weighted scans per subject included in
+Pizarro screening.}
+\end{figure}
+
+\subsection{De-identification validation}
+
+De-identification validation included audits of DICOM identifier handling,
+UID remapping, date shifting, and BIDS JSON sidecar scrubbing.
+Sampled sidecar audits reported absence of core patient/institution/date/device
+serial fields after scrubbing.
+Defacing outputs were inspected with before/after visual QC examples for
+processed anatomical volumes.
+Publication wording intentionally describes the workflow as inspired by
+DICOM PS3.15 confidentiality recommendations rather than as full-profile
+certification.
+
+\subsection{Conversion validation}
+
+Conversion validation combined BIDS validation with pipeline integrity checks,
+including mapping from inventoried DICOM series to BIDS entities, sidecar
+post-processing, and documentation of SliceTiming recovery for affected XA30
+sessions.
+Checksum and volume-level integrity artefacts are maintained in project
+metadata/manifest outputs used during conversion checkpointing.
+\textit{(Authors should cite the specific final manifest/checksum files
+included with the public release package.)}
+
+%==============================================================================
+\section{Usage Notes}
+%==============================================================================
+
+Users can download the deposited BIDS dataset from the public repository once
+the accession is available and inspect it with standard BIDS tools
+(e.g., bids-validator) and neuroimaging software supporting NIfTI/JSON.
+Recommended first steps are: (i)~review \texttt{participants.tsv} and session
+coverage; (ii)~consult JSON sidecars for acquisition parameters; (iii)~use
+verified \texttt{*\_events.tsv} files only where provided; and
+(iv)~consult MRIQC derivatives and Pizarro screening tables as prioritization
+aids for visual QC, not as automatic exclusion labels.
+
+Preprocessing recommendations are not prescribed here beyond standard BIDS-aware
+workflows.
+Physiology files are not currently distributed in BIDS form; users requiring
+ECG/respiration/pulse recordings should consult the study team regarding
+source PhysioLog availability and conversion status.
+
+\vspace{1.5em}
+\noindent\textit{End of draft sections 4--8. No Discussion or Conclusion included.}
+
+\end{document}

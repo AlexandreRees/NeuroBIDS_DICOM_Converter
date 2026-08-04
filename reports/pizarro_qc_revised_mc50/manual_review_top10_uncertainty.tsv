@@ -1,0 +1,11 @@
+rank	subject	session	filename	artifact_probability	uncertainty	confidence
+1	sub-080	ses-01	sub-080_ses-01_run-01_T1w.nii.gz	50	1	50
+2	sub-067	ses-01	sub-067_ses-01_run-02_T1w.nii.gz	50	1	50
+3	sub-018	ses-01	sub-018_ses-01_run-02_T1w.nii.gz	50	1	50
+4	sub-017	ses-01	sub-017_ses-01_run-02_T1w.nii.gz	50	1	50
+5	sub-029	ses-01	sub-029_ses-01_run-02_T1w.nii.gz	52	0.998846	52
+6	sub-021	ses-01	sub-021_ses-01_run-01_T1w.nii.gz	52	0.998846	52
+7	sub-011	ses-02	sub-011_ses-02_run-02_T1w.nii.gz	52	0.998846	52
+8	sub-008	ses-01	sub-008_ses-01_run-01_T1w.nii.gz	52	0.998846	52
+9	sub-007	ses-02	sub-007_ses-02_run-03_T1w.nii.gz	52	0.998846	52
+10	sub-005	ses-02	sub-005_ses-02_run-03_T1w.nii.gz	52	0.998846	52

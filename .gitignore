@@ -1,9 +1,185 @@
+# =============================================================================
+# Scientific Data / OpenNeuro — repository .gitignore
+# Version code, docs, reports (text), metadata, scripts, tests ONLY.
+# Never version MRI imaging volumes, DICOM, full BIDS trees, or bulky derivatives.
+# =============================================================================
+
+# ----- Primary imaging / dataset trees -----
+bids/
+sourcedata/
+incoming/
+release_dataset/
+release_candidate_level1/
+release_candidate_plan/
+derivatives/
+neuro_pipeline/
+pipelines/
+software/
+tmp/
+tmp_processing/
+pizarro_test_inputs/
+pizarro_transfer_learning/
+figures/
+
+# ----- Backups / archives -----
+archive_old_bids_backups/
+release_dataset_backup*/
+bids_backup*/
+bids_metadata_backup*/
+defacing_metadata_backup/
+
+# ----- Runtime / caches / environments -----
+logs/
+work/
+.nextflow/
+.npm-cache/
+.npm-home/
+.tools/
+.pytest_cache/
+venvs/
+defacing_env/
+pizarro_env/
+containers/
 __pycache__/
 *.pyc
-.DS_Store
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ----- MRI / neuroimaging binary formats -----
 *.nii
 *.nii.gz
 *.dcm
-logs/
-data/
+*.IMA
+*.ima
+*.img
+*.hdr
+*.mgh
+*.mgz
+*.mnc
+*.mnc.gz
+*.bvec
+*.bval
+*.fif
+*.edf
+*.eeg
+*.vhdr
+*.vmrk
 
+# ----- Archives / large binary blobs -----
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.h5
+*.hdf5
+*.pickle
+*.pkl
+*.joblib
+*.parquet
+*.feather
+*.sqlite
+*.db
+*.mat
+*.npy
+*.npz
+*.pt
+*.pth
+*.onnx
+*.sif
+*.simg
+*.sqsh
+
+# ----- Physiology raw (session-scale; audits stay in reports/) -----
+*.ext
+*.ext2
+*.puls
+*.resp
+*.ecg
+*.pmu
+
+# ----- OS / editor -----
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# ----- Accidental junk in workspace root -----
+=1.8
+path_migration_report.json
+
+# ----- Large report artefacts (keep TSVs/MD/JSON text) -----
+reports/**/*.html
+reports/**/*.htm
+reports/**/*.gif
+reports/**/*.mp4
+reports/**/*.avi
+reports/**/*.webm
+reports/**/*.png
+reports/**/*.jpg
+reports/**/*.jpeg
+reports/**/*.tif
+reports/**/*.tiff
+reports/**/*.pdf
+reports/**/*.svg
+!reports/**/*.tsv
+!reports/**/*.csv
+!reports/**/*.md
+!reports/**/*.txt
+!reports/**/*.json
+!reports/**/*.yml
+!reports/**/*.yaml
+
+# ----- Oversized report caches / inventories (>100 MB; not for GitHub) -----
+reports/physiology_audit/dicom_timing_inventory.tsv
+reports/physiology_audit/_dicom_scan_checkpoint.tsv
+reports/physiology_audit/_discovery_cache.pkl
+reports/**/*_checkpoint.tsv
+reports/**/*_cache.pkl
+# NumPy dumps accidentally under reports/
+reports/**/*.npy
+
+# === Scientific Data GitHub push policy (2026-08-04) ===
+
+# Generated large audit outputs
+metadata/deidentify_report.csv
+metadata/deidentify_manifest.json
+reports/movie_timing_forensic_audit/VERSION_COMPARISON.tsv
+
+# Neuroimaging data
+bids/
+sourcedata/
+raw_original/
+derivatives/
+release_dataset/
+incoming/
+
+*.nii
+*.nii.gz
+*.dcm
+*.IMA
+
+# Large generated files
+*.h5
+*.pkl
+*.npy
+
+# Environments
+venvs/
+containers/
+defacing_env/
+pizarro_env/
+.nextflow/
+
+# Per-subject deidentify shards (source IDs / generated dumps)
+reports/shards/

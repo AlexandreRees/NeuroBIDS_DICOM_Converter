@@ -1,0 +1,1286 @@
+file	ProtocolName	SeriesNumber	Channels	has_EXT_or_trigger	interpretation
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-001/ses-02/func/sub-001_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-002/ses-02/func/sub-002_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-003/ses-02/func/sub-003_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-004/ses-02/func/sub-004_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-005/ses-01/func/sub-005_ses-01_task-movie_run-05_recording-ecg_physio.json	movie		cardiac	NO	physiology only
+sub-005/ses-01/func/sub-005_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-005/ses-01/func/sub-005_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-005/ses-02/func/sub-005_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-006/ses-02/func/sub-006_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-007/ses-02/func/sub-007_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-008/ses-02/func/sub-008_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-009/ses-02/func/sub-009_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-011/ses-02/func/sub-011_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-012/ses-02/func/sub-012_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-01/func/sub-015_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-015/ses-02/func/sub-015_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-01/func/sub-016_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-016/ses-02/func/sub-016_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-01/func/sub-017_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-017/ses-02/func/sub-017_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-018/ses-01/func/sub-018_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-01/func/sub-019_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-019/ses-02/func/sub-019_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-020/ses-01/func/sub-020_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-01/func/sub-021_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-021/ses-02/func/sub-021_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-01/func/sub-022_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-022/ses-02/func/sub-022_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-01/func/sub-023_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-023/ses-02/func/sub-023_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-01/func/sub-024_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-024/ses-02/func/sub-024_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-01/func/sub-025_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-025/ses-02/func/sub-025_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-01/func/sub-026_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-026/ses-02/func/sub-026_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-01/func/sub-027_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-027/ses-02/func/sub-027_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-01/func/sub-028_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-028/ses-02/func/sub-028_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-01/func/sub-029_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-029/ses-02/func/sub-029_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-01/func/sub-030_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-030/ses-02/func/sub-030_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-01/func/sub-031_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-031/ses-02/func/sub-031_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-032/ses-01/func/sub-032_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-033/ses-01/func/sub-033_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-01/func/sub-034_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-034/ses-02/func/sub-034_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-01/func/sub-035_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-035/ses-02/func/sub-035_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-01/func/sub-036_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-036/ses-02/func/sub-036_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-037/ses-01/func/sub-037_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-01/func/sub-038_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-038/ses-02/func/sub-038_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-01/func/sub-039_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-039/ses-02/func/sub-039_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-01/func/sub-040_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-040/ses-02/func/sub-040_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-041/ses-02/func/sub-041_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-042/ses-01/func/sub-042_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-01/func/sub-044_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-044/ses-02/func/sub-044_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-045/ses-01/func/sub-045_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-01/func/sub-046_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-046/ses-02/func/sub-046_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-01/func/sub-047_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-047/ses-02/func/sub-047_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-01/func/sub-048_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-048/ses-02/func/sub-048_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-049/ses-01/func/sub-049_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-049/ses-02/func/sub-049_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-050/ses-01/func/sub-050_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-01/func/sub-052_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-052/ses-02/func/sub-052_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-053/ses-01/func/sub-053_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-054/ses-01/func/sub-054_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-055/ses-01/func/sub-055_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-055/ses-01/func/sub-055_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-055/ses-01/func/sub-055_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-055/ses-01/func/sub-055_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-055/ses-01/func/sub-055_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-055/ses-01/func/sub-055_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-01/func/sub-057_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-057/ses-02/func/sub-057_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-058/ses-01/func/sub-058_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-059/ses-01/func/sub-059_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-09_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-09_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-060/ses-01/func/sub-060_ses-01_task-movie_run-09_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-01/func/sub-064_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-064/ses-02/func/sub-064_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-065/ses-01/func/sub-065_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-01/func/sub-066_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-066/ses-02/func/sub-066_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-01/func/sub-067_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-067/ses-02/func/sub-067_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-01/func/sub-068_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-068/ses-02/func/sub-068_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-01/func/sub-069_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-069/ses-02/func/sub-069_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-070/ses-01/func/sub-070_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-071/ses-01/func/sub-071_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-01/func/sub-072_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-072/ses-02/func/sub-072_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-01/func/sub-073_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-073/ses-02/func/sub-073_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-01/func/sub-074_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-074/ses-02/func/sub-074_ses-02_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-075/ses-01/func/sub-075_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-01_recording-ecg_physio.json	movie		cardiac	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-05_recording-ecg_physio.json	movie		cardiac	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-076/ses-01/func/sub-076_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-077/ses-01/func/sub-077_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-078/ses-01/func/sub-078_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-079/ses-01/func/sub-079_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-01_recording-ecg_physio.json	movie		cardiac	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-03_recording-ecg_physio.json	movie		cardiac	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-080/ses-01/func/sub-080_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-081/ses-01/func/sub-081_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-09_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-09_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-09_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-083/ses-01/func/sub-083_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-01_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-01_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-01_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-03_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-03_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-03_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-05_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-05_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-05_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-07_recording-pulse_physio.json	movie		cardiac	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-07_recording-respiratory_physio.json	movie		respiratory	NO	physiology only
+sub-084/ses-01/func/sub-084_ses-01_task-movie_run-07_recording-trigger_physio.json	movie		trigger	YES	scanner trigger source possible but stimulus onset unavailable

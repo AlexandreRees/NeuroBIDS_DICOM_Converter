@@ -1,0 +1,283 @@
+% Scientific Data manuscript draft: References section
+% Compile from this directory:
+%   pdflatex Scientific_Data_References_Draft_2026-07-22.tex
+%   pdflatex Scientific_Data_References_Draft_2026-07-22.tex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\setlength{\headheight}{14pt}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black,
+  pdftitle={Scientific Data draft: References},
+  pdfauthor={Alex Rees - Shmuel Lab}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Scientific Data draft -- References}
+\fancyhead[R]{Internal -- verify before submission}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\title{Scientific Data Data Descriptor\\[0.35em]
+\large Draft: References\\[0.2em]
+\large Software inventory and key literature}
+\author{Prepared from project software versions and verified bibliographic sources\\
+\small Alex Rees -- Shmuel Lab / \texttt{neuro\_pipeline}}
+\date{22 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This draft provides a \textbf{References} section suitable for a Scientific Data
+Data Descriptor, focused on the software and literature actually used in the
+present workflow (BIDS conversion, de-identification, MRIQC, Pizarro screening,
+defacing, and validation).
+Peer-reviewed citations below were checked against publisher/DOI records or
+the software authors' own citation instructions.
+Where only a software version/URL is known, the item is listed under
+\textit{Software and standards} rather than given an invented journal citation.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section*{Author notes (not for submission)}
+
+\begin{itemize}[leftmargin=*]
+  \item Pizarro citation text follows the authors' GitHub README for
+        \texttt{AS-Lab/Pizarro-et-al-2023-DL-detects-MRI-artifacts}.
+  \item MRIQC version recorded in derivatives metadata is
+        \texttt{24.1.0.dev0+gd5b13cb5.d20240826}; array scripts also reference
+        container tag \texttt{nipreps/mriqc:24.0.2}. Cite the MRIQC paper and
+        report the exact runtime version in Methods.
+  \item bids-validator runtime used for Scientific Data validation reports was
+        \textbf{1.15.0}; pipeline config mentions an npm pin of \texttt{1.14.7}
+        that was not runtime-enforced.
+  \item \texttt{neuro\_pipeline} (v2.1.0) is an internal research workflow; it
+        currently has no standalone peer-reviewed citation in the available
+        materials and is therefore listed as software only.
+  \item pydeface is cited as software (GitHub/Zenodo badge available upstream);
+        no separate journal article DOI was verified here for the exact build
+        \texttt{2.0.0+computecanada}.
+\end{itemize}
+
+\newpage
+
+%==============================================================================
+\section{Software inventory (versions used in this project)}
+%==============================================================================
+
+The table maps tools used in the curated workflow to the reference numbers in
+Section~\ref{sec:refs}. Versions are those recorded in BIDS/derivatives metadata,
+validation reports, or project documentation.
+
+\begin{center}
+\small
+\begin{longtable}{@{}llp{0.42\textwidth}@{}}
+\toprule
+\textbf{Tool / resource} & \textbf{Version / identifier used} & \textbf{Role in this dataset} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Tool / resource} & \textbf{Version / identifier used} & \textbf{Role in this dataset} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+BIDS specification & 1.9.0 & Dataset organisation target \\
+\texttt{neuro\_pipeline} & 2.1.0 & Inventory, mapping, streaming de-id, conversion orchestration \\
+dcm2niix & v1.0.20230411 & DICOM$\rightarrow$NIfTI + JSON sidecars \\
+bids-validator & 1.15.0 (Scientific Data validation run) & BIDS validation \\
+MRIQC & 24.1.0.dev0+gd5b13cb5.d20240826 (derivatives metadata); container target 24.0.2 in array scripts & Automated IQMs / QC reports \\
+Pizarro model & \texttt{model.FINAL.onnx} (\texttt{Pizarro2023-FINAL}) & Complementary T1w artifact screening \\
+ONNX Runtime & 1.23.2 & Pizarro inference engine \\
+Python (Pizarro env) & 3.11.5 & Pizarro screening runtime \\
+Monte Carlo dropout & 10 runs; seed 1010 & Pizarro uncertainty/probability estimation \\
+pydicom & 3.0.2+computecanada & DICOM de-identification I/O \\
+\texttt{mri\_anonymization} & 2.0.0 & De-identification engine \\
+pydeface & 2.0.0+computecanada & Anatomical defacing \\
+FSL & 6.0.7.20 & Dependency for pydeface registration \\
+DICOM PS3.15 & confidentiality profile guidance & De-identification policy inspiration (not claimed as full-profile certification) \\
+\end{longtable}
+\end{center}
+
+%==============================================================================
+\section{Suggested in-text citation map}
+%==============================================================================
+
+\begin{itemize}[leftmargin=*]
+  \item BIDS organisation: refs.~\ref{ref:bids}, optionally~\ref{ref:bidsapps}
+  \item DICOM to NIfTI conversion (dcm2niix): ref.~\ref{ref:dcm2niix}
+  \item MRIQC: ref.~\ref{ref:mriqc}
+  \item Pizarro screening: ref.~\ref{ref:pizarro}
+  \item FSL (pydeface dependency): ref.~\ref{ref:fsl}
+  \item DICOM confidentiality guidance: ref.~\ref{ref:dicomps315}
+  \item Optional sharing context (OpenNeuro): ref.~\ref{ref:openneuro}
+\end{itemize}
+
+%==============================================================================
+\section{References}
+\label{sec:refs}
+%==============================================================================
+
+\begin{enumerate}[leftmargin=*,itemsep=0.65em,label={[\arabic*]}]
+
+  \item \label{ref:bids}
+  Gorgolewski, K.~J. \textit{et al.}
+  The brain imaging data structure, a format for organizing and describing
+  outputs of neuroimaging experiments.
+  \textit{Sci.\ Data} \textbf{3}, 160044 (2016).
+  \url{https://doi.org/10.1038/sdata.2016.44}
+
+  \item \label{ref:bidsapps}
+  Gorgolewski, K.~J. \textit{et al.}
+  BIDS apps: Improving ease of use, accessibility, and reproducibility of
+  neuroimaging data analysis methods.
+  \textit{PLoS Comput.\ Biol.} \textbf{13}, e1005209 (2017).
+  \url{https://doi.org/10.1371/journal.pcbi.1005209}
+
+  \item \label{ref:dcm2niix}
+  Li, X., Morgan, P.~S., Ashburner, J., Smith, J.\ \& Rorden, C.
+  The first step for neuroimaging data analysis: DICOM to NIfTI conversion.
+  \textit{J.\ Neurosci.\ Methods} \textbf{264}, 47--56 (2016).
+  \url{https://doi.org/10.1016/j.jneumeth.2016.03.001}
+
+  \item \label{ref:mriqc}
+  Esteban, O. \textit{et al.}
+  MRIQC: Advancing the automatic prediction of image quality in MRI from unseen
+  sites.
+  \textit{PLoS ONE} \textbf{12}, e0184661 (2017).
+  \url{https://doi.org/10.1371/journal.pone.0184661}
+
+  \item \label{ref:pizarro}
+  Pizarro, R. \textit{et al.}
+  Deep learning, data ramping, and uncertainty estimation for detecting
+  artifacts in large, imbalanced databases of MRI images.
+  \textit{Med.\ Image Anal.} \textbf{90}, 102942 (2023).
+  \url{https://doi.org/10.1016/j.media.2023.102942}\\
+  Software implementation used here:
+  \url{https://github.com/AS-Lab/Pizarro-et-al-2023-DL-detects-MRI-artifacts}
+  (production model file \texttt{model.FINAL.onnx}).
+
+  \item \label{ref:fsl}
+  Smith, S.~M. \textit{et al.}
+  Advances in functional and structural MR image analysis and implementation as
+  FSL.
+  \textit{NeuroImage} \textbf{23}, S208--S219 (2004).
+  \url{https://doi.org/10.1016/j.neuroimage.2004.07.051}
+
+  \item \label{ref:openneuro}
+  Markiewicz, C.~J. \textit{et al.}
+  The OpenNeuro resource for sharing of neuroscience data.
+  \textit{eLife} \textbf{10}, e71774 (2021).
+  \url{https://doi.org/10.7554/eLife.71774}
+
+  \item \label{ref:numpy}
+  Harris, C.~R. \textit{et al.}
+  Array programming with NumPy.
+  \textit{Nature} \textbf{585}, 357--362 (2020).
+  \url{https://doi.org/10.1038/s41586-020-2649-2}
+
+  \item \label{ref:matplotlib}
+  Hunter, J.~D.
+  Matplotlib: A 2D graphics environment.
+  \textit{Comput.\ Sci.\ Eng.} \textbf{9}, 90--95 (2007).
+  \url{https://doi.org/10.1109/MCSE.2007.55}
+
+  \item \label{ref:dicomps315}
+  National Electrical Manufacturers Association (NEMA).
+  \textit{Digital Imaging and Communications in Medicine (DICOM) Standard,
+  Part 15: Security and System Management Profiles}
+  (Attribute Confidentiality Profiles).
+  Rosslyn, VA: NEMA.
+  Available at:
+  \url{https://dicom.nema.org/medical/dicom/current/output/html/part15.html}
+  (accessed for policy guidance; this dataset documents a custom workflow
+  inspired by PS3.15 recommendations rather than certified full-profile
+  compliance).
+
+\end{enumerate}
+
+%==============================================================================
+\section{Software and standards (versioned resources)}
+%==============================================================================
+
+The following resources were used and should be named with version in Methods.
+They are listed here as software/standards rather than journal articles when no
+verified paper citation was required for this draft, or when the canonical
+reference is the software distribution itself.
+
+\begin{enumerate}[leftmargin=*,itemsep=0.55em,label={[S\arabic*]}]
+
+  \item \textbf{bids-validator}
+  (v1.15.0 used in Scientific Data validation reports).
+  \url{https://github.com/bids-standard/bids-validator}
+
+  \item \textbf{ONNX Runtime}
+  (v1.23.2 used for Pizarro inference).
+  \url{https://onnxruntime.ai/}
+
+  \item \textbf{pydeface}
+  (v2.0.0+computecanada used for anatomical defacing).
+  \url{https://github.com/poldracklab/pydeface}
+
+  \item \textbf{pydicom}
+  (v3.0.2+computecanada observed in de-identification runtime).
+  \url{https://github.com/pydicom/pydicom}
+
+  \item \textbf{nibabel}
+  (used for geometry checks in defacing QC workflows).
+  \url{https://nipy.org/nibabel/}
+
+  \item \textbf{Python}
+  (v3.11.5 in the Pizarro screening environment).
+  \url{https://www.python.org/}
+
+  \item \textbf{neuro\_pipeline}
+  (v2.1.0; internal conversion/de-identification/validation orchestration used
+  to generate this BIDS dataset).
+  Project software; no standalone peer-reviewed citation was available in the
+  materials used for this draft.
+
+\end{enumerate}
+
+%==============================================================================
+\section{Pizarro-specific citation note for Methods}
+%==============================================================================
+
+Suggested Methods wording (already aligned with the Scientific Data Pizarro
+package):
+
+\begin{quote}
+\textit{An automated deep-learning classifier
+(Pizarro et~al., 2023; model file \texttt{model.FINAL.onnx}) was applied to
+T1-weighted images as a complementary quality-screening tool using ONNX Runtime.
+Monte Carlo dropout inference (10 runs; seed 1010) provided continuous
+model-estimated artifact probability, confidence, and uncertainty scores used
+to prioritize targeted visual inspection. Model outputs were not used for
+exclusion decisions. Quantitative MRI quality assessment remains provided by
+MRIQC (Esteban et~al., 2017).}
+\end{quote}
+
+Corresponding reference entries: [\ref{ref:pizarro}] and [\ref{ref:mriqc}].
+
+\vspace{1.5em}
+\noindent\textit{End of References draft.}
+
+\end{document}

@@ -1,0 +1,135 @@
+{
+  "artifacts": {
+    "acquisition_validation": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/validation/acquisition_validation.csv",
+    "conversion_logs": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/conversion/logs",
+    "conversion_report": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/conversion/conversion_report.csv",
+    "derivatives_dataset_description": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/dataset_description.json",
+    "geometry_validation": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/validation/geometry_validation.csv",
+    "inventory": "/lustre07/scratch/alexrees/metadata/inventory.csv",
+    "participant_mapping": "/lustre07/scratch/alexrees/metadata/participant_mapping.csv",
+    "pipeline_qc_summary": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/qc/pipeline_qc_summary.html",
+    "qc_detail": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/qc/qc_detail.csv",
+    "qc_summary": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/qc/qc_summary.csv",
+    "release_ready": "/lustre07/scratch/alexrees/metadata/release_ready.json",
+    "validation_report": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/validation/bids_validation_report.json",
+    "validation_summary": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline/validation/bids_validation_summary.csv"
+  },
+  "cohort_counts": {
+    "Control": 55,
+    "DataON": 7,
+    "DataTON": 2,
+    "Glaucoma": 19
+  },
+  "content_aware_mapping": {
+    "auxiliary_folders_auto_associated": 6,
+    "auxiliary_folders_detected": 6,
+    "low_confidence_associations": 0,
+    "manual_review_cases": 0,
+    "mri_sessions_created": 134,
+    "participants_created": 83,
+    "unresolved_auxiliary_folders": 0
+  },
+  "dataset_scope": {
+    "allowed_cohorts": [
+      "Control",
+      "Data_ON",
+      "Data_TON",
+      "Glaucoma"
+    ],
+    "excluded_non_dataset_directories": [
+      {
+        "category": "test",
+        "detected_name": "SUBC56-test-2025JUN12",
+        "exclusion_reason": "non_dataset_directory:test",
+        "exclusion_status": "excluded",
+        "inventory_entries": 47,
+        "original_cohort": "Control",
+        "path": "/lustre07/scratch/alexrees/raw_original/Control/SUBC56-test-2025JUN12",
+        "source": "inventory",
+        "timestamp": "2026-07-16T01:51:49.214595+00:00"
+      }
+    ],
+    "inventory_entries_before_filtering": 10079,
+    "inventory_entries_excluded": 47,
+    "inventory_entries_mapped_scope": 10032
+  },
+  "extension_hooks": {
+    "fmriprep": {
+      "description": "Preprocessing pipeline for task and resting-state fMRI.",
+      "input_key": "raw_bids",
+      "output_key": "derivatives/fmriprep",
+      "stage": "post_conversion"
+    },
+    "mriqc": {
+      "description": "Automated QC metrics for structural and functional MRI.",
+      "input_key": "raw_bids",
+      "output_key": "derivatives/mriqc",
+      "stage": "post_qc"
+    },
+    "qsiprep": {
+      "description": "Preprocessing pipeline for diffusion MRI.",
+      "input_key": "raw_bids",
+      "output_key": "derivatives/qsiprep",
+      "stage": "post_conversion"
+    },
+    "release_anonymization": {
+      "description": "PS3.15 anonymization for external dataset sharing.",
+      "input_key": "raw_bids",
+      "output_key": "anonymization_release/Public_Dataset",
+      "stage": "public_release"
+    }
+  },
+  "generated_at": "2026-07-16T01:51:59.174070+00:00",
+  "manual_mapping_overrides_applied": [
+    {
+      "canonical_session": "ses-02",
+      "canonical_subject": "SUBC044",
+      "confidence": "high",
+      "override_type": "patient_id_raw_conflict",
+      "path": "/lustre07/scratch/alexrees/raw_original/Control/SUBC44_Session02_2025FEB19",
+      "reason": "PatientID conflict interpreted as scanner/anonymization variation. Folder name and DICOM metadata consistently identify the same participant.",
+      "source": "manual_mapping_overrides.csv",
+      "status": "approved_override"
+    }
+  ],
+  "manual_subject_overrides_applied": [
+    {
+      "dicom_subject": "SUBC041",
+      "dicom_subject_original": "SUBC004",
+      "override_reason": "DICOM PatientName truncated subject identifier; folder naming and longitudinal session chronology confirm same participant.",
+      "resolved_identifier": "SUBC041"
+    }
+  ],
+  "mapping_outputs_archived": [
+    "/lustre07/scratch/alexrees/metadata/archive/participant_mapping_2026-07-16T01-51-58Z.csv",
+    "/lustre07/scratch/alexrees/metadata/archive/session_mapping_2026-07-16T01-51-58Z.csv",
+    "/lustre07/scratch/alexrees/metadata/archive/mapping_2026-07-16T01-51-58Z.csv",
+    "/lustre07/scratch/alexrees/metadata/archive/auxiliary_mapping_2026-07-16T01-51-58Z.csv",
+    "/lustre07/scratch/alexrees/metadata/archive/mapping_review_2026-07-16T01-51-58Z.csv",
+    "/lustre07/scratch/alexrees/metadata/archive/participants_preview_2026-07-16T01-51-58Z.tsv",
+    "/lustre07/scratch/alexrees/metadata/archive/sessions_2026-07-16T01-51-58Z.tsv",
+    "/lustre07/scratch/alexrees/metadata/archive/excluded_non_dataset_directories_2026-07-16T01-51-58Z.json",
+    "/lustre07/scratch/alexrees/metadata/archive/mapping_report_2026-07-16T01-51-58Z.md",
+    "/lustre07/scratch/alexrees/metadata/archive/reinstated_subjects_report_2026-07-16T01-51-58Z.md",
+    "/lustre07/scratch/alexrees/metadata/archive/mapping_longitudinal_audit_2026-07-16T01-51-58Z.md",
+    "/lustre07/scratch/alexrees/metadata/archive/pipeline_manifest_2026-07-16T01-51-58Z.json"
+  ],
+  "n_participants": 83,
+  "n_sessions": 134,
+  "paths": {
+    "anonymization_release": "/lustre07/scratch/alexrees/anonymization_release",
+    "code_root": "/lustre07/scratch/alexrees/neuro_pipeline",
+    "data_root": "/lustre07/scratch/alexrees",
+    "derivatives": "/lustre07/scratch/alexrees/derivatives/neuro_pipeline",
+    "metadata": "/lustre07/scratch/alexrees/metadata",
+    "project_root": "/lustre07/scratch/alexrees",
+    "public_dataset": "/lustre07/scratch/alexrees/anonymization_release/Public_Dataset",
+    "raw_bids": "/lustre07/scratch/alexrees/bids",
+    "raw_original": "/lustre07/scratch/alexrees/raw_original"
+  },
+  "pipeline_version": "2.1.0",
+  "steps_completed": [
+    "inventory",
+    "generate_mapping"
+  ]
+}

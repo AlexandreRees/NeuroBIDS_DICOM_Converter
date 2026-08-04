@@ -1,0 +1,2 @@
+subject	session	modality	input	output	status	runtime_seconds	include_reason
+sub-024	ses-01	T1w	/home/alexrees/scratch/bids/sub-024/ses-01/anat/sub-024_ses-01_run-01_T1w.nii.gz	/home/alexrees/scratch/derivatives/defacing/sub-024/ses-01/anat/sub-024_ses-01_run-01_T1w.nii.gz	PASS	218.821	always (high-res anatomical)

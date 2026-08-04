@@ -1,0 +1,17 @@
+task	basename	decision	sha256	n_total	n_canonical	n_variants	rationale
+grating	main.m	PUBLISH_CANONICAL	7b6e48e0242beb02cd4d6ba2771ca5ff18a6c6ebeb5e4cd8408518f4796076a2	138	121	6	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	presentStimParams.m	PUBLISH_CANONICAL	a27ac8fca0d2d39e90d6d219a43d950d1bb7f755b23acbae4acb3edd9a567a6f	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	RandomGenerator.m	PUBLISH_CANONICAL	2792bc41f6ebab876b03439b47f95ec75814a222dacb2e373f177afa521e2f6b	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	GratingStimulus1.m	PUBLISH_CANONICAL	1bb67cee02e61bb0b79df1ded4231be6d0401cbe0d45d99783e89e816f184c49	138	137	2	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	GratingStimulus2.m	PUBLISH_CANONICAL	3162e00be9173d911c0a664ea662c4da657d5c4ffcf9f298233288f18802a7ed	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	GratingStimulus3.m	PUBLISH_CANONICAL	a1be718f9b2a06b59968f9d3b34a5b343e18a189fbacc8da6f7be86691751dc3	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	GratingStimulus4.m	PUBLISH_CANONICAL	c5131f08f019fe78de4921dc1a3c155f8e07a2981e0199ab6ec2771738aeb040	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	GratingStimulus5.m	PUBLISH_CANONICAL	a2bba53c71aee6434132b4e35bab9c9a3e69e6aee761c88d831ed63d04a3bc33	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	CheckerFlickerSine.m	PUBLISH_CANONICAL	ecabb3cc084a1001833f86c4f68f5a42424d38dc6d8b8b89840681ae1306412f	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	CheckerFlickerSquare.m	PUBLISH_CANONICAL	8b86145749ab438c9eaa8da62fa8a52cf018f3ce88ec5cdca6758450e2cbc36c	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	CheckerMoveSine.m	PUBLISH_CANONICAL	efbde7f7ed1e2f982f30e454a765a6014bf8d513c69412832c67f6d6b4a62337	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+grating	CheckerMoveSquare.m	PUBLISH_CANONICAL	29be5c7f2fd2ced0aafb0577ae99237cfdcd9a71884441f13fa53aaddcd92a34	138	138	1	Modal SHA256 across 2-Grating sessions; required runtime dependency
+movie	main.m	PUBLISH_CANONICAL_SANITIZED	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	138	127	5	Modal SHA256 across primary 3-Movie_Data (excludes FOV nested copies)
+movie	Show_movie.m	PUBLISH_CANONICAL	83ade7957408103126c86b4ef0ac8892e804caafd7f901bd353ee8318027ccb4	138	137	2	Modal SHA256 across primary 3-Movie_Data (excludes FOV nested copies)
+rest	main.m	PUBLISH_CANONICAL	cbf1d5c8c657920e1b5bdef74da7008f11407abce4608a7e4120e7796f210ea8	137	94	21	Modal SHA256; fixation-only script; single exemplar published
+movie_fov	(all)	EXCLUDE		36	0	2	FOV / eye-check movie utilities — not the published task-movie paradigm

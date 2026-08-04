@@ -1,0 +1,30 @@
+{
+  "generated_utc": "2026-07-29T19:26:36Z",
+  "n_inventory": 17110,
+  "n_mat_vars": 24678,
+  "n_code_hits": 16853,
+  "n_scanner_json": 3248,
+  "n_physio": 2602,
+  "n_dicom": 16,
+  "n_hidden": 41260,
+  "n_matrix_runs": 536,
+  "matrix_confidence": {
+    "HIGH": 349,
+    "NONE": 187
+  },
+  "n_potential_archives": 23884,
+  "n_archive_content_flags": 109,
+  "n_version_pairs": 181470,
+  "psychtoolbox": {
+    "unique_movie_scripts": 8,
+    "creates_mat": true,
+    "creates_txt_or_log": true,
+    "creates_csv": false,
+    "saves_timing": false,
+    "call_sites": 11
+  },
+  "movie_onsets_directly_recorded": true,
+  "trigger_times_in_mat": true,
+  "flip_timestamps_saved": false,
+  "events_theoretically_reconstructible": true
+}

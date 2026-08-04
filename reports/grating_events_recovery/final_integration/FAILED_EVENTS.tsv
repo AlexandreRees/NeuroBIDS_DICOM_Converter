@@ -1,0 +1,2 @@
+participant	session	fmri_number	selected_run	status	message	events_dest	events_used	matlab_sha256	n_triggers	n_volumes	origin	actions
+sub-046	ses-01	1	07	REVIEW	TRIGGER_VOLUME_MISMATCH triggers=226 volumes=219			8e2c62cca3be2202	226	219	FINAL_MAPPING_ACCEPT	

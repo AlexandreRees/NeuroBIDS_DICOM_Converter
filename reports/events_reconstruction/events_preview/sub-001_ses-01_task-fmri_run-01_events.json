@@ -1,0 +1,24 @@
+{
+  "GeneratedBy": "reconstruct_events_from_matlab.py",
+  "TaskName": "fmri",
+  "source_matlab_files": [
+    "/lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/May-05-2023_ 3-05-13_PM__scan_info_for_subject_050__selected_run_is_2__fmri_number_is3.mat",
+    "/lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/fMRI_3.mat",
+    "/lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/runs_random_record_050.mat"
+  ],
+  "source_sha256_16": {
+    "/lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/May-05-2023_ 3-05-13_PM__scan_info_for_subject_050__selected_run_is_2__fmri_number_is3.mat": "1ece805e5910a8dd",
+    "/lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/fMRI_3.mat": "f54cb4907f53b112",
+    "/lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/runs_random_record_050.mat": "73cc38484b70b1f4"
+  },
+  "matlab_fmri_number": 3,
+  "bids_run": "01",
+  "confidence_level": "high",
+  "messages": [
+    "triggerTimes from scan.runs",
+    "vbl from scan.runs",
+    "n_stim=12",
+    "paradigm load failed: 'paradigm / runParadigmFinal not found in /lustre06/project/6001995/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/runs_random_record_050.mat'",
+    "using default grating block paradigm (10s baseline / 8s stim)"
+  ]
+}

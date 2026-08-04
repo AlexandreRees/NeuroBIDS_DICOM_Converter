@@ -1,0 +1,12 @@
+participant_id	session_id	status	n_bids_files	n_structural	n_defaced_ready	n_defaced_missing	notes
+sub-057	ses-02	READY	140	4	4	0	
+sub-064	ses-02	READY	138	3	3	0	
+sub-066	ses-02	READY	140	4	4	0	
+sub-067	ses-02	READY	140	4	4	0	
+sub-068	ses-02	READY	140	4	4	0	
+sub-069	ses-02	READY	140	4	4	0	
+sub-072	ses-02	READY	140	4	4	0	
+sub-073	ses-02	READY	140	4	4	0	
+sub-074	ses-02	READY	132	4	4	0	
+sub-078	ses-02	READY	54	0	0	0	no anat (sparse session); copy non-structural only
+sub-081	ses-02	READY	90	5	5	0	

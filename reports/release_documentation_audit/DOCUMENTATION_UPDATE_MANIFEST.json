@@ -1,0 +1,22 @@
+{
+  "backup_dir": "/lustre07/scratch/alexrees/release_dataset_backup_before_documentation_update_20260729T192711Z",
+  "updated_files": [
+    "/lustre07/scratch/alexrees/release_dataset/README.md",
+    "/lustre07/scratch/alexrees/release_dataset/dataset_description.json",
+    "/lustre07/scratch/alexrees/release_dataset/docs/acquisition_protocol.md",
+    "/lustre07/scratch/alexrees/release_dataset/docs/task_descriptions.md",
+    "/lustre07/scratch/alexrees/release_dataset/docs/physiology_methods.md",
+    "/lustre07/scratch/alexrees/release_dataset/docs/quality_control.md",
+    "/lustre07/scratch/alexrees/release_dataset/docs/data_dictionary.md",
+    "/lustre07/scratch/alexrees/release_dataset/docs/provenance.md",
+    "/lustre07/scratch/alexrees/release_dataset/docs/limitations.md",
+    "/lustre07/scratch/alexrees/release_dataset/docs/software_versions.md",
+    "/lustre07/scratch/alexrees/release_dataset/CHANGES.md",
+    "/lustre07/scratch/alexrees/release_dataset/CHANGES",
+    "/lustre07/scratch/alexrees/release_dataset/docs/Protocols/Movie.md"
+  ],
+  "manual_review": [
+    "release_dataset/dataset_description.json (Authors/Funding/DOI/Acknowledgements)",
+    "Confirm LICENSE matches investigator intent (existing file preserved)"
+  ]
+}

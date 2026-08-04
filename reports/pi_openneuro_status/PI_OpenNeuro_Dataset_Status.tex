@@ -1,0 +1,240 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=18mm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\definecolor{ok}{HTML}{1B7A4E}
+\definecolor{warn}{HTML}{C47A00}
+\definecolor{fail}{HTML}{B42318}
+\definecolor{headergray}{HTML}{374151}
+\definecolor{tablealt}{HTML}{F5F7FA}
+
+\hypersetup{colorlinks=true,linkcolor=headergray,urlcolor=headergray}
+\titleformat{\section}{\large\bfseries\color{headergray}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{headergray}}{\thesubsection}{0.5em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Dataset status for OpenNeuro / \textit{Scientific Data}}
+\rhead{\small Confidential --- PI briefing}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\captionsetup{font=small,labelfont=bf,skip=6pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Dataset readiness for OpenNeuro publication}\\[6pt]
+{\large Optic-nerve MRI resource --- status briefing for PI}\\[4pt]
+{\normalsize 23 July 2026 \quad\cdot\quad Research BIDS: \texttt{bids/} \quad\cdot\quad Release tree: \texttt{release\_dataset/}}
+\end{center}
+
+\vspace{4mm}
+
+\section*{Executive summary (1 minute)}
+
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt]
+\item The \textbf{research BIDS dataset is structurally complete}: \textbf{84 participants}, \textbf{124 sessions}, \textbf{7{,}956} imaging NIfTI (+ JSON).
+\item \textbf{BIDS validator: 0 errors} (documentable warnings remain: missing events for some runs, longitudinal incompleteness, placeholder authors).
+\item \textbf{Defacing is ready} for public release (T1w 356/356); pre-flight anatomical replacement plan \textbf{PASS} (481/481).
+\item \textbf{Not ready to upload to OpenNeuro today.} Two hard blockers remain:
+  \begin{enumerate}[leftmargin=1.4em,itemsep=1pt]
+  \item Finish the \textbf{defaced public release package} (currently $\sim$68/84 subjects; anatomicals not yet swapped in).
+  \item Replace \textbf{placeholder Authors} and set \textbf{License: CC0}.
+  \end{enumerate}
+\item \textbf{MRIQC} is useful but incomplete (78\% sessions fully covered). Either finish the AFNI patch re-run or disclose coverage in Technical Validation --- this is a caution, not an OpenNeuro packaging blocker.
+\end{itemize}
+
+\noindent\textit{Bottom line for decision:} science package and privacy pipeline are largely done; remaining work is packaging + authorship/license + MRIQC disclosure/completion.
+
+\section{What the dataset contains}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/fig1_cohort.png}\hfill
+\includegraphics[width=0.48\textwidth]{figures/fig2_sessions.png}
+\caption{Left: clinical cohort composition. Right: longitudinal session availability (incomplete follow-up is real, not a packaging omission).}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\textwidth]{figures/fig3_inventory.png}
+\caption{Imaging file counts in the research BIDS tree. Functional data dominate because of multi-run BOLD + phase + SBRef.}
+\end{figure}
+
+\subsection*{Concrete inventory}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lrrrY@{}}
+\toprule
+\textbf{Component} & \textbf{Count} & \textbf{Expected} & \textbf{\%} & \textbf{Note} \\
+\midrule
+Participants & 84 & 84 & 100 & Control 56; Glaucoma 19; DataON 7; DataTON 2 \\
+Sessions & 124 & --- & --- & 40 both; 43 ses-01 only; 1 ses-02 only \\
+NIfTI / JSON & 7{,}956 & --- & --- & anat 729; func 5{,}884; dwi 361; fmap 982 \\
+T1w defaced & 356 & 356 & 100 & pydeface; privacy checklist checked \\
+DWI scans QC'd & 361 & 361 & 100 & 0 FAIL gradients; fmap AP/PA 120/120 \\
+MRIQC sessions & 97 & 124 & 78.2 & 130 failed IQMs (AFNI FWHMx ACF) \\
+task-fmri events & 456 & $\sim$507 & $\sim$89 & Unambiguous mapping rule; movie/control none \\
+Physio BIDS files & 0 & --- & --- & Explicitly withheld (metadata incomplete) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Readiness dashboard}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig4_readiness.png}
+\caption{Percent completion by publication component. Green $\approx$ release-ready; amber = disclose or finish; red = OpenNeuro blocker.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig5_traffic.png}
+\caption{Traffic-light summary for OpenNeuro deposition decisions.}
+\end{figure}
+
+\section{OpenNeuro package status (critical)}
+
+OpenNeuro must receive a \textbf{defaced} tree with real metadata --- not the research \texttt{bids/} tree as-is (faces still present in raw anatomicals).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig6_release.png}
+\caption{Release package vs research BIDS. Anatomical counts in the release tree are still incomplete because defaced T1w/FLAIR swaps are pending for remaining subjects.}
+\end{figure}
+
+\subsection*{What pre-flight already verified (PASS)}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item Anatomical replacement plan: \textbf{481/481} defaced replacements available and integrity-checked.
+\item Safe to run \texttt{build\_release.py --apply} (preflight 2026-07-23).
+\item Protected trees (\texttt{bids/}, \texttt{derivatives/}, raw archive) are not modified by the release builder.
+\end{itemize}
+
+\subsection*{What is still incomplete in \texttt{release\_dataset/}}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item Subjects present: \textbf{68 / 84} (16 subjects not yet copied).
+\item Anatomicals in release tree still largely incomplete relative to plan (defaced swap not finished for remaining subjects).
+\item \texttt{dataset\_description.json}: Name still placeholder; \textbf{Authors = ``Neuro BIDS Pipeline''}; \textbf{License missing}.
+\end{itemize}
+
+\section{Quality control --- concrete status}
+
+\subsection{MRIQC}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item T1w IQMs: \textbf{353/356 (99.2\%)}
+\item BOLD magnitude IQMs: \textbf{1{,}367/1{,}496 (91.4\%)}
+\item Fully complete sessions: \textbf{97/124 (78.2\%)}
+\item Root cause of gaps: AFNI \texttt{3dFWHMx -acf} crash (\texttt{out\_acf} missing) on 130 unique inputs.
+\item Follow-up job submitted with \texttt{acf=False} patch (\texttt{mriqc\_acf}). Re-audit when finished.
+\item \textbf{PI choice:} wait for full coverage \emph{or} publish with disclosed incomplete MRIQC (acceptable for Scientific Data if stated in Technical Validation).
+\end{itemize}
+
+\subsection{DWI QC}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item 361/361 scans: gradients + sidecars present; volume counts match.
+\item \texttt{dwigradcheck}: 250 PASS / 111 REVIEW / \textbf{0 FAIL}.
+\item Publication recommendation: document REVIEW observations; \textbf{not release-blocking}.
+\item Released schemes: multi-shell \texttt{b=0/1000/2000} (n=240) and RESOLVE \texttt{b=0/1000} (n=121).
+\item Reverse-PE b0 series from older protocol notes is \textbf{not} in released BIDS; distortion correction uses spin-echo field maps.
+\end{itemize}
+
+\subsection{Events / stimulus metadata}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item \textbf{456} \texttt{task-fmri} \texttt{events.tsv} released under a unique protocol$\rightarrow$BOLD matching rule.
+\item $\sim$55 task-fmri runs remain without events (ambiguous mapping) --- intentional.
+\item Movie / control: no events by design (timing not reconstructable / not applicable).
+\end{itemize}
+
+\subsection{Physiology}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item Source PhysioLog files exist historically, but BIDS physiology release was ruled \textbf{not recoverable} with verified sampling/start-time/run mapping.
+\item Decision: \textbf{do not release physio}; Methods text already documents this.
+\end{itemize}
+
+\section{Scientific Data manuscript readiness (parallel track)}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lLY@{}}
+\toprule
+\textbf{Section} & \textbf{Status} & \textbf{Concrete note} \\
+\midrule
+Background \& Summary & Drafted & Aligns with 84 participants / cohort $n$ \\
+Methods & Drafted (23 Jul) & Acquisition, de-id, conversion, QC procedures \\
+Data Record & Drafted & Needs OpenNeuro accession once deposited \\
+Acquisition table & Audited + figure & BIDS-aligned; DWI multi-shell corrected \\
+Technical Validation & Partial & Needs final MRIQC \% + DWI tables \\
+Authors / affiliations & \textcolor{fail}{\textbf{Needed}} & PI decision required for OpenNeuro + paper \\
+Ethics / consent-to-share & \textcolor{warn}{\textbf{Confirm}} & Confirm open deposition language in consent \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Recommended path and decisions for PI}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig7_path.png}
+\caption{Shortest practical path to OpenNeuro deposition.}
+\end{figure}
+
+\subsection*{Decisions requested}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=4pt]
+\item \textbf{Author list \& order} for \texttt{dataset\_description.json} / OpenNeuro / \textit{Scientific Data} (blocks upload).
+\item \textbf{License:} confirm \textbf{CC0} (OpenNeuro default) is acceptable under consent.
+\item \textbf{MRIQC:} wait for remaining IQMs \emph{or} disclose 78\% session coverage in Technical Validation and proceed.
+\item \textbf{Release build:} approve finishing \texttt{release\_dataset/} (defaced anat swap + remaining 16 subjects) then validator re-run.
+\item \textbf{Optional:} include TB1TFL in public package (3 TB1TFL defaces still missing if required).
+\end{enumerate}
+
+\subsection*{Estimated remaining effort (engineering)}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item Finish release apply + validate: \textbf{hours to 1--2 days} (mostly compute/copy + checks).
+\item Authors/license/README polish: \textbf{$<$1 day} after PI input.
+\item MRIQC completion: \textbf{depends on job 66310069}; otherwise disclose and move on.
+\item Manuscript polish after DOI: \textbf{1--2 days}.
+\end{itemize}
+
+\section*{Appendix A --- Documented non-blockers (disclose, do not ``fix'')}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item Longitudinal incompleteness (43 baseline-only).
+\item XA30 subset (193 sidecars): coil field sometimes absent; SliceTiming recovered for bold.
+\item No reverse-PE b0 in BIDS DWI; use fmap AP/PA.
+\item Physio withheld.
+\item Incomplete events for some task-fmri / none for movie \& control.
+\end{itemize}
+
+\vspace{6mm}
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{One-line status for PI}\\[3pt]
+Research dataset = ready to package.\quad OpenNeuro upload = blocked on release tree + Authors/CC0.\\
+MRIQC = optional finish vs disclose.\quad DWI/defacing/BIDS structure = publication-grade with caveats.
+}}
+\end{center}
+
+\vspace{4mm}
+{\footnotesize
+\noindent\textit{Sources (absolute paths under project scratch):}
+\texttt{bids/}, \texttt{release\_dataset/}, \texttt{derivatives/defacing/}, \texttt{derivatives/mriqc/},
+\texttt{reports/mriqc\_coverage\_audit/}, \texttt{reports/dwi\_qc/}, \texttt{reports/openneuro\_release/},
+\texttt{reports/openneuro\_prepublication/}, \texttt{reports/mri\_acquisition\_table\_audit.md},
+\texttt{reports/scientific\_data\_manuscript\_draft/}.\\
+\noindent Generated 23 July 2026 for internal PI briefing. Not for public deposition as-is.
+}
+
+\end{document}

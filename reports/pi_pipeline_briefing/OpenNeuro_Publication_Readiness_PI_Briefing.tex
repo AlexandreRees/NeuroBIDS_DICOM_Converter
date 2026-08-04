@@ -1,0 +1,365 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=18mm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{float}
+
+\graphicspath{%
+  {figures/}%
+  {figures/dwi/}%
+  {figures/pizarro/}%
+  {../deidentification_figures/figures/}%
+  {../mriqc_publication_audit/figures/}%
+  {../functional_mri_paradigm_figures/}%
+  {../stimulus_validation/}%
+  {../dwi_qc/publication/}%
+}
+
+\definecolor{ok}{HTML}{0E6B5C}
+\definecolor{warn}{HTML}{A65D1A}
+\definecolor{fail}{HTML}{B42318}
+\definecolor{hdr}{HTML}{1C2430}
+\definecolor{soft}{HTML}{F3F1EC}
+
+\hypersetup{colorlinks=true,linkcolor=hdr,urlcolor=ok}
+\titleformat{\section}{\large\bfseries\color{hdr}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{hdr}}{\thesubsection}{0.45em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Optic-nerve MRI dataset --- OpenNeuro readiness}
+\rhead{\small PI technical briefing \cdot 24 July 2026}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\captionsetup{font=small,labelfont=bf,skip=4pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlist[itemize]{leftmargin=1.15em,itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.25em,itemsep=2pt,topsep=2pt}
+\setlength{\parskip}{0.35em}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Pipeline completion \& OpenNeuro publication readiness}\\[6pt]
+{\large Technical briefing for the Principal Investigator}\\[4pt]
+{\normalsize Multimodal MRI dataset \quad$\cdot$\quad BIDS 1.9.0 \quad$\cdot$\quad 24 July 2026}
+\end{center}
+
+\vspace{2mm}
+\noindent\colorbox{soft}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+\textbf{30-second message.}
+We have a BIDS-organised multimodal MRI dataset (84 participants, 124 sessions) with
+DICOM de-identification, anatomical defacing, validated functional event metadata where
+mapping is unique, and three complementary QC layers (Pizarro, MRIQC, DWI).
+A public release tree (\texttt{release\_dataset/}) has been built with defaced anatomicals
+under standard BIDS names.
+\textbf{OpenNeuro upload is blocked only by:} real author list + licence (CC0/CC-BY) in
+\texttt{dataset\_description.json}, and PI confirmation of consent language.
+Imaging + QC content is deposit-ready.
+}}
+
+\section{Executive verdict}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lYY@{}}
+\toprule
+\textbf{Question} & \textbf{Verdict} & \textbf{Detail} \\
+\midrule
+Is the research pipeline complete enough to present? &
+\textcolor{ok}{\textbf{YES}} &
+End-to-end: inventory $\rightarrow$ de-ID $\rightarrow$ BIDS $\rightarrow$ deface $\rightarrow$ QC $\rightarrow$ release package \\
+Is the imaging package scientifically documented? &
+\textcolor{ok}{\textbf{YES}} &
+Methods / Data Record drafts; QC reports; event validation; acquisition tables \\
+Can we upload to OpenNeuro today? &
+\textcolor{warn}{\textbf{NOT YET}} &
+Authors + Licence placeholders; optional: finish 11 pending \texttt{ses-02} conversions \\
+Should incomplete QC / missing events block deposit? &
+\textcolor{ok}{\textbf{NO}} &
+Document transparently (4 MRIQC gaps; 51 events withheld; DWI REVIEW) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Dataset snapshot}
+
+\begin{center}
+\small
+\begin{tabular}{@{}lp{3.2cm}p{4.2cm}@{}}
+\toprule
+\textbf{Item} & \textbf{N / note} & \textbf{Comment} \\
+\midrule
+Participants & 84 & Control 56; Glaucoma 19; DataON 7; DataTON 2 \\
+BIDS sessions & 124 (83 + 41) & Longitudinal incomplete by design \\
+Mapped DICOM sessions & 135 & 11 follow-up sessions pending conversion \\
+NIfTI in BIDS (approx.) & 7956 & Plus JSON sidecars \\
+T1w / FLAIR & 356 / 125 & Defaced T1w complete (356/356) \\
+BOLD / sbref / fmap / DWI & 2992 / 2892 / 982 / 361 & Multimodal release \\
+task-fmri events & 456 / 507 (89.9\%) & Eligible magnitude runs only \\
+MRIQC IQMs (T1w+BOLD) & 1848 / 1852 (\textbf{99.8\%}) & Audit 24 Jul 2026 \\
+Release package & 84 subjects; $\sim$1~TB & Public tree built \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.98\textwidth]{Figure_pipeline_complete_PI.png}
+\caption{End-to-end pipeline overview used for PI presentation (inventory $\rightarrow$ BIDS $\rightarrow$ defacing $\rightarrow$ QC $\rightarrow$ release).}
+\end{figure}
+
+\section{What was built (technical walkthrough)}
+
+\subsection{Inventory, mapping, and session confirmation}
+\begin{itemize}
+\item Source archive inventoried under \texttt{/project/def-amirs/raw\_original/} (Control, Glaucoma, Data\_ON, Data\_TON).
+\item Series-level mapping frozen in \texttt{metadata/session\_mapping.csv} ($\sim$10\,026 MRI series) and session-level \texttt{metadata/mapping.csv}.
+\item Session confirmation: \textbf{135 AUTO\_CONFIRMED} DICOM sessions + 6 auxiliary-only \texttt{NO\_DICOM\_FOUND}.
+\item Manual overrides documented (e.g.\ SUBC044 patient\_id conflict) without disabling validation rules.
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\textwidth]{Figure_mapping_PI.png}
+\caption{Mapping / session confirmation summary for PI.}
+\end{figure}
+
+\noindent\textbf{Documented gap (transparent):}
+BIDS currently contains \textbf{124/135} AUTO\_CONFIRMED sessions.
+The missing 11 are all non-Control \texttt{ses-02} visits (1 DataON, 1 DataTON, 9 Glaucoma).
+Root cause: conversion arrays originally hard-coded \texttt{--session ses-01}; a follow-up
+\texttt{ses-02} array converted Control successfully; the remaining 11 failed because
+scratch lacked those cohort raw trees. Retry array \texttt{ses02\_r11} (job 66365527)
+points at \texttt{/project/def-amirs/raw\_original} (verified present). Completing these
+sessions is recommended before final OpenNeuro freeze but is not a QC failure of the
+existing 124-session package.
+
+\subsection{DICOM de-identification (derived copies only)}
+\begin{itemize}
+\item Applied on \textbf{derived} DICOM copies used for conversion --- the raw archive is never overwritten.
+\item Policy oriented to DICOM PS3.15 Basic Application Level Confidentiality Profile (Annex E):
+  documented custom subset (not a certified PS3.15 product claim).
+\item Actions: clear PHI / free-text / site tags; pseudonymise PatientName/ID; remap UIDs;
+  shift dates by participant-specific offsets (\texttt{metadata/deidentify\_date\_shifts.csv} ---
+  \textbf{do not publish}); remove private tags except documented Siemens CSA needed for
+  BIDS physics (SliceTiming, PE, bvals).
+\item \textbf{Pixels unchanged} at this stage; acquisition parameters retained for science.
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.95\textwidth]{Fig06_PI_onepager_deidentification.png}
+\caption{De-identification one-pager (workflow, tag policy, provenance). Framing for Methods: ``oriented toward PS3.15 Basic; documented subset''.}
+\end{figure}
+
+\subsection{BIDS conversion}
+\begin{itemize}
+\item Tooling: \texttt{neuro\_pipeline} 2.1.0 + \texttt{dcm2niix}; BIDSVersion \textbf{1.9.0}; DatasetType \texttt{raw}.
+\item Layout: \texttt{sub-*/ses-*/\{anat,func,dwi,fmap\}} with JSON sidecars; DWI includes \texttt{.bval}/\texttt{.bvec}.
+\item Post-conversion metadata hygiene: administrative / identifying JSON fields scrubbed
+  (\texttt{InstitutionalDepartmentName}, Patient*, DeviceSerialNumber, etc.) without altering
+  scientific acquisition keys (TR/TE, ProtocolName, PhaseEncodingDirection, \ldots).
+\item XA30 SliceTiming recovery documented where Enhanced DICOM permitted measured timing
+  (no invented SliceTiming from TR heuristics).
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\textwidth]{Figure_bids_conversion_PI.png}
+\caption{BIDS conversion outcome summary.}
+\end{figure}
+
+\subsection{Anatomical defacing}
+\begin{itemize}
+\item Tool: pydeface on structural images under \texttt{derivatives/defacing/}.
+\item Coverage: \textbf{T1w 356/356} (FLAIR also included in release replacements; total
+  structural replacements in public package = \textbf{481}).
+\item Public release uses \textbf{standard BIDS filenames} (no \texttt{desc-defaced} entity);
+  original identifiable anatomicals are excluded from \texttt{release\_dataset/}.
+\end{itemize}
+
+\subsection{Functional paradigms and event metadata}
+Functional tasks: \texttt{rest}, \texttt{fmri} (grating), \texttt{movie}, \texttt{control}.
+Validated \texttt{*\_events.tsv} files apply to the grating \texttt{task-fmri} paradigm only.
+
+\begin{itemize}
+\item Eligible non-phase magnitude \texttt{task-fmri} BOLD runs: \textbf{507}.
+\item Released with validated events: \textbf{456 (89.9\%)}.
+\item Intentionally without events: \textbf{51} --- duplicate ProtocolName ($n=32$), missing
+  Results ($n=8$), duplicate/missing \texttt{scan\_info} ($n=5$/$n=4$), MATLAB vs protocol
+  number mismatch ($n=2$).
+\item \textbf{Policy:} no invented onsets; no synthetic events; imaging retained for all 507.
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.88\textwidth]{Figure2_functional_paradigm_overview.png}
+\caption{Functional paradigm overview (tasks and design context).}
+\end{figure}
+
+\section{Quality control --- three complementary layers}
+
+The QC strategy is deliberately multi-layer: screening (Pizarro), quantitative IQMs (MRIQC),
+and diffusion technical validation (DWI QC). \textbf{None of these layers auto-excludes
+subjects from the deposit.}
+
+\begin{figure}[H]\centering
+\includegraphics[width=\textwidth]{Figure_QC_three_layers_quality.png}
+\caption{Single-figure QC summary for PI: Pizarro / MRIQC / DWI --- quality evidenced without automatic exclusions.}
+\end{figure}
+
+\subsection{Pizarro (T1w deep-learning screening)}
+\begin{itemize}
+\item Scope: all \textbf{356} T1w images; 0 load errors.
+\item Outputs: artifact probability, confidence, uncertainty (Monte Carlo dropout).
+\item Prioritisation thresholds used to queue visual review (e.g.\ high artifact probability /
+  high uncertainty) --- \textbf{229} images prioritised; \textbf{0 automatic exclusions}.
+\item Scientific Data framing: screening / prioritisation only; quantitative QC remains MRIQC.
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.85\textwidth]{Figure_Pizarro_overview_PI.png}
+\caption{Pizarro screening overview.}
+\end{figure}
+
+\subsection{MRIQC (anatomical + functional IQMs)}
+\begin{itemize}
+\item Software: MRIQC 24.0.2 with fault-tolerant wrapper in \texttt{neuro\_pipeline}.
+\item Coverage (24 Jul 2026): subjects 84/84; sessions with all expected IQMs \textbf{120/124 (96.8\%)};
+  T1w \textbf{354/356 (99.4\%)}; magnitude BOLD \textbf{1494/1496 (99.9\%)};
+  combined \textbf{1848/1852 (99.8\%)}.
+\item Quality headlines: median BOLD \texttt{fd\_mean} \textbf{0.176\,mm}; median tSNR \textbf{20.9}.
+\item Engineering fix: mass failures traced to AFNI \texttt{3dFWHMx -acf}; corrected patch forces
+  classic FWHM (\texttt{acf=False}) via correct nipype import --- session completeness rose
+  from $\sim$78\% to 96.8\%.
+\item Four remaining missing IQMs are \textbf{pathological / truncated acquisitions}
+  (2 BOLD with 3--4 volumes; 2 abnormal T1w FOV/intensity) --- MRIQC fails correctly;
+  do not block deposit.
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.78\textwidth]{Fig01_MRIQC_coverage_summary.png}
+\caption{MRIQC coverage summary (sessions / T1w / BOLD / combined).}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.72\textwidth]{mriqc_before_after.png}
+\caption{MRIQC session completeness before vs after AFNI ACF patch correction.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.88\textwidth]{Fig08_four_missing_acquisitions.png}
+\caption{The four missing IQMs explained by BIDS evidence (truncated / out-of-protocol), not software failure.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\textwidth]{Fig09_PI_onepager_quality_summary.png}
+\caption{MRIQC quality one-pager (coverage + motion/tSNR context).}
+\end{figure}
+
+\subsection{DWI QC (read-only technical validation)}
+\begin{itemize}
+\item Scope: \textbf{361} DWI scans / 82 subjects / 120 sessions.
+\item Integrity: NIfTI + bval + bvec + JSON \textbf{361/361 PASS}; volume/gradient length mismatches \textbf{0}.
+\item \texttt{dwigradcheck}: \textbf{250 PASS}, \textbf{111 REVIEW}, \textbf{0 FAIL}.
+\item REVIEW findings documented; \textbf{no gradient corrections applied} to distributed data.
+\item AP/PA field-map pairing for sessions: complete in documented checklist.
+\end{itemize}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.88\textwidth]{Fig01_DWI_overview_PI.png}
+\caption{DWI QC overview for PI.}
+\end{figure}
+
+\section{Public release package}
+
+\begin{itemize}
+\item Builder: \texttt{code/build\_release.py} (\texttt{--dry-run} / \texttt{--apply}).
+\item Source trees \texttt{bids/}, \texttt{derivatives/}, \texttt{raw\_original/} are \textbf{never modified}.
+\item Output: \texttt{\textasciitilde/scratch/release\_dataset} --- 84 subjects, 124 sessions, 17\,101 files.
+\item Anatomicals: original T1w/FLAIR NIfTIs excluded; replaced by validated defaced files
+  (481 replacements; identity-checked vs \texttt{derivatives/defacing}).
+\item Preflight validation: PASS (audit completeness, geometry, JSON, structure).
+\item Post-build audit verdict: \textbf{WARNING} only for publication metadata
+  (Authors still ``Neuro BIDS Pipeline''; Name placeholder; License missing) and soft notes
+  (events scope; \texttt{raw\_original} path on scratch).
+\item Structural integrity checks: PASS (manifest 16\,620 COPY files present; no
+  \texttt{desc-defaced} names; participants vs folders aligned).
+\end{itemize}
+
+\section{What has been documented for Scientific Data / OpenNeuro}
+
+\begin{itemize}
+\item Data Record draft (inventory, organisation, modalities, events policy).
+\item De-identification Methods language + supplementary tag-action tables / figures.
+\item MRIQC Technical Validation English text (99.8\%; four gaps justified).
+\item Pizarro Scientific Data statements (screening only; no exclusion).
+\item DWI technical validation report + PI talking points.
+\item Functional event validation report (456/507; irrecoverable audit for 51).
+\item Release build + anatomical replacement + release-dataset audit reports under
+  \texttt{reports/openneuro\_release/}.
+\end{itemize}
+
+\section{OpenNeuro readiness checklist}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}l c Y@{}}
+\toprule
+\textbf{Requirement} & \textbf{Status} & \textbf{Notes} \\
+\midrule
+BIDS layout + sidecars & \textcolor{ok}{READY} & BIDS 1.9.0; metadata cleaned \\
+Defaced anatomicals in public tree & \textcolor{ok}{READY} & 481 replacements; standard names \\
+Participant table & \textcolor{ok}{READY} & 84 IDs match folders \\
+QC documentation & \textcolor{ok}{READY} & Pizarro + MRIQC + DWI \\
+Event policy documented & \textcolor{ok}{READY} & 456 released; 51 withheld intentionally \\
+De-ID / defacing documented & \textcolor{ok}{READY} & Honest PS3.15 framing \\
+\texttt{dataset\_description.json} Authors & \textcolor{fail}{BLOCKER} & Replace pipeline placeholder \\
+Licence (CC0 / CC-BY) & \textcolor{fail}{BLOCKER} & Field currently missing \\
+Dataset Name (final title) & \textcolor{warn}{NEEDED} & Still generic pipeline name \\
+Consent / ethics language for open share & \textcolor{warn}{PI} & Confirm before upload \\
+Optional: convert remaining 11 \texttt{ses-02} & \textcolor{warn}{IN PROGRESS} & Improves completeness; not QC fail \\
+Optional: rebuild release after ses-02 + deface & \textcolor{warn}{AFTER} & Re-run \texttt{build\_release.py --apply} \\
+bids-validator on release tree & \textcolor{warn}{PENDING} & Not on PATH at last apply; run before upload \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Decisions requested from the PI}
+
+\begin{enumerate}
+\item \textbf{Author list and order} for OpenNeuro \texttt{dataset\_description.json} and the Scientific Data paper.
+\item Confirm \textbf{licence} (typically \textbf{CC0} on OpenNeuro) and consent language for open redistribution.
+\item Confirm final \textbf{dataset title / Name}.
+\item Accept documenting MRIQC at \textbf{99.8\%} with four pathological gaps in Technical Validation
+  (recommended) versus delaying for 100\%.
+\item Accept event release policy (456/507; no invented timing).
+\item Priority on finishing the \textbf{11 pending \texttt{ses-02}} conversions before freeze (recommended yes).
+\item Green light to finalise README + description JSON and proceed to OpenNeuro upload after blockers cleared.
+\end{enumerate}
+
+\section*{Closing statement for the meeting}
+\begin{quote}
+\textit{``We have a complete, documented BIDS pipeline: de-identified DICOMs, converted imaging,
+defaced anatomicals, three QC layers showing high coverage and usable quality metrics, and a
+built public release tree. The science package is ready to deposit. What we still need from you
+are the human metadata --- authors, licence, consent --- and a decision on whether to wait for
+the last eleven follow-up sessions before freezing the OpenNeuro version.''}
+\end{quote}
+
+\vspace{3mm}
+{\footnotesize
+\textbf{Primary paths:}
+\texttt{bids/}, \texttt{release\_dataset/}, \texttt{derivatives/\{defacing,mriqc\}},
+\texttt{metadata/}, \texttt{reports/\{openneuro\_release,mriqc\_publication\_audit,mriqc\_coverage\_audit,}
+\texttt{dwi\_qc,pizarro\_qc\_scientific\_data,deidentification\_figures,stimulus\_validation,}
+\texttt{scientific\_data\_manuscript\_draft,pi\_pipeline\_briefing\}}.
+}
+
+\end{document}

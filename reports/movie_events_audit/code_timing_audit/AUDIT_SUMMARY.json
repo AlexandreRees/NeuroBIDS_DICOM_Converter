@@ -1,0 +1,19 @@
+{
+  "generated": "2026-07-28T14:40:01.823118+00:00",
+  "movie_roots": 156,
+  "scripts": 312,
+  "unique_script_sha16": 8,
+  "code_search_hits": 3717,
+  "output_log_rows": 5140,
+  "output_REAL_TIMING": 0,
+  "mat_SCANNER_LOCKED_TIMING": 0,
+  "mat_FRAME_TIMING": 0,
+  "physio_rows": 1285,
+  "RECONSTRUCTABLE": "NO",
+  "show_movie": {
+    "A_scanner_trigger_reception": "FOUND",
+    "B_flip_timestamps": "NOT FOUND",
+    "C_saved_timing": "NOT FOUND",
+    "E_frame_timestamps": "NOT FOUND"
+  }
+}

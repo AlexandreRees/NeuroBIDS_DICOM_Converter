@@ -1,0 +1,24 @@
+{
+  "status": "READ ONLY COMPLETED",
+  "date": "2026-08-04T13:54:29.770421+00:00",
+  "forbidden_paths_untouched": [
+    "/lustre07/scratch/alexrees/raw_original",
+    "/lustre07/scratch/alexrees/bids",
+    "/lustre07/scratch/alexrees/derivatives",
+    "/lustre07/scratch/alexrees/reports/pizarro_qc_transfer_calibrated"
+  ],
+  "embeddings_recomputed": false,
+  "embeddings_source": "/lustre07/scratch/alexrees/pizarro_transfer_learning/output/with_embeddings/pizarro_embeddings.npy",
+  "n_scans": 264,
+  "n_run01": 132,
+  "n_run02": 132,
+  "qc_threshold": 50.0,
+  "auc_global": 0.9475570647047726,
+  "auc_run01": 0.9677197802197802,
+  "auc_run02": 0.9375430539609644,
+  "auc_run01_to_run02": 0.9079219288174512,
+  "auc_run02_to_run01": 0.9835164835164836,
+  "domain_shift_detected": "NO",
+  "potential_norm_confounding": "LOW",
+  "output_dir": "/lustre07/scratch/alexrees/reports/pizarro_qc_transfer_norm_analysis"
+}

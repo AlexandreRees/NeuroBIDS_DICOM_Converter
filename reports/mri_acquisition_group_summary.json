@@ -1,0 +1,1004 @@
+{
+  "('Anatomical', 'FLAIR', '', '', '')": {
+    "modality": "Anatomical",
+    "kind": "FLAIR",
+    "n_files": 125,
+    "sequence": "3D FLAIR",
+    "bids_label": "FLAIR",
+    "TR_ms": "6",
+    "TE_ms": "0.357",
+    "flip_angle_deg": "120",
+    "resolution": "0.8\u00d70.8\u00d70.8 mm",
+    "additional": "in-plane accel=2; PE=i; SequenceName=*spcir_288ns; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "Sag Flair 3D-0.8",
+    "ProtocolName": "Sag Flair 3D-0.8",
+    "SequenceName": "*spcir_288ns",
+    "MB": null,
+    "iPAT": "2",
+    "PE": "i",
+    "SliceThickness": "0.8",
+    "TotalReadoutTime": null,
+    "PixelBandwidth": "780",
+    "TR_variants": [
+      "6"
+    ],
+    "TE_variants": [
+      "0.357"
+    ],
+    "FA_variants": [
+      "120"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Anatomical', 'T1w_MPRAGE', '', '', '')": {
+    "modality": "Anatomical",
+    "kind": "T1w_MPRAGE",
+    "n_files": 245,
+    "sequence": "T1-weighted MPRAGE",
+    "bids_label": "T1w",
+    "TR_ms": "2.5",
+    "TE_ms": "0.0022",
+    "flip_angle_deg": "8",
+    "resolution": "0.8\u00d70.8\u00d70.8 mm",
+    "additional": "in-plane accel=2; SequenceName=*tfl3d1_16ns; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "T1w_MPR",
+    "ProtocolName": "T1w_MPR",
+    "SequenceName": "*tfl3d1_16ns",
+    "MB": null,
+    "iPAT": "2",
+    "PE": null,
+    "SliceThickness": "0.8",
+    "TotalReadoutTime": null,
+    "PixelBandwidth": "220",
+    "TR_variants": [
+      "2.5"
+    ],
+    "TE_variants": [
+      "0.0022"
+    ],
+    "FA_variants": [
+      "8"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Anatomical', 'B1map', 'TB1TFL', '', '')": {
+    "modality": "Anatomical",
+    "kind": "B1map",
+    "n_files": 248,
+    "sequence": "B1 mapping (turbo flash)",
+    "bids_label": "TB1TFL",
+    "TR_ms": "4",
+    "TE_ms": "0.0018",
+    "flip_angle_deg": "8",
+    "resolution": "3.438\u00d73.438\u00d710 mm",
+    "additional": "PE=j-; SequenceName=tfl2d1_512; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "tfl_b1map_1mmiso",
+    "ProtocolName": "tfl_b1map_1mmiso",
+    "SequenceName": "tfl2d1_512",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "8",
+    "TotalReadoutTime": null,
+    "PixelBandwidth": "490",
+    "TR_variants": [
+      "4"
+    ],
+    "TE_variants": [
+      "0.0018"
+    ],
+    "FA_variants": [
+      "8",
+      "79.99",
+      "80"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Anatomical', 'WMn_MPRAGE', '', '', '')": {
+    "modality": "Anatomical",
+    "kind": "WMn_MPRAGE",
+    "n_files": 111,
+    "sequence": "White-matter-nulled MPRAGE",
+    "bids_label": "T1w",
+    "TR_ms": "4",
+    "TE_ms": "0.0038",
+    "flip_angle_deg": "7",
+    "resolution": "1\u00d71\u00d71 mm",
+    "additional": "in-plane accel=2; SequenceName=*tfl3d1_200; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "WMn_MPRAGE_sagittal",
+    "ProtocolName": "WMn_MPRAGE_sagittal",
+    "SequenceName": "*tfl3d1_200",
+    "MB": null,
+    "iPAT": "2",
+    "PE": null,
+    "SliceThickness": "1",
+    "TotalReadoutTime": null,
+    "PixelBandwidth": "200",
+    "TR_variants": [
+      "4"
+    ],
+    "TE_variants": [
+      "0.0038"
+    ],
+    "FA_variants": [
+      "7"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Diffusion', 'multi-shell_or_multidir', '', '', '')": {
+    "modality": "Diffusion",
+    "kind": "multi-shell_or_multidir",
+    "n_files": 240,
+    "sequence": "Diffusion-weighted MRI (multidirection)",
+    "bids_label": "dwi",
+    "TR_ms": "3.5",
+    "TE_ms": "0.075",
+    "flip_angle_deg": "90",
+    "resolution": "1\u00d71\u00d75 mm",
+    "additional": "MB=2; in-plane accel=3; PE=j-; TotalReadoutTime=0.0679s; volumes=385; b-values=0,1000,2000 (n=240); n_diff_dirs=365 (n=228); 270 (n=2); 239 (n=2); n_b0=20 (n=240); SequenceName=gs_b0; TR_variants=3.5|3.9; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "gsld_76dir_b2000_1mmiso_AP",
+    "ProtocolName": "gsld_76dir_b2000_1mmiso_AP",
+    "SequenceName": "gs_b0",
+    "MB": "2",
+    "iPAT": "3",
+    "PE": "j-",
+    "SliceThickness": "5",
+    "TotalReadoutTime": "0.0679",
+    "PixelBandwidth": "1265",
+    "TR_variants": [
+      "3.5",
+      "3.9"
+    ],
+    "TE_variants": [
+      "0.075"
+    ],
+    "FA_variants": [
+      "90"
+    ],
+    "bval_schemes": [
+      [
+        "0,1000,2000",
+        240
+      ]
+    ],
+    "n_dirs": [
+      [
+        365,
+        228
+      ],
+      [
+        270,
+        2
+      ],
+      [
+        239,
+        2
+      ],
+      [
+        144,
+        2
+      ],
+      [
+        287,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        104,
+        2
+      ]
+    ],
+    "sample_volumes": 385,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Diffusion', 'RESOLVE', '', '', '')": {
+    "modality": "Diffusion",
+    "kind": "RESOLVE",
+    "n_files": 121,
+    "sequence": "RESOLVE diffusion (trace)",
+    "bids_label": "dwi",
+    "TR_ms": "4.14",
+    "TE_ms": "0.051",
+    "flip_angle_deg": "180",
+    "resolution": "1.375\u00d71.375\u00d71.82 mm",
+    "additional": "in-plane accel=3; PE=j-; TotalReadoutTime=0.0161s; volumes=15; b-values=0,1000 (n=121); n_diff_dirs=11 (n=121); n_b0=4 (n=121); SequenceName=*re_b0; TE_variants=0.051|0.0512; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "resolve_3scan_trace_tra_p3_160_1.4iso_AP",
+    "ProtocolName": "resolve_3scan_trace_tra_p3_160_1.4iso_AP",
+    "SequenceName": "*re_b0",
+    "MB": null,
+    "iPAT": "3",
+    "PE": "j-",
+    "SliceThickness": "1.4",
+    "TotalReadoutTime": "0.0161",
+    "PixelBandwidth": "870",
+    "TR_variants": [
+      "4.14"
+    ],
+    "TE_variants": [
+      "0.051",
+      "0.0512"
+    ],
+    "FA_variants": [
+      "180"
+    ],
+    "bval_schemes": [
+      [
+        "0,1000",
+        121
+      ]
+    ],
+    "n_dirs": [
+      [
+        11,
+        121
+      ]
+    ],
+    "sample_volumes": 15,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Field map', 'epi', 'AP', '', '')": {
+    "modality": "Field map",
+    "kind": "epi",
+    "n_files": 246,
+    "sequence": "Spin-echo EPI field map",
+    "bids_label": "dir-AP_epi",
+    "TR_ms": "9.71",
+    "TE_ms": "0.066",
+    "flip_angle_deg": "90",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; SequenceName=epse2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "SpinEchoFieldMap_AP",
+    "ProtocolName": "SpinEchoFieldMap_AP",
+    "SequenceName": "epse2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "9.71"
+    ],
+    "TE_variants": [
+      "0.066"
+    ],
+    "FA_variants": [
+      "90"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Field map', 'epi', 'AP', 'phase', '')": {
+    "modality": "Field map",
+    "kind": "epi",
+    "n_files": 246,
+    "sequence": "Spin-echo EPI field map",
+    "bids_label": "dir-AP_part-phase_epi",
+    "TR_ms": "9.71",
+    "TE_ms": "0.066",
+    "flip_angle_deg": "90",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; SequenceName=epse2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "SpinEchoFieldMap_AP",
+    "ProtocolName": "SpinEchoFieldMap_AP",
+    "SequenceName": "epse2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "9.71"
+    ],
+    "TE_variants": [
+      "0.066"
+    ],
+    "FA_variants": [
+      "90"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Field map', 'epi', 'PA', '', '')": {
+    "modality": "Field map",
+    "kind": "epi",
+    "n_files": 245,
+    "sequence": "Spin-echo EPI field map",
+    "bids_label": "dir-PA_epi",
+    "TR_ms": "9.71",
+    "TE_ms": "0.066",
+    "flip_angle_deg": "90",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j; TotalReadoutTime=0.0597s; SequenceName=epse2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "SpinEchoFieldMap_PA",
+    "ProtocolName": "SpinEchoFieldMap_PA",
+    "SequenceName": "epse2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "9.71"
+    ],
+    "TE_variants": [
+      "0.066"
+    ],
+    "FA_variants": [
+      "90"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Field map', 'epi', 'PA', 'phase', '')": {
+    "modality": "Field map",
+    "kind": "epi",
+    "n_files": 245,
+    "sequence": "Spin-echo EPI field map",
+    "bids_label": "dir-PA_part-phase_epi",
+    "TR_ms": "9.71",
+    "TE_ms": "0.066",
+    "flip_angle_deg": "90",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j; TotalReadoutTime=0.0597s; SequenceName=epse2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "SpinEchoFieldMap_PA",
+    "ProtocolName": "SpinEchoFieldMap_PA",
+    "SequenceName": "epse2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "9.71"
+    ],
+    "TE_variants": [
+      "0.066"
+    ],
+    "FA_variants": [
+      "90"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'bold', 'control', '', '')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 369,
+    "sequence": "BOLD fMRI (control)",
+    "bids_label": "task-control_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j; TotalReadoutTime=0.0597s; volumes=20; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "Control1_PA",
+    "ProtocolName": "Control1_PA",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 20,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'sbref', 'control', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 355,
+    "sequence": "Single-band reference (control)",
+    "bids_label": "task-control_part-phase_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "Control1_PA_SBRef",
+    "ProtocolName": "Control1_PA",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'sbref', 'control', '', '')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 355,
+    "sequence": "Single-band reference (control)",
+    "bids_label": "task-control_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "Control1_PA_SBRef",
+    "ProtocolName": "Control1_PA",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'bold', 'control', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 369,
+    "sequence": "BOLD fMRI (control)",
+    "bids_label": "task-control_part-phase_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j; TotalReadoutTime=0.0597s; volumes=20; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "Control1_PA",
+    "ProtocolName": "Control1_PA",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 20,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'bold', 'fmri', '', '')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 507,
+    "sequence": "BOLD fMRI (fmri)",
+    "bids_label": "task-fmri_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=226; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "fMRI1_AP",
+    "ProtocolName": "fMRI1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 226,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'sbref', 'fmri', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 492,
+    "sequence": "Single-band reference (fmri)",
+    "bids_label": "task-fmri_part-phase_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "fMRI1_AP_SBRef",
+    "ProtocolName": "fMRI1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'sbref', 'fmri', '', '')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 492,
+    "sequence": "Single-band reference (fmri)",
+    "bids_label": "task-fmri_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "fMRI1_AP_SBRef",
+    "ProtocolName": "fMRI1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'bold', 'fmri', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 508,
+    "sequence": "BOLD fMRI (fmri)",
+    "bids_label": "task-fmri_part-phase_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=226; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "fMRI1_AP",
+    "ProtocolName": "fMRI1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 226,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'bold', 'movie', '', '')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 495,
+    "sequence": "BOLD fMRI (movie)",
+    "bids_label": "task-movie_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=210; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "Movie1_AP",
+    "ProtocolName": "Movie1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 210,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'sbref', 'movie', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 479,
+    "sequence": "Single-band reference (movie)",
+    "bids_label": "task-movie_part-phase_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "Movie1_AP_SBRef",
+    "ProtocolName": "Movie1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'sbref', 'movie', '', '')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 479,
+    "sequence": "Single-band reference (movie)",
+    "bids_label": "task-movie_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "Movie1_AP_SBRef",
+    "ProtocolName": "Movie1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'bold', 'movie', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 494,
+    "sequence": "BOLD fMRI (movie)",
+    "bids_label": "task-movie_part-phase_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=210; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "Movie1_AP",
+    "ProtocolName": "Movie1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 210,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'bold', 'rest', '', '')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 125,
+    "sequence": "BOLD fMRI (rest)",
+    "bids_label": "task-rest_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=320; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "REST1_AP",
+    "ProtocolName": "REST1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 320,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  },
+  "('Functional', 'sbref', 'rest', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 120,
+    "sequence": "Single-band reference (rest)",
+    "bids_label": "task-rest_part-phase_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "REST1_AP_SBRef",
+    "ProtocolName": "REST1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'sbref', 'rest', '', '')": {
+    "modality": "Functional",
+    "kind": "sbref",
+    "n_files": 120,
+    "sequence": "Single-band reference (rest)",
+    "bids_label": "task-rest_sbref",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "PE=j-; TotalReadoutTime=0.0597s; volumes=1; SequenceName=epfid2d1_104",
+    "SeriesDescription": "REST1_AP_SBRef",
+    "ProtocolName": "REST1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": null,
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 1,
+    "software_group": [
+      "syngo MR E11"
+    ]
+  },
+  "('Functional', 'bold', 'rest', '', 'phase')": {
+    "modality": "Functional",
+    "kind": "bold",
+    "n_files": 125,
+    "sequence": "BOLD fMRI (rest)",
+    "bids_label": "task-rest_part-phase_bold",
+    "TR_ms": "0.937",
+    "TE_ms": "0.037",
+    "flip_angle_deg": "52",
+    "resolution": "2\u00d72\u00d72 mm",
+    "additional": "MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=320; SequenceName=epfid2d1_104; Software=syngo MR E11|syngo MR XA30",
+    "SeriesDescription": "REST1_AP",
+    "ProtocolName": "REST1_AP",
+    "SequenceName": "epfid2d1_104",
+    "MB": "8",
+    "iPAT": null,
+    "PE": "j-",
+    "SliceThickness": "2",
+    "TotalReadoutTime": "0.0597",
+    "PixelBandwidth": "2290",
+    "TR_variants": [
+      "0.937"
+    ],
+    "TE_variants": [
+      "0.037"
+    ],
+    "FA_variants": [
+      "52"
+    ],
+    "bval_schemes": [],
+    "n_dirs": [],
+    "sample_volumes": 320,
+    "software_group": [
+      "syngo MR E11",
+      "syngo MR XA30"
+    ]
+  }
+}

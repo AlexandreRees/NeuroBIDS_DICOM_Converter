@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-07-23T19:29:10Z",
+  "inventory_rows": 5756,
+  "role_counts": {
+    "other|eye_tracking": 412,
+    "other|physiology": 339,
+    "other|stimulus": 20,
+    "other|unknown": 8,
+    "task-fmri|display_calibration": 276,
+    "task-fmri|runs_random_workspace": 274,
+    "task-fmri|scan_info_triggers": 554,
+    "task-fmri|stim_order": 1112,
+    "task-fmri|stimulus_script": 1656,
+    "task-movie|movie_run_selection_log": 550,
+    "task-movie|movie_stimulus_file": 104,
+    "task-movie|stimulus_script": 312,
+    "task-rest|stimulus_script": 137,
+    "task_timing_misc|task_timing": 2
+  },
+  "n_fmri_bold": 507,
+  "n_movie_bold": 495,
+  "n_fmri_events": 51,
+  "n_movie_events": 0,
+  "n_scan_info": 554,
+  "n_stim_order": 1112,
+  "n_workspace": 274,
+  "n_movie_logs": 550,
+  "n_movie_mp4": 104,
+  "n_fmri_scripts": 1656,
+  "n_movie_scripts": 312,
+  "level1_ready": 51,
+  "level1_withheld": 341,
+  "level1_recoverable": 323,
+  "fmri_status_counts": {
+    "already_released": 51,
+    "reconstructable_with_mapping_fix": 331,
+    "sources_uncertain_or_absent": 118,
+    "ambiguous": 7
+  },
+  "movie_segment_counts": {
+    "YES": 341,
+    "UNCERTAIN": 154
+  },
+  "sample_notes": [
+    "fMRI_1 exists=True path=/project/def-amirs/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/fMRI_1.mat",
+    "  ERROR No module named 'scipy'",
+    "scan_info exists=True path=/project/def-amirs/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/May-05-2023_ 2-55-37_PM__scan_info_for_subject_050__selected_run_is_1__fmri_number_is1.mat",
+    "  ERROR No module named 'scipy'",
+    "movie_log exists=True path=/project/def-amirs/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/3-Movie_Data/Results/May-05-2023_ 3-10-18_PM_Subject_is_050_selected_run_id_1.mat",
+    "  ERROR No module named 'scipy'",
+    "runs_random exists=True path=/project/def-amirs/raw_original/Control/SUBC01-Session1-2023MAY5/SUBC01_2023MAY05_session1_MATLAB/2-Grating/Results/runs_random.mat",
+    "  ERROR No module named 'scipy'",
+    "Movie1A.mp4 exists=True"
+  ]
+}

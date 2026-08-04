@@ -1,0 +1,8 @@
+2026-07-15 22:42:01 | INFO     | neuro_pipeline.release_dataset | Starting public-release anonymization for /lustre07/scratch/alexrees (openneuro=False)
+2026-07-15 22:42:01 | ERROR    | neuro_pipeline.release_dataset | FATAL: Research BIDS dataset not found: /lustre07/scratch/alexrees/bids. Run the research pipeline (neuro-pipeline) first.
+2026-07-15 22:47:29 | INFO     | neuro_pipeline.release_dataset | Starting public-release anonymization for /lustre07/scratch/alexrees (openneuro=False)
+2026-07-15 22:47:29 | ERROR    | neuro_pipeline.release_dataset | FATAL: Research BIDS dataset not found: /lustre07/scratch/alexrees/bids. Run the research pipeline (neuro-pipeline) first.
+2026-07-15 22:52:45 | INFO     | neuro_pipeline.release_dataset | Starting public-release anonymization for /lustre07/scratch/alexrees (openneuro=False)
+2026-07-15 22:52:45 | ERROR    | neuro_pipeline.release_dataset | FATAL: Research BIDS dataset not found: /lustre07/scratch/alexrees/bids. Run the research pipeline (neuro-pipeline) first.
+2026-07-16 10:25:24 | INFO     | neuro_pipeline.release_dataset | Starting public-release anonymization for /lustre07/scratch/alexrees (openneuro=False)
+2026-07-16 10:25:24 | ERROR    | neuro_pipeline.release_dataset | FATAL: Research BIDS dataset not found: /lustre07/scratch/alexrees/bids. Run the research pipeline (neuro-pipeline) first.

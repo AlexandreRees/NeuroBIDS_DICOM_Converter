@@ -1,0 +1,16 @@
+Counter({'COPIED': 120, 'SKIP_SAME': 16})
+{
+  "generated_utc": "2026-07-29T19:02:57.608497+00:00",
+  "grating_mag_bold_release": 553,
+  "grating_events_release": 514,
+  "grating_events_coverage_pct": 92.9,
+  "grating_without_events": 39,
+  "grating_physio_any_pct": 83.0,
+  "grating_physio_pulse_resp_pct": 76.5,
+  "rest_mag_bold_release": 135,
+  "rest_events": 0,
+  "rest_physio_any_pct": 82.2,
+  "rest_dual_run_sessions": 3,
+  "subjects_incomplete_rest_or_grating": 2
+}
+POST mag bids/release 553/553 | events bids/release 514/514 | release missing events 39

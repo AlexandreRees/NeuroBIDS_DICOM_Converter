@@ -1,0 +1,12 @@
+participant_id	session_id	exists	n_nii	n_json	has_anat	has_func	has_fmap	has_dwi	missing_json_for_nii	fields_scrubbed	status	notes
+sub-057	ses-02	True	66	66	True	True	True	True	0	0	PASS	
+sub-064	ses-02	True	65	65	True	True	True	True	0	0	PASS	
+sub-066	ses-02	True	66	66	True	True	True	True	0	0	PASS	
+sub-067	ses-02	True	66	66	True	True	True	True	0	0	PASS	
+sub-068	ses-02	True	66	66	True	True	True	True	0	0	PASS	
+sub-069	ses-02	True	66	66	True	True	True	True	0	0	PASS	
+sub-072	ses-02	True	66	66	True	True	True	True	0	0	PASS	
+sub-073	ses-02	True	66	66	True	True	True	True	0	0	PASS	
+sub-074	ses-02	True	62	62	True	True	True	True	0	0	PASS	
+sub-078	ses-02	True	27	27	False	True	True	False	0	0	PASS	
+sub-081	ses-02	True	43	43	True	True	True	True	0	0	PASS	

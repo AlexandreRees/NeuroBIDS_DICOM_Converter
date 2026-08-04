@@ -1,0 +1,119 @@
+2026-07-22T11:45:00 [INFO] Privacy audit starting (READ-ONLY)
+2026-07-22T11:45:00 [INFO] Output: /lustre07/scratch/alexrees/reports/privacy_audit
+2026-07-22T11:45:01 [INFO] Software: {'python': '3.11.4', 'platform': 'Linux-5.14.0-687.24.1.el9_8.x86_64-x86_64-AMD_EPYC_7532_32-Core_Processor-with-glibc2.37', 'script': '/lustre07/scratch/alexrees/neuro_pipeline/scripts/run_privacy_audit.py', 'pydicom': '3.0.2+computecanada'}
+2026-07-22T11:45:01 [WARNING] Only source DICOMs were available (`~/scratch/deid_dicom` missing or empty). Burned-in and demographic audits therefore reflect **source** DICOM under `/lustre07/scratch/alexrees/raw_original`, not a release mirror.
+2026-07-22T11:45:01 [INFO] Discovering DICOM files under /lustre07/scratch/alexrees/raw_original ...
+2026-07-22T11:45:01 [INFO] Discovery progress: 200 series dirs (16535 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 400 series dirs (37468 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 600 series dirs (54397 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 800 series dirs (71966 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 1000 series dirs (89484 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 1200 series dirs (105879 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 1400 series dirs (123922 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 1600 series dirs (139976 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 1800 series dirs (157171 DICOM-like names seen)
+2026-07-22T11:45:01 [INFO] Discovery progress: 2000 series dirs (174589 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 2200 series dirs (192198 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 2400 series dirs (207589 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 2600 series dirs (226355 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 2800 series dirs (242849 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 3000 series dirs (259868 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 3200 series dirs (277331 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 3400 series dirs (294849 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 3600 series dirs (311228 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 3800 series dirs (328980 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 4000 series dirs (351812 DICOM-like names seen)
+2026-07-22T11:45:02 [INFO] Discovery progress: 4200 series dirs (369522 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 4400 series dirs (390479 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 4600 series dirs (408478 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 4800 series dirs (425423 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 5000 series dirs (444329 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 5200 series dirs (460650 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 5400 series dirs (477302 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 5600 series dirs (493321 DICOM-like names seen)
+2026-07-22T11:45:03 [INFO] Discovery progress: 5800 series dirs (511520 DICOM-like names seen)
+2026-07-22T11:45:04 [INFO] Discovery progress: 6000 series dirs (528307 DICOM-like names seen)
+2026-07-22T11:45:04 [INFO] Discovery progress: 6200 series dirs (545913 DICOM-like names seen)
+2026-07-22T11:45:04 [INFO] Discovery progress: 6400 series dirs (563063 DICOM-like names seen)
+2026-07-22T11:45:04 [INFO] Discovery progress: 6600 series dirs (581348 DICOM-like names seen)
+2026-07-22T11:45:05 [INFO] Discovery progress: 6800 series dirs (601911 DICOM-like names seen)
+2026-07-22T11:45:05 [INFO] Discovery progress: 7000 series dirs (619505 DICOM-like names seen)
+2026-07-22T11:45:05 [INFO] Discovery progress: 7200 series dirs (635908 DICOM-like names seen)
+2026-07-22T11:45:05 [INFO] Discovery done: inspect=7254 candidates_seen=640066 (one representative instance per series directory (7254 series dirs; 640066 DICOM-like filenames seen))
+2026-07-22T11:45:05 [INFO] Audit 1/3: burned-in / overlays
+2026-07-22T11:45:09 [INFO] Processed 200 / 7254
+2026-07-22T11:45:14 [INFO] Processed 400 / 7254
+2026-07-22T11:45:18 [INFO] Processed 600 / 7254
+2026-07-22T11:45:23 [INFO] Processed 800 / 7254
+2026-07-22T11:45:29 [INFO] Processed 1000 / 7254
+2026-07-22T11:45:33 [INFO] Processed 1200 / 7254
+2026-07-22T11:45:38 [INFO] Processed 1400 / 7254
+2026-07-22T11:45:43 [INFO] Processed 1600 / 7254
+2026-07-22T11:45:49 [INFO] Processed 1800 / 7254
+2026-07-22T11:45:54 [INFO] Processed 2000 / 7254
+2026-07-22T11:45:59 [INFO] Processed 2200 / 7254
+2026-07-22T11:46:04 [INFO] Processed 2400 / 7254
+2026-07-22T11:46:09 [INFO] Processed 2600 / 7254
+2026-07-22T11:46:14 [INFO] Processed 2800 / 7254
+2026-07-22T11:46:19 [INFO] Processed 3000 / 7254
+2026-07-22T11:46:24 [INFO] Processed 3200 / 7254
+2026-07-22T11:46:28 [INFO] Processed 3400 / 7254
+2026-07-22T11:46:33 [INFO] Processed 3600 / 7254
+2026-07-22T11:46:38 [INFO] Processed 3800 / 7254
+2026-07-22T11:46:43 [INFO] Processed 4000 / 7254
+2026-07-22T11:46:48 [INFO] Processed 4200 / 7254
+2026-07-22T11:46:52 [INFO] Processed 4400 / 7254
+2026-07-22T11:46:58 [INFO] Processed 4600 / 7254
+2026-07-22T11:47:04 [INFO] Processed 4800 / 7254
+2026-07-22T11:47:10 [INFO] Processed 5000 / 7254
+2026-07-22T11:47:14 [INFO] Processed 5200 / 7254
+2026-07-22T11:47:20 [INFO] Processed 5400 / 7254
+2026-07-22T11:47:25 [INFO] Processed 5600 / 7254
+2026-07-22T11:47:30 [INFO] Processed 5800 / 7254
+2026-07-22T11:47:34 [INFO] Processed 6000 / 7254
+2026-07-22T11:47:40 [INFO] Processed 6200 / 7254
+2026-07-22T11:47:45 [INFO] Processed 6400 / 7254
+2026-07-22T11:47:50 [INFO] Processed 6600 / 7254
+2026-07-22T11:47:55 [INFO] Processed 6800 / 7254
+2026-07-22T11:48:00 [INFO] Processed 7000 / 7254
+2026-07-22T11:48:05 [INFO] Processed 7200 / 7254
+2026-07-22T11:48:06 [INFO] Audit 2/3: demographic identifiers
+2026-07-22T11:48:09 [INFO] Processed 200 / 7254
+2026-07-22T11:48:12 [INFO] Processed 400 / 7254
+2026-07-22T11:48:16 [INFO] Processed 600 / 7254
+2026-07-22T11:48:20 [INFO] Processed 800 / 7254
+2026-07-22T11:48:23 [INFO] Processed 1000 / 7254
+2026-07-22T11:48:25 [INFO] Processed 1200 / 7254
+2026-07-22T11:48:28 [INFO] Processed 1400 / 7254
+2026-07-22T11:48:30 [INFO] Processed 1600 / 7254
+2026-07-22T11:48:32 [INFO] Processed 1800 / 7254
+2026-07-22T11:48:34 [INFO] Processed 2000 / 7254
+2026-07-22T11:48:37 [INFO] Processed 2200 / 7254
+2026-07-22T11:48:39 [INFO] Processed 2400 / 7254
+2026-07-22T11:48:41 [INFO] Processed 2600 / 7254
+2026-07-22T11:48:44 [INFO] Processed 2800 / 7254
+2026-07-22T11:48:47 [INFO] Processed 3000 / 7254
+2026-07-22T11:48:49 [INFO] Processed 3200 / 7254
+2026-07-22T11:48:51 [INFO] Processed 3400 / 7254
+2026-07-22T11:48:54 [INFO] Processed 3600 / 7254
+2026-07-22T11:48:56 [INFO] Processed 3800 / 7254
+2026-07-22T11:48:59 [INFO] Processed 4000 / 7254
+2026-07-22T11:49:01 [INFO] Processed 4200 / 7254
+2026-07-22T11:49:04 [INFO] Processed 4400 / 7254
+2026-07-22T11:49:07 [INFO] Processed 4600 / 7254
+2026-07-22T11:49:10 [INFO] Processed 4800 / 7254
+2026-07-22T11:49:13 [INFO] Processed 5000 / 7254
+2026-07-22T11:49:17 [INFO] Processed 5200 / 7254
+2026-07-22T11:49:19 [INFO] Processed 5400 / 7254
+2026-07-22T11:49:22 [INFO] Processed 5600 / 7254
+2026-07-22T11:49:24 [INFO] Processed 5800 / 7254
+2026-07-22T11:49:26 [INFO] Processed 6000 / 7254
+2026-07-22T11:49:28 [INFO] Processed 6200 / 7254
+2026-07-22T11:49:30 [INFO] Processed 6400 / 7254
+2026-07-22T11:49:32 [INFO] Processed 6600 / 7254
+2026-07-22T11:49:35 [INFO] Processed 6800 / 7254
+2026-07-22T11:49:36 [INFO] Processed 7000 / 7254
+2026-07-22T11:49:37 [INFO] Processed 7200 / 7254
+2026-07-22T11:49:38 [INFO] Audit 3/3: BIDS free-text
+2026-07-22T11:49:38 [INFO] Scanning BIDS JSON sidecars under /lustre07/scratch/alexrees/bids
+2026-07-22T11:56:40 [INFO] Privacy audit complete → /lustre07/scratch/alexrees/reports/privacy_audit

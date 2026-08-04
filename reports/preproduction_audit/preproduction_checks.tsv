@@ -1,0 +1,7 @@
+check_id	check_name	status	n_issues	details
+1	every_subject_has_mapping_entry	PASS	0	
+2	valid_session_identifiers	PASS	0	
+3	no_duplicated_subject_session_series	PASS	0	
+4	no_missing_bids_plan_filenames	PASS	0	
+5	no_acquisition_without_modality	PASS	0	
+6	no_unresolved_matlab_timing_conflict	PASS	0	

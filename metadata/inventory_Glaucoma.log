@@ -1,0 +1,47 @@
+2026-07-15 10:26:39 | INFO     | __main__ | Inventory started
+2026-07-15 10:26:39 | INFO     | __main__ | Requested cohort filter: Glaucoma
+2026-07-15 10:26:39 | INFO     | __main__ | No previous inventory_Glaucoma.csv found.
+2026-07-15 10:26:39 | INFO     | __main__ | No previous inventory_Glaucoma_summary.json found.
+2026-07-15 10:26:39 | INFO     | __main__ | No previous inventory_Glaucoma.log found.
+2026-07-15 10:26:39 | INFO     | __main__ | Starting inventory (read-only) for /lustre07/scratch/alexrees
+2026-07-15 10:26:39 | INFO     | __main__ | Discovered 1 cohort(s) under /lustre07/scratch/alexrees/raw_original: ['Glaucoma']
+2026-07-15 10:26:39 | INFO     | __main__ | Scanning cohort 'Glaucoma' at /lustre07/scratch/alexrees/raw_original/Glaucoma
+2026-07-15 10:36:43 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=5000 dicom_candidates=4967 elapsed=603.9s
+2026-07-15 10:50:21 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=10000 dicom_candidates=9882 elapsed=1422.5s
+2026-07-15 11:12:03 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=15000 dicom_candidates=14799 elapsed=2724.5s
+2026-07-15 11:45:50 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=20000 dicom_candidates=19799 elapsed=4751.7s
+2026-07-15 12:11:35 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=25000 dicom_candidates=24747 elapsed=6296.6s
+2026-07-15 12:31:05 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=30000 dicom_candidates=29706 elapsed=7466.5s
+2026-07-15 12:45:19 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=35000 dicom_candidates=34627 elapsed=8320.6s
+2026-07-15 12:59:28 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=40000 dicom_candidates=39572 elapsed=9169.4s
+2026-07-15 13:14:43 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=45000 dicom_candidates=44572 elapsed=10083.8s
+2026-07-15 13:30:30 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=50000 dicom_candidates=49518 elapsed=11031.2s
+2026-07-15 13:44:20 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=55000 dicom_candidates=54419 elapsed=11861.3s
+2026-07-15 13:57:53 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=60000 dicom_candidates=59350 elapsed=12674.1s
+2026-07-15 14:11:01 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=65000 dicom_candidates=64324 elapsed=13462.1s
+2026-07-15 14:24:57 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=70000 dicom_candidates=69255 elapsed=14298.6s
+2026-07-15 14:40:49 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=75000 dicom_candidates=74255 elapsed=15249.8s
+2026-07-15 14:52:35 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=80000 dicom_candidates=79207 elapsed=15956.4s
+2026-07-15 15:08:24 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=85000 dicom_candidates=84159 elapsed=16905.0s
+2026-07-15 15:29:39 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=90000 dicom_candidates=89085 elapsed=18180.1s
+2026-07-15 15:51:46 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=95000 dicom_candidates=94059 elapsed=19507.4s
+2026-07-15 16:15:52 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=100000 dicom_candidates=99005 elapsed=20953.7s
+2026-07-15 16:34:04 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=105000 dicom_candidates=103932 elapsed=22045.2s
+2026-07-15 16:51:22 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=110000 dicom_candidates=108812 elapsed=23082.8s
+2026-07-15 17:14:18 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=115000 dicom_candidates=113763 elapsed=24458.9s
+2026-07-15 17:32:22 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=120000 dicom_candidates=118715 elapsed=25543.7s
+2026-07-15 17:47:57 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=125000 dicom_candidates=123622 elapsed=26478.5s
+2026-07-15 18:05:21 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=130000 dicom_candidates=128547 elapsed=27522.1s
+2026-07-15 18:22:08 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=135000 dicom_candidates=133521 elapsed=28529.3s
+2026-07-15 18:47:57 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=140000 dicom_candidates=138447 elapsed=30077.9s
+2026-07-15 19:29:24 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=145000 dicom_candidates=143343 elapsed=32565.5s
+2026-07-15 19:49:09 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=150000 dicom_candidates=148317 elapsed=33750.3s
+2026-07-15 20:04:35 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=155000 dicom_candidates=153283 elapsed=34675.9s
+2026-07-15 20:24:53 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=160000 dicom_candidates=158236 elapsed=35893.9s
+2026-07-15 20:45:16 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=165000 dicom_candidates=163183 elapsed=37117.1s
+2026-07-15 21:06:54 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=170000 dicom_candidates=168066 elapsed=38415.1s
+2026-07-15 21:18:48 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=175000 dicom_candidates=173066 elapsed=39129.2s
+2026-07-15 21:29:27 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=180000 dicom_candidates=177977 elapsed=39768.6s
+2026-07-15 21:41:39 | INFO     | __main__ | Inventory scan progress cohort=Glaucoma files_scanned=185000 dicom_candidates=182902 elapsed=40500.3s
+2026-07-15 21:51:09 | INFO     | __main__ | Inventory scan completed cohort=Glaucoma files_scanned=188525 dicom_candidates=186396 elapsed=41070.0s
+2026-07-15 21:51:09 | INFO     | __main__ | Subjects discovered: 19 | Sessions discovered: 29 | Subjects with 1 session: 9 | Subjects with 2 sessions: 10 | Subjects with >2 sessions: 0

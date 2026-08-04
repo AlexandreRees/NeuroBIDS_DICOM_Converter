@@ -1,0 +1,16 @@
+{
+  "canonical_normalizations": 13,
+  "identifier_mismatches": 0,
+  "identifier_not_present": 3,
+  "inventory_rows": 543,
+  "no_dicom_subjects": 0,
+  "sessions_discovered": 2,
+  "subjects_discovered": 7,
+  "subjects_with_more_than_two_sessions": 0,
+  "subjects_with_one_session": 6,
+  "subjects_with_two_sessions": 1,
+  "total_sessions": 8,
+  "total_subjects": 7,
+  "validated_from_dicom": 5,
+  "warnings_total": 3
+}

@@ -1,0 +1,89 @@
+task	basename	sha256	pattern	severity	line_approx	match_preview	publishable
+movie_fov	Show_movie.m	88923aeac42f475df28b7e0534d7bff21269fa4989bf60bbfdef003a68b6ac90		NONE			yes
+movie_fov	main.m	fa01b62dff72ec1d7a9358caa3da20518d215b02aaad0cc9ce171974ab3839d3	Subject	LOW	44	Subject	review
+movie_fov	main.m	fa01b62dff72ec1d7a9358caa3da20518d215b02aaad0cc9ce171974ab3839d3	Subject	LOW	46	Subject	review
+grating	CheckerFlickerSine.m	ecabb3cc084a1001833f86c4f68f5a42424d38dc6d8b8b89840681ae1306412f		NONE			yes
+grating	CheckerFlickerSquare.m	8b86145749ab438c9eaa8da62fa8a52cf018f3ce88ec5cdca6758450e2cbc36c		NONE			yes
+grating	CheckerMoveSine.m	efbde7f7ed1e2f982f30e454a765a6014bf8d513c69412832c67f6d6b4a62337		NONE			yes
+grating	CheckerMoveSquare.m	29be5c7f2fd2ced0aafb0577ae99237cfdcd9a71884441f13fa53aaddcd92a34		NONE			yes
+grating	GratingStimulus1.m	1bb67cee02e61bb0b79df1ded4231be6d0401cbe0d45d99783e89e816f184c49		NONE			yes
+grating	GratingStimulus2.m	3162e00be9173d911c0a664ea662c4da657d5c4ffcf9f298233288f18802a7ed		NONE			yes
+grating	GratingStimulus3.m	a1be718f9b2a06b59968f9d3b34a5b343e18a189fbacc8da6f7be86691751dc3		NONE			yes
+grating	GratingStimulus4.m	c5131f08f019fe78de4921dc1a3c155f8e07a2981e0199ab6ec2771738aeb040		NONE			yes
+grating	GratingStimulus5.m	a2bba53c71aee6434132b4e35bab9c9a3e69e6aee761c88d831ed63d04a3bc33		NONE			yes
+grating	RandomGenerator.m	2792bc41f6ebab876b03439b47f95ec75814a222dacb2e373f177afa521e2f6b	Subject	LOW	21	Subject	review
+grating	main.m	f94dbbd903ed321a13ed625576c7cf8fbcc6752fe8765cd1f98391346a7c3549	Subject	LOW	18	Subject	review
+grating	main.m	f94dbbd903ed321a13ed625576c7cf8fbcc6752fe8765cd1f98391346a7c3549	Subject	LOW	20	Subject	review
+grating	presentStimParams.m	a27ac8fca0d2d39e90d6d219a43d950d1bb7f755b23acbae4acb3edd9a567a6f		NONE			yes
+movie	Show_movie.m	83ade7957408103126c86b4ef0ac8892e804caafd7f901bd353ee8318027ccb4		NONE			yes
+rest	main.m	74778260f4f032759fcd2c8710b6a7fce85209be1b63257f0540cbe1cb324253		NONE			yes
+grating	main.m	7b6e48e0242beb02cd4d6ba2771ca5ff18a6c6ebeb5e4cd8408518f4796076a2	Subject	LOW	19	Subject	review
+grating	main.m	7b6e48e0242beb02cd4d6ba2771ca5ff18a6c6ebeb5e4cd8408518f4796076a2	Subject	LOW	21	Subject	review
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	WindowsUserPath	HIGH	8	C:\Users\Mendola	no
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	WindowsUserPath	HIGH	86	C:\Users\Mendola	no
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	WindowsUserPath	HIGH	90	C:\Users\Mendola	no
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	WindowsUserPath	HIGH	95	C:\Users\Mendola	no
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	WindowsUserPath	HIGH	99	C:\Users\Mendola	no
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	DesktopPath	MEDIUM	8	\Desktop\	review
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	DesktopPath	MEDIUM	86	\Desktop\	review
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	DesktopPath	MEDIUM	90	\Desktop\	review
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	DesktopPath	MEDIUM	95	\Desktop\	review
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	DesktopPath	MEDIUM	99	\Desktop\	review
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	Subject	LOW	57	Subject	review
+movie	main.m	1aab337d9f67bc7fea3f0b95dfdff182ad43057c04c553e95b256c38a0ae6f01	Subject	LOW	59	Subject	review
+rest	main.m	cbf1d5c8c657920e1b5bdef74da7008f11407abce4608a7e4120e7796f210ea8		NONE			yes
+grating	main.m	b16ca3d15659a836c2fd1bb9bf45247966a278933803365bc0f232b650d398f7	Subject	LOW	18	Subject	review
+grating	main.m	b16ca3d15659a836c2fd1bb9bf45247966a278933803365bc0f232b650d398f7	Subject	LOW	20	Subject	review
+rest	main.m	9c436c36b0eb0436729fd80b4c5c593d233afa96d5e1c3547b9c546e3c0e4b43		NONE			yes
+rest	main.m	44f24140355ff1f0d33cdfc93608c853982f352725be54061217a8ca6409a9f4		NONE			yes
+rest	main.m	25adcec023dee7a269f8f5ccb11574009b72687edd4f2bd8026ea5f769cad603		NONE			yes
+rest	main.m	eb495c47ef84a9f514f4abfdbb3286eafc66ebec865bdde3bb92b488523dccc3		NONE			yes
+movie	Show_movie.m	eb9dc42739c61be26c0a798ab16472c6de12d77008a5bb5fd0f7bf034b14fbf5		NONE			yes
+movie	main.m	8a7291c3500c94528364c25f6ebd4c8f500e342dfa3df74428b3e3e566f787f2	Subject	LOW	44	Subject	review
+movie	main.m	8a7291c3500c94528364c25f6ebd4c8f500e342dfa3df74428b3e3e566f787f2	Subject	LOW	46	Subject	review
+grating	main.m	79191c1fdedba9918845dae425a54ec29c97506f117fcb60c0224e134ae73396	Subject	LOW	19	Subject	review
+grating	main.m	79191c1fdedba9918845dae425a54ec29c97506f117fcb60c0224e134ae73396	Subject	LOW	21	Subject	review
+rest	main.m	b705994ee3aab5a70aebcd7ec66f44f5bbb06ad00f6d06bf94e170c3d5505520		NONE			yes
+rest	main.m	9aaad8cfb1c13e02b6c562efbb6ec412565d28eae2b8474647e3b88b46c34b77		NONE			yes
+grating	GratingStimulus1.m	0f99c992f15ba7107ae0d5df6b25307e5fd867f937adfabde877ea6e047582df		NONE			yes
+rest	main.m	a47bb2b2d68e80f9f570158d74e3cc8b59eba4ff9fe8ed572dd114524cfded6c		NONE			yes
+rest	main.m	44483d042725187bd115b233649e7760a586f23df420200e042243f051b7c422		NONE			yes
+grating	main.m	af51f7d9adfff7d2178f46dcfe4b4ed974c2200a4251182a5df87c402b696e22	Subject	LOW	19	Subject	review
+grating	main.m	af51f7d9adfff7d2178f46dcfe4b4ed974c2200a4251182a5df87c402b696e22	Subject	LOW	21	Subject	review
+rest	main.m	3e856f838e0760795aaa929bde723f032773f1f1d3575a9d68d1e5f525164f5b		NONE			yes
+rest	main.m	68dbcb3d822e6ea8b9d960e8910bb3b5560d3f32880b9117ebf3b086153c31a7		NONE			yes
+rest	main.m	066aa85415f51a30f57df736dae3e77f820527b4626afd645a9a3aebd9046b69		NONE			yes
+rest	main.m	32671a13375fff3e8e92f5216d8d1de95b6ac9b3da8bff3d616325b852220988		NONE			yes
+rest	main.m	dc62421c288e4612ad526adb4ed78edb71178f544b50eacf979fe5f5d5461d14		NONE			yes
+rest	main.m	ec9729f492ee694994595f22c7e8a83b5f3631afccab45fc2f1992b5825363fc		NONE			yes
+rest	main.m	7d4a7fa50da019890127cbaaba34a60097d566d608a6f533aa301b91f0803f04		NONE			yes
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	WindowsUserPath	HIGH	8	C:\Users\Mendola	no
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	WindowsUserPath	HIGH	86	C:\Users\Mendola	no
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	WindowsUserPath	HIGH	90	C:\Users\Mendola	no
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	WindowsUserPath	HIGH	95	C:\Users\Mendola	no
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	WindowsUserPath	HIGH	99	C:\Users\Mendola	no
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	DesktopPath	MEDIUM	8	\Desktop\	review
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	DesktopPath	MEDIUM	86	\Desktop\	review
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	DesktopPath	MEDIUM	90	\Desktop\	review
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	DesktopPath	MEDIUM	95	\Desktop\	review
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	DesktopPath	MEDIUM	99	\Desktop\	review
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	Subject	LOW	57	Subject	review
+movie	main.m	620c8c7b6425be2ae3441f93f2f1b4253414322a5c25f4ffac306c329cdd3007	Subject	LOW	59	Subject	review
+rest	main.m	bef4c0480b2027c16e4ebe257ecd2a3449089663072eba349c901891cb3f6790		NONE			yes
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	WindowsUserPath	HIGH	9	C:\Users\Mendola	no
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	WindowsUserPath	HIGH	87	C:\Users\Mendola	no
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	WindowsUserPath	HIGH	91	C:\Users\Mendola	no
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	WindowsUserPath	HIGH	96	C:\Users\Mendola	no
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	WindowsUserPath	HIGH	100	C:\Users\Mendola	no
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	DesktopPath	MEDIUM	9	\Desktop\	review
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	DesktopPath	MEDIUM	87	\Desktop\	review
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	DesktopPath	MEDIUM	91	\Desktop\	review
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	DesktopPath	MEDIUM	96	\Desktop\	review
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	DesktopPath	MEDIUM	100	\Desktop\	review
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	Subject	LOW	58	Subject	review
+movie	main.m	c0ca9dbb15a8af64e5786e9c8e735e932539dcff6a02b1d94f45060390ec4af9	Subject	LOW	60	Subject	review
+rest	main.m	6b27aefac84bd32dfe2bde121269264b88bda6f01f4405ad1b01e8a2007413de		NONE			yes
+rest	main.m	4212350d203b1893f5a88ef3be2b02a95ecd6d0acdfa44656fd01da281e4035f		NONE			yes
+rest	main.m	f99f5b8d439c8467de6669ea8d0189aec8a8c6bd2289a773baa85225a6394978		NONE			yes
+grating	main.m	541617db8e7291e0b85d2a8629b412711da83fda08f82f980ad1930bb02842f4	Subject	LOW	19	Subject	review
+grating	main.m	541617db8e7291e0b85d2a8629b412711da83fda08f82f980ad1930bb02842f4	Subject	LOW	21	Subject	review

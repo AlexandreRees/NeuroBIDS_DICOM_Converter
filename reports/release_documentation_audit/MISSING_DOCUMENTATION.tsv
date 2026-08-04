@@ -1,0 +1,16 @@
+document	expected_path	status	criticality	note
+README.md	/lustre07/scratch/alexrees/release_dataset/README.md	PRESENT	critical	
+dataset_description.json	/lustre07/scratch/alexrees/release_dataset/dataset_description.json	PRESENT	critical	
+CHANGES.md	/lustre07/scratch/alexrees/release_dataset/CHANGES.md	PRESENT	recommended	
+CHANGES (alternate)	/lustre07/scratch/alexrees/release_dataset/CHANGES	N/A	critical_if_no_CHANGES.md	CHANGES.md present
+LICENSE	/lustre07/scratch/alexrees/release_dataset/LICENSE	PRESENT	critical	
+participants.tsv	/lustre07/scratch/alexrees/release_dataset/participants.tsv	PRESENT	critical	
+participants.json	/lustre07/scratch/alexrees/release_dataset/participants.json	PRESENT	critical	
+acquisition_protocol.md	/lustre07/scratch/alexrees/release_dataset/docs/acquisition_protocol.md	PRESENT	critical	
+quality_control.md	/lustre07/scratch/alexrees/release_dataset/docs/quality_control.md	PRESENT	critical	
+data_dictionary.md	/lustre07/scratch/alexrees/release_dataset/docs/data_dictionary.md	PRESENT	critical	
+task_descriptions.md	/lustre07/scratch/alexrees/release_dataset/docs/task_descriptions.md	PRESENT	critical	
+physiology_methods.md	/lustre07/scratch/alexrees/release_dataset/docs/physiology_methods.md	PRESENT	critical	
+limitations.md	/lustre07/scratch/alexrees/release_dataset/docs/limitations.md	PRESENT	critical	
+software_versions.md	/lustre07/scratch/alexrees/release_dataset/docs/software_versions.md	PRESENT	critical	
+provenance.md	/lustre07/scratch/alexrees/release_dataset/docs/provenance.md	PRESENT	critical	

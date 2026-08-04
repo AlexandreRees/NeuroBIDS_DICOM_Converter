@@ -1,0 +1,39 @@
+{
+  "generated": "2026-07-22T12:59:52.320868-04:00",
+  "pydeface_version": "2.0.0+computecanada",
+  "pydeface_executable": "/home/alexrees/defacing_env/bin/pydeface",
+  "original_bids": "/home/alexrees/scratch/bids",
+  "defaced_dir": "/home/alexrees/scratch/derivatives/defacing",
+  "subject": "sub-070",
+  "session": "ses-01",
+  "n_targets": 2,
+  "n_pass": 2,
+  "n_skip": 0,
+  "n_fail": 0,
+  "records": [
+    {
+      "subject": "sub-070",
+      "session": "ses-01",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-070/ses-01/anat/sub-070_ses-01_run-01_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-070/ses-01/anat/sub-070_ses-01_run-01_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "312.448",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-070",
+      "session": "ses-01",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-070/ses-01/anat/sub-070_ses-01_run-02_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-070/ses-01/anat/sub-070_ses-01_run-02_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "319.593",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    }
+  ]
+}

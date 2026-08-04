@@ -1,0 +1,9 @@
+qc_component	status	paths	notes
+MRIQC	AVAILABLE	derivatives/mriqc; reports/mriqc	Presence of directory/file only; content completeness NOT fully validated here
+DWI QC	AVAILABLE	derivatives/dmriqc; reports/dwi_qc	Presence of directory/file only; content completeness NOT fully validated here
+Physiology QC	AVAILABLE	derivatives/physiology_qc; reports/physiology_audit	Presence of directory/file only; content completeness NOT fully validated here
+Physiology characterization	AVAILABLE	derivatives/physiology_characterization	Presence of directory/file only; content completeness NOT fully validated here
+Visual QC / Pizarro	AVAILABLE	reports/pizarro_qc_revised; reports/pizarro_qc_scientific_data; reports/pizarro_qc_split_figures_v2	Presence of directory/file only; content completeness NOT fully validated here
+Functional validation	AVAILABLE	reports/functional_mri_paradigm_report.md; reports/grating_rest_publication_audit	Presence of directory/file only; content completeness NOT fully validated here
+Technical validation	AVAILABLE	reports/scientific_data_docs; reports/bids_validation_scientific_data	Presence of directory/file only; content completeness NOT fully validated here
+Defacing audit	AVAILABLE	reports/defacing; derivatives/defacing	Presence of directory/file only; content completeness NOT fully validated here

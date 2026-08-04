@@ -1,0 +1,248 @@
+original_identifier	normalized_identifier	source_file	number_of_matches	confidence
+SUBC001	SUBC001	May-05-2023_ 2-07-14_PM  The Right Eye is _ eye =0 .mat	430	HIGH
+SUBC002	SUBC002	May-11-2023_ 1-47-42_PM  The Right Eye is _ eye =1 .mat	434	HIGH
+SUBC003	SUBC003	May-19-2023_12-45-48_PM  The Right Eye is _ eye =1 .mat	432	HIGH
+SUBC004	SUBC004	GreenLevel.mat	360	HIGH
+SUBC005	SUBC005	May-16-2023_ 1-04-27_PM  The Right Eye is _ eye =0 .mat	446	HIGH
+SUBC006	SUBC006	May-16-2023_ 1-04-27_PM  The Right Eye is _ eye =0 .mat	438	HIGH
+SUBC007	SUBC007	May-31-2023_ 1-43-53_PM  The Right Eye is _ eye =1 .mat	446	HIGH
+SUBC008	SUBC008	June-02-2023_ 9-40-30_AM  The Right Eye is _ eye =0 .mat	440	HIGH
+SUBC009	SUBC009	June-08-2023_ 9-37-11_AM  The Right Eye is _ eye =1 .mat	436	HIGH
+SUBC01-Session1-2023MAY5	SUBC01-Session1-2023MAY5	session_mapping.csv:source_subject_folder	74	LOW
+SUBC01-Session2-2023NOV08	SUBC01-Session2-2023NOV08	session_mapping.csv:source_subject_folder	75	LOW
+SUBC010	SUBC010	GreenLevel.mat	186	HIGH
+SUBC011	SUBC011	July-11-2023_11-31-59_AM  The Right Eye is _ eye =1 .mat	454	HIGH
+SUBC012	SUBC012	July-11-2023_11-31-59_AM  The Right Eye is _ eye =1 .mat	528	HIGH
+SUBC013	SUBC013	GreenLevel.mat	258	HIGH
+SUBC014	SUBC014	July-11-2023_11-31-59_AM  The Right Eye is _ eye =1 .mat	226	HIGH
+SUBC015	SUBC015	August-07-2023_ 9-42-42_AM  The Right Eye is _ eye =1 .mat	431	HIGH
+SUBC016	SUBC016	GreenLevel.mat	432	HIGH
+SUBC017	SUBC017	August-18-2023_ 2-48-20_PM  The Right Eye is _ eye =1 .mat	430	HIGH
+SUBC018	SUBC018	August-28-2023_ 1-06-24_PM  The Right Eye is _ eye =1 .mat	219	HIGH
+SUBC02-Session1-2023MAY11	SUBC02-Session1-2023MAY11	session_mapping.csv:source_subject_folder	78	LOW
+SUBC020	SUBC020	September-07-2023_ 2-13-06_PM  The Right Eye is _ eye =1 .mat	425	HIGH
+SUBC021	SUBC021	September-09-2023_10-30-00_AM  The Right Eye is _ eye =1 .mat	217	HIGH
+SUBC022	SUBC022	September-28-2023_12-55-42_PM  The Right Eye is _ eye =1 .mat	437	HIGH
+SUBC023	SUBC023	October-05-2023_ 9-12-22_AM  The Right Eye is _ eye =1 .mat	427	HIGH
+SUBC024	SUBC024	GreenLevel.mat	432	HIGH
+SUBC025	SUBC025	GreenLevel.mat	445	HIGH
+SUBC026	SUBC026	GreenLevel.mat	434	HIGH
+SUBC027	SUBC027	July-17-2024_ 4-11-07_PM  The Right Eye is _ eye =1 .mat	422	HIGH
+SUBC028	SUBC028	GreenLevel.mat	424	HIGH
+SUBC028_Session01_2023DEC09	SUBC028_Session01_2023DEC09	session_mapping.csv:source_subject_folder	76	LOW
+SUBC029	SUBC029	December-16-2023_11-38-26_AM  The Right Eye is _ eye =1 .mat	426	HIGH
+SUBC029_Session01_2023DEC16	SUBC029_Session01_2023DEC16	session_mapping.csv:source_subject_folder	75	LOW
+SUBC02_SESSION02_20NOV2023	SUBC02_SESSION02_20NOV2023	session_mapping.csv:source_subject_folder	75	LOW
+SUBC03-Session01-2023MAY19	SUBC03-Session01-2023MAY19	session_mapping.csv:source_subject_folder	75	LOW
+SUBC030	SUBC030	GreenLevel.mat	422	HIGH
+SUBC031	SUBC031	July-30-2024_ 8-38-04_AM  The Right Eye is _ eye =1 .mat	489	HIGH
+SUBC031_Session2_2024JUL30	SUBC031_Session2_2024JUL30	session_mapping.csv:source_subject_folder	75	LOW
+SUBC032	SUBC032	February-03-2024_10-29-37_AM  The Right Eye is _ eye =1 .mat	423	HIGH
+SUBC033	SUBC033	February-09-2024_ 2-14-40_PM  The Right Eye is _ eye =1 .mat	271	HIGH
+SUBC034	SUBC034	February-12-2024_ 1-09-41_PM  The Right Eye is _ eye =1 .mat	188	HIGH
+SUBC035	SUBC035	GreenLevel.mat	421	HIGH
+SUBC035_Session02_2024AUG27	SUBC035_Session02_2024AUG27	session_mapping.csv:source_subject_folder	76	LOW
+SUBC036	SUBC036	February-27-2024_ 2-18-53_PM  The Right Eye is _ eye =1 .mat	432	HIGH
+SUBC037	SUBC037	GreenLevel.mat	422	HIGH
+SUBC037_Session02_2024AUG30	SUBC037_Session02_2024AUG30	session_mapping.csv:source_subject_folder	75	LOW
+SUBC038	SUBC038	March-07-2024_ 2-23-07_PM  The Right Eye is _ eye =1 .mat	212	HIGH
+SUBC039	SUBC039	March-10-2024_ 9-32-51_AM  The Right Eye is _ eye =1 .mat	429	HIGH
+SUBC03_Session2_2023NOV10	SUBC03_Session2_2023NOV10	session_mapping.csv:source_subject_folder	75	LOW
+SUBC04-SESSION01-2023MAY22	SUBC04-SESSION01-2023MAY22	session_mapping.csv:source_subject_folder	75	LOW
+SUBC04-SESSION2-2023NOV19	SUBC04-SESSION2-2023NOV19	session_mapping.csv:source_subject_folder	75	LOW
+SUBC040	SUBC040	March-18-2024_ 4-44-31_PM  The Right Eye is _ eye =1 .mat	424	HIGH
+SUBC041	SUBC041	March-21-2024_ 2-55-12_PM  The Right Eye is _ eye =1 .mat	472	HIGH
+SUBC042	SUBC042	May-06-2024_ 9-24-36_AM  The Right Eye is _ eye =1 .mat	434	HIGH
+SUBC043	SUBC043	May-13-2024_ 2-47-01_PM  The Right Eye is _ eye =1 .mat	212	HIGH
+SUBC044	SUBC044	July-25-2024_ 4-45-34_PM  The Right Eye is _ eye =1 .mat	407	HIGH
+SUBC045	SUBC045	GreenLevel.mat	418	HIGH
+SUBC046	SUBC046	August-23-2024_ 1-17-21_PM  The Right Eye is _ eye =1 .mat	210	HIGH
+SUBC047	SUBC047	GreenLevel.mat	426	HIGH
+SUBC048	SUBC048	GreenLevel.mat	395	HIGH
+SUBC049	SUBC049	September-19-2024_ 4-16-42_PM  The Right Eye is _ eye =1 .mat	421	HIGH
+SUBC05-Session1-2023MAY24	SUBC05-Session1-2023MAY24	session_mapping.csv:source_subject_folder	80	LOW
+SUBC05-Session2-2023NOV25	SUBC05-Session2-2023NOV25	session_mapping.csv:source_subject_folder	75	LOW
+SUBC050	SUBC050	GreenLevel.mat	355	HIGH
+SUBC051	SUBC051	October-15-2024_ 1-00-46_PM  The Right Eye is _ eye =1 .mat	212	HIGH
+SUBC052	SUBC052	SUBC052_SESSION01_2024NOV05.ecg	156	HIGH
+SUBC053	SUBC053	GreenLevel.mat	417	HIGH
+SUBC054	SUBC054	GreenLevel.mat	268	HIGH
+SUBC055	SUBC055	February-11-2025_ 2-44-07_PM  The Right Eye is _ eye =1 .mat	390	HIGH
+SUBC056	SUBC056	May-15-2025_ 1-09-06_PM  The Right Eye is _ eye =1 .mat	138	HIGH
+SUBC057	SUBC057	GreenLevel.mat	178	HIGH
+SUBC06-Session1-2023MAY25	SUBC06-Session1-2023MAY25	session_mapping.csv:source_subject_folder	75	LOW
+SUBC06_Session02_2023DEC14	SUBC06_Session02_2023DEC14	session_mapping.csv:source_subject_folder	75	LOW
+SUBC07-Session1-2023MAY31	SUBC07-Session1-2023MAY31	session_mapping.csv:source_subject_folder	81	LOW
+SUBC07-Session2-2023NOV24	SUBC07-Session2-2023NOV24	session_mapping.csv:source_subject_folder	75	LOW
+SUBC08-Session1-2023Jun02	SUBC08-Session1-2023Jun02	session_mapping.csv:source_subject_folder	83	LOW
+SUBC08-Session2-2023DEC11	SUBC08-Session2-2023DEC11	session_mapping.csv:source_subject_folder	71	LOW
+SUBC09-Session1-2023JUN08	SUBC09-Session1-2023JUN08	session_mapping.csv:source_subject_folder	75	LOW
+SUBC09_Session02_2023DEC02	SUBC09_Session02_2023DEC02	session_mapping.csv:source_subject_folder	76	LOW
+SUBC10-Session1-2023JUL05	SUBC10-Session1-2023JUL05	session_mapping.csv:source_subject_folder	67	LOW
+SUBC11-Session1-2023JUL11	SUBC11-Session1-2023JUL11	session_mapping.csv:source_subject_folder	81	LOW
+SUBC11_Session02_2024JAN10	SUBC11_Session02_2024JAN10	session_mapping.csv:source_subject_folder	77	LOW
+SUBC12-Session01-2023JUL12	SUBC12-Session01-2023JUL12	session_mapping.csv:source_subject_folder	79	LOW
+SUBC12_Session02_2024JAN09	SUBC12_Session02_2024JAN09	session_mapping.csv:source_subject_folder	76	LOW
+SUBC13-Session1-2023JUL17	SUBC13-Session1-2023JUL17	session_mapping.csv:source_subject_folder	75	LOW
+SUBC14-Session1-2023JUL19	SUBC14-Session1-2023JUL19	session_mapping.csv:source_subject_folder	75	LOW
+SUBC15-Session1-2023AUG07	SUBC15-Session1-2023AUG07	session_mapping.csv:source_subject_folder	79	LOW
+SUBC15_Session02_2024FEB08	SUBC15_Session02_2024FEB08	session_mapping.csv:source_subject_folder	75	LOW
+SUBC16-SESSION2-2024FEB07	SUBC16-SESSION2-2024FEB07	session_mapping.csv:source_subject_folder	80	LOW
+SUBC16-Session1-2023AUG08	SUBC16-Session1-2023AUG08	session_mapping.csv:source_subject_folder	75	LOW
+SUBC17-Session1-2023AUG18	SUBC17-Session1-2023AUG18	session_mapping.csv:source_subject_folder	75	LOW
+SUBC17_Session02_2024APR09	SUBC17_Session02_2024APR09	session_mapping.csv:source_subject_folder	75	LOW
+SUBC18-Session1-2023AUG28	SUBC18-Session1-2023AUG28	session_mapping.csv:source_subject_folder	78	LOW
+SUBC20-Session1_2023SEP07	SUBC20-Session1_2023SEP07	session_mapping.csv:source_subject_folder	75	LOW
+SUBC20_Session02_2024MAR05	SUBC20_Session02_2024MAR05	session_mapping.csv:source_subject_folder	75	LOW
+SUBC21-Session1-2023SEP09	SUBC21-Session1-2023SEP09	session_mapping.csv:source_subject_folder	75	LOW
+SUBC22-Session1-2023SEPT28	SUBC22-Session1-2023SEPT28	session_mapping.csv:source_subject_folder	75	LOW
+SUBC22_Session02_2024MAR25	SUBC22_Session02_2024MAR25	session_mapping.csv:source_subject_folder	81	LOW
+SUBC23-Session01-2023OCT05	SUBC23-Session01-2023OCT05	session_mapping.csv:source_subject_folder	76	LOW
+SUBC23_Session02_2024APR22	SUBC23_Session02_2024APR22	session_mapping.csv:source_subject_folder	75	LOW
+SUBC24-SESSION2-2024APR27	SUBC24-SESSION2-2024APR27	session_mapping.csv:source_subject_folder	75	LOW
+SUBC24-Session01-2023OCT17	SUBC24-Session01-2023OCT17	session_mapping.csv:source_subject_folder	80	LOW
+SUBC25-Session01-2023NOV08	SUBC25-Session01-2023NOV08	session_mapping.csv:source_subject_folder	75	LOW
+SUBC25_Session02_2024APR23	SUBC25_Session02_2024APR23	session_mapping.csv:source_subject_folder	85	LOW
+SUBC26-Session1-2023OCT20	SUBC26-Session1-2023OCT20	session_mapping.csv:source_subject_folder	81	LOW
+SUBC26_Session2_2024APR19	SUBC26_Session2_2024APR19	session_mapping.csv:source_subject_folder	75	LOW
+SUBC27-Session2-2024JUL17	SUBC27-Session2-2024JUL17	session_mapping.csv:source_subject_folder	75	LOW
+SUBC27_Session01_2023DEC01	SUBC27_Session01_2023DEC01	session_mapping.csv:source_subject_folder	75	LOW
+SUBC28-Session2-2024JUL13	SUBC28-Session2-2024JUL13	session_mapping.csv:source_subject_folder	75	LOW
+SUBC29-Session2-2024JUL14	SUBC29-Session2-2024JUL14	session_mapping.csv:source_subject_folder	77	LOW
+SUBC30-SESSION2-2024JUL20	SUBC30-SESSION2-2024JUL20	session_mapping.csv:source_subject_folder	75	LOW
+SUBC30_Session01_2024JAN19	SUBC30_Session01_2024JAN19	session_mapping.csv:source_subject_folder	75	LOW
+SUBC31_Session01_2024FEB01	SUBC31_Session01_2024FEB01	session_mapping.csv:source_subject_folder	77	LOW
+SUBC32_Session01_2024FEB03	SUBC32_Session01_2024FEB03	session_mapping.csv:source_subject_folder	75	LOW
+SUBC32_Session2_2024AUG03	SUBC32_Session2_2024AUG03	session_mapping.csv:source_subject_folder	75	LOW
+SUBC33_Session01_2024FEB09	SUBC33_Session01_2024FEB09	session_mapping.csv:source_subject_folder	75	LOW
+SUBC34_Session1_2024FEB12	SUBC34_Session1_2024FEB12	session_mapping.csv:source_subject_folder	63	LOW
+SUBC35_SESSION01_2024FEB20	SUBC35_SESSION01_2024FEB20	session_mapping.csv:source_subject_folder	75	LOW
+SUBC36_SESSION01_27_FEB2024	SUBC36_SESSION01_27_FEB2024	session_mapping.csv:source_subject_folder	76	LOW
+SUBC36_Session02_2024AUG24	SUBC36_Session02_2024AUG24	session_mapping.csv:source_subject_folder	79	LOW
+SUBC37_SESSION01_29FEB2024	SUBC37_SESSION01_29FEB2024	session_mapping.csv:source_subject_folder	75	LOW
+SUBC38_Session01_2024MAR07	SUBC38_Session01_2024MAR07	session_mapping.csv:source_subject_folder	75	LOW
+SUBC39_Session01_2024MAR10	SUBC39_Session01_2024MAR10	session_mapping.csv:source_subject_folder	75	LOW
+SUBC39_Session2_2024SEP08	SUBC39_Session2_2024SEP08	session_mapping.csv:source_subject_folder	81	LOW
+SUBC40_SESSION01_2024MAR18	SUBC40_SESSION01_2024MAR18	session_mapping.csv:source_subject_folder	76	LOW
+SUBC40_Session02_2024OCT05	SUBC40_Session02_2024OCT05	session_mapping.csv:source_subject_folder	75	LOW
+SUBC41_Session01_2024MAR21	SUBC41_Session01_2024MAR21	session_mapping.csv:source_subject_folder	81	LOW
+SUBC41_Session02_2024OCT04	SUBC41_Session02_2024OCT04	session_mapping.csv:source_subject_folder	75	LOW
+SUBC42_Session01_2024MAY06	SUBC42_Session01_2024MAY06	session_mapping.csv:source_subject_folder	79	LOW
+SUBC42_Session02_2024NOV08	SUBC42_Session02_2024NOV08	session_mapping.csv:source_subject_folder	75	LOW
+SUBC43_SESSION01_2024MAY13	SUBC43_SESSION01_2024MAY13	session_mapping.csv:source_subject_folder	75	LOW
+SUBC44_Session02_2025FEB19	SUBC44_Session02_2025FEB19	session_mapping.csv:source_subject_folder	144	LOW
+SUBC45_SESSION02_2025FEB10	SUBC45_SESSION02_2025FEB10	session_mapping.csv:source_subject_folder	75	LOW
+SUBC45_Session01_29JUL2024	SUBC45_Session01_29JUL2024	session_mapping.csv:source_subject_folder	75	LOW
+SUBC46_Session01_2024AUG23	SUBC46_Session01_2024AUG23	session_mapping.csv:source_subject_folder	74	LOW
+SUBC47_Session02_2025FEB23	SUBC47_Session02_2025FEB23	session_mapping.csv:source_subject_folder	75	LOW
+SUBC47_Session1_2024AUG27	SUBC47_Session1_2024AUG27	session_mapping.csv:source_subject_folder	79	LOW
+SUBC48_SESSION02_2025MARCH17	SUBC48_SESSION02_2025MARCH17	session_mapping.csv:source_subject_folder	75	LOW
+SUBC48_Session01_2024SEP20	SUBC48_Session01_2024SEP20	session_mapping.csv:source_subject_folder	77	LOW
+SUBC49_Session01_2024SEP19	SUBC49_Session01_2024SEP19	session_mapping.csv:source_subject_folder	76	LOW
+SUBC49_Session2_2025March21	SUBC49_Session2_2025March21	session_mapping.csv:source_subject_folder	75	LOW
+SUBC50_Session01_2024OCT11	SUBC50_Session01_2024OCT11	session_mapping.csv:source_subject_folder	76	LOW
+SUBC50_Session02_2025MAY08	SUBC50_Session02_2025MAY08	session_mapping.csv:source_subject_folder	37	LOW
+SUBC51_Session01_2024OCT15	SUBC51_Session01_2024OCT15	session_mapping.csv:source_subject_folder	75	LOW
+SUBC52_SESSION01_2024NOV05	SUBC52_SESSION01_2024NOV05	session_mapping.csv:source_subject_folder	75	LOW
+SUBC53_Session01_2024NOV08	SUBC53_Session01_2024NOV08	session_mapping.csv:source_subject_folder	75	LOW
+SUBC53_Session02_2025MAY05	SUBC53_Session02_2025MAY05	session_mapping.csv:source_subject_folder	75	LOW
+SUBC54_Session01_2024NOV29	SUBC54_Session01_2024NOV29	session_mapping.csv:source_subject_folder	71	LOW
+SUBC55_SESSION01_2025FEB11	SUBC55_SESSION01_2025FEB11	session_mapping.csv:source_subject_folder	74	LOW
+SUBC55_SESSION02_2025AUG14	SUBC55_SESSION02_2025AUG14	session_mapping.csv:source_subject_folder	58	LOW
+SUBC56_Session01_2025MAY15	SUBC56_Session01_2025MAY15	session_mapping.csv:source_subject_folder	35	LOW
+SUBC57_Session01_2025AUG11	SUBC57_Session01_2025AUG11	session_mapping.csv:source_subject_folder	60	LOW
+SUBG001	SUBG001	GreenLevel.mat	121	HIGH
+SUBG002	SUBG002	September-13-2023_ 8-12-06_AM  The Right Eye is _ eye =1 .mat	123	HIGH
+SUBG003	SUBG003	October-14-2023_ 1-55-03_PM  The Right Eye is _ eye =1 .mat	129	HIGH
+SUBG004	SUBG004	GreenLevel.mat	125	HIGH
+SUBG005	SUBG005	November-04-2023_12-10-25_PM  The Right Eye is _ eye =1 .mat	62	HIGH
+SUBG006	SUBG006	November-14-2023_ 3-45-23_PM  The Right Eye is _ eye =1 .mat	62	HIGH
+SUBG007	SUBG007	July-21-2024_ 9-24-48_AM  The Right Eye is _ eye =1 .mat	124	HIGH
+SUBG008	SUBG008	February-10-2024_ 1-55-07_PM  The Right Eye is _ eye =1 .mat	125	HIGH
+SUBG009	SUBG009	May-23-2024_ 9-42-52_AM  The Right Eye is _ eye =1 .mat	124	HIGH
+SUBG01	SUBG001	session_mapping.csv:canonical_subject_id	300	HIGH
+SUBG010	SUBG010	GreenLevel.mat	60	HIGH
+SUBG011	SUBG011	GreenLevel.mat	60	HIGH
+SUBG012	SUBG012	November-20-2024_ 4-14-55_PM  The Right Eye is _ eye =1 .mat	62	HIGH
+SUBG013	SUBG013	May-22-2025_ 2-15-49_PM  The Right Eye is _ eye =1 .mat	72	HIGH
+SUBG014	SUBG014	December-01-2024_ 2-13-20_PM  The Right Eye is _ eye =1 .mat	62	HIGH
+SUBG015	SUBG015	GreenLevel.mat	60	HIGH
+SUBG016	SUBG016	GreenLevel.mat	128	HIGH
+SUBG017	SUBG017	August-19-2025_ 3-12-23_PM  The Right Eye is _ eye =1 .mat	118	HIGH
+SUBG018	SUBG018	March-14-2025_11-00-36_AM  The Right Eye is _ eye =1 .mat	62	HIGH
+SUBG019	SUBG019	GreenLevel.mat	60	HIGH
+SUBG01_Session01_2023AUG23	SUBG01_Session01_2023AUG23	session_mapping.csv:source_subject_folder	75	LOW
+SUBG01_Session2_2024FEB21	SUBG01_Session2_2024FEB21	session_mapping.csv:source_subject_folder	75	LOW
+SUBG02	SUBG002	session_mapping.csv:canonical_subject_id	300	HIGH
+SUBG02-Session01-2023SEP13	SUBG02-Session01-2023SEP13	session_mapping.csv:source_subject_folder	75	LOW
+SUBG02_SESSION2_2024MAR18	SUBG02_SESSION2_2024MAR18	session_mapping.csv:source_subject_folder	75	LOW
+SUBG03	SUBG003	session_mapping.csv:canonical_subject_id	304	HIGH
+SUBG03-SESSION01-2023OCT14	SUBG03-SESSION01-2023OCT14	session_mapping.csv:source_subject_folder	76	LOW
+SUBG03_Session02_2024APR14	SUBG03_Session02_2024APR14	session_mapping.csv:source_subject_folder	76	LOW
+SUBG04	SUBG004	session_mapping.csv:canonical_subject_id	300	HIGH
+SUBG04-SESSION01-2023OCT15	SUBG04-SESSION01-2023OCT15	session_mapping.csv:source_subject_folder	75	LOW
+SUBG04_Session02_2024APR13	SUBG04_Session02_2024APR13	session_mapping.csv:source_subject_folder	75	LOW
+SUBG05	SUBG005	session_mapping.csv:canonical_subject_id	98	HIGH
+SUBG05_Session01-2023NOV04	SUBG05_Session01-2023NOV04	session_mapping.csv:source_subject_folder	49	LOW
+SUBG06	SUBG006	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBG06-SESSION1-2023NOV14	SUBG06-SESSION1-2023NOV14	session_mapping.csv:source_subject_folder	75	LOW
+SUBG07	SUBG007	session_mapping.csv:canonical_subject_id	300	HIGH
+SUBG07-SESSION2-2024JUL21	SUBG07-SESSION2-2024JUL21	session_mapping.csv:source_subject_folder	75	LOW
+SUBG07_Session01_2023DEC02	SUBG07_Session01_2023DEC02	session_mapping.csv:source_subject_folder	75	LOW
+SUBG08	SUBG008	session_mapping.csv:canonical_subject_id	300	HIGH
+SUBG08_Session01_2024FEB10	SUBG08_Session01_2024FEB10	session_mapping.csv:source_subject_folder	75	LOW
+SUBG08_Session02_2024AUG18	SUBG08_Session02_2024AUG18	session_mapping.csv:source_subject_folder	75	LOW
+SUBG09	SUBG009	session_mapping.csv:canonical_subject_id	292	HIGH
+SUBG09_Session01_2024MAY23	SUBG09_Session01_2024MAY23	session_mapping.csv:source_subject_folder	75	LOW
+SUBG09_Session02_2024NOV19	SUBG09_Session02_2024NOV19	session_mapping.csv:source_subject_folder	71	LOW
+SUBG10	SUBG010	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBG10_Session01_2024SEP13	SUBG10_Session01_2024SEP13	session_mapping.csv:source_subject_folder	75	LOW
+SUBG11	SUBG011	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBG11_Session01_2024OCT06	SUBG11_Session01_2024OCT06	session_mapping.csv:source_subject_folder	75	LOW
+SUBG12	SUBG012	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBG12_Session01_2024NOV20	SUBG12_Session01_2024NOV20	session_mapping.csv:source_subject_folder	75	LOW
+SUBG13	SUBG013	session_mapping.csv:canonical_subject_id	204	HIGH
+SUBG13-Session1-2024NOV25	SUBG13-Session1-2024NOV25	session_mapping.csv:source_subject_folder	75	LOW
+SUBG13_SESSION02_2025MAY22	SUBG13_SESSION02_2025MAY22	session_mapping.csv:source_subject_folder	27	LOW
+SUBG14	SUBG014	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBG14_Session01_2024DEC01	SUBG14_Session01_2024DEC01	session_mapping.csv:source_subject_folder	75	LOW
+SUBG15	SUBG015	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBG15_Session01_2024DEC08	SUBG15_Session01_2024DEC08	session_mapping.csv:source_subject_folder	75	LOW
+SUBG16	SUBG016	session_mapping.csv:canonical_subject_id	266	HIGH
+SUBG16_SESSION02_2025AUG17	SUBG16_SESSION02_2025AUG17	session_mapping.csv:source_subject_folder	58	LOW
+SUBG16_Session01_2024DEC14	SUBG16_Session01_2024DEC14	session_mapping.csv:source_subject_folder	75	LOW
+SUBG17	SUBG017	session_mapping.csv:canonical_subject_id	160	HIGH
+SUBG17_Session01_2025FEB06	SUBG17_Session01_2025FEB06	session_mapping.csv:source_subject_folder	80	LOW
+SUBG18	SUBG018	session_mapping.csv:canonical_subject_id	162	HIGH
+SUBG18_SESSION01_2025MAR14	SUBG18_SESSION01_2025MAR14	session_mapping.csv:source_subject_folder	81	LOW
+SUBG19	SUBG019	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBG19_Session1-2025Mar30	SUBG19_Session1-2025Mar30	session_mapping.csv:source_subject_folder	75	LOW
+SUBON001	SUBON001	May-28-2024_ 4-11-02_PM  The Right Eye is _ eye =1 .mat	121	HIGH
+SUBON002	SUBON002	GreenLevel.mat	59	HIGH
+SUBON003	SUBON003	GreenLevel.mat	60	HIGH
+SUBON004	SUBON004	GreenLevel.mat	67	HIGH
+SUBON006	SUBON006	August-13-2025_ 3-08-50_PM  The Right Eye is _ eye =1 .mat	69	HIGH
+SUBON007	SUBON007	August-15-2025_ 3-57-01_PM  The Right Eye is _ eye =1 .mat	63	HIGH
+SUBON008	SUBON008	SUNON08-Session1-2025Aug18.puls	2	HIGH
+SUBON01	SUBON001	session_mapping.csv:canonical_subject_id	300	HIGH
+SUBON01_Session01_2024MAY28	SUBON01_Session01_2024MAY28	session_mapping.csv:source_subject_folder	75	LOW
+SUBON02	SUBON002	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBON03	SUBON003	session_mapping.csv:canonical_subject_id	150	HIGH
+SUBON04	SUBON004	session_mapping.csv:canonical_subject_id	160	HIGH
+SUBON04-Session1-2025MAY17	SUBON04-Session1-2025MAY17	session_mapping.csv:source_subject_folder	80	LOW
+SUBON06	SUBON006	session_mapping.csv:canonical_subject_id	136	HIGH
+SUBON06_Session01_2025AUG13	SUBON06_Session01_2025AUG13	session_mapping.csv:source_subject_folder	68	LOW
+SUBON07	SUBON007	session_mapping.csv:canonical_subject_id	116	HIGH
+SUBON07_Session01_2025AUG15	SUBON07_Session01_2025AUG15	session_mapping.csv:source_subject_folder	58	LOW
+SUBON08	SUBON008	session_mapping.csv:canonical_subject_id	74	HIGH
+SUBON08-Session1-2025AUG18	SUBON08-Session1-2025AUG18	session_mapping.csv:source_subject_folder	37	LOW
+SUBON1_Session02_12DEC2024	SUBON1_Session02_12DEC2024	session_mapping.csv:source_subject_folder	75	LOW
+SUBON2_Session01_26FEB2025	SUBON2_Session01_26FEB2025	session_mapping.csv:source_subject_folder	75	LOW
+SUBON3_Session01_03MAY2025	SUBON3_Session01_03MAY2025	session_mapping.csv:source_subject_folder	75	LOW
+SUBT01_Session02_2024JUN01	SUBT01_Session02_2024JUN01	session_mapping.csv:source_subject_folder	74	LOW
+SUBT01_Session1_2023NOV25	SUBT01_Session1_2023NOV25	session_mapping.csv:source_subject_folder	75	LOW
+SUBTON001	SUBTON001	June-01-2024_ 1-57-49_PM  The Right Eye is _ eye =1 .mat	124	HIGH
+SUBTON002	SUBTON002	GreenLevel.mat	60	HIGH
+SUBTON01	SUBTON001	session_mapping.csv:canonical_subject_id	298	HIGH
+SUBTON02	SUBTON002	session_mapping.csv:canonical_subject_id	152	HIGH
+SUBTON02-session1-2025MAR07	SUBTON02-session1-2025MAR07	session_mapping.csv:source_subject_folder	76	LOW

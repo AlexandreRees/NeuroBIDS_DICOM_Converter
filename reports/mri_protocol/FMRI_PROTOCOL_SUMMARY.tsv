@@ -1,0 +1,6 @@
+Paradigm	BIDSTask	SiemensProtocolNames	NRunsPlanned	PhaseEncoding	VolumesPerRun	Role	Notes
+Visually driven grating/checkerboard task	task-fmri	fMRI1_AP; fMRI2_AP; fMRI3_AP; fMRI4_AP	4	AP (BIDS PhaseEncodingDirection j-)	226	Primary visual stimulation BOLD	Shared MB-EPI geometry with other BOLD; events released for verified subset
+Movie viewing	task-movie	Movie1_AP; Movie2_AP; Movie3_AP; Movie4_AP	4	AP (j-)	210	Naturalistic visual BOLD	Four movie segments; monocular stimulation per visit scripts
+Resting-state	task-rest	REST1_AP	1	AP (j-)	320	Intrinsic connectivity	Monocular fixation; longest continuous BOLD run
+Control EPI	task-control	Control1_PA; Control2_AP|Control2_PA; Control3_PA|Control3_AP	3	Mixed AP/PA	20	Short reverse/same-PE control runs	Modal labels Control2_AP + Control3_PA; Control1 always PA in sampled data
+Spin-echo field map (functional block)	dir-AP/PA_epi	SpinEchoFieldMap_AP; SpinEchoFieldMap_PA	2 pairs/session typical	AP and PA	1 magnitude (+phase) per PE	Susceptibility distortion correction for BOLD	Placed after Movie2 and again after Control2/3 in canonical sessions; IntendedFor lists func BOLD/SBRef

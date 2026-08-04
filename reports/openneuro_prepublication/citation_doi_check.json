@@ -1,0 +1,83 @@
+[
+  {
+    "name": "BIDS",
+    "doi": "10.1038/sdata.2016.44",
+    "ok": true,
+    "title": "The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments",
+    "journal": "Scientific Data",
+    "year": 2016,
+    "first_author": "Gorgolewski"
+  },
+  {
+    "name": "BIDS apps",
+    "doi": "10.1371/journal.pcbi.1005209",
+    "ok": true,
+    "title": "BIDS apps: Improving ease of use, accessibility, and reproducibility of neuroimaging data analysis methods",
+    "journal": "PLOS Computational Biology",
+    "year": 2017,
+    "first_author": "Gorgolewski"
+  },
+  {
+    "name": "dcm2niix",
+    "doi": "10.1016/j.jneumeth.2016.03.001",
+    "ok": true,
+    "title": "The first step for neuroimaging data analysis: DICOM to NIfTI conversion",
+    "journal": "Journal of Neuroscience Methods",
+    "year": 2016,
+    "first_author": "Li"
+  },
+  {
+    "name": "MRIQC",
+    "doi": "10.1371/journal.pone.0184661",
+    "ok": true,
+    "title": "MRIQC: Advancing the automatic prediction of image quality in MRI from unseen sites",
+    "journal": "PLOS ONE",
+    "year": 2017,
+    "first_author": "Esteban"
+  },
+  {
+    "name": "Pizarro",
+    "doi": "10.1016/j.media.2023.102942",
+    "ok": true,
+    "title": "Deep learning, data ramping, and uncertainty estimation for detecting artifacts in large, imbalanced databases of MRI images",
+    "journal": "Medical Image Analysis",
+    "year": 2023,
+    "first_author": "Pizarro"
+  },
+  {
+    "name": "FSL",
+    "doi": "10.1016/j.neuroimage.2004.07.051",
+    "ok": true,
+    "title": "Advances in functional and structural MR image analysis and implementation as FSL",
+    "journal": "NeuroImage",
+    "year": 2004,
+    "first_author": "Smith"
+  },
+  {
+    "name": "OpenNeuro",
+    "doi": "10.7554/eLife.71774",
+    "ok": true,
+    "title": "The OpenNeuro resource for sharing of neuroscience data",
+    "journal": "eLife",
+    "year": 2021,
+    "first_author": "Markiewicz"
+  },
+  {
+    "name": "NumPy",
+    "doi": "10.1038/s41586-020-2649-2",
+    "ok": true,
+    "title": "Array programming with NumPy",
+    "journal": "Nature",
+    "year": 2020,
+    "first_author": "Harris"
+  },
+  {
+    "name": "Matplotlib",
+    "doi": "10.1109/MCSE.2007.55",
+    "ok": true,
+    "title": "Matplotlib: A 2D Graphics Environment",
+    "journal": "Computing in Science &amp; Engineering",
+    "year": 2007,
+    "first_author": "Hunter"
+  }
+]

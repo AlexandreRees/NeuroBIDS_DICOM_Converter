@@ -1,0 +1,24 @@
+=== cleanup_report 2026-07-19T13:30:19-04:00 ===
+Removed (safe targets only):
+- neuro_pipeline **/__pycache__ (41 dirs)
+- ~/scratch/tmp_processing contents (~69794 files)
+- ~/scratch/defacing_env (~4703 files; recreating at ~/defacing_env)
+- ~/scratch/.pydeps (~1689 files)
+- ~/scratch/.pydeps_h5py (~162 files)
+- ~/scratch/.pytest_cache
+- ~/scratch/venvs/* (empty)
+NEVER touched: raw_original, bids, derivatives, metadata
+
+Quota after cleanup:
+                            Description                Space         # of files
+                  /home (user alexrees)          12GB/  50GB          67K/ 500K
+               /scratch (user alexrees)        2260GB/  20TB         914K/1000K
+           /project (project def-amirs)        6853GB/  10TB         310K/ 500K
+          /nearline (project def-amirs)        1356KB/1000GB          55 /5000 
+
+Disk usage can be explored using the following commands
+diskusage_explorer /home/alexrees            # Last update: 2026-07-17 22:48:08
+diskusage_explorer /scratch/alexrees         # Last update: 2026-07-19 10:22:52
+diskusage_explorer /project/def-amirs        # Last update: 2026-07-19 09:13:07
+diskusage_explorer /nearline/def-amirs       # Last update: 2026-07-19 12:00:53
+--

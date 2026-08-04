@@ -1,0 +1,4 @@
+SeriesDescription	n	mean	median	n_100	pct_100	n_ge_90	pct_ge_90
+T1w_MPR	259	54.32	50.0	52	20.1	73	28.2
+WMn_MPRAGE_sagittal	120	90.75	100.0	84	70.0	93	77.5
+T1w_MPR_ND	6	65.0	75.0	1	16.7	3	50.0

@@ -1,0 +1,5 @@
+subject	session	acquisition	warning_class	severity	evidence	publication_action
+sub-002	ses-01	task-fmri_run-07_bold	MISSING_IQM	truncated_bold	NIfTI shape 104x104x88x4 (expected ~226 vols)	Document as incomplete acquisition; do not treat as MRIQC software failure
+sub-011	ses-01	task-fmri_run-03_bold	MISSING_IQM	truncated_bold	NIfTI shape 104x104x88x3 (expected ~226 vols)	Document as incomplete acquisition; do not treat as MRIQC software failure
+sub-039	ses-02	run-03_T1w	MISSING_IQM	abnormal_t1w	FOV 192x224x224, max intensity ~390 vs sibling T1w 208x300x320 max~4095	Document as out-of-protocol / failed anatomical series
+sub-058	ses-01	run-03_T1w	MISSING_IQM	abnormal_t1w	FOV 192x224x224, max intensity ~294	Document as out-of-protocol / failed anatomical series

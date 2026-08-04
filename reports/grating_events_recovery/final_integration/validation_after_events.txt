@@ -1,0 +1,109 @@
+# bids-validator capture
+time: 2026-07-28T16:26:25Z
+bids_root: /home/alexrees/scratch/bids
+missing_task-fmri_events_count: 39
+command: node /home/alexrees/scratch/.tools/node_modules/bids-validator/bin/bids-validator /home/alexrees/scratch/bids --ignoreNiftiHeaders
+exit_code: 1
+EVENTS_TSV_MISSING_mentions: 2
+
+--- validator output (tail) ---
+		... and 16 more files having this issue (Use --verbose to see them all).
+
+	Please visit https://neurostars.org/search?q=TOTAL_READOUT_TIME_MUST_DEFINE for existing conversations about this issue.
+
+	5: [ERR] A BIDS dataset MUST NOT contain more than one `README` file (with or without extension) at its root directory. (code: 228 - MULTIPLE_README_FILES)
+
+	Please visit https://neurostars.org/search?q=MULTIPLE_README_FILES for existing conversations about this issue.
+
+	1: [WARN] You should define 'SliceTiming' for this file. If you don't provide this information slice time correction will not be possible. 'Slice Timing' is the time at which each slice was acquired within each volume (frame) of the acquisition. Slice timing is not slice order -- rather, it is a list of times containing the time (in seconds) of each slice acquisition in relation to the beginning of volume acquisition. (code: 13 - SLICE_TIMING_NOT_DEFINED)
+		./sub-081/ses-02/func/sub-081_ses-02_task-control_run-01_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-control_run-02_part-phase_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-control_run-03_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-control_run-04_part-phase_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-control_run-05_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-control_run-06_part-phase_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-fmri_run-01_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-fmri_run-02_part-phase_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-fmri_run-03_bold.nii.gz
+		./sub-081/ses-02/func/sub-081_ses-02_task-fmri_run-04_part-phase_bold.nii.gz
+		... and 14 more files having this issue (Use --verbose to see them all).
+
+	Please visit https://neurostars.org/search?q=SLICE_TIMING_NOT_DEFINED for existing conversations about this issue.
+
+	2: [WARN] Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word "rest". (code: 25 - EVENTS_TSV_MISSING)
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-01_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-02_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-03_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-04_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-05_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-06_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-02_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-04_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-06_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-08_part-phase_bold.nii.gz
+		... and 2454 more files having this issue (Use --verbose to see them all).
+
+	Please visit https://neurostars.org/search?q=EVENTS_TSV_MISSING for existing conversations about this issue.
+
+	3: [WARN] Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing. (code: 38 - INCONSISTENT_SUBJECTS)
+		./sub-001/ses-01/anat/sub-001_ses-01_run-02_FLAIR.json
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-02_FLAIR.json
+		./sub-001/ses-01/anat/sub-001_ses-01_run-02_FLAIR.nii.gz
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-02_FLAIR.nii.gz
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-02_part-phase_dwi.bval
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-02_part-phase_dwi.bval
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-02_part-phase_dwi.bvec
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-02_part-phase_dwi.bvec
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-02_part-phase_dwi.json
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-02_part-phase_dwi.json
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-02_part-phase_dwi.nii.gz
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-02_part-phase_dwi.nii.gz
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-04_part-phase_dwi.bval
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-04_part-phase_dwi.bval
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-04_part-phase_dwi.bvec
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-04_part-phase_dwi.bvec
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-04_part-phase_dwi.json
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-04_part-phase_dwi.json
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-04_part-phase_dwi.nii.gz
+			Evidence: Subject: sub-001; Missing file: sub-001_ses-01_run-04_part-phase_dwi.nii.gz
+		... and 28845 more files having this issue (Use --verbose to see them all).
+
+	Please visit https://neurostars.org/search?q=INCONSISTENT_SUBJECTS for existing conversations about this issue.
+
+	4: [WARN] Not all subjects contain the same sessions. (code: 97 - MISSING_SESSION)
+		./sub-010/ses-02
+			Evidence: Subject: sub-010; Missing session: ses-02
+		./sub-013/ses-02
+			Evidence: Subject: sub-013; Missing session: ses-02
+		./sub-014/ses-02
+			Evidence: Subject: sub-014; Missing session: ses-02
+		./sub-018/ses-02
+			Evidence: Subject: sub-018; Missing session: ses-02
+		./sub-020/ses-02
+			Evidence: Subject: sub-020; Missing session: ses-02
+		./sub-032/ses-02
+			Evidence: Subject: sub-032; Missing session: ses-02
+		./sub-033/ses-02
+			Evidence: Subject: sub-033; Missing session: ses-02
+		./sub-037/ses-02
+			Evidence: Subject: sub-037; Missing session: ses-02
+		./sub-042/ses-02
+			Evidence: Subject: sub-042; Missing session: ses-02
+		./sub-043/ses-01
+			Evidence: Subject: sub-043; Missing session: ses-01
+		... and 23 more files having this issue (Use --verbose to see them all).
+
+	Please visit https://neurostars.org/search?q=MISSING_SESSION for existing conversations about this issue.
+
+	5: [WARN] The Authors field of dataset_description.json should contain an array of fields - with one author per field. This was triggered based on the presence of only one author field. Please ignore if all contributors are already properly listed. (code: 102 - TOO_FEW_AUTHORS)
+
+	Please visit https://neurostars.org/search?q=TOO_FEW_AUTHORS for existing conversations about this issue.
+
+        Summary:                      Available Tasks:        Available Modalities: 
+        27836 Files, 1022.75GB        control                 MRI                   
+        84 - Subjects                 fmri                                          
+        2 - Sessions                  movie                                         
+                                      rest                                          
+
+
+	If you have any questions, please post on https://neurostars.org/tags/bids.

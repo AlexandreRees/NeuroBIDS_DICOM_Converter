@@ -1,0 +1,56 @@
+participant_id	session_id	run	protocol	bold_path	reason	reason_category
+sub-002	ses-01	07	fMRI1_AP	sub-002/ses-01/func/sub-002_ses-01_task-fmri_run-07_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-002	ses-01	09	fMRI1_AP	sub-002/ses-01/func/sub-002_ses-01_task-fmri_run-09_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-004	ses-02	01	fMRI3_AP	sub-004/ses-02/func/sub-004_ses-02_task-fmri_run-01_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-004	ses-02	03	fMRI4_AP	sub-004/ses-02/func/sub-004_ses-02_task-fmri_run-03_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-004	ses-02	05	fMRI1_AP	sub-004/ses-02/func/sub-004_ses-02_task-fmri_run-05_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-004	ses-02	07	fMRI2_AP	sub-004/ses-02/func/sub-004_ses-02_task-fmri_run-07_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-011	ses-01	03	fMRI4_AP	sub-011/ses-01/func/sub-011_ses-01_task-fmri_run-03_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-011	ses-01	05	fMRI4_AP	sub-011/ses-01/func/sub-011_ses-01_task-fmri_run-05_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-011	ses-01	07	fMRI1_AP	sub-011/ses-01/func/sub-011_ses-01_task-fmri_run-07_bold.nii.gz	scan=2, stim=1, workspace=1	Incomplete MATLAB logs
+sub-011	ses-02	06	fMRI1_AP	sub-011/ses-02/func/sub-011_ses-02_task-fmri_run-06_bold.nii.gz	scan=2, stim=1, workspace=1	Incomplete MATLAB logs
+sub-012	ses-01	03	fMRI4_AP	sub-012/ses-01/func/sub-012_ses-01_task-fmri_run-03_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-012	ses-01	05	fMRI4_AP	sub-012/ses-01/func/sub-012_ses-01_task-fmri_run-05_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-013	ses-01	07	fMRI2_AP	sub-013/ses-01/func/sub-013_ses-01_task-fmri_run-07_bold.nii.gz	scan=0, stim=1, workspace=1	Incomplete MATLAB logs
+sub-016	ses-02	07	fMRI1_AP	sub-016/ses-02/func/sub-016_ses-02_task-fmri_run-07_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-016	ses-02	09	fMRI1_AP	sub-016/ses-02/func/sub-016_ses-02_task-fmri_run-09_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-020	ses-01	05	fMRI1_AP	sub-020/ses-01/func/sub-020_ses-01_task-fmri_run-05_bold.nii.gz	scan=2, stim=1, workspace=1	Incomplete MATLAB logs
+sub-023	ses-01	07	fMRI1_AP	sub-023/ses-01/func/sub-023_ses-01_task-fmri_run-07_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-023	ses-01	09	fMRI1_AP	sub-023/ses-01/func/sub-023_ses-01_task-fmri_run-09_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-024	ses-02	01	fMRI1_AP_Rerun	sub-024/ses-02/func/sub-024_ses-02_task-fmri_run-01_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-024	ses-02	03	fMRI2_AP_Rerun	sub-024/ses-02/func/sub-024_ses-02_task-fmri_run-03_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-024	ses-02	07	fMRI1_AP	sub-024/ses-02/func/sub-024_ses-02_task-fmri_run-07_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-024	ses-02	11	fMRI2_AP	sub-024/ses-02/func/sub-024_ses-02_task-fmri_run-11_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-025	ses-01	07	fMRI1_AP	sub-025/ses-01/func/sub-025_ses-01_task-fmri_run-07_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-025	ses-01	09	fMRI1_AP	sub-025/ses-01/func/sub-025_ses-01_task-fmri_run-09_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-032	ses-01	01	fMRI3_AP	sub-032/ses-01/func/sub-032_ses-01_task-fmri_run-01_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-032	ses-01	03	fMRI4_AP	sub-032/ses-01/func/sub-032_ses-01_task-fmri_run-03_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-038	ses-02	02	fMRI3_AP	sub-038/ses-02/func/sub-038_ses-02_task-fmri_run-02_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-038	ses-02	04	fMRI3_AP	sub-038/ses-02/func/sub-038_ses-02_task-fmri_run-04_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-040	ses-01	07	fMRI1_AP	sub-040/ses-01/func/sub-040_ses-01_task-fmri_run-07_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-040	ses-01	09	fMRI1_AP	sub-040/ses-01/func/sub-040_ses-01_task-fmri_run-09_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-041	ses-01	07	fMRI1_AP	sub-041/ses-01/func/sub-041_ses-01_task-fmri_run-07_bold.nii.gz	scan=2, stim=1, workspace=1	Incomplete MATLAB logs
+sub-041	ses-01	09	fMRI1_AP_REDO	sub-041/ses-01/func/sub-041_ses-01_task-fmri_run-09_bold.nii.gz	scan=2, stim=1, workspace=1	Incomplete MATLAB logs
+sub-043	ses-02	01	fMRI3_AP	sub-043/ses-02/func/sub-043_ses-02_task-fmri_run-01_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-043	ses-02	02	fMRI3_AP	sub-043/ses-02/func/sub-043_ses-02_task-fmri_run-02_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-043	ses-02	05	fMRI4_AP	sub-043/ses-02/func/sub-043_ses-02_task-fmri_run-05_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-043	ses-02	06	fMRI4_AP	sub-043/ses-02/func/sub-043_ses-02_task-fmri_run-06_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-043	ses-02	11	fMRI2_AP	sub-043/ses-02/func/sub-043_ses-02_task-fmri_run-11_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-043	ses-02	12	fMRI2_AP	sub-043/ses-02/func/sub-043_ses-02_task-fmri_run-12_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-046	ses-01	07	fMRI1_AP	sub-046/ses-01/func/sub-046_ses-01_task-fmri_run-07_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-046	ses-01	09	fMRI1_AP	sub-046/ses-01/func/sub-046_ses-01_task-fmri_run-09_bold.nii.gz	expected one matching non-phase BOLD sidecar, found 2	No unique ProtocolName mapping
+sub-047	ses-01	01	fMRI3_AP	sub-047/ses-01/func/sub-047_ses-01_task-fmri_run-01_bold.nii.gz	scan=0, stim=1, workspace=1	Incomplete MATLAB logs
+sub-047	ses-01	05	fMRI1_AP	sub-047/ses-01/func/sub-047_ses-01_task-fmri_run-05_bold.nii.gz	scan=0, stim=1, workspace=1	Incomplete MATLAB logs
+sub-047	ses-01	07	fMRI2_AP	sub-047/ses-01/func/sub-047_ses-01_task-fmri_run-07_bold.nii.gz	scan=0, stim=1, workspace=1	Incomplete MATLAB logs
+sub-051	ses-01	01	fMRI3_AP	sub-051/ses-01/func/sub-051_ses-01_task-fmri_run-01_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-051	ses-01	03	fMRI4_AP	sub-051/ses-01/func/sub-051_ses-01_task-fmri_run-03_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-051	ses-01	05	fMRI1_AP	sub-051/ses-01/func/sub-051_ses-01_task-fmri_run-05_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-051	ses-01	07	fMRI2_AP	sub-051/ses-01/func/sub-051_ses-01_task-fmri_run-07_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-061	ses-01	05	fMRI1_AP	sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-05_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-061	ses-01	07	fMRI1_AP	sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-07_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-078	ses-01	01	fMRI3_AP	sub-078/ses-01/func/sub-078_ses-01_task-fmri_run-01_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-078	ses-01	03	fMRI4_AP	sub-078/ses-01/func/sub-078_ses-01_task-fmri_run-03_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-078	ses-01	05	fMRI1_AP	sub-078/ses-01/func/sub-078_ses-01_task-fmri_run-05_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-078	ses-01	07	fMRI2_AP	sub-078/ses-01/func/sub-078_ses-01_task-fmri_run-07_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-083	ses-01	07	fMRI1_AP	sub-083/ses-01/func/sub-083_ses-01_task-fmri_run-07_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping
+sub-083	ses-01	09	fMRI1_AP	sub-083/ses-01/func/sub-083_ses-01_task-fmri_run-09_bold.nii.gz	No events generated (no unique verified mapping)	No unique verified mapping

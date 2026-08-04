@@ -1,0 +1,9 @@
+Category	Count	Percentage	Description
+Total task-fMRI acquisitions	507	100.0	Non-phase BIDS task-fmri BOLD runs in the release tree.
+Validated events.tsv released	456	89.9	Events generated only when scan_info triggerTimes, stimulus order, and unique ProtocolName↔BOLD mapping were available.
+Runs without events.tsv	51	10.1	Intentionally released without events.tsv; no invented timing.
+Duplicate ProtocolName	32	6.3	Two or more non-phase BOLD acquisitions share the same ProtocolName fMRI_N; unique events↔BOLD mapping impossible.
+Missing Results/stimulus logs	8	1.6	Mapped visit folder contains no 2-Grating/Results (no scan_info / stim-order sources).
+Duplicate scan_info	5	1.0	Multiple scan_info files for the same fMRI_number; trigger source not unique.
+Missing scan_info	4	0.8	Stimulus-order present but no scan_info triggerTimes for the required fMRI_number.
+MATLAB numbering mismatch	2	0.4	MATLAB fMRI_number (e.g. 5/6) does not match any BOLD ProtocolName (e.g. fMRI3/4_AP).

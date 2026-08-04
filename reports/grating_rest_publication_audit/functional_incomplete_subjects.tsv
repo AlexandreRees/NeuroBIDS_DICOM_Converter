@@ -1,0 +1,3 @@
+subject	has_task_rest_mag	has_task_fmri_mag	note
+sub-055	no	yes	No resting-state magnitude BOLD
+sub-063	yes	no	No grating (task-fmri) magnitude BOLD

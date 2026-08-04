@@ -1,0 +1,5 @@
+fmri_number	candidate_run	score	decision	reason	series_number	n_volumes	nifti_bytes	ImagingFrequency
+3	01	8	TIED_TOP	+3_vol_226;+3_trig_226;+2_duration_lt5s;0_no_SeriesTime_in_JSON;0_series_number_tied_within_family	15	226	336115949	123.257831
+3	02	8	TIED_TOP	+3_vol_226;+3_trig_226;+2_duration_lt5s;0_no_SeriesTime_in_JSON;0_series_number_tied_within_family	15	226	339542038	123.257877
+4	05	8	TIED_TOP	+3_vol_226;+3_trig_226;+2_duration_lt5s;0_no_SeriesTime_in_JSON;0_series_number_tied_within_family	19	226	336208795	123.257835
+4	06	8	TIED_TOP	+3_vol_226;+3_trig_226;+2_duration_lt5s;0_no_SeriesTime_in_JSON;0_series_number_tied_within_family	19	226	339784438	123.257881

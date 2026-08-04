@@ -1,0 +1,59 @@
+bids-validator@1.14.6
+	1: [ERR] Files with such naming scheme are not part of BIDS specification. This error is most commonly caused by typos in file names that make them not BIDS compatible. Please consult the specification and make sure your files are named correctly. If this is not a file naming issue (for example when including files not yet covered by the BIDS specification) you should include a ".bidsignore" file in your dataset (see https://github.com/bids-standard/bids-validator#bidsignore for details). Please note that derived (processed) data should be placed in /derivatives folder and source data (such as DICOMS or behavioural logs in proprietary formats) should be placed in the /sourcedata folder. (code: 1 - NOT_INCLUDED)
+		./sub-001/ses-01/anat/sub-001_ses-01_run-01_localizer_i00001.json
+			Evidence: sub-001_ses-01_run-01_localizer_i00001.json
+		./sub-001/ses-01/anat/sub-001_ses-01_run-01_localizer_i00001.nii.gz
+			Evidence: sub-001_ses-01_run-01_localizer_i00001.nii.gz
+		./sub-001/ses-01/anat/sub-001_ses-01_run-01_localizer_i00002.json
+			Evidence: sub-001_ses-01_run-01_localizer_i00002.json
+		./sub-001/ses-01/anat/sub-001_ses-01_run-01_localizer_i00002.nii.gz
+			Evidence: sub-001_ses-01_run-01_localizer_i00002.nii.gz
+		./sub-001/ses-01/anat/sub-001_ses-01_run-01_localizer_i00003.json
+			Evidence: sub-001_ses-01_run-01_localizer_i00003.json
+		./sub-001/ses-01/anat/sub-001_ses-01_run-01_localizer_i00003.nii.gz
+			Evidence: sub-001_ses-01_run-01_localizer_i00003.nii.gz
+
+	Please visit https://neurostars.org/search?q=NOT_INCLUDED for existing conversations about this issue.
+
+	2: [ERR] The number of volumes in this scan does not match the number of volumes in the corresponding .bvec and .bval files. (code: 29 - VOLUME_COUNT_MISMATCH)
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-07_dwi.nii.gz
+
+	Please visit https://neurostars.org/search?q=VOLUME_COUNT_MISMATCH for existing conversations about this issue.
+
+	1: [WARN] Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word "rest". (code: 25 - EVENTS_TSV_MISSING)
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-01_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-02_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-03_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-04_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-05_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-control_run-06_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-02_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-04_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-06_part-phase_bold.nii.gz
+		./sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-08_part-phase_bold.nii.gz
+		... and 8 more files having this issue (Use --verbose to see them all).
+
+	Please visit https://neurostars.org/search?q=EVENTS_TSV_MISSING for existing conversations about this issue.
+
+	2: [WARN] Not all subjects/sessions/runs have the same scanning parameters. (code: 39 - INCONSISTENT_PARAMETERS)
+		./sub-001/ses-01/anat/sub-001_ses-01_run-03_T1w.nii.gz
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-03_dwi.nii.gz
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-04_dwi.nii.gz
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-05_dwi.nii.gz
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-07_dwi.nii.gz
+		./sub-001/ses-01/dwi/sub-001_ses-01_run-11_dwi.nii.gz
+
+	Please visit https://neurostars.org/search?q=INCONSISTENT_PARAMETERS for existing conversations about this issue.
+
+	3: [WARN] The Authors field of dataset_description.json should contain an array of fields - with one author per field. This was triggered based on the presence of only one author field. Please ignore if all contributors are already properly listed. (code: 102 - TOO_FEW_AUTHORS)
+
+	Please visit https://neurostars.org/search?q=TOO_FEW_AUTHORS for existing conversations about this issue.
+
+        Summary:                 Available Tasks:        Available Modalities: 
+        163 Files, 7.68GB        control                 MRI                   
+        1 - Subject              fmri                                          
+        1 - Session              movie                                         
+                                 rest                                          
+
+
+	If you have any questions, please post on https://neurostars.org/tags/bids.

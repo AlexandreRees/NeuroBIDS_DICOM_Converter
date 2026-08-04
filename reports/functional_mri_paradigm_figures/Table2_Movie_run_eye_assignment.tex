@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[margin=18mm,paperwidth=210mm,paperheight=297mm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\definecolor{tablealt}{RGB}{245,247,250}
+\definecolor{headergray}{RGB}{55,65,81}
+\captionsetup{font=small,labelfont=bf,skip=8pt,justification=centering}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{empty}
+\vspace*{0pt}
+\begin{center}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{minipage}{0.96\textwidth}
+\captionof{table}{Monocular movie assignment for {\ttfamily task-movie}. Mapping is by scanner ProtocolName {\ttfamily Movie1}--{\ttfamily Movie4} (typical magnitude BIDS runs {\ttfamily run-01}/{\ttfamily 03}/{\ttfamily 05}/{\ttfamily 07}; even indices are usually phase). Design-level {\ttfamily events.tsv} use onset~$=$~0 under protocol sync; videos are not redistributed.}
+\centering
+\begin{tabularx}{\textwidth}{@{}C{1.6cm} C{2.2cm} Y C{2.2cm} C{2.0cm} C{1.8cm} C{2.0cm}@{}}
+\toprule
+\textcolor{headergray}{\textbf{run\_id}} &
+\textcolor{headergray}{\textbf{Protocol}} &
+\textcolor{headergray}{\textbf{Clip}} &
+\textcolor{headergray}{\textbf{Eye}} &
+\textcolor{headergray}{\textbf{Typ.\ run}} &
+\textcolor{headergray}{\textbf{Vols}} &
+\textcolor{headergray}{\textbf{Dur.\ (s)}} \\
+\midrule
+1 & Movie1 & Movie1A.mp4 & Left & {\ttfamily run-01} & 210 & 196.821 \\
+\rowcolor{tablealt} 2 & Movie2 & Movie2A.mp4 & Right & {\ttfamily run-03} & 210 & 196.821 \\
+3 & Movie3 & Movie1B.mp4 & Right & {\ttfamily run-05} & 210 & 196.821 \\
+\rowcolor{tablealt} 4 & Movie4 & Movie2B.mp4 & Left & {\ttfamily run-07} & 210 & 196.821 \\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\end{center}
+\end{document}

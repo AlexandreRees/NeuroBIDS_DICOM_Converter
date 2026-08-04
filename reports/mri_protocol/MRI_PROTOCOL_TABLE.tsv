@@ -1,0 +1,19 @@
+Order	Sequence	Purpose	Contrast	ProcessingPipeline
+1	Localizer	Initial geometric scout	Scout	Planning only (not typically preprocessed)
+2-3	fMRI1_AP; fMRI2_AP	Task BOLD runs 1–2	T2* BOLD	fMRIPrep/SDC (SE fmap) → task GLM
+4	Control1_PA	Brief reverse-PE control BOLD	T2* BOLD	fMRIPrep/SDC; control contrasts
+5-6	fMRI3_AP; fMRI4_AP	Task BOLD runs 3–4	T2* BOLD	fMRIPrep/SDC → task GLM
+7-8	Movie1_AP; Movie2_AP	Movie BOLD runs 1–2	T2* BOLD	fMRIPrep/SDC → movie analyses
+9-10	SpinEchoFieldMap_AP/PA	Field map pair 1 for BOLD SDC	SE EPI	TOPUP / fMRIPrep SDC
+11-12	Movie3_AP; Movie4_AP	Movie BOLD runs 3–4	T2* BOLD	fMRIPrep/SDC → movie analyses
+13	REST1_AP	Resting-state BOLD	T2* BOLD	fMRIPrep/SDC → connectivity
+14	Localizer	Re-scout before anatomy/DWI	Scout	Re-planning
+15	T1w_MPR	Structural T1 reference	T1w	Defacing → FreeSurfer/fMRIPrep anat
+16-17	Control2_AP; Control3_PA	Late control BOLD (modal PE labels)	T2* BOLD	fMRIPrep/SDC
+18-19	SpinEchoFieldMap_AP/PA	Field map pair 2	SE EPI	TOPUP / fMRIPrep SDC
+20	gsld_76dir_b2000_1mmiso_AP	Primary multi-shell DWI	DWI	TOPUP+eddy (with PA b0) → DTI/FOD
+21	gsld_75TE_PA_3b0	Reverse-PE b0 for DWI	b0	TOPUP pair for GSLD
+22	tfl_b1map_1mmiso	B1 mapping	B1+	B1 QC / quantitative correction
+23-24	RESOLVE AP/PA	Low-distortion DWI pair	DWI / b0	RESOLVE processing; optional TOPUP
+25	Sag Flair 3D-0.8	FLAIR anatomy	T2-FLAIR	Clinical-research review; registration
+26	WMn_MPRAGE_sagittal	White-matter-nulled T1	T1-WMn	Subcortical visualization / morphometry

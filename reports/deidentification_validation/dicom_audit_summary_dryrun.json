@@ -1,0 +1,24 @@
+{
+  "generated_utc": "2026-07-22T19:07:28.669921+00:00",
+  "dicom_dir": "/lustre07/scratch/alexrees/raw_original",
+  "mode": "archive_unavailable_reuse_prior",
+  "dry_run": true,
+  "files_scanned": 0,
+  "parse_ok": 0,
+  "parse_fail": 0,
+  "files_with_identifiers": null,
+  "files_with_demographics": null,
+  "uid_status": "DOCUMENTED_IN_PIPELINE_NO_LIVE_OBJECTS",
+  "looks_like_source": null,
+  "reused_reports": [
+    "/home/alexrees/scratch/reports/privacy_audit/PUBLICATION_PRIVACY_READINESS.md",
+    "/home/alexrees/scratch/reports/privacy_audit/burned_in_annotation_summary.md",
+    "/home/alexrees/scratch/reports/privacy_audit/dicom_demographic_summary.md",
+    "/home/alexrees/scratch/reports/deidentification_ps315_openneuro_audit.md",
+    "/home/alexrees/scratch/reports/deidentification_report.md",
+    "/home/alexrees/scratch/metadata/deidentify_date_shifts.csv"
+  ],
+  "tsv": "/home/alexrees/scratch/reports/deidentification_validation/dicom_phi_audit_dryrun.tsv",
+  "summary_md": "/home/alexrees/scratch/reports/deidentification_validation/dicom_deidentification_summary_dryrun.md",
+  "verdict_hint": "READY_FOR_BIDS_ONLY_RELEASE_DICOM_NOT_DISTRIBUTED"
+}

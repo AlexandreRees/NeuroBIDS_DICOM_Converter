@@ -1,0 +1,14 @@
+{
+  "index": 291,
+  "subject": "sub-059",
+  "session": "ses-01",
+  "nifti": "/lustre07/scratch/alexrees/bids/sub-059/ses-01/dwi/sub-059_ses-01_run-05_dwi.nii.gz",
+  "status": "OK",
+  "mask_voxels": 184987,
+  "brain_fraction": 0.225814208984375,
+  "mean_signal": 317.70281982421875,
+  "median_signal": 274.0,
+  "std_signal": 199.64511108398438,
+  "mean_b0_signal": 575.3914794921875,
+  "mean_diffusion_signal": 223.9978485107422
+}

@@ -1,0 +1,21 @@
+2026-07-15 18:42:14 | ERROR    | __main__ | DICOM root does not exist: /lustre07/scratch/alexrees/raw_original/sub-001
+2026-07-15 18:45:28 | INFO     | __main__ | neuro_protocol_sample starting
+2026-07-15 18:45:28 | INFO     | __main__ |   dicom_root  = /lustre07/scratch/alexrees/raw_original/Control/SUBC01-Session1-2023MAY5
+2026-07-15 18:45:28 | INFO     | __main__ |   output_dir  = /lustre07/scratch/alexrees/reports/protocol_sample
+2026-07-15 18:45:28 | INFO     | __main__ |   subject_id  = SUBC01
+2026-07-15 19:21:00 | INFO     | __main__ | neuro_protocol_sample starting
+2026-07-15 19:21:01 | INFO     | __main__ |   dicom_root  = /lustre07/scratch/alexrees/raw_original/Control/SUBC01-Session1-2023MAY5
+2026-07-15 19:21:01 | INFO     | __main__ |   output_dir  = /lustre07/scratch/alexrees/reports/protocol_sample
+2026-07-15 19:21:01 | INFO     | __main__ |   subject_id  = SUBC01
+2026-07-15 19:48:51 | INFO     | __main__ | Wrote 5 artifact(s); 74 series extracted
+2026-07-15 19:48:51 | INFO     | __main__ |   methods_mri_acquisition_md: /lustre07/scratch/alexrees/reports/protocol_sample/methods_mri_acquisition.md
+2026-07-15 19:48:51 | INFO     | __main__ |   scanner_summary_json: /lustre07/scratch/alexrees/reports/protocol_sample/scanner_summary.json
+2026-07-15 19:48:51 | INFO     | __main__ |   sequence_parameters_csv: /lustre07/scratch/alexrees/reports/protocol_sample/sequence_parameters.csv
+2026-07-15 19:48:51 | INFO     | __main__ |   sequence_parameters_json: /lustre07/scratch/alexrees/reports/protocol_sample/sequence_parameters.json
+2026-07-15 19:48:51 | INFO     | __main__ |   sequence_summary_md: /lustre07/scratch/alexrees/reports/protocol_sample/sequence_summary.md
+2026-07-15 19:52:54 | INFO     | __main__ | Wrote 5 artifact(s); 74 series extracted
+2026-07-15 19:52:54 | INFO     | __main__ |   methods_mri_acquisition_md: /lustre07/scratch/alexrees/reports/protocol_sample/methods_mri_acquisition.md
+2026-07-15 19:52:54 | INFO     | __main__ |   scanner_summary_json: /lustre07/scratch/alexrees/reports/protocol_sample/scanner_summary.json
+2026-07-15 19:52:54 | INFO     | __main__ |   sequence_parameters_csv: /lustre07/scratch/alexrees/reports/protocol_sample/sequence_parameters.csv
+2026-07-15 19:52:54 | INFO     | __main__ |   sequence_parameters_json: /lustre07/scratch/alexrees/reports/protocol_sample/sequence_parameters.json
+2026-07-15 19:52:54 | INFO     | __main__ |   sequence_summary_md: /lustre07/scratch/alexrees/reports/protocol_sample/sequence_summary.md

@@ -1,0 +1,113 @@
+{
+  "generated_at_utc": "2026-07-29T19:24:02Z",
+  "mode": "update",
+  "readiness": {
+    "score_total": 21,
+    "score_max": 22,
+    "score_percent": 95.5,
+    "dimensions": [
+      {
+        "dimension": "Dataset description",
+        "status": "PARTIAL",
+        "score": 1,
+        "evidence": "Name=Neuro BIDS Pipeline Dataset; BIDSVersion=1.9.0; Authors=['Neuro BIDS Pipeline']",
+        "gaps": "Complete Authors/Funding/DOI/HowToAcknowledge if still placeholders"
+      },
+      {
+        "dimension": "Acquisition documentation",
+        "status": "READY",
+        "score": 2,
+        "evidence": "Sidecar-derived examples available; docs/acquisition_protocol.md present",
+        "gaps": ""
+      },
+      {
+        "dimension": "BIDS compliance",
+        "status": "READY",
+        "score": 2,
+        "evidence": "Prior validator reports under reports/bids_validation_scientific_data/",
+        "gaps": "Re-run bids-validator on current release_dataset for FINAL validation"
+      },
+      {
+        "dimension": "Quality control",
+        "status": "READY",
+        "score": 2,
+        "evidence": "MRIQC T1w JSON=384, bold JSON=1623; DWI report=True; physio QC=True",
+        "gaps": "Ensure QC narrative docs cite live counts; MRIQC may still be partial vs full cohort"
+      },
+      {
+        "dimension": "Physiology documentation",
+        "status": "READY",
+        "score": 2,
+        "evidence": "Live physio.tsv.gz=3620; methods doc=yes",
+        "gaps": ""
+      },
+      {
+        "dimension": "Diffusion documentation",
+        "status": "READY",
+        "score": 2,
+        "evidence": "DWI NIfTI=399; DWI_QC_REPORT present=True",
+        "gaps": "Summarize DWI QC in quality_control.md / acquisition_protocol.md"
+      },
+      {
+        "dimension": "Functional validation",
+        "status": "READY",
+        "score": 2,
+        "evidence": "Tasks={'control': 399, 'fmri': 553, 'movie': 536, 'rest': 135}; events={'fmri': 514, 'movie': 536}",
+        "gaps": "Align task_descriptions.md with movie events timing policy"
+      },
+      {
+        "dimension": "Code availability",
+        "status": "READY",
+        "score": 2,
+        "evidence": "release_dataset/code/ present with task protocol materials",
+        "gaps": ""
+      },
+      {
+        "dimension": "Provenance",
+        "status": "READY",
+        "score": 2,
+        "evidence": "dataset_description GeneratedBy + optional provenance.md",
+        "gaps": ""
+      },
+      {
+        "dimension": "Limitations",
+        "status": "READY",
+        "score": 2,
+        "evidence": "README known limitations section and/or docs/limitations.md",
+        "gaps": ""
+      },
+      {
+        "dimension": "Reproducibility",
+        "status": "READY",
+        "score": 2,
+        "evidence": "Software versions in README/reports; dedicated software_versions.md present",
+        "gaps": "Create software_versions.md from verified sources only"
+      }
+    ],
+    "missing_critical": [],
+    "high_inconsistencies": 11
+  },
+  "update": {
+    "backup_dir": "/lustre07/scratch/alexrees/release_dataset_backup_before_documentation_update_20260729T192345Z",
+    "updated_files": [
+      "/lustre07/scratch/alexrees/release_dataset/README.md",
+      "/lustre07/scratch/alexrees/release_dataset/dataset_description.json",
+      "/lustre07/scratch/alexrees/release_dataset/docs/acquisition_protocol.md",
+      "/lustre07/scratch/alexrees/release_dataset/docs/task_descriptions.md",
+      "/lustre07/scratch/alexrees/release_dataset/docs/physiology_methods.md",
+      "/lustre07/scratch/alexrees/release_dataset/docs/quality_control.md",
+      "/lustre07/scratch/alexrees/release_dataset/docs/data_dictionary.md",
+      "/lustre07/scratch/alexrees/release_dataset/docs/provenance.md",
+      "/lustre07/scratch/alexrees/release_dataset/docs/limitations.md",
+      "/lustre07/scratch/alexrees/release_dataset/docs/software_versions.md",
+      "/lustre07/scratch/alexrees/release_dataset/CHANGES.md",
+      "/lustre07/scratch/alexrees/release_dataset/CHANGES",
+      "/lustre07/scratch/alexrees/release_dataset/docs/Protocols/Movie.md"
+    ],
+    "manual_review": [
+      "release_dataset/dataset_description.json (Authors/Funding/DOI/Acknowledgements)",
+      "Confirm LICENSE matches investigator intent (existing file preserved)"
+    ]
+  },
+  "output_dir": "/lustre07/scratch/alexrees/reports/release_documentation_audit"
+}

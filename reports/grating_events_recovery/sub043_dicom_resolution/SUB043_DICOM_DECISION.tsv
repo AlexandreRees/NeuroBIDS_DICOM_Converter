@@ -1,0 +1,3 @@
+participant	session	fmri_number	decision	selected_bids_run	SeriesUID	SeriesNumber	SeriesTime	dicom_cohort	rejected_twin_run	reason	matlab_timestamp
+sub-043	ses-02	3	ACCEPT	02	1.3.12.2.1107.5.2.43.166092.2025021914332960434830674.0.0.0	15	14:34:29.422	2025FEB19	01	UNIQUE_FREQ_MATCH_TO_2025_MAGNITUDE_SERIES; SeriesTime=14:34:29.422 precedes MATLAB 14:40:19 by 350s; rejected orphan 2024JUL25 twin	14:40:19
+sub-043	ses-02	4	ACCEPT	06	1.3.12.2.1107.5.2.43.166092.202502191437069811611495.0.0.0	19	14:38:46.273	2025FEB19	05	UNIQUE_FREQ_MATCH_TO_2025_MAGNITUDE_SERIES; SeriesTime=14:38:46.273 precedes MATLAB 14:44:31 by 345s; rejected orphan 2024JUL25 twin	14:44:31

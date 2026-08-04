@@ -1,0 +1,18 @@
+=== neuro_pipeline path check 2026-07-19T13:28:47-04:00 ===
+CODE_ROOT=/home/alexrees/scratch/neuro_pipeline
+DATA_ROOT=/home/alexrees/scratch
+RAW_ROOT(config)=/project/def-amirs/raw_original
+LIVE_RAW=/home/alexrees/scratch/raw_original
+[OK]  raw_original accessible with cohorts: /home/alexrees/scratch/raw_original
+[OK]  BIDS accessible: /home/alexrees/scratch/bids
+[OK]  dcm2niix available: /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/dcm2niix/1.0.20230411/bin/dcm2niix
+[OK]  python available: /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.11.5/bin/python3 (Python 3.11.5)
+[OK]  neuro_pipeline importable
+[OK]  writable: /home/alexrees/scratch/bids
+[OK]  writable: /home/alexrees/scratch/derivatives
+[OK]  writable: /home/alexrees/scratch/metadata
+[OK]  writable: /home/alexrees/scratch/tmp_processing
+[OK]  writable: /home/alexrees/scratch/logs
+[OK]  paths.yaml present: /home/alexrees/scratch/neuro_pipeline/config/paths.yaml
+=====================================
+PATH CHECK PASSED

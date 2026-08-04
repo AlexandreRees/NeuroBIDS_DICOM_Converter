@@ -1,0 +1,44 @@
+severity	code	path	reason
+errors	PHASE_ENCODING_DIRECTION_MUST_DEFINE	/sub-054/ses-02/fmap/sub-054_ses-02_dir-AP_run-02_epi.nii.gz	You have to define 'PhaseEncodingDirection' for this file.
+errors	TOTAL_READOUT_TIME_MUST_DEFINE	/sub-054/ses-02/fmap/sub-054_ses-02_dir-AP_run-02_epi.nii.gz	You have to define 'TotalReadoutTime' for this file.
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-control_run-01_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-control_run-02_part-phase_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-control_run-03_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-control_run-04_part-phase_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-control_run-05_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-control_run-06_part-phase_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-01_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-02_part-phase_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-04_part-phase_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	EVENTS_TSV_MISSING	/sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-05_bold.nii.gz	"Task scans should have a corresponding events.tsv file. If this is a resting state scan you can ignore this warning or rename the task to include the word ""rest""."
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/anat/sub-001_ses-01_run-02_FLAIR.json	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/anat/sub-001_ses-01_run-02_FLAIR.nii.gz	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-03_dwi.bval	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-03_dwi.bvec	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-03_dwi.json	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-03_dwi.nii.gz	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-04_dwi.bval	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-04_dwi.bvec	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-04_dwi.json	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_SUBJECTS	/sub-001/ses-01/dwi/sub-001_ses-01_run-04_dwi.nii.gz	Not all subjects contain the same files. Each subject should contain the same number of files with the same naming unless some files are known to be missing.
+warnings	INCONSISTENT_PARAMETERS	/sub-001/ses-01/anat/sub-001_ses-01_run-03_T1w.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-001/ses-01/dwi/sub-001_ses-01_run-05_dwi.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-001/ses-02/anat/sub-001_ses-02_run-03_T1w.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-001/ses-02/dwi/sub-001_ses-02_run-05_dwi.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-002/ses-01/anat/sub-002_ses-01_run-03_T1w.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-002/ses-01/dwi/sub-002_ses-01_run-05_dwi.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-002/ses-01/func/sub-002_ses-01_task-fmri_run-07_bold.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-002/ses-01/func/sub-002_ses-01_task-fmri_run-08_part-phase_bold.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-002/ses-02/anat/sub-002_ses-02_run-03_T1w.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	INCONSISTENT_PARAMETERS	/sub-002/ses-02/dwi/sub-002_ses-02_run-05_dwi.nii.gz	Not all subjects/sessions/runs have the same scanning parameters.
+warnings	MISSING_SESSION	/sub-010/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-013/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-014/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-018/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-020/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-032/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-033/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-037/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-042/ses-02	Not all subjects contain the same sessions.
+warnings	MISSING_SESSION	/sub-043/ses-01	Not all subjects contain the same sessions.
+warnings	TOO_FEW_AUTHORS		The Authors field of dataset_description.json should contain an array of fields - with one author per field. This was triggered based on the presence of only one author field. Please ignore if all contributors are already properly listed.

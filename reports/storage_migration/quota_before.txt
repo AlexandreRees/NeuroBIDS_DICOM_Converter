@@ -1,0 +1,53 @@
+=== QUOTA BEFORE 2026-07-19T21:02:35-04:00 ===
+
+                            Description                Space         # of files
+                  /home (user alexrees)          12GB/  50GB          67K/ 500K
+               /scratch (user alexrees)        2714GB/  20TB         942K/1000K
+           /project (project def-amirs)        6853GB/  10TB         310K/2000K
+          /nearline (project def-amirs)        1356KB/1000GB          55 /5000 
+
+Disk usage can be explored using the following commands
+diskusage_explorer /home/alexrees            # Last update: 2026-07-17 22:48:08
+diskusage_explorer /scratch/alexrees         # Last update: 2026-07-19 18:13:56
+diskusage_explorer /project/def-amirs        # Last update: 2026-07-19 09:13:07
+diskusage_explorer /nearline/def-amirs       # Last update: 2026-07-19 20:00:47
+--
+On some clusters, a break down per user may be available by adding the option '--per_user'.
+
+--- Source ---
+path: /lustre07/scratch/alexrees/raw_original
+drwxr-x---. 6 alexrees alexrees 25600 Jul 15 10:23 /lustre07/scratch/alexrees/raw_original
+top-level cohorts:
+total 166
+drwxr-x---.   6 alexrees alexrees 25600 Jul 15 10:23 .
+drwx------.  16 alexrees alexrees 25600 Jul 19 14:00 ..
+drwxrwxrwx. 104 alexrees alexrees 33792 Jul 10 10:25 Control
+drwxrwxrwx.  10 alexrees alexrees 25600 Jul 10 10:27 Data_ON
+drwxrwxrwx.   5 alexrees alexrees 25600 Mar 16 22:39 Data_TON
+drwxrwxrwx.  31 alexrees alexrees 33792 Jul  9 14:40 Glaucoma
+
+cohort folder counts (top-level entries):
+  scratch/Control: 102
+  scratch/Data_ON: 8
+  scratch/Data_TON: 3
+  scratch/Glaucoma: 29
+
+--- Destination (pre-migration / partial) ---
+path: /project/def-amirs/raw_original
+drwxr-x---. 6 alexrees alexrees 25600 Jul 15 10:23 /project/def-amirs/raw_original
+total 166
+drwxr-x---.   6 alexrees alexrees  25600 Jul 15 10:23 .
+drwxrws---.  61 amirs    def-amirs 33792 Jul 19 13:09 ..
+drwxrwxrwx. 104 alexrees alexrees  33792 Jul 10 10:25 Control
+drwx------.   2 alexrees alexrees  25600 Jul 19 13:25 Data_ON
+drwx------.   2 alexrees alexrees  25600 Jul 19 13:25 Data_TON
+drwx------.   2 alexrees alexrees  25600 Jul 19 13:25 Glaucoma
+  project/Control: 102
+  project/Data_ON: 0
+  project/Data_TON: 0
+  project/Glaucoma: 0
+
+project partial size:
+1.4G	/project/def-amirs/raw_original
+
+Project free inodes approx: 2000K - 310K = 1690K (sufficient for ~900K-file raw_original)

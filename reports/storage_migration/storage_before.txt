@@ -1,0 +1,95 @@
+STORAGE AUDIT BEFORE MIGRATION
+Generated: 2026-07-19T13:23:57.565739-04:00
+Host: narval2
+User: alexrees
+
+========== QUOTA (diskusage_report) ==========
+                            Description                Space         # of files
+                  /home (user alexrees)          12GB/  50GB          46K/ 500K
+               /scratch (user alexrees)        2260GB/  20TB         914K/1000K
+           /project (project def-amirs)        6852GB/  10TB         310K/ 500K
+          /nearline (project def-amirs)        1356KB/1000GB          55 /5000 
+
+Disk usage can be explored using the following commands
+diskusage_explorer /home/alexrees            # Last update: 2026-07-17 22:48:08
+diskusage_explorer /scratch/alexrees         # Last update: 2026-07-19 10:22:52
+diskusage_explorer /project/def-amirs        # Last update: 2026-07-19 09:13:07
+diskusage_explorer /nearline/def-amirs       # Last update: 2026-07-19 12:00:53
+--
+On some clusters, a break down per user may be available by adding the option '--per_user'.
+
+========== DIR SIZES (excluding full raw_ori2.1T	/home/alexrees/scratch/raw_original/
+19G	/home/alexrees/scratch/bids/
+7.5G	/home/alexrees/scratch/bids_defaced/
+4.7G	/home/alexrees/scratch/containers/
+440M	/home/alexrees/scratch/logs/
+89M	/home/alexrees/scratch/derivatives/
+44M	/home/alexrees/scratch/neuro_pipeline/
+13M	/home/alexrees/scratch/reports/
+5.9M	/home/alexrees/scratch/metadata/
+1.4M	/home/alexrees/scratch/figures/
+25K	/home/alexrees/scratch/venvs/
+25K	/home/alexrees/scratch/tmp_processing/
+25K	/home/alexrees/scratch/bids_defaced_test/
+
+========== FILE COUNTS (maxdepth 1 dirs) ==========
+900375	raw_original
+69794	tmp_processing
+4703	defacing_env
+885	neuro_pipeline
+312	bids
+285	derivatives
+177	reports
+134	bids_defaced
+88	metadata
+49	logs
+10	figures
+1	containers
+0	venvs
+0	bids_defaced_test
+1689	.pydeps
+162	.pydeps_h5py
+4	.pytest_cache
+
+--- refreshed key counts ---
+900375	raw_original
+312	bids
+285	derivatives
+88	metadata
+895	neuro_pipeline
+0	tmp_processing
+185	reports
+49	logs
+1	containers
+
+========== PIPELINE PATHS ==========
+CODE_ROOT=/home/alexrees/scratch/neuro_pipeline
+DATA_ROOT=/home/alexrees/scratch
+RAW_ORIGINAL=/home/alexrees/scratch/raw_original
+BIDS=/home/alexrees/scratch/bids
+DERIVATIVES=/home/alexrees/scratch/derivatives
+METADATA=/home/alexrees/scratch/metadata
+TMP=/home/alexrees/scratch/tmp_processing
+PROJECT_RAW_TARGET=/project/def-amirs/raw_original
+
+========== PROJECT INODE CAPACITY CHECK ==========
+raw_original files: 900375
+project files used: 310K (from diskusage_report; see above)
+project file quota: 500K
+project free (approx): ~190K
+REQUIRED free for migration: 900375
+BLOCKER: project inode quota insufficient for full raw_original migration
+STATUS: NEEDS_QUOTA_INCREASE
+
+========== raw_original structure ==========
+total 166
+drwxr-x---.   6 alexrees alexrees 25600 Jul 15 10:23 .
+drwx------.  16 alexrees alexrees 25600 Jul 19 13:48 ..
+drwxrwxrwx. 104 alexrees alexrees 33792 Jul 10 10:25 Control
+drwxrwxrwx.  10 alexrees alexrees 25600 Jul 10 10:27 Data_ON
+drwxrwxrwx.   5 alexrees alexrees 25600 Mar 16 22:39 Data_TON
+drwxrwxrwx.  31 alexrees alexrees 33792 Jul  9 14:40 Glaucoma
+1.7T	/home/alexrees/scratch/raw_original/Control
+240G	/home/alexrees/scratch/raw_original/Glaucoma
+106G	/home/alexrees/scratch/raw_original/Data_ON
+61G	/home/alexrees/scratch/raw_original/Data_TON

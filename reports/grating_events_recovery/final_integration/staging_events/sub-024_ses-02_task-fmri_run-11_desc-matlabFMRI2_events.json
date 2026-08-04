@@ -1,0 +1,16 @@
+{
+  "Description": "Event timings reconstructed from MATLAB Psychtoolbox triggerTimes recorded during task-fMRI acquisition.",
+  "Source": "MATLAB scan_info.mat triggerTimes",
+  "ReconstructionMethod": "Direct extraction, no synthetic timing generation",
+  "matlab_fmri_number": 2,
+  "matlab_sha256_16": "1b5370b9fc5d658c",
+  "confidence_level": "high",
+  "messages": [
+    "triggerTimes from scan.runs",
+    "vbl from scan.runs",
+    "n_stim=12",
+    "paradigm load failed: 'paradigm / runParadigmFinal not found in /lustre06/project/6001995/raw_original/Control/SUBC25_Session02_2024APR23/SUBC25_Session02_2024APR23_MATLAB/2-Grating/Results/runs_random_record_SUBC25_SESS02.mat'",
+    "using default grating block paradigm (10s baseline / 8s stim)"
+  ],
+  "matlab_basename": "April-23-2024_10-47-59_AM__scan_info_for_subject_c25__selected_run_is_4__fmri_number_is2.mat"
+}

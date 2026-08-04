@@ -1,0 +1,6 @@
+classification	count	percentage	potentially_recoverable	not_recoverable
+RECOVERABLE_MAPPING_FAILURE	158	100.0	true	false
+RECOVERABLE_SOURCE_SELECTION	0	0.0	true	false
+TRUE_MISSING_SOURCE	0	0.0	false	true
+INSUFFICIENT_METADATA	0	0.0	false	false
+NOT_A_VALID_TASK_RUN	0	0.0	false	true

@@ -1,0 +1,5 @@
+subject	session	modality	input	output	status	runtime_seconds	include_reason
+sub-008	ses-02	T1w	/home/alexrees/scratch/bids/sub-008/ses-02/anat/sub-008_ses-02_run-01_T1w.nii.gz	/home/alexrees/scratch/derivatives/defacing/sub-008/ses-02/anat/sub-008_ses-02_run-01_T1w.nii.gz	PASS	263.268	always (high-res anatomical)
+sub-008	ses-02	T1w	/home/alexrees/scratch/bids/sub-008/ses-02/anat/sub-008_ses-02_run-02_T1w.nii.gz	/home/alexrees/scratch/derivatives/defacing/sub-008/ses-02/anat/sub-008_ses-02_run-02_T1w.nii.gz	PASS	434.019	always (high-res anatomical)
+sub-008	ses-02	T1w	/home/alexrees/scratch/bids/sub-008/ses-02/anat/sub-008_ses-02_run-03_T1w.nii.gz	/home/alexrees/scratch/derivatives/defacing/sub-008/ses-02/anat/sub-008_ses-02_run-03_T1w.nii.gz	PASS	221.718	always (high-res anatomical)
+sub-008	ses-02	FLAIR	/home/alexrees/scratch/bids/sub-008/ses-02/anat/sub-008_ses-02_run-01_FLAIR.nii.gz	/home/alexrees/scratch/derivatives/defacing/sub-008/ses-02/anat/sub-008_ses-02_run-01_FLAIR.nii.gz	PASS	227.394	always (high-res anatomical)

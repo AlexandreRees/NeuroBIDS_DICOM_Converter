@@ -1,0 +1,11 @@
+subject	session	filename	artifact_probability	transfer_proba_nonNORM	screening_priority	screening_source	uncertainty	confidence
+sub-001	ses-01	sub-001_ses-01_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-001	ses-02	sub-001_ses-02_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-002	ses-01	sub-002_ses-01_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-002	ses-02	sub-002_ses-02_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-003	ses-01	sub-003_ses-01_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-004	ses-01	sub-004_ses-01_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-004	ses-02	sub-004_ses-02_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-006	ses-02	sub-006_ses-02_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-007	ses-01	sub-007_ses-01_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100
+sub-008	ses-01	sub-008_ses-01_run-03_T1w.nii.gz	100		100.0	original_pizarro_score	0.0	100

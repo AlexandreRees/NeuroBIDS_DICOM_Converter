@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated Scientific Data publication."
+title: "Shmuel Lab MRI Dataset Processing Pipeline"
+version: "1.0.0"
+type: software
+repository-code: "https://github.com/AlexandreRees/neuro_pipeline"
+url: "https://github.com/AlexandreRees/neuro_pipeline"
+date-released: "2026-08-04"
+license: "NOASSERTION"
+authors:
+  - family-names: Rees
+    given-names: Alexandre
+    alias: AlexandreRees
+  - family-names: "[PLACEHOLDER]"
+    given-names: "[Co-author]"
+    affiliation: "Shmuel Lab / McGill University (placeholder)"
+  - name: "Shmuel Lab"
+    website: "https://github.com/AlexandreRees/neuro_pipeline"
+keywords:
+  - neuroimaging
+  - BIDS
+  - MRI
+  - Scientific Data
+  - Open Science
+  - Siemens Prisma

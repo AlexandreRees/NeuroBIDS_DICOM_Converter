@@ -1,0 +1,9 @@
+VALIDATION: BLOCKED
+reason: project inode quota insufficient
+source_files: 900375
+approx_project_free_inodes: 190000
+needed_with_headroom: 990412
+action: Request inode quota increase for /project/def-amirs (suggest >= 1.5M files)
+        then re-run this script. Partial copies (if any) can be resumed by rsync.
+rsync: NOT STARTED
+cutover: NOT PERFORMED

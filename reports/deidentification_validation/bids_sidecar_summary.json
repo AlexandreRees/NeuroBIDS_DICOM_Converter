@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-07-22T19:35:50.013284+00:00",
+  "bids_dir": "/lustre07/scratch/alexrees/bids",
+  "dry_run": false,
+  "n_json": 7958,
+  "invalid": 0,
+  "phi_risk": 0,
+  "review_required": 0,
+  "field_hits": {},
+  "verdict": "PASS",
+  "tsv": "/home/alexrees/scratch/reports/deidentification_validation/bids_sidecar_phi_audit.tsv",
+  "summary_md": "/home/alexrees/scratch/reports/deidentification_validation/bids_sidecar_privacy_summary.md"
+}

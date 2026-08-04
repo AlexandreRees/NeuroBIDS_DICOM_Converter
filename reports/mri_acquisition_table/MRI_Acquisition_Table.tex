@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[margin=20mm,paperwidth=210mm,paperheight=297mm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\definecolor{tablealt}{RGB}{245,247,250}
+\definecolor{headergray}{RGB}{55,65,81}
+\captionsetup{font=small,labelfont=bf,skip=8pt,justification=centering}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{document}
+\pagestyle{empty}
+\vspace*{0pt}
+\begin{center}
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{1.28}
+\begin{minipage}{0.98\textwidth}
+\captionof{table}{MRI acquisition parameters. Siemens Prisma, 3 T (syngo MR E11 / XA30; HeadNeck\_64). Parameters from BIDS JSON sidecars. Localizers, SBRef, physiological logs and derived diffusion maps omitted. Reverse-PE b0 not present in released BIDS DWI; EPI distortion correction uses spin-echo field maps.}
+\centering
+\begin{tabularx}{\textwidth}{@{}L{2.15cm}L{3.6cm}L{2.7cm}Y@{}}
+\toprule
+\textcolor{headergray}{\textbf{Category}} &
+\textcolor{headergray}{\textbf{Sequence}} &
+\textcolor{headergray}{\textbf{BIDS label}} &
+\textcolor{headergray}{\textbf{Acquisition parameters}} \\
+\midrule
+Anatomical & T1-weighted MPRAGE & {\ttfamily\footnotesize T1w} & TR 2500 ms; TE 2.2 ms; Flip angle 8$^{\circ}$; 0.8$\times$0.8$\times$0.8 mm; in-plane accel. 2 \\
+\rowcolor{tablealt} Anatomical & White-matter-nulled MPRAGE & {\ttfamily\footnotesize T1w (WMn)} & TR 4000 ms; TE 3.8 ms; Flip angle 7$^{\circ}$; 1$\times$1$\times$1 mm; in-plane accel. 2 \\
+Anatomical & 3D FLAIR & {\ttfamily\footnotesize FLAIR} & TR 6000 ms; TE 357 ms; Flip angle 120$^{\circ}$; 0.8$\times$0.8$\times$0.8 mm; in-plane accel. 2 \\
+\rowcolor{tablealt} Field map & Spin-echo EPI (AP/PA) & {\ttfamily\footnotesize dir-AP/PA\_epi} & TR 9710 ms; TE 66 ms; Flip angle 90$^{\circ}$; 2 mm isotropic; PE AP/PA; TotalReadoutTime 0.0597 s \\
+Functional & Resting-state fMRI (1 run) & {\ttfamily\footnotesize task-rest\_bold} & TR 937 ms; TE 37 ms; Flip angle 52$^{\circ}$; 2$\times$2$\times$2 mm; MB 8; 320 volumes; PE AP \\
+\rowcolor{tablealt} Functional & Movie fMRI (4 runs) & {\ttfamily\footnotesize task-movie\_bold} & TR 937 ms; TE 37 ms; Flip angle 52$^{\circ}$; 2$\times$2$\times$2 mm; MB 8; 210 volumes; PE AP \\
+Functional & Task fMRI (4 runs) & {\ttfamily\footnotesize task-fmri\_bold} & TR 937 ms; TE 37 ms; Flip angle 52$^{\circ}$; 2$\times$2$\times$2 mm; MB 8; 226 volumes; PE AP \\
+\rowcolor{tablealt} Functional & Control fMRI (3 runs) & {\ttfamily\footnotesize task-control\_bold} & TR 937 ms; TE 37 ms; Flip angle 52$^{\circ}$; 2$\times$2$\times$2 mm; MB 8; 20 volumes; PE AP/PA \\
+Diffusion & Multidirection DWI & {\ttfamily\footnotesize dwi} & TR 3500 ms; TE 75 ms; Flip angle 90$^{\circ}$; 1 mm isotropic (protocol); MB 2; in-plane accel. 3; b = 0/1000/2000 s/mm²; \textasciitilde{}365 directions; 20 b0; PE AP \\
+\rowcolor{tablealt} Diffusion & RESOLVE trace DWI & {\ttfamily\footnotesize dwi (RESOLVE)} & TR 4140 ms; TE 51 ms; Flip angle 180$^{\circ}$; $\approx$1.4 mm; in-plane accel. 3; b = 0/1000 s/mm²; 11 directions; 4 b0; PE AP \\
+Calibration & B1 map (turbo flash) & {\ttfamily\footnotesize TB1TFL} & TR 4000 ms; TE 1.8 ms; Flip angle 8$^{\circ}$; 3.438$\times$3.438$\times$10 mm \\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\end{center}
+\end{document}

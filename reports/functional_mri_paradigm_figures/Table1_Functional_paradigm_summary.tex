@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[margin=18mm,paperwidth=210mm,paperheight=297mm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\definecolor{tablealt}{RGB}{245,247,250}
+\definecolor{headergray}{RGB}{55,65,81}
+\captionsetup{font=small,labelfont=bf,skip=8pt,justification=centering}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{empty}
+\vspace*{0pt}
+\begin{center}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.30}
+\begin{minipage}{0.98\textwidth}
+\captionof{table}{Functional MRI paradigm summary. All BOLD runs share TR 937 ms, TE 37 ms, flip angle 52$^{\circ}$, 2 mm isotropic voxels, and multiband acceleration factor 8. Durations are approximate (volumes $\times$ TR). Stimulation was monocular; the non-stimulated eye was occluded.}
+\centering
+\begin{tabularx}{\textwidth}{@{}L{2.6cm}Y C{2.2cm} C{2.2cm} C{2.4cm}@{}}
+\toprule
+\textcolor{headergray}{\textbf{BIDS task}} &
+\textcolor{headergray}{\textbf{Description}} &
+\textcolor{headergray}{\textbf{Runs/session}} &
+\textcolor{headergray}{\textbf{Volumes/run}} &
+\textcolor{headergray}{\textbf{Duration (min)}} \\
+\midrule
+{\ttfamily task-rest} & Fixation-only monocular resting-state & 1 & 320 & 5.0 \\
+\rowcolor{tablealt} {\ttfamily task-movie} & Naturalistic movie segments with fixation overlay & 4 & 210 & 3.3 \\
+{\ttfamily task-fmri} & Block-design grating/checkerboard stimulation & 4 & 226 & 3.5 \\
+\rowcolor{tablealt} {\ttfamily task-control} & Short control EPI acquisitions & 3 & 20 & 0.3 \\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\end{center}
+\end{document}

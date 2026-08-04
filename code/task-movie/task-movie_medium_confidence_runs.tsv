@@ -1,0 +1,17 @@
+participant_id	session_id	bids_run	ProtocolName	stim_file	eye	movie_label	matlab_run_id	mapping_method
+sub-007	ses-01	run-07	Movie4_AP	Movie2B.mp4	left	Movie4	4	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-007	ses-01	run-09	Movie4_AP_redo_cuz_gogle_moved	Movie2B.mp4	left	Movie4	4	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-010	ses-01	run-01	Movie1_AP	Movie1A.mp4	left	Movie1	1	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-010	ses-01	run-03	Movie1_AP	Movie1A.mp4	left	Movie1	1	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-01	Movie1_AP	Movie1A.mp4	left	Movie1	1	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-02	Movie1_AP	Movie1A.mp4	left	Movie1	1	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-05	Movie2_AP	Movie2A.mp4	right	Movie2	2	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-06	Movie2_AP	Movie2A.mp4	right	Movie2	2	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-09	Movie3_AP	Movie1B.mp4	right	Movie3	3	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-10	Movie3_AP	Movie1B.mp4	right	Movie3	3	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-13	Movie4_AP	Movie2B.mp4	left	Movie4	4	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-043	ses-02	run-14	Movie4_AP	Movie2B.mp4	left	Movie4	4	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-060	ses-01	run-01	Movie1_AP	Movie1A.mp4	left	Movie1	1	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-060	ses-01	run-03	Movie1_AP	Movie1A.mp4	left	Movie1	1	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-082	ses-01	run-05	Movie3_AP	Movie1B.mp4	right	Movie3	3	ProtocolName_MovieN_fallback_unassigned_or_ambiguous
+sub-082	ses-01	run-07	Movie3_AP	Movie1B.mp4	right	Movie3	3	ProtocolName_MovieN_fallback_unassigned_or_ambiguous

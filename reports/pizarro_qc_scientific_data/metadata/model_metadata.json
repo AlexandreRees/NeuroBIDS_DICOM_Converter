@@ -1,0 +1,28 @@
+{
+  "model_name": "Pizarro et al. (2023)",
+  "model_label": "Pizarro2023-FINAL",
+  "model_file": "model.FINAL.onnx",
+  "model_path": "/home/alexrees/scratch/neuro_pipeline/external/Pizarro-et-al-2023-DL-detects-MRI-artifacts/production/model.FINAL.onnx",
+  "model_sha256": "cb84f2b90f7de452331ed9ba5152335b873aba95d0ca3766adfffecdafe5178a",
+  "inference_framework": "ONNX Runtime",
+  "monte_carlo_dropout_runs": 10,
+  "random_seed": 1010,
+  "python_version": "3.11.5",
+  "onnxruntime_version": "1.23.2",
+  "execution_date": "2026-07-24",
+  "execution_dates_observed": [
+    "2026-07-22",
+    "2026-07-24"
+  ],
+  "report_generated": "2026-07-24T17:40:07Z",
+  "slurm_array_job_id": "66208403",
+  "role": "automated_qc_screening_and_prioritization",
+  "not_used_as": "exclusion_classifier",
+  "high_probability_threshold_percent": 90.0,
+  "high_uncertainty_threshold_bits": 0.9,
+  "required_statement": "No image or subject was excluded based solely on the Pizarro model output. Predictions were used exclusively to prioritize targeted manual visual inspection.",
+  "mriqc_statement": "The Pizarro model was used as an automated structural MRI quality screening tool. Model outputs were not used for exclusion decisions but rather to prioritize images for targeted visual inspection. Quantitative MRI quality assessment remains provided by MRIQC.",
+  "runtime_notes": {
+    "python_full": "3.11.5 (main, Sep 18 2023, 12:23:42) [GCC 12.3.1 20230526]"
+  }
+}

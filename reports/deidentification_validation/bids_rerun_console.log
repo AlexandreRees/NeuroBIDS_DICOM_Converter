@@ -1,0 +1,21 @@
+Scanning 7958 JSON sidecars under /home/alexrees/scratch/bids
+  … 500/7958
+  … 1000/7958
+  … 1500/7958
+  … 2000/7958
+  … 2500/7958
+  … 3000/7958
+  … 3500/7958
+  … 4000/7958
+  … 4500/7958
+  … 5000/7958
+  … 5500/7958
+  … 6000/7958
+  … 6500/7958
+  … 7000/7958
+  … 7500/7958
+  … 7958/7958
+Wrote /home/alexrees/scratch/reports/deidentification_validation/bids_sidecar_phi_audit.tsv
+Wrote /home/alexrees/scratch/reports/deidentification_validation/bids_sidecar_privacy_summary.md
+Verdict: PASS
+EXIT:0

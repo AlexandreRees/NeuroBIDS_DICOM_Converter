@@ -1,0 +1,21 @@
+T1w BIDS=356 defaced=356 matched=356 missing=0 unexpected=0
+Full: geometry+voxels on 356 pairs
+  … pairs 25/356
+  … pairs 50/356
+  … pairs 75/356
+  … pairs 100/356
+  … pairs 125/356
+  … pairs 150/356
+  … pairs 175/356
+  … pairs 200/356
+  … pairs 225/356
+  … pairs 250/356
+  … pairs 275/356
+  … pairs 300/356
+  … pairs 325/356
+  … pairs 350/356
+  … pairs 356/356
+Wrote /home/alexrees/scratch/reports/deidentification_validation/defacing_validation.tsv
+Wrote /home/alexrees/scratch/reports/deidentification_validation/defacing_validation_summary.md
+Verdict: PASS_WITH_METADATA_REVIEW
+EXIT:0

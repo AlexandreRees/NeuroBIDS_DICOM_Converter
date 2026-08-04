@@ -1,0 +1,13 @@
+modality	bids_suffix	n_subjects	n_sessions	n_files
+bold	bold	84	124	2992
+sbref	sbref	80	119	2892
+epi	epi	84	124	982
+dwi	dwi	82	120	361
+T1w	T1w	83	122	356
+TB1TFL	TB1TFL	81	118	248
+FLAIR	FLAIR	80	118	125
+bold_task-control	bold	84		369
+bold_task-fmri	bold	83		507
+bold_task-movie	bold	83		495
+bold_task-rest	bold	83		125
+events	events.tsv	51		51

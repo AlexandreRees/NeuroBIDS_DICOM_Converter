@@ -1,0 +1,7 @@
+protocol_id	n_scans	unique_bvals	n_diffusion_directions	n_b0_typical	voxel_size_str	matrix_str	TR_s_median	TE_s_median	PhaseEncodingDirection	TotalReadoutTime_median	orientation
+Protocol A	232	0,1000,2000	365	20	1×1×5	220×220×30	3.5	0.075	j-	0.0678889	LAS
+Protocol B	121	0,1000	11	4	1.38×1.38×1.82	160×160×32	4.14	0.051	j-	0.0160989	LAS
+Protocol C	2	0,1000,2000	144	20	1×1×5	220×220×30	3.5	0.075	j-	0.0678889	LAS
+Protocol D	2	0,1000,2000	7	20	1×1×5	220×220×30	3.5	0.075	j-	0.0678889	LAS
+Protocol E	2	0,1000,2000	365	20	0.982×0.982×6.75	220×220×30	3.5	0.075	j-	0.0678889	LAS
+Protocol F	2	0,1000,2000	104	20	0.982×0.982×6.75	220×220×30	3.5	0.075	j-	0.0678889	LAS

@@ -1,0 +1,713 @@
+Mapping versions audit report
+========================================================================================
+Execution date     : 2026-07-16T11:02:04-04:00
+metadata           : /lustre07/scratch/alexrees/metadata
+raw_original       : /lustre07/scratch/alexrees/raw_original
+expected subjects  : 84
+expected cohorts   : Control, DataON, DataTON, Glaucoma
+
+1) CSV inventory
+----------------------------------------------------------------------------------------
+File: auxiliary_mapping.csv
+  path     : /lustre07/scratch/alexrees/metadata/auxiliary_mapping.csv
+  modified : 2026-07-15T22:04:36-04:00
+  size     : 1.4 KiB (1386 bytes)
+  lines    : 7
+  rows     : 6
+  columns  : cohort, source_subject_folder, auxiliary_path, matched_participant_id, matched_session_id, match_score, mapping_status, association_reason
+
+File: inventory_Data_ON.csv
+  path     : /lustre07/scratch/alexrees/metadata/inventory_Data_ON.csv
+  modified : 2026-07-15T15:31:33-04:00
+  size     : 652.3 KiB (667953 bytes)
+  lines    : 544
+  rows     : 543
+  columns  : cohort, subject_candidate, session_candidate, canonical_subject, canonical_session, session_count_detected, detected_sessions, original_path, source_subject_folder, source_subject_path, session_index, session_label, session_cluster_key, study_instance_uid, series_instance_uid, series_description, modality, protocol_name, series_number, n_dicom_files, representative_dicom, patient_id_raw, patient_sex, study_date, study_time, series_time, manufacturer, manufacturer_model, dicom_manufacturer, dicom_manufacturer_model, dicom_study_date_min, dicom_study_date_max, dicom_n_studies, dicom_metadata_summary, dicom_count, has_physiological_data, physiological_data_path, has_MATLAB_data, MATLAB_data_path, auxiliary_file_summary, subject_override_applied, session_override_applied, override_reason
+
+File: inventory_Data_TON.csv
+  path     : /lustre07/scratch/alexrees/metadata/inventory_Data_TON.csv
+  modified : 2026-07-16T10:58:02-04:00
+  size     : 289.3 KiB (296200 bytes)
+  lines    : 226
+  rows     : 225
+  columns  : cohort, subject_candidate, session_candidate, canonical_subject, canonical_session, session_count_detected, detected_sessions, original_path, source_subject_folder, source_subject_path, session_index, session_label, session_cluster_key, study_instance_uid, series_instance_uid, series_description, modality, protocol_name, series_number, n_dicom_files, representative_dicom, patient_id_raw, patient_sex, study_date, study_time, series_time, manufacturer, manufacturer_model, dicom_manufacturer, dicom_manufacturer_model, dicom_study_date_min, dicom_study_date_max, dicom_n_studies, dicom_metadata_summary, dicom_count, has_physiological_data, physiological_data_path, has_MATLAB_data, MATLAB_data_path, auxiliary_file_summary, subject_override_applied, session_override_applied, override_reason
+
+File: inventory_narval.csv
+  path     : /lustre07/scratch/alexrees/metadata/inventory_narval.csv
+  modified : 2026-07-15T20:31:18-04:00
+  size     : 12.4 MiB (12984684 bytes)
+  lines    : 10080
+  rows     : 10079
+  columns  : cohort, subject_candidate, session_candidate, canonical_subject, canonical_session, session_count_detected, detected_sessions, original_path, source_subject_folder, source_subject_path, session_index, session_label, session_cluster_key, study_instance_uid, series_instance_uid, series_description, modality, protocol_name, series_number, n_dicom_files, representative_dicom, patient_id_raw, patient_sex, study_date, study_time, series_time, manufacturer, manufacturer_model, dicom_manufacturer, dicom_manufacturer_model, dicom_study_date_min, dicom_study_date_max, dicom_n_studies, dicom_metadata_summary, dicom_count, has_physiological_data, physiological_data_path, has_MATLAB_data, MATLAB_data_path, auxiliary_file_summary, subject_override_applied, session_override_applied, override_reason
+
+File: inventory_warnings.csv
+  path     : /lustre07/scratch/alexrees/metadata/inventory_warnings.csv
+  modified : 2026-07-15T15:31:33-04:00
+  size     : 1.0 KiB (1052 bytes)
+  lines    : 4
+  rows     : 3
+  columns  : type, severity, context, message
+
+File: manual_mapping_overrides.csv
+  path     : /lustre07/scratch/alexrees/metadata/manual_mapping_overrides.csv
+  modified : 2026-07-16T10:30:06-04:00
+  size     : 680 B (680 bytes)
+  lines    : 3
+  rows     : 2
+  columns  : path, canonical_subject, canonical_session, status, reason, confidence
+
+File: manual_session_overrides_narval.csv
+  path     : /lustre07/scratch/alexrees/metadata/manual_session_overrides_narval.csv
+  modified : 2026-07-15T20:43:40-04:00
+  size     : 199 B (199 bytes)
+  lines    : 2
+  rows     : 1
+  columns  : path, canonical_subject, canonical_session, reason
+
+File: mapping.csv
+  path     : /lustre07/scratch/alexrees/metadata/mapping.csv
+  modified : 2026-07-15T22:04:36-04:00
+  size     : 67.3 KiB (68871 bytes)
+  lines    : 142
+  rows     : 141
+  columns  : participant_id, session_id, cohort, dicom_source_path, associated_auxiliary_paths, acquisition_date, mapping_confidence, mapping_status, source_subject_folder, source_subject_path, source_hash, session_label_raw, subject_label_raw, session_label_normalized, subject_label_normalized, association_reason, dicom_subject, dicom_subject_original, subject_override_applied, override_reason, original_subject_id, canonical_subject_id, override_applied, override_source, original_path, original_cohort, exclusion_status, exclusion_reason
+
+File: mapping_narval_fixed.csv
+  path     : /lustre07/scratch/alexrees/metadata/mapping_narval_fixed.csv
+  modified : 2026-07-15T22:17:37-04:00
+  size     : 67.3 KiB (68878 bytes)
+  lines    : 142
+  rows     : 141
+  columns  : participant_id, session_id, cohort, dicom_source_path, associated_auxiliary_paths, acquisition_date, mapping_confidence, mapping_status, source_subject_folder, source_subject_path, source_hash, session_label_raw, subject_label_raw, session_label_normalized, subject_label_normalized, association_reason, dicom_subject, dicom_subject_original, subject_override_applied, override_reason, original_subject_id, canonical_subject_id, override_applied, override_source, original_path, original_cohort, exclusion_status, exclusion_reason
+
+File: mapping_review.csv
+  path     : /lustre07/scratch/alexrees/metadata/mapping_review.csv
+  modified : 2026-07-15T22:04:36-04:00
+  size     : 1.2 KiB (1244 bytes)
+  lines    : 7
+  rows     : 6
+  columns  : cohort, subject_id, candidate_session, auxiliary_path, matched_session, match_score, decision, reason
+
+File: no_dicom_subjects.csv
+  path     : /lustre07/scratch/alexrees/metadata/no_dicom_subjects.csv
+  modified : 2026-07-15T15:31:33-04:00
+  size     : 40 B (40 bytes)
+  lines    : 1
+  rows     : 0
+  columns  : cohort, subject, reason, file_types_found
+
+File: participant_mapping.csv
+  path     : /lustre07/scratch/alexrees/metadata/participant_mapping.csv
+  modified : 2026-07-15T22:04:35-04:00
+  size     : 33.2 KiB (33986 bytes)
+  lines    : 85
+  rows     : 84
+  columns  : participant_id, cohort, canonical_subject_id, source_subject_folder, source_subject_path, source_hash, patient_sex, original_subject_id, canonical_subject_id.1, override_applied, override_source, original_path, original_cohort, exclusion_status, exclusion_reason
+
+File: session_mapping.csv
+  path     : /lustre07/scratch/alexrees/metadata/session_mapping.csv
+  modified : 2026-07-15T22:04:36-04:00
+  size     : 14.1 MiB (14792395 bytes)
+  lines    : 10027
+  rows     : 10026
+  columns  : cohort, subject_candidate, session_candidate, canonical_subject, canonical_session, session_count_detected, detected_sessions, original_path, source_subject_folder, source_subject_path, session_index, session_label, session_cluster_key, study_instance_uid, series_instance_uid, series_description, modality, protocol_name, series_number, n_dicom_files, representative_dicom, patient_id_raw, patient_sex, study_date, study_time, series_time, manufacturer, manufacturer_model, dicom_manufacturer, dicom_manufacturer_model, dicom_study_date_min, dicom_study_date_max, dicom_n_studies, dicom_metadata_summary, dicom_count, has_physiological_data, physiological_data_path, has_MATLAB_data, MATLAB_data_path, auxiliary_file_summary, subject_override_applied, session_override_applied, override_reason, has_dicoms, has_matlab, has_physio, acquisition_date, subject_label_raw, session_label_raw, subject_label_normalized, session_label_normalized, manual_mapping, correction_source, canonical_subject_override, participant_id, canonical_subject_id, session_id, source_hash, dicom_subject, dicom_subject_original, original_subject_id, override_applied, override_source, original_cohort, exclusion_status, exclusion_reason
+
+2) Summary table
+----------------------------------------------------------------------------------------
+Fichier                      | Date                | Lignes   | Sujets uniques | Sessions | Cohortes | DICOM valides
+-----------------------------+---------------------+----------+----------------+----------+----------+--------------
+auxiliary_mapping.csv        | 2026-07-15 22:04    | 7        | 6              | 2        | 2        | 0            
+inventory_Data_ON.csv        | 2026-07-15 15:31    | 544      | 7              | 2        | 1        | 543          
+inventory_Data_TON.csv       | 2026-07-16 10:58    | 226      | 2              | 2        | 1        | 225          
+inventory_narval.csv         | 2026-07-15 20:31    | 10080    | 84             | 3        | 4        | 10079        
+manual_mapping_overrides.csv | 2026-07-16 10:30    | 3        | 2              | 2        | 0        | 0            
+manual_session_overrides_nar | 2026-07-15 20:43    | 2        | 1              | 1        | 0        | 0            
+mapping.csv                  | 2026-07-15 22:04    | 142      | 84             | 6        | 4        | 135          
+mapping_narval_fixed.csv     | 2026-07-15 22:17    | 142      | 84             | 2        | 4        | 135          
+mapping_review.csv           | 2026-07-15 22:04    | 7        | 6              | 0        | 2        | 0            
+participant_mapping.csv      | 2026-07-15 22:04    | 85       | 84             | 0        | 4        | 84           
+session_mapping.csv          | 2026-07-15 22:04    | 10027    | 84             | 2        | 4        | 10026        
+inventory_warnings.csv       | 2026-07-15 15:31    | 4        | -              | -        | -        | -            
+no_dicom_subjects.csv        | 2026-07-15 15:31    | 1        | -              | -        | -        | -            
+
+3) Subject-level details
+----------------------------------------------------------------------------------------
+File: auxiliary_mapping.csv
+  participant column : matched_participant_id
+  session column     : matched_session_id
+  DICOM path column  : None
+  cohort column      : cohort
+  status column      : mapping_status
+  unique participants: 6
+  unique sessions    : 2
+  cohorts            : 2
+  cohort distribution: Control=5, Glaucoma=1
+  DICOM valid        : 0
+  DICOM missing      : 6
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: inventory_Data_ON.csv
+  participant column : canonical_subject
+  session column     : canonical_session
+  DICOM path column  : original_path
+  cohort column      : cohort
+  status column      : None
+  unique participants: 7
+  unique sessions    : 2
+  cohorts            : 1
+  cohort distribution: Data_ON=543
+  DICOM valid        : 543
+  DICOM missing      : 0
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: inventory_Data_TON.csv
+  participant column : canonical_subject
+  session column     : canonical_session
+  DICOM path column  : original_path
+  cohort column      : cohort
+  status column      : None
+  unique participants: 2
+  unique sessions    : 2
+  cohorts            : 1
+  cohort distribution: Data_TON=225
+  DICOM valid        : 225
+  DICOM missing      : 0
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: inventory_narval.csv
+  participant column : canonical_subject
+  session column     : canonical_session
+  DICOM path column  : original_path
+  cohort column      : cohort
+  status column      : None
+  unique participants: 84
+  unique sessions    : 3
+  cohorts            : 4
+  cohort distribution: Control=7292, DataON=543, DataTON=225, Glaucoma=2019
+  DICOM valid        : 10079
+  DICOM missing      : 0
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: manual_mapping_overrides.csv
+  participant column : canonical_subject
+  session column     : canonical_session
+  DICOM path column  : None
+  cohort column      : None
+  status column      : None
+  unique participants: 2
+  unique sessions    : 2
+  cohorts            : 0
+  DICOM valid        : 0
+  DICOM missing      : 2
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: manual_session_overrides_narval.csv
+  participant column : canonical_subject
+  session column     : canonical_session
+  DICOM path column  : None
+  cohort column      : None
+  status column      : None
+  unique participants: 1
+  unique sessions    : 1
+  cohorts            : 0
+  DICOM valid        : 0
+  DICOM missing      : 1
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: mapping.csv
+  participant column : participant_id
+  session column     : session_id
+  DICOM path column  : dicom_source_path
+  cohort column      : cohort
+  status column      : mapping_status
+  unique participants: 84
+  unique sessions    : 6
+  cohorts            : 4
+  cohort distribution: Control=101, DataON=8, DataTON=3, Glaucoma=29
+  DICOM valid        : 135
+  DICOM missing      : 6
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 6
+  suspicious (HCP/phantom/temp): 0
+
+File: mapping_narval_fixed.csv
+  participant column : participant_id
+  session column     : session_id
+  DICOM path column  : dicom_source_path
+  cohort column      : cohort
+  status column      : mapping_status
+  unique participants: 84
+  unique sessions    : 2
+  cohorts            : 4
+  cohort distribution: Control=101, DataON=8, DataTON=3, Glaucoma=29
+  DICOM valid        : 135
+  DICOM missing      : 6
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 6
+  suspicious (HCP/phantom/temp): 0
+
+File: mapping_review.csv
+  participant column : subject_id
+  session column     : None
+  DICOM path column  : None
+  cohort column      : cohort
+  status column      : decision
+  unique participants: 6
+  unique sessions    : 0
+  cohorts            : 2
+  cohort distribution: Control=5, Glaucoma=1
+  DICOM valid        : 0
+  DICOM missing      : 6
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: participant_mapping.csv
+  participant column : participant_id
+  session column     : None
+  DICOM path column  : original_path
+  cohort column      : cohort
+  status column      : exclusion_status
+  unique participants: 84
+  unique sessions    : 0
+  cohorts            : 4
+  cohort distribution: Control=56, DataON=7, DataTON=2, Glaucoma=19
+  DICOM valid        : 84
+  DICOM missing      : 0
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+File: session_mapping.csv
+  participant column : participant_id
+  session column     : session_id
+  DICOM path column  : original_path
+  cohort column      : cohort
+  status column      : exclusion_status
+  unique participants: 84
+  unique sessions    : 2
+  cohorts            : 4
+  cohort distribution: Control=7240, DataON=543, DataTON=225, Glaucoma=2018
+  DICOM valid        : 10026
+  DICOM missing      : 0
+  MANUAL_REVIEW_REQUIRED: 0
+  NO_DICOM_FOUND     : 0
+  suspicious (HCP/phantom/temp): 0
+
+4) Pairwise subject comparisons
+----------------------------------------------------------------------------------------
+
+### auxiliary_mapping.csv  vs  mapping.csv
+  subjects: 6 vs 84 (Δ=-78)
+  sessions: 2 vs 6 (Δ=-4)
+  only in auxiliary_mapping.csv: 0
+  only in mapping.csv: 78
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    - sub-026
+    ... and 53 more
+
+### auxiliary_mapping.csv  vs  mapping_narval_fixed.csv
+  subjects: 6 vs 84 (Δ=-78)
+  sessions: 2 vs 2 (Δ=+0)
+  only in auxiliary_mapping.csv: 0
+  only in mapping_narval_fixed.csv: 78
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    - sub-026
+    ... and 53 more
+
+### auxiliary_mapping.csv  vs  mapping_review.csv
+  subjects: 6 vs 6 (Δ=+0)
+  sessions: 2 vs 0 (Δ=+2)
+  only in auxiliary_mapping.csv: 6
+    - sub-012
+    - sub-032
+    - sub-042
+    - sub-043
+    - sub-053
+    - sub-082
+  only in mapping_review.csv: 6
+    - SUBC012
+    - SUBC033
+    - SUBC043
+    - SUBC044
+    - SUBC054
+    - SUBG17
+
+### auxiliary_mapping.csv  vs  participant_mapping.csv
+  subjects: 6 vs 84 (Δ=-78)
+  sessions: 2 vs 0 (Δ=+2)
+  only in auxiliary_mapping.csv: 0
+  only in participant_mapping.csv: 78
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    - sub-026
+    ... and 53 more
+
+### auxiliary_mapping.csv  vs  session_mapping.csv
+  subjects: 6 vs 84 (Δ=-78)
+  sessions: 2 vs 2 (Δ=+0)
+  only in auxiliary_mapping.csv: 0
+  only in session_mapping.csv: 78
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    - sub-026
+    ... and 53 more
+
+### mapping.csv  vs  mapping_narval_fixed.csv
+  subjects: 84 vs 84 (Δ=+0)
+  sessions: 6 vs 2 (Δ=+4)
+  only in mapping.csv: 0
+  only in mapping_narval_fixed.csv: 0
+
+### mapping.csv  vs  mapping_review.csv
+  subjects: 84 vs 6 (Δ=+78)
+  sessions: 6 vs 0 (Δ=+6)
+  only in mapping.csv: 84
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-012
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    ... and 59 more
+  only in mapping_review.csv: 6
+    - SUBC012
+    - SUBC033
+    - SUBC043
+    - SUBC044
+    - SUBC054
+    - SUBG17
+
+### mapping.csv  vs  participant_mapping.csv
+  subjects: 84 vs 84 (Δ=+0)
+  sessions: 6 vs 0 (Δ=+6)
+  only in mapping.csv: 0
+  only in participant_mapping.csv: 0
+
+### mapping.csv  vs  session_mapping.csv
+  subjects: 84 vs 84 (Δ=+0)
+  sessions: 6 vs 2 (Δ=+4)
+  only in mapping.csv: 0
+  only in session_mapping.csv: 0
+
+### mapping_narval_fixed.csv  vs  mapping_review.csv
+  subjects: 84 vs 6 (Δ=+78)
+  sessions: 2 vs 0 (Δ=+2)
+  only in mapping_narval_fixed.csv: 84
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-012
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    ... and 59 more
+  only in mapping_review.csv: 6
+    - SUBC012
+    - SUBC033
+    - SUBC043
+    - SUBC044
+    - SUBC054
+    - SUBG17
+
+### mapping_narval_fixed.csv  vs  participant_mapping.csv
+  subjects: 84 vs 84 (Δ=+0)
+  sessions: 2 vs 0 (Δ=+2)
+  only in mapping_narval_fixed.csv: 0
+  only in participant_mapping.csv: 0
+
+### mapping_narval_fixed.csv  vs  session_mapping.csv
+  subjects: 84 vs 84 (Δ=+0)
+  sessions: 2 vs 2 (Δ=+0)
+  only in mapping_narval_fixed.csv: 0
+  only in session_mapping.csv: 0
+
+### mapping_review.csv  vs  participant_mapping.csv
+  subjects: 6 vs 84 (Δ=-78)
+  sessions: 0 vs 0 (Δ=+0)
+  only in mapping_review.csv: 6
+    - SUBC012
+    - SUBC033
+    - SUBC043
+    - SUBC044
+    - SUBC054
+    - SUBG17
+  only in participant_mapping.csv: 84
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-012
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    ... and 59 more
+
+### mapping_review.csv  vs  session_mapping.csv
+  subjects: 6 vs 84 (Δ=-78)
+  sessions: 0 vs 2 (Δ=-2)
+  only in mapping_review.csv: 6
+    - SUBC012
+    - SUBC033
+    - SUBC043
+    - SUBC044
+    - SUBC054
+    - SUBG17
+  only in session_mapping.csv: 84
+    - sub-001
+    - sub-002
+    - sub-003
+    - sub-004
+    - sub-005
+    - sub-006
+    - sub-007
+    - sub-008
+    - sub-009
+    - sub-010
+    - sub-011
+    - sub-012
+    - sub-013
+    - sub-014
+    - sub-015
+    - sub-016
+    - sub-017
+    - sub-018
+    - sub-019
+    - sub-020
+    - sub-021
+    - sub-022
+    - sub-023
+    - sub-024
+    - sub-025
+    ... and 59 more
+
+### participant_mapping.csv  vs  session_mapping.csv
+  subjects: 84 vs 84 (Δ=+0)
+  sessions: 0 vs 2 (Δ=-2)
+  only in participant_mapping.csv: 0
+  only in session_mapping.csv: 0
+
+5) Candidate final mapping
+----------------------------------------------------------------------------------------
+  RECOMMENDED: mapping_narval_fixed.csv
+  path       : /lustre07/scratch/alexrees/metadata/mapping_narval_fixed.csv
+  score      : 144.151
+  subjects   : 84
+  sessions   : 2
+  cohorts    : Control=101, DataON=8, DataTON=3, Glaucoma=29
+  DICOM valid: 135
+  rationale:
+    - primary mapping filename
+    - exact subject count (84)
+    - all 4 expected cohorts present
+    - DICOM valid rows=135/141 (96%)
+    - no HCP/phantom/temp hits
+    - mtime=2026-07-15T22:17:37-04:00
+
+  Ranked candidates:
+    1. mapping_narval_fixed.csv (score=144.151, subjects=84, dicom_valid=135)
+    2. mapping.csv (score=144.151, subjects=84, dicom_valid=135)
+    3. participant_mapping.csv (score=105.002, subjects=84, dicom_valid=84)
+    4. session_mapping.csv (score=100.002, subjects=84, dicom_valid=10026)
+    5. inventory_narval.csv (score=85.002, subjects=84, dicom_valid=10079)
+    6. mapping_review.csv (score=10.002, subjects=6, dicom_valid=0)
+    7. inventory_Data_TON.csv (score=5.002, subjects=2, dicom_valid=225)
+    8. inventory_Data_ON.csv (score=5.002, subjects=7, dicom_valid=543)
+    9. manual_mapping_overrides.csv (score=-19.998, subjects=2, dicom_valid=0)
+    10. auxiliary_mapping.csv (score=-19.998, subjects=6, dicom_valid=0)
+    11. manual_session_overrides_narval.csv (score=-19.998, subjects=1, dicom_valid=0)
+
+6) Check summary
+----------------------------------------------------------------------------------------
+[OK] count      : 24
+[WARNING] count : 0
+[ERROR] count   : 0
+
+OK
+  - metadata directory found: /lustre07/scratch/alexrees/metadata
+  - raw_original found: /lustre07/scratch/alexrees/raw_original
+  - found 13 CSV file(s) in metadata/
+  - auxiliary_mapping.csv: subjects=6, sessions=2, cohorts=2, dicom_valid=0, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - inventory_Data_ON.csv: subjects=7, sessions=2, cohorts=1, dicom_valid=543, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - inventory_Data_TON.csv: subjects=2, sessions=2, cohorts=1, dicom_valid=225, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - inventory_narval.csv: subjects=84, sessions=3, cohorts=4, dicom_valid=10079, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - inventory_narval.csv: matches expected subject count (84)
+  - manual_mapping_overrides.csv: subjects=2, sessions=2, cohorts=0, dicom_valid=0, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - manual_session_overrides_narval.csv: subjects=1, sessions=1, cohorts=0, dicom_valid=0, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - mapping.csv: subjects=84, sessions=6, cohorts=4, dicom_valid=135, NO_DICOM_FOUND=6, MANUAL_REVIEW=0
+  - mapping.csv: matches expected subject count (84)
+  - mapping_narval_fixed.csv: subjects=84, sessions=2, cohorts=4, dicom_valid=135, NO_DICOM_FOUND=6, MANUAL_REVIEW=0
+  - mapping_narval_fixed.csv: matches expected subject count (84)
+  - mapping_review.csv: subjects=6, sessions=0, cohorts=2, dicom_valid=0, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - participant_mapping.csv: subjects=84, sessions=0, cohorts=4, dicom_valid=84, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - participant_mapping.csv: matches expected subject count (84)
+  - session_mapping.csv: subjects=84, sessions=2, cohorts=4, dicom_valid=10026, NO_DICOM_FOUND=0, MANUAL_REVIEW=0
+  - session_mapping.csv: matches expected subject count (84)
+  - recommended final mapping: mapping_narval_fixed.csv
+  - recommended file contains all 4 expected cohorts
+  - recommended file has no HCP/phantom/temp hits
+  - recommended file has 135 valid DICOM path row(s)
+  - most recently modified mapping-like CSV: mapping_narval_fixed.csv (2026-07-15T22:17:37-04:00)
+
+Warnings
+  (none)
+
+Errors
+  (none)
+

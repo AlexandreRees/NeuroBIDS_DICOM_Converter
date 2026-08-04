@@ -1,0 +1,2 @@
+(node:3243916) Warning: Closing directory handle on garbage collection
+(Use `node --trace-warnings ...` to show where the warning was created)

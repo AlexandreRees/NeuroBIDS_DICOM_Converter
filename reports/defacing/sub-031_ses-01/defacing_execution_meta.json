@@ -1,0 +1,87 @@
+{
+  "generated": "2026-07-22T11:47:09.435541-04:00",
+  "pydeface_version": "2.0.0+computecanada",
+  "pydeface_executable": "/home/alexrees/defacing_env/bin/pydeface",
+  "original_bids": "/home/alexrees/scratch/bids",
+  "defaced_dir": "/home/alexrees/scratch/derivatives/defacing",
+  "subject": "sub-031",
+  "session": "ses-01",
+  "n_targets": 6,
+  "n_pass": 5,
+  "n_skip": 0,
+  "n_fail": 1,
+  "records": [
+    {
+      "subject": "sub-031",
+      "session": "ses-01",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-031/ses-01/anat/sub-031_ses-01_run-01_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-031/ses-01/anat/sub-031_ses-01_run-01_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "253.439",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-031",
+      "session": "ses-01",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-031/ses-01/anat/sub-031_ses-01_run-02_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-031/ses-01/anat/sub-031_ses-01_run-02_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "267.353",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-031",
+      "session": "ses-01",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-031/ses-01/anat/sub-031_ses-01_run-03_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-031/ses-01/anat/sub-031_ses-01_run-03_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "218.516",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-031",
+      "session": "ses-01",
+      "modality": "FLAIR",
+      "input": "/home/alexrees/scratch/bids/sub-031/ses-01/anat/sub-031_ses-01_run-01_FLAIR.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-031/ses-01/anat/sub-031_ses-01_run-01_FLAIR.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "219.785",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-031",
+      "session": "ses-01",
+      "modality": "TB1TFL",
+      "input": "/home/alexrees/scratch/bids/sub-031/ses-01/anat/sub-031_ses-01_run-01_TB1TFL.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-031/ses-01/anat/sub-031_ses-01_run-01_TB1TFL.nii.gz",
+      "status": "FAIL",
+      "runtime_seconds": "202.544",
+      "include_reason": "head FOV visible shape=(64, 64, 15) zooms=[3.44, 3.44, 10.0] fov_mm=[220.0, 220.0, 150.0]",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "Traceback (most recent call last):   File \"/home/alexrees/defacing_env/bin/pydeface\", line 6, in <module>     sys.exit(main())              ^^^^^^   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/pydeface/__main__.py\", line 95, in main     pdu.deface_image(**vars(args))   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/pydeface/utils.py\", line 126, in deface_image     masked_brain.to_filename(outfile)   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/nibabel/filebasedimages.py\", line 304, in to_filename     self.to_file_map(**kwargs)   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/nibabel/nifti1.py\", line 2372, in to_file_map     super().to_file_map(file_map, dtype)   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/nibabel/analyze.py\", line 1040, in to_file_map     hdrf = hdr_fh.get_prepare_fileobj(mode='wb')            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/nibabel/fileholders.py\", line 77, in get_prepare_fileobj     obj = ImageOpener(self.filename, *args, **kwargs)           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/nibabel/openers.py\", line 110, in __init__     self.fobj = opener(fileish, *args, **kwargs)                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/nibabel/_compression.py\", line 143, in gzip_open     gzip_file = DeterministicGzipFile(filename, mode, compresslevel, mtime=mtime)                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   File \"/home/alexrees/defacing_env/lib/python3.11/site-packages/nibabel/_compression.py\", line 101, in __init__     fileobj = self.myfileobj = ty.cast('io.FileIO', open(filename, modestr))                                                     ^^^^^^^^^^^^^^^^^^^^^^^ OSError: [Errno 122] Disk quota exceeded: '/home/alexrees/scratch/derivatives/defacing/sub-031/ses-01/anat/sub-031_ses-01_run-01_TB1TFL.nii.gz'"
+    },
+    {
+      "subject": "sub-031",
+      "session": "ses-01",
+      "modality": "TB1TFL",
+      "input": "/home/alexrees/scratch/bids/sub-031/ses-01/anat/sub-031_ses-01_run-02_TB1TFL.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-031/ses-01/anat/sub-031_ses-01_run-02_TB1TFL.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "423.566",
+      "include_reason": "head FOV visible shape=(64, 64, 15) zooms=[3.44, 3.44, 10.0] fov_mm=[220.0, 220.0, 150.0]",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    }
+  ]
+}

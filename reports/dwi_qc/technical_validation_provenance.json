@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-07-23 14:41:03 UTC",
+  "n_scans": 361,
+  "n_protocols": 6,
+  "overall": "PASS",
+  "gradient": {
+    "PASS": 250,
+    "REVIEW": 111
+  },
+  "signal_pass": 216,
+  "pe_pair_ok": 120,
+  "read_only": true
+}

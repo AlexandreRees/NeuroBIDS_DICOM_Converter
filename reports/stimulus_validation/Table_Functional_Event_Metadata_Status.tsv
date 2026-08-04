@@ -1,0 +1,7 @@
+Status	Number of runs	Percentage	Action
+Validated event metadata	456	89.9	Released
+Ambiguous acquisition mapping	32	6.3	Withheld
+Missing stimulus source files	8	1.6	Withheld
+Ambiguous trigger source	5	1.0	Withheld
+Missing trigger information	4	0.8	Withheld
+Protocol mismatch	2	0.4	Withheld

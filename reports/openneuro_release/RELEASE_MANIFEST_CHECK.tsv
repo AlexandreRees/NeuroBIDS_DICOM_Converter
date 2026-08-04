@@ -1,0 +1,2 @@
+check	release_relative_path	detail
+summary		COPY ok=16620/16620; EXCLUDE_ANAT planned=481

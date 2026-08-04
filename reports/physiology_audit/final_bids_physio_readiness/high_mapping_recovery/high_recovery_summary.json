@@ -1,0 +1,28 @@
+{
+  "generated_utc": "2026-07-29T18:13:38.470617+00:00",
+  "n_high_puls_resp_candidates": 15,
+  "n_accepted": 15,
+  "n_converted_ok": 15,
+  "dry_run": false,
+  "also_release": true,
+  "status_counts": {
+    "OK": 15
+  },
+  "accepted_stems": [
+    "sub-015_ses-01_task-control_run-05",
+    "sub-015_ses-01_task-control_run-07",
+    "sub-016_ses-02_task-fmri_run-07",
+    "sub-016_ses-02_task-fmri_run-09",
+    "sub-021_ses-02_task-rest_run-01",
+    "sub-035_ses-02_task-rest_run-01",
+    "sub-035_ses-02_task-rest_run-03",
+    "sub-038_ses-02_task-fmri_run-02",
+    "sub-038_ses-02_task-fmri_run-04",
+    "sub-040_ses-01_task-fmri_run-07",
+    "sub-040_ses-01_task-fmri_run-09",
+    "sub-060_ses-01_task-movie_run-01",
+    "sub-060_ses-01_task-movie_run-03",
+    "sub-082_ses-01_task-movie_run-05",
+    "sub-082_ses-01_task-movie_run-07"
+  ]
+}

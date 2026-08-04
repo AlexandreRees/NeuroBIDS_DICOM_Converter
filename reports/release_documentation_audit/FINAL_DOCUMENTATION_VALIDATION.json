@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "check": "README_exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset_description_json_valid",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "participants_tsv_readable",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_acquisition_protocol.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_task_descriptions.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_physiology_methods.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_quality_control.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_data_dictionary.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_provenance.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_limitations.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "docs_software_versions.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "LICENSE_exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "CHANGES_exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no_absolute_paths_in_docs",
+      "status": "PASS",
+      "detail": "0 files: "
+    },
+    {
+      "check": "phi_sample_sidecars",
+      "status": "PASS",
+      "detail": "0 sampled sidecars with sensitive keys"
+    },
+    {
+      "check": "bids_validator",
+      "status": "SKIPPED",
+      "detail": "--skip_bids_validator set"
+    }
+  ],
+  "fail": 0,
+  "warn": 0
+}

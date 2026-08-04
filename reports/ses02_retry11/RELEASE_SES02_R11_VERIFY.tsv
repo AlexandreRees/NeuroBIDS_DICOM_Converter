@@ -1,0 +1,12 @@
+participant_id	session_id	release_exists	n_files	n_struct_anat	has_nondefaced_structural	verify	notes
+sub-057	ses-02	True	140	4	N	PASS	
+sub-064	ses-02	True	138	3	N	PASS	
+sub-066	ses-02	True	140	4	N	PASS	
+sub-067	ses-02	True	140	4	N	PASS	
+sub-068	ses-02	True	140	4	N	PASS	
+sub-069	ses-02	True	140	4	N	PASS	
+sub-072	ses-02	True	140	4	N	PASS	
+sub-073	ses-02	True	140	4	N	PASS	
+sub-074	ses-02	True	132	4	N	PASS	
+sub-078	ses-02	True	54	0	N	PASS	
+sub-081	ses-02	True	90	5	N	PASS	

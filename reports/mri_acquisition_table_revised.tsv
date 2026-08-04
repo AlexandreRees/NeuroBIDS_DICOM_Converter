@@ -1,0 +1,13 @@
+Modality	Sequence	BIDS_label	TR_ms	TE_ms	Flip_angle_deg	Resolution	Additional_parameters	n_sidecars
+Anatomical	3D FLAIR	FLAIR	6000	357	120	0.8×0.8×0.8 mm	in-plane accel=2; PE=i	125
+Anatomical	B1 mapping (turbo flash)	TB1TFL	4000	1.8	8	3.438×3.438×10 mm	PE=j-; B1-related series present as TB1TFL; FA variants common in paired maps	248
+Anatomical	T1-weighted MPRAGE	T1w	2500	2.2	8	0.8×0.8×0.8 mm	in-plane accel=2	245
+Anatomical	White-matter-nulled MPRAGE	T1w (WMn series)	4000	3.8	7	1×1×1 mm	in-plane accel=2	111
+Field map	Spin-echo EPI (AP)	dir-AP_epi	9710	66	90	2×2×2 mm	PE=j-; TotalReadoutTime=0.0597s	246
+Field map	Spin-echo EPI (PA)	dir-PA_epi	9710	66	90	2×2×2 mm	PE=j; TotalReadoutTime=0.0597s	245
+Functional	Control BOLD	task-control_bold	937	37	52	2×2×2 mm	MB=8; PE=j; TotalReadoutTime=0.0597s; volumes=20; short runs; AP and/or PA; SBRef paired series n≈710	369
+Functional	Movie BOLD	task-movie_bold	937	37	52	2×2×2 mm	MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=210; typically 4 runs/session; SBRef paired series n≈958	495
+Functional	Resting-state BOLD	task-rest_bold	937	37	52	2×2×2 mm	MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=320; typically 1 run/session; SBRef paired series n≈240	125
+Functional	Task BOLD	task-fmri_bold	937	37	52	2×2×2 mm	MB=8; PE=j-; TotalReadoutTime=0.0597s; volumes=226; typically 4 runs/session; SBRef paired series n≈984	507
+Diffusion	Multidirection DWI	dwi	3500	75	90	1 mm isotropic (protocol)	SeriesDescription=gsld_76dir_b2000_1mmiso_AP (historical name); MB=2; in-plane accel=3; PE=j-; TotalReadoutTime=0.0679s; volumes=385; b-values=0,1000,2000 (n=240); n_diff_dirs=365 (n=228); 270 (n=2); 239 (n=2); n_b0=20 (n=240); TR_variants=3.5|3.9; note: released .bval is multi-shell (0/1000/2000), not single-shell 76-dir	240
+Diffusion	RESOLVE trace DWI	dwi (RESOLVE)	4140	51	180	≈1.4 mm (1.375×1.375×1.82 mm)	in-plane accel=3; PE=j-; TotalReadoutTime=0.0161s; volumes=15; b-values=0,1000 (n=121); n_diff_dirs=11 (n=121); n_b0=4 (n=121); TE_variants=0.051|0.0512; Derived TRACE/ADC/FA maps may exist in source protocol; released BIDS primarily stores convertible DWI runs	121

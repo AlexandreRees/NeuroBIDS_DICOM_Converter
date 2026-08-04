@@ -1,0 +1,11 @@
+{
+  "SUBC041": {
+    "original_dicom_identifier": "SUBC04",
+    "resolved_identifier": "SUBC041",
+    "reason": "DICOM PatientName truncated subject identifier; folder naming and longitudinal session chronology confirm same participant.",
+    "source": "manual_review",
+    "path": "/project/def-amirs/raw_original/Control/SUBC41_Session02_2024OCT04",
+    "canonical_session": "ses-02",
+    "confidence": "high"
+  }
+}

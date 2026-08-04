@@ -1,0 +1,6 @@
+item	category	detail
+Age description	Recommended	Age present but description incomplete
+Variables missing description	Recommended	3322 variable–source pairs lack Description in sampled inventory
+Absolute paths in BIDS events provenance	Critical	events.json contain absolute filesystem paths and raw cohort labels (SUBC*/SUBG*) — must be redacted/normalized before FITBIR deposit
+Large-file SHA256	Optional	Files > 5 MiB recorded as NOT_COMPUTED_LARGE_FILE
+Subject-level SHA256 bulk deferral	Optional	Files under sub-*/ recorded as NOT_COMPUTED_SUBJECT_LEVEL_BULK in inventory

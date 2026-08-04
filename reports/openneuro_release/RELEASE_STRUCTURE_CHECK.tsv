@@ -1,0 +1,16 @@
+item	status	detail
+root:dataset_description.json	OK	present_in_source
+root:participants.tsv	OK	present_in_source
+root:participants.json	OK	present_in_source
+root:CHANGES	OK	present_in_source
+root:README	OK	README or README.md present
+subjects	OK	n=84
+subject_folder_names	OK	
+modality_dirs:anat	OK	sessions_with_anat=122
+modality_dirs:func	OK	sessions_with_func=124
+modality_dirs:dwi	OK	sessions_with_dwi=120
+modality_dirs:fmap	OK	sessions_with_fmap=124
+no_raw_original_in_manifest	OK	hits=0
+anatomicals_planned_replaced	OK	planned=481 ok_status=481
+no_duplicate_T1w_destinations	OK	duplicates=0
+release_dataset_exists	OK	not_built_yet_simulated_from_source_and_dry_run_plan

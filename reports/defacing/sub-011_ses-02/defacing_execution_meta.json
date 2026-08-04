@@ -1,0 +1,87 @@
+{
+  "generated": "2026-07-22T11:10:14.026617-04:00",
+  "pydeface_version": "2.0.0+computecanada",
+  "pydeface_executable": "/home/alexrees/defacing_env/bin/pydeface",
+  "original_bids": "/home/alexrees/scratch/bids",
+  "defaced_dir": "/home/alexrees/scratch/derivatives/defacing",
+  "subject": "sub-011",
+  "session": "ses-02",
+  "n_targets": 6,
+  "n_pass": 6,
+  "n_skip": 0,
+  "n_fail": 0,
+  "records": [
+    {
+      "subject": "sub-011",
+      "session": "ses-02",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-011/ses-02/anat/sub-011_ses-02_run-01_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-011/ses-02/anat/sub-011_ses-02_run-01_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "246.628",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-011",
+      "session": "ses-02",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-011/ses-02/anat/sub-011_ses-02_run-02_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-011/ses-02/anat/sub-011_ses-02_run-02_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "314.152",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-011",
+      "session": "ses-02",
+      "modality": "T1w",
+      "input": "/home/alexrees/scratch/bids/sub-011/ses-02/anat/sub-011_ses-02_run-03_T1w.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-011/ses-02/anat/sub-011_ses-02_run-03_T1w.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "263.598",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-011",
+      "session": "ses-02",
+      "modality": "FLAIR",
+      "input": "/home/alexrees/scratch/bids/sub-011/ses-02/anat/sub-011_ses-02_run-01_FLAIR.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-011/ses-02/anat/sub-011_ses-02_run-01_FLAIR.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "233.976",
+      "include_reason": "always (high-res anatomical)",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-011",
+      "session": "ses-02",
+      "modality": "TB1TFL",
+      "input": "/home/alexrees/scratch/bids/sub-011/ses-02/anat/sub-011_ses-02_run-01_TB1TFL.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-011/ses-02/anat/sub-011_ses-02_run-01_TB1TFL.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "209.284",
+      "include_reason": "head FOV visible shape=(64, 64, 15) zooms=[3.44, 3.44, 10.0] fov_mm=[220.0, 220.0, 150.0]",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    },
+    {
+      "subject": "sub-011",
+      "session": "ses-02",
+      "modality": "TB1TFL",
+      "input": "/home/alexrees/scratch/bids/sub-011/ses-02/anat/sub-011_ses-02_run-02_TB1TFL.nii.gz",
+      "output": "/home/alexrees/scratch/derivatives/defacing/sub-011/ses-02/anat/sub-011_ses-02_run-02_TB1TFL.nii.gz",
+      "status": "PASS",
+      "runtime_seconds": "515.637",
+      "include_reason": "head FOV visible shape=(64, 64, 15) zooms=[3.44, 3.44, 10.0] fov_mm=[220.0, 220.0, 150.0]",
+      "pydeface_version": "2.0.0+computecanada",
+      "message": "ok"
+    }
+  ]
+}

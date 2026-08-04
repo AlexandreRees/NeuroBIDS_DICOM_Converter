@@ -1,0 +1,18 @@
+{
+  "n_uncertain_runs": 118,
+  "n_uncertain_sessions": 29,
+  "definition_in_original_audit": "BIDS task-fmri BOLD run without events.tsv AND (participant_id, session_id) absent from Level-1 withheld_events_summary \u2014 NOT a direct check that MATLAB sources are missing",
+  "root_cause": "Level-1 events plan only included 55 subjects (mostly Control sub-001..056, excluding sub-051). All Glaucoma / DataON / DataTON BIDS fmri sessions, plus Control sub-004/ses-02, were never attempted by convert_events \u2192 tagged sources_uncertain_or_absent by session-coverage heuristic.",
+  "reclassification": {
+    "HAS_SOURCES_same_as_recoverable_pattern": 102,
+    "HAS_SOURCES_but_session_label_mismatch": 12,
+    "TRUE_MISSING_no_grating_results": 4
+  },
+  "cohort_sessions": {
+    "Control": 2,
+    "DataON": 6,
+    "DataTON": 2,
+    "Glaucoma": 19
+  },
+  "implication": "~102\u2013114/118 runs likely reconstructable with the same mapping fix as Level-1 recoverable cases; only sub-051 (4 runs) appears to lack grating Results. Extend convert_events beyond Control scope."
+}

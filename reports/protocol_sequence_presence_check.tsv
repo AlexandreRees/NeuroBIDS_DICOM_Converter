@@ -1,0 +1,24 @@
+sequence	in_inventory	inventory_series	inventory_subjects	in_bids_ProtocolName	bids_json_count	bids_labels	note
+Localizer	True	303	84	False	0		Scout — intentionally not converted to BIDS
+fMRI1_AP	True	561	83	True	568	fMRI1_AP | fMRI1_AP_REDO | fMRI1_AP_Rerun	
+fMRI2_AP	True	533	83	True	528	fMRI2_AP | fMRI2_AP_Rerun	
+Control1_PA	True	530	83	True	530	Control1_PA	
+fMRI3_AP	True	537	83	True	534	fMRI3_AP	
+fMRI4_AP	True	538	83	True	537	fMRI4_AP	
+Movie1_AP	True	538	83	True	537	Movie1_AP	
+Movie2_AP	True	524	82	True	522	Movie2_AP	
+SpinEchoFieldMap_AP	True	534	84	True	534	SpinEchoFieldMap_AP | SpinEchoFieldMap_AP_rerun	
+SpinEchoFieldMap_PA	True	534	84	True	532	SpinEchoFieldMap_PA	
+Movie3_AP	True	525	82	True	525	Movie3_AP	
+Movie4_AP	True	514	81	True	518	Movie4_AP | Movie4_AP_redo_cuz_gogle_moved	
+REST1_AP	True	528	83	True	528	REST1_AP	
+T1w_MPR	True	266	83	True	265	T1w_MPR	
+Control2_AP	True	492	82	True	492	Control2_AP | Control2_AP_redo	
+Control3_PA	True	480	81	True	476	Control3_PA	
+gsld_76dir_b2000_1mmiso_AP	True	270	82	True	259	gsld_76dir_b2000_1mmiso_AP	
+gsld_75TE_PA_3b0	True	264	81	False	0		Reverse-PE b0 present in DICOM inventory; typically NOT in BIDS dwi/ (distortion via spin-echo fmap)
+tfl_b1map_1mmiso	True	272	81	True	270	tfl_b1map_1mmiso	
+resolve_3scan_trace_tra_p3_160_1.4iso_AP	True	799	81	True	140	resolve_3scan_trace_tra_p3_160_1.4iso_AP	
+resolve_3scan_trace_tra_p3_160_1.4iso_PA	True	132	81	False	0		
+Sag Flair 3D-0.8	True	137	80	True	136	Sag Flair 3D-0.8 | Sag Flair 3D-0.8_usethisone	
+WMn_MPRAGE_sagittal	True	121	75	True	120	WMn_MPRAGE_sagittal	

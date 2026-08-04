@@ -1,0 +1,362 @@
+subject	session	run	nifti	status	median_b0	median_diffusion	p05_b0	p95_b0	p05_diffusion	p95_diffusion	cv_b0	cv_diffusion	n_mask_voxels	brain_fraction	error
+sub-001	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-001/ses-01/dwi/sub-001_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-001	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-001/ses-01/dwi/sub-001_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-001	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-001/ses-01/dwi/sub-001_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-001	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-001/ses-02/dwi/sub-001_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-001	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-001/ses-02/dwi/sub-001_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-001	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-001/ses-02/dwi/sub-001_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-002	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-002/ses-01/dwi/sub-002_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-002	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-002/ses-01/dwi/sub-002_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-002	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-002/ses-01/dwi/sub-002_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-002	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-002/ses-02/dwi/sub-002_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-002	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-002/ses-02/dwi/sub-002_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-002	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-002/ses-02/dwi/sub-002_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-003	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-003/ses-01/dwi/sub-003_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-003	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-003/ses-01/dwi/sub-003_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-003	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-003/ses-01/dwi/sub-003_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-003	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-003/ses-02/dwi/sub-003_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-003	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-003/ses-02/dwi/sub-003_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-003	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-003/ses-02/dwi/sub-003_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-004	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-004/ses-01/dwi/sub-004_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-004	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-004/ses-01/dwi/sub-004_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-004	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-004/ses-01/dwi/sub-004_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-004	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-004/ses-02/dwi/sub-004_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-004	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-004/ses-02/dwi/sub-004_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-004	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-004/ses-02/dwi/sub-004_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-005	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-005/ses-01/dwi/sub-005_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-005	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-005/ses-01/dwi/sub-005_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-005	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-005/ses-01/dwi/sub-005_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-005	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-005/ses-02/dwi/sub-005_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-005	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-005/ses-02/dwi/sub-005_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-005	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-005/ses-02/dwi/sub-005_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-006	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-006/ses-01/dwi/sub-006_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-006	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-006/ses-01/dwi/sub-006_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-006	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-006/ses-01/dwi/sub-006_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-006	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-006/ses-02/dwi/sub-006_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-006	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-006/ses-02/dwi/sub-006_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-006	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-006/ses-02/dwi/sub-006_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-007	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-007/ses-01/dwi/sub-007_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-007	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-007/ses-01/dwi/sub-007_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-007	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-007/ses-01/dwi/sub-007_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-007	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-007/ses-02/dwi/sub-007_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-007	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-007/ses-02/dwi/sub-007_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-007	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-007/ses-02/dwi/sub-007_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-008	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-008/ses-01/dwi/sub-008_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-008	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-008/ses-01/dwi/sub-008_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-008	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-008/ses-01/dwi/sub-008_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-008	ses-02	run-03	/lustre07/scratch/alexrees/bids/sub-008/ses-02/dwi/sub-008_ses-02_run-03_dwi.nii.gz	NO_MASK											
+sub-009	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-009/ses-01/dwi/sub-009_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-009	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-009/ses-01/dwi/sub-009_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-009	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-009/ses-01/dwi/sub-009_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-009	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-009/ses-02/dwi/sub-009_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-009	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-009/ses-02/dwi/sub-009_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-009	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-009/ses-02/dwi/sub-009_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-010	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-010/ses-01/dwi/sub-010_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-010	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-010/ses-01/dwi/sub-010_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-010	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-010/ses-01/dwi/sub-010_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-011	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-011/ses-01/dwi/sub-011_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-011	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-011/ses-01/dwi/sub-011_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-011	ses-01	run-07	/lustre07/scratch/alexrees/bids/sub-011/ses-01/dwi/sub-011_ses-01_run-07_dwi.nii.gz	NO_MASK											
+sub-011	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-011/ses-02/dwi/sub-011_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-011	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-011/ses-02/dwi/sub-011_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-011	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-011/ses-02/dwi/sub-011_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-012	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-012/ses-01/dwi/sub-012_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-012	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-012/ses-01/dwi/sub-012_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-012	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-012/ses-01/dwi/sub-012_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-012	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-012/ses-02/dwi/sub-012_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-012	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-012/ses-02/dwi/sub-012_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-012	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-012/ses-02/dwi/sub-012_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-013	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-013/ses-01/dwi/sub-013_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-013	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-013/ses-01/dwi/sub-013_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-013	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-013/ses-01/dwi/sub-013_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-014	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-014/ses-01/dwi/sub-014_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-014	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-014/ses-01/dwi/sub-014_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-014	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-014/ses-01/dwi/sub-014_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-015	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-015/ses-01/dwi/sub-015_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-015	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-015/ses-01/dwi/sub-015_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-015	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-015/ses-01/dwi/sub-015_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-015	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-015/ses-02/dwi/sub-015_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-015	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-015/ses-02/dwi/sub-015_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-015	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-015/ses-02/dwi/sub-015_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-016	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-016/ses-01/dwi/sub-016_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-016	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-016/ses-01/dwi/sub-016_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-016	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-016/ses-01/dwi/sub-016_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-016	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-016/ses-02/dwi/sub-016_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-016	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-016/ses-02/dwi/sub-016_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-016	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-016/ses-02/dwi/sub-016_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-017	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-017/ses-01/dwi/sub-017_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-017	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-017/ses-01/dwi/sub-017_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-017	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-017/ses-01/dwi/sub-017_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-017	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-017/ses-02/dwi/sub-017_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-017	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-017/ses-02/dwi/sub-017_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-017	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-017/ses-02/dwi/sub-017_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-018	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-018/ses-01/dwi/sub-018_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-018	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-018/ses-01/dwi/sub-018_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-018	ses-01	run-03	/lustre07/scratch/alexrees/bids/sub-018/ses-01/dwi/sub-018_ses-01_run-03_dwi.nii.gz	NO_MASK											
+sub-018	ses-01	run-12	/lustre07/scratch/alexrees/bids/sub-018/ses-01/dwi/sub-018_ses-01_run-12_dwi.nii.gz	NO_MASK											
+sub-018	ses-01	run-13	/lustre07/scratch/alexrees/bids/sub-018/ses-01/dwi/sub-018_ses-01_run-13_dwi.nii.gz	NO_MASK											
+sub-019	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-019/ses-01/dwi/sub-019_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-019	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-019/ses-01/dwi/sub-019_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-019	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-019/ses-01/dwi/sub-019_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-019	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-019/ses-02/dwi/sub-019_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-019	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-019/ses-02/dwi/sub-019_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-019	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-019/ses-02/dwi/sub-019_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-020	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-020/ses-01/dwi/sub-020_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-020	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-020/ses-01/dwi/sub-020_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-020	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-020/ses-01/dwi/sub-020_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-021	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-021/ses-01/dwi/sub-021_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-021	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-021/ses-01/dwi/sub-021_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-021	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-021/ses-01/dwi/sub-021_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-021	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-021/ses-02/dwi/sub-021_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-021	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-021/ses-02/dwi/sub-021_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-021	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-021/ses-02/dwi/sub-021_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-022	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-022/ses-01/dwi/sub-022_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-022	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-022/ses-01/dwi/sub-022_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-022	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-022/ses-01/dwi/sub-022_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-022	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-022/ses-02/dwi/sub-022_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-022	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-022/ses-02/dwi/sub-022_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-022	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-022/ses-02/dwi/sub-022_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-023	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-023/ses-01/dwi/sub-023_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-023	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-023/ses-01/dwi/sub-023_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-023	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-023/ses-01/dwi/sub-023_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-023	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-023/ses-02/dwi/sub-023_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-023	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-023/ses-02/dwi/sub-023_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-023	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-023/ses-02/dwi/sub-023_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-024	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-024/ses-02/dwi/sub-024_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-024	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-024/ses-02/dwi/sub-024_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-024	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-024/ses-02/dwi/sub-024_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-025	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-025/ses-01/dwi/sub-025_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-025	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-025/ses-01/dwi/sub-025_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-025	ses-01	run-03	/lustre07/scratch/alexrees/bids/sub-025/ses-01/dwi/sub-025_ses-01_run-03_dwi.nii.gz	NO_MASK											
+sub-025	ses-01	run-04	/lustre07/scratch/alexrees/bids/sub-025/ses-01/dwi/sub-025_ses-01_run-04_dwi.nii.gz	NO_MASK											
+sub-025	ses-01	run-07	/lustre07/scratch/alexrees/bids/sub-025/ses-01/dwi/sub-025_ses-01_run-07_dwi.nii.gz	NO_MASK											
+sub-025	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-025/ses-02/dwi/sub-025_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-025	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-025/ses-02/dwi/sub-025_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-025	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-025/ses-02/dwi/sub-025_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-026	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-026/ses-01/dwi/sub-026_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-026	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-026/ses-01/dwi/sub-026_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-026	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-026/ses-01/dwi/sub-026_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-026	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-026/ses-02/dwi/sub-026_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-026	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-026/ses-02/dwi/sub-026_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-026	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-026/ses-02/dwi/sub-026_ses-02_run-05_dwi.nii.gz	NO_MASK											
+sub-027	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-027/ses-01/dwi/sub-027_ses-01_run-01_dwi.nii.gz	NO_MASK											
+sub-027	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-027/ses-01/dwi/sub-027_ses-01_run-02_dwi.nii.gz	NO_MASK											
+sub-027	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-027/ses-01/dwi/sub-027_ses-01_run-05_dwi.nii.gz	NO_MASK											
+sub-027	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-027/ses-02/dwi/sub-027_ses-02_run-01_dwi.nii.gz	NO_MASK											
+sub-027	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-027/ses-02/dwi/sub-027_ses-02_run-02_dwi.nii.gz	NO_MASK											
+sub-027	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-027/ses-02/dwi/sub-027_ses-02_run-05_dwi.nii.gz	OK	556.0	227.0	332.0	912.0	46.0	365.0	0.3277313096443571	0.42130658432508156	170580	0.2082275390625	
+sub-028	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-028/ses-01/dwi/sub-028_ses-01_run-01_dwi.nii.gz	OK	329.0	102.0	165.0	793.0	25.0	238.0	0.6601064763634441	0.6592296502311263	254519	0.17528856749311295	
+sub-028	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-028/ses-01/dwi/sub-028_ses-01_run-02_dwi.nii.gz	OK	-18.0	38.0	-3594.0	3590.0	-3670.0	3668.0	-123.82316137104264	61.42662357185107	1107952	0.7630523415977961	
+sub-028	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-028/ses-01/dwi/sub-028_ses-01_run-05_dwi.nii.gz	OK	624.0	273.0	384.0	1023.0	67.0	417.0	0.3249915980876267	0.38279752687362917	226519	0.276512451171875	
+sub-028	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-028/ses-02/dwi/sub-028_ses-02_run-01_dwi.nii.gz	OK	313.0	98.0	139.0	789.0	21.0	232.0	0.7288191004208652	0.686285182808984	278004	0.19146280991735537	
+sub-028	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-028/ses-02/dwi/sub-028_ses-02_run-02_dwi.nii.gz	OK	-180.0	20.0	-3742.0	3562.0	-3688.0	3680.0	-12.760778828669945	117.80946033286175	1114074	0.7672685950413223	
+sub-028	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-028/ses-02/dwi/sub-028_ses-02_run-05_dwi.nii.gz	OK	521.0	229.0	310.0	804.0	55.0	356.0	0.30351493763973436	0.3896016383011807	210520	0.256982421875	
+sub-029	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-029/ses-01/dwi/sub-029_ses-01_run-01_dwi.nii.gz	OK	292.0	91.0	150.0	712.0	21.0	213.0	0.6770538189055363	0.6616125972847815	262857	0.1810309917355372	
+sub-029	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-029/ses-01/dwi/sub-029_ses-01_run-02_dwi.nii.gz	OK	2486.0	1718.0	-3660.0	3858.0	-3778.0	3810.0	0.7729050876715574	1.4653381649680104	452268	0.3114793388429752	
+sub-029	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-029/ses-01/dwi/sub-029_ses-01_run-05_dwi.nii.gz	OK	629.0	274.0	412.0	1016.0	64.0	415.0	0.3075481756211931	0.37460800371866815	185257	0.226143798828125	
+sub-029	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-029/ses-02/dwi/sub-029_ses-02_run-01_dwi.nii.gz	OK	270.0	85.0	139.0	627.0	20.0	199.0	0.6091372874679585	0.6623732606622089	254727	0.1754318181818182	
+sub-029	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-029/ses-02/dwi/sub-029_ses-02_run-02_dwi.nii.gz	OK	-356.0	-88.0	-3846.0	3812.0	-3742.0	3726.0	-7.2436316226875475	-27.799636198121178	1210080	0.8333884297520661	
+sub-029	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-029/ses-02/dwi/sub-029_ses-02_run-05_dwi.nii.gz	OK	542.0	236.0	342.0	876.0	55.0	359.0	0.3131909951642695	0.38066082637079196	178619	0.218040771484375	
+sub-030	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-030/ses-01/dwi/sub-030_ses-01_run-01_dwi.nii.gz	OK	269.0	87.0	134.15000000002328	589.0	22.0	186.0	0.5638907311045347	0.5876480418805068	235219	0.1619965564738292	
+sub-030	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-030/ses-01/dwi/sub-030_ses-01_run-02_dwi.nii.gz	OK	3052.0	1978.0	-3870.0	3948.0	-3832.0	3858.0	0.7049700842751901	1.3552423322905403	260595	0.17947314049586777	
+sub-030	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-030/ses-01/dwi/sub-030_ses-01_run-05_dwi.nii.gz	OK	582.0	252.0	368.0	938.0	56.0	389.0	0.31158974726054756	0.3881645135672957	143860	0.1756103515625	
+sub-030	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-030/ses-02/dwi/sub-030_ses-02_run-01_dwi.nii.gz	OK	271.0	86.0	134.0	593.0	21.0	187.0	0.5600233748270143	0.5995185472920677	234049	0.16119077134986226	
+sub-030	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-030/ses-02/dwi/sub-030_ses-02_run-02_dwi.nii.gz	OK	86.0	76.0	-3540.0	3552.0	-3668.0	3666.0	25.614251323713788	30.678514654939907	1145508	0.7889173553719008	
+sub-030	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-030/ses-02/dwi/sub-030_ses-02_run-05_dwi.nii.gz	OK	564.0	245.0	369.0	949.0	57.0	377.0	0.3222424654144662	0.3841059638749996	191344	0.23357421875	
+sub-031	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-031/ses-01/dwi/sub-031_ses-01_run-01_dwi.nii.gz	OK	296.0	97.0	139.0	622.0	23.0	215.0	0.5443742188781444	0.6192432474719145	239319	0.1648202479338843	
+sub-031	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-031/ses-01/dwi/sub-031_ses-01_run-02_dwi.nii.gz	OK	-320.0	-76.0	-3664.0	3552.0	-3718.0	3702.0	-7.299963436065849	-31.504869558134846	1162179	0.8003987603305786	
+sub-031	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-031/ses-01/dwi/sub-031_ses-01_run-05_dwi.nii.gz	OK	598.0	269.0	398.0	904.0	73.0	401.0	0.2787954350582529	0.35621797907838165	173660	0.2119873046875	
+sub-031	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-031/ses-02/dwi/sub-031_ses-02_run-01_dwi.nii.gz	OK	264.0	88.0	141.0	527.0	22.0	188.0	0.4864926208989168	0.5928943517954329	238677	0.16437809917355373	
+sub-031	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-031/ses-02/dwi/sub-031_ses-02_run-02_dwi.nii.gz	OK	2674.0	1698.0	-3586.0	3874.0	-3798.0	3830.0	0.7104009720307937	1.509986304812671	326720	0.2250137741046832	
+sub-031	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-031/ses-02/dwi/sub-031_ses-02_run-05_dwi.nii.gz	OK	508.0	229.0	349.0	766.0	68.0	338.0	0.2732405213041503	0.34467574580095267	200698	0.24499267578125	
+sub-032	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-032/ses-01/dwi/sub-032_ses-01_run-01_dwi.nii.gz	OK	281.0	92.0	144.0	559.0	22.0	201.0	0.48787936025156253	0.6043503216532602	238403	0.16418939393939394	
+sub-032	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-032/ses-01/dwi/sub-032_ses-01_run-02_dwi.nii.gz	OK	2056.0	1304.0	-3580.0	3768.0	-3716.0	3758.0	0.9392825122888179	1.8455073518172471	387851	0.2671150137741047	
+sub-032	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-032/ses-01/dwi/sub-032_ses-01_run-05_dwi.nii.gz	OK	588.0	259.0	370.0	892.0	57.0	384.0	0.2872689306703307	0.37003744616747963	154538	0.18864501953125	
+sub-033	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-033/ses-01/dwi/sub-033_ses-01_run-01_dwi.nii.gz	OK	311.0	113.0	158.0	690.0	28.0	241.0	0.5744984770738991	0.5889294396618425	260590	0.17946969696969697	
+sub-033	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-033/ses-01/dwi/sub-033_ses-01_run-02_dwi.nii.gz	OK	664.0	392.0	-3660.0	3678.0	-3686.0	3696.0	3.4925108465544743	6.101741586317464	994005	0.6845764462809918	
+sub-034	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-034/ses-01/dwi/sub-034_ses-01_run-01_dwi.nii.gz	OK	291.0	92.0	141.0	659.0	21.0	207.0	0.6069267556540422	0.6291005774523205	268001	0.1845736914600551	
+sub-034	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-034/ses-01/dwi/sub-034_ses-01_run-02_dwi.nii.gz	OK	2256.0	1410.0	-3464.0	3796.0	-3754.0	3782.0	0.805599524147879	1.747714958166343	484187	0.3334621212121212	
+sub-034	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-034/ses-01/dwi/sub-034_ses-01_run-05_dwi.nii.gz	OK	622.0	269.0	379.0	970.0	59.0	413.0	0.31070567009600597	0.38958212689089183	147891	0.180531005859375	
+sub-034	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-034/ses-02/dwi/sub-034_ses-02_run-01_dwi.nii.gz	OK	263.0	83.0	134.0	546.0	19.0	184.0	0.5203958139286045	0.6193083157860305	276596	0.1904931129476584	
+sub-034	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-034/ses-02/dwi/sub-034_ses-02_run-02_dwi.nii.gz	OK	324.0	168.0	-3610.0	3634.0	-3666.0	3670.0	6.877646642296041	13.869195885937817	1198462	0.8253870523415978	
+sub-034	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-034/ses-02/dwi/sub-034_ses-02_run-05_dwi.nii.gz	OK	526.0	230.0	333.0	818.0	54.0	347.0	0.30070585312850984	0.37353087920016087	169636	0.2070751953125	
+sub-035	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-035/ses-01/dwi/sub-035_ses-01_run-01_dwi.nii.gz	OK	273.0	84.0	135.0	742.0	20.0	187.0	0.781231188516002	0.6229332779212522	256913	0.17693732782369145	
+sub-035	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-035/ses-01/dwi/sub-035_ses-01_run-02_dwi.nii.gz	OK	406.0	282.0	-3594.0	3614.0	-3658.0	3668.0	5.408416226159072	8.237690005015846	1249246	0.8603622589531681	
+sub-035	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-035/ses-01/dwi/sub-035_ses-01_run-05_dwi.nii.gz	OK	540.0	230.0	329.0	948.0	43.0	362.0	0.35930572804586935	0.41709762819590107	138268	0.1687841796875	
+sub-035	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-035/ses-02/dwi/sub-035_ses-02_run-01_dwi.nii.gz	OK	249.0	76.0	126.0	611.0	18.0	174.0	0.6525602174858127	0.6416165838686404	264934	0.18246143250688704	
+sub-035	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-035/ses-02/dwi/sub-035_ses-02_run-02_dwi.nii.gz	OK	3172.0	1800.0	-3952.0	3980.0	-3874.0	3888.0	0.7736970804661905	1.5680626794850712	230808	0.1589586776859504	
+sub-035	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-035/ses-02/dwi/sub-035_ses-02_run-05_dwi.nii.gz	OK	558.0	239.0	345.0	988.0	46.0	375.0	0.35898165015444466	0.4113174790097865	161283	0.196878662109375	
+sub-036	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-036/ses-01/dwi/sub-036_ses-01_run-01_dwi.nii.gz	OK	307.0	98.0	154.0	741.0	22.0	218.0	0.6399979601982151	0.6246648027773101	259577	0.1787720385674931	
+sub-036	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-036/ses-01/dwi/sub-036_ses-01_run-02_dwi.nii.gz	OK	452.0	350.0	-3568.0	3600.0	-3652.0	3666.0	4.814991886542154	6.611959881937272	1203921	0.8291466942148761	
+sub-036	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-036/ses-01/dwi/sub-036_ses-01_run-05_dwi.nii.gz	OK	505.0	219.0	328.0	827.0	47.0	328.0	0.3093468203288947	0.37649390918941944	176009	0.214854736328125	
+sub-036	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-036/ses-02/dwi/sub-036_ses-02_run-01_dwi.nii.gz	OK	294.0	93.0	148.0	671.0	21.0	205.0	0.5918558059832408	0.6161557657477804	263380	0.18139118457300277	
+sub-036	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-036/ses-02/dwi/sub-036_ses-02_run-02_dwi.nii.gz	OK	2684.0	1496.0	-3654.0	3890.0	-3810.0	3828.0	0.7303391477057161	1.755789004391051	387360	0.2667768595041322	
+sub-036	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-036/ses-02/dwi/sub-036_ses-02_run-05_dwi.nii.gz	OK	505.0	216.0	340.0	866.0	49.0	324.0	0.32301251606126974	0.3741969045220354	216530	0.26431884765625	
+sub-037	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-037/ses-01/dwi/sub-037_ses-01_run-01_dwi.nii.gz	OK	309.0	97.0	145.0	834.0	22.0	225.0	0.7422654963156833	0.6617945895641898	274828	0.1892754820936639	
+sub-037	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-037/ses-01/dwi/sub-037_ses-01_run-02_dwi.nii.gz	OK	2080.0	1236.0	-3548.0	3780.0	-3720.0	3758.0	0.9219189166804578	1.9554549169294702	465703	0.32073209366391187	
+sub-037	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-037/ses-01/dwi/sub-037_ses-01_run-05_dwi.nii.gz	OK	589.0	255.0	368.0	1008.0	64.0	402.0	0.33861781943663255	0.3934704516280526	214906	0.26233642578125	
+sub-038	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-038/ses-01/dwi/sub-038_ses-01_run-01_dwi.nii.gz	OK	314.0	97.0	150.0	735.0	23.0	224.0	0.6176470904387644	0.6501201952634571	258944	0.17833608815426996	
+sub-038	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-038/ses-01/dwi/sub-038_ses-01_run-02_dwi.nii.gz	OK	628.0	360.0	-3592.0	3622.0	-3656.0	3668.0	3.5159661430853735	6.448635610834267	1216057	0.8375048209366391	
+sub-038	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-038/ses-01/dwi/sub-038_ses-01_run-05_dwi.nii.gz	OK	641.0	276.0	403.0	1087.0	64.0	428.0	0.32604800973060744	0.39223653040094697	197903	0.241580810546875	
+sub-038	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-038/ses-02/dwi/sub-038_ses-02_run-01_dwi.nii.gz	OK	303.0	93.0	150.0	702.0	22.0	212.0	0.608130788037935	0.6407781737932533	248801	0.17135055096418733	
+sub-038	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-038/ses-02/dwi/sub-038_ses-02_run-02_dwi.nii.gz	OK	-128.0	12.0	-3676.0	3574.0	-3680.0	3670.0	-17.699474016316252	195.17623041498578	1070538	0.7372851239669421	
+sub-038	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-038/ses-02/dwi/sub-038_ses-02_run-05_dwi.nii.gz	OK	585.0	249.0	367.0	1017.0	57.0	385.0	0.3381992253714638	0.39348871677824776	212252	0.2590966796875	
+sub-039	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-039/ses-01/dwi/sub-039_ses-01_run-01_dwi.nii.gz	OK	314.0	96.0	158.0	687.0	23.0	221.0	0.5635196151351398	0.6481136457993355	273877	0.18862052341597796	
+sub-039	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-039/ses-01/dwi/sub-039_ses-01_run-02_dwi.nii.gz	OK	1470.0	682.0	-3506.0	3646.0	-3690.0	3714.0	1.3715175020264423	3.481247993903517	581980	0.40081267217630856	
+sub-039	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-039/ses-01/dwi/sub-039_ses-01_run-05_dwi.nii.gz	OK	574.0	236.0	343.0	970.0	42.0	371.0	0.3369710542954839	0.4211295116835502	177179	0.216282958984375	
+sub-039	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-039/ses-02/dwi/sub-039_ses-02_run-01_dwi.nii.gz	OK	247.0	73.0	72.0	587.0	16.0	192.0	0.6783000301088481	0.7689369229079009	281245	0.19369490358126723	
+sub-039	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-039/ses-02/dwi/sub-039_ses-02_run-02_dwi.nii.gz	OK	1638.0	688.0	-3492.0	3690.0	-3702.0	3720.0	1.1868102463860528	3.489984076821972	587127	0.4043574380165289	
+sub-039	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-039/ses-02/dwi/sub-039_ses-02_run-05_dwi.nii.gz	OK	579.0	240.0	355.0	978.0	49.0	373.0	0.33198455820885664	0.4026392499668233	227230	0.27738037109375	
+sub-040	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-040/ses-01/dwi/sub-040_ses-01_run-01_dwi.nii.gz	OK	256.0	83.0	108.0	597.0	20.0	184.0	0.6244852066193725	0.62638821184749	227380	0.1565977961432507	
+sub-040	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-040/ses-01/dwi/sub-040_ses-01_run-02_dwi.nii.gz	OK	2344.0	1286.0	-3762.0	3858.0	-3748.0	3776.0	0.9012875732064838	1.9240235171399314	540592	0.3723085399449036	
+sub-040	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-040/ses-01/dwi/sub-040_ses-01_run-05_dwi.nii.gz	OK	643.0	280.0	410.0	1063.0	63.0	442.0	0.32244028014852133	0.3982675257690039	176297	0.215206298828125	
+sub-040	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-040/ses-02/dwi/sub-040_ses-02_run-01_dwi.nii.gz	OK	243.0	81.0	123.0	545.0	20.0	173.0	0.5678789693040127	0.5893854257436943	226890	0.1562603305785124	
+sub-040	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-040/ses-02/dwi/sub-040_ses-02_run-02_dwi.nii.gz	OK	2288.0	1518.0	-3664.0	3820.0	-3748.0	3788.0	0.8786686632755475	1.6101102505944256	438016	0.30166391184573005	
+sub-040	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-040/ses-02/dwi/sub-040_ses-02_run-05_dwi.nii.gz	OK	618.0	274.0	402.0	1040.0	62.0	421.0	0.32365737519401344	0.38530775027996184	178039	0.217332763671875	
+sub-041	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-041/ses-01/dwi/sub-041_ses-01_run-01_dwi.nii.gz	OK	294.0	88.0	135.0	691.0	18.0	199.0	0.6188708914730161	0.6391649263124344	241845	0.1665599173553719	
+sub-041	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-041/ses-01/dwi/sub-041_ses-01_run-02_dwi.nii.gz	OK	-244.0	-10.0	-3610.0	3578.0	-3672.0	3660.0	-9.267652855086128	-232.75953538087242	1182580	0.8144490358126721	
+sub-041	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-041/ses-01/dwi/sub-041_ses-01_run-05_dwi.nii.gz	OK	479.0	201.0	286.0	806.0	33.0	310.0	0.33534597769487956	0.41742340628079083	113642	0.13872314453125	
+sub-041	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-041/ses-02/dwi/sub-041_ses-02_run-01_dwi.nii.gz	OK	279.0	84.0	138.0	645.0	18.0	187.0	0.5916696872282058	0.6273236443741916	239620	0.16502754820936638	
+sub-041	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-041/ses-02/dwi/sub-041_ses-02_run-02_dwi.nii.gz	OK	2404.0	1322.0	-3694.0	3848.0	-3734.0	3772.0	0.8417221185685123	1.8588942581931023	417390	0.2874586776859504	
+sub-041	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-041/ses-02/dwi/sub-041_ses-02_run-05_dwi.nii.gz	OK	502.0	214.0	309.0	859.0	39.0	328.0	0.33822988475081833	0.4021430836783937	143952	0.17572265625	
+sub-042	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-042/ses-01/dwi/sub-042_ses-01_run-01_dwi.nii.gz	OK	251.0	85.0	135.0	482.0	22.0	183.0	0.4556931311695512	0.5914507480381425	218310	0.1503512396694215	
+sub-042	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-042/ses-01/dwi/sub-042_ses-01_run-02_dwi.nii.gz	OK	3086.0	1612.0	-3830.0	3950.0	-3852.0	3870.0	0.6853884335176477	1.7002632392371235	238019	0.1639249311294766	
+sub-042	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-042/ses-01/dwi/sub-042_ses-01_run-05_dwi.nii.gz	OK	503.0	223.0	311.0	757.0	51.0	329.0	0.29141324108888633	0.3645612595936149	136722	0.16689697265625	
+sub-043	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-043/ses-02/dwi/sub-043_ses-02_run-01_dwi.nii.gz	OK	305.0	94.0	165.0	715.0	21.0	229.0	0.6069543715842062	0.688996269654389	303428	0.20897245179063362	
+sub-043	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-043/ses-02/dwi/sub-043_ses-02_run-02_dwi.nii.gz	OK	315.0	96.0	170.0	731.0	22.0	232.0	0.597737554700888	0.6855017044775661	302190	0.2081198347107438	
+sub-043	ses-02	run-03	/lustre07/scratch/alexrees/bids/sub-043/ses-02/dwi/sub-043_ses-02_run-03_dwi.nii.gz	OK	142.0	104.0	-3566.0	3582.0	-3660.0	3662.0	15.381927537411633	22.30513699416993	1154551	0.7951453168044077	
+sub-043	ses-02	run-04	/lustre07/scratch/alexrees/bids/sub-043/ses-02/dwi/sub-043_ses-02_run-04_dwi.nii.gz	OK	1696.0	1008.0	-3448.0	3714.0	-3704.0	3740.0	1.1152828069732823	2.369504907069246	501258	0.34521900826446283	
+sub-043	ses-02	run-09	/lustre07/scratch/alexrees/bids/sub-043/ses-02/dwi/sub-043_ses-02_run-09_dwi.nii.gz	OK	660.0	287.0	428.0	1069.0	60.0	438.0	0.3084375179518538	0.38592446923505186	212865	0.259844970703125	
+sub-043	ses-02	run-10	/lustre07/scratch/alexrees/bids/sub-043/ses-02/dwi/sub-043_ses-02_run-10_dwi.nii.gz	OK	633.0	271.0	393.0	1004.0	47.0	415.0	0.3040287663702432	0.4018398242455797	161132	0.1966943359375	
+sub-044	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-044/ses-01/dwi/sub-044_ses-01_run-01_dwi.nii.gz	OK	281.0	92.0	137.0	637.0	22.0	206.0	0.5902451615057894	0.6252520423533798	239695	0.16507920110192836	
+sub-044	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-044/ses-01/dwi/sub-044_ses-01_run-02_dwi.nii.gz	OK	304.0	222.0	-3568.0	3586.0	-3654.0	3660.0	7.106586040977959	10.404962868175469	1207516	0.8316225895316804	
+sub-044	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-044/ses-01/dwi/sub-044_ses-01_run-05_dwi.nii.gz	OK	628.0	276.0	393.0	1012.0	53.0	417.0	0.31067269740238695	0.39001804488657	125830	0.15360107421875	
+sub-044	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-044/ses-02/dwi/sub-044_ses-02_run-01_dwi.nii.gz	OK	283.0	92.0	131.0	638.0	21.0	207.0	0.5892364627540968	0.6294916553113795	233117	0.16054889807162534	
+sub-044	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-044/ses-02/dwi/sub-044_ses-02_run-02_dwi.nii.gz	OK	1844.0	1546.0	-3098.0	3720.0	-3726.0	3774.0	0.9447485852143044	1.5550824117212576	294621	0.20290702479338843	
+sub-044	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-044/ses-02/dwi/sub-044_ses-02_run-05_dwi.nii.gz	OK	547.0	237.0	331.0	883.0	40.0	364.0	0.3162266204187689	0.40913911055214547	112727	0.137606201171875	
+sub-045	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-045/ses-01/dwi/sub-045_ses-01_run-01_dwi.nii.gz	OK	238.0	79.0	125.0	539.0	19.0	173.0	0.6132820010171185	0.6042151065899976	248009	0.1708050964187328	
+sub-045	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-045/ses-01/dwi/sub-045_ses-01_run-02_dwi.nii.gz	OK	-124.0	-2.0	-3588.0	3574.0	-3686.0	3678.0	-18.446309528731145	-1178.357057488367	1152159	0.7934979338842976	
+sub-045	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-045/ses-01/dwi/sub-045_ses-01_run-05_dwi.nii.gz	OK	517.0	229.0	343.0	877.0	53.0	347.0	0.32900302631322775	0.37606452797142664	214474	0.26180908203125	
+sub-046	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-046/ses-01/dwi/sub-046_ses-01_run-01_dwi.nii.gz	OK	307.0	98.0	134.0	744.0	23.0	230.0	0.660363188666613	0.6773759260466692	244738	0.16855234159779614	
+sub-046	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-046/ses-01/dwi/sub-046_ses-01_run-02_dwi.nii.gz	OK	280.0	242.0	-3556.0	3570.0	-3650.0	3658.0	7.832294495844664	9.551544258379494	1086831	0.7485061983471074	
+sub-046	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-046/ses-01/dwi/sub-046_ses-01_run-05_dwi.nii.gz	OK	603.0	261.0	385.0	1017.0	61.0	401.0	0.3267724735379205	0.3866864160157777	193141	0.235767822265625	
+sub-046	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-046/ses-02/dwi/sub-046_ses-02_run-01_dwi.nii.gz	OK	275.0	85.0	141.0	639.0	21.0	202.0	0.61824639333611	0.672299168908128	241050	0.1660123966942149	
+sub-046	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-046/ses-02/dwi/sub-046_ses-02_run-02_dwi.nii.gz	OK	-576.0	-174.0	-3820.0	3726.0	-3718.0	3694.0	-4.209830943637853	-13.763678951280394	1171448	0.8067823691460055	
+sub-046	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-046/ses-02/dwi/sub-046_ses-02_run-05_dwi.nii.gz	OK	549.0	234.0	353.0	973.0	59.0	362.0	0.35002688174986724	0.38499601837228437	225328	0.27505859375	
+sub-047	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-047/ses-01/dwi/sub-047_ses-01_run-01_dwi.nii.gz	OK	328.0	106.0	166.0	808.0	25.0	245.0	0.6651162063321561	0.6509045430014233	175598	0.12093526170798898	
+sub-047	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-047/ses-01/dwi/sub-047_ses-01_run-02_dwi.nii.gz	OK	2444.0	1130.0	-3842.0	3892.0	-3790.0	3810.0	0.9684091874627724	2.284521070226504	396165	0.2728409090909091	
+sub-047	ses-01	run-03	/lustre07/scratch/alexrees/bids/sub-047/ses-01/dwi/sub-047_ses-01_run-03_dwi.nii.gz	OK	327.0	108.0	167.0	803.0	25.0	247.0	0.6628484987599005	0.6428900984013923	176338	0.12144490358126722	
+sub-047	ses-01	run-04	/lustre07/scratch/alexrees/bids/sub-047/ses-01/dwi/sub-047_ses-01_run-04_dwi.nii.gz	OK	2496.0	1470.0	-3754.0	3876.0	-3774.0	3804.0	0.8292180795990733	1.7272286375733887	354805	0.2443560606060606	
+sub-047	ses-01	run-07	/lustre07/scratch/alexrees/bids/sub-047/ses-01/dwi/sub-047_ses-01_run-07_dwi.nii.gz	OK	578.0	255.0	371.0	978.0	60.0	388.0	0.32844882948536325	0.38222024858602	202488	0.247177734375	
+sub-047	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-047/ses-02/dwi/sub-047_ses-02_run-01_dwi.nii.gz	OK	285.0	96.0	150.0	666.0	24.0	223.0	0.6136583793922451	0.6486613133432141	237085	0.16328168044077135	
+sub-047	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-047/ses-02/dwi/sub-047_ses-02_run-02_dwi.nii.gz	OK	2258.0	1030.0	-3726.0	3848.0	-3754.0	3774.0	0.9269560499374969	2.4126728063356904	541600	0.37300275482093664	
+sub-047	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-047/ses-02/dwi/sub-047_ses-02_run-05_dwi.nii.gz	OK	614.0	271.0	395.0	1027.0	63.0	411.0	0.32261865271556495	0.3798789866749606	194688	0.23765625	
+sub-048	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-048/ses-01/dwi/sub-048_ses-01_run-01_dwi.nii.gz	OK	270.0	88.0	134.0	652.0	21.0	195.0	0.6483294131706562	0.6229186192495129	270306	0.18616115702479338	
+sub-048	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-048/ses-01/dwi/sub-048_ses-01_run-02_dwi.nii.gz	OK	2090.0	1434.0	-3034.0	3770.0	-3748.0	3780.0	0.8117650784807638	1.7145173214990888	520869	0.35872520661157026	
+sub-048	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-048/ses-01/dwi/sub-048_ses-01_run-05_dwi.nii.gz	OK	519.0	230.0	325.0	861.0	52.0	357.0	0.3279085373488177	0.3911564373700491	184381	0.225074462890625	
+sub-048	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-048/ses-02/dwi/sub-048_ses-02_run-01_dwi.nii.gz	OK	265.0	85.0	134.0	617.0	20.0	193.0	0.6034121509930789	0.6307327522813769	271476	0.18696694214876033	
+sub-048	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-048/ses-02/dwi/sub-048_ses-02_run-02_dwi.nii.gz	OK	714.0	288.0	-3626.0	3652.0	-3670.0	3676.0	3.1408359404224924	8.12883690939566	1177837	0.8111825068870523	
+sub-048	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-048/ses-02/dwi/sub-048_ses-02_run-05_dwi.nii.gz	OK	586.0	260.0	360.0	946.0	57.0	402.0	0.3228203573037311	0.39093921490353156	171934	0.20988037109375	
+sub-049	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-049/ses-01/dwi/sub-049_ses-01_run-01_dwi.nii.gz	OK	283.0	96.0	156.0	684.0	23.0	247.0	0.6461681815139033	0.7609115942900523	250159	0.1722858126721763	
+sub-049	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-049/ses-01/dwi/sub-049_ses-01_run-02_dwi.nii.gz	OK	520.0	252.0	-3604.0	3622.0	-3656.0	3664.0	4.256819412018061	9.198399843931508	1243206	0.856202479338843	
+sub-049	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-049/ses-01/dwi/sub-049_ses-01_run-05_dwi.nii.gz	OK	544.0	247.0	354.0	857.0	56.0	367.0	0.3004137954991072	0.36639189722015203	188844	0.2305224609375	
+sub-050	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-050/ses-01/dwi/sub-050_ses-01_run-01_dwi.nii.gz	OK	292.0	94.0	149.0	636.0	23.0	214.0	0.5623016527231436	0.6347761010188192	266042	0.1832245179063361	
+sub-050	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-050/ses-01/dwi/sub-050_ses-01_run-02_dwi.nii.gz	OK	-28.0	-4.0	-3884.0	3876.0	-3778.0	3778.0	-96.42069897431792	-629.6749380301134	1063916	0.7327245179063361	
+sub-050	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-050/ses-01/dwi/sub-050_ses-01_run-05_dwi.nii.gz	OK	587.0	250.0	370.0	1027.0	59.0	388.0	0.3455078539222443	0.39211053358504616	218191	0.266346435546875	
+sub-051	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-051/ses-01/dwi/sub-051_ses-01_run-01_dwi.nii.gz	OK	287.0	89.0	150.0	555.0	20.0	192.0	0.465435913235762	0.601696459190429	243431	0.1676522038567493	
+sub-051	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-051/ses-01/dwi/sub-051_ses-01_run-02_dwi.nii.gz	OK	374.0	8.0	-3870.0	3880.0	-3776.0	3772.0	7.119744911126296	314.664124603612	989888	0.6817410468319559	
+sub-051	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-051/ses-01/dwi/sub-051_ses-01_run-05_dwi.nii.gz	OK	532.0	228.0	335.0	836.0	48.0	348.0	0.2995840471487034	0.3868383262579254	144994	0.17699462890625	
+sub-052	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-052/ses-01/dwi/sub-052_ses-01_run-01_dwi.nii.gz	OK	284.0	93.0	146.0	675.0	23.0	218.0	0.6329262829258026	0.6603530806685676	262210	0.18058539944903582	
+sub-052	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-052/ses-01/dwi/sub-052_ses-01_run-02_dwi.nii.gz	OK	2062.0	1372.0	-3504.0	3802.0	-3724.0	3764.0	0.8988659473880569	1.757053805429385	572611	0.39436019283746554	
+sub-052	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-052/ses-01/dwi/sub-052_ses-01_run-05_dwi.nii.gz	OK	593.0	265.0	383.0	962.0	63.0	401.0	0.3133132880039029	0.37418723769658363	195376	0.23849609375	
+sub-052	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-052/ses-02/dwi/sub-052_ses-02_run-01_dwi.nii.gz	OK	302.0	97.0	156.0	722.0	25.0	225.0	0.63406665797838	0.647142605427144	249296	0.17169146005509642	
+sub-052	ses-02	run-02	/lustre07/scratch/alexrees/bids/sub-052/ses-02/dwi/sub-052_ses-02_run-02_dwi.nii.gz	OK	290.0	234.0	-3500.0	3534.0	-3646.0	3654.0	7.256969792519357	9.829836222782323	1095672	0.754595041322314	
+sub-052	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-052/ses-02/dwi/sub-052_ses-02_run-05_dwi.nii.gz	OK	616.0	279.0	388.0	991.0	63.0	425.0	0.3158127555508631	0.38235581203116586	205428	0.2507666015625	
+sub-053	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-053/ses-01/dwi/sub-053_ses-01_run-01_dwi.nii.gz	OK	248.0	80.0	125.0	544.0	18.0	187.0	0.5661640346182052	0.6600730882531044	246888	0.17003305785123968	
+sub-053	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-053/ses-01/dwi/sub-053_ses-01_run-02_dwi.nii.gz	OK	118.0	110.0	-3560.0	3572.0	-3654.0	3654.0	18.45012509141141	21.00205837632055	1167007	0.803723829201102	
+sub-053	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-053/ses-01/dwi/sub-053_ses-01_run-05_dwi.nii.gz	OK	542.0	239.0	282.0	856.0	57.0	371.0	0.342782758235148	0.38647357136117727	157839	0.192674560546875	
+sub-054	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-054/ses-01/dwi/sub-054_ses-01_run-01_dwi.nii.gz	OK	259.0	83.0	74.0	579.0	20.0	184.0	0.6092921912405724	0.6153869957908579	270151	0.18605440771349863	
+sub-054	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-054/ses-01/dwi/sub-054_ses-01_run-02_dwi.nii.gz	OK	264.0	126.0	-3612.0	3626.0	-3674.0	3674.0	8.473515675002822	18.577855157005203	1180139	0.8127679063360882	
+sub-054	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-054/ses-01/dwi/sub-054_ses-01_run-05_dwi.nii.gz	OK	554.0	240.0	336.0	853.0	47.0	372.0	0.30267168879069445	0.4044713846493882	130287	0.159041748046875	
+sub-054	ses-02	run-01	/lustre07/scratch/alexrees/bids/sub-054/ses-02/dwi/sub-054_ses-02_run-01_dwi.nii.gz	OK	247.0	83.0	125.0	575.0	20.0	183.0	0.5956365309716122	0.6110732764889938	248563	0.1711866391184573	
+sub-054	ses-02	run-05	/lustre07/scratch/alexrees/bids/sub-054/ses-02/dwi/sub-054_ses-02_run-05_dwi.nii.gz	OK	418.0	185.0	266.0	653.0	40.0	281.0	0.29901561327016707	0.3864254600388165	142727	0.174227294921875	
+sub-056	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-056/ses-01/dwi/sub-056_ses-01_run-01_dwi.nii.gz	OK	286.0	87.0	134.0	717.0	18.0	205.0	0.6685773017276585	0.6724636268978132	275069	0.1894414600550964	
+sub-056	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-056/ses-01/dwi/sub-056_ses-01_run-05_dwi.nii.gz	OK	418.0	181.0	251.0	692.4499999999534	39.0	281.0	0.3356988224077966	0.39479677327094936	186218	0.22731689453125	
+sub-057	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-057/ses-01/dwi/sub-057_ses-01_run-01_dwi.nii.gz	OK	272.0	85.0	135.0	615.0	19.0	184.0	0.5769314850645685	0.6062196620604584	245322	0.16895454545454547	
+sub-057	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-057/ses-01/dwi/sub-057_ses-01_run-02_dwi.nii.gz	OK	3064.0	1368.0	-3880.0	3960.0	-3872.0	3878.0	0.7431574771652649	2.0514058460956113	270201	0.18608884297520661	
+sub-057	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-057/ses-01/dwi/sub-057_ses-01_run-05_dwi.nii.gz	OK	491.0	212.0	316.0	838.0	42.0	319.0	0.32903415664797103	0.38663769914773444	169393	0.206778564453125	
+sub-058	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-058/ses-01/dwi/sub-058_ses-01_run-01_dwi.nii.gz	OK	291.0	91.0	150.0	676.0	20.0	211.0	0.598951051563924	0.6601744406389163	243917	0.16798691460055096	
+sub-058	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-058/ses-01/dwi/sub-058_ses-01_run-02_dwi.nii.gz	OK	2286.0	1528.0	-3604.0	3832.0	-3766.0	3798.0	0.8413242288503192	1.635256603991377	477039	0.3285392561983471	
+sub-058	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-058/ses-01/dwi/sub-058_ses-01_run-05_dwi.nii.gz	OK	569.0	236.0	361.0	1089.0	41.0	371.0	0.38492166130698036	0.42416939981044505	202712	0.247451171875	
+sub-059	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-059/ses-01/dwi/sub-059_ses-01_run-01_dwi.nii.gz	OK	321.0	103.0	167.0	781.0	23.0	250.0	0.6600244284706722	0.6876401921955657	244063	0.1680874655647383	
+sub-059	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-059/ses-01/dwi/sub-059_ses-01_run-02_dwi.nii.gz	OK	488.0	308.0	-3552.0	3596.0	-3644.0	3656.0	4.437144392984603	7.459043130367585	1224890	0.8435881542699725	
+sub-059	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-059/ses-01/dwi/sub-059_ses-01_run-05_dwi.nii.gz	OK	545.0	234.0	343.0	942.0	49.0	364.0	0.3419458382719928	0.4007888234473145	184987	0.225814208984375	
+sub-060	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-060/ses-01/dwi/sub-060_ses-01_run-01_dwi.nii.gz	OK	298.0	92.0	155.0	650.0	21.0	220.0	0.5555416536605653	0.67853309986674	243038	0.16738154269972452	
+sub-060	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-060/ses-01/dwi/sub-060_ses-01_run-02_dwi.nii.gz	OK	1612.0	1140.0	-3188.0	3650.0	-3696.0	3740.0	1.105774697097283	2.088065347968507	358935	0.24720041322314049	
+sub-060	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-060/ses-01/dwi/sub-060_ses-01_run-05_dwi.nii.gz	OK	621.0	270.0	374.0	921.0	48.0	403.0	0.2848423171475856	0.3896299395126929	113704	0.138798828125	
+sub-061	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-061/ses-01/dwi/sub-061_ses-01_run-01_dwi.nii.gz	OK	263.0	88.0	134.0	624.0	22.0	196.0	0.6285271841561897	0.6180065468195354	237341	0.16345798898071626	
+sub-061	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-061/ses-01/dwi/sub-061_ses-01_run-05_dwi.nii.gz	OK	391.0	170.0	244.0	681.0	33.0	264.0	0.3491342611941402	0.40418351465542846	98542	0.12029052734375	
+sub-061	ses-01	run-13	/lustre07/scratch/alexrees/bids/sub-061/ses-01/dwi/sub-061_ses-01_run-13_dwi.nii.gz	OK	378.0	165.0	244.0	676.0	39.0	258.0	0.358852334244186	0.39161077951143447	181826	0.22195556640625	
+sub-062	ses-01	run-03	/lustre07/scratch/alexrees/bids/sub-062/ses-01/dwi/sub-062_ses-01_run-03_dwi.nii.gz	OK	380.0	166.0	239.0	657.0	38.0	260.0	0.34438844212204195	0.3962308586672631	211227	0.257845458984375	
+sub-062	ses-01	run-11	/lustre07/scratch/alexrees/bids/sub-062/ses-01/dwi/sub-062_ses-01_run-11_dwi.nii.gz	OK	282.0	90.0	143.0	764.0	21.0	199.0	0.7323668104681728	0.6169746041767192	273709	0.18850482093663912	
+sub-063	ses-01	run-03	/lustre07/scratch/alexrees/bids/sub-063/ses-01/dwi/sub-063_ses-01_run-03_dwi.nii.gz	OK	420.0	180.0	271.0	764.0	38.0	278.0	0.3640055370477674	0.39534231255964924	191078	0.23324951171875	
+sub-063	ses-01	run-11	/lustre07/scratch/alexrees/bids/sub-063/ses-01/dwi/sub-063_ses-01_run-11_dwi.nii.gz	OK	288.0	92.0	149.0	786.0	21.0	204.0	0.7481488585313572	0.6155754157884623	235844	0.16242699724517906	
+sub-064	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-064/ses-01/dwi/sub-064_ses-01_run-01_dwi.nii.gz	OK	254.0	86.0	136.0	602.0	22.0	190.0	0.6154919334433574	0.615594303137851	287812	0.1982176308539945	
+sub-064	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-064/ses-01/dwi/sub-064_ses-01_run-02_dwi.nii.gz	OK	3254.0	1628.0	-4000.0	4006.0	-3870.0	3884.0	0.9024487378663087	1.7300907532975607	261912	0.1803801652892562	
+sub-064	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-064/ses-01/dwi/sub-064_ses-01_run-05_dwi.nii.gz	OK	555.0	251.0	368.0	963.0	68.0	377.0	0.3435465899507043	0.363883991078713	269004	0.3283740234375	
+sub-065	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-065/ses-01/dwi/sub-065_ses-01_run-01_dwi.nii.gz	OK	316.0	100.0	153.0	754.0	21.0	234.0	0.6333795461254005	0.6685426806917615	277464	0.1910909090909091	
+sub-065	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-065/ses-01/dwi/sub-065_ses-01_run-02_dwi.nii.gz	OK	2714.0	1556.0	-3606.0	3892.0	-3832.0	3846.0	0.7046347259761897	1.7385162456707661	442591	0.304814738292011	
+sub-065	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-065/ses-01/dwi/sub-065_ses-01_run-05_dwi.nii.gz	OK	578.0	249.0	360.0	1013.0	52.0	391.0	0.351616955547077	0.4043941529301311	194490	0.23741455078125	
+sub-066	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-066/ses-01/dwi/sub-066_ses-01_run-01_dwi.nii.gz	OK	166.0	58.0	52.0	398.0	16.0	142.0	0.6694415948812906	0.6931080950889588	199094	0.13711707988980718	
+sub-066	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-066/ses-01/dwi/sub-066_ses-01_run-02_dwi.nii.gz	OK	-382.0	-2.0	-3806.0	3756.0	-3720.0	3710.0	-6.447920046038451	-1205.9569312782924	1170842	0.8063650137741046	
+sub-066	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-066/ses-01/dwi/sub-066_ses-01_run-05_dwi.nii.gz	OK	627.0	268.0	340.0	1037.0	60.0	460.0	0.3499302864132902	0.4545558289072313	137469	0.167808837890625	
+sub-067	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-067/ses-01/dwi/sub-067_ses-01_run-01_dwi.nii.gz	OK	286.0	90.0	142.0	698.0	22.0	205.0	0.6565809798695122	0.640936041115147	231393	0.15936157024793388	
+sub-067	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-067/ses-01/dwi/sub-067_ses-01_run-05_dwi.nii.gz	OK	565.0	246.0	379.0	1013.0	59.0	371.0	0.34769970969938946	0.37661468216401484	209715	0.255999755859375	
+sub-068	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-068/ses-01/dwi/sub-068_ses-01_run-01_dwi.nii.gz	OK	275.0	91.0	142.0	607.0	22.0	202.0	0.5907431155446782	0.620768561265694	270528	0.18631404958677686	
+sub-068	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-068/ses-01/dwi/sub-068_ses-01_run-02_dwi.nii.gz	OK	14.0	98.0	-3574.0	3574.0	-3658.0	3658.0	155.6104059043022	23.60589932940496	1142327	0.7867265840220385	
+sub-068	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-068/ses-01/dwi/sub-068_ses-01_run-05_dwi.nii.gz	OK	610.0	272.0	398.0	993.0	68.0	415.0	0.3150345224962038	0.37482665984477026	197360	0.24091796875	
+sub-069	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-069/ses-01/dwi/sub-069_ses-01_run-01_dwi.nii.gz	OK	278.0	89.0	146.0	730.0	22.0	202.0	0.7176004483530098	0.6322116342203107	265552	0.1828870523415978	
+sub-069	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-069/ses-01/dwi/sub-069_ses-01_run-02_dwi.nii.gz	OK	18.0	52.0	-3582.0	3600.0	-3664.0	3662.0	121.75413826518954	44.70230450690607	1191819	0.8208119834710744	
+sub-069	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-069/ses-01/dwi/sub-069_ses-01_run-05_dwi.nii.gz	OK	602.0	271.0	387.0	1010.0	62.0	414.0	0.32940956247768366	0.384127118858736	220352	0.268984375	
+sub-071	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-071/ses-01/dwi/sub-071_ses-01_run-01_dwi.nii.gz	OK	234.0	80.0	126.0	493.0	22.0	178.0	0.5301274058178318	0.6134193671849051	222058	0.15293250688705234	
+sub-071	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-071/ses-01/dwi/sub-071_ses-01_run-02_dwi.nii.gz	OK	146.0	172.0	-3534.0	3548.0	-3660.0	3664.0	14.68820034152485	13.50099465029425	1101252	0.7584380165289256	
+sub-071	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-071/ses-01/dwi/sub-071_ses-01_run-05_dwi.nii.gz	OK	526.0	237.0	340.0	835.0	66.0	366.0	0.30877460417238123	0.3728825260939608	209207	0.255379638671875	
+sub-072	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-072/ses-01/dwi/sub-072_ses-01_run-01_dwi.nii.gz	OK	311.0	95.0	159.0	822.0	21.0	227.0	0.7215109242263883	0.6891066584158582	273715	0.18850895316804409	
+sub-072	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-072/ses-01/dwi/sub-072_ses-01_run-02_dwi.nii.gz	OK	518.0	378.0	-3560.0	3588.0	-3646.0	3662.0	4.179534916186701	6.099314729798979	1163855	0.8015530303030303	
+sub-072	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-072/ses-01/dwi/sub-072_ses-01_run-05_dwi.nii.gz	OK	621.0	266.0	403.0	1143.0	57.0	405.0	0.36933540144573496	0.39127862889731546	257496	0.314326171875	
+sub-073	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-073/ses-01/dwi/sub-073_ses-01_run-01_dwi.nii.gz	OK	288.0	91.0	141.0	708.0	21.0	202.0	0.65200077768871	0.6223271222010385	268985	0.18525137741046832	
+sub-073	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-073/ses-01/dwi/sub-073_ses-01_run-02_dwi.nii.gz	OK	2538.0	1772.0	-3560.0	3868.0	-3808.0	3834.0	0.738566780140846	1.4642963952984258	426910	0.2940151515151515	
+sub-073	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-073/ses-01/dwi/sub-073_ses-01_run-05_dwi.nii.gz	OK	623.0	269.0	386.0	1009.0	50.0	412.0	0.31299043494126977	0.39704395926803815	148148	0.1808447265625	
+sub-074	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-074/ses-01/dwi/sub-074_ses-01_run-01_dwi.nii.gz	OK	284.0	88.0	138.0	706.0	20.0	199.0	0.6735771376455445	0.6331540985065532	303446	0.2089848484848485	
+sub-074	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-074/ses-01/dwi/sub-074_ses-01_run-02_dwi.nii.gz	OK	1922.0	1118.0	-3430.0	3734.0	-3706.0	3744.0	0.962020526971081	2.1490584658217053	466258	0.3211143250688705	
+sub-074	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-074/ses-01/dwi/sub-074_ses-01_run-05_dwi.nii.gz	OK	582.0	249.0	369.0	1045.0	50.0	391.0	0.3569418753722514	0.4082197612091364	219656	0.268134765625	
+sub-075	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-075/ses-01/dwi/sub-075_ses-01_run-01_dwi.nii.gz	OK	278.0	88.0	138.0	682.0	20.0	196.0	0.657838979359048	0.6309647777815829	251100	0.17293388429752066	
+sub-075	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-075/ses-01/dwi/sub-075_ses-01_run-02_dwi.nii.gz	OK	-632.0	-152.0	-3842.0	3768.0	-3732.0	3718.0	-3.916600860903339	-15.952316203394236	1180378	0.8129325068870523	
+sub-075	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-075/ses-01/dwi/sub-075_ses-01_run-05_dwi.nii.gz	OK	524.0	228.0	319.0	902.0	47.0	356.0	0.3496022824333572	0.40257693133082756	189635	0.231488037109375	
+sub-076	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-076/ses-01/dwi/sub-076_ses-01_run-01_dwi.nii.gz	OK	299.0	88.0	155.0	720.0	19.0	202.0	0.6369822401142566	0.6605675794430046	285701	0.1967637741046832	
+sub-076	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-076/ses-01/dwi/sub-076_ses-01_run-02_dwi.nii.gz	OK	-592.0	-110.0	-3810.0	3718.0	-3720.0	3706.0	-4.091880338196255	-21.884081984354278	1178321	0.8115158402203857	
+sub-076	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-076/ses-01/dwi/sub-076_ses-01_run-05_dwi.nii.gz	OK	616.0	259.0	394.0	1123.0	51.0	400.0	0.3560433422768211	0.40730687117016984	227808	0.2780859375	
+sub-077	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-077/ses-01/dwi/sub-077_ses-01_run-01_dwi.nii.gz	OK	283.0	90.0	139.0	688.0	20.0	208.0	0.6710282872447743	0.6577169122527743	242114	0.1667451790633609	
+sub-077	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-077/ses-01/dwi/sub-077_ses-01_run-02_dwi.nii.gz	OK	2366.0	1574.0	-3526.0	3832.0	-3760.0	3798.0	0.781506205816535	1.577215267433462	440038	0.3030564738292011	
+sub-077	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-077/ses-01/dwi/sub-077_ses-01_run-05_dwi.nii.gz	OK	560.0	244.0	350.0	988.0	56.0	376.0	0.35154930391552625	0.3899190823525569	195856	0.23908203125	
+sub-078	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-078/ses-01/dwi/sub-078_ses-01_run-01_dwi.nii.gz	OK	309.0	89.0	160.0	753.0	20.0	203.0	0.6393668740689892	0.6382805610148207	286983	0.19764669421487605	
+sub-078	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-078/ses-01/dwi/sub-078_ses-01_run-02_dwi.nii.gz	OK	-498.0	-118.0	-3840.0	3758.0	-3736.0	3718.0	-4.906695182186885	-20.53213528235439	1177988	0.8112865013774104	
+sub-078	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-078/ses-01/dwi/sub-078_ses-01_run-05_dwi.nii.gz	OK	548.0	234.0	365.0	938.0	46.0	353.0	0.3181638976302601	0.3877049178205733	204196	0.2492626953125	
+sub-079	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-079/ses-01/dwi/sub-079_ses-01_run-01_dwi.nii.gz	OK	245.0	78.0	108.0	563.0	19.0	192.0	0.6144738173774672	0.7066551121788986	239423	0.16489187327823693	
+sub-079	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-079/ses-01/dwi/sub-079_ses-01_run-02_dwi.nii.gz	OK	2808.0	672.0	-3940.0	3952.0	-3806.0	3822.0	1.0218759869991245	3.9200019370218264	378245	0.26049931129476583	
+sub-079	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-079/ses-01/dwi/sub-079_ses-01_run-05_dwi.nii.gz	OK	614.0	271.0	385.0	990.0	57.0	423.0	0.3083682831105405	0.39872952177320464	182944	0.2233203125	
+sub-080	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-080/ses-01/dwi/sub-080_ses-01_run-01_dwi.nii.gz	OK	302.0	82.0	151.0	744.0	16.0	192.0	0.635089122081717	0.6713456475382622	296413	0.20414118457300276	
+sub-080	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-080/ses-01/dwi/sub-080_ses-01_run-02_dwi.nii.gz	OK	2772.0	396.0	-3942.0	3950.0	-3776.0	3786.0	1.0458598394985616	6.454427618264298	410168	0.2824848484848485	
+sub-080	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-080/ses-01/dwi/sub-080_ses-01_run-05_dwi.nii.gz	OK	554.0	222.0	329.0	998.0	38.0	357.0	0.3701882534930108	0.43837320207216807	199571	0.243616943359375	
+sub-081	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-081/ses-01/dwi/sub-081_ses-01_run-01_dwi.nii.gz	OK	294.0	82.0	141.0	726.0	17.0	188.0	0.648109023027254	0.6537770781318478	250133	0.17226790633608816	
+sub-081	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-081/ses-01/dwi/sub-081_ses-01_run-02_dwi.nii.gz	OK	-626.0	-134.0	-3846.0	3796.0	-3730.0	3718.0	-4.013706915768311	-18.15348831510874	1180664	0.813129476584022	
+sub-081	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-081/ses-01/dwi/sub-081_ses-01_run-05_dwi.nii.gz	OK	582.0	233.0	382.0	1136.0	43.0	366.0	0.3913890894135031	0.42364750388418787	215867	0.263509521484375	
+sub-082	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-082/ses-01/dwi/sub-082_ses-01_run-01_dwi.nii.gz	OK	292.0	76.0	149.0	814.0	16.0	180.0	0.7510783537474252	0.6813959803568591	238937	0.16455716253443525	
+sub-082	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-082/ses-01/dwi/sub-082_ses-01_run-02_dwi.nii.gz	OK	2084.0	1292.0	-3584.0	3792.0	-3730.0	3766.0	0.9271303801834733	1.8759450827537063	513528	0.35366942148760333	
+sub-082	ses-01	run-03	/lustre07/scratch/alexrees/bids/sub-082/ses-01/dwi/sub-082_ses-01_run-03_dwi.nii.gz	OK	679.0	259.0	432.0	1380.0	47.0	430.0	0.42926579783250823	0.4578769741282267	250003	0.305179443359375	
+sub-083	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-083/ses-01/dwi/sub-083_ses-01_run-01_dwi.nii.gz	OK	291.0	90.0	152.0	748.0	22.0	213.0	0.696259360338968	0.6618252729062366	287544	0.19803305785123967	
+sub-083	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-083/ses-01/dwi/sub-083_ses-01_run-02_dwi.nii.gz	OK	454.0	236.0	-3542.0	3586.0	-3650.0	3660.0	4.710281078650985	9.786150816399575	1150361	0.7922596418732782	
+sub-083	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-083/ses-01/dwi/sub-083_ses-01_run-05_dwi.nii.gz	OK	608.0	266.0	387.0	1048.0	56.0	405.0	0.3372432671113912	0.38978661904521084	216561	0.264356689453125	
+sub-084	ses-01	run-01	/lustre07/scratch/alexrees/bids/sub-084/ses-01/dwi/sub-084_ses-01_run-01_dwi.nii.gz	OK	244.0	73.0	116.0	629.0	17.0	180.0	0.692478936106532	0.705357143373488	259971	0.17904338842975207	
+sub-084	ses-01	run-02	/lustre07/scratch/alexrees/bids/sub-084/ses-01/dwi/sub-084_ses-01_run-02_dwi.nii.gz	OK	3002.0	546.0	-3988.0	3990.0	-3824.0	3832.0	1.0991364800909955	4.883609745843612	305605	0.21047176308539944	
+sub-084	ses-01	run-05	/lustre07/scratch/alexrees/bids/sub-084/ses-01/dwi/sub-084_ses-01_run-05_dwi.nii.gz	OK	622.0	253.0	351.0	1125.0	47.0	411.0	0.3858704799973719	0.433992861251616	224605	0.274176025390625	

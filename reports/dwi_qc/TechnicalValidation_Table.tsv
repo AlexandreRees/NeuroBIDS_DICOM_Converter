@@ -1,0 +1,13 @@
+QC_item	Status
+BIDS consistency	PASS
+NIfTI integrity	PASS
+b-values	PASS
+b-vectors	PASS
+JSON metadata	PASS
+Gradient orientation	PASS*
+Brain mask	PASS
+Signal quality	PASS
+Motion estimates	N.A.
+Susceptibility pairs	PASS
+Visual inspection	PASS
+Overall technical validation	PASS

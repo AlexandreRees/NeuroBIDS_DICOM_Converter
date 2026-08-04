@@ -1,0 +1,7 @@
+cohort,subject_id,candidate_session,auxiliary_path,matched_session,match_score,decision,reason
+Control,SUBC012,Session1,/lustre07/scratch/alexrees/raw_original/Control/SUBC12-Session1-2023JUL12,ses-01,120,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same normalized session label; same parent folder
+Control,SUBC033,Session02,/lustre07/scratch/alexrees/raw_original/Control/SUBC33_Session02_2024AUG15,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Control,SUBC043,SESSION02,/lustre07/scratch/alexrees/raw_original/Control/SUBC43_SESSION02_2024NOV13_2,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Control,SUBC044,SESSION01,/lustre07/scratch/alexrees/raw_original/Control/SUBC44_SESSION01_2024JUL25,ses-02,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Control,SUBC054,SESSION02,/lustre07/scratch/alexrees/raw_original/Control/SUBC54_SESSION02_2025MAY27,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder
+Glaucoma,SUBG17,SESSION02,/lustre07/scratch/alexrees/raw_original/Glaucoma/SUBG17_SESSION02_2025AUG19,ses-01,90,AUTO_CONFIRMED,same cohort; same cohort-scoped subject; same parent folder

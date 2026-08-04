@@ -1,0 +1,378 @@
+% Pizarro QC - PI Report (Scientific Data framing)
+% Compile from this directory:
+%   pdflatex Pizarro_QC_PI_Report_Scientific_Data_2026-07-22.tex
+%   pdflatex Pizarro_QC_PI_Report_Scientific_Data_2026-07-22.tex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\setlength{\headheight}{14pt}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black,
+  pdftitle={Pizarro Automated QC Screening - PI Report (Scientific Data)},
+  pdfauthor={Alex Rees - Shmuel Lab / neuro_pipeline}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Pizarro QC screening -- T1w only}
+\fancyhead[R]{Confidential -- internal}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\title{Automated MRI Quality Screening (Pizarro)\\[0.4em]
+\large PI Report --- Scientific Data framing\\
+\large T1-weighted prioritization only}
+\author{Alex Rees - Shmuel Lab / \texttt{neuro\_pipeline}}
+\date{22 July 2026}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+%==============================================================================
+\section{Executive summary}
+%==============================================================================
+
+An automated deep-learning quality-screening layer was applied to
+\textbf{T1-weighted} structural MRI using the published
+\textbf{Pizarro et al.\ (2023)} ONNX classifier.
+Outputs are continuous screening metrics used to
+\textbf{prioritize targeted manual visual inspection}.
+They are \textbf{not} used as automatic exclusion decisions.
+
+\begin{quote}
+\textit{The Pizarro model was used as an automated structural MRI quality
+screening tool. Model outputs were not used for exclusion decisions but rather
+to prioritize images for targeted visual inspection. Quantitative MRI quality
+assessment remains provided by MRIQC.}
+\end{quote}
+
+\begin{quote}
+\textit{No image or subject was excluded based solely on the Pizarro model
+output. Predictions were used exclusively to prioritize targeted manual visual
+inspection.}
+\end{quote}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Outcome} & \textbf{Result} \\
+\midrule
+Pipeline / reporting status
+  & \textbf{Success} (existing predictions; inference not re-run) \\
+Subjects covered
+  & \textbf{83 / 83} \\
+T1w images included
+  & \textbf{385} \\
+Non-T1w in analysis
+  & \textbf{0} (FLAIR and other modalities excluded) \\
+Inference / load errors
+  & \textbf{0} \\
+Role of Pizarro
+  & Automated QC \textbf{screening / prioritization} \\
+Automatic exclusions
+  & \textbf{None} \\
+Primary quantitative QC
+  & \textbf{MRIQC} \\
+\bottomrule
+\end{tabular}
+\caption{High-level outcomes for the PI.}
+\end{table}
+
+\noindent\textbf{Bottom line for the PI:}
+the T1w screening package is complete and reproducible.
+Use the visual-review priority queues (high model-estimated artifact
+probability; high model uncertainty) to triage manual QC.
+Do \textbf{not} interpret priority counts as a dataset failure rate or as
+pass/fail labels.
+
+%==============================================================================
+\section{What this report is (and is not)}
+%==============================================================================
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Is:} automated QC screening to prioritize visual review of T1w.
+  \item \textbf{Is not:} an exclusion classifier or final quality verdict.
+  \item \textbf{Scope:} \texttt{*\_T1w.nii.gz} only.
+        FLAIR, T2w, DWI, functional, fieldmaps, and all other modalities are
+        excluded from analysis tables and figures.
+  \item \textbf{Language:}
+        ``model-estimated artifact probability'',
+        ``subjects prioritized for visual review'',
+        ``screening priority'',
+        ``automated QC screening''.
+\end{enumerate}
+
+%==============================================================================
+\section{Methods (brief)}
+%==============================================================================
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lp{0.60\textwidth}@{}}
+\toprule
+\textbf{Item} & \textbf{Detail} \\
+\midrule
+Model
+  & Pizarro et al.\ (2023), \texttt{model.FINAL.onnx}
+    (\texttt{Pizarro2023-FINAL}) \\
+Model SHA256
+  & \texttt{cb84f2b90f7de452331ed9ba5152335b873aba95d0ca3766adfffecdafe5178a} \\
+Inference
+  & ONNX Runtime 1.23.2; Monte Carlo dropout, 10 runs; seed 1010 \\
+Python
+  & 3.11.5 \\
+Execution date
+  & 2026-07-24 \\
+Slurm array job
+  & \texttt{66208403} \\
+Included
+  & \texttt{*\_T1w.nii.gz} only \\
+Excluded
+  & FLAIR, T2w, DWI, functional, fieldmaps, all other sequences \\
+Continuous scores
+  & Model-estimated artifact probability;
+    model confidence;
+    model uncertainty (binary Shannon entropy of MC votes) \\
+Visual-review thresholds
+  & High probability $\geq$90\%;
+    high uncertainty $\geq$0.9~bit
+    (prioritization aids only; not exclusion rules) \\
+\bottomrule
+\end{tabular}
+\caption{Methods and reproducibility summary.}
+\end{table}
+
+%==============================================================================
+\section{Cohort coverage}
+%==============================================================================
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Subjects & 83 \\
+T1w images scored & 385 \\
+Inference errors & 0 \\
+T1w scans / subject & 2 ($n=8$), 3 ($n=35$), 4 ($n=1$), 5 ($n=3$), 6 ($n=36$) \\
+\bottomrule
+\end{tabular}
+\caption{Coverage (T1w only).}
+\end{table}
+
+Subject-level tables intentionally report
+\textbf{median} model-estimated artifact probability and
+\textbf{IQR}, plus the number of images requiring prioritized review.
+Cohort mean probability is \textbf{not} reported as a quality indicator.
+
+%==============================================================================
+\section{Screening priority (visual review queues)}
+%==============================================================================
+
+These counts describe \textbf{screening priority} for targeted manual
+inspection. They are not pass/fail labels, exclusion tallies, or a dataset
+failure rate.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Queue} & \textbf{Count} \\
+\midrule
+T1w images with high model-estimated artifact probability ($\geq$90\%)
+  & 157 \\
+T1w images with high model uncertainty ($\geq$0.9~bit)
+  & 72 \\
+Subjects prioritized for visual review ($\geq$1 prioritized image)
+  & 78 \\
+\bottomrule
+\end{tabular}
+\caption{Visual-review prioritization summary.}
+\end{table}
+
+\subsection{Images prioritized for visual inspection based on high model-estimated artifact probability}
+
+Preview of the ranked queue (full list in
+\texttt{tables/pizarro\_visual\_review\_priority.tsv}):
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}rlrrr@{}}
+\toprule
+\textbf{\#} & \textbf{Image identifier} & \textbf{P} & \textbf{U} & \textbf{C} \\
+\midrule
+1  & \texttt{sub-084\_ses-01\_run-03\_T1w} & 100 & 0 & 100 \\
+2  & \texttt{sub-084\_ses-01\_run-02\_T1w} & 100 & 0 & 100 \\
+3  & \texttt{sub-084\_ses-01\_run-01\_T1w} & 100 & 0 & 100 \\
+4  & \texttt{sub-083\_ses-01\_run-03\_T1w} & 100 & 0 & 100 \\
+5  & \texttt{sub-083\_ses-01\_run-02\_T1w} & 100 & 0 & 100 \\
+6  & \texttt{sub-082\_ses-01\_run-03\_T1w} & 100 & 0 & 100 \\
+7  & \texttt{sub-082\_ses-01\_run-02\_T1w} & 100 & 0 & 100 \\
+8  & \texttt{sub-082\_ses-01\_run-01\_T1w} & 100 & 0 & 100 \\
+9  & \texttt{sub-081\_ses-01\_run-03\_T1w} & 100 & 0 & 100 \\
+10 & \texttt{sub-080\_ses-01\_run-03\_T1w} & 100 & 0 & 100 \\
+\bottomrule
+\end{tabular}
+\caption{Highest model-estimated artifact probability T1w images
+(P/U/C = probability / uncertainty / confidence).}
+\end{table}
+
+\subsection{Images prioritized for visual inspection based on high model uncertainty}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}rlrrr@{}}
+\toprule
+\textbf{\#} & \textbf{Image identifier} & \textbf{P} & \textbf{U} & \textbf{C} \\
+\midrule
+1  & \texttt{sub-081\_ses-01\_run-02\_T1w} & 50 & 1 & 50 \\
+2  & \texttt{sub-078\_ses-01\_run-02\_T1w} & 50 & 1 & 50 \\
+3  & \texttt{sub-073\_ses-01\_run-02\_T1w} & 50 & 1 & 50 \\
+4  & \texttt{sub-067\_ses-01\_run-01\_T1w} & 50 & 1 & 50 \\
+5  & \texttt{sub-065\_ses-01\_run-02\_T1w} & 50 & 1 & 50 \\
+6  & \texttt{sub-058\_ses-01\_run-03\_T1w} & 50 & 1 & 50 \\
+7  & \texttt{sub-058\_ses-01\_run-01\_T1w} & 50 & 1 & 50 \\
+8  & \texttt{sub-051\_ses-01\_run-02\_T1w} & 50 & 1 & 50 \\
+9  & \texttt{sub-046\_ses-01\_run-02\_T1w} & 50 & 1 & 50 \\
+10 & \texttt{sub-038\_ses-01\_run-01\_T1w} & 50 & 1 & 50 \\
+\bottomrule
+\end{tabular}
+\caption{Highest model-uncertainty T1w images
+(discordant MC votes; review regardless of majority label).}
+\end{table}
+
+\newpage
+
+%==============================================================================
+\section{Key figures}
+%==============================================================================
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/pizarro_workflow.png}
+\caption{Figure 1. Workflow: BIDS T1w $\rightarrow$ Pizarro inference
+$\rightarrow$ continuous QC metrics $\rightarrow$ manual visual prioritization.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/pizarro_probability_distribution.png}
+\caption{Figure 2. Distribution of model-estimated artifact probability
+across T1w images.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/pizarro_uncertainty_probability.png}
+\caption{Figure 3. Model uncertainty vs.\ model-estimated artifact probability.
+High-uncertainty images are highlighted.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/pizarro_subject_coverage.png}
+\caption{Figure 4. Distribution of the number of T1w scans per subject.}
+\end{figure}
+
+\newpage
+
+%==============================================================================
+\section{Interpretation for the PI}
+%==============================================================================
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Technical success.}
+        Existing predictions cover 83 subjects / 385 T1w images with zero
+        inference failures. This PDF uses those outputs; inference was not
+        re-run.
+
+  \item \textbf{Use as triage.}
+        Start visual QC with the high-probability queue, then the
+        high-uncertainty queue. Priority counts are screening aids only.
+
+  \item \textbf{MRIQC remains primary.}
+        Quantitative MRI quality assessment for the dataset remains provided by
+        MRIQC. Pizarro is complementary automated screening.
+
+  \item \textbf{No automatic exclusions.}
+        No image or subject was excluded based solely on the Pizarro model
+        output.
+\end{enumerate}
+
+%==============================================================================
+\section{Deliverables}
+%==============================================================================
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lp{0.52\textwidth}@{}}
+\toprule
+\textbf{Deliverable} & \textbf{Location} \\
+\midrule
+This PI PDF
+  & \texttt{reports/pizarro\_qc\_scientific\_data/Pizarro\_QC\_PI\_Report\_Scientific\_Data\_2026-07-22.pdf} \\
+Scientific Data markdown report
+  & \texttt{PIZARRO\_QC\_REPORT.md} \\
+Image-level table
+  & \texttt{tables/pizarro\_image\_level.tsv} \\
+Subject-level table
+  & \texttt{tables/pizarro\_subject\_level.tsv} \\
+Visual-review priority table
+  & \texttt{tables/pizarro\_visual\_review\_priority.tsv} \\
+Figures
+  & \texttt{figures/} \\
+Reproducibility metadata
+  & \texttt{metadata/model\_metadata.json} \\
+Report generator
+  & \texttt{code/reports/generate\_pizarro\_scientific\_data\_report.py} \\
+\bottomrule
+\end{tabular}
+\caption{Package paths under \texttt{reports/pizarro\_qc\_scientific\_data/}.}
+\end{table}
+
+%==============================================================================
+\section{Recommended next steps}
+%==============================================================================
+
+\begin{enumerate}[leftmargin=*]
+  \item Manual visual QC of images prioritized by high model-estimated artifact
+        probability.
+  \item Manual visual QC of images prioritized by high model uncertainty.
+  \item Cross-check prioritized findings against MRIQC metrics before any
+        inclusion/exclusion documentation.
+  \item Keep FLAIR / non-T1w Pizarro outputs out of publication tables.
+\end{enumerate}
+
+%==============================================================================
+\section{Citation}
+%==============================================================================
+
+Pizarro et al.\ (2023).
+\textit{Deep learning detects MRI artifacts.}
+Model: \texttt{model.FINAL.onnx}.
+
+\vspace{1.5em}
+\noindent\textit{Prepared for internal lab review. Contact: Alex Rees.}
+
+\end{document}

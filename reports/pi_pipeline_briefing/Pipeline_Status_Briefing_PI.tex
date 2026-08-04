@@ -1,0 +1,129 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=16mm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\definecolor{ok}{HTML}{1B7A4E}
+\definecolor{warn}{HTML}{C47A00}
+\definecolor{fail}{HTML}{B42318}
+\definecolor{hdr}{HTML}{374151}
+
+\hypersetup{colorlinks=true,linkcolor=hdr,urlcolor=hdr}
+\titleformat{\section}{\large\bfseries\color{hdr}}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{hdr}}{\thesubsection}{0.4em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Pipeline MRI --- statut projet (PI)}
+\rhead{\small 24 juillet 2026}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\captionsetup{font=small,labelfont=bf,skip=5pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.3em,itemsep=3pt,topsep=3pt}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Statut de la pipeline MRI}\\[4pt]
+{\large Conversion BIDS $\rightarrow$ QC $\rightarrow$ OpenNeuro / \textit{Scientific Data}}\\[3pt]
+{\normalsize Briefing factuel pour PI \quad$\cdot$\quad 24 juillet 2026}
+\end{center}
+
+\vspace{3mm}
+\section*{En une phrase}
+La pipeline de recherche est \textbf{opérationnelle} (BIDS complet, défacing, DWI QC, package release copié).  
+\textbf{Bloquants OpenNeuro restants:} liste d'auteurs réelle + licence CC0.  
+\textbf{MRIQC:} 95\,\% des sessions (99\,\% des scans T1w/BOLD) --- quasi prêt pour présentation.
+
+\section{Ce qui a été fait}
+
+\begin{enumerate}
+\item \textbf{Inventaire DICOM + mapping} figé (84 participants; tables \texttt{metadata/}).
+\item \textbf{Dé-identification} DICOM (politique type PS3.15; dates décalées; UIDs remappés).
+\item \textbf{Conversion BIDS 1.9.0} via \texttt{neuro\_pipeline} 2.1.0 + dcm2niix --- \textbf{7\,956} NIfTI + JSON.
+\item \textbf{Défacing} pydeface: T1w \textbf{356/356}.
+\item \textbf{Events task-fmri:} 456 fichiers (règle de mapping unique; movie/control sans events par design).
+\item \textbf{DWI QC:} 361/361; 0 FAIL gradients; paires fmap AP/PA OK.
+\item \textbf{MRIQC:} couverture portée de 78\,\% $\rightarrow$ \textbf{95\,\%} sessions après correction du patch AFNI ACF.
+\item \textbf{Package release:} arbre \texttt{release\_dataset/} aligné (84 sujets / 7\,956 NIfTI) avec anatomiques défaced (préflight PASS).
+\item \textbf{Documentation:} drafts Methods / Data Record; table d'acquisition auditée vs BIDS; rapports QC.
+\end{enumerate}
+
+\section{Chiffres clés (24 juil.\ 2026)}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lrrrY@{}}
+\toprule
+\textbf{Composante} & \textbf{Fait} & \textbf{Attendu} & \textbf{\%} & \textbf{Statut} \\
+\midrule
+Participants & 84 & 84 & 100 & Control 56; Glaucoma 19; DataON 7; DataTON 2 \\
+Sessions (ses-01/02) & 124 & --- & --- & 40 les deux; 43 ses-01 seul; 1 ses-02 seul \\
+NIfTI BIDS & 7\,956 & --- & --- & anat 729; func 5\,884; dwi 361; fmap 982 \\
+T1w défaced & 356 & 356 & 100 & Ready for public package \\
+DWI QC & 361 & 361 & 100 & Non bloquant \\
+MRIQC sessions & 118 & 124 & 95.2 & 6 sessions incomplètes (peu de runs) \\
+MRIQC T1w / BOLD & 354 / 1\,486 & 356 / 1\,496 & 99.4 / 99.3 & Quasi complet \\
+Events task-fmri & 456 & $\sim$507 & $\sim$89 & Mapping ambigu $\Rightarrow$ pas d'events \\
+Release subjects & 84 & 84 & 100 & Copie complète \\
+Authors / License & 0 & 1 & 0 & \textcolor{fail}{\textbf{Bloquant OpenNeuro}} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.92\textwidth]{figures/status_bars.png}
+\caption{Statut par étape de la pipeline.}
+\end{figure}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.55\textwidth]{figures/cohort.png}\hfill
+\includegraphics[width=0.42\textwidth]{figures/mriqc_before_after.png}
+\caption{Cohorte (gauche). Progression MRIQC après correction ACF (droite).}
+\end{figure}
+
+\section{Problème MRIQC --- ce qui s'est passé (factuel)}
+
+\begin{itemize}
+\item Échecs massifs sur la node \texttt{smoothness} (AFNI \texttt{3dFWHMx -acf}): modèle ACF ne fit pas $\Rightarrow$ pas de \texttt{3dFWHMx.1D} $\Rightarrow$ pas d'IQM JSON.
+\item Un patch avait été ajouté, mais \textbf{il ne s'appliquait pas}: mauvais import (\texttt{afni.preprocess} au lieu de \texttt{afni.utils}).
+\item Correction: forcer \texttt{acf=False} / \texttt{\_acf=False} (FWHM classique). Vérifié dans les logs: \texttt{FWHMx patched (nipype.interfaces.afni.utils.FWHMx)}.
+\item Résultat: sessions 78\,\% $\rightarrow$ \textbf{95\,\%}; BOLD 91\,\% $\rightarrow$ \textbf{99\,\%}.
+\item Reste: 6 sessions (2 T1w + 10 BOLD manquants). Relances automatiques en place.
+\end{itemize}
+
+\section{OpenNeuro --- prêt ou pas?}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.95\textwidth]{figures/remaining.png}
+\caption{Ce qui reste avant dépôt.}
+\end{figure}
+
+\noindent\textbf{Verdict:} le contenu image + QC est prêt à être empaqueté.  
+L'upload OpenNeuro est \textbf{bloqué} uniquement par métadonnées (Authors + License CC0) et la confirmation consentement.
+
+\section{Décisions demandées au PI}
+
+\begin{enumerate}
+\item Liste et ordre des \textbf{auteurs} (dataset + papier \textit{Scientific Data}).
+\item Confirmation \textbf{CC0} / langage de consentement pour partage ouvert.
+\item MRIQC: accepter \textbf{95--99\,\%} documenté en Technical Validation, ou attendre 100\,\% (quelques heures/jours).
+\item Feu vert pour finaliser README + \texttt{dataset\_description.json} puis upload.
+\end{enumerate}
+
+\section*{Message pour la réunion (30 secondes)}
+\textit{« On a un dataset BIDS de 84 sujets, défaced, QC DWI OK, MRIQC à 99\,\% des scans. Le package release est construit. Il reste surtout Authors + CC0 pour OpenNeuro, et documenter les quelques trous MRIQC / events / physio. »}
+
+\vspace{4mm}
+{\footnotesize Sources: \texttt{bids/}, \texttt{release\_dataset/}, \texttt{derivatives/\{defacing,mriqc\}}, \texttt{reports/\{mriqc\_coverage\_audit,dwi\_qc,openneuro\_release,scientific\_data\_manuscript\_draft\}}.}
+\end{document}

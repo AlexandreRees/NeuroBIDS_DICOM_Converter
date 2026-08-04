@@ -1,0 +1,38 @@
+variable	reason	confidence	example_source
+cohort	Study cohort / group label	MEDIUM	bids/participants.tsv
+sex	Biological sex	HIGH	bids/participants.tsv
+TaskName	Task name	HIGH	bids/task-movie.json
+EchoTime	Echo time	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+FlipAngle	Flip angle	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+MagneticFieldStrength	Magnetic field strength	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+Manufacturer	Scanner manufacturer	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+ManufacturersModelName	Scanner model	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+ParallelReductionFactorInPlane	In-plane parallel imaging factor	MEDIUM	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+RepetitionTime	Repetition time	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+SliceThickness	Slice thickness	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_T1w.json
+PhaseEncodingDirection	Phase-encoding direction	HIGH	bids/sub-001/ses-01/anat/sub-001_ses-01_run-01_FLAIR.json
+MultibandAccelerationFactor	Multiband acceleration factor	HIGH	bids/sub-001/ses-01/func/sub-001_ses-01_task-control_run-01_bold.json
+SpacingBetweenSlices	Slice spacing	MEDIUM	bids/sub-001/ses-01/func/sub-001_ses-01_task-control_run-01_bold.json
+TotalReadoutTime	Total readout time	MEDIUM	bids/sub-001/ses-01/func/sub-001_ses-01_task-control_run-01_bold.json
+expected_RepetitionTime	Repetition time	HIGH	bids/sub-001/ses-01/func/sub-001_ses-01_task-movie_run-01_events.json
+observed_RepetitionTime	Repetition time	HIGH	bids/sub-001/ses-01/func/sub-001_ses-01_task-movie_run-01_events.json
+SamplingFrequency	Physiological / signal sampling frequency	HIGH	bids/sub-001/ses-02/func/sub-001_ses-02_task-control_run-01_recording-pulse_physio.json
+StartTime	Physio relative start time	MEDIUM	bids/sub-001/ses-02/func/sub-001_ses-02_task-control_run-01_recording-pulse_physio.json
+cardiac_starttime	Physio relative start time	MEDIUM	derivatives/physiology_characterization/physio_mri_quality_master.tsv
+resp_starttime	Physio relative start time	MEDIUM	derivatives/physiology_characterization/physio_mri_quality_master.tsv
+trigger_starttime	Physio relative start time	MEDIUM	derivatives/physiology_characterization/physio_mri_quality_master.tsv
+DVARS	DVARS fMRI QC metric	HIGH	derivatives/physiology_characterization/physio_mri_quality_master.tsv
+tSNR	Temporal signal-to-noise ratio	HIGH	derivatives/physiology_characterization/physio_mri_quality_master.tsv
+sampling_frequency	Physiological / signal sampling frequency	HIGH	derivatives/physiology_characterization/physiology_characterization_summary.tsv
+delta_tSNR	Temporal signal-to-noise ratio	HIGH	derivatives/physiology_characterization/longitudinal_pairs_detail.tsv
+delta_DVARS	DVARS fMRI QC metric	HIGH	derivatives/physiology_characterization/longitudinal_pairs_detail.tsv
+framewise_displacement	Framewise displacement (motion)	HIGH	derivatives/mriqc/sub-027/ses-01/func/sub-027_ses-01_task-movie_run-03_timeseries.tsv
+dvars	DVARS fMRI QC metric	HIGH	derivatives/mriqc/group_qc/mriqc_iqm_all_acquisitions.tsv
+tsnr	Temporal signal-to-noise ratio	HIGH	derivatives/mriqc/group_qc/mriqc_iqm_all_acquisitions.tsv
+scanner_manufacturer	Scanner manufacturer	HIGH	reports/mriqc/iqm_summary.tsv
+magnetic_field_strength	Magnetic field strength	HIGH	reports/mriqc/iqm_summary.tsv
+start_time	Physio relative start time	MEDIUM	reports/movie_timing_recovery_audit/PHYSIOLOG_EXT_AUDIT.tsv
+TR	Repetition time	HIGH	reports/movie_timing_recovery_audit/movie_bold_inventory.tsv
+dicom_cohort	Study cohort / group label	MEDIUM	reports/grating_events_recovery/sub043_dicom_resolution/DICOM_SERIES_INVENTORY.tsv
+matched_cohort	Study cohort / group label	MEDIUM	reports/grating_events_recovery/sub043_dicom_resolution/BIDS_TO_DICOM_MATCH.tsv
+age	Age at assessment / acquisition	HIGH	metadata/participants.tsv

@@ -1,0 +1,194 @@
+{
+  "n_sidecar_json": 725,
+  "n_audit_rows": 2168,
+  "field_file_counts": {
+    "InstitutionalDepartmentName": 718,
+    "ProtocolName": 725,
+    "SeriesDescription": 725
+  },
+  "field_unique_values": {
+    "InstitutionalDepartmentName": {
+      "Department": 676,
+      "Centre de Recherche": 42
+    },
+    "ProtocolName": {
+      "T1w_MPR": 245,
+      "tfl_b1map_1mmiso": 244,
+      "Sag Flair 3D-0.8": 124,
+      "WMn_MPRAGE_sagittal": 111,
+      "Sag Flair 3D-0.8_usethisone": 1
+    },
+    "SeriesDescription": {
+      "T1w_MPR": 240,
+      "tfl_b1map_1mmiso": 234,
+      "Sag Flair 3D-0.8": 119,
+      "WMn_MPRAGE_sagittal": 111,
+      "tfl_b1map_1mmiso_ND": 10,
+      "Sag Flair 3D-0.8_ND": 5,
+      "T1w_MPR_ND": 5,
+      "Sag Flair 3D-0.8_usethisone": 1
+    }
+  },
+  "top_all_keys": [
+    [
+      "AcquisitionNumber",
+      725
+    ],
+    [
+      "BodyPartExamined",
+      725
+    ],
+    [
+      "ConversionSoftware",
+      725
+    ],
+    [
+      "ConversionSoftwareVersion",
+      725
+    ],
+    [
+      "EchoTime",
+      725
+    ],
+    [
+      "FlipAngle",
+      725
+    ],
+    [
+      "ImageOrientationPatientDICOM",
+      725
+    ],
+    [
+      "ImageType",
+      725
+    ],
+    [
+      "ImagingFrequency",
+      725
+    ],
+    [
+      "InPlanePhaseEncodingDirectionDICOM",
+      725
+    ],
+    [
+      "MRAcquisitionType",
+      725
+    ],
+    [
+      "MagneticFieldStrength",
+      725
+    ],
+    [
+      "Manufacturer",
+      725
+    ],
+    [
+      "ManufacturersModelName",
+      725
+    ],
+    [
+      "Modality",
+      725
+    ],
+    [
+      "PatientPosition",
+      725
+    ],
+    [
+      "PercentPhaseFOV",
+      725
+    ],
+    [
+      "PercentSampling",
+      725
+    ],
+    [
+      "PhaseEncodingSteps",
+      725
+    ],
+    [
+      "PixelBandwidth",
+      725
+    ],
+    [
+      "ProtocolName",
+      725
+    ],
+    [
+      "ReconMatrixPE",
+      725
+    ],
+    [
+      "RepetitionTime",
+      725
+    ],
+    [
+      "SeriesDescription",
+      725
+    ],
+    [
+      "SeriesNumber",
+      725
+    ],
+    [
+      "SliceThickness",
+      725
+    ],
+    [
+      "SoftwareVersions",
+      725
+    ],
+    [
+      "InstitutionalDepartmentName",
+      718
+    ],
+    [
+      "AcquisitionMatrixPE",
+      683
+    ],
+    [
+      "BaseResolution",
+      683
+    ],
+    [
+      "CoilCombinationMethod",
+      683
+    ],
+    [
+      "ConsistencyInfo",
+      683
+    ],
+    [
+      "MatrixCoilMode",
+      683
+    ],
+    [
+      "NonlinearGradientCorrection",
+      683
+    ],
+    [
+      "PartialFourier",
+      683
+    ],
+    [
+      "PhaseResolution",
+      683
+    ],
+    [
+      "PulseSequenceDetails",
+      683
+    ],
+    [
+      "ReceiveCoilActiveElements",
+      683
+    ],
+    [
+      "ReceiveCoilName",
+      683
+    ],
+    [
+      "SAR",
+      683
+    ]
+  ]
+}

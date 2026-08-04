@@ -1,0 +1,20 @@
+{
+  "generated_utc": "2026-07-22T19:12:44.572799+00:00",
+  "bids_dir": "/lustre07/scratch/alexrees/bids",
+  "defaced_dir": "/lustre07/scratch/alexrees/derivatives/defacing",
+  "dry_run": true,
+  "n_expected": 356,
+  "n_defaced": 356,
+  "n_matched": 356,
+  "n_missing": 0,
+  "n_unexpected": 0,
+  "geom_fail": 0,
+  "phi_json": 12,
+  "json_invalid": 0,
+  "generated_by_dataset": true,
+  "median_pct_changed": 99.284,
+  "mean_pct_changed": 97.95285833333332,
+  "verdict": "PASS_WITH_METADATA_REVIEW",
+  "tsv": "/home/alexrees/scratch/reports/deidentification_validation/defacing_validation_dryrun.tsv",
+  "summary_md": "/home/alexrees/scratch/reports/deidentification_validation/defacing_validation_summary_dryrun.md"
+}

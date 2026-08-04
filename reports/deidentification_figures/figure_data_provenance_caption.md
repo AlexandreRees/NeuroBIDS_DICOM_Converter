@@ -1,0 +1,2 @@
+**Figure 4 | Data provenance and integrity.**  
+Original DICOM acquisitions remain an immutable source throughout research preparation. Inventory extracts metadata without modifying source files; approved participant–session mapping defines study identities; de-identification writes derived copies; and privacy validation confirms confidentiality checks and source integrity before BIDS conversion, dataset validation, and quality control. The publicly shared research dataset is therefore produced from controlled derivatives while original acquisitions remain untouched.

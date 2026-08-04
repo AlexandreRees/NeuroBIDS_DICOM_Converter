@@ -1,0 +1,14 @@
+{
+  "mean_intra_run01_distance": 10.913090705871582,
+  "mean_intra_run02_distance": 16.966291427612305,
+  "mean_intra_run_distance": 13.939691066741943,
+  "mean_inter_run_distance": 14.872662544250488,
+  "silhouette_score_by_run": 0.06631472706794739,
+  "davies_bouldin_index_by_run": 3.86957708745711,
+  "pca_variance_explained_2d": [
+    0.21798384189605713,
+    0.09756671637296677
+  ],
+  "umap_available": true,
+  "strong_domain_shift": false
+}

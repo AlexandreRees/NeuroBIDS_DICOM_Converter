@@ -1,0 +1,23 @@
+{
+  "generated_utc": "2026-07-21T20:10:16.890466+00:00",
+  "events": {
+    "n_rc_events": 51,
+    "n_copied": 0,
+    "n_skip_exists": 51,
+    "n_missing_bold": 0
+  },
+  "slicetiming": {
+    "n_updated": 1,
+    "n_fail": 0,
+    "n_already": 103,
+    "n_no_source": 0
+  },
+  "longitudinal": {
+    "n_subjects": 84,
+    "both": 40,
+    "ses01_only": 43,
+    "ses02_only": 1,
+    "coverage_tsv": "/home/alexrees/scratch/reports/bids_validation_scientific_data/longitudinal_session_coverage.tsv",
+    "coverage_md": "/home/alexrees/scratch/reports/bids_validation_scientific_data/LONGITUDINAL_COVERAGE.md"
+  }
+}

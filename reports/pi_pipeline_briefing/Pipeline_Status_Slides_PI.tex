@@ -1,0 +1,150 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usetheme{default}
+\usecolortheme{default}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\definecolor{ok}{HTML}{1B7A4E}
+\definecolor{warn}{HTML}{C47A00}
+\definecolor{fail}{HTML}{B42318}
+\definecolor{hdr}{HTML}{1F2937}
+\setbeamercolor{structure}{fg=hdr}
+\setbeamercolor{title}{fg=hdr}
+\setbeamercolor{frametitle}{fg=hdr}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \hfill\scriptsize\textcolor{gray}{\insertframenumber/\inserttotalframenumber}\hspace{2mm}\vspace{1mm}}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+
+\title{Pipeline MRI --- statut projet}
+\subtitle{BIDS $\rightarrow$ QC $\rightarrow$ OpenNeuro}
+\author{Briefing PI}
+\date{24 juillet 2026}
+
+\begin{document}
+
+%---- 1 ----
+\begin{frame}{Message clé}
+\begin{itemize}
+  \item Dataset BIDS \textbf{complet}: 84 sujets, 124 sessions, 7\,956 NIfTI
+  \item Défacing T1w \textbf{100\,\%} \quad DWI QC \textbf{100\,\%}
+  \item MRIQC: \textbf{95\,\%} sessions / \textbf{99\,\%} scans (après fix ACF)
+  \item Package \texttt{release\_dataset/}: \textbf{84/84} sujets copiés
+  \item \textcolor{fail}{\textbf{Bloque OpenNeuro:}} Authors réels + License CC0
+\end{itemize}
+\vspace{4mm}
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{\centering\textbf{Prêt pour montrer les résultats QC.}\\[2pt]
+Upload OpenNeuro = décision PI (auteurs + licence), pas un problème technique majeur.}}
+\end{center}
+\end{frame}
+
+%---- 2 ----
+\begin{frame}{Ce que j'ai construit}
+\begin{enumerate}
+  \item Mapping DICOM $\rightarrow$ BIDS (figé, 84 sujets)
+  \item Dé-identification + conversion (\texttt{neuro\_pipeline} 2.1.0)
+  \item Défacing (pydeface) + audits privacy
+  \item Events \texttt{task-fmri} (456 runs mappés de façon unique)
+  \item QC: MRIQC (T1w+BOLD) + DWI QC complet
+  \item Package release défaced (préflight PASS)
+  \item Drafts \textit{Scientific Data} + table d'acquisition alignée BIDS
+\end{enumerate}
+\end{frame}
+
+%---- 3 ----
+\begin{frame}{Dataset --- faits}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figures/cohort.png}
+\end{column}
+\begin{column}{0.50\textwidth}
+\begin{tabular}{lr}
+\toprule
+Participants & 84 \\
+Sessions & 124 \\
+NIfTI + JSON & 7\,956 \\
+anat / func / dwi / fmap & 729 / 5884 / 361 / 982 \\
+Sex F / M & 46 / 38 \\
+Les deux sessions & 40 \\
+ses-01 seul & 43 \\
+\bottomrule
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+%---- 4 ----
+\begin{frame}{Statut pipeline}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{figures/status_bars.png}
+\end{center}
+\end{frame}
+
+%---- 5 ----
+\begin{frame}{MRIQC --- avant / après}
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\includegraphics[width=\textwidth]{figures/mriqc_before_after.png}
+\end{column}
+\begin{column}{0.43\textwidth}
+\textbf{Cause}\\[2pt]
+Patch ACF jamais appliqué (mauvais import nipype).\\[6pt]
+\textbf{Fix}\\[2pt]
+\texttt{afni.utils.FWHMx} + \texttt{\_acf=False}.\\[6pt]
+\textbf{Maintenant}\\[2pt]
+118/124 sessions\\
+354/356 T1w\\
+1486/1496 BOLD\\[4pt]
+\textit{6 sessions encore courtes --- relances en cours.}
+\end{column}
+\end{columns}
+\end{frame}
+
+%---- 6 ----
+\begin{frame}{QC & validation --- résumé}
+\begin{tabular}{lll}
+\toprule
+Composante & Résultat & Pour OpenNeuro \\
+\midrule
+bids-validator & 0 erreurs (warnings documentés) & OK \\
+Défacing T1w & 356/356 & OK \\
+DWI QC & 361/361; 0 FAIL & OK \\
+fmap AP/PA & 120/120 & OK \\
+MRIQC & 99\,\% scans & Quasi OK \\
+Events & 456 / $\sim$507 task-fmri & Divulguer \\
+Physio & Non distribué & Divulguer \\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+%---- 7 ----
+\begin{frame}{OpenNeuro --- ce qui reste}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{figures/remaining.png}
+\end{center}
+\vspace{2mm}
+\textbf{Technique:} prêt.\quad \textbf{Administratif:} Authors + CC0 + consentement.
+\end{frame}
+
+%---- 8 ----
+\begin{frame}{Décisions PI aujourd'hui}
+\begin{enumerate}
+  \item \textbf{Auteurs} (ordre) pour dataset + papier
+  \item Confirmer \textbf{CC0} / consentement open data
+  \item MRIQC: publier avec 95--99\,\% documenté \textbf{ou} attendre 100\,\%
+  \item Feu vert upload OpenNeuro après métadonnées
+\end{enumerate}
+\vspace{6mm}
+\begin{center}
+\large\textbf{Demain on peut montrer: dataset + QC concrets.}\\[4pt]
+\normalsize Upload = 1 décision auteurs/licence, pas une refonte pipeline.
+\end{center}
+\end{frame}
+
+\end{document}

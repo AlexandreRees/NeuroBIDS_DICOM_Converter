@@ -1,0 +1,2 @@
+participant_label	session_id	n_t1w	n_bold_mag	note
+sub-047	01	3	12	recover missing task-fmri_run-03_bold IQM (healthy 226 vols); push coverage to 100% excl. pathological

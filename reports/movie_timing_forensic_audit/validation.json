@@ -1,0 +1,32 @@
+{
+  "generated_utc": "2026-07-29T19:26:36Z",
+  "read_only": true,
+  "protected_roots_unmodified": [
+    "raw_original",
+    "bids",
+    "derivatives"
+  ],
+  "relative_paths_policy": "root-tagged <RAW>/<BIDS>/<DERIVATIVES>",
+  "privacy": {
+    "absolute_path_pattern_hits": 0,
+    "phi_pattern_hits": 0,
+    "issues_sample": [],
+    "pass": true
+  },
+  "outputs_present": [
+    "ARCHIVE_CONTENT_AUDIT.tsv",
+    "DICOM_TIMING_AUDIT.tsv",
+    "FILE_INVENTORY.tsv",
+    "HIDDEN_TIMING_FILES.tsv",
+    "MATLAB_CODE_TIMING_AUDIT.tsv",
+    "MATLAB_VARIABLE_AUDIT.tsv",
+    "MOVIE_TIMING_FORENSIC_REPORT.md",
+    "MOVIE_TIMING_MATRIX.tsv",
+    "PHYSIOLOGY_TIMING_AUDIT.tsv",
+    "POTENTIAL_ARCHIVES.tsv",
+    "PSYCHTOOLBOX_LOG_AUDIT.md",
+    "README.md",
+    "SCANNER_METADATA.tsv",
+    "VERSION_COMPARISON.tsv"
+  ]
+}

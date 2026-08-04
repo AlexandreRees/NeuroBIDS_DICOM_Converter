@@ -1,0 +1,3 @@
+subject	session	matlab_fmri_number	selected_bids_run	matlab_timestamp	reason
+sub-043	ses-02	3	02	14:40:19	Matched MATLAB timing; magnitude series; same acquisition date; twin run excluded as orphan; twin excluded: run-01 belongs to orphan acquisition 2024-07-25; score=28
+sub-043	ses-02	4	06	14:44:31	Matched MATLAB timing; magnitude series; same acquisition date; twin run excluded as orphan; twin excluded: run-05 belongs to orphan acquisition 2024-07-25; score=28

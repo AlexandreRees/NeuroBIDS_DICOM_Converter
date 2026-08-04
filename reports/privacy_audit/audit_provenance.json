@@ -1,0 +1,61 @@
+{
+  "timestamp_utc": "2026-07-22T16:58:35.568198+00:00",
+  "read_only": true,
+  "modified_bids": false,
+  "modified_raw_original": false,
+  "software": {
+    "python": "3.11.4",
+    "platform": "Linux-5.14.0-687.24.1.el9_8.x86_64-x86_64-AMD_EPYC_7532_32-Core_Processor-with-glibc2.37",
+    "script": "/lustre07/scratch/alexrees/neuro_pipeline/scripts/run_privacy_audit.py",
+    "pydicom": "3.0.2+computecanada"
+  },
+  "bids_root": "/lustre07/scratch/alexrees/bids",
+  "raw_root": "/lustre07/scratch/alexrees/raw_original",
+  "deid_root": "/lustre07/scratch/alexrees/deid_dicom",
+  "dicom_root_used": "/lustre07/scratch/alexrees/raw_original",
+  "deid_available": false,
+  "burned_stats": {
+    "n_files_discovered": 83154,
+    "n_files_inspected": 1133,
+    "BurnedInAnnotation_YES": 0,
+    "BurnedInAnnotation_NO": 0,
+    "BurnedInAnnotation_tag_absent": 1133,
+    "BurnedInAnnotation_other": 0,
+    "has_overlay": 0,
+    "has_graphic_annotation": 0,
+    "has_anatomic_region_sequence": 0,
+    "parse_errors": 1133,
+    "risk_high": 0,
+    "sampling_note": "one representative instance per series directory (1133 series dirs from 83154 files)"
+  },
+  "demo_stats": {
+    "n_files": 0,
+    "by_tag_present": {
+      "PatientAge": 0,
+      "PatientBirthDate": 0,
+      "PatientSex": 0,
+      "PatientName": 0,
+      "PatientID": 0,
+      "OtherPatientIDs": 0,
+      "OtherPatientNames": 0
+    },
+    "source_label": "Only source DICOMs were available (`~/scratch/deid_dicom` missing or empty). Burned-in and demographic audits therefore reflect **source** DICOM under `/lustre07/scratch/alexrees/raw_original`, not a release mirror."
+  },
+  "freetext_stats": {
+    "n_json": 7958,
+    "n_errors": 0,
+    "n_unique_rows": 119,
+    "n_suspicious": 6,
+    "field_class": {
+      "SeriesDescription": "REVIEW_REQUIRED",
+      "ProtocolName": "REVIEW_REQUIRED",
+      "SequenceName": "SAFE_TO_KEEP",
+      "PulseSequenceDetails": "SAFE_TO_KEEP",
+      "ScanningSequence": "SAFE_TO_KEEP",
+      "InstitutionalDepartmentName": "REVIEW_REQUIRED",
+      "Manufacturer": "SAFE_TO_KEEP",
+      "ManufacturersModelName": "SAFE_TO_KEEP"
+    }
+  },
+  "workers": 8
+}

@@ -1,0 +1,508 @@
+participant_id	session_id	bids_run	has_events_tsv	reconstruction_status	in_level1_session	can_reconstruct_complete_events	blockers
+sub-042	ses-01	03	True	already_released	True	YES	
+sub-042	ses-01	01	True	already_released	True	YES	
+sub-042	ses-01	07	True	already_released	True	YES	
+sub-042	ses-01	05	True	already_released	True	YES	
+sub-035	ses-02	03	True	already_released	True	YES	
+sub-035	ses-02	01	True	already_released	True	YES	
+sub-035	ses-02	07	True	already_released	True	YES	
+sub-035	ses-02	05	True	already_released	True	YES	
+sub-035	ses-01	01	True	already_released	True	YES	
+sub-035	ses-01	03	True	already_released	True	YES	
+sub-035	ses-01	05	True	already_released	True	YES	
+sub-035	ses-01	07	True	already_released	True	YES	
+sub-048	ses-02	05	True	already_released	True	YES	
+sub-048	ses-02	07	True	already_released	True	YES	
+sub-048	ses-02	01	True	already_released	True	YES	
+sub-048	ses-02	03	True	already_released	True	YES	
+sub-048	ses-01	05	True	already_released	True	YES	
+sub-048	ses-01	07	True	already_released	True	YES	
+sub-048	ses-01	01	True	already_released	True	YES	
+sub-048	ses-01	03	True	already_released	True	YES	
+sub-007	ses-01	03	True	already_released	True	YES	
+sub-007	ses-01	01	True	already_released	True	YES	
+sub-007	ses-01	07	True	already_released	True	YES	
+sub-007	ses-01	05	True	already_released	True	YES	
+sub-007	ses-02	05	True	already_released	True	YES	
+sub-007	ses-02	07	True	already_released	True	YES	
+sub-007	ses-02	01	True	already_released	True	YES	
+sub-007	ses-02	03	True	already_released	True	YES	
+sub-070	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-070	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-070	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-070	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-051	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-051	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-051	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-051	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-026	ses-02	01	True	already_released	True	YES	
+sub-026	ses-02	03	True	already_released	True	YES	
+sub-026	ses-02	05	True	already_released	True	YES	
+sub-026	ses-02	07	True	already_released	True	YES	
+sub-026	ses-01	03	True	already_released	True	YES	
+sub-026	ses-01	01	True	already_released	True	YES	
+sub-026	ses-01	07	True	already_released	True	YES	
+sub-026	ses-01	05	True	already_released	True	YES	
+sub-069	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-069	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-069	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-069	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-014	ses-01	03	True	already_released	True	YES	
+sub-014	ses-01	01	True	already_released	True	YES	
+sub-014	ses-01	07	True	already_released	True	YES	
+sub-014	ses-01	05	True	already_released	True	YES	
+sub-080	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-080	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-080	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-080	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-019	ses-01	01	True	already_released	True	YES	
+sub-019	ses-01	03	True	already_released	True	YES	
+sub-019	ses-01	05	True	already_released	True	YES	
+sub-019	ses-01	07	True	already_released	True	YES	
+sub-019	ses-02	03	True	already_released	True	YES	
+sub-019	ses-02	01	True	already_released	True	YES	
+sub-019	ses-02	07	True	already_released	True	YES	
+sub-019	ses-02	05	True	already_released	True	YES	
+sub-064	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-064	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-064	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-064	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-013	ses-01	01	True	already_released	True	YES	
+sub-013	ses-01	03	True	already_released	True	YES	
+sub-013	ses-01	05	True	already_released	True	YES	
+sub-013	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-021	ses-02	01	True	already_released	True	YES	
+sub-021	ses-02	03	True	already_released	True	YES	
+sub-021	ses-02	05	True	already_released	True	YES	
+sub-021	ses-02	07	True	already_released	True	YES	
+sub-021	ses-01	03	True	already_released	True	YES	
+sub-021	ses-01	01	True	already_released	True	YES	
+sub-021	ses-01	07	True	already_released	True	YES	
+sub-021	ses-01	05	True	already_released	True	YES	
+sub-056	ses-01	07	True	already_released	True	YES	
+sub-056	ses-01	05	True	already_released	True	YES	
+sub-056	ses-01	03	True	already_released	True	YES	
+sub-056	ses-01	01	True	already_released	True	YES	
+sub-077	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-077	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-077	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-077	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-032	ses-01	05	True	already_released	True	YES	
+sub-032	ses-01	07	True	already_released	True	YES	
+sub-032	ses-01	01	False	reconstructable_with_mapping_fix	True	YES	
+sub-032	ses-01	03	False	reconstructable_with_mapping_fix	True	YES	
+sub-045	ses-01	07	True	already_released	True	YES	
+sub-045	ses-01	05	True	already_released	True	YES	
+sub-045	ses-01	03	True	already_released	True	YES	
+sub-045	ses-01	01	True	already_released	True	YES	
+sub-038	ses-02	02	False	reconstructable_with_mapping_fix	True	YES	
+sub-038	ses-02	06	True	already_released	True	YES	
+sub-038	ses-02	04	False	reconstructable_with_mapping_fix	True	YES	
+sub-038	ses-02	08	True	already_released	True	YES	
+sub-038	ses-02	10	True	already_released	True	YES	
+sub-038	ses-01	01	True	already_released	True	YES	
+sub-038	ses-01	03	True	already_released	True	YES	
+sub-038	ses-01	05	True	already_released	True	YES	
+sub-038	ses-01	07	True	already_released	True	YES	
+sub-036	ses-01	01	True	already_released	True	YES	
+sub-036	ses-01	03	True	already_released	True	YES	
+sub-036	ses-01	05	True	already_released	True	YES	
+sub-036	ses-01	07	True	already_released	True	YES	
+sub-036	ses-02	01	True	already_released	True	YES	
+sub-036	ses-02	03	True	already_released	True	YES	
+sub-036	ses-02	05	True	already_released	True	YES	
+sub-036	ses-02	07	True	already_released	True	YES	
+sub-041	ses-01	09	False	reconstructable_with_mapping_fix	True	YES	
+sub-041	ses-01	05	True	already_released	True	YES	
+sub-041	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-041	ses-01	01	True	already_released	True	YES	
+sub-041	ses-01	03	True	already_released	True	YES	
+sub-041	ses-02	03	True	already_released	True	YES	
+sub-041	ses-02	01	True	already_released	True	YES	
+sub-041	ses-02	07	True	already_released	True	YES	
+sub-041	ses-02	05	True	already_released	True	YES	
+sub-079	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-079	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-079	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-079	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-073	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-073	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-073	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-073	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-004	ses-02	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-004	ses-02	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-004	ses-02	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-004	ses-02	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-004	ses-01	05	True	already_released	True	YES	
+sub-004	ses-01	07	True	already_released	True	YES	
+sub-004	ses-01	01	True	already_released	True	YES	
+sub-004	ses-01	03	True	already_released	True	YES	
+sub-025	ses-02	05	True	already_released	True	YES	
+sub-025	ses-02	07	True	already_released	True	YES	
+sub-025	ses-02	01	True	already_released	True	YES	
+sub-025	ses-02	03	True	already_released	True	YES	
+sub-025	ses-01	09	False	reconstructable_with_mapping_fix	True	YES	
+sub-025	ses-01	03	True	already_released	True	YES	
+sub-025	ses-01	01	True	already_released	True	YES	
+sub-025	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-025	ses-01	05	True	already_released	True	YES	
+sub-052	ses-01	01	True	already_released	True	YES	
+sub-052	ses-01	03	True	already_released	True	YES	
+sub-052	ses-01	05	True	already_released	True	YES	
+sub-052	ses-01	07	True	already_released	True	YES	
+sub-052	ses-02	07	True	already_released	True	YES	
+sub-052	ses-02	05	True	already_released	True	YES	
+sub-052	ses-02	03	True	already_released	True	YES	
+sub-052	ses-02	01	True	already_released	True	YES	
+sub-058	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-058	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-058	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-058	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-060	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-060	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-060	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-060	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-017	ses-01	05	True	already_released	True	YES	
+sub-017	ses-01	07	True	already_released	True	YES	
+sub-017	ses-01	01	True	already_released	True	YES	
+sub-017	ses-01	03	True	already_released	True	YES	
+sub-017	ses-02	03	True	already_released	True	YES	
+sub-017	ses-02	01	True	already_released	True	YES	
+sub-017	ses-02	07	True	already_released	True	YES	
+sub-017	ses-02	05	True	already_released	True	YES	
+sub-084	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-084	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-084	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-084	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-010	ses-01	01	True	already_released	True	YES	
+sub-010	ses-01	03	True	already_released	True	YES	
+sub-010	ses-01	05	True	already_released	True	YES	
+sub-010	ses-01	07	True	already_released	True	YES	
+sub-067	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-067	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-067	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-067	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-083	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-083	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-083	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-083	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-083	ses-01	09	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-055	ses-01	01	True	already_released	True	YES	
+sub-055	ses-01	03	True	already_released	True	YES	
+sub-055	ses-01	05	True	already_released	True	YES	
+sub-055	ses-01	07	True	already_released	True	YES	
+sub-022	ses-01	01	True	already_released	True	YES	
+sub-022	ses-01	03	True	already_released	True	YES	
+sub-022	ses-01	05	True	already_released	True	YES	
+sub-022	ses-01	07	True	already_released	True	YES	
+sub-022	ses-02	01	True	already_released	True	YES	
+sub-022	ses-02	03	True	already_released	True	YES	
+sub-022	ses-02	05	True	already_released	True	YES	
+sub-022	ses-02	07	True	already_released	True	YES	
+sub-028	ses-01	03	True	already_released	True	YES	
+sub-028	ses-01	01	True	already_released	True	YES	
+sub-028	ses-01	07	True	already_released	True	YES	
+sub-028	ses-01	05	True	already_released	True	YES	
+sub-028	ses-02	08	True	already_released	True	YES	
+sub-028	ses-02	02	True	already_released	True	YES	
+sub-028	ses-02	06	True	already_released	True	YES	
+sub-028	ses-02	04	True	already_released	True	YES	
+sub-009	ses-02	01	True	already_released	True	YES	
+sub-009	ses-02	03	True	already_released	True	YES	
+sub-009	ses-02	05	True	already_released	True	YES	
+sub-009	ses-02	07	True	already_released	True	YES	
+sub-009	ses-01	03	True	already_released	True	YES	
+sub-009	ses-01	01	True	already_released	True	YES	
+sub-009	ses-01	07	True	already_released	True	YES	
+sub-009	ses-01	05	True	already_released	True	YES	
+sub-003	ses-01	05	True	already_released	True	YES	
+sub-003	ses-01	07	True	already_released	True	YES	
+sub-003	ses-01	01	True	already_released	True	YES	
+sub-003	ses-01	03	True	already_released	True	YES	
+sub-003	ses-02	07	True	already_released	True	YES	
+sub-003	ses-02	05	True	already_released	True	YES	
+sub-003	ses-02	03	True	already_released	True	YES	
+sub-003	ses-02	01	True	already_released	True	YES	
+sub-074	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-074	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-074	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-074	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-046	ses-02	03	True	already_released	True	YES	
+sub-046	ses-02	01	True	already_released	True	YES	
+sub-046	ses-02	07	True	already_released	True	YES	
+sub-046	ses-02	05	True	already_released	True	YES	
+sub-046	ses-01	05	True	already_released	True	YES	
+sub-046	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-046	ses-01	01	True	already_released	True	YES	
+sub-046	ses-01	03	True	already_released	True	YES	
+sub-046	ses-01	09	False	reconstructable_with_mapping_fix	True	YES	
+sub-031	ses-02	01	True	already_released	True	YES	
+sub-031	ses-02	03	True	already_released	True	YES	
+sub-031	ses-02	05	True	already_released	True	YES	
+sub-031	ses-02	07	True	already_released	True	YES	
+sub-031	ses-01	01	True	already_released	True	YES	
+sub-031	ses-01	03	True	already_released	True	YES	
+sub-031	ses-01	05	True	already_released	True	YES	
+sub-031	ses-01	07	True	already_released	True	YES	
+sub-001	ses-02	07	True	already_released	True	YES	
+sub-001	ses-02	05	True	already_released	True	YES	
+sub-001	ses-02	03	True	already_released	True	YES	
+sub-001	ses-02	01	True	already_released	True	YES	
+sub-001	ses-01	05	True	already_released	True	YES	
+sub-001	ses-01	07	True	already_released	True	YES	
+sub-001	ses-01	01	True	already_released	True	YES	
+sub-001	ses-01	03	True	already_released	True	YES	
+sub-076	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-076	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-076	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-076	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-039	ses-01	03	True	already_released	True	YES	
+sub-039	ses-01	01	True	already_released	True	YES	
+sub-039	ses-01	07	True	already_released	True	YES	
+sub-039	ses-01	05	True	already_released	True	YES	
+sub-039	ses-02	03	True	already_released	True	YES	
+sub-039	ses-02	01	True	already_released	True	YES	
+sub-039	ses-02	07	True	already_released	True	YES	
+sub-039	ses-02	05	True	already_released	True	YES	
+sub-044	ses-02	01	True	already_released	True	YES	
+sub-044	ses-02	03	True	already_released	True	YES	
+sub-044	ses-02	05	True	already_released	True	YES	
+sub-044	ses-02	07	True	already_released	True	YES	
+sub-044	ses-01	05	True	already_released	True	YES	
+sub-044	ses-01	07	True	already_released	True	YES	
+sub-044	ses-01	01	True	already_released	True	YES	
+sub-044	ses-01	03	True	already_released	True	YES	
+sub-033	ses-01	07	True	already_released	True	YES	
+sub-033	ses-01	05	True	already_released	True	YES	
+sub-033	ses-01	03	True	already_released	True	YES	
+sub-033	ses-01	01	True	already_released	True	YES	
+sub-012	ses-01	01	True	already_released	True	YES	
+sub-012	ses-01	03	False	reconstructable_with_mapping_fix	True	YES	
+sub-012	ses-01	05	False	reconstructable_with_mapping_fix	True	YES	
+sub-012	ses-01	07	True	already_released	True	YES	
+sub-012	ses-01	09	True	already_released	True	YES	
+sub-012	ses-02	01	True	already_released	True	YES	
+sub-012	ses-02	03	True	already_released	True	YES	
+sub-012	ses-02	05	True	already_released	True	YES	
+sub-012	ses-02	07	True	already_released	True	YES	
+sub-065	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-065	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-065	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-065	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-081	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-081	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-081	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-081	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-018	ses-01	05	True	already_released	True	YES	
+sub-018	ses-01	07	True	already_released	True	YES	
+sub-018	ses-01	01	True	already_released	True	YES	
+sub-018	ses-01	03	True	already_released	True	YES	
+sub-057	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-057	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-057	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-057	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-020	ses-01	07	True	already_released	True	YES	
+sub-020	ses-01	05	False	reconstructable_with_mapping_fix	True	YES	
+sub-020	ses-01	03	True	already_released	True	YES	
+sub-020	ses-01	01	True	already_released	True	YES	
+sub-027	ses-01	03	True	already_released	True	YES	
+sub-027	ses-01	01	True	already_released	True	YES	
+sub-027	ses-01	07	True	already_released	True	YES	
+sub-027	ses-01	05	True	already_released	True	YES	
+sub-027	ses-02	07	True	already_released	True	YES	
+sub-027	ses-02	05	True	already_released	True	YES	
+sub-027	ses-02	03	True	already_released	True	YES	
+sub-027	ses-02	01	True	already_released	True	YES	
+sub-050	ses-01	01	True	already_released	True	YES	
+sub-050	ses-01	03	True	already_released	True	YES	
+sub-050	ses-01	05	True	already_released	True	YES	
+sub-050	ses-01	07	True	already_released	True	YES	
+sub-062	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-062	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-062	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-062	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-015	ses-02	05	True	already_released	True	YES	
+sub-015	ses-02	07	True	already_released	True	YES	
+sub-015	ses-02	01	True	already_released	True	YES	
+sub-015	ses-02	03	True	already_released	True	YES	
+sub-015	ses-01	03	True	already_released	True	YES	
+sub-015	ses-01	01	True	already_released	True	YES	
+sub-015	ses-01	07	True	already_released	True	YES	
+sub-015	ses-01	05	True	already_released	True	YES	
+sub-068	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-068	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-068	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-068	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-049	ses-02	01	True	already_released	True	YES	
+sub-049	ses-02	03	True	already_released	True	YES	
+sub-049	ses-02	05	True	already_released	True	YES	
+sub-049	ses-02	07	True	already_released	True	YES	
+sub-049	ses-01	03	True	already_released	True	YES	
+sub-049	ses-01	01	True	already_released	True	YES	
+sub-049	ses-01	07	True	already_released	True	YES	
+sub-049	ses-01	05	True	already_released	True	YES	
+sub-034	ses-02	05	True	already_released	True	YES	
+sub-034	ses-02	07	True	already_released	True	YES	
+sub-034	ses-02	01	True	already_released	True	YES	
+sub-034	ses-02	03	True	already_released	True	YES	
+sub-034	ses-01	01	True	already_released	True	YES	
+sub-034	ses-01	03	True	already_released	True	YES	
+sub-034	ses-01	05	True	already_released	True	YES	
+sub-034	ses-01	07	True	already_released	True	YES	
+sub-043	ses-02	06	False	reconstructable_with_mapping_fix	True	YES	
+sub-043	ses-02	05	False	reconstructable_with_mapping_fix	True	YES	
+sub-043	ses-02	02	False	reconstructable_with_mapping_fix	True	YES	
+sub-043	ses-02	01	False	reconstructable_with_mapping_fix	True	YES	
+sub-043	ses-02	09	True	already_released	True	YES	
+sub-043	ses-02	12	False	reconstructable_with_mapping_fix	True	YES	
+sub-043	ses-02	11	False	reconstructable_with_mapping_fix	True	YES	
+sub-071	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-071	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-071	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-071	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-006	ses-02	07	True	already_released	True	YES	
+sub-006	ses-02	05	True	already_released	True	YES	
+sub-006	ses-02	03	True	already_released	True	YES	
+sub-006	ses-02	01	True	already_released	True	YES	
+sub-006	ses-01	01	True	already_released	True	YES	
+sub-006	ses-01	03	True	already_released	True	YES	
+sub-006	ses-01	05	True	already_released	True	YES	
+sub-006	ses-01	07	True	already_released	True	YES	
+sub-075	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-075	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-075	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-075	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-002	ses-02	03	True	already_released	True	YES	
+sub-002	ses-02	01	True	already_released	True	YES	
+sub-002	ses-02	07	True	already_released	True	YES	
+sub-002	ses-02	05	True	already_released	True	YES	
+sub-002	ses-01	09	False	reconstructable_with_mapping_fix	True	YES	
+sub-002	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-002	ses-01	05	True	already_released	True	YES	
+sub-002	ses-01	03	True	already_released	True	YES	
+sub-002	ses-01	01	True	already_released	True	YES	
+sub-008	ses-01	03	True	already_released	True	YES	
+sub-008	ses-01	01	True	already_released	True	YES	
+sub-008	ses-01	07	True	already_released	True	YES	
+sub-008	ses-01	05	True	already_released	True	YES	
+sub-008	ses-02	01	True	already_released	True	YES	
+sub-008	ses-02	03	True	already_released	True	YES	
+sub-008	ses-02	05	True	already_released	True	YES	
+sub-008	ses-02	07	True	already_released	True	YES	
+sub-030	ses-02	03	True	already_released	True	YES	
+sub-030	ses-02	01	True	already_released	True	YES	
+sub-030	ses-02	07	True	already_released	True	YES	
+sub-030	ses-02	05	True	already_released	True	YES	
+sub-030	ses-01	03	True	already_released	True	YES	
+sub-030	ses-01	01	True	already_released	True	YES	
+sub-030	ses-01	07	True	already_released	True	YES	
+sub-030	ses-01	05	True	already_released	True	YES	
+sub-047	ses-01	01	False	ambiguous	True	NO	
+sub-047	ses-01	07	False	ambiguous	True	NO	
+sub-047	ses-01	05	False	ambiguous	True	NO	
+sub-047	ses-02	03	True	already_released	True	YES	
+sub-047	ses-02	01	True	already_released	True	YES	
+sub-047	ses-02	07	True	already_released	True	YES	
+sub-047	ses-02	05	True	already_released	True	YES	
+sub-082	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-082	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-082	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-082	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-066	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-066	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-066	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-066	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-011	ses-01	09	True	already_released	True	YES	
+sub-011	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-011	ses-01	05	False	reconstructable_with_mapping_fix	True	YES	
+sub-011	ses-01	03	False	reconstructable_with_mapping_fix	True	YES	
+sub-011	ses-01	01	True	already_released	True	YES	
+sub-011	ses-02	02	True	already_released	True	YES	
+sub-011	ses-02	06	False	reconstructable_with_mapping_fix	True	YES	
+sub-011	ses-02	04	True	already_released	True	YES	
+sub-011	ses-02	08	True	already_released	True	YES	
+sub-029	ses-01	03	True	already_released	True	YES	
+sub-029	ses-01	01	True	already_released	True	YES	
+sub-029	ses-01	07	True	already_released	True	YES	
+sub-029	ses-01	05	True	already_released	True	YES	
+sub-029	ses-02	07	True	already_released	True	YES	
+sub-029	ses-02	05	True	already_released	True	YES	
+sub-029	ses-02	03	True	already_released	True	YES	
+sub-029	ses-02	01	True	already_released	True	YES	
+sub-023	ses-02	01	True	already_released	True	YES	
+sub-023	ses-02	03	True	already_released	True	YES	
+sub-023	ses-02	05	True	already_released	True	YES	
+sub-023	ses-02	07	True	already_released	True	YES	
+sub-023	ses-01	09	False	reconstructable_with_mapping_fix	True	YES	
+sub-023	ses-01	03	True	already_released	True	YES	
+sub-023	ses-01	01	True	already_released	True	YES	
+sub-023	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-023	ses-01	05	True	already_released	True	YES	
+sub-054	ses-02	05	True	already_released	True	YES	
+sub-054	ses-02	07	True	already_released	True	YES	
+sub-054	ses-02	01	True	already_released	True	YES	
+sub-054	ses-02	03	True	already_released	True	YES	
+sub-054	ses-01	05	True	already_released	True	YES	
+sub-054	ses-01	07	True	already_released	True	YES	
+sub-054	ses-01	01	True	already_released	True	YES	
+sub-054	ses-01	03	True	already_released	True	YES	
+sub-059	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-059	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-059	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-059	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-053	ses-01	03	True	already_released	True	YES	
+sub-053	ses-01	01	True	already_released	True	YES	
+sub-053	ses-01	07	True	already_released	True	YES	
+sub-053	ses-01	05	True	already_released	True	YES	
+sub-024	ses-02	11	False	reconstructable_with_mapping_fix	True	YES	
+sub-024	ses-02	08	True	already_released	True	YES	
+sub-024	ses-02	03	False	reconstructable_with_mapping_fix	True	YES	
+sub-024	ses-02	01	False	reconstructable_with_mapping_fix	True	YES	
+sub-024	ses-02	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-024	ses-02	05	True	already_released	True	YES	
+sub-024	ses-01	03	True	already_released	True	YES	
+sub-024	ses-01	01	True	already_released	True	YES	
+sub-024	ses-01	05	True	already_released	True	YES	
+sub-016	ses-02	09	False	reconstructable_with_mapping_fix	True	YES	
+sub-016	ses-02	01	True	already_released	True	YES	
+sub-016	ses-02	03	True	already_released	True	YES	
+sub-016	ses-02	05	True	already_released	True	YES	
+sub-016	ses-02	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-016	ses-01	01	True	already_released	True	YES	
+sub-016	ses-01	03	True	already_released	True	YES	
+sub-016	ses-01	05	True	already_released	True	YES	
+sub-016	ses-01	07	True	already_released	True	YES	
+sub-061	ses-01	09	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-061	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-061	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-061	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-061	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-040	ses-02	01	True	already_released	True	YES	
+sub-040	ses-02	03	True	already_released	True	YES	
+sub-040	ses-02	05	True	already_released	True	YES	
+sub-040	ses-02	07	True	already_released	True	YES	
+sub-040	ses-01	09	False	reconstructable_with_mapping_fix	True	YES	
+sub-040	ses-01	05	True	already_released	True	YES	
+sub-040	ses-01	07	False	reconstructable_with_mapping_fix	True	YES	
+sub-040	ses-01	01	True	already_released	True	YES	
+sub-040	ses-01	03	True	already_released	True	YES	
+sub-037	ses-01	05	True	already_released	True	YES	
+sub-037	ses-01	07	True	already_released	True	YES	
+sub-037	ses-01	01	True	already_released	True	YES	
+sub-037	ses-01	03	True	already_released	True	YES	
+sub-005	ses-01	07	True	already_released	True	YES	
+sub-005	ses-01	05	True	already_released	True	YES	
+sub-005	ses-01	03	True	already_released	True	YES	
+sub-005	ses-01	01	True	already_released	True	YES	
+sub-005	ses-02	07	True	already_released	True	YES	
+sub-005	ses-02	05	True	already_released	True	YES	
+sub-005	ses-02	03	True	already_released	True	YES	
+sub-005	ses-02	01	True	already_released	True	YES	
+sub-072	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-072	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-072	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-072	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-078	ses-01	05	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-078	ses-01	07	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-078	ses-01	01	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session
+sub-078	ses-01	03	False	sources_uncertain_or_absent	False	UNCERTAIN	not in Level-1 events plan for this session

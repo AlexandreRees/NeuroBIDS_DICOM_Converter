@@ -1,0 +1,12 @@
+participant_id	session_id	canonical_id	exists	n_nii	n_json	n_t1w	n_bold_mag	n_dwi	missing_json	bad_bids_names	forbidden_fields	invalid_json	phi_value_hits	marker	conversion_ok	bids_ok	phi_ok	gate	notes
+sub-057	ses-02	SUBON01	True	66	66	3	12	4	0	0	0	0	0	SUBON01_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-064	ses-02	SUBTON01	True	65	65	2	12	4	0	0	0	0	0	SUBTON01_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-066	ses-02	SUBG01	True	66	66	3	12	4	0	0	0	0	0	SUBG01_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-067	ses-02	SUBG02	True	66	66	3	12	4	0	0	0	0	0	SUBG02_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-068	ses-02	SUBG03	True	66	66	3	12	4	0	0	0	0	0	SUBG03_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-069	ses-02	SUBG04	True	66	66	3	12	4	0	0	0	0	0	SUBG04_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-072	ses-02	SUBG07	True	66	66	3	12	4	0	0	0	0	0	SUBG07_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-073	ses-02	SUBG08	True	66	66	3	12	4	0	0	0	0	0	SUBG08_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-074	ses-02	SUBG09	True	62	62	3	11	4	0	0	0	0	0	SUBG09_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	
+sub-078	ses-02	SUBG13	True	27	27	0	6	0	0	0	0	0	0	SUBG13_ses-02.SUCCESS	True	True	True	PASS	
+sub-081	ses-02	SUBG16	True	43	43	3	12	2	0	0	0	0	0	SUBG16_ses-02.SUCCESS_PARTIAL	True	True	True	PASS	

@@ -1,0 +1,2 @@
+source_file	destination_file	source_sha256	destination_sha256	identical	PHI_status
+<canonical_resting_main.m sha256=cbf1d5c8c657920e…; see inventory>	sourcedata/MATLAB_protocol/resting_state/main.m	cbf1d5c8c657920e1b5bdef74da7008f11407abce4608a7e4120e7796f210ea8	cbf1d5c8c657920e1b5bdef74da7008f11407abce4608a7e4120e7796f210ea8	yes	PASS

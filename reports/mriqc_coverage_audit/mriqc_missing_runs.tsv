@@ -1,0 +1,6 @@
+subject	session	missing_t1w	missing_bold	n_missing_t1w	n_missing_bold
+sub-002	ses-01		sub-002_ses-01_task-fmri_run-07_bold	0	1
+sub-011	ses-01		sub-011_ses-01_task-fmri_run-03_bold	0	1
+sub-039	ses-02	sub-039_ses-02_run-03_T1w		1	0
+sub-058	ses-01	sub-058_ses-01_run-03_T1w		1	0
+sub-066	ses-02	sub-066_ses-02_run-03_T1w		1	0

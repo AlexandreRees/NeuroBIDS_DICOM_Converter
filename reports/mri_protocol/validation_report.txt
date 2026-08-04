@@ -1,0 +1,98 @@
+MRI PROTOCOL RECONSTRUCTION — VALIDATION REPORT
+Generated for reports/mri_protocol/
+Rule: every Methods / timeline claim must be Supported, Likely, Possible, Unknown, or FLAG.
+No files under bids/, derivatives/, or raw_original/ were modified.
+
+SECTION A — SCANNER / HARDWARE (BIDS JSON aggregate)
+  n_json_sidecars_scanned=13654
+  Manufacturer mode=[('Siemens', 13654)]  SUPPORT
+  Model mode=[('Prisma', 9727), ('None', 3620), ('MAGNETOM Prisma', 307)]  SUPPORT
+  SoftwareVersions mode=[('syngo MR E11', 9727), ('None', 3620), ('syngo MR XA30', 307)]  SUPPORT
+  MagneticFieldStrength mode=[('3', 10034), ('None', 3620)]  SUPPORT
+  ReceiveCoilName mode=[('HeadNeck_64', 9316), ('None', 3927), ('Body', 411)]  SUPPORT (Body coil appears on Localizer only)
+  PatientPosition mode=[('HFS', 10034), ('None', 3620)]  SUPPORT
+  InstitutionName in BIDS: ABSENT (stripped). DICOM exemplar shows de-id placeholder "Hospital".  FLAG for publication site name
+
+SECTION B — CANONICAL ORDER vs USER KNOWN ORDER
+  Exemplar path: SUBC01-Session2-2023NOV08
+  Derived primary order (26 steps):
+    01. Localizer
+    02. fMRI1_AP
+    03. fMRI2_AP
+    04. Control1_PA
+    05. fMRI3_AP
+    06. fMRI4_AP
+    07. Movie1_AP
+    08. Movie2_AP
+    09. SpinEchoFieldMap_AP
+    10. SpinEchoFieldMap_PA
+    11. Movie3_AP
+    12. Movie4_AP
+    13. REST1_AP
+    14. Localizer
+    15. T1w_MPR
+    16. Control2_AP
+    17. Control3_PA
+    18. SpinEchoFieldMap_AP
+    19. SpinEchoFieldMap_PA
+    20. gsld_76dir_b2000_1mmiso_AP
+    21. gsld_75TE_PA_3b0
+    22. tfl_b1map_1mmiso
+    23. resolve_3scan_trace_tra_p3_160_1.4iso_AP
+    24. resolve_3scan_trace_tra_p3_160_1.4iso_PA
+    25. Sag Flair 3D-0.8
+    26. WMn_MPRAGE_sagittal
+  User known order length=26; match to exemplar: True
+  VERDICT: User KNOWN ACQUISITION ORDER matches canonical exemplar SeriesNumber order. SUPPORT
+
+SECTION C — COVERAGE
+  Sessions containing full modal protocol set (Control2_AP+Control3_PA): 108  SUPPORT
+  Sessions with Control2_PA label: 7; Control3_AP label: 7  SUPPORT (minority variants)
+
+SECTION D — KEY PARAMETERS (sub-001 ses-01 BIDS JSON + NIfTI)
+  fMRI1_AP: file=sub-001_ses-01_task-fmri_run-05_bold.json vols=226 SUPPORT
+  Movie1_AP: file=sub-001_ses-01_task-movie_run-01_bold.json vols=210 SUPPORT
+  REST1_AP: file=sub-001_ses-01_task-rest_run-01_bold.json vols=320 SUPPORT
+  Control1_PA: file=sub-001_ses-01_task-control_run-01_bold.json vols=20 SUPPORT
+  SpinEchoFieldMap_AP: file=sub-001_ses-01_dir-AP_run-03_epi.json vols=1 SUPPORT
+  T1w_MPR: file=sub-001_ses-01_run-02_T1w.json vols=1 SUPPORT
+  Sag Flair 3D-0.8: file=sub-001_ses-01_run-01_FLAIR.json vols=1 SUPPORT
+  WMn_MPRAGE_sagittal: file=sub-001_ses-01_run-03_T1w.json vols=1 SUPPORT
+  tfl_b1map_1mmiso: file=sub-001_ses-01_run-02_TB1TFL.json vols=1 SUPPORT
+  gsld_76dir_b2000_1mmiso_AP: file=sub-001_ses-01_run-01_dwi.json vols=385 SUPPORT
+  gsld_75TE_PA_3b0: file=sub-001_ses-01_run-03_dwi.json vols=5 SUPPORT
+  resolve_3scan_trace_tra_p3_160_1.4iso_AP.SequenceName: expected *re_b0 got *re_b1000t  FLAG
+  resolve_3scan_trace_tra_p3_160_1.4iso_AP: file=sub-001_ses-01_run-07_dwi.json vols=1 PARTIAL
+
+SECTION E — CLAIMS REQUIRING CAUTION
+  1. GSLD "1mmiso" in ProtocolName vs DICOM/BIDS SliceThickness=5 mm, PixelSpacing=1x1 mm.
+     FLAG: do not state isotropic 1 mm without resolving SMS/mosaic geometry; report measured tags.
+  2. gsld_75TE_PA_3b0 name implies 3 b0; exemplar BIDS has 5 b0 volumes. FLAG naming vs count.
+  3. SE fieldmap IntendedFor lists func only (not dwi) in exemplar. SUPPORT for BOLD SDC role;
+     DWI SDC should cite gsld_75TE_PA_3b0 (+ optional geometry check before reusing SE fmap).
+  4. Rationale statements (why fMRI first, why rest after movie, etc.) are marked Likely in SESSION_TIMELINE.md
+     — not supported by an in-repo SOP. Methods section avoids speculative motivation language.
+  5. Control run stimulus content: Unknown in MATLAB/operator docs. Do not invent paradigm for controls.
+  6. InstitutionName/site: de-identified; do not invent hospital name from DICOM placeholder.
+  7. ParallelReductionFactorInPlane absent on BOLD sidecars (MB-only). Do not invent in-plane R for BOLD.
+  8. sub-001 ses-01 order differs from canonical (no mid-movie fmap; late controls after DWI). Documented as deviation.
+
+SECTION F — OUTPUT FILE MANIFEST
+  DWI_PROTOCOL.tsv	1509 bytes
+  FIELDMAP_PROTOCOL.tsv	866 bytes
+  FMRI_PROTOCOL_SUMMARY.tsv	1144 bytes
+  METHODS_SECTION_2_4.md	3957 bytes
+  MRI_PROTOCOL_TABLE.tsv	1530 bytes
+  MRI_SEQUENCE_INVENTORY.tsv	4301 bytes
+  SESSION_TIMELINE.md	9432 bytes
+  SPECIALIZED_SEQUENCES.tsv	1174 bytes
+  STRUCTURAL_PROTOCOL.tsv	977 bytes
+  validation_report.txt	8098 bytes
+
+SECTION G — METHODS SECTION QC
+  Bullet points in Methods: none SUPPORT
+  Methods focuses on organization (parameters deferred to tables): SUPPORT by inspection
+
+OVERALL: Protocol inventory and canonical timeline are DICOM/BIDS-supported.
+Motivational "why" items are explicitly graded Likely/Unknown in SESSION_TIMELINE.md.
+Publication Methods text (2.4) restricted to supported organizational facts.

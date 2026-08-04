@@ -1,0 +1,4 @@
+ProtocolName	BIDSLabel	SequenceFamily	Contrast	KeyParameters_supported	ClinicalValue	ResearchValue	Evidence
+T1w_MPR	T1w	3D MPRAGE (*tfl3d1_16ns)	T1-weighted	TR 2500 ms; TE 2.22 ms; FA 8°; TI 1000 ms; 0.8 mm iso; iPAT 2	Standard anatomical reference; morphological assessment	Cortical reconstruction, registration target, morphometry	BIDS JSON + DICOM ProtocolName T1w_MPR
+Sag Flair 3D-0.8	FLAIR	3D FLAIR SPC IR (*spcir_288ns)	T2-FLAIR	TR 6000 ms; TE 357 ms; FA 120°; TI 2200 ms; 0.8 mm iso; iPAT 2	CSF-nulled detection of white-matter / perioptic signal abnormality	Lesion load; complementary tissue contrast to T1w	BIDS JSON ProtocolName Sag Flair 3D-0.8
+WMn_MPRAGE_sagittal	T1w (WMn)	White-matter-nulled MPRAGE (*tfl3d1_200)	T1 white-matter-nulled	TR 4000 ms; TE 3.82 ms; FA 7°; TI 500 ms; 1 mm iso; iPAT 2	Improved deep gray / thalamic conspicuity vs standard MPRAGE	Subcortical segmentation aids; complementary T1 contrast	BIDS JSON ProtocolName WMn_MPRAGE_sagittal

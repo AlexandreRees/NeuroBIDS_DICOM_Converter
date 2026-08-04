@@ -1,0 +1,15 @@
+=== FITBIR pre-submission audit (READ-ONLY) ===
+root=/lustre07/scratch/alexrees
+output=/lustre07/scratch/alexrees/reports/fitbir_pre_submission
+[inventory] reusing /lustre07/scratch/alexrees/reports/fitbir_pre_submission/DATASET_INVENTORY.tsv
+Dataset inventory completed
+[summary] subjects=84 tasks=['control', 'fmri', 'movie', 'rest']
+[variables] collecting…
+Variables detected: 3325
+Potential Common Data Elements: 37
+Potential Unique Data Elements: 25
+Suggested Form Structures: written
+Critical missing information: 1
+Overall FITBIR readiness: 79/100
+No files modified (BIDS/raw_original/derivatives untouched)
+Outputs: /lustre07/scratch/alexrees/reports/fitbir_pre_submission

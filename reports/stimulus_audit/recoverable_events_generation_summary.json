@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-07-23T19:51:16Z",
+  "timing_families": 97,
+  "rows": 391,
+  "written": 299,
+  "skipped_existing": 61,
+  "failed": 31,
+  "status_counts": {
+    "written": 299,
+    "skipped_existing": 61,
+    "failed_no_bids_match": 20,
+    "failed": 11
+  },
+  "written_method_counts": {
+    "canonical_paradigm": 261,
+    "strict_runs_random": 38
+  },
+  "bids_task_fmri_events_total": 350,
+  "report": "/home/alexrees/scratch/reports/stimulus_audit/recoverable_events_generation.tsv"
+}

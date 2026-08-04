@@ -1,0 +1,4 @@
+subject	session	n_rest_runs	primary_bold_stem	all_stems	note
+sub-021	ses-02	2	sub-021_ses-02_task-rest_run-01	sub-021_ses-02_task-rest_run-01;sub-021_ses-02_task-rest_run-03	Multiple rest magnitude BOLDs in session; prefer primary (lowest SeriesNumber) unless analysis requires otherwise
+sub-035	ses-02	2	sub-035_ses-02_task-rest_run-01	sub-035_ses-02_task-rest_run-01;sub-035_ses-02_task-rest_run-03	Multiple rest magnitude BOLDs in session; prefer primary (lowest SeriesNumber) unless analysis requires otherwise
+sub-043	ses-02	2	sub-043_ses-02_task-rest_run-01	sub-043_ses-02_task-rest_run-01;sub-043_ses-02_task-rest_run-02	Multiple rest magnitude BOLDs in session; prefer primary (lowest SeriesNumber) unless analysis requires otherwise

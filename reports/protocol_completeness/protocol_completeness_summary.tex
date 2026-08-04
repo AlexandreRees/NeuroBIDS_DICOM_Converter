@@ -1,0 +1,157 @@
+% Independent protocol completeness report
+\documentclass[11pt]{article}
+\usepackage[margin=14mm,landscape,a4paper]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\definecolor{tablealt}{RGB}{245,247,250}
+\definecolor{headergray}{RGB}{55,65,81}
+\captionsetup{font=small,labelfont=bf,skip=6pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\begin{document}
+\pagestyle{empty}
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{table}[htbp]
+\centering
+\caption{MRI protocol completeness by acquisition. Values are the percentage of participants with at least one matching series.}
+\label{tab:protocol_completeness_by_acquisition}
+\small
+\begin{tabularx}{\textwidth}{@{}YCCCCC@{}}
+\toprule
+\textcolor{headergray}{\textbf{Acquisition}} & \textcolor{headergray}{\textbf{Control}} & \textcolor{headergray}{\textbf{Data\_ON}} & \textcolor{headergray}{\textbf{Data\_TON}} & \textcolor{headergray}{\textbf{Glaucoma}} & \textcolor{headergray}{\textbf{Total}} \\
+\midrule
+T1w\_MPR & 98\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 99\textbackslash{}\% \\
+\rowcolor{tablealt} WMn\_MPRAGE\_sagittal & 91\textbackslash{}\% & 71\textbackslash{}\% & 100\textbackslash{}\% & 89\textbackslash{}\% & 89\textbackslash{}\% \\
+Sag FLAIR 3D & 95\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 95\textbackslash{}\% & 95\textbackslash{}\% \\
+\rowcolor{tablealt} REST1\_AP & 98\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 99\textbackslash{}\% \\
+fMRI1\_AP & 100\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 99\textbackslash{}\% \\
+\rowcolor{tablealt} fMRI2\_AP & 100\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 99\textbackslash{}\% \\
+fMRI3\_AP & 100\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 99\textbackslash{}\% \\
+\rowcolor{tablealt} fMRI4\_AP & 100\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 99\textbackslash{}\% \\
+Control acquisitions & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% \\
+\rowcolor{tablealt} Movie1\_AP & 100\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 99\textbackslash{}\% \\
+Movie2\_AP & 98\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 98\textbackslash{}\% \\
+\rowcolor{tablealt} Movie3\_AP & 98\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 98\textbackslash{}\% \\
+Movie4\_AP & 96\textbackslash{}\% & 86\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 96\textbackslash{}\% \\
+\rowcolor{tablealt} SpinEchoFieldMap\_AP & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% \\
+SpinEchoFieldMap\_PA & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% \\
+\rowcolor{tablealt} gsld\_76dir\_b2000\_1mmiso\_AP & 98\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 95\textbackslash{}\% & 98\textbackslash{}\% \\
+RESOLVE diffusion & 96\textbackslash{}\% & 100\textbackslash{}\% & 100\textbackslash{}\% & 95\textbackslash{}\% & 96\textbackslash{}\% \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+
+\begin{longtable}{@{}l l c c c c c c@{}}
+\caption{Participant-level MRI protocol completeness. Checkmark = present; en-dash = absent.}
+\label{tab:protocol_completeness_participants} \\
+\toprule
+\textcolor{headergray}{\textbf{participant\_id}} & \textcolor{headergray}{\textbf{cohort}} & \textcolor{headergray}{\textbf{T1}} & \textcolor{headergray}{\textbf{FLAIR}} & \textcolor{headergray}{\textbf{fMRI}} & \textcolor{headergray}{\textbf{Movie}} & \textcolor{headergray}{\textbf{DWI}} & \textcolor{headergray}{\textbf{Fieldmaps}} \\
+\midrule
+\endfirsthead
+\toprule
+\textcolor{headergray}{\textbf{participant\_id}} & \textcolor{headergray}{\textbf{cohort}} & \textcolor{headergray}{\textbf{T1}} & \textcolor{headergray}{\textbf{FLAIR}} & \textcolor{headergray}{\textbf{fMRI}} & \textcolor{headergray}{\textbf{Movie}} & \textcolor{headergray}{\textbf{DWI}} & \textcolor{headergray}{\textbf{Fieldmaps}} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+sub-001 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-002 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-003 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-004 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-005 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-006 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-007 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-008 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-009 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-010 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-011 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-012 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-013 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-014 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-015 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-016 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-017 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-018 & Control & \checkmark & -- & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-019 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-020 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-021 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-022 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-023 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-024 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-025 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-026 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-027 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-028 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-029 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-030 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-031 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-032 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-033 & Control & \checkmark & -- & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-034 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-035 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-036 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-037 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-038 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-039 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-040 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-041 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-042 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-043 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-044 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-045 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-046 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-047 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-048 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-049 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-050 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-051 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-052 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-053 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-054 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-055 & Control & -- & -- & \checkmark & \checkmark & -- & \checkmark \\
+\rowcolor{tablealt} sub-056 & Control & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-057 & Data\_ON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-058 & Data\_ON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-059 & Data\_ON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-060 & Data\_ON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-061 & Data\_ON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-062 & Data\_ON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-063 & Data\_ON & \checkmark & \checkmark & \checkmark & -- & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-064 & Data\_TON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-065 & Data\_TON & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-066 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-067 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-068 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-069 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-070 & Glaucoma & \checkmark & -- & \checkmark & \checkmark & -- & \checkmark \\
+sub-071 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-072 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-073 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-074 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-075 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-076 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-077 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-078 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-079 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-080 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-081 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-082 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+sub-083 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\rowcolor{tablealt} sub-084 & Glaucoma & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+\end{longtable}
+\end{document}

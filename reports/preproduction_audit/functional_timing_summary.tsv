@@ -1,0 +1,5 @@
+task_type	total_runs	events_required	ready	missing	resolved_conflict	coverage_percentage
+task_fmri_grating	536	true	510	6	20	98.9
+control	802	true	505	275	22	65.7
+movie	1070	false	0	0	0	97.8
+resting_state	270	false	0	0	0	not_applicable

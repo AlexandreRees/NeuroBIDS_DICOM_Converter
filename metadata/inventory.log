@@ -1,0 +1,10 @@
+2026-07-15 09:20:02 | INFO     | __main__ | No previous inventory.csv found.
+2026-07-15 09:20:02 | INFO     | __main__ | No previous inventory_summary.json found.
+2026-07-15 09:20:02 | INFO     | __main__ | No previous inventory.log found.
+2026-07-15 09:20:02 | INFO     | __main__ | Starting inventory (read-only) for /lustre07/scratch/alexrees
+2026-07-15 09:20:02 | INFO     | __main__ | Discovered 4 cohort(s) under /lustre07/scratch/alexrees/raw_original: ['Control', 'DataON', 'DataTON', 'Glaucoma']
+2026-07-15 09:20:02 | INFO     | __main__ | Scanning cohort 'Control' at /lustre07/scratch/alexrees/raw_original/Control
+2026-07-15 09:30:07 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=5000 dicom_candidates=4921 elapsed=605.2s
+2026-07-15 09:40:36 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=10000 dicom_candidates=9879 elapsed=1234.1s
+2026-07-15 09:51:18 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=15000 dicom_candidates=14778 elapsed=1876.5s
+2026-07-15 09:59:10 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=20000 dicom_candidates=19705 elapsed=2348.0s

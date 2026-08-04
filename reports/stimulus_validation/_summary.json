@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-07-23T20:23:11Z",
+  "n_events_files": 452,
+  "n_bold_runs": 507,
+  "n_missing": 55,
+  "coverage_pct": 89.15187376725838,
+  "n_pass": 452,
+  "n_warning": 0,
+  "n_fail": 0,
+  "overall_validation": "PASS",
+  "publication_verdict": "PASS WITH DOCUMENTED LIMITATIONS",
+  "missing_reason_counts": {
+    "No unique ProtocolName mapping": 28,
+    "No unique verified mapping": 18,
+    "Incomplete MATLAB logs": 9
+  }
+}

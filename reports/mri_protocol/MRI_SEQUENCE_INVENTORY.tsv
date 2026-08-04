@@ -1,0 +1,27 @@
+Order	ProtocolName	SequenceType	Contrast	Purpose	UsedFor
+1	Localizer	GRE localizer	T1/T2* scout	Geometric scout for slice planning	Prescription of subsequent series
+2	fMRI1_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Visually driven grating/checkerboard task run 1 (AP)	task-fmri BOLD analysis; distortion correction via SE fmap
+3	fMRI2_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Visually driven grating/checkerboard task run 2 (AP)	task-fmri BOLD analysis; distortion correction via SE fmap
+4	Control1_PA	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Brief reverse-PE control EPI (PA) interleaved in task block	task-control; PE polarity reference complementary to AP BOLD
+5	fMRI3_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Visually driven grating/checkerboard task run 3 (AP)	task-fmri BOLD analysis; distortion correction via SE fmap
+6	fMRI4_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Visually driven grating/checkerboard task run 4 (AP)	task-fmri BOLD analysis; distortion correction via SE fmap
+7	Movie1_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Naturalistic movie-viewing run 1 (AP)	task-movie BOLD analysis
+8	Movie2_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Naturalistic movie-viewing run 2 (AP)	task-movie BOLD analysis
+9	SpinEchoFieldMap_AP	Spin-echo EPI field map	SE magnitude/phase (T2)	Opposed-PE field map pair part 1 (AP) mid-functional block	TOPUP/SDC for preceding and following BOLD (IntendedFor func)
+10	SpinEchoFieldMap_PA	Spin-echo EPI field map	SE magnitude/phase (T2)	Opposed-PE field map pair part 2 (PA) mid-functional block	TOPUP/SDC for preceding and following BOLD (IntendedFor func)
+11	Movie3_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Naturalistic movie-viewing run 3 (AP)	task-movie BOLD analysis
+12	Movie4_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Naturalistic movie-viewing run 4 (AP)	task-movie BOLD analysis
+13	REST1_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Eyes-open resting-state with monocular fixation (AP)	task-rest connectivity / resting-state analysis
+14	Localizer	GRE localizer	T1/T2* scout	Re-scout after functional block (possible subject motion)	Re-prescription of structural and diffusion geometries
+15	T1w_MPR	3D MPRAGE (TFL)	T1-weighted	High-resolution anatomical reference	Cortical surface / volumetric registration; FreeSurfer-class pipelines
+16	Control2_AP	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Brief control EPI (AP) after anatomy start (modal label)	task-control; PE AP; minority sessions use Control2_PA
+17	Control3_PA	Multiband gradient-echo EPI (BOLD)	T2* BOLD	Brief control EPI (PA) after anatomy start (modal label)	task-control; PE PA; minority sessions use Control3_AP
+18	SpinEchoFieldMap_AP	Spin-echo EPI field map	SE magnitude/phase (T2)	Second opposed-PE field map pair part 1 (AP)	TOPUP/SDC for late functional/control and EPI-based series
+19	SpinEchoFieldMap_PA	Spin-echo EPI field map	SE magnitude/phase (T2)	Second opposed-PE field map pair part 2 (PA)	TOPUP/SDC for late functional/control and EPI-based series
+20	gsld_76dir_b2000_1mmiso_AP	SMS EPI diffusion (GSLD)	Diffusion-weighted (multi-shell)	Primary multi-direction DWI shell set (AP)	Tractography / DTI/HARDI; eddy + susceptibility correction with PA b0
+21	gsld_75TE_PA_3b0	SMS EPI diffusion b0 (reverse PE)	Diffusion b0 (T2)	Reverse-PE b0 volumes matched to primary DWI TE (PA)	TOPUP/eddy susceptibility distortion correction for primary DWI
+22	tfl_b1map_1mmiso	Turbo-flash B1 mapping (TFL)	B1+/flip-angle map	Transmit field mapping before RESOLVE	B1 correction / quantitative reference (TB1TFL)
+23	resolve_3scan_trace_tra_p3_160_1.4iso_AP	RESOLVE readout-segmented EPI DWI	Diffusion-weighted (trace)	Low-distortion RESOLVE DWI (AP)	Clinical-grade DWI / FA-ADC derivatives; complementary to GSLD
+24	resolve_3scan_trace_tra_p3_160_1.4iso_PA	RESOLVE readout-segmented EPI DWI b0	Diffusion b0 (T2)	Reverse-PE RESOLVE companion (PA)	Susceptibility correction / pairing for RESOLVE AP
+25	Sag Flair 3D-0.8	3D FLAIR (SPC IR)	T2-FLAIR	CSF-suppressed T2-weighted anatomy	White-matter lesion / optic pathway clinical-research review
+26	WMn_MPRAGE_sagittal	White-matter-nulled 3D MPRAGE	T1 white-matter-nulled	Enhanced deep gray / thalamic contrast	Subcortical structure visualization complementary to standard T1w

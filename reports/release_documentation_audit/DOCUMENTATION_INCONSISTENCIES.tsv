@@ -1,0 +1,5 @@
+severity	check	documented_value	actual_value	location	detail
+LOW	movie_events_historical_wording_retained	historical absence claim retained with update note	536 task-movie events.tsv present	docs/Protocols/Movie.md	Update note present; consider rewriting historical sections in a future editorial pass
+HIGH	outdated_qc_numbers_physio_zero	0	3620	reports/scientific_data_docs/extracted_metrics.md	Extracted metrics still report 0 physio sidecars
+MEDIUM	outdated_missing_physio_claim	none present	3620	reports/scientific_data_docs/extracted_metrics.md	Missing-items list still claims no BIDS physiology
+HIGH	placeholder_authors	Neuro BIDS Pipeline	real author list required for publication	release_dataset/dataset_description.json	Authors still placeholder

@@ -1,0 +1,19 @@
+{
+  "n_unique_scanners": 2,
+  "scanners": [
+    {
+      "manufacturer": "SIEMENS",
+      "scanner_model": "Prisma",
+      "magnetic_field_strength": "3",
+      "software_version": "syngo MR E11"
+    },
+    {
+      "manufacturer": "SIEMENS",
+      "scanner_model": "Prisma",
+      "magnetic_field_strength": "Not available",
+      "software_version": "syngo MR E11"
+    }
+  ],
+  "subject_id": "SUBC01",
+  "warnings": []
+}

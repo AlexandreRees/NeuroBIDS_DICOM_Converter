@@ -1,0 +1,25 @@
+Scanning JSON sidecars under /lustre07/scratch/alexrees/bids …
+  … scanned 500 JSON files (497 with target fields)
+  … scanned 1000 JSON files (997 with target fields)
+  … scanned 1500 JSON files (1497 with target fields)
+  … scanned 2000 JSON files (1997 with target fields)
+  … scanned 2500 JSON files (2497 with target fields)
+  … scanned 3000 JSON files (2997 with target fields)
+  … scanned 3500 JSON files (3497 with target fields)
+  … scanned 4000 JSON files (3997 with target fields)
+  … scanned 4500 JSON files (4497 with target fields)
+  … scanned 5000 JSON files (4997 with target fields)
+  … scanned 5500 JSON files (5497 with target fields)
+  … scanned 6000 JSON files (5997 with target fields)
+  … scanned 6500 JSON files (6497 with target fields)
+  … scanned 7000 JSON files (6997 with target fields)
+  … scanned 7500 JSON files (7497 with target fields)
+Scan complete: scanned=7958 with_targets=7956
+Wrote /lustre07/scratch/alexrees/reports/bids_metadata_cleaning_before.tsv (7956 row(s))
+APPLY: backing up 7956 JSON file(s) to /lustre07/scratch/alexrees/bids_metadata_backup_before_cleaning
+Modified 7956 JSON sidecar(s)
+Validating all JSON sidecars remain valid…
+Validation OK — all JSON files parse as objects.
+Wrote /lustre07/scratch/alexrees/reports/bids_metadata_cleaning_after.tsv
+Wrote /lustre07/scratch/alexrees/reports/BIDS_METADATA_CLEANING_SUMMARY.md
+EXIT:0

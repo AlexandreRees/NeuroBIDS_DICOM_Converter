@@ -1,0 +1,12 @@
+{
+  "returncode": 1,
+  "error_keys": [
+    "VOLUME_COUNT_MISMATCH"
+  ],
+  "warning_keys": [
+    "EVENTS_TSV_MISSING",
+    "INCONSISTENT_PARAMETERS",
+    "README_FILE_MISSING",
+    "TOO_FEW_AUTHORS"
+  ]
+}

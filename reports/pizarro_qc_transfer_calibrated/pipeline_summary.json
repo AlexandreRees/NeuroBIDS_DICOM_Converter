@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-04",
+  "n_images_qc": 387,
+  "n_with_transfer_score": 264,
+  "n_original_score_only": 123,
+  "transfer_threshold": 0.8241350216104502,
+  "mean_artifact_probability": 69.67441860465117,
+  "median_artifact_probability": 80.0,
+  "mean_transfer_proba_nonNORM": 0.49996829831286915,
+  "model_path": "/lustre07/scratch/alexrees/reports/pizarro_qc_transfer_calibrated/transfer_logistic_regression.joblib",
+  "source_qc": "/lustre07/scratch/alexrees/reports/pizarro_qc_revised_mc50",
+  "source_embeddings": "/lustre07/scratch/alexrees/pizarro_transfer_learning/output/with_embeddings"
+}

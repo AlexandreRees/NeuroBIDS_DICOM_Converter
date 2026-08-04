@@ -1,0 +1,52 @@
+2026-07-15 10:38:35 | INFO     | __main__ | Inventory started
+2026-07-15 10:38:35 | INFO     | __main__ | Requested cohort filter: Control
+2026-07-15 10:38:35 | INFO     | __main__ | No previous inventory_Control.csv found.
+2026-07-15 10:38:35 | INFO     | __main__ | No previous inventory_Control_summary.json found.
+2026-07-15 10:38:35 | INFO     | __main__ | No previous inventory_Control.log found.
+2026-07-15 10:38:35 | INFO     | __main__ | Starting inventory (read-only) for /lustre07/scratch/alexrees
+2026-07-15 10:38:35 | INFO     | __main__ | Discovered 1 cohort(s) under /lustre07/scratch/alexrees/raw_original: ['Control']
+2026-07-15 10:38:35 | INFO     | __main__ | Scanning cohort 'Control' at /lustre07/scratch/alexrees/raw_original/Control
+2026-07-15 10:51:16 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=5000 dicom_candidates=4921 elapsed=760.4s
+2026-07-15 11:14:52 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=10000 dicom_candidates=9879 elapsed=2177.1s
+2026-07-15 11:44:57 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=15000 dicom_candidates=14778 elapsed=3981.5s
+2026-07-15 12:08:37 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=20000 dicom_candidates=19705 elapsed=5401.5s
+2026-07-15 12:28:22 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=25000 dicom_candidates=24678 elapsed=6586.2s
+2026-07-15 12:41:44 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=30000 dicom_candidates=29604 elapsed=7388.7s
+2026-07-15 12:55:08 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=35000 dicom_candidates=34535 elapsed=8192.4s
+2026-07-15 13:07:53 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=40000 dicom_candidates=39450 elapsed=8957.8s
+2026-07-15 13:21:34 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=45000 dicom_candidates=44424 elapsed=9778.6s
+2026-07-15 13:33:58 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=50000 dicom_candidates=49381 elapsed=10523.1s
+2026-07-15 13:47:32 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=55000 dicom_candidates=54313 elapsed=11336.6s
+2026-07-15 13:59:46 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=60000 dicom_candidates=59245 elapsed=12070.9s
+2026-07-15 14:12:36 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=65000 dicom_candidates=64219 elapsed=12841.0s
+2026-07-15 14:24:46 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=70000 dicom_candidates=69171 elapsed=13571.1s
+2026-07-15 14:38:15 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=75000 dicom_candidates=74103 elapsed=14379.9s
+2026-07-15 14:51:23 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=80000 dicom_candidates=79035 elapsed=15167.6s
+2026-07-15 15:07:29 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=85000 dicom_candidates=84009 elapsed=16133.4s
+2026-07-15 15:26:22 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=90000 dicom_candidates=88948 elapsed=17266.3s
+2026-07-15 15:44:10 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=95000 dicom_candidates=93876 elapsed=18335.2s
+2026-07-15 16:05:04 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=100000 dicom_candidates=98789 elapsed=19589.0s
+2026-07-15 16:22:42 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=105000 dicom_candidates=103763 elapsed=20646.8s
+2026-07-15 16:38:24 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=110000 dicom_candidates=108736 elapsed=21588.7s
+2026-07-15 16:53:01 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=115000 dicom_candidates=113632 elapsed=22466.0s
+2026-07-15 17:12:11 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=120000 dicom_candidates=118561 elapsed=23615.4s
+2026-07-15 17:27:01 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=125000 dicom_candidates=123561 elapsed=24505.4s
+2026-07-15 17:41:58 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=130000 dicom_candidates=128501 elapsed=25402.6s
+2026-07-15 17:53:58 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=135000 dicom_candidates=133453 elapsed=26122.8s
+2026-07-15 18:07:40 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=140000 dicom_candidates=138373 elapsed=26944.8s
+2026-07-15 18:22:24 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=145000 dicom_candidates=143304 elapsed=27828.8s
+2026-07-15 18:43:47 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=150000 dicom_candidates=148304 elapsed=29111.8s
+2026-07-15 19:26:08 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=155000 dicom_candidates=153275 elapsed=31652.7s
+2026-07-15 19:46:30 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=160000 dicom_candidates=158187 elapsed=32874.9s
+2026-07-15 20:00:36 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=165000 dicom_candidates=163159 elapsed=33720.3s
+2026-07-15 20:17:43 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=170000 dicom_candidates=168082 elapsed=34747.8s
+2026-07-15 20:35:57 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=175000 dicom_candidates=173055 elapsed=35841.7s
+2026-07-15 20:53:55 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=180000 dicom_candidates=177902 elapsed=36919.3s
+2026-07-15 21:10:33 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=185000 dicom_candidates=182792 elapsed=37917.6s
+2026-07-15 21:21:05 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=190000 dicom_candidates=187710 elapsed=38549.9s
+2026-07-15 21:33:05 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=195000 dicom_candidates=192684 elapsed=39269.8s
+2026-07-15 21:44:09 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=200000 dicom_candidates=197677 elapsed=39934.1s
+2026-07-15 21:55:19 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=205000 dicom_candidates=202605 elapsed=40603.6s
+2026-07-15 22:09:49 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=210000 dicom_candidates=207490 elapsed=41473.9s
+2026-07-15 22:24:42 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=215000 dicom_candidates=212456 elapsed=42366.5s
+2026-07-15 22:38:02 | INFO     | __main__ | Inventory scan progress cohort=Control files_scanned=220000 dicom_candidates=217430 elapsed=43167.2s

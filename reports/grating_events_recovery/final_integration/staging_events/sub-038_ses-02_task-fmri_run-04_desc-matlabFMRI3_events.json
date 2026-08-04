@@ -1,0 +1,15 @@
+{
+  "Description": "Event timings reconstructed from MATLAB Psychtoolbox triggerTimes recorded during task-fMRI acquisition.",
+  "Source": "MATLAB scan_info.mat triggerTimes",
+  "ReconstructionMethod": "Direct extraction, no synthetic timing generation",
+  "matlab_fmri_number": 3,
+  "matlab_sha256_16": "9b601a59333a29d4",
+  "confidence_level": "high",
+  "messages": [
+    "triggerTimes from scan.runs",
+    "vbl from scan.runs",
+    "n_stim=12",
+    "paradigm from runs_random"
+  ],
+  "matlab_basename": "September-08-2024_10-28-13_AM__scan_info_for_subject_SUBC039-SESSION2__selected_run_is_2__fmri_number_is3.mat"
+}

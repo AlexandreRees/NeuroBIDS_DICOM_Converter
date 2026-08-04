@@ -1,0 +1,157 @@
+action	bold	dest	detail	json	n_slices	source	source_dicom	status
+events_join	/home/alexrees/scratch/bids/sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-001/ses-01/func/sub-001_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-002/ses-01/func/sub-002_ses-01_task-fmri_run-05_bold.nii.gz	/home/alexrees/scratch/bids/sub-002/ses-01/func/sub-002_ses-01_task-fmri_run-05_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-002/ses-01/func/sub-002_ses-01_task-fmri_run-05_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-003/ses-01/func/sub-003_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-003/ses-01/func/sub-003_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-003/ses-01/func/sub-003_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-004/ses-01/func/sub-004_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-004/ses-01/func/sub-004_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-004/ses-01/func/sub-004_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-005/ses-01/func/sub-005_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-005/ses-01/func/sub-005_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-005/ses-01/func/sub-005_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-006/ses-01/func/sub-006_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-006/ses-01/func/sub-006_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-006/ses-01/func/sub-006_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-007/ses-01/func/sub-007_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-007/ses-01/func/sub-007_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-007/ses-01/func/sub-007_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-008/ses-01/func/sub-008_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-008/ses-01/func/sub-008_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-008/ses-01/func/sub-008_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-009/ses-01/func/sub-009_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-009/ses-01/func/sub-009_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-009/ses-01/func/sub-009_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-010/ses-01/func/sub-010_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-010/ses-01/func/sub-010_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-010/ses-01/func/sub-010_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-013/ses-01/func/sub-013_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-013/ses-01/func/sub-013_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-013/ses-01/func/sub-013_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-014/ses-01/func/sub-014_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-014/ses-01/func/sub-014_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-014/ses-01/func/sub-014_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-015/ses-01/func/sub-015_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-015/ses-01/func/sub-015_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-015/ses-01/func/sub-015_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-016/ses-01/func/sub-016_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-016/ses-01/func/sub-016_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-016/ses-01/func/sub-016_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-017/ses-01/func/sub-017_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-017/ses-01/func/sub-017_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-017/ses-01/func/sub-017_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-018/ses-01/func/sub-018_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-018/ses-01/func/sub-018_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-018/ses-01/func/sub-018_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-019/ses-01/func/sub-019_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-019/ses-01/func/sub-019_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-019/ses-01/func/sub-019_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-020/ses-01/func/sub-020_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-020/ses-01/func/sub-020_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-020/ses-01/func/sub-020_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-021/ses-01/func/sub-021_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-021/ses-01/func/sub-021_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-021/ses-01/func/sub-021_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-022/ses-01/func/sub-022_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-022/ses-01/func/sub-022_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-022/ses-01/func/sub-022_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-023/ses-01/func/sub-023_ses-01_task-fmri_run-05_bold.nii.gz	/home/alexrees/scratch/bids/sub-023/ses-01/func/sub-023_ses-01_task-fmri_run-05_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-023/ses-01/func/sub-023_ses-01_task-fmri_run-05_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-024/ses-01/func/sub-024_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-024/ses-01/func/sub-024_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-024/ses-01/func/sub-024_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-025/ses-01/func/sub-025_ses-01_task-fmri_run-05_bold.nii.gz	/home/alexrees/scratch/bids/sub-025/ses-01/func/sub-025_ses-01_task-fmri_run-05_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-025/ses-01/func/sub-025_ses-01_task-fmri_run-05_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-026/ses-01/func/sub-026_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-026/ses-01/func/sub-026_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-026/ses-01/func/sub-026_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-027/ses-01/func/sub-027_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-027/ses-01/func/sub-027_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-027/ses-01/func/sub-027_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-028/ses-01/func/sub-028_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-028/ses-01/func/sub-028_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-028/ses-01/func/sub-028_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-029/ses-01/func/sub-029_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-029/ses-01/func/sub-029_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-029/ses-01/func/sub-029_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-030/ses-01/func/sub-030_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-030/ses-01/func/sub-030_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-030/ses-01/func/sub-030_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-031/ses-01/func/sub-031_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-031/ses-01/func/sub-031_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-031/ses-01/func/sub-031_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-032/ses-01/func/sub-032_ses-01_task-fmri_run-07_bold.nii.gz	/home/alexrees/scratch/bids/sub-032/ses-01/func/sub-032_ses-01_task-fmri_run-07_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-032/ses-01/func/sub-032_ses-01_task-fmri_run-07_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-033/ses-01/func/sub-033_ses-01_task-fmri_run-01_bold.nii.gz	/home/alexrees/scratch/bids/sub-033/ses-01/func/sub-033_ses-01_task-fmri_run-01_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-033/ses-01/func/sub-033_ses-01_task-fmri_run-01_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-034/ses-01/func/sub-034_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-034/ses-01/func/sub-034_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-034/ses-01/func/sub-034_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-035/ses-01/func/sub-035_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-035/ses-01/func/sub-035_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-035/ses-01/func/sub-035_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-036/ses-01/func/sub-036_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-036/ses-01/func/sub-036_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-036/ses-01/func/sub-036_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-037/ses-01/func/sub-037_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-037/ses-01/func/sub-037_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-037/ses-01/func/sub-037_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-038/ses-01/func/sub-038_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-038/ses-01/func/sub-038_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-038/ses-01/func/sub-038_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-039/ses-01/func/sub-039_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-039/ses-01/func/sub-039_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-039/ses-01/func/sub-039_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-040/ses-01/func/sub-040_ses-01_task-fmri_run-05_bold.nii.gz	/home/alexrees/scratch/bids/sub-040/ses-01/func/sub-040_ses-01_task-fmri_run-05_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-040/ses-01/func/sub-040_ses-01_task-fmri_run-05_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-041/ses-01/func/sub-041_ses-01_task-fmri_run-05_bold.nii.gz	/home/alexrees/scratch/bids/sub-041/ses-01/func/sub-041_ses-01_task-fmri_run-05_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-041/ses-01/func/sub-041_ses-01_task-fmri_run-05_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-042/ses-01/func/sub-042_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-042/ses-01/func/sub-042_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-042/ses-01/func/sub-042_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-044/ses-01/func/sub-044_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-044/ses-01/func/sub-044_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-044/ses-01/func/sub-044_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-045/ses-01/func/sub-045_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-045/ses-01/func/sub-045_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-045/ses-01/func/sub-045_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-046/ses-01/func/sub-046_ses-01_task-fmri_run-05_bold.nii.gz	/home/alexrees/scratch/bids/sub-046/ses-01/func/sub-046_ses-01_task-fmri_run-05_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-046/ses-01/func/sub-046_ses-01_task-fmri_run-05_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-048/ses-01/func/sub-048_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-048/ses-01/func/sub-048_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-048/ses-01/func/sub-048_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-049/ses-01/func/sub-049_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-049/ses-01/func/sub-049_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-049/ses-01/func/sub-049_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-050/ses-01/func/sub-050_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-050/ses-01/func/sub-050_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-050/ses-01/func/sub-050_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-052/ses-01/func/sub-052_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-052/ses-01/func/sub-052_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-052/ses-01/func/sub-052_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-053/ses-01/func/sub-053_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-053/ses-01/func/sub-053_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-053/ses-01/func/sub-053_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-054/ses-01/func/sub-054_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-054/ses-01/func/sub-054_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-054/ses-01/func/sub-054_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-055/ses-01/func/sub-055_ses-01_task-fmri_run-03_bold.nii.gz	/home/alexrees/scratch/bids/sub-055/ses-01/func/sub-055_ses-01_task-fmri_run-03_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-055/ses-01/func/sub-055_ses-01_task-fmri_run-03_events.tsv		already_exists
+events_join	/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-05_bold.nii.gz	/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-05_events.tsv				/home/alexrees/scratch/release_candidate_level1/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-05_events.tsv		already_exists
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-control_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-control_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-control_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-control_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-control_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-control_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-fmri_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-movie_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-rest_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-054/ses-02/func/sub-054_ses-02_task-rest_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-control_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-control_run-02_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-control_run-03_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-control_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-control_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-control_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-fmri_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-movie_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-rest_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-056/ses-01/func/sub-056_ses-01_task-rest_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-control_run-01_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-control_run-02_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-control_run-03_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-control_run-04_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-control_run-05_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-control_run-06_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-05_bold.json	88			already_present
+slicetiming			max=0.835;TR=0.937;method=FrameAcquisitionDateTime+InStackPositionNumber;shard=/home/alexrees/scratch/reports/shards/SUBON06/conversion_report.json	/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-06_part-phase_bold.json	88		/lustre06/project/6001995/raw_original/Data_ON/SUBON06_Session01_2025AUG13/SUBON06_SESSION01_2025AUG13/MR166092.MR.Dr_Shmuel_FINAL.4.1.2025.08.13.18.27.06.147.30848642.dcm	updated
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-09_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-fmri_run-10_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-movie_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-rest_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-061/ses-01/func/sub-061_ses-01_task-rest_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-control_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-control_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-control_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-control_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-control_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-control_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-fmri_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-05_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-06_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-07_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-movie_run-08_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-rest_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-062/ses-01/func/sub-062_ses-01_task-rest_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-063/ses-01/func/sub-063_ses-01_task-control_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-063/ses-01/func/sub-063_ses-01_task-control_run-02_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-063/ses-01/func/sub-063_ses-01_task-control_run-03_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-063/ses-01/func/sub-063_ses-01_task-control_run-04_part-phase_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-063/ses-01/func/sub-063_ses-01_task-rest_run-01_bold.json	88			already_present
+slicetiming				/home/alexrees/scratch/bids/sub-063/ses-01/func/sub-063_ses-01_task-rest_run-02_part-phase_bold.json	88			already_present
+fmap_pe_trt			donor=sub-054_ses-02_dir-AP_run-01_epi.json;SeriesDescription=SpinEchoFieldMap_AP;PE=j-;TRT=0.0597409	/home/alexrees/scratch/bids/sub-054/ses-02/fmap/sub-054_ses-02_dir-AP_run-02_epi.json				updated_from_sibling

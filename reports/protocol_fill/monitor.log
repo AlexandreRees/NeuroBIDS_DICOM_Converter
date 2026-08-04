@@ -1,0 +1,99 @@
+2026-07-27T11:57:33-04:00 monitor start
+2026-07-27T11:57:33-04:00 NEW_FAILURES:
+66496517_13
+66496517_17
+  task=13 subject=SUBC013
+13:2026-07-27 11:41:18 | ERROR    | __main__ | Subject worker failed: No columns to parse from file
+14:Traceback (most recent call last):
+43:pandas.errors.EmptyDataError: No columns to parse from file
+  task=17 subject=SUBC017
+13:2026-07-27 11:41:21 | ERROR    | __main__ | Subject worker failed: No columns to parse from file
+14:Traceback (most recent call last):
+43:pandas.errors.EmptyDataError: No columns to parse from file
+2026-07-27T11:57:34-04:00 progress loc=234 run03=43 run11=36 queue=23
+2026-07-27T11:59:05-04:00 progress loc=237 run03=43 run11=36 queue=23
+2026-07-27T12:00:35-04:00 NEW_FAILURES:
+66496517_1
+66496517_18
+  task=1 subject=SUBC001
+13:2026-07-27 12:00:06 | ERROR    | __main__ | FATAL: Conversion FAILED for 1 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBC001 (inspect conversion audit / dcm2niix logs for root causes)
+  task=18 subject=SUBC018
+13:2026-07-27 12:00:06 | ERROR    | __main__ | FATAL: Conversion FAILED for 2 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBC018 (inspect conversion audit / dcm2niix logs for root causes)
+2026-07-27T12:00:37-04:00 progress loc=240 run03=44 run11=36 queue=24
+2026-07-27T12:02:08-04:00 progress loc=240 run03=45 run11=36 queue=23
+2026-07-27T12:03:40-04:00 progress loc=240 run03=45 run11=37 queue=23
+2026-07-27T12:05:11-04:00 progress loc=261 run03=45 run11=38 queue=23
+2026-07-27T12:06:41-04:00 progress loc=297 run03=45 run11=38 queue=23
+2026-07-27T12:08:13-04:00 progress loc=315 run03=45 run11=38 queue=23
+2026-07-27T12:09:44-04:00 progress loc=336 run03=51 run11=38 queue=23
+2026-07-27T12:11:14-04:00 progress loc=375 run03=58 run11=45 queue=23
+2026-07-27T12:12:44-04:00 progress loc=393 run03=59 run11=51 queue=23
+2026-07-27T12:14:15-04:00 progress loc=423 run03=60 run11=52 queue=23
+2026-07-27T12:15:45-04:00 progress loc=441 run03=64 run11=53 queue=23
+2026-07-27T12:17:16-04:00 progress loc=459 run03=68 run11=57 queue=23
+2026-07-27T12:18:47-04:00 progress loc=465 run03=73 run11=64 queue=23
+2026-07-27T12:20:17-04:00 progress loc=477 run03=77 run11=67 queue=21
+2026-07-27T12:21:49-04:00 progress loc=513 run03=78 run11=71 queue=21
+2026-07-27T12:23:19-04:00 progress loc=537 run03=81 run11=72 queue=21
+2026-07-27T12:24:49-04:00 progress loc=564 run03=83 run11=76 queue=21
+2026-07-27T12:26:20-04:00 progress loc=579 run03=90 run11=80 queue=21
+2026-07-27T12:27:50-04:00 progress loc=594 run03=90 run11=84 queue=21
+2026-07-27T12:29:22-04:00 progress loc=600 run03=92 run11=84 queue=21
+2026-07-27T12:30:54-04:00 progress loc=618 run03=93 run11=86 queue=21
+2026-07-27T12:32:24-04:00 progress loc=637 run03=96 run11=87 queue=21
+2026-07-27T12:33:54-04:00 progress loc=649 run03=100 run11=90 queue=21
+2026-07-27T12:35:25-04:00 progress loc=660 run03=102 run11=93 queue=21
+2026-07-27T12:36:55-04:00 progress loc=670 run03=104 run11=94 queue=21
+2026-07-27T12:38:25-04:00 NEW_FAILURES:
+66496517_54
+  task=54 subject=SUBC055
+13:2026-07-27 12:36:54 | ERROR    | __main__ | FATAL: Conversion FAILED for 2 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBC055 (inspect conversion audit / dcm2niix logs for root causes)
+2026-07-27T12:38:25-04:00 progress loc=691 run03=104 run11=95 queue=21
+2026-07-27T12:39:57-04:00 progress loc=699 run03=107 run11=95 queue=21
+2026-07-27T12:41:27-04:00 progress loc=714 run03=107 run11=98 queue=21
+2026-07-27T12:42:58-04:00 progress loc=720 run03=110 run11=99 queue=21
+2026-07-27T12:44:28-04:00 NEW_FAILURES:
+66496517_47
+  task=47 subject=SUBC048
+13:2026-07-27 12:44:20 | ERROR    | __main__ | FATAL: Conversion FAILED for 1 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBC048 (inspect conversion audit / dcm2niix logs for root causes)
+2026-07-27T12:44:28-04:00 progress loc=726 run03=111 run11=100 queue=17
+2026-07-27T12:45:58-04:00 progress loc=759 run03=115 run11=102 queue=21
+2026-07-27T12:47:29-04:00 progress loc=792 run03=116 run11=107 queue=21
+2026-07-27T12:49:00-04:00 progress loc=795 run03=123 run11=108 queue=21
+2026-07-27T12:50:30-04:00 NEW_FAILURES:
+66496517_61
+66496517_62
+  task=61 subject=SUBON06
+13:2026-07-27 12:49:03 | ERROR    | __main__ | FATAL: Conversion FAILED for 2 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBON06 (inspect conversion audit / dcm2niix logs for root causes)
+  task=62 subject=SUBON07
+13:2026-07-27 12:49:03 | ERROR    | __main__ | FATAL: Conversion FAILED for 2 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBON07 (inspect conversion audit / dcm2niix logs for root causes)
+2026-07-27T12:50:30-04:00 progress loc=819 run03=123 run11=114 queue=19
+2026-07-27T12:52:00-04:00 NEW_FAILURES:
+66496517_63
+  task=63 subject=SUBON08
+13:2026-07-27 12:51:50 | ERROR    | __main__ | FATAL: Conversion FAILED for 2 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBON08 (inspect conversion audit / dcm2niix logs for root causes)
+2026-07-27T12:52:00-04:00 progress loc=834 run03=127 run11=114 queue=17
+2026-07-27T12:53:31-04:00 progress loc=840 run03=128 run11=117 queue=16
+2026-07-27T12:55:01-04:00 progress loc=846 run03=129 run11=119 queue=16
+2026-07-27T12:56:32-04:00 progress loc=850 run03=130 run11=121 queue=16
+2026-07-27T12:58:02-04:00 progress loc=853 run03=130 run11=122 queue=16
+2026-07-27T12:59:32-04:00 progress loc=853 run03=130 run11=122 queue=16
+2026-07-27T13:01:03-04:00 progress loc=853 run03=130 run11=122 queue=16
+2026-07-27T13:02:33-04:00 NEW_FAILURES:
+66496517_56
+66496517_67
+  task=56 subject=SUBC057
+13:2026-07-27 13:02:09 | ERROR    | __main__ | FATAL: Conversion FAILED for 2 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBC057 (inspect conversion audit / dcm2niix logs for root causes)
+  task=67 subject=SUBG02
+13:2026-07-27 13:02:09 | ERROR    | __main__ | FATAL: Conversion FAILED for 1 required series; see subject shards under /lustre07/scratch/alexrees/reports/shards/SUBG02 (inspect conversion audit / dcm2niix logs for root causes)
+2026-07-27T13:02:36-04:00 progress loc=853 run03=130 run11=122 queue=11
+2026-07-27T13:04:06-04:00 progress loc=853 run03=130 run11=122 queue=11
+2026-07-27T13:05:36-04:00 progress loc=853 run03=130 run11=122 queue=11
+2026-07-27T13:07:07-04:00 progress loc=853 run03=130 run11=122 queue=11
+2026-07-27T13:08:37-04:00 progress loc=853 run03=130 run11=122 queue=11
+2026-07-27T13:10:08-04:00 progress loc=853 run03=130 run11=122 queue=11
+2026-07-27T13:11:38-04:00 progress loc=853 run03=130 run11=122 queue=2
+2026-07-27T13:13:09-04:00 progress loc=853 run03=130 run11=122 queue=2
+2026-07-27T13:14:41-04:00 progress loc=853 run03=130 run11=122 queue=2
+2026-07-27T13:16:12-04:00 progress loc=853 run03=130 run11=122 queue=0
+2026-07-27T13:16:12-04:00 queue empty — monitor exit

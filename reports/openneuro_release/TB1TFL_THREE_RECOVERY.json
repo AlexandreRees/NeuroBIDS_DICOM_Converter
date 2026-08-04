@@ -1,0 +1,34 @@
+{
+  "generated_utc": "2026-07-27T17:13:17.057016+00:00",
+  "pydeface": "/home/alexrees/defacing_env/bin/pydeface",
+  "results": [
+    {
+      "path": "sub-027/ses-02/anat/sub-027_ses-02_run-02_TB1TFL.nii.gz",
+      "status": "PASS",
+      "runtime_sec": 328.2,
+      "defaced_size": 24216,
+      "error": "",
+      "released": true,
+      "release_size": 24216
+    },
+    {
+      "path": "sub-028/ses-02/anat/sub-028_ses-02_run-01_TB1TFL.nii.gz",
+      "status": "PASS",
+      "runtime_sec": 257.4,
+      "defaced_size": 85393,
+      "error": "",
+      "released": true,
+      "release_size": 85393
+    },
+    {
+      "path": "sub-031/ses-01/anat/sub-031_ses-01_run-01_TB1TFL.nii.gz",
+      "status": "PASS",
+      "runtime_sec": 214.0,
+      "defaced_size": 78053,
+      "error": "",
+      "released": true,
+      "release_size": 78053
+    }
+  ],
+  "all_released_ok": true
+}

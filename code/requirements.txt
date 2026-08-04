@@ -1,0 +1,8 @@
+# Minimal dependencies for Grating events BIDS integration
+# Requires Python >= 3.11
+#
+# Standard library used (no install needed): hashlib, json, pathlib, argparse, shutil
+pandas>=2.0
+numpy>=1.24
+# Optional but recommended for volume checks:
+# nibabel>=5.0

@@ -1,0 +1,6 @@
+physio_uid	subject	session	stem	status	n_samples	n_pulses	StartTime	SamplingFrequency	outputs	error
+1.3.12.2.1107.5.2.43.166092.2023050514503246786661989.0.0.0	sub-001	ses-01	sub-001_ses-01_task-control_run-01	FAIL						missing_ticks:vol0=21378257:ext=None
+1.3.12.2.1107.5.2.43.166092.2023050516511632509348136.0.0.0	sub-001	ses-01	sub-001_ses-01_task-control_run-05	FAIL						missing_ticks:vol0=24135119:ext=None
+1.3.12.2.1107.5.2.43.166092.202305051649173319740653.0.0.0	sub-001	ses-01	sub-001_ses-01_task-control_run-03	FAIL						missing_ticks:vol0=24110622:ext=None
+1.3.12.2.1107.5.2.43.166092.2023050514415648251600347.0.0.0	sub-001	ses-01	sub-001_ses-01_task-fmri_run-05	FAIL						missing_ticks:vol0=21171488:ext=None
+1.3.12.2.1107.5.2.43.166092.2023050514454334799981168.0.0.0	sub-001	ses-01	sub-001_ses-01_task-fmri_run-07	FAIL						missing_ticks:vol0=21275695:ext=None

@@ -1,0 +1,12 @@
+FITBIR pre-submission validation
+generated: 2026-07-30T14:52:06.809672+00:00
+
+NOTE: inventory lists reports/shards/SUBC*|SUBG* paths (pre-BIDS conversion shards)
+OK: audit writes restricted to output_dir only (script design)
+OK: no rename/move operations implemented
+OK: inventory rows=68844
+NOTE: sha256 NOT_COMPUTED_LARGE_FILE count=20 (threshold 5242880 bytes)
+NOTE: sha256 NOT_COMPUTED_SUBJECT_LEVEL_BULK count=53902
+NOTE: sha256 NOT_COMPUTED_IMAGING_VOLUME count=11477
+
+No BIDS/raw_original/derivatives files were modified by this audit.

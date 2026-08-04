@@ -1,0 +1,145 @@
+subject	session	protocol_name	series_number	series_instance_uid_hash	series_description	acquisition_time	study_date_year_month_only	image_type	is_magnitude	is_phase	volume_count	TR	ImagingFrequency	cohort_hint
+sub-043	ses-02	Movie4_AP	39	9295274ff9a04a40	Movie4_AP	17:50:41.419	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257845	orphan_other_date
+sub-043	ses-02	Movie4_AP	39	3f0ed1e4ebeee819	Movie4_AP	14:56:06.298	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257897	session_matched_folder
+sub-043	ses-02	REST1_AP	44	35564c797db4b1b1	REST1_AP	17:55:24.476	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	320	0.937	123.257847	orphan_other_date
+sub-043	ses-02	REST1_AP	44	05d8a84d73a12ad0	REST1_AP	15:00:06.457	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	320	0.937	123.257898	session_matched_folder
+sub-043	ses-02	fMRI4_AP	19	51aa68e0c9c94b66	fMRI4_AP	17:33:41.413	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	226	0.937	123.257835	orphan_other_date
+sub-043	ses-02	fMRI4_AP	19	b989b43b761e4e77	fMRI4_AP	14:38:46.273	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	226	0.937	123.257881	session_matched_folder
+sub-043	ses-02	fMRI1_AP	4	ba853b9598d6d995	fMRI1_AP	14:25:29.677	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	226	0.937	123.257867	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	72	c81b67e4b56620ee	resolve_3scan_trace_tra_p3_160_1.4iso_AP_TENSOR	19:14:36.599	2024-07	DERIVED\PRIMARY\DIFFUSION\TENSOR\ND\NORM	False	False	1			orphan_other_date
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	72	1c0146c0f285b2ae	resolve_3scan_trace_tra_p3_160_1.4iso_AP_TENSOR	16:24:40.163	2025-02	DERIVED\PRIMARY\DIFFUSION\TENSOR\ND\NORM	False	False	1			session_matched_folder
+sub-043	ses-02	REST1_AP	45	c81865357bf57e4b	REST1_AP_PhysioLog	17:59:30.466	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	REST1_AP	45	23c863c23f8c157e	REST1_AP_PhysioLog	15:04:01.921	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_AP	22	6825cacfcd2f1e24	SpinEchoFieldMap_AP	14:41:58.565	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257885	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_AP	22	d7fb167bd7b3e75e	SpinEchoFieldMap_AP	17:36:40.582	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257838	orphan_other_date
+sub-043	ses-02	SpinEchoFieldMap_PA	59	1ebc3e6a0fa4cd05	SpinEchoFieldMap_PA	15:33:28.378	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257896	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_PA	59	d74f2005f40fa386	SpinEchoFieldMap_PA	18:23:45.716	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257856	orphan_other_date
+sub-043	ses-02	SpinEchoFieldMap_PA	24	814e75551da95731	SpinEchoFieldMap_PA	17:36:52.546	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257839	orphan_other_date
+sub-043	ses-02	SpinEchoFieldMap_PA	24	47d10967decadee6	SpinEchoFieldMap_PA	14:42:10.584	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257884	session_matched_folder
+sub-043	ses-02	Movie1_AP	29	ddfaa98f0530ac10	Movie1_AP_PhysioLog	17:41:11.238	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	Movie1_AP	29	26c777742a3b6414	Movie1_AP_PhysioLog	14:46:26.638	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	fMRI3_AP	14	40aa2b860e6be9a8	fMRI3_AP_SBRef	14:34:29.392	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257877	session_matched_folder
+sub-043	ses-02	fMRI3_AP	14	52039f953d0ceade	fMRI3_AP_SBRef	17:29:27.225	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257831	orphan_other_date
+sub-043	ses-02	Movie4_AP	38	57b4a67e5437a708	Movie4_AP_SBRef	14:56:06.243	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257897	session_matched_folder
+sub-043	ses-02	Movie4_AP	38	76cb8d4930b664b1	Movie4_AP_SBRef	17:50:41.389	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257845	orphan_other_date
+sub-043	ses-02	Movie3_AP	35	32aa95fa8f62bf9b	Movie3_AP	17:47:07.257	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257842	orphan_other_date
+sub-043	ses-02	Movie3_AP	35	d82e203a9539e753	Movie3_AP	14:51:49.423	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257893	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	67	49dc567805d5fc33	resolve_3scan_trace_tra_p3_160_1.4iso_AP	16:24:12.437	2025-02	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\NORM\MOSAIC	False	False	15	4.14	123.257868	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	67	0544c9969b4b5d39	resolve_3scan_trace_tra_p3_160_1.4iso_AP	19:14:06.541	2024-07	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\NORM\MOSAIC	False	False	15	4.14	123.257846	orphan_other_date
+sub-043	ses-02	fMRI3_AP	15	f1ef422c35bad2c5	fMRI3_AP	17:29:27.268	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	226	0.937	123.257831	orphan_other_date
+sub-043	ses-02	fMRI3_AP	15	e8d521e2eff8e85d	fMRI3_AP	14:34:29.422	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	226	0.937	123.257877	session_matched_folder
+sub-043	ses-02	Movie1_AP	26	2b64555019f67f8a	Movie1_AP_SBRef	17:39:01.371	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257836	orphan_other_date
+sub-043	ses-02	Movie1_AP	26	43ecaf65c929f957	Movie1_AP_SBRef	14:44:06.243	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257884	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	69	bc28a977cca2d12a	resolve_3scan_trace_tra_p3_160_1.4iso_AP_TRACEW	16:24:39.699	2025-02	DERIVED\PRIMARY\DIFFUSION\TRACEW\ND\NORM	False	False	32	4.14	123.257868	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	69	c1e96e5ec1d69359	resolve_3scan_trace_tra_p3_160_1.4iso_AP_TRACEW	19:14:36.208	2024-07	DERIVED\PRIMARY\DIFFUSION\TRACEW\ND\NORM	False	False	32	4.14	123.257846	orphan_other_date
+sub-043	ses-02	fMRI2_AP	8	ed0976c836e717f2	fMRI2_AP	17:24:21.574	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	226	0.937	123.257825	orphan_other_date
+sub-043	ses-02	fMRI2_AP	8	c9b2254deff56f76	fMRI2_AP	14:29:46.563	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	226	0.937	123.257872	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_AP	58	f56e3174ab21b6c5	SpinEchoFieldMap_AP	18:23:43.788	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257856	orphan_other_date
+sub-043	ses-02	SpinEchoFieldMap_AP	58	017204728cc1b817	SpinEchoFieldMap_AP	15:33:26.510	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257897	session_matched_folder
+sub-043	ses-02	Control3_PA	56	e626cfb2fecf65a8	Control3_PA	18:23:41.917	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	20	0.937	123.257856	orphan_other_date
+sub-043	ses-02	Control3_PA	56	e3caaa5ce029be49	Control3_PA	15:33:24.769	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	20	0.937	123.257897	session_matched_folder
+sub-043	ses-02	fMRI1_AP	3	24aa0981de24ba8f	fMRI1_AP	14:25:29.419	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	226	0.937	123.257867	session_matched_folder
+sub-043	ses-02	Localizer	1	68dca585bce4a810	Localizer	14:22:38.520	2025-02	ORIGINAL\PRIMARY\M\ND\NORM	True	False	3	0.04	123.257909	session_matched_folder
+sub-043	ses-02	Movie2_AP	31	cd32b0f348579916	Movie2_AP	17:43:04.356	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257841	orphan_other_date
+sub-043	ses-02	Movie2_AP	31	7d81c7d8aeaa70d9	Movie2_AP	14:48:06.296	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257888	session_matched_folder
+sub-043	ses-02	REST1_AP	43	409d0701447cc34a	REST1_AP	17:55:24.358	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	320	0.937	123.257847	orphan_other_date
+sub-043	ses-02	REST1_AP	43	310c32a07acb7705	REST1_AP	15:00:06.291	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	320	0.937	123.257898	session_matched_folder
+sub-043	ses-02	Control1_PA	12	29ef822e1d7c1d66	Control1_PA	17:28:19.011	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	20	0.937	123.25783	orphan_other_date
+sub-043	ses-02	Control1_PA	12	1b7720b8d4935d9a	Control1_PA	14:33:29.635	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	20	0.937	123.257875	session_matched_folder
+sub-043	ses-02	Control2_AP	50	4bebfd0b5ef52c26	Control2_AP_SBRef	18:21:42.877	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257855	orphan_other_date
+sub-043	ses-02	Control2_AP	50	753989f6840faead	Control2_AP_SBRef	15:31:06.292	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257895	session_matched_folder
+sub-043	ses-02	Movie1_AP	27	a63a432cebd7bf79	Movie1_AP	14:44:06.274	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257884	session_matched_folder
+sub-043	ses-02	Movie1_AP	27	a995e3af111fc3a5	Movie1_AP	17:39:01.409	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	210	0.937	123.257836	orphan_other_date
+sub-043	ses-02	fMRI2_AP	6	c6cc0b5e3fa0a1d5	fMRI2_AP_SBRef	14:29:46.243	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257872	session_matched_folder
+sub-043	ses-02	Control2_AP	49	dd7a3059cd487947	Control2_AP_PhysioLog	15:31:06.259	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	Control2_AP	49	8fe8ea64044fbf2f	Control2_AP_PhysioLog	18:21:42.857	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	71	6de012788633e611	resolve_3scan_trace_tra_p3_160_1.4iso_AP_ColFA	16:24:39.958	2025-02	DERIVED\PRIMARY\DIFFUSION\FA\ND\NORM	False	False	32			session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	71	ea47b241268bcb18	resolve_3scan_trace_tra_p3_160_1.4iso_AP_ColFA	19:14:36.399	2024-07	DERIVED\PRIMARY\DIFFUSION\FA\ND\NORM	False	False	32			orphan_other_date
+sub-043	ses-02	T1w_MPR	47	5acce5a40f141d79	T1w_MPR	15:26:46.242	2025-02	ORIGINAL\PRIMARY\M\ND	True	False	208	2.5	123.2579	session_matched_folder
+sub-043	ses-02	T1w_MPR	47	de8ddfaf0e294fd3	T1w_MPR	18:16:01.372	2024-07	ORIGINAL\PRIMARY\M\ND	True	False	208	2.5	123.257861	orphan_other_date
+sub-043	ses-02	fMRI3_AP	16	0bb79a034b6429c5	fMRI3_AP	14:34:30.004	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	226	0.937	123.257877	session_matched_folder
+sub-043	ses-02	fMRI3_AP	16	dea4bd276f042659	fMRI3_AP	17:29:27.435	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	226	0.937	123.257831	orphan_other_date
+sub-043	ses-02	Movie3_AP	36	790a98a06d0c5c70	Movie3_AP	14:51:49.522	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257893	session_matched_folder
+sub-043	ses-02	Movie3_AP	36	7a5facb767850ecd	Movie3_AP	17:47:07.482	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257842	orphan_other_date
+sub-043	ses-02	Movie4_AP	41	36c4771a839b68b5	Movie4_AP_PhysioLog	14:58:07.144	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	Movie4_AP	41	084f14c6bdc3507f	Movie4_AP_PhysioLog	17:53:08.118	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	Control3_PA	55	4f0ff7428b1b4e22	Control3_PA	18:23:41.759	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	20	0.937	123.257856	orphan_other_date
+sub-043	ses-02	Control3_PA	55	27d69b73e85b36ed	Control3_PA	15:33:24.629	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	20	0.937	123.257897	session_matched_folder
+sub-043	ses-02	Movie4_AP	40	4393bc47c6bfce93	Movie4_AP	14:56:06.551	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257897	session_matched_folder
+sub-043	ses-02	Movie4_AP	40	782091f33befb925	Movie4_AP	17:50:41.934	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257845	orphan_other_date
+sub-043	ses-02	Sag Flair 3D-0.8	74	e327b6c9acbcf3fe	Sag Flair 3D-0.8	19:15:16.833	2024-07	ORIGINAL\PRIMARY\M\ND\NORM\FM\FIL	True	False	192	6.0	123.257871	orphan_other_date
+sub-043	ses-02	Sag Flair 3D-0.8	74	2e8bfa53f7772fec	Sag Flair 3D-0.8	16:25:29.483	2025-02	ORIGINAL\PRIMARY\M\ND\NORM\FM\FIL	True	False	192	6.0	123.257913	session_matched_folder
+sub-043	ses-02	Movie2_AP	32	a2c11856bb424c2f	Movie2_AP	14:48:06.503	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257888	session_matched_folder
+sub-043	ses-02	Movie2_AP	32	628972ee9639e580	Movie2_AP	17:43:04.528	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257841	orphan_other_date
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	68	129ce85e4f8e1a9a	resolve_3scan_trace_tra_p3_160_1.4iso_AP_ADC	16:24:39.550	2025-02	DERIVED\PRIMARY\DIFFUSION\ADC\ND\NORM	False	False	32	4.14	123.257868	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	68	9ee85e305a85a673	resolve_3scan_trace_tra_p3_160_1.4iso_AP_ADC	19:14:36.083	2024-07	DERIVED\PRIMARY\DIFFUSION\ADC\ND\NORM	False	False	32	4.14	123.257846	orphan_other_date
+sub-043	ses-02	Movie2_AP	30	744104ca17e071f1	Movie2_AP_SBRef	14:48:06.260	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257888	session_matched_folder
+sub-043	ses-02	Movie2_AP	30	a8de0205d847abb5	Movie2_AP_SBRef	17:43:04.326	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257841	orphan_other_date
+sub-043	ses-02	Movie1_AP	28	76c6827c7febf34a	Movie1_AP	14:44:06.403	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257884	session_matched_folder
+sub-043	ses-02	Movie1_AP	28	268efdb517df1a1b	Movie1_AP	17:39:01.640	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	210	0.937	123.257836	orphan_other_date
+sub-043	ses-02	fMRI2_AP	9	66a5350ab8c8f72a	fMRI2_AP_PhysioLog	17:26:49.026	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	fMRI2_AP	9	d31b42a511fa96bc	fMRI2_AP_PhysioLog	14:32:05.303	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_PA	73	1fc4e511e2ce14d7	resolve_3scan_trace_tra_p3_160_1.4iso_PA	19:14:57.330	2024-07	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\NORM	False	False	96	4.14	123.25785	orphan_other_date
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_PA	73	08aced12ce1ddf36	resolve_3scan_trace_tra_p3_160_1.4iso_PA	16:24:59.639	2025-02	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\NORM	False	False	96	4.14	123.257872	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	70	9422c8c1d4deb85d	resolve_3scan_trace_tra_p3_160_1.4iso_AP_FA	16:24:39.848	2025-02	DERIVED\PRIMARY\DIFFUSION\FA\ND\NORM	False	False	32	4.14	123.257868	session_matched_folder
+sub-043	ses-02	resolve_3scan_trace_tra_p3_160_1.4iso_AP	70	ba20cfe5f246efa3	resolve_3scan_trace_tra_p3_160_1.4iso_AP_FA	19:14:36.306	2024-07	DERIVED\PRIMARY\DIFFUSION\FA\ND\NORM	False	False	32	4.14	123.257846	orphan_other_date
+sub-043	ses-02	Movie2_AP	33	dea30eeb601518dc	Movie2_AP_PhysioLog	17:45:14.949	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	Movie2_AP	33	715d1504b3b5fd0d	Movie2_AP_PhysioLog	14:50:17.653	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	gsld_75TE_PA_3b0	66	8dd84e7453485e57	gsld_75TE_PA_3b0	19:12:41.468	2024-07	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND	False	False	150	3.5	123.257865	orphan_other_date
+sub-043	ses-02	gsld_75TE_PA_3b0	66	18b91cda5afb428f	gsld_75TE_PA_3b0	16:22:46.321	2025-02	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND	False	False	150	3.5	123.257906	session_matched_folder
+sub-043	ses-02	WMn_MPRAGE_sagittal	75	be07c3069304eba5	WMn_MPRAGE_sagittal	19:20:21.181	2024-07	ORIGINAL\PRIMARY\M\NORM\DIS2D\SH5_4\FIL	True	False	192	4.0	123.257864	orphan_other_date
+sub-043	ses-02	WMn_MPRAGE_sagittal	75	14b217a3619111e4	WMn_MPRAGE_sagittal	16:29:26.167	2025-02	ORIGINAL\PRIMARY\M\NORM\DIS2D\SH5_4\FIL	True	False	192	4.0	123.257909	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_AP	23	0464e22cb89dd369	SpinEchoFieldMap_AP	14:41:58.602	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257885	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_AP	23	d2decb4da09b0b90	SpinEchoFieldMap_AP	17:36:40.614	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257838	orphan_other_date
+sub-043	ses-02	SpinEchoFieldMap_PA	25	c7e424ebc0af5169	SpinEchoFieldMap_PA	14:42:10.618	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257884	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_PA	25	0783d79fc5f80cf6	SpinEchoFieldMap_PA	17:36:52.579	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257839	orphan_other_date
+sub-043	ses-02	Control2_AP	52	fe9687de75535d4c	Control2_AP	15:31:06.367	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	20	0.937	123.257895	session_matched_folder
+sub-043	ses-02	Control2_AP	52	7448a03785c43e81	Control2_AP	18:21:43.024	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	20	0.937	123.257855	orphan_other_date
+sub-043	ses-02	T1w_MPR	48	6bbff7e1414c8f40	T1w_MPR	18:16:01.778	2024-07	ORIGINAL\PRIMARY\M\ND\NORM	True	False	208	2.5	123.257861	orphan_other_date
+sub-043	ses-02	T1w_MPR	48	2d6ab81c2b0a1e0b	T1w_MPR	15:26:46.516	2025-02	ORIGINAL\PRIMARY\M\ND\NORM	True	False	208	2.5	123.2579	session_matched_folder
+sub-043	ses-02	gsld_76dir_b2000_1mmiso_AP	62	29492804beb4d368	gsld_76dir_b2000_1mmiso_AP	18:25:44.388	2024-07	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\MOSAIC	False	False	385	3.5	123.257853	orphan_other_date
+sub-043	ses-02	gsld_76dir_b2000_1mmiso_AP	62	8208d9ba39b19b5a	gsld_76dir_b2000_1mmiso_AP	15:36:46.360	2025-02	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\MOSAIC	False	False	385	3.5	123.257896	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_PA	60	3406f2959e09c56f	SpinEchoFieldMap_PA	18:23:45.750	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257856	orphan_other_date
+sub-043	ses-02	SpinEchoFieldMap_PA	60	3840b462a0e702af	SpinEchoFieldMap_PA	15:33:28.408	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	True	1	9.71	123.257896	session_matched_folder
+sub-043	ses-02	Movie3_AP	37	37d4d2b58af7b169	Movie3_AP_PhysioLog	14:54:09.712	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	Movie3_AP	37	b37fc36f54c3b241	Movie3_AP_PhysioLog	17:49:15.273	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	fMRI1_AP	2	4656dc2f38462c2b	fMRI1_AP_SBRef	14:25:29.390	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257867	session_matched_folder
+sub-043	ses-02	Control1_PA	11	66280bbf594c008b	Control1_PA_SBRef	14:33:29.606	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257875	session_matched_folder
+sub-043	ses-02	Control1_PA	11	26fa31dfa84c155d	Control1_PA_SBRef	17:28:18.982	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.25783	orphan_other_date
+sub-043	ses-02	fMRI4_AP	20	5523958851ec307e	fMRI4_AP	14:38:46.462	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	226	0.937	123.257881	session_matched_folder
+sub-043	ses-02	fMRI4_AP	20	06d316f2ab959a35	fMRI4_AP	17:33:41.637	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	226	0.937	123.257835	orphan_other_date
+sub-043	ses-02	Control3_PA	54	6769874b961abf8f	Control3_PA_SBRef	15:33:24.599	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257897	session_matched_folder
+sub-043	ses-02	Control3_PA	54	e45347684e4cabcf	Control3_PA_SBRef	18:23:41.729	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257856	orphan_other_date
+sub-043	ses-02	REST1_AP	42	75aa3111d054fc72	REST1_AP_SBRef	17:55:24.323	2024-07	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257847	orphan_other_date
+sub-043	ses-02	REST1_AP	42	d7835865aa28a741	REST1_AP_SBRef	15:00:06.259	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257898	session_matched_folder
+sub-043	ses-02	Control3_PA	53	ef28b142f45aad63	Control3_PA_PhysioLog	15:31:49.391	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	Control3_PA	53	73b5981d9b0a56f8	Control3_PA_PhysioLog	18:22:07.225	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	Localizer	46	82c2e01ecc2b0348	Localizer	15:18:39.746	2025-02	ORIGINAL\PRIMARY\M\ND\NORM	True	False	3	0.04	123.257956	session_matched_folder
+sub-043	ses-02	Localizer	46	64383e419fa4dc4f	Localizer	18:05:21.884	2024-07	ORIGINAL\PRIMARY\M\ND\NORM	True	False	3	0.04	123.257925	orphan_other_date
+sub-043	ses-02	tfl_b1map_1mmiso	64	c08a421aa25f6b8b	tfl_b1map_1mmiso	19:12:03.158	2024-07	ORIGINAL\PRIMARY\FLIP ANGLE MAP\ND	False	False	15	4.0	123.257853	orphan_other_date
+sub-043	ses-02	tfl_b1map_1mmiso	64	2f6d390d8ba6fbf0	tfl_b1map_1mmiso	16:22:10.656	2025-02	ORIGINAL\PRIMARY\FLIP ANGLE MAP\ND	False	False	15	4.0	123.257896	session_matched_folder
+sub-043	ses-02	Control1_PA	10	2b42e52c867d5398	Control1_PA_PhysioLog	17:28:18.962	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	Control1_PA	10	2e21b17cb39fff91	Control1_PA_PhysioLog	14:33:29.581	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	fMRI1_AP	5	ea380c07b7cc84d7	fMRI1_AP_PhysioLog	14:27:48.698	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	gsld_75TE_PA_3b0	65	f50cab5542cb684f	gsld_75TE_PA_3b0	16:22:46.241	2025-02	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND	False	False	150	3.5	123.257906	session_matched_folder
+sub-043	ses-02	gsld_75TE_PA_3b0	65	7ec066527d5c4ef8	gsld_75TE_PA_3b0	19:12:41.371	2024-07	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND	False	False	150	3.5	123.257865	orphan_other_date
+sub-043	ses-02	fMRI4_AP	21	f84e63d98e527798	fMRI4_AP_PhysioLog	14:41:16.958	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	fMRI4_AP	21	3d036c660314486d	fMRI4_AP_PhysioLog	17:36:04.730	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	Control2_AP	51	711874feb3aa48f5	Control2_AP	15:31:06.321	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	20	0.937	123.257895	session_matched_folder
+sub-043	ses-02	Control2_AP	51	34e8811bf203ffcb	Control2_AP	18:21:42.909	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	20	0.937	123.257855	orphan_other_date
+sub-043	ses-02	fMRI2_AP	7	2cf63a20d34a66cd	fMRI2_AP	17:24:21.402	2024-07	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	117	0.937	123.257825	orphan_other_date
+sub-043	ses-02	fMRI2_AP	7	e594fc84a36d5aea	fMRI2_AP	14:29:46.282	2025-02	ORIGINAL\PRIMARY\M\MB\ND\MOSAIC	True	False	226	0.937	123.257872	session_matched_folder
+sub-043	ses-02	fMRI3_AP	17	dfa2572577d39068	fMRI3_AP_PhysioLog	14:37:04.226	2025-02	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			session_matched_folder
+sub-043	ses-02	fMRI3_AP	17	74cc17ddd39479d7	fMRI3_AP_PhysioLog	17:31:56.840	2024-07	ORIGINAL\PRIMARY\RAWDATA\PHYSIO	False	False	1			orphan_other_date
+sub-043	ses-02	SpinEchoFieldMap_AP	57	853a4a2729973745	SpinEchoFieldMap_AP	15:33:26.479	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257897	session_matched_folder
+sub-043	ses-02	SpinEchoFieldMap_AP	57	8393aae8179a39a2	SpinEchoFieldMap_AP	18:23:43.759	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	True	False	1	9.71	123.257856	orphan_other_date
+sub-043	ses-02	tfl_b1map_1mmiso	63	e45b5e0b09fc9ae2	tfl_b1map_1mmiso	16:22:10.580	2025-02	ORIGINAL\PRIMARY\M\ND	True	False	15	4.0	123.257896	session_matched_folder
+sub-043	ses-02	tfl_b1map_1mmiso	63	67b5ff8bed36d2fe	tfl_b1map_1mmiso	19:12:03.099	2024-07	ORIGINAL\PRIMARY\M\ND	True	False	15	4.0	123.257853	orphan_other_date
+sub-043	ses-02	gsld_76dir_b2000_1mmiso_AP	61	75d121a7066c182c	gsld_76dir_b2000_1mmiso_AP	18:25:44.307	2024-07	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\MOSAIC	False	False	385	3.5	123.257853	orphan_other_date
+sub-043	ses-02	gsld_76dir_b2000_1mmiso_AP	61	1c05c0cc8b3b86c3	gsld_76dir_b2000_1mmiso_AP	15:36:46.260	2025-02	ORIGINAL\PRIMARY\DIFFUSION\NONE\ND\MOSAIC	False	False	385	3.5	123.257896	session_matched_folder
+sub-043	ses-02	Control1_PA	13	5f9bae4c16ee50e9	Control1_PA	17:28:19.151	2024-07	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	20	0.937	123.25783	orphan_other_date
+sub-043	ses-02	Control1_PA	13	362ea35d136b977b	Control1_PA	14:33:29.747	2025-02	ORIGINAL\PRIMARY\P\MB\ND\MOSAIC	False	True	20	0.937	123.257875	session_matched_folder
+sub-043	ses-02	Movie3_AP	34	b63e5fb8ad4179b3	Movie3_AP_SBRef	17:47:07.233	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257842	orphan_other_date
+sub-043	ses-02	Movie3_AP	34	ba23d4921327ca40	Movie3_AP_SBRef	14:51:49.391	2025-02	ORIGINAL\PRIMARY\P\ND\MOSAIC	False	False	2	0.937	123.257893	session_matched_folder
+sub-043	ses-02	fMRI4_AP	18	47f9a9ae709bcf30	fMRI4_AP_SBRef	14:38:46.242	2025-02	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257881	session_matched_folder
+sub-043	ses-02	fMRI4_AP	18	5f63a369574bbdf6	fMRI4_AP_SBRef	17:33:41.372	2024-07	ORIGINAL\PRIMARY\M\ND\MOSAIC	False	False	2	0.937	123.257835	orphan_other_date

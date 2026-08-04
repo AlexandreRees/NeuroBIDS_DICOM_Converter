@@ -1,0 +1,5 @@
+matlab_run_id	stimulus_name	movie_label	eye	expected_volumes	TR	mp4_duration_seconds	scan_duration_seconds	notes
+1	Movie1A.mp4	Movie1	left	210	0.937	196.821333	196.770	Clip/eye from main.m; mp4_duration=ffprobe; scan_duration=210×TR from BIDS
+2	Movie2A.mp4	Movie2	right	210	0.937	196.821333	196.770	Clip/eye from main.m (eye=~change_eye); mp4_duration=ffprobe; scan_duration=210×TR
+3	Movie1B.mp4	Movie3	right	210	0.937	196.821333	196.770	Clip/eye from main.m; Movie1B ↔ ProtocolName Movie3_*; mp4_duration=ffprobe
+4	Movie2B.mp4	Movie4	left	210	0.937	196.821333	196.770	Clip/eye from main.m; Movie2B ↔ ProtocolName Movie4_*; mp4_duration=ffprobe

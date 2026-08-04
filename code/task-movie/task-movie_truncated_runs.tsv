@@ -1,0 +1,8 @@
+relative_bold	n_volumes	TR	scan_duration_s	mp4_duration_s	events_duration_s
+sub-010/ses-01/func/sub-010_ses-01_task-movie_run-01_bold.nii.gz	53	0.937	49.661	196.821333	49.661
+sub-010/ses-01/func/sub-010_ses-01_task-movie_run-03_bold.nii.gz	35	0.937	32.795	196.821333	32.795
+sub-041/ses-01/func/sub-041_ses-01_task-movie_run-05_bold.nii.gz	209	0.937	195.833	196.821333	195.833
+sub-051/ses-01/func/sub-051_ses-01_task-movie_run-07_bold.nii.gz	40	0.937	37.48	196.821333	37.48
+sub-055/ses-01/func/sub-055_ses-01_task-movie_run-05_bold.nii.gz	142	0.937	133.054	196.821333	133.054
+sub-078/ses-02/func/sub-078_ses-02_task-movie_run-01_bold.nii.gz	128	0.937	119.936	196.821333	119.936
+sub-082/ses-01/func/sub-082_ses-01_task-movie_run-05_bold.nii.gz	49	0.937	45.913	196.821333	45.913

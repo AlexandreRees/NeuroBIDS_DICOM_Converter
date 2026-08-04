@@ -1,0 +1,10 @@
+{
+  "bids_dir": "/lustre07/scratch/alexrees/bids",
+  "output_dir": "/lustre07/scratch/alexrees/reports/dwi_qc",
+  "n_dwi_scans": 361,
+  "n_pass": 100,
+  "n_requiring_review": 261,
+  "b0_threshold": 50.0,
+  "generated_utc": "2026-07-23T00:33:18.859551+00:00",
+  "read_only_bids": true
+}
