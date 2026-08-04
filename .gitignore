@@ -183,3 +183,4 @@ pizarro_env/
 
 # Per-subject deidentify shards (source IDs / generated dumps)
 reports/shards/
+reports/openneuro_release/*_console.log
