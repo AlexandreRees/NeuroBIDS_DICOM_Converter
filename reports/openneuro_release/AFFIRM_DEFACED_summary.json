@@ -1,0 +1,15 @@
+{
+  "generated_utc": "2026-08-04T14:35:17Z",
+  "verdict": "PASS",
+  "n_checked": 791,
+  "n_ok": 791,
+  "n_fail": 0,
+  "by_modality": {
+    "FLAIR": 136,
+    "T1w": 385,
+    "TB1TFL": 270
+  },
+  "retry11_ses02_checked": 62,
+  "tsv": "/lustre07/scratch/alexrees/reports/openneuro_release/AFFIRM_DEFACED_ANAT_IDENTITY.tsv",
+  "certificate": "/lustre07/scratch/alexrees/reports/openneuro_release/AFFIRM_DEFACED.md"
+}
