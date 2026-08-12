@@ -1,0 +1,6 @@
+PASS
+No forbidden file types detected.
+No obvious McGill/research infrastructure paths detected.
+No obvious PHI *values* detected.
+No obvious secret patterns detected.
+No files larger than 50 MB detected.

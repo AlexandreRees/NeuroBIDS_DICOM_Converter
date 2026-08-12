@@ -1,0 +1,14 @@
+services:
+  neuropipeline:
+    build: .
+    image: neuropipeline:latest
+    working_dir: /data
+    volumes:
+      - ${HOST_DATA:-./data}:/data
+    environment:
+      - INPUT_DIR=/data/input
+      - OUTPUT_DIR=/data/output
+    # Example:
+    # docker compose run --rm neuropipeline convert --input /data/input --output /data/output
+    entrypoint: ["python", "-m", "neuro_pipeline"]
+    command: ["--help"]

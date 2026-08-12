@@ -1,0 +1,77 @@
+# Smart filename rules.
+# Keys are matched case-insensitively against SeriesDescription / ProtocolName.
+# First matching rule wins. More specific patterns must appear before broader ones.
+# If nothing matches, the original SeriesDescription is kept (sanitized).
+
+rules:
+  - pattern: rest_ap
+    match: contains
+    name: REST_AP
+
+  - pattern: rest_pa
+    match: contains
+    name: REST_PA
+
+  - pattern: rest[_-]?(ap|pa)
+    match: regex
+    name: REST
+
+  - pattern: mprage
+    match: contains
+    name: T1w
+
+  - pattern: t1_mprage
+    match: contains
+    name: T1w
+
+  - pattern: t1w
+    match: contains
+    name: T1w
+
+  - pattern: flair
+    match: contains
+    name: FLAIR
+
+  - pattern: movie
+    match: contains
+    name: Movie
+
+  - pattern: ep2d_diff
+    match: contains
+    name: DWI
+
+  - pattern: dwi
+    match: contains
+    name: DWI
+
+  - pattern: diffuse
+    match: contains
+    name: DWI
+
+  - pattern: bold
+    match: contains
+    name: BOLD
+
+  - pattern: gre_field_mapping
+    match: contains
+    name: fmap
+
+  - pattern: field.?map
+    match: regex
+    name: fmap
+
+  - pattern: localizer
+    match: contains
+    name: Localizer
+
+  - pattern: scout
+    match: contains
+    name: Scout
+
+  - pattern: t2[_ ]?space
+    match: regex
+    name: T2w
+
+  - pattern: t2w
+    match: contains
+    name: T2w

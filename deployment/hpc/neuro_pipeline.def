@@ -1,0 +1,39 @@
+# NeuroPipeline DICOM Converter — Apptainer / Singularity
+From: docker://python:3.12-slim-bookworm
+
+%post
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        curl ca-certificates pigz unzip dcm2niix || true
+    if ! command -v dcm2niix >/dev/null 2>&1; then
+        curl -fsSL -o /tmp/dcm2niix.zip \
+          https://github.com/rordenlab/dcm2niix/releases/latest/download/dcm2niix_lnx.zip
+        unzip -o /tmp/dcm2niix.zip -d /usr/local/bin
+        chmod +x /usr/local/bin/dcm2niix || true
+        rm -f /tmp/dcm2niix.zip
+    fi
+    pip install --upgrade pip
+    if [ -d /opt/src/neuro_pipeline ]; then
+        pip install /opt
+    fi
+
+%files
+    ../../pyproject.toml /opt/pyproject.toml
+    ../../README.md /opt/README.md
+    ../../requirements.txt /opt/requirements.txt
+    ../../src /opt/src
+    ../../configs /opt/configs
+    ../../templates /opt/templates
+
+%environment
+    export PYTHONUNBUFFERED=1
+
+%runscript
+    exec python -m neuro_pipeline "$@"
+
+%help
+    Build:
+      apptainer build neuropipeline.sif deployment/hpc/neuro_pipeline.def
+
+    Run:
+      apptainer run neuropipeline.sif convert --input $PWD/dicoms --output $PWD/out --batch

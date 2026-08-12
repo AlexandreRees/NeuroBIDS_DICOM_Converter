@@ -1,0 +1,65 @@
+plugins:
+
+  anat:
+    enabled: true
+    patterns:
+      - name: MPRAGE
+        regex: ".*MPRAGE.*"
+        label: "T1 weighted MRI"
+        bids:
+          datatype: anat
+          suffix: T1w
+      - name: FLAIR
+        regex: ".*FLAIR.*"
+        label: "T2-FLAIR MRI"
+        bids:
+          datatype: anat
+          suffix: FLAIR
+      - name: T1w
+        regex: ".*T1[wW].*"
+        label: "T1 weighted MRI"
+        bids:
+          datatype: anat
+          suffix: T1w
+      - name: T2w
+        regex: ".*T2[wW].*"
+        label: "T2 weighted MRI"
+        bids:
+          datatype: anat
+          suffix: T2w
+
+  dwi:
+    enabled: true
+    patterns:
+      - name: DWI
+        regex: ".*diff.*"
+        label: "Diffusion weighted MRI"
+        bids:
+          datatype: dwi
+          suffix: dwi
+      - name: DTI
+        regex: ".*DTI.*"
+        label: "Diffusion tensor MRI"
+        bids:
+          datatype: dwi
+          suffix: dwi
+
+  func:
+    enabled: true
+    patterns:
+      - name: BOLD
+        regex: ".*(bold|rest|task|fmri).*"
+        label: "Functional BOLD MRI"
+        bids:
+          datatype: func
+          suffix: bold
+
+  fmap:
+    enabled: true
+    patterns:
+      - name: Fieldmap
+        regex: ".*(field.?map|fmap|gre_field).*"
+        label: "Fieldmap MRI"
+        bids:
+          datatype: fmap
+          suffix: fmap
