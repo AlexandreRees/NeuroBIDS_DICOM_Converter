@@ -403,4 +403,8 @@ installer/
 
 ## License
 
-Apache-2.0
+MIT
+
+Third-party tools bundled or used by this application (for example **dcm2niix**)
+retain their own licenses and are **not** covered by this MIT license.
+See `third_party/licenses/`.
