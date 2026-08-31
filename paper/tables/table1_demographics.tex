@@ -1,0 +1,51 @@
+%% Participant demographics by cohort and session (age omitted).
+%% Layout matches reports/participant_summary/Participant_Demographics_by_Session_no_age.png
+%% Values match reports/participant_summary/Participant_Demographics_by_Session_no_age.*
+\begin{table}[htbp]
+\centering
+\caption{Participant demographic characteristics by cohort and imaging session (age omitted). Each cohort has ses-01 and ses-02 columns. Values are $n$ or $n$ (\%) as indicated.}
+\label{tab:demographics}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.28}
+%% tabular (not tabularx) inside resizebox: table keeps the figure's
+%% 11-column layout and single-line cells, then scales to \textwidth.
+\noindent\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}l*{10}{c}@{}}
+\toprule
+\textcolor{headergray}{\textbf{Characteristic}} &
+\multicolumn{2}{c}{\textcolor{headergray}{\textbf{Control}}} &
+\multicolumn{2}{c}{\textcolor{headergray}{\textbf{\shortstack[c]{Optic neuritis\\(ON)}}}} &
+\multicolumn{2}{c}{\textcolor{headergray}{\textbf{\shortstack[c]{Traumatic optic\\neuropathy\\(TON)}}}} &
+\multicolumn{2}{c}{\textcolor{headergray}{\textbf{Glaucoma}}} &
+\multicolumn{2}{c@{}}{\textcolor{headergray}{\textbf{Total}}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(l){10-11}
+ & \textcolor{headergray}{\textbf{ses-01}} & \textcolor{headergray}{\textbf{ses-02}}
+ & \textcolor{headergray}{\textbf{ses-01}} & \textcolor{headergray}{\textbf{ses-02}}
+ & \textcolor{headergray}{\textbf{ses-01}} & \textcolor{headergray}{\textbf{ses-02}}
+ & \textcolor{headergray}{\textbf{ses-01}} & \textcolor{headergray}{\textbf{ses-02}}
+ & \textcolor{headergray}{\textbf{ses-01}} & \textcolor{headergray}{\textbf{ses-02}} \\
+\midrule
+Participants, $n$
+  & 55 & 41
+  & 7 & 1
+  & 2 & 1
+  & 19 & 9
+  & 83 & 52 \\
+\rowcolor{tablealt}
+Female, $n$ (\%)
+  & 35 (63.6\%) & 25 (61.0\%)
+  & 6 (85.7\%) & 1 (100.0\%)
+  & 0 (0.0\%) & 0 (0.0\%)
+  & 5 (26.3\%) & 3 (33.3\%)
+  & 46 (55.4\%) & 29 (55.8\%) \\
+Male, $n$ (\%)
+  & 20 (36.4\%) & 16 (39.0\%)
+  & 1 (14.3\%) & 0 (0.0\%)
+  & 2 (100.0\%) & 1 (100.0\%)
+  & 14 (73.7\%) & 6 (66.7\%)
+  & 37 (44.6\%) & 23 (44.2\%) \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

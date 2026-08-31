@@ -4,17 +4,16 @@ Methods, quality-control audits, and reproducibility code for the Shmuel Lab mul
 
 ## 1. Overview
 
-This GitHub repository contains **software, lightweight metadata, documentation, and audit reports** used to build and validate a BIDS-compliant MRI release.
+This GitHub repository contains **software, documentation, manuscript materials, and audit reports** used to build and validate a BIDS-compliant MRI release.
 
-**MRI imaging data are not stored in this repository.**  
+**MRI imaging data, DICOM inventories, date-shift keys, and participant-level mapping tables are not stored in this repository.**  
 Public imaging products will be distributed through the designated data platform (e.g., OpenNeuro / institutional release), separate from GitHub.
 
 GitHub contains only:
 
 - processing and audit **code**
-- **metadata** tables (mappings, inventories; no DICOM volumes)
-- **documentation** and manuscript materials
-- **audit / QC reports** (text tables and markdown)
+- **documentation** and the Data in Brief manuscript (`paper/`)
+- **audit / QC reports** (text tables and markdown; BIDS `sub-` identifiers only)
 
 ## 2. Scientific objective
 
@@ -24,16 +23,15 @@ Support transparent, fail-closed curation of a longitudinal 3T Prisma dataset sp
 
 ```
 code/          # Python pipelines, BIDS builders, QC/audit scripts
-scripts/       # Slurm / bash launchers (Compute Canada / Narval)
-reports/       # Scientific audits, QC summaries, pre-commit Git reports
-metadata/      # Participant/session mappings and light inventories
-manuscript/    # Scientific Data drafting materials
+paper/         # Data in Brief manuscript (LaTeX, protocol figures)
+manuscript/    # Earlier Scientific Data drafting notes
+reports/       # Scientific audits, QC summaries (no PHI tables)
 tests/         # Unit / smoke tests
 CITATION.cff   # Citation metadata
-.gitignore     # Excludes imaging trees and bulky generated dumps
+.gitignore     # Excludes imaging trees, PHI metadata, bulky dumps
 ```
 
-Ignored by policy (not on GitHub): `bids/`, `sourcedata/`, `raw_original/`, `derivatives/`, `release_dataset/`, containers/envs, NIfTI/DICOM binaries.
+Ignored by policy (not on GitHub): `bids/`, `sourcedata/`, `raw_original/`, `derivatives/`, `release_dataset/`, `metadata/` (participant mappings, ages, date shifts, DICOM inventories), containers/envs, NIfTI/DICOM binaries.
 
 ## 4. Reproducibility workflow
 
@@ -49,8 +47,8 @@ Ignored by policy (not on GitHub): `bids/`, `sourcedata/`, `raw_original/`, `der
 |---------|----------|
 | DICOM / NIfTI volumes | Institutional storage + public data platform (not GitHub) |
 | BIDS tree | Generated locally / released externally |
-| Code & audits | This repository |
-| Participant mapping | `metadata/` (pseudonymous BIDS labels) |
+| Code, manuscript, audits | This repository |
+| Participant mapping / date shifts | Institutional storage only (not GitHub) |
 
 ## 6. Quality control
 

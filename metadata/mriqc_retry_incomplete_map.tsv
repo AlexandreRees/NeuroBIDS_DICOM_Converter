@@ -1,5 +1,0 @@
-array_task_id	subject	session	mriqc_t1w	expected_t1w	mriqc_bold	expected_bold
-3	sub-002	ses-01	3	3	12	13
-20	sub-011	ses-01	3	3	12	13
-70	sub-039	ses-02	2	3	12	12
-98	sub-058	ses-01	2	3	12	12

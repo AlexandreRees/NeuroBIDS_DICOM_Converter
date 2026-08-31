@@ -1,0 +1,40 @@
+\section{Quality Control}
+\label{sec:quality_control}
+
+\begin{figure}[htbp]
+    \centering
+    % \includegraphics[width=\linewidth]{figures/Figure_4.pdf}
+    \fbox{\parbox[c][0.28\linewidth][c]{0.92\linewidth}{\centering
+    Placeholder for Figure~4 --- Quality control / completeness.\\
+    Add \texttt{figures/Figure\_4.pdf} and uncomment \texttt{\textbackslash includegraphics}.}}
+    \caption{Overview of MRIQC and diffusion QC coverage and outcomes for the released dataset.}
+    \label{fig:quality_control}
+\end{figure}
+
+Quality control (QC) for this release comprises two complementary layers: (i)~automated image-quality metrics (IQMs) from MRIQC applied to magnitude anatomical T1-weighted and functional BOLD series in the BIDS tree, and (ii)~visual / protocol QC of the packaged TractoFlow-normalized diffusion derivative using \texttt{scilus/dmriqc\_flow} reports provided by the collaborator share. QC outputs are intended to characterise acquisitions and to prioritise inspection; they were not used as automatic exclusion criteria unless a specific artefact states otherwise. Five T1w volumes were subsequently withdrawn from the packaged tree after visual inspection found them unusable (\texttt{docs/quality\_control/excluded\_t1w.md}). Tabular summaries and report packages are distributed under \texttt{docs/quality\_control/}, with native MRIQC JSON under \texttt{derivatives/mriqc/}.
+
+\subsection{Sequences included in QC}
+
+MRIQC was applied to magnitude \texttt{T1w} volumes under \texttt{anat/} and magnitude BOLD series under \texttt{func/} (\texttt{task-rest}, \texttt{task-movie}, \texttt{task-fmri}, and \texttt{task-control}). The expected set for this layer is defined as every magnitude T1w or BOLD NIfTI present in the release BIDS tree (2007 expected runs across 84 participants and 135 sessions). FLAIR, B1-mapping (\texttt{TB1TFL}), localizers, phase images, spin-echo field maps, and raw BIDS \texttt{dwi/} series were not scored by MRIQC in the packaged campaign.
+
+Diffusion QC covers the TractoFlow \texttt{Normalize\_DWI} derivative in \texttt{derivatives/tractoflow\_normalize\_dwi/} for 66 subjects (one session each: 49 Control and 17 Glaucoma), corresponding to multi-shell acquisitions with $b=0/1000/2000$~s/mm$^2$ and 77 directions. This QC evaluates the normalized DWI and a T1 volume registered into diffusion space; it is not a substitute for QC of all raw BIDS diffusion runs (more subjects have raw \texttt{dwi/} than have the normalized derivative).
+
+\subsection{MRIQC procedures}
+
+MRIQC jobs targeted the \texttt{nipreps/mriqc:24.0.2} container; per-run JSON record \texttt{provenance.version} \texttt{24.1.0.dev0+gd5b13cb5.d20240826} for all successful outputs. Anatomical jobs used modality \texttt{T1w} and functional jobs modality \texttt{bold}. Native IQMs (for example contrast-to-noise and coefficient of joint variation for T1w; mean framewise displacement, temporal SNR, and DVARS-related metrics for BOLD) were written as JSON under \texttt{derivatives/mriqc/} and aggregated into \texttt{docs/quality\_control/mriqc/mriqc\_metrics.csv}. HTML/SVG participant reports are not packaged because MRIQC was run on pre-deface T1w inputs and the HTML mosaics would expose identifiable facial structure; users should rely on the JSON IQMs and publication tables under \texttt{docs/quality\_control/mriqc/}.
+
+In addition to native MRIQC metrics, project-derived exploratory outlier flags were generated with Tukey / $z$-score rules and stored in \texttt{mriqc\_outliers.csv} (\texttt{source=project\_derived}). These flags mark review priority only and do not remove data from the BIDS tree. Session-level aggregates are provided in \texttt{mriqc\_qc\_summary.csv}. Protocol-aware interpretation is recommended for T1w IQMs because standard MPRAGE and white-matter-nulled MPRAGE differ systematically (see \texttt{figures\_and\_tables/t1w\_iqm\_by\_protocol.tsv}).
+
+\subsection{Diffusion QC procedures (collaborator dmriqc)}
+
+Visual diffusion QC reports were generated with \texttt{scilus/dmriqc\_flow} using the \texttt{input\_qc} profile on the collaborator TractoFlow \texttt{Normalize\_DWI} outputs (denoising, topup/eddy distortion and motion correction, N4 bias-field correction, resampling to 1~mm isotropic, and intensity normalization) together with T1 registered into diffusion space. The packaged HTML reports are \texttt{QC\_Raw\_DWI/report\_raw\_dwi.html} (per-subject DWI mosaics animated across the 77 volumes), \texttt{QC\_Raw\_T1/report\_raw\_t1.html} (T1 in diffusion space), and \texttt{QC\_DWI\_Protocol/report\_dwi\_protocol.html} (gradient-scheme / $b$-value protocol check), under \texttt{docs/quality\_control/dwi/}. Folder names inherited from dmriqc\_flow refer to the QC profile; the inputs were the normalized volumes, not the raw BIDS \texttt{dwi/} runs. Native collaborator subject IDs in the original reports were remapped to BIDS \texttt{sub-XXX\_ses-YY}; the identity mapping is not redistributed. Sampled mosaics are brain-FOV and do not show identifiable faces.
+
+\subsection{QC results}
+
+For MRIQC, 2003 of 2007 expected magnitude T1w/BOLD runs yielded IQMs (99.8\% coverage), spanning all 84 participants. By modality this corresponds to 380/382 T1w and 1623/1625 magnitude BOLD successes (BOLD successes by task: rest 135, movie 536, fmri 551, control 401). Four remaining expected acquisitions have no IQM and are documented as pathological rather than software failures: two truncated \texttt{task-fmri} BOLD series (\texttt{sub-002} ses-01 run-07, 4 volumes; \texttt{sub-011} ses-01 run-03, 3 volumes) and two out-of-protocol or empty-corrected \texttt{run-03} T1w volumes (\texttt{sub-039} ses-02, \texttt{sub-058} ses-01). A third pathological T1w (\texttt{sub-066} ses-02 run-03) was later withdrawn from the release after visual QC. No expected runs remained in an unqueued \texttt{MRIQC\_NOT\_RUN} state in the packaged inventory.
+
+Among successful BOLD IQMs, the cohort median mean framewise displacement was approximately 0.181~mm and the median temporal SNR was approximately 20.6. For successful T1w IQMs, cohort medians included CNR $\approx$ 1.50, CJV $\approx$ 0.63, and total SNR $\approx$ 5.53 (values should be stratified by MPRAGE versus white-matter-nulled protocols). Project-derived outlier tables contain 724 exploratory flags (most frequent metrics include \texttt{aqi}, \texttt{snr}, \texttt{gcor}, \texttt{tsnr}, and \texttt{fd\_mean}); these labels support transparent reuse and visual prioritisation only.
+
+For diffusion QC, all 66 packaged \texttt{Normalize\_DWI} subjects are represented in the dmriqc HTML report set (DWI mosaics, T1-in-DWI mosaics, and protocol check). These reports enable visual assessment of residual artefacts, brain coverage, and adherence of the gradient table to the expected multi-shell scheme; they do not provide MRIQC-style scalar IQMs for every raw BIDS diffusion series. Coverage details are recorded in \texttt{docs/quality\_control/dwi/normalize\_dwi\_coverage.json}.
+
+\input{tables/table4_protocol_completeness}

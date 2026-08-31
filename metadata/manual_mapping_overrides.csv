@@ -1,3 +1,0 @@
-path,canonical_subject,canonical_session,status,reason,confidence
-/project/def-amirs/raw_original/Control/SUBC44_Session02_2025FEB19,SUBC044,ses-02,approved_override,"PatientID conflict interpreted as scanner/anonymization variation. Folder name and DICOM metadata consistently identify the same participant.",high
-/project/def-amirs/raw_original/Control/SUBC57_Session01_2025AUG11,SUBC057,ses-01,approved_override,"Same-day restudy on MAGNETOM Prisma (2025-08-11): two scanner timestamp PatientIDs (~13:54 and ~15:38) with complementary series (func/movie then anat/DWI). Folder and DICOM paths consistently identify SUBC057; not a mixed-subject collision.",high

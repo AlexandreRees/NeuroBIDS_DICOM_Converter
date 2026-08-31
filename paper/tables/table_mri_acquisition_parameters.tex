@@ -1,0 +1,60 @@
+%% MRI acquisition parameters (representative values from released BIDS sidecars).
+%% Companion to the session-organisation paragraph in sec:mri_acquisition.
+%% Diffusion rows align with docs/diffusion/diffusion_acquisition_parameters.tsv.
+\begin{table}[htbp]
+\centering
+\caption{MRI acquisition parameters for the principal sequences in the release.
+Values are representative parameters taken from packaged BIDS JSON sidecars
+(Siemens Prisma~3\,T, 64-channel head/neck coil). Exact run counts and console
+order varied across sessions; \texttt{run} indices are assigned at conversion.
+Diffusion rows distinguish raw gSlider slab geometry from the reconstructed
+1\,mm \texttt{Normalize\_DWI} derivative. Localizer series were acquired for
+prescription but are not packaged in the release.}
+\label{tab:mri_acq_parameters}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{adjustbox}{max width=\textwidth,center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}
+                >{\raggedright\arraybackslash}p{2.4cm}
+                >{\raggedright\arraybackslash}p{2.1cm}
+                c
+                >{\raggedright\arraybackslash}p{2.0cm}
+                >{\raggedright\arraybackslash}p{3.6cm}@{}}
+\toprule
+\textcolor{headergray}{\textbf{Sequence}} &
+\textcolor{headergray}{\textbf{ProtocolName}} &
+\textcolor{headergray}{\textbf{Voxel size (mm)}} &
+\textcolor{headergray}{\textbf{TR / TE (/ TI)}} &
+\textcolor{headergray}{\textbf{FA / accel.}} &
+\textcolor{headergray}{\textbf{Notes}} \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Anatomical}} \\
+\midrule
+T1w MPRAGE & \texttt{T1w\_MPR} & $0.8$ iso & $2500$ / $2.22$ / $1000$\,ms & $8^\circ$; iPAT\,2 & Typically two runs/session; \texttt{run-02} usually reconstructed with Siemens \texttt{NORM} \\
+\rowcolor{tablealt}
+WMn MPRAGE & \texttt{WMn\_MPRAGE\_sagittal} & $1.0$ iso & $4000$ / $3.82$ / $500$\,ms & $7^\circ$; iPAT\,2 & White-matter-nulled; usually \texttt{run-03\_T1w} \\
+3D FLAIR & \texttt{Sag Flair 3D-0.8} & $0.8$ iso & $6000$ / $357$ / $2200$\,ms & $120^\circ$; iPAT\,2 & One run/session in most visits \\
+\rowcolor{tablealt}
+B1 map & \texttt{tfl\_b1map\_1mmiso} & $\sim 3.4\times3.4\times10$ & $4000$ / $1.83$\,ms & $8^\circ$ & 15 slices (thickness 8\,mm, spacing 10\,mm); gSlider B1 calibration (\texttt{TB1TFL}) \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Functional BOLD (MB8 EPI; tasks share geometry)}} \\
+\midrule
+BOLD (all tasks) & \texttt{REST*}/\texttt{Movie*}/\texttt{fMRI*}/\texttt{Control*} & $2.0$ iso & $937$ / $37$\,ms & $52^\circ$; MB\,8 & Matrix $104\times104\times88$; BW $\sim$2290\,Hz/Px; PE mainly AP (some control runs PA). Representative lengths: rest $\sim$320, movie $\sim$210, fmri $\sim$226, control $\sim$20 vols \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Field maps}} \\
+\midrule
+Spin-echo EPI fmap & \texttt{SpinEchoFieldMap\_AP/PA} & $2.0$ iso & $9710$ / $66$\,ms & $90^\circ$ & Opposing PE (\texttt{dir-AP}/\texttt{dir-PA}); matched to BOLD FOV/matrix for distortion correction \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Diffusion}} \\
+\midrule
+gSlider-SMS AP & \texttt{gsld\_76dir\_b2000\_1mmiso\_AP} & Raw $1\times1\times5$ (30 slabs); recon.\ $1$ iso & $3500$ / $75$\,ms & $90^\circ$; MB\,2; iPAT\,3; PF\,6/8 & Multi-shell $b=0/1000/2000$\,s/mm$^2$. Raw series retain RF encodings (modal 385 time points). Analysis-ready: $4\,b0+37+36=77$ vols in \texttt{Normalize\_DWI} \\
+\rowcolor{tablealt}
+gSlider PA $b=0$ & \texttt{gsld\_75TE\_PA\_3b0} & Raw $1\times1\times5$ & $3500$ / $75$\,ms & $90^\circ$; MB\,2; iPAT\,3; PF\,6/8 & Reverse-PE $b=0$ references (modal 5 vols); for topup \\
+RESOLVE trace AP & \texttt{resolve\_\ldots{}1.4iso\_AP} & $\sim 1.38\times1.38\times1.82$ & $4140$ / $51$\,ms & $180^\circ$; iPAT\,3 & Clinical RESOLVE; $b=0/1000$\,s/mm$^2$ (modal 15 vols); TRACEW products also released \\
+\rowcolor{tablealt}
+RESOLVE PA & \texttt{resolve\_\ldots{}1.4iso\_PA} & $\sim 1.38\times1.38\times1.82$ & $\sim 24.8$\,s / $51$\,ms & $180^\circ$; iPAT\,3 & Primarily reverse-PE $b=0$ (modal 3 vols) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

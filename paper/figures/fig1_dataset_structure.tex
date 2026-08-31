@@ -1,0 +1,58 @@
+%% Conceptual BIDS dataset-structure tree for Figure 1.
+%% Requires: \usepackage[edges]{forest}
+\begin{forest}
+  for tree={
+    font=\ttfamily\scriptsize,
+    grow'=0,
+    folder,
+    l sep=0.85em,
+    s sep=0.02em,
+    inner ysep=0.5pt,
+  }
+  [release\_dataset
+    [dataset\_description.json]
+    [participants.tsv / participants.json]
+    [README.md / CHANGES]
+    [task-movie.json / task-*\_events.json]
+    [sub-XXX
+      [ses-XX
+        [anat/
+          [sub-001\_ses-01\_run-01\_T1w.nii.gz / .json]
+          [sub-001\_ses-01\_run-03\_T1w.nii.gz / .json (WMn)]
+          [sub-001\_ses-01\_run-01\_FLAIR.nii.gz / .json]
+          [sub-001\_ses-01\_run-01\_TB1TFL.nii.gz / .json]
+        ]
+        [func/
+          [sub-001\_ses-01\_task-rest\_run-01\_bold.nii.gz / .json]
+          [sub-001\_ses-01\_task-movie\_run-01\_bold.nii.gz / .json]
+          [sub-001\_ses-01\_task-fmri\_run-01\_bold.nii.gz / .json]
+          [sub-001\_ses-01\_task-control\_run-01\_bold.nii.gz / .json]
+          [sub-001\_ses-01\_task-fmri\_run-01\_sbref.nii.gz / .json]
+          [sub-001\_ses-01\_task-fmri\_run-01\_events.tsv]
+          [sub-001\_ses-01\_task-rest\_run-01\_recording-pulse\_physio.tsv.gz / .json]
+        ]
+        [dwi/
+          [sub-001\_ses-01\_run-01\_dwi.nii.gz / .json]
+          [sub-001\_ses-01\_run-01\_dwi.bval / .bvec]
+        ]
+        [fmap/
+          [sub-001\_ses-01\_dir-AP\_run-01\_epi.nii.gz / .json]
+          [sub-001\_ses-01\_dir-PA\_run-01\_epi.nii.gz / .json]
+        ]
+        [sub-001\_ses-01\_scans.tsv]
+      ]
+    ]
+    [derivatives/
+      [mriqc/]
+      [tractoflow\_normalize\_dwi/]
+    ]
+    [code/
+      [task-movie/]
+      [task-fmri dictionaries / scripts]
+    ]
+    [docs/
+      [inventory / events / physiology]
+      [deidentification / bids\_validation / QC]
+    ]
+  ]
+\end{forest}

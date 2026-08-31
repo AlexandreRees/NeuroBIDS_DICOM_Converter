@@ -1,0 +1,117 @@
+%% =============================================================================
+%% Data in Brief — Data Descriptor manuscript
+%% Main document controller (do not place body text here)
+%% Compatible with Overleaf (TeX Live) and local latexmk / pdflatex + bibtex
+%% =============================================================================
+\documentclass[preprint,12pt]{elsarticle}
+
+%% --- Encoding / fonts --------------------------------------------------------
+\usepackage[utf8]{inputenc}   % Safe for older engines; harmless with modern TeX
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%% --- Mathematics / symbols ---------------------------------------------------
+\usepackage{amsmath,amssymb}
+
+%% --- Graphics ----------------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage[table]{xcolor}    % load before forest to avoid option clash
+\usepackage[edges]{forest}    % Figure 1 dataset-structure tree
+\usepackage{adjustbox}        % fit Fig. 1 within text width and page height
+\definecolor{tablealt}{RGB}{245,247,250}
+\definecolor{headergray}{RGB}{55,65,81}
+
+%% --- Tables ------------------------------------------------------------------
+\usepackage{booktabs}         % Clean horizontal rules only
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+
+%% --- Captions / floats -------------------------------------------------------
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+%% --- Lists -------------------------------------------------------------------
+\usepackage{enumitem}
+
+%% --- URLs / hyperlinks -------------------------------------------------------
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}  % hidelinks: cleaner preprint look
+
+%% --- Bibliography (Elsevier numeric) -----------------------------------------
+%% Style applied at \bibliographystyle below; BibTeX keys in references.bib
+
+%% --- Misc --------------------------------------------------------------------
+\usepackage{xspace}
+
+%% Optional: uncomment if you need landscape supplementary tables
+% \usepackage{pdflscape}
+
+%% -----------------------------------------------------------------------------
+\begin{document}
+
+\begin{frontmatter}
+
+\title{NeuroPipeline DICOM Converter: DICOM to BIDS in one workflow}
+
+%% Author block — replace placeholders; add \fnref / \corref as needed
+\author[author1]{[TODO: Author Name]}
+\author[author2]{[TODO: Author Name]}
+%% \author[author3]{[TODO: Author Name]\corref{cor1}}
+%% \cortext[cor1]{Corresponding author. Email: [TODO: email@institution.edu]}
+
+\address[author1]{[TODO: Affiliation 1]}
+\address[author2]{[TODO: Affiliation 2]}
+
+\begin{abstract}
+\input{sections/01_abstract}
+\end{abstract}
+
+\begin{keyword}
+[TODO: Keyword 1] \sep
+[TODO: Keyword 2] \sep
+[TODO: Keyword 3] \sep
+[TODO: Keyword 4]
+%% Maximum 7 keywords. Remove unused placeholders before submission.
+\end{keyword}
+
+\end{frontmatter}
+
+%% --- Specifications table (unnumbered front matter) --------------------------
+\input{tables/specifications_table}
+
+%% --- Main manuscript sections ------------------------------------------------
+\input{sections/02_background_motivation}
+\input{sections/03_data_description}
+\input{sections/04_mri_data_acquisition}
+\input{sections/05_experimental_paradigms}
+\input{sections/06_data_processing}
+\input{sections/07_quality_control}
+\input{sections/08_data_records}
+\input{sections/09_technical_validation}
+\input{sections/10_usage_notes}
+\input{sections/11_limitations}
+\input{sections/12_ethics_statement}
+\input{sections/13_data_availability}
+\input{sections/14_author_contributions}
+\input{sections/15_acknowledgements}
+\input{sections/16_declaration_competing_interest}
+
+%% --- References --------------------------------------------------------------
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+%% --- Supplementary material (optional appendix) ------------------------------
+%% Overleaf / journal may prefer a separate supplementary PDF.
+%% Uncomment the block below to compile supplementary tables/figures
+%% as an appendix in this document for internal review.
+%
+% \appendix
+% \section*{Supplementary material}
+% \input{supplementary/supplementary_tables}
+% \input{supplementary/supplementary_figures}
+
+\end{document}

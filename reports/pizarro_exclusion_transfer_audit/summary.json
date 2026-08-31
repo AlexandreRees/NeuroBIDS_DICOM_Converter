@@ -1,0 +1,34 @@
+{
+  "transfer_n": 264,
+  "empty_run03_in_transfer": [],
+  "wmn_run03_in_transfer": [],
+  "low_cnr_in_transfer": [
+    "sub-013_ses-01_run-01_T1w",
+    "sub-040_ses-01_run-01_T1w",
+    "sub-040_ses-02_run-01_T1w",
+    "sub-066_ses-01_run-01_T1w",
+    "sub-071_ses-01_run-01_T1w",
+    "sub-076_ses-01_run-01_T1w",
+    "sub-078_ses-01_run-01_T1w",
+    "sub-082_ses-01_run-01_T1w"
+  ],
+  "uncertain_in_transfer": [
+    "sub-017_ses-01_run-02_T1w",
+    "sub-018_ses-01_run-02_T1w",
+    "sub-029_ses-01_run-02_T1w",
+    "sub-067_ses-01_run-02_T1w",
+    "sub-080_ses-01_run-01_T1w"
+  ],
+  "auc_norm_baseline": 0.9643021120293848,
+  "auc_qc_baseline": 0.9620148637489678,
+  "in_bids_empty": {
+    "sub-039_ses-02_run-03_T1w": true,
+    "sub-058_ses-01_run-03_T1w": true,
+    "sub-066_ses-02_run-03_T1w": true
+  },
+  "in_release_empty": {
+    "sub-039_ses-02_run-03_T1w": true,
+    "sub-058_ses-01_run-03_T1w": true,
+    "sub-066_ses-02_run-03_T1w": false
+  }
+}

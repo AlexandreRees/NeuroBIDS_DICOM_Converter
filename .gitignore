@@ -19,7 +19,7 @@ tmp/
 tmp_processing/
 pizarro_test_inputs/
 pizarro_transfer_learning/
-figures/
+/figures/
 
 # ----- Backups / archives -----
 archive_old_bids_backups/
@@ -214,3 +214,26 @@ venvs/
 *.ext2
 *.pmu
 
+
+# === Privacy: never commit participant-level or reidentification material ===
+/metadata/
+**/deidentify_date_shifts.csv
+**/deidentify_date_shifts.csv.lock
+**/deidentify_report.csv
+**/deidentify_manifest.json
+**/patient_id*
+reports/bids_plan.tsv
+reports/master_manifest.tsv
+reports/mapping_audit_final/
+paper/build/*.aux
+paper/build/*.log
+paper/build/*.out
+paper/figures/*.aux
+paper/figures/*.log
+paper/figures/__pycache__/
+paper/figures/*.pkl
+# Face QC / defacing test pixels
+reports/caideface_test_*/
+reports/defacing_test_*/
+reports/defacing_redo_qc/
+reports/defacing_validation_extremes/

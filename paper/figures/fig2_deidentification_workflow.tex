@@ -1,0 +1,70 @@
+%% Horizontal de-identification workflow (orange–blue). No title banner.
+\begin{tikzpicture}[
+  font=\sffamily\footnotesize,
+  >=Latex,
+  box/.style={
+    draw=blue!55!black,
+    line width=0.55pt,
+    rounded corners=2.5pt,
+    align=center,
+    inner xsep=5pt,
+    inner ysep=4pt,
+    text width=2.45cm,
+    minimum height=1.05cm
+  },
+  boxblue/.style={box, fill=blue!14},
+  boxorange/.style={box, fill=orange!20},
+  boxdeep/.style={box, fill=orange!38},
+  boxfinal/.style={box, fill=blue!26},
+  smallbox/.style={boxdeep, text width=2.15cm, minimum height=0.72cm},
+  arr/.style={->, thick, draw=blue!45!black},
+  arrsoft/.style={->, thick, draw=orange!70!black, densely dashed},
+  lab/.style={font=\sffamily\scriptsize\bfseries, text=blue!50!black},
+  labwarm/.style={font=\sffamily\scriptsize\bfseries, text=orange!65!black},
+]
+
+% Column 1–4: main early pipeline
+\node[boxblue] (raw) at (0,0) {Raw DICOM repository\\(original acquisitions)};
+\node[boxorange] (inv) at (3.35,0) {Non-destructive inventory\\(metadata catalogue only)};
+\node[boxorange] (map) at (6.7,0) {Participant--session mapping\\(approved identity tables)};
+\node[boxdeep] (deid) at (10.05,0) {Automated DICOM\\de-identification\\(derived copies only)};
+
+% Column 5: four parallel operations
+\node[smallbox] (phi)  at (13.15, 1.55) {PHI removal};
+\node[smallbox] (date) at (13.15, 0.52) {Date shifting};
+\node[smallbox] (uid)  at (13.15,-0.51) {UID remapping};
+\node[smallbox] (priv) at (13.15,-1.54) {Private tag removal};
+
+% Column 6–8: late pipeline
+\node[boxblue] (clean) at (16.55,0) {De-identified DICOM repository\\(provenance retained;\\pixels unchanged)};
+\node[boxblue] (bids)  at (19.95,0) {DICOM-to-NIfTI conversion\\$\rightarrow$ BIDS dataset};
+\node[boxfinal] (qc)   at (23.35,0) {Quality control\\and validation};
+
+% Main arrows
+\draw[arr] (raw) -- node[lab, above=1pt] {read-only} (inv);
+\draw[arr] (inv) -- (map);
+\draw[arr] (map) -- (deid);
+
+% Dashed copy & transform
+\draw[arrsoft] (raw.south) to[out=-55,in=-125]
+  node[labwarm, midway, below=2pt] {copy \& transform} (deid.south);
+
+% Fan-out
+\draw[arr] (deid.east) -- ++(0.28,0) coordinate (fork);
+\draw[arr] (fork) |- (phi.west);
+\draw[arr] (fork) |- (date.west);
+\draw[arr] (fork) |- (uid.west);
+\draw[arr] (fork) |- (priv.west);
+
+% Fan-in
+\coordinate (join) at (14.55,0);
+\draw[arr] (phi.east) -| (join);
+\draw[arr] (date.east) -- (join);
+\draw[arr] (uid.east) -- (join);
+\draw[arr] (priv.east) -| (join);
+\draw[arr] (join) -- (clean.west);
+
+\draw[arr] (clean) -- (bids);
+\draw[arr] (bids) -- (qc);
+
+\end{tikzpicture}

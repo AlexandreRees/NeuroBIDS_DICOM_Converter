@@ -1,0 +1,74 @@
+%% Supplementary tables (compile separately or via optional appendix in main.tex)
+%% Labels use prefix tab:supp- to avoid collisions with main manuscript tables.
+%% Brace {[TODO...]} at start of table rows so LaTeX does not treat [ as \\ optional arg.
+
+\section*{Supplementary tables}
+
+\subsection*{Supplementary Table 1. Complete MRI acquisition parameters}
+
+\begin{table}[htbp]
+\centering
+\caption{Complete MRI acquisition parameters.}
+\label{tab:supp-mri-parameters}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+{[TODO: Parameter]} & {[TODO]} \\
+{[TODO: Parameter]} & {[TODO]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% TODO: Expand to one block per sequence/modality from verified protocol sheets.
+
+\subsection*{Supplementary Table 2. Complete dataset inventory}
+
+\begin{table}[htbp]
+\centering
+\caption{Complete dataset inventory.}
+\label{tab:supp-dataset-inventory}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Subject} & \textbf{Session} & \textbf{Modality / file} & \textbf{Notes} \\
+\midrule
+{[TODO]} & {[TODO]} & {[TODO]} & {[TODO]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% TODO: Prefer generating this inventory from the release tree rather than hand-typing.
+
+\subsection*{Supplementary Table 3. Participant/session completeness}
+
+\begin{table}[htbp]
+\centering
+\caption{Participant and session completeness.}
+\label{tab:supp-completeness}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Subject} & \textbf{Session} & \textbf{Expected} & \textbf{Missing} \\
+\midrule
+{[TODO]} & {[TODO]} & {[TODO]} & {[TODO]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Supplementary Table 4. BIDS validation results}
+
+\begin{table}[htbp]
+\centering
+\caption{BIDS validation results.}
+\label{tab:supp-bids-validation}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Check} & \textbf{Result} & \textbf{Notes} \\
+\midrule
+BIDS Validator version & {[TODO]} & {[TODO]} \\
+Errors & {[TODO]} & {[TODO]} \\
+Warnings & {[TODO]} & {[TODO]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% TODO: Paste summaries from actual BIDS Validator reports; do not invent counts.

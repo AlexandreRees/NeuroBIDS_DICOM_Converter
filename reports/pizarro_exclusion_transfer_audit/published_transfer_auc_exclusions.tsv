@@ -1,0 +1,11 @@
+exclusion	task	n_kept	n_excluded	roc_auc
+none	published_transfer_P_nonNORM	264	0	1.0
+none	published_transfer_vs_qc_fail	264	0	0.6966270723496157
+low_cnr_mpr_run01	published_transfer_P_nonNORM	256	8	1.0
+low_cnr_mpr_run01	published_transfer_vs_qc_fail	256	8	0.6896436896436896
+uncertain_50_50	published_transfer_P_nonNORM	259	5	1.0
+uncertain_50_50	published_transfer_vs_qc_fail	259	5	0.6931923331130205
+low_cnr_plus_uncertain	published_transfer_P_nonNORM	251	13	1.0
+low_cnr_plus_uncertain	published_transfer_vs_qc_fail	251	13	0.68608683589957
+all_listed_in_transfer	published_transfer_P_nonNORM	251	13	1.0
+all_listed_in_transfer	published_transfer_vs_qc_fail	251	13	0.68608683589957

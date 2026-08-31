@@ -1,0 +1,6 @@
+lab_file	matlab_run_id	bids_movie_label	default_eye	hcp_clip_short_name	hcp_full_title	hcp_year	hcp_run	hcp_class	hcp_vimeo_or_note	lab_role	citation_confidence
+Movie1A.mp4	1	Movie1	left	garden	Mrs. Meyer's Clean Day	2013	7T_MOVIE3_CC2	CC	http://vimeo.com/63405160	first excerpt of garden documentary	high
+Movie1B.mp4	3	Movie3	right	garden	Mrs. Meyer's Clean Day	2013	7T_MOVIE3_CC2	CC	http://vimeo.com/63405160	second excerpt of same work	high
+Movie2A.mp4	2	Movie2	right	inception	Inception	2010	7T_MOVIE2_HO1	HO	HCP_7T_Movie_Info.csv Inception_1 frames 41843-47285	Inception excerpt (Paris cafe / dream walk)	high
+Movie2B.mp4	4	Movie4	left	inception	Inception	2010	7T_MOVIE2_HO1	HO	same Inception clip family	main body: Inception (Paris fold)	high
+Movie2B.mp4	4	Movie4	left	home alone	Home Alone	1990	7T_MOVIE4_HO2	HO	HCP_7T_Movie_Info.csv Home_Alone_1 frames 25448-31024	opening ~25 s of picture only; PI confirm	medium

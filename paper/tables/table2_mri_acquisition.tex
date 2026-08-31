@@ -1,0 +1,70 @@
+%% MRI acquisition protocol: laboratory SeriesDescription → BIDS
+%% Layout matches reports/pi_pipeline_briefing/figures/Table_MRI_acquisition_protocol_lab_to_bids.png
+\begin{table}[htbp]
+\centering
+\caption{MRI acquisition protocol: laboratory SeriesDescription mapped to BIDS datatype and general filename pattern (single session, console order). Run index $<$N$>$ is assigned at conversion and may differ from acquisition order. Full form: \texttt{sub-<ID>\_ses-<01|02>\_<entities>\_<suffix>.nii.gz}.}
+\label{tab:mri_acquisition}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.22}
+%% Shrink only if the 11pt/wide-figure layout exceeds manuscript \textwidth.
+\begin{adjustbox}{max width=\textwidth,center}
+\begin{tabular}{@{}c l c l@{}}
+\toprule
+\textcolor{headergray}{\textbf{\#}} &
+\textcolor{headergray}{\textbf{Lab series name}} &
+\textcolor{headergray}{\textbf{BIDS datatype}} &
+\textcolor{headergray}{\textbf{General BIDS name}} \\
+\midrule
+1 & \texttt{Localizer} & \texttt{anat} & \texttt{run-\textless{}N\textgreater{}\_localizer} \\
+\rowcolor{tablealt}
+2 & \texttt{fMRI1\_AP} & \texttt{func} & \texttt{task-fmri\_run-\textless{}N\textgreater{}\_bold} \\
+3 & \texttt{fMRI2\_AP} & \texttt{func} & \texttt{task-fmri\_run-\textless{}N\textgreater{}\_bold} \\
+\rowcolor{tablealt}
+4 & \texttt{Control1\_PA} & \texttt{func} & \texttt{task-control\_run-\textless{}N\textgreater{}\_bold} \\
+5 & \texttt{fMRI3\_AP} & \texttt{func} & \texttt{task-fmri\_run-\textless{}N\textgreater{}\_bold} \\
+\rowcolor{tablealt}
+6 & \texttt{fMRI4\_AP} & \texttt{func} & \texttt{task-fmri\_run-\textless{}N\textgreater{}\_bold} \\
+7 & \texttt{Movie1\_AP} & \texttt{func} & \texttt{task-movie\_run-\textless{}N\textgreater{}\_bold} \\
+\rowcolor{tablealt}
+8 & \texttt{Movie2\_AP} & \texttt{func} & \texttt{task-movie\_run-\textless{}N\textgreater{}\_bold} \\
+9 & \texttt{SpinEchoFieldMap\_AP} & \texttt{fmap} & \texttt{dir-AP\_run-\textless{}N\textgreater{}\_epi} \\
+\rowcolor{tablealt}
+10 & \texttt{SpinEchoFieldMap\_PA} & \texttt{fmap} & \texttt{dir-PA\_run-\textless{}N\textgreater{}\_epi} \\
+11 & \texttt{Movie3\_AP} & \texttt{func} & \texttt{task-movie\_run-\textless{}N\textgreater{}\_bold} \\
+\rowcolor{tablealt}
+12 & \texttt{Movie4\_AP} & \texttt{func} & \texttt{task-movie\_run-\textless{}N\textgreater{}\_bold} \\
+13 & \texttt{REST1\_AP} & \texttt{func} & \texttt{task-rest\_run-\textless{}N\textgreater{}\_bold} \\
+\midrule
+\textbf{*} & & & \\
+\midrule
+\rowcolor{tablealt}
+14 & \texttt{Localizer} & \texttt{anat} & \texttt{run-\textless{}N\textgreater{}\_localizer} \\
+15 & \texttt{T1w\_MPR} & \texttt{anat} & \texttt{run-\textless{}N\textgreater{}\_T1w} \\
+\rowcolor{tablealt}
+16 & \texttt{Control2\_AP} & \texttt{func} & \texttt{task-control\_run-\textless{}N\textgreater{}\_bold} \\
+17 & \texttt{Control3\_PA} & \texttt{func} & \texttt{task-control\_run-\textless{}N\textgreater{}\_bold} \\
+\rowcolor{tablealt}
+18 & \texttt{SpinEchoFieldMap\_AP} & \texttt{fmap} & \texttt{dir-AP\_run-\textless{}N\textgreater{}\_epi} \\
+19 & \texttt{SpinEchoFieldMap\_PA} & \texttt{fmap} & \texttt{dir-PA\_run-\textless{}N\textgreater{}\_epi} \\
+\rowcolor{tablealt}
+20 & \texttt{gsld\_76dir\_b2000\_1mmiso\_AP} & \texttt{dwi} & \texttt{run-\textless{}N\textgreater{}\_dwi} \\
+21 & \texttt{gsld\_75TE\_PA\_3b0} & \texttt{dwi} & \texttt{run-\textless{}N\textgreater{}\_dwi} \\
+\rowcolor{tablealt}
+22 & \texttt{tfl\_b1map\_1mmiso} & \texttt{anat} & \texttt{run-\textless{}N\textgreater{}\_TB1TFL} \\
+23 & \texttt{resolve\_3scan\_trace\_tra\_p3\_160\_1.4iso\_AP} & \texttt{dwi} & \texttt{run-\textless{}N\textgreater{}\_dwi} \\
+\rowcolor{tablealt}
+24 & \texttt{resolve\_3scan\_trace\_tra\_p3\_160\_1.4iso\_PA} & \texttt{dwi} & \texttt{run-\textless{}N\textgreater{}\_dwi} \\
+25 & \texttt{Sag Flair 3D-0.8} & \texttt{anat} & \texttt{run-\textless{}N\textgreater{}\_FLAIR} \\
+\rowcolor{tablealt}
+26 & \texttt{WMn\_MPRAGE\_sagittal} & \texttt{anat} & \texttt{run-\textless{}N\textgreater{}\_T1w} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+
+\vspace{4pt}
+\begin{flushleft}
+\footnotesize
+\textbf{*} Anterior part of the head coil added, after which the localizer is repeated.
+\end{flushleft}
+\end{table}

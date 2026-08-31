@@ -1,3 +1,0 @@
-participant_label	session_id	n_t1w	n_bold_mag	note
-sub-024	01	3	12	partial coverage retry: recover healthy missing IQMs; run-03_T1w expected pathological
-sub-074	02	3	11	ses02_r11 task9 FAILED segfault; full session rerun

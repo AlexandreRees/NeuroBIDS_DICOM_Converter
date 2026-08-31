@@ -1,0 +1,50 @@
+%% Specifications Table (Data in Brief front matter)
+%% Filled only from documented release metadata under scratch (release_dataset/,
+%% metadata/participant_mapping.csv). Unverified fields remain marked TODO.
+\begin{table}[H]
+\centering
+\caption{Specifications Table.}
+\label{tab:specifications}
+\begin{tabular}{@{}p{0.32\linewidth}p{0.62\linewidth}@{}}
+\toprule
+\textbf{Subject area} & Neuroscience \\
+\midrule
+\textbf{Specific subject area} &
+Multimodal human MRI (structural, functional, diffusion, and field-map imaging)
+with four study cohorts labelled in metadata as Control ($n=56$), Glaucoma ($n=19$),
+DataON ($n=7$), and DataTON ($n=2$) (84 participants total). \\
+\midrule
+\textbf{Type of data} &
+Raw MRI images (NIfTI); BIDS metadata (JSON, TSV); task event files (where available);
+physiological recordings (where conversion gates were met); optional derivatives
+(defaced anatomicals; partial preprocessed DWI). \\
+\midrule
+\textbf{How the data were acquired} &
+Siemens Prisma, 3\,T MRI. Longitudinal design with up to two sessions
+(\texttt{ses-01}, \texttt{ses-02}). Functional paradigms present in the release include
+\texttt{task-rest}, \texttt{task-movie}, \texttt{task-fmri} (visual grating/checkerboard),
+and \texttt{task-control}. Conversion to BIDS with dcm2niix / \texttt{neuro\_pipeline}. \\
+\midrule
+\textbf{Data format} &
+BIDS (BIDSVersion 1.9.0); NIfTI (\texttt{.nii.gz}); JSON sidecars; TSV;
+physiology \texttt{.tsv.gz} + JSON (where present). \\
+\midrule
+\textbf{Data source location} &
+{[TODO: Institution / city / country --- not stated in the current public release metadata
+(administrative institution fields were scrubbed from BIDS sidecars).]} \\
+\midrule
+\textbf{Data accessibility} &
+Repository: FITBIR (accession / URL {[TODO: insert after deposit]}).
+Access: restricted under FITBIR data-access agreement (see dataset \texttt{LICENSE}; not CC0). \\
+\midrule
+\textbf{Related research article} &
+{[TODO: Insert related research article citation, or state N/A if none.]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% Source notes (not printed):
+%% - Cohort counts: metadata/participant_mapping.csv (matches 84 sub-* in release_dataset/).
+%% - participants.tsv rebuilt 2026-08-16 (was incomplete at 51/84).
+%% - Scanner / modalities / tasks / BIDS version: release_dataset/README.md
+%% - Access: FITBIR contractual (CC0 withdrawn 2026-08-16)
