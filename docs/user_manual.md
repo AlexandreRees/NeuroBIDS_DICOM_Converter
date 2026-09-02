@@ -2,8 +2,8 @@
 
 Version 1.0.0
 
-> **Full walkthrough (all features):** see **[USER_GUIDE.md](USER_GUIDE.md)**  
-> (Convert, BIDS Preview, Inventory, Queue, Naming Rules, multi-subject folders)
+> **NeuroBIDS workflow:** see **[neurobids_workflow.md](neurobids_workflow.md)**  
+> (Discover → Map → Audit → Protect → Release; Copilot is optional)
 
 <p align="center">
   <img src="assets/logo_small.png" alt="NeuroPipeline" width="48" />

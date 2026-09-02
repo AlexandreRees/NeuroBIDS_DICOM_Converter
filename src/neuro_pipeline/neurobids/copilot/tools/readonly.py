@@ -27,6 +27,7 @@ class InspectDatasetTool(Tool):
     def execute(self, session: CopilotSession, params: Mapping[str, Any] | None = None) -> ToolResult:
         ctx = session.dataset_context(refresh=True)
         validation = session.validate_plan()
+        store = session.curation_store()
         summary = {
             "dataset_label": ctx.dataset_label,
             "output_label": ctx.output_label,
@@ -41,6 +42,9 @@ class InspectDatasetTool(Tool):
             "n_validation_errors": len(validation.errors),
             "n_validation_warnings": len(validation.warnings),
             "n_metadata_issues": len(ctx.metadata_issues),
+            "n_curation_rules": len(store.rules),
+            "n_enabled_curation_rules": len(store.enabled_rules()),
+            "curation_rules": [r.to_llm_dict() for r in store.rules[:20]],
             "issues": [i.to_llm_dict() for i in ctx.metadata_issues[:40]],
         }
         return ok(self.name, {"summary": summary, "llm_context": ctx.to_llm_context()})

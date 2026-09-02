@@ -112,7 +112,6 @@ def _count_acquisitions(ctx: DatasetContext) -> int:
 def _group_issues(issues: list[MetadataIssue]) -> list[AuditIssueRow]:
     grouped: dict[tuple[str, str], list[MetadataIssue]] = defaultdict(list)
     for issue in issues:
-        key = (issue.code or issue.level, issue.message.split(":")[0] if issue.code else issue.message)
         grouped[(issue.code or "", issue.level)].append(issue)
 
     rows: list[AuditIssueRow] = []

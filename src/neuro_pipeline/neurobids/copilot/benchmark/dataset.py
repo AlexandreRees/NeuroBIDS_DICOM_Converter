@@ -31,12 +31,38 @@ UID_002_01_PHOENIX = "uid.002.01.phoenix"
 UID_003_01_T1W = "uid.003.01.t1w"
 UID_003_01_LOC = "uid.003.01.loc"
 UID_003_01_UNMAP = "uid.003.01.unmap"
+UID_004_01_T2W = "uid.004.01.t2w"
+UID_004_01_FLAIR = "uid.004.01.flair"
+UID_004_01_TASK = "uid.004.01.task"
+UID_004_01_SBREF = "uid.004.01.sbref"
+UID_004_01_FMAP_AP = "uid.004.01.fmap_ap"
+UID_004_01_FMAP_PA = "uid.004.01.fmap_pa"
+UID_004_01_ME1 = "uid.004.01.mecho1"
+UID_004_01_ME2 = "uid.004.01.mecho2"
+UID_004_01_RUN02 = "uid.004.01.run02"
+UID_004_01_MIXED = "uid.004.01.mixed"
 
 T1W_UIDS = (UID_001_01_T1W, UID_001_02_T1W, UID_002_01_T1W, UID_003_01_T1W)
-FUNC_UIDS = (UID_001_01_FUNC, UID_001_02_FUNC, UID_002_01_FUNC)
+T2W_UIDS = (UID_004_01_T2W,)
+FLAIR_UIDS = (UID_004_01_FLAIR,)
+FUNC_UIDS = (
+    UID_001_01_FUNC,
+    UID_001_02_FUNC,
+    UID_002_01_FUNC,
+    UID_004_01_TASK,
+    UID_004_01_SBREF,
+    UID_004_01_ME1,
+    UID_004_01_ME2,
+    UID_004_01_RUN02,
+)
+TASK_FUNC_UIDS = (UID_004_01_TASK,)
+SBREF_UIDS = (UID_004_01_SBREF,)
+FMAP_UIDS = (UID_004_01_FMAP_AP, UID_004_01_FMAP_PA)
+MULTIECHO_UIDS = (UID_004_01_ME1, UID_004_01_ME2)
 DWI_UIDS = (UID_001_01_DWI, UID_002_01_DWI)
 LOCALIZER_UIDS = (UID_001_01_LOC, UID_003_01_LOC)
 AMBIGUOUS_UIDS = (UID_002_01_AMBIG, UID_003_01_UNMAP)
+CONFLICT_UIDS = (UID_004_01_MIXED,)
 UNMAPPED_UIDS = (UID_002_01_AMBIG, UID_003_01_UNMAP, UID_001_01_LOC, UID_003_01_LOC, UID_002_01_PHOENIX)
 EXCLUDED_UIDS = (UID_002_01_PHOENIX,)
 SUBJECT_002_UIDS = (
@@ -220,6 +246,137 @@ _ACQ_SPEC: tuple[dict[str, Any], ...] = (
         manual=True,
         confidence=0.15,
     ),
+    # Subject 004 — extra modalities for Copilot reasoning tools (additive).
+    dict(
+        uid=UID_004_01_T2W,
+        subject="004",
+        session="01",
+        description="t2_tse",
+        sequence_type="anat",
+        fine="ANAT_T2",
+        datatype="anat",
+        suffix="T2w",
+        acquisition="tse",
+        include=True,
+        series_number=1,
+    ),
+    dict(
+        uid=UID_004_01_FLAIR,
+        subject="004",
+        session="01",
+        description="t2_flair",
+        sequence_type="anat",
+        fine="FLAIR",
+        datatype="anat",
+        suffix="FLAIR",
+        include=True,
+        series_number=2,
+    ),
+    dict(
+        uid=UID_004_01_TASK,
+        subject="004",
+        session="01",
+        description="task_nback_bold",
+        sequence_type="func",
+        fine="FMRI_TASK",
+        datatype="func",
+        suffix="bold",
+        task="nback",
+        include=True,
+        series_number=3,
+    ),
+    dict(
+        uid=UID_004_01_SBREF,
+        subject="004",
+        session="01",
+        description="func_sbref",
+        sequence_type="func",
+        fine="FMRI_REST",
+        datatype="func",
+        suffix="sbref",
+        include=True,
+        series_number=4,
+    ),
+    dict(
+        uid=UID_004_01_FMAP_AP,
+        subject="004",
+        session="01",
+        description="fmap_AP",
+        sequence_type="fmap",
+        fine="FMAP",
+        datatype="fmap",
+        suffix="epi",
+        direction="AP",
+        include=True,
+        series_number=5,
+    ),
+    dict(
+        uid=UID_004_01_FMAP_PA,
+        subject="004",
+        session="01",
+        description="fmap_PA",
+        sequence_type="fmap",
+        fine="FMAP",
+        datatype="fmap",
+        suffix="epi",
+        direction="PA",
+        include=True,
+        series_number=6,
+    ),
+    dict(
+        uid=UID_004_01_ME1,
+        subject="004",
+        session="01",
+        description="multiecho_bold_echo-1",
+        sequence_type="func",
+        fine="FMRI_TASK",
+        datatype="func",
+        suffix="bold",
+        task="rest",
+        include=True,
+        series_number=7,
+    ),
+    dict(
+        uid=UID_004_01_ME2,
+        subject="004",
+        session="01",
+        description="multiecho_bold_echo-2",
+        sequence_type="func",
+        fine="FMRI_TASK",
+        datatype="func",
+        suffix="bold",
+        task="rest",
+        include=True,
+        series_number=8,
+    ),
+    dict(
+        uid=UID_004_01_RUN02,
+        subject="004",
+        session="01",
+        description="rest_bold_run-02",
+        sequence_type="func",
+        fine="FMRI_REST",
+        datatype="func",
+        suffix="bold",
+        task="rest",
+        run="02",
+        include=True,
+        series_number=9,
+    ),
+    dict(
+        uid=UID_004_01_MIXED,
+        subject="004",
+        session="01",
+        description="mprage",
+        protocol="tse",
+        sequence_type="anat",
+        fine="ANAT_CONFLICT",
+        datatype="anat",
+        suffix="T1w",
+        include=True,
+        confidence=0.45,
+        series_number=10,
+    ),
 )
 
 
@@ -265,6 +422,7 @@ def build_benchmark_session(root: Path | None = None) -> CopilotSession:
         detection_method="patient_id",
         detection_reason="synthetic benchmark dataset",
         n_dicom_files=n_files,
+        curation_rules_path=root / "curation_rules.json",
     )
 
 
@@ -277,6 +435,7 @@ def clone_benchmark_session(session: CopilotSession) -> CopilotSession:
         detection_method=session.detection_method,
         detection_reason=session.detection_reason,
         n_dicom_files=session.n_dicom_files,
+        curation_rules_path=session.curation_rules_path,
     )
 
 
@@ -371,7 +530,9 @@ def compute_ground_truth(session: CopilotSession) -> dict[str, Any]:
         "notes": (
             "Subject 001 is longitudinal: ses-01 has DWI, ses-02 does not. "
             "uid.002.01.ambig and uid.003.01.unmap require manual mapping. "
-            "uid.002.01.phoenix is excluded from conversion."
+            "uid.002.01.phoenix is excluded from conversion. "
+            "Subject 004 holds T2w, FLAIR, task BOLD, SBRef, fmap AP/PA, "
+            "multi-echo, run-02, and a conflicting mprage/tse pair (description vs protocol)."
         ),
     }
 
@@ -398,6 +559,7 @@ def _build_acquisition(
     session = str(spec["session"])
     uid = str(spec["uid"])
     description = str(spec["description"])
+    protocol = str(spec.get("protocol") or description)
     source = dicom_root / f"sub-{subject}" / f"ses-{session}" / description
     source.mkdir(parents=True, exist_ok=True)
     sample = source / "IM0001.dcm"
@@ -408,7 +570,7 @@ def _build_acquisition(
         patient_id=subject,
         study_description="NeuroBIDSBenchmark",
         series_description=description,
-        protocol_name=description,
+        protocol_name=protocol,
         series_number=int(spec.get("series_number") or 1),
         acquisition_number=1,
         modality="MR",
@@ -431,7 +593,7 @@ def _build_acquisition(
         source_series_number=series.series_number,
         source_series_description=description,
         source_patient_id=subject,
-        source_protocol_name=description,
+        source_protocol_name=protocol,
         source_sequence_type=series.sequence_type,
         source_smart_name=description,
         source_subject_folder=str(source),
@@ -476,6 +638,23 @@ __all__ = [
     "UID_003_01_T1W",
     "UID_003_01_UNMAP",
     "UNMAPPED_UIDS",
+    "UID_004_01_FLAIR",
+    "UID_004_01_FMAP_AP",
+    "UID_004_01_FMAP_PA",
+    "UID_004_01_ME1",
+    "UID_004_01_ME2",
+    "UID_004_01_MIXED",
+    "UID_004_01_RUN02",
+    "UID_004_01_SBREF",
+    "UID_004_01_T2W",
+    "UID_004_01_TASK",
+    "CONFLICT_UIDS",
+    "FLAIR_UIDS",
+    "FMAP_UIDS",
+    "MULTIECHO_UIDS",
+    "SBREF_UIDS",
+    "T2W_UIDS",
+    "TASK_FUNC_UIDS",
     "acquisition_spec",
     "build_benchmark_session",
     "clone_benchmark_session",

@@ -9,16 +9,16 @@
       "expected_behavior": "read-only response",
       "expected_tools": ["inspect_dataset"],
       "expected_tool_arguments": {},
-      "expected_answer": {"summary.n_subjects": 3, "derived.n_subjects": 3},
+      "expected_answer": {"summary.n_subjects": 4, "derived.n_subjects": 4},
       "expected_auto_apply": false,
       "expected_safety_behavior": "allow",
-      "expected_answer_contains": ["3 subject"],
+      "expected_answer_contains": ["4 subject"],
       "levels": ["level1", "level2", "level3"],
       "level1_tool": "inspect_dataset",
       "level1_arguments": {},
       "scripted_llm_responses": [
         {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
-        {"type": "message", "content": "There are 3 subjects in the dataset."}
+        {"type": "message", "content": "There are 4 subjects in the dataset."}
       ],
       "gui_action": "none"
     },
@@ -29,15 +29,15 @@
       "expected_behavior": "read-only response",
       "expected_tools": ["inspect_dataset"],
       "expected_tool_arguments": {},
-      "expected_answer": {"summary.n_sessions": 4},
+      "expected_answer": {"summary.n_sessions": 5},
       "expected_auto_apply": false,
-      "expected_answer_contains": ["4 session"],
+      "expected_answer_contains": ["5 session"],
       "levels": ["level1", "level2"],
       "level1_tool": "inspect_dataset",
       "level1_arguments": {},
       "scripted_llm_responses": [
         {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
-        {"type": "message", "content": "There are 4 sessions in the dataset."}
+        {"type": "message", "content": "There are 5 sessions in the dataset."}
       ]
     },
     {
@@ -65,14 +65,14 @@
       "expected_behavior": "read-only response",
       "expected_tools": ["list_subjects"],
       "expected_tool_arguments": {},
-      "expected_answer": {"derived.single_session_subjects": ["002", "003"]},
+      "expected_answer": {"derived.single_session_subjects": ["002", "003", "004"]},
       "expected_auto_apply": false,
       "levels": ["level1", "level2"],
       "level1_tool": "list_subjects",
       "level1_arguments": {},
       "scripted_llm_responses": [
         {"type": "tool_call", "tool_name": "list_subjects", "arguments": {}},
-        {"type": "message", "content": "Subjects 002 and 003 have only one session."}
+        {"type": "message", "content": "Subjects 002, 003, and 004 have only one session."}
       ]
     },
     {
@@ -82,15 +82,15 @@
       "expected_behavior": "read-only response",
       "expected_tools": ["inspect_dataset"],
       "expected_tool_arguments": {},
-      "expected_answer": {"summary.n_acquisitions": 14},
+      "expected_answer": {"summary.n_acquisitions": 24},
       "expected_auto_apply": false,
-      "expected_answer_contains": ["14 acquisition"],
+      "expected_answer_contains": ["24 acquisition"],
       "levels": ["level1", "level2"],
       "level1_tool": "inspect_dataset",
       "level1_arguments": {},
       "scripted_llm_responses": [
         {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
-        {"type": "message", "content": "There are 14 acquisitions in the dataset."}
+        {"type": "message", "content": "There are 24 acquisitions in the dataset."}
       ]
     },
     {
@@ -137,7 +137,7 @@
       "expected_tools": ["inspect_dataset"],
       "expected_tool_arguments": {},
       "expected_answer": {
-        "summary.datatype_summary": {"unknown": 5, "anat": 4, "func": 3, "dwi": 2}
+        "summary.datatype_summary": {"unknown": 5, "anat": 7, "func": 8, "dwi": 2, "fmap": 2}
       },
       "expected_auto_apply": false,
       "levels": ["level1", "level2"],
@@ -145,7 +145,7 @@
       "level1_arguments": {},
       "scripted_llm_responses": [
         {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
-        {"type": "message", "content": "Datatypes present: anat, func, dwi, and unknown."}
+        {"type": "message", "content": "Datatypes present: anat, func, dwi, fmap, and unknown."}
       ]
     },
     {
@@ -158,13 +158,13 @@
       "expected_answer": {"n_matches": 1},
       "expected_acquisitions": ["uid.002.01.phoenix"],
       "expected_auto_apply": false,
-      "notes": "One excluded series (PhoenixZIPReport). Complementary included count is 13.",
+      "notes": "One excluded series (PhoenixZIPReport). Complementary included count is 23.",
       "levels": ["level1", "level2"],
       "level1_tool": "find_acquisitions",
       "level1_arguments": {"included": false},
       "scripted_llm_responses": [
         {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"included": false}},
-        {"type": "message", "content": "1 acquisition is excluded; 13 are included."}
+        {"type": "message", "content": "1 acquisition is excluded; 23 are included."}
       ]
     },
     {
@@ -174,15 +174,15 @@
       "expected_behavior": "read-only response",
       "expected_tools": ["list_subjects"],
       "expected_tool_arguments": {},
-      "expected_answer": {"n_subjects": 3, "derived.subject_ids": ["001", "002", "003"]},
-      "expected_subjects": ["001", "002", "003"],
+      "expected_answer": {"n_subjects": 4, "derived.subject_ids": ["001", "002", "003", "004"]},
+      "expected_subjects": ["001", "002", "003", "004"],
       "expected_auto_apply": false,
       "levels": ["level1", "level2"],
       "level1_tool": "list_subjects",
       "level1_arguments": {},
       "scripted_llm_responses": [
         {"type": "tool_call", "tool_name": "list_subjects", "arguments": {}},
-        {"type": "message", "content": "The subject IDs are 001, 002, and 003."}
+        {"type": "message", "content": "The subject IDs are 001, 002, 003, and 004."}
       ]
     }
   ]

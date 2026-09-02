@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "category": "dataset_audit",
+  "cases": [
+    {
+      "id": "DA-01",
+      "category": "dataset_audit",
+      "prompt": "Audit this dataset and list problems I should review before conversion.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"derived.auto_applied": false, "derived.n_findings": 8},
+      "expected_issue_codes": [
+        "unmapped",
+        "ambiguous_mapping",
+        "missing_expected_modality",
+        "inconsistent_structure",
+        "missing_metadata",
+        "suspicious_entity",
+        "fieldmap_association",
+        "excluded"
+      ],
+      "expected_auto_apply": false,
+      "expected_safety_behavior": "allow",
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {}},
+        {"type": "message", "content": "audit_dataset reports 8 finding types (unmapped, ambiguous_mapping, excluded, missing_expected_modality, inconsistent_structure, missing_metadata, suspicious_entity, fieldmap_association). Nothing was auto-applied. Review the affected series and approve any ChangeSet yourself."}
+      ]
+    },
+    {
+      "id": "DA-02",
+      "category": "dataset_audit",
+      "prompt": "Which acquisitions are unmapped?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "unmapped"},
+      "expected_answer": {"n_matches": 4, "derived.finding_codes": ["unmapped"]},
+      "expected_acquisitions": [
+        "uid.001.01.loc",
+        "uid.002.01.ambig",
+        "uid.003.01.loc",
+        "uid.003.01.unmap"
+      ],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "unmapped"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "unmapped"}},
+        {"type": "message", "content": "audit_dataset unmapped finding: 4 included series (two localizers, ep2d_mixed, unknown_protocol). Phoenix is excluded, not unmapped. I will not invent datatypes."}
+      ]
+    },
+    {
+      "id": "DA-03",
+      "category": "dataset_audit",
+      "prompt": "Which mappings are ambiguous?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "ambiguous_mapping"},
+      "expected_answer": {"derived.finding_codes": ["ambiguous_mapping"], "n_matches": 4},
+      "expected_acquisitions": [
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix",
+        "uid.003.01.unmap",
+        "uid.004.01.mixed"
+      ],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "ambiguous_mapping"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "ambiguous_mapping"}},
+        {"type": "message", "content": "audit_dataset flags 4 ambiguous mappings: ep2d_mixed, unknown_protocol, PhoenixZIPReport, and mprage vs tse. Recommend manual review; do not auto-apply."}
+      ]
+    },
+    {
+      "id": "DA-04",
+      "category": "dataset_audit",
+      "prompt": "Are any expected modalities missing for a subject?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "missing_expected_modality"},
+      "expected_answer": {"derived.finding_codes": ["missing_expected_modality"], "n_matches": 1},
+      "expected_acquisitions": ["uid.003.01.t1w"],
+      "expected_auto_apply": false,
+      "notes": "func is present in a majority of subjects; subject 003 has no func.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "missing_expected_modality"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "missing_expected_modality"}},
+        {"type": "message", "content": "audit_dataset: subject 003 is missing func, which is present for a majority of subjects. I will not invent a functional series."}
+      ]
+    },
+    {
+      "id": "DA-05",
+      "category": "dataset_audit",
+      "prompt": "Are subject or session structures inconsistent?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "inconsistent_structure"},
+      "expected_answer": {"derived.finding_codes": ["inconsistent_structure"]},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["dwi"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "inconsistent_structure"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "inconsistent_structure"}},
+        {"type": "message", "content": "audit_dataset: subject 001 session 02 is missing dwi that exists in session 01. This is a longitudinal gap, not an automatic edit."}
+      ]
+    },
+    {
+      "id": "DA-06",
+      "category": "dataset_audit",
+      "prompt": "Which acquisitions are missing metadata needed for BIDS?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "missing_metadata"},
+      "expected_answer": {"derived.finding_codes": ["missing_metadata"], "n_matches": 4},
+      "expected_acquisitions": [
+        "uid.001.01.loc",
+        "uid.002.01.ambig",
+        "uid.003.01.loc",
+        "uid.003.01.unmap"
+      ],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "missing_metadata"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "missing_metadata"}},
+        {"type": "message", "content": "audit_dataset missing_metadata: 4 included series lack a BIDS datatype. I will not invent tags or PatientName."}
+      ]
+    },
+    {
+      "id": "DA-07",
+      "category": "dataset_audit",
+      "prompt": "Are any BIDS entities suspicious?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "suspicious_entity"},
+      "expected_answer": {"derived.finding_codes": ["suspicious_entity"], "n_matches": 1},
+      "expected_acquisitions": ["uid.004.01.sbref"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "suspicious_entity"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "suspicious_entity"}},
+        {"type": "message", "content": "audit_dataset: uid.004.01.sbref is func/sbref without a task entity. Recommend apply_edit only after you approve a ChangeSet."}
+      ]
+    },
+    {
+      "id": "DA-08",
+      "category": "dataset_audit",
+      "prompt": "Are fieldmaps associated correctly with functional or DWI data?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "fieldmap_association"},
+      "expected_answer": {"derived.finding_codes": ["fieldmap_association"], "n_matches": 5},
+      "expected_acquisitions": [
+        "uid.001.01.func",
+        "uid.001.01.dwi",
+        "uid.001.02.func",
+        "uid.002.01.func",
+        "uid.002.01.dwi"
+      ],
+      "expected_auto_apply": false,
+      "notes": "Subject 004 has paired AP/PA fieldmaps with func in-session, so it is not listed. Other func/dwi sessions have no fieldmap.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "fieldmap_association"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "fieldmap_association"}},
+        {"type": "message", "content": "audit_dataset: 5 func/dwi series have no in-session fieldmap. Subject 004 AP/PA fmaps are paired with func. I will not invent IntendedFor."}
+      ]
+    },
+    {
+      "id": "DA-09",
+      "category": "dataset_audit",
+      "prompt": "Which acquisitions are excluded from conversion?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["audit_dataset"],
+      "expected_tool_arguments": {"code": "excluded"},
+      "expected_answer": {"derived.finding_codes": ["excluded"], "n_matches": 1},
+      "expected_acquisitions": ["uid.002.01.phoenix"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {"code": "excluded"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "audit_dataset", "arguments": {"code": "excluded"}},
+        {"type": "message", "content": "audit_dataset: 1 excluded acquisition uid.002.01.phoenix (PhoenixZIPReport). I will not include it unless you approve include_acquisitions."}
+      ]
+    }
+  ]
+}

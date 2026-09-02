@@ -1,18 +1,30 @@
-# NeuroPipeline DICOM Converter
+# NeuroPipeline / NeuroBIDS
 
 <p align="center">
   <img src="docs/assets/logo.png" alt="NeuroPipeline logo" width="88" />
 </p>
 
-Windows desktop application for converting MRI DICOM datasets to NIfTI / BIDS with [dcm2niix](https://github.com/rordenlab/dcm2niix).
+**NeuroBIDS** — from raw neuroimaging data to a research-ready dataset.
 
-Designed for researchers with no programming experience. Built as a modular foundation for a future neuroimaging platform (BIDS, QC, MRIQC, reports).
+Windows/Linux desktop application for converting MRI DICOM datasets to NIfTI / BIDS with [dcm2niix](https://github.com/rordenlab/dcm2niix), then curating the conversion plan with a human-in-the-loop Copilot.
+
+Designed for researchers with no programming experience. Built as a modular foundation for a neuroimaging platform (BIDS, QC, MRIQC, reports).
 
 **Version:** 1.0.0
 
+## NeuroBIDS workflow
+
+```text
+DISCOVER → MAP → AUDIT → PROTECT → RELEASE
+```
+
+Full walkthrough: **[docs/neurobids_workflow.md](docs/neurobids_workflow.md)** · **[User Guide](docs/USER_GUIDE.md)**
+
+The Copilot is a natural-language layer over typed tools. The deterministic core (DICOM scan, BIDS plan, validation, conversion) remains the source of truth. Original DICOM files are never modified.
+
 ## For end users
 
-Start here — how to use Convert, Preview, Inventory, Queue, and Naming Rules in practice:
+Start here — how to use Discover, Map, Audit, Conversion, Inventory, Queue, and Naming Rules in practice:
 
 **[User Guide (English)](docs/USER_GUIDE.md)**
 
@@ -20,9 +32,11 @@ Also: [User Manual (short)](docs/user_manual.md)
 
 ## Features
 
-- Modern PySide6 interface (Convert · Queue · Settings · Logs)
+- NeuroBIDS workflow: Discover · Map · Audit · Protect · Release
+- Conversion, Queue, Settings, and Logs remain available as tools
 - Automatic DICOM scan (recursive; multi-subject folders supported)
-- BIDS Preview with editable conversion plan (DICOM stays read-only)
+- BIDS Preview (Map) with editable conversion plan (DICOM stays read-only)
+- Optional NeuroBIDS Copilot (typed tools + ChangeSet Apply; works without an API key)
 - DICOM Inventory Excel/CSV (no conversion)
 - Smart naming rules (optional lab JSON rules)
 - Conversion queue for large batches (pause / retry / recover)
@@ -55,12 +69,13 @@ python -m neuro_pipeline
 
 ## Example user workflow
 
-1. Open **Convert** → select DICOM **Input** folder and BIDS **Output** folder  
-2. Review **Input analysis** and **BIDS Preview**  
-3. Click **Convert** (or use **Queue** for many subjects)  
-4. Open the output folder / `conversion_report.html`
+1. Open **Discover** → select a DICOM folder (and an output folder on Conversion if needed)
+2. Review counts, then **Map** to inspect and edit the BIDS plan
+3. Use **Audit** / **Protect** / **Release** as needed; Copilot is optional (Ctrl+J / Ctrl+K)
+4. Open **Conversion** → **Convert** (or **Queue** for many subjects)
+5. Open the output folder / `conversion_report.html`
 
-Full walkthrough: **[docs/USER_GUIDE.md](docs/USER_GUIDE.md)**
+Full walkthrough: **[docs/USER_GUIDE.md](docs/USER_GUIDE.md)** · **[docs/neurobids_workflow.md](docs/neurobids_workflow.md)**
 
 ## Post conversion validation
 
@@ -344,7 +359,7 @@ Smart naming rules live in `configs/naming_rules.yaml` (not hardcoded).
 
 ## Packaging (Windows EXE)
 
-End users: see [`README_WINDOWS.md`](README_WINDOWS.md).
+End users: see [`README_WINDOWS.md`](README_WINDOWS.md) and [`docs/INSTALL.md`](docs/INSTALL.md).
 
 Developers (build machine):
 
@@ -359,6 +374,22 @@ Produces:
 
 Details: [`installer/BUILD_WINDOWS.md`](installer/BUILD_WINDOWS.md).
 
+## Packaging (macOS)
+
+On a macOS build machine:
+
+```bash
+bash scripts/build_macos.sh
+```
+
+## Demo / Preview
+
+```bash
+PYTHONPATH=src python -m neuro_pipeline.gui.preview
+```
+
+Synthetic dataset: [`examples/synthetic_dataset/`](examples/synthetic_dataset/).
+
 ## Tests
 
 ```bash
@@ -367,10 +398,17 @@ pytest
 
 ## Documentation
 
+- [Install](docs/INSTALL.md)
+- [Configuration](docs/CONFIGURATION.md)
+- [NeuroBIDS Copilot](docs/COPILOT.md)
+- [NeuroBIDS workflow](docs/neurobids_workflow.md)
+- [User Guide](docs/USER_GUIDE.md)
 - [Developer guide](docs/developer.md)
 - [Architecture](docs/architecture.md)
 - [Changelog](CHANGELOG.md)
 - [Docker](README_DOCKER.md)
+- [Copilot benchmark](tests/benchmarks/README.md)
+- [Release checklist](release/COPILOT_V1_RELEASE_CHECKLIST.md)
 
 ## Project layout
 

@@ -1,0 +1,519 @@
+{
+  "version": 1,
+  "category": "modality_reasoning",
+  "cases": [
+    {
+      "id": "MX-01",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "Is the func_sbref series SBRef rather than BOLD?",
+      "expected_tools": [
+        "list_sbref"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_matches": 1,
+        "derived.labels": [
+          "SBRef"
+        ]
+      },
+      "expected_acquisitions": [
+        "uid.004.01.sbref"
+      ],
+      "level1_tool": "list_sbref",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_sbref",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "list_sbref reports 1 SBRef: uid.004.01.sbref. It is not listed as BOLD rest."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-02",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "List fieldmaps and keep AP vs PA distinct.",
+      "expected_tools": [
+        "list_fieldmaps"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_matches": 2
+      },
+      "expected_acquisitions": [
+        "uid.004.01.fmap_ap",
+        "uid.004.01.fmap_pa"
+      ],
+      "level1_tool": "list_fieldmaps",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_fieldmaps",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "list_fieldmaps reports 2 series: fmap_AP and fmap_PA."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-03",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "List multi-echo BOLD echoes as separate series.",
+      "expected_tools": [
+        "list_multiecho"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_matches": 2
+      },
+      "expected_acquisitions": [
+        "uid.004.01.mecho1",
+        "uid.004.01.mecho2"
+      ],
+      "level1_tool": "list_multiecho",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_multiecho",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "list_multiecho reports 2 series: echo-1 and echo-2."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-04",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "What run entity is on rest_bold_run-02 versus the other rest series?",
+      "expected_tools": [
+        "inspect_entities"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.run02"
+      },
+      "expected_answer": {
+        "derived.run": "02"
+      },
+      "expected_acquisitions": [
+        "uid.004.01.run02"
+      ],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.run02"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_entities",
+          "arguments": {
+            "series_uid": "uid.004.01.run02"
+          }
+        },
+        {
+          "type": "message",
+          "content": "inspect_entities reports run=02 from rest_bold_run-02."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-05",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "What echo entity is on the second multi-echo series?",
+      "expected_tools": [
+        "inspect_entities"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.mecho2"
+      },
+      "expected_answer": {
+        "derived.echo": "2"
+      },
+      "expected_acquisitions": [
+        "uid.004.01.mecho2"
+      ],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.mecho2"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_entities",
+          "arguments": {
+            "series_uid": "uid.004.01.mecho2"
+          }
+        },
+        {
+          "type": "message",
+          "content": "inspect_entities reports echo=2 from multiecho_bold_echo-2."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-06",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "Classify fmap_AP including phase-encoding direction.",
+      "expected_tools": [
+        "classify_acquisition"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.fmap_ap"
+      },
+      "expected_answer": {
+        "derived.label": "fieldmap_AP",
+        "derived.datatype": "fmap",
+        "derived.phase_encoding": "AP"
+      },
+      "expected_acquisitions": [
+        "uid.004.01.fmap_ap"
+      ],
+      "level1_tool": "classify_acquisition",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.fmap_ap"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "classify_acquisition",
+          "arguments": {
+            "series_uid": "uid.004.01.fmap_ap"
+          }
+        },
+        {
+          "type": "message",
+          "content": "classify_acquisition reports fieldmap_AP with phase_encoding AP."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-07",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "Classify func_sbref; it must not be treated as task BOLD.",
+      "expected_tools": [
+        "classify_acquisition"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.sbref"
+      },
+      "expected_answer": {
+        "derived.label": "SBRef",
+        "derived.datatype": "func"
+      },
+      "expected_acquisitions": [
+        "uid.004.01.sbref"
+      ],
+      "level1_tool": "classify_acquisition",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.sbref"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "classify_acquisition",
+          "arguments": {
+            "series_uid": "uid.004.01.sbref"
+          }
+        },
+        {
+          "type": "message",
+          "content": "classify_acquisition reports SBRef (func/sbref), not task BOLD."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-08",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "Which series have conflicting T1/T2 tokens (mprage vs tse)?",
+      "expected_tools": [
+        "list_ambiguous_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "include_unclassified": false
+      },
+      "expected_answer": {
+        "n_matches": 4
+      },
+      "expected_acquisitions": [
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix",
+        "uid.003.01.unmap",
+        "uid.004.01.mixed"
+      ],
+      "level1_tool": "list_ambiguous_acquisitions",
+      "level1_arguments": {
+        "include_unclassified": false
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_ambiguous_acquisitions",
+          "arguments": {
+            "include_unclassified": false
+          }
+        },
+        {
+          "type": "message",
+          "content": "list_ambiguous_acquisitions reports 4 ambiguous series including mprage vs tse."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-09",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "List task BOLD with the nback task, not rest.",
+      "expected_tools": [
+        "list_functional"
+      ],
+      "expected_tool_arguments": {
+        "subtype": "task"
+      },
+      "expected_answer": {
+        "n_matches": 1,
+        "derived.labels": [
+          "BOLD_task"
+        ]
+      },
+      "expected_acquisitions": [
+        "uid.004.01.task"
+      ],
+      "level1_tool": "list_functional",
+      "level1_arguments": {
+        "subtype": "task"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_functional",
+          "arguments": {
+            "subtype": "task"
+          }
+        },
+        {
+          "type": "message",
+          "content": "list_functional reports 1 task BOLD acquisition: uid.004.01.task with observed task=nback."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-10",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "What acquisition entity is stored on the T2-weighted TSE series?",
+      "expected_tools": [
+        "inspect_entities"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.t2w"
+      },
+      "expected_answer": {
+        "derived.acquisition": "tse"
+      },
+      "expected_acquisitions": [
+        "uid.004.01.t2w"
+      ],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.t2w"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_entities",
+          "arguments": {
+            "series_uid": "uid.004.01.t2w"
+          }
+        },
+        {
+          "type": "message",
+          "content": "inspect_entities reports acquisition=tse for uid.004.01.t2w."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-11",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "Find acquisitions with BIDS datatype fmap.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "datatype": "fmap"
+      },
+      "expected_answer": {
+        "n_matches": 2
+      },
+      "expected_acquisitions": [
+        "uid.004.01.fmap_ap",
+        "uid.004.01.fmap_pa"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "datatype": "fmap"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "datatype": "fmap"
+          }
+        },
+        {
+          "type": "message",
+          "content": "There are 2 fmap acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MX-12",
+      "category": "modality_reasoning",
+      "tags": [
+        "modality_edge"
+      ],
+      "prompt": "What phase-encoding direction entity is on fmap_PA?",
+      "expected_tools": [
+        "inspect_entities"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.fmap_pa"
+      },
+      "expected_answer": {
+        "derived.direction": "PA"
+      },
+      "expected_acquisitions": [
+        "uid.004.01.fmap_pa"
+      ],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.fmap_pa"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_entities",
+          "arguments": {
+            "series_uid": "uid.004.01.fmap_pa"
+          }
+        },
+        {
+          "type": "message",
+          "content": "inspect_entities reports direction=PA for uid.004.01.fmap_pa."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    }
+  ]
+}

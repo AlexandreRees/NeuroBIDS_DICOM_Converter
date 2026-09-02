@@ -11,6 +11,7 @@ from neuro_pipeline.neurobids.copilot.benchmark.dataset import (
     compute_ground_truth,
 )
 from neuro_pipeline.neurobids.copilot.benchmark.loader import load_benchmark_cases
+from neuro_pipeline.neurobids.copilot.benchmark.live import live_provider_available, run_live_benchmark
 from neuro_pipeline.neurobids.copilot.benchmark.runner import BenchmarkRun, run_benchmark
 from neuro_pipeline.neurobids.copilot.benchmark.schema import BenchmarkCase
 
@@ -20,6 +21,8 @@ __all__ = [
     "build_benchmark_session",
     "clone_benchmark_session",
     "compute_ground_truth",
+    "live_provider_available",
     "load_benchmark_cases",
     "run_benchmark",
+    "run_live_benchmark",
 ]

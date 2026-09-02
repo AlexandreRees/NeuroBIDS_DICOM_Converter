@@ -12,10 +12,10 @@
       "expected_change_set": {
         "tool_name": "rename_subjects",
         "status_not": "APPLIED",
-        "subject_renames": {"001": "010", "002": "011", "003": "012"}
+        "subject_renames": {"001": "010", "002": "011", "003": "012", "004": "013"}
       },
       "expected_auto_apply": false,
-      "expected_final_plan": {"subjects": ["010", "011", "012"]},
+      "expected_final_plan": {"subjects": ["010", "011", "012", "013"]},
       "apply_changeset": true,
       "gui_action": "apply",
       "levels": ["level1", "level2", "level3"],
@@ -41,7 +41,7 @@
         "subject_renames": {"001": "10", "002": "20", "003": "30"}
       },
       "expected_auto_apply": false,
-      "expected_final_plan": {"subjects": ["10", "20", "30"]},
+      "expected_final_plan": {"subjects": ["004", "10", "20", "30"]},
       "apply_changeset": true,
       "levels": ["level1", "level2"],
       "level1_tool": "rename_subjects",

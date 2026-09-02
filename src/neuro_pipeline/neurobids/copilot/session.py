@@ -9,6 +9,7 @@ from neuro_pipeline.bids.conversion_plan import BIDSConversionPlan, PlanValidati
 from neuro_pipeline.models import DicomSeries
 from neuro_pipeline.neurobids.dataset_context import DatasetContext
 from neuro_pipeline.neurobids.copilot.plan_ops import plan_fingerprint
+from neuro_pipeline.neurobids.curation.store import CurationRuleStore
 
 
 @dataclass(slots=True)
@@ -26,7 +27,10 @@ class CopilotSession:
     detection_reason: str = ""
     n_dicom_files: int = 0
     ui_selection: dict[str, str] = field(default_factory=dict)
+    last_applied_changeset: Any | None = field(default=None, repr=False)
+    curation_rules_path: Any | None = field(default=None, repr=False)
     _dataset_context: DatasetContext | None = field(default=None, repr=False)
+    _rule_store: CurationRuleStore | None = field(default=None, repr=False)
 
     def set_conversion_busy(self, busy: bool) -> None:
         self.conversion_busy = bool(busy)
@@ -67,6 +71,18 @@ class CopilotSession:
 
     def invalidate_context_cache(self) -> None:
         self._dataset_context = None
+
+    def curation_store(self, *, refresh: bool = False) -> CurationRuleStore:
+        """Dataset-scoped rule catalog (JSON; never written into DICOM)."""
+        if self._rule_store is None or refresh:
+            self._rule_store = CurationRuleStore.for_dataset(
+                self.plan.dataset_root,
+                path=self.curation_rules_path,
+            )
+        return self._rule_store
+
+    def bind_rule_store(self, store: CurationRuleStore | None) -> None:
+        self._rule_store = store
 
     def series_by_uid(self) -> dict[str, DicomSeries]:
         out: dict[str, DicomSeries] = {}

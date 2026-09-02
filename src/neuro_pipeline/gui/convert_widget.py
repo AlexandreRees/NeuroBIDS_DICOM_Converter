@@ -8,7 +8,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
     QCheckBox,
     QComboBox,
@@ -21,7 +21,6 @@ from PySide6.QtWidgets import (
     QProgressBar,
     QPushButton,
     QScrollArea,
-    QSplitter,
     QTextEdit,
     QVBoxLayout,
     QWidget,
@@ -48,7 +47,11 @@ LOGGER = logging.getLogger(__name__)
 
 
 class ConvertWidget(QWidget):
-    """One-click convert page (automatic single / multi-subject routing)."""
+    """Conversion + inventory workflow (scan / dcm2niix / reports)."""
+
+    dataset_changed = Signal()
+    busy_changed = Signal(bool)
+    open_map_requested = Signal()
 
     def __init__(
         self,
@@ -96,9 +99,19 @@ class ConvertWidget(QWidget):
         root.setContentsMargins(12, 10, 12, 10)
         root.setSpacing(10)
 
-        title = QLabel("Convert")
+        kicker = QLabel("TOOLS · DICOM → NIfTI / BIDS")
+        kicker.setObjectName("pageKicker")
+        root.addWidget(kicker)
+        title = QLabel("Conversion")
         title.setObjectName("titleLabel")
         root.addWidget(title)
+        intro = QLabel(
+            "Run conversion and inventory here. BIDS mapping lives on the Map page. "
+            "Original DICOM files are never modified."
+        )
+        intro.setObjectName("subtitleLabel")
+        intro.setWordWrap(True)
+        root.addWidget(intro)
 
         # --- Input Folder ---
         in_box = QGroupBox("Input Folder")
@@ -143,21 +156,29 @@ class ConvertWidget(QWidget):
         analysis_layout.addWidget(self.analysis_view)
         root.addWidget(analysis_box)
 
-        # --- BIDS Preview + NeuroBIDS Copilot (Preview remains primary) ---
+        # Preview + Copilot are owned here (data/session binding) but laid out
+        # on the Map page / main shell so Map remains the central workspace.
         self.preview_panel = BIDSPreviewPanel()
         self.preview_panel.status_message.connect(self._on_preview_status)
         self.preview_panel.continue_requested.connect(self._on_preview_continue)
+        self.preview_panel.plan_changed.connect(self.dataset_changed.emit)
         self.copilot_panel = NeuroBIDSCopilotPanel()
         self.copilot_panel.status_message.connect(self._on_preview_status)
         self.copilot_panel.bind_preview(self.preview_panel)
 
-        bids_splitter = QSplitter(Qt.Orientation.Horizontal)
-        bids_splitter.addWidget(self.preview_panel)
-        bids_splitter.addWidget(self.copilot_panel)
-        bids_splitter.setStretchFactor(0, 3)
-        bids_splitter.setStretchFactor(1, 2)
-        bids_splitter.setChildrenCollapsible(False)
-        root.addWidget(bids_splitter)
+        map_note = QGroupBox("BIDS mapping")
+        map_note_layout = QHBoxLayout(map_note)
+        map_hint = QLabel(
+            "Subjects, sessions, and acquisitions are curated on Map. "
+            "Continue to Conversion when the plan is ready."
+        )
+        map_hint.setObjectName("statusLabel")
+        map_hint.setWordWrap(True)
+        open_map = QPushButton("Open Map")
+        open_map.clicked.connect(self.open_map_requested.emit)
+        map_note_layout.addWidget(map_hint, 1)
+        map_note_layout.addWidget(open_map)
+        root.addWidget(map_note)
 
         # --- Subject / Session (optional) ---
         id_box = QGroupBox("Subject / session")
@@ -254,6 +275,14 @@ class ConvertWidget(QWidget):
         root.addLayout(actions)
 
         self.input_edit.editingFinished.connect(self._maybe_autoscan)
+        self.input_edit.textChanged.connect(lambda _=None: self.dataset_changed.emit())
+        self.output_edit.textChanged.connect(lambda _=None: self.dataset_changed.emit())
+
+    def is_scanning(self) -> bool:
+        return self._scan_thread is not None and self._scan_thread.isRunning()
+
+    def is_converting(self) -> bool:
+        return bool(self._converting)
 
     def apply_config_defaults(self) -> None:
         self.chk_compress.setChecked(bool(self.config.compression))
@@ -308,7 +337,7 @@ class ConvertWidget(QWidget):
         # Block Copilot mutations while scan/convert/inventory runs; keep panel visible.
         if hasattr(self, "copilot_panel"):
             self.copilot_panel.set_conversion_busy(busy or self._converting)
-            self.copilot_panel.setEnabled(not busy or self._converting)
+        self.busy_changed.emit(bool(busy or self._converting))
 
     def _discovery_mode(self) -> str:
         return str(self.discovery_mode_combo.currentData() or "automatic")
@@ -383,6 +412,7 @@ class ConvertWidget(QWidget):
             self.detail_label.setText("")
         self._set_busy(False)
         self._cleanup_scan()
+        self.dataset_changed.emit()
 
     def _on_scan_failed(self, message: str) -> None:
         self.progress_bar.setRange(0, 100)
@@ -403,6 +433,7 @@ class ConvertWidget(QWidget):
                 f"{message}\n\nPlease check the selected folder.",
             )
         self._cleanup_scan()
+        self.dataset_changed.emit()
 
     def _cleanup_scan(self) -> None:
         if self._scan_worker is not None:
@@ -412,6 +443,59 @@ class ConvertWidget(QWidget):
             self._scan_thread.wait(2000)
         self._scan_worker = None
         self._scan_thread = None
+
+    def load_demo_dataset(
+        self,
+        *,
+        series: list,
+        plan,
+        dataset_root: str,
+        output_root: str = "",
+        analysis: InputAnalysis | None = None,
+    ) -> None:
+        """Inject an in-memory dataset for UI Preview/Demo Mode (no DICOM scan).
+
+        Uses the live Preview + Copilot widgets. Does not read real DICOM files.
+        """
+        self._cleanup_scan()
+        self.series = list(series)
+        self._last_input_folder = dataset_root
+        self.input_edit.setText(dataset_root)
+        if output_root:
+            self.output_edit.setText(output_root)
+        self._analysis = analysis
+        if self._analysis is not None:
+            self.analysis_view.setPlainText(self._analysis.summary_text())
+        else:
+            self.analysis_view.setPlainText(
+                f"Preview demo: {len(self.series)} synthetic series (no real DICOM)."
+            )
+        self.preview_panel.set_context(
+            series=self.series,
+            dataset_root=dataset_root,
+            output_root=output_root or self.output_edit.text().strip(),
+        )
+        # Use the provided plan object so demo scenarios stay deterministic.
+        self.preview_panel._plan = plan
+        self.preview_panel._populate()
+        self.preview_panel.status.setText(
+            f"Preview demo plan: {sum(1 for i in plan.items if i.include_in_conversion)} "
+            f"of {len(plan.items)} series included."
+        )
+        self.copilot_panel.rebind_session_from_preview()
+        session = self.copilot_panel.controller.session
+        if session is not None:
+            if analysis is not None:
+                session.n_dicom_files = int(analysis.number_of_dicom_files or 0)
+                session.detection_method = analysis.detection_method or "preview_demo"
+                session.detection_reason = analysis.detection_reason or "UI Preview/Demo Mode"
+            else:
+                session.detection_method = "preview_demo"
+                session.detection_reason = "UI Preview/Demo Mode"
+        self.status_label.setText("Preview/Demo Mode — synthetic dataset loaded.")
+        self.detail_label.setText("No real DICOM. Copilot uses FakeLLMProvider.")
+        self.preview_panel.plan_changed.emit()
+        self.dataset_changed.emit()
 
     def _update_preview_plan(self) -> None:
         self.preview_panel.set_context(
@@ -424,6 +508,12 @@ class ConvertWidget(QWidget):
         self.preview_panel.rebuild_plan()
         if hasattr(self, "copilot_panel"):
             self.copilot_panel.rebind_session_from_preview()
+            session = self.copilot_panel.controller.session
+            if session is not None and self._analysis is not None:
+                session.n_dicom_files = int(self._analysis.number_of_dicom_files or 0)
+                session.detection_method = self._analysis.detection_method or ""
+                session.detection_reason = self._analysis.detection_reason or ""
+        self.dataset_changed.emit()
 
     def _on_preview_status(self, message: str) -> None:
         self.detail_label.setText(message)

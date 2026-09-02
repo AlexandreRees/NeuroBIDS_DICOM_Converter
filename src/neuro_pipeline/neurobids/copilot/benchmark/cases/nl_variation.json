@@ -1,0 +1,523 @@
+{
+  "version": 1,
+  "category": "dataset_understanding",
+  "cases": [
+    {
+      "id": "NV-01",
+      "category": "dataset_understanding",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "Count the participants in this study.",
+      "expected_tools": [
+        "inspect_dataset"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "summary.n_subjects": 4,
+        "derived.n_subjects": 4
+      },
+      "expected_answer_contains": [
+        "4 subject"
+      ],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "There are 4 subjects in the dataset."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-02",
+      "category": "dataset_understanding",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "What's the session count for this conversion plan?",
+      "expected_tools": [
+        "inspect_dataset"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "summary.n_sessions": 5
+      },
+      "expected_answer_contains": [
+        "5 session"
+      ],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "There are 5 sessions in the dataset."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-03",
+      "category": "dataset_understanding",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "Give me every participant identifier.",
+      "expected_tools": [
+        "list_subjects"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_subjects": 4,
+        "derived.subject_ids": [
+          "001",
+          "002",
+          "003",
+          "004"
+        ]
+      },
+      "expected_subjects": [
+        "001",
+        "002",
+        "003",
+        "004"
+      ],
+      "level1_tool": "list_subjects",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_subjects",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "The subject IDs are 001, 002, 003, and 004."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-04",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "I need the T1-weighted series, please.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "sequence": "t1"
+      },
+      "expected_answer": {
+        "n_matches": 4
+      },
+      "expected_acquisitions": [
+        "uid.001.01.t1w",
+        "uid.001.02.t1w",
+        "uid.002.01.t1w",
+        "uid.003.01.t1w"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "sequence": "t1"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "sequence": "t1"
+          }
+        },
+        {
+          "type": "message",
+          "content": "There are 4 T1w acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-05",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "Pull the diffusion-weighted scans.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "datatype": "dwi"
+      },
+      "expected_answer": {
+        "n_matches": 2
+      },
+      "expected_acquisitions": [
+        "uid.001.01.dwi",
+        "uid.002.01.dwi"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "datatype": "dwi"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "datatype": "dwi"
+          }
+        },
+        {
+          "type": "message",
+          "content": "There are 2 DWI acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-06",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "What series belong to participant 002?",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "subject": "002"
+      },
+      "expected_answer": {
+        "n_matches": 5
+      },
+      "expected_acquisitions": [
+        "uid.002.01.t1w",
+        "uid.002.01.func",
+        "uid.002.01.dwi",
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "subject": "002"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "subject": "002"
+          }
+        },
+        {
+          "type": "message",
+          "content": "Subject 002 has 5 acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-07",
+      "category": "modality_reasoning",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "Show me the single-band reference scans.",
+      "expected_tools": [
+        "list_sbref"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_matches": 1,
+        "derived.labels": [
+          "SBRef"
+        ]
+      },
+      "expected_acquisitions": [
+        "uid.004.01.sbref"
+      ],
+      "level1_tool": "list_sbref",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_sbref",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "list_sbref reports 1 SBRef: uid.004.01.sbref."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-08",
+      "category": "modality_reasoning",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "Which series are diffusion MRI?",
+      "expected_tools": [
+        "list_dwi"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_matches": 2
+      },
+      "expected_acquisitions": [
+        "uid.001.01.dwi",
+        "uid.002.01.dwi"
+      ],
+      "level1_tool": "list_dwi",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_dwi",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "list_dwi reports 2 DWI acquisitions: uid.001.01.dwi and uid.002.01.dwi."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-09",
+      "category": "dataset_audit",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "What is left out of conversion?",
+      "expected_tools": [
+        "audit_dataset"
+      ],
+      "expected_tool_arguments": {
+        "code": "excluded"
+      },
+      "expected_answer": {
+        "derived.finding_codes": [
+          "excluded"
+        ],
+        "n_matches": 1
+      },
+      "expected_acquisitions": [
+        "uid.002.01.phoenix"
+      ],
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {
+        "code": "excluded"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "audit_dataset",
+          "arguments": {
+            "code": "excluded"
+          }
+        },
+        {
+          "type": "message",
+          "content": "audit_dataset: 1 excluded acquisition uid.002.01.phoenix (PhoenixZIPReport)."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-10",
+      "category": "mutations",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "Drop scout/localizer series from the conversion set.",
+      "expected_tools": [
+        "exclude_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "series_uids": [
+          "uid.001.01.loc",
+          "uid.003.01.loc"
+        ]
+      },
+      "expected_change_set": {
+        "tool_name": "exclude_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [
+          {
+            "series_uid": "uid.001.01.loc",
+            "after": false
+          },
+          {
+            "series_uid": "uid.003.01.loc",
+            "after": false
+          }
+        ]
+      },
+      "apply_changeset": false,
+      "level1_tool": "exclude_acquisitions",
+      "level1_arguments": {
+        "series_uids": [
+          "uid.001.01.loc",
+          "uid.003.01.loc"
+        ]
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "exclude_acquisitions",
+          "arguments": {
+            "series_uids": [
+              "uid.001.01.loc",
+              "uid.003.01.loc"
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "mutation proposal",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-11",
+      "category": "bids_reasoning",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "Suggest a BIDS datatype/suffix for subject 001 session 01 T1.",
+      "expected_tools": [
+        "propose_bids_mapping"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.001.01.t1w"
+      },
+      "expected_answer": {
+        "derived.proposed.datatype": "anat",
+        "derived.proposed.suffix": "T1w"
+      },
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {
+        "series_uid": "uid.001.01.t1w"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "propose_bids_mapping",
+          "arguments": {
+            "series_uid": "uid.001.01.t1w"
+          }
+        },
+        {
+          "type": "message",
+          "content": "Proposed mapping: datatype anat, suffix T1w."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "NV-12",
+      "category": "dataset_understanding",
+      "tags": [
+        "nl_variation"
+      ],
+      "prompt": "How large is the acquisition table?",
+      "expected_tools": [
+        "inspect_dataset"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "summary.n_acquisitions": 24
+      },
+      "expected_answer_contains": [
+        "24 acquisition"
+      ],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "There are 24 acquisitions in the dataset."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    }
+  ]
+}

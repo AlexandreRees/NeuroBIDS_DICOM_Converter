@@ -49,4 +49,4 @@ def test_mutation_status_not_applied_before_explicit_apply(
     assert out.ok
     cs = out.data["changeset"]
     assert cs.status != ChangeSetStatus.APPLIED
-    assert {i.subject for i in work.plan.items} == {"001", "002", "003"}
+    assert {i.subject for i in work.plan.items} == {"001", "002", "003", "004"}

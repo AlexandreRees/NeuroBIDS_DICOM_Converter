@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "category": "modality_reasoning",
+  "cases": [
+    {
+      "id": "MR-01",
+      "category": "modality_reasoning",
+      "prompt": "Classify the T1w acquisition of subject 001 session 01.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["classify_acquisition"],
+      "expected_tool_arguments": {"series_uid": "uid.001.01.t1w"},
+      "expected_answer": {
+        "derived.label": "T1w",
+        "derived.datatype": "anat",
+        "derived.suffix": "T1w",
+        "derived.ambiguous": false
+      },
+      "expected_acquisitions": ["uid.001.01.t1w"],
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["T1w"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "classify_acquisition",
+      "level1_arguments": {"series_uid": "uid.001.01.t1w"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "classify_acquisition", "arguments": {"series_uid": "uid.001.01.t1w"}},
+        {"type": "message", "content": "classify_acquisition reports label T1w, datatype anat, suffix T1w. Evidence includes series_description=t1_mprage. It is not ambiguous."}
+      ]
+    },
+    {
+      "id": "MR-02",
+      "category": "modality_reasoning",
+      "prompt": "Which acquisitions are T2-weighted?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_anatomical"],
+      "expected_tool_arguments": {"subtype": "t2w"},
+      "expected_answer": {"n_matches": 1, "derived.labels": ["T2w"]},
+      "expected_acquisitions": ["uid.004.01.t2w"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_anatomical",
+      "level1_arguments": {"subtype": "t2w"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_anatomical", "arguments": {"subtype": "t2w"}},
+        {"type": "message", "content": "list_anatomical reports 1 T2w acquisition: uid.004.01.t2w (series_description=t2_tse)."}
+      ]
+    },
+    {
+      "id": "MR-03",
+      "category": "modality_reasoning",
+      "prompt": "Which acquisitions are FLAIR?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_anatomical"],
+      "expected_tool_arguments": {"subtype": "flair"},
+      "expected_answer": {"n_matches": 1, "derived.labels": ["FLAIR"]},
+      "expected_acquisitions": ["uid.004.01.flair"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_anatomical",
+      "level1_arguments": {"subtype": "flair"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_anatomical", "arguments": {"subtype": "flair"}},
+        {"type": "message", "content": "list_anatomical reports 1 FLAIR acquisition: uid.004.01.flair (series_description=t2_flair)."}
+      ]
+    },
+    {
+      "id": "MR-04",
+      "category": "modality_reasoning",
+      "prompt": "List resting-state BOLD acquisitions.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_functional"],
+      "expected_tool_arguments": {"subtype": "rest"},
+      "expected_answer": {"n_matches": 6},
+      "expected_acquisitions": [
+        "uid.001.01.func",
+        "uid.001.02.func",
+        "uid.002.01.func",
+        "uid.004.01.mecho1",
+        "uid.004.01.mecho2",
+        "uid.004.01.run02"
+      ],
+      "expected_auto_apply": false,
+      "notes": "SBRef is excluded from BOLD rest. Multi-echo series have plan task=rest.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_functional",
+      "level1_arguments": {"subtype": "rest"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_functional", "arguments": {"subtype": "rest"}},
+        {"type": "message", "content": "list_functional reports 6 resting-state BOLD acquisitions, including rest_bold and rest_bold_run-02. SBRef is not included."}
+      ]
+    },
+    {
+      "id": "MR-05",
+      "category": "modality_reasoning",
+      "prompt": "List task fMRI / task BOLD acquisitions.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_functional"],
+      "expected_tool_arguments": {"subtype": "task"},
+      "expected_answer": {"n_matches": 1, "derived.labels": ["BOLD_task"]},
+      "expected_acquisitions": ["uid.004.01.task"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_functional",
+      "level1_arguments": {"subtype": "task"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_functional", "arguments": {"subtype": "task"}},
+        {"type": "message", "content": "list_functional reports 1 task BOLD acquisition: uid.004.01.task with observed task=nback."}
+      ]
+    },
+    {
+      "id": "MR-06",
+      "category": "modality_reasoning",
+      "prompt": "List DWI acquisitions.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_dwi"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"n_matches": 2, "derived.labels": ["DWI", "DWI"]},
+      "expected_acquisitions": ["uid.001.01.dwi", "uid.002.01.dwi"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_dwi",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_dwi", "arguments": {}},
+        {"type": "message", "content": "list_dwi reports 2 DWI acquisitions: uid.001.01.dwi and uid.002.01.dwi."}
+      ]
+    },
+    {
+      "id": "MR-07",
+      "category": "modality_reasoning",
+      "prompt": "Classify the AP fieldmap.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["classify_acquisition"],
+      "expected_tool_arguments": {"series_uid": "uid.004.01.fmap_ap"},
+      "expected_answer": {
+        "derived.label": "fieldmap_AP",
+        "derived.datatype": "fmap",
+        "derived.phase_encoding": "AP",
+        "derived.ambiguous": false
+      },
+      "expected_acquisitions": ["uid.004.01.fmap_ap"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "classify_acquisition",
+      "level1_arguments": {"series_uid": "uid.004.01.fmap_ap"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "classify_acquisition", "arguments": {"series_uid": "uid.004.01.fmap_ap"}},
+        {"type": "message", "content": "classify_acquisition reports fieldmap_AP with phase_encoding AP from series_description=fmap_AP and plan.direction=AP."}
+      ]
+    },
+    {
+      "id": "MR-08",
+      "category": "modality_reasoning",
+      "prompt": "Classify the PA fieldmap.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["classify_acquisition"],
+      "expected_tool_arguments": {"series_uid": "uid.004.01.fmap_pa"},
+      "expected_answer": {
+        "derived.label": "fieldmap_PA",
+        "derived.datatype": "fmap",
+        "derived.phase_encoding": "PA",
+        "derived.ambiguous": false
+      },
+      "expected_acquisitions": ["uid.004.01.fmap_pa"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "classify_acquisition",
+      "level1_arguments": {"series_uid": "uid.004.01.fmap_pa"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "classify_acquisition", "arguments": {"series_uid": "uid.004.01.fmap_pa"}},
+        {"type": "message", "content": "classify_acquisition reports fieldmap_PA with phase_encoding PA from series_description=fmap_PA."}
+      ]
+    },
+    {
+      "id": "MR-09",
+      "category": "modality_reasoning",
+      "prompt": "Which acquisitions are SBRef?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_sbref"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"n_matches": 1, "derived.labels": ["SBRef"]},
+      "expected_acquisitions": ["uid.004.01.sbref"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_sbref",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_sbref", "arguments": {}},
+        {"type": "message", "content": "list_sbref reports 1 SBRef: uid.004.01.sbref. Evidence is the sbref token in series_description=func_sbref."}
+      ]
+    },
+    {
+      "id": "MR-10",
+      "category": "modality_reasoning",
+      "prompt": "Which acquisitions are multi-echo?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_multiecho"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"n_matches": 2},
+      "expected_acquisitions": ["uid.004.01.mecho1", "uid.004.01.mecho2"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_multiecho",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_multiecho", "arguments": {}},
+        {"type": "message", "content": "list_multiecho reports 2 series: uid.004.01.mecho1 (echo-1) and uid.004.01.mecho2 (echo-2). Echo indices come from series descriptions, not invented tags."}
+      ]
+    },
+    {
+      "id": "MR-11",
+      "category": "modality_reasoning",
+      "prompt": "What run entity is on rest_bold_run-02?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_entities"],
+      "expected_tool_arguments": {"series_uid": "uid.004.01.run02"},
+      "expected_answer": {"derived.run": "02"},
+      "expected_acquisitions": ["uid.004.01.run02"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {"series_uid": "uid.004.01.run02"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_entities", "arguments": {"series_uid": "uid.004.01.run02"}},
+        {"type": "message", "content": "inspect_entities reports run=02 from the conversion plan and the run-02 token in series_description=rest_bold_run-02."}
+      ]
+    },
+    {
+      "id": "MR-12",
+      "category": "modality_reasoning",
+      "prompt": "What echo entity is on the first multi-echo series?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_entities"],
+      "expected_tool_arguments": {"series_uid": "uid.004.01.mecho1"},
+      "expected_answer": {"derived.echo": "1"},
+      "expected_acquisitions": ["uid.004.01.mecho1"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {"series_uid": "uid.004.01.mecho1"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_entities", "arguments": {"series_uid": "uid.004.01.mecho1"}},
+        {"type": "message", "content": "inspect_entities reports echo=1 from the echo-1 token in series_description=multiecho_bold_echo-1. No echo tag is invented."}
+      ]
+    },
+    {
+      "id": "MR-13",
+      "category": "modality_reasoning",
+      "prompt": "What acquisition entity is on the T2w series?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_entities"],
+      "expected_tool_arguments": {"series_uid": "uid.004.01.t2w"},
+      "expected_answer": {"derived.acquisition": "tse"},
+      "expected_acquisitions": ["uid.004.01.t2w"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {"series_uid": "uid.004.01.t2w"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_entities", "arguments": {"series_uid": "uid.004.01.t2w"}},
+        {"type": "message", "content": "inspect_entities reports acquisition=tse from the conversion plan for uid.004.01.t2w."}
+      ]
+    },
+    {
+      "id": "MR-14",
+      "category": "modality_reasoning",
+      "prompt": "Which acquisitions are unclassified?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_ambiguous_acquisitions"],
+      "expected_tool_arguments": {"only_unclassified": true},
+      "expected_answer": {"n_matches": 5},
+      "expected_acquisitions": [
+        "uid.001.01.loc",
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix",
+        "uid.003.01.loc",
+        "uid.003.01.unmap"
+      ],
+      "expected_auto_apply": false,
+      "notes": "Localizers, unknown_protocol, ep2d_mixed, and excluded Phoenix are unclassified. Conflicting mprage_and_tse is classified as ambiguous anatomy, not unclassified.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_ambiguous_acquisitions",
+      "level1_arguments": {"only_unclassified": true},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_ambiguous_acquisitions", "arguments": {"only_unclassified": true}},
+        {"type": "message", "content": "list_ambiguous_acquisitions reports 5 unclassified series: two localizers, ep2d_mixed, unknown_protocol, and PhoenixZIPReport."}
+      ]
+    },
+    {
+      "id": "MR-15",
+      "category": "modality_reasoning",
+      "prompt": "Which acquisitions are ambiguous (conflicting or manual-mapping)?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_ambiguous_acquisitions"],
+      "expected_tool_arguments": {"include_unclassified": false},
+      "expected_answer": {"n_matches": 4},
+      "expected_acquisitions": [
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix",
+        "uid.003.01.unmap",
+        "uid.004.01.mixed"
+      ],
+      "expected_auto_apply": false,
+      "notes": "include_unclassified=false keeps localizers out. mprage vs tse protocol is ambiguous because T1 and T2 tokens conflict. ep2d_mixed and unknown_protocol require manual mapping.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_ambiguous_acquisitions",
+      "level1_arguments": {"include_unclassified": false},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_ambiguous_acquisitions", "arguments": {"include_unclassified": false}},
+        {"type": "message", "content": "list_ambiguous_acquisitions reports 4 ambiguous series: ep2d_mixed, unknown_protocol, PhoenixZIPReport, and mprage vs tse (conflicting T1/T2 tokens)."}
+      ]
+    }
+  ]
+}

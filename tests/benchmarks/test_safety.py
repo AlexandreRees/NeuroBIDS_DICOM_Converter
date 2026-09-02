@@ -16,6 +16,10 @@ def test_dangerous_tools_are_not_registered() -> None:
         "exec_python",
         "apply_changeset",
         "rollback_changeset",
+        "exec_rule",
+        "eval_rule",
+        "run_curation_code",
+        "execute_rule",
     ):
         assert forbidden not in names
 

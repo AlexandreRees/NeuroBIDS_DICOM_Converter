@@ -8,11 +8,21 @@ from typing import Callable
 from PySide6.QtCore import QObject, Qt, Signal
 
 from neuro_pipeline.neurobids.copilot.changeset import ChangeSet, ChangeSetError, ChangeSetStatus
+from neuro_pipeline.neurobids.copilot.explain import (
+    CopilotExplanation,
+    explain_changeset,
+    explain_mapping,
+)
 from neuro_pipeline.neurobids.copilot.llm.agent import CopilotAgent
 from neuro_pipeline.neurobids.copilot.llm.config import LLMConfig
 from neuro_pipeline.neurobids.copilot.llm.provider import LLMProvider
 from neuro_pipeline.neurobids.copilot.llm.schemas import CopilotTurnResult
 from neuro_pipeline.neurobids.copilot.plan_ops import plan_fingerprint
+from neuro_pipeline.neurobids.copilot.provenance import (
+    CopilotProvenanceStore,
+    build_decision_record,
+    default_provenance_store,
+)
 from neuro_pipeline.neurobids.copilot.session import CopilotSession
 from neuro_pipeline.neurobids.copilot.tools.registry import ToolRegistry, default_registry
 from neuro_pipeline.workers import CopilotWorker, start_worker
@@ -61,11 +71,14 @@ class CopilotController(QObject):
         self._provider: LLMProvider | None = None
         self._config = LLMConfig.from_env()
         self._pending: ChangeSet | None = None
+        self._last_turn: CopilotTurnResult | None = None
         self._busy = False
         self._force_sync = False
         self._thread = None
         self._worker: CopilotWorker | None = None
         self._sync_plan: Callable[[], None] | None = None
+        self._turn_id = 0
+        self._provenance_store: CopilotProvenanceStore | None = default_provenance_store()
 
     @property
     def session(self) -> CopilotSession | None:
@@ -76,14 +89,28 @@ class CopilotController(QObject):
         return self._pending
 
     @property
+    def last_turn(self) -> CopilotTurnResult | None:
+        return self._last_turn
+
+    @property
     def busy(self) -> bool:
         return self._busy
 
     def set_provider(self, provider: LLMProvider | None) -> None:
         self._provider = provider
 
+    def is_llm_available(self) -> bool:
+        if self._provider is not None:
+            from neuro_pipeline.neurobids.copilot.llm.provider import UnavailableLLMProvider
+
+            return not isinstance(self._provider, UnavailableLLMProvider)
+        return bool(self._config and self._config.is_configured)
+
     def set_config(self, config: LLMConfig) -> None:
         self._config = config
+
+    def set_provenance_store(self, store: CopilotProvenanceStore | None) -> None:
+        self._provenance_store = store
 
     def set_sync_plan_callback(self, callback: Callable[[], None] | None) -> None:
         """Optional hook to flush Preview table edits into the live plan."""
@@ -91,6 +118,7 @@ class CopilotController(QObject):
 
     def bind_session(self, session: CopilotSession | None) -> None:
         self._session = session
+        self._last_turn = None
         self.clear_pending()
 
     def set_conversion_busy(self, busy: bool) -> None:
@@ -126,11 +154,14 @@ class CopilotController(QObject):
             return False
 
         self._flush_plan()
+        self._turn_id += 1
+        turn = self._turn_id
         agent = CopilotAgent(
             session=self._session,
             registry=self._registry,
             provider=self._provider,
             config=self._config,
+            provenance_store=self._provenance_store,
         )
         use_sync = self._force_sync if sync is None else sync
         if use_sync:
@@ -138,12 +169,15 @@ class CopilotController(QObject):
             try:
                 self._on_worker_started()
                 result = agent.handle(text)
-                self._on_worker_response(result)
+                if turn == self._turn_id:
+                    self._on_worker_response(result)
             except Exception as exc:  # noqa: BLE001
                 LOGGER.exception("Copilot sync ask failed")
-                self._on_worker_error(str(exc))
+                if turn == self._turn_id:
+                    self._on_worker_error(str(exc))
             finally:
-                self._on_worker_finished()
+                if turn == self._turn_id:
+                    self._on_worker_finished()
             return True
 
         self._cleanup_worker()
@@ -152,15 +186,15 @@ class CopilotController(QObject):
         assert self._thread is not None and self._worker is not None
         self._worker.started.connect(self._on_worker_started)
         self._worker.response_ready.connect(
-            self._on_worker_response,
+            lambda result, t=turn: self._deliver_response(t, result),
             type=Qt.ConnectionType.QueuedConnection,  # type: ignore[arg-type]
         )
         self._worker.error.connect(
-            self._on_worker_error,
+            lambda message, t=turn: self._deliver_error(t, message),
             type=Qt.ConnectionType.QueuedConnection,  # type: ignore[arg-type]
         )
         self._worker.finished.connect(
-            self._on_worker_finished,
+            lambda t=turn: self._deliver_finished(t),
             type=Qt.ConnectionType.QueuedConnection,  # type: ignore[arg-type]
         )
         self._thread.finished.connect(self._worker.deleteLater)
@@ -168,6 +202,30 @@ class CopilotController(QObject):
         self._set_busy(True)
         self._thread.start()
         return True
+
+    def cancel(self) -> bool:
+        """Stop an in-flight request. Never applies a ChangeSet."""
+        if not self._busy:
+            return False
+        self._turn_id += 1
+        self._cleanup_worker()
+        self._set_busy(False)
+        return True
+
+    def _deliver_response(self, turn: int, result: object) -> None:
+        if turn != self._turn_id:
+            return
+        self._on_worker_response(result)
+
+    def _deliver_error(self, turn: int, message: str) -> None:
+        if turn != self._turn_id:
+            return
+        self._on_worker_error(message)
+
+    def _deliver_finished(self, turn: int) -> None:
+        if turn != self._turn_id:
+            return
+        self._on_worker_finished()
 
     def _set_busy(self, busy: bool) -> None:
         self._busy = busy
@@ -181,6 +239,7 @@ class CopilotController(QObject):
         if turn is None:
             self.error.emit(friendly_copilot_error("malformed_response"))
             return
+        self._last_turn = turn
         if turn.changeset is not None:
             self._pending = turn.changeset
             # Validate immediately so Apply can be enabled when safe
@@ -189,6 +248,7 @@ class CopilotController(QObject):
                     self._pending.validate(
                         self._session.plan,
                         conversion_busy=self._session.conversion_busy,
+                        rule_store=self._session.curation_store(),
                     )
             except ChangeSetError as exc:
                 LOGGER.info("changeset validate after turn: %s", exc)
@@ -252,14 +312,25 @@ class CopilotController(QObject):
         cs = self._pending
         plan = self._session.plan
         busy = self._session.conversion_busy
+        status_before = cs.status.value
+        turn_id = (
+            self._last_turn.provenance_turn_id
+            if self._last_turn is not None
+            else ""
+        )
         if busy:
             return False, friendly_copilot_error("conversion_busy")
         try:
             if cs.status == ChangeSetStatus.DRAFT:
-                cs.validate(plan, conversion_busy=busy)
+                cs.validate(plan, conversion_busy=busy, rule_store=self._session.curation_store())
             if cs.status == ChangeSetStatus.VALIDATED:
                 cs.approve()
-            cs.apply(plan, conversion_busy=busy, require_validated=True)
+            cs.apply(
+                plan,
+                conversion_busy=busy,
+                require_validated=True,
+                rule_store=self._session.curation_store(),
+            )
         except ChangeSetError as exc:
             msg = str(exc)
             if "fingerprint" in msg.lower() or "stale" in msg.lower():
@@ -267,23 +338,133 @@ class CopilotController(QObject):
             if "conversion" in msg.lower() and "running" in msg.lower():
                 return False, friendly_copilot_error("conversion_busy")
             return False, msg
+        preview = cs.preview() if hasattr(cs, "preview") else {}
+        applied_summary = {
+            "n_edits": len(cs.edits or []),
+            "subject_renames": dict((preview or {}).get("subject_renames") or {}),
+            "n_include_changes": len((preview or {}).get("include_changes") or []),
+            "n_entity_changes": len((preview or {}).get("entity_changes") or []),
+            "plan_fingerprint_before": cs.plan_fingerprint,
+            "plan_fingerprint_after": plan_fingerprint(plan),
+        }
+        message = "Proposed changes applied to the BIDS conversion plan."
+        if cs.rule_catalog_op and cs.proposed_rule is not None:
+            rule = cs.proposed_rule
+            message = (
+                "Proposed changes applied to the BIDS conversion plan. "
+                f"Saved dataset curation rule {rule.id[:8]} (v{rule.version})."
+            )
+        self._record_decision(
+            turn_id=turn_id,
+            action="applied",
+            changeset=cs,
+            status_before=status_before,
+            message=message,
+            applied_summary=applied_summary,
+            plan_fingerprint_after=plan_fingerprint(plan),
+        )
+        self._session.last_applied_changeset = cs
         self._session.invalidate_context_cache()
         self._pending = None
         self.changeset_updated.emit()
         self.plan_applied.emit()
-        return True, "Proposed changes applied to the BIDS conversion plan."
+        return True, message
 
     def reject_pending(self) -> tuple[bool, str]:
         if self._pending is None:
             return False, "No proposed changes to reject."
+        cs = self._pending
+        status_before = cs.status.value
+        turn_id = (
+            self._last_turn.provenance_turn_id
+            if self._last_turn is not None
+            else ""
+        )
         try:
-            self._pending.reject()
+            cs.reject()
         except ChangeSetError as exc:
             return False, str(exc)
-        status = self._pending.status
+        status = cs.status
+        message = f"Proposal rejected ({status.value}). Plan unchanged."
+        self._record_decision(
+            turn_id=turn_id,
+            action="rejected",
+            changeset=cs,
+            status_before=status_before,
+            message=message,
+            applied_summary=None,
+            plan_fingerprint_after=plan_fingerprint(self._session.plan)
+            if self._session is not None
+            else "",
+        )
         self._pending = None
         self.changeset_updated.emit()
-        return True, f"Proposal rejected ({status.value}). Plan unchanged."
+        return True, message
+
+    def _record_decision(
+        self,
+        *,
+        turn_id: str,
+        action: str,
+        changeset: ChangeSet,
+        status_before: str,
+        message: str,
+        applied_summary: dict | None,
+        plan_fingerprint_after: str,
+    ) -> None:
+        store = self._provenance_store
+        if store is None:
+            return
+        try:
+            record = build_decision_record(
+                turn_id=turn_id or "",
+                action=action,
+                changeset=changeset,
+                status_before=status_before,
+                message=message,
+                applied_summary=applied_summary,
+                dataset_root=None
+                if self._session is None
+                else self._session.plan.dataset_root,
+                plan_fingerprint_after=plan_fingerprint_after,
+            )
+            store.append(record)
+        except Exception as exc:  # noqa: BLE001
+            LOGGER.warning("Failed to persist Copilot provenance decision: %s", exc)
+
+    def explain_pending(self) -> CopilotExplanation | None:
+        """Explain the pending ChangeSet. Read-only; never applies."""
+        if self._pending is None:
+            return None
+        traces = self._last_turn.tool_traces if self._last_turn is not None else None
+        if self._last_turn is not None and self._last_turn.explanation is not None:
+            expl = self._last_turn.explanation
+            if getattr(expl, "changeset_id", "") == self._pending.id:
+                return expl
+        return explain_changeset(self._pending, tool_traces=traces)
+
+    def explain_mapping_uid(self, series_uid: str = "") -> CopilotExplanation | None:
+        """Explain the current (or given) acquisition mapping. Read-only."""
+        if self._session is None:
+            return None
+        uid = (series_uid or "").strip() or str(
+            (self._session.ui_selection or {}).get("series_uid") or ""
+        ).strip()
+        if not uid:
+            return None
+        try:
+            return explain_mapping(self._session, uid)
+        except KeyError:
+            return None
+
+    def explain_current(self) -> CopilotExplanation | None:
+        """ChangeSet explanation if pending, otherwise selected mapping."""
+        pending = self.explain_pending()
+        if pending is not None:
+            return pending
+        if self._last_turn is not None and self._last_turn.explanation is not None:
+            return self._last_turn.explanation
+        return self.explain_mapping_uid()
 
     def notify_plan_edited(self) -> None:
         """Call when Preview edits may have changed the live plan."""

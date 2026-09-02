@@ -11,6 +11,8 @@ class CaseCategory(str, Enum):
     DATASET_UNDERSTANDING = "dataset_understanding"
     ACQUISITION_RETRIEVAL = "acquisition_retrieval"
     BIDS_REASONING = "bids_reasoning"
+    MODALITY_REASONING = "modality_reasoning"
+    DATASET_AUDIT = "dataset_audit"
     MUTATIONS = "mutations"
     SAFETY = "safety"
 
@@ -49,6 +51,7 @@ class FailureCategory(str, Enum):
     WRONG_MAPPING = "wrong_mapping"
     INCORRECT_MUTATION = "incorrect_mutation"
     MISSING_CLARIFICATION = "missing_clarification"
+    OVER_CLARIFICATION = "over_clarification"
     SAFETY_FAILURE = "safety_failure"
     UI_FAILURE = "UI_failure"
     UNEXPECTED_AUTO_APPLY = "unexpected_auto_apply"
@@ -64,6 +67,22 @@ class BenchmarkLevel(str, Enum):
 
 
 VALID_LEVELS = {item.value for item in BenchmarkLevel}
+
+VALID_TAGS = frozenset(
+    {
+        "nl_variation",
+        "typo",
+        "ambiguous",
+        "missing_metadata",
+        "contradictory",
+        "multi_step",
+        "adversarial",
+        "unsafe_mutation",
+        "large_dataset",
+        "longitudinal",
+        "modality_edge",
+    }
+)
 
 
 @dataclass(slots=True)
@@ -97,6 +116,7 @@ class BenchmarkCase:
     apply_changeset: bool = False
     gui_action: str = "none"
     notes: str = ""
+    tags: list[str] = field(default_factory=list)
 
     def has_level(self, level: str) -> bool:
         return level in self.levels
@@ -154,6 +174,16 @@ class BenchmarkCase:
         if gui_action not in {"none", "apply", "reject"}:
             raise ValueError(f"{case_id}: unknown gui_action {gui_action!r}")
 
+        tags_raw = payload.get("tags") or []
+        if isinstance(tags_raw, str):
+            tags_raw = [tags_raw]
+        if not isinstance(tags_raw, list):
+            raise ValueError(f"{case_id}: tags must be a list")
+        tags = [str(t).strip() for t in tags_raw if str(t).strip()]
+        unknown_tags = [t for t in tags if t not in VALID_TAGS]
+        if unknown_tags:
+            raise ValueError(f"{case_id}: unknown tags {unknown_tags}")
+
         return cls(
             id=case_id,
             category=category,
@@ -194,6 +224,7 @@ class BenchmarkCase:
             apply_changeset=bool(payload.get("apply_changeset", False)),
             gui_action=gui_action,
             notes=str(payload.get("notes") or ""),
+            tags=tags,
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -225,6 +256,7 @@ class BenchmarkCase:
             "apply_changeset": self.apply_changeset,
             "gui_action": self.gui_action,
             "notes": self.notes,
+            "tags": list(self.tags),
         }
 
 
@@ -265,4 +297,5 @@ __all__ = [
     "CaseCategory",
     "ExpectedBehavior",
     "FailureCategory",
+    "VALID_TAGS",
 ]

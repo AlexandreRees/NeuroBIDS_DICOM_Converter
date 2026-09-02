@@ -77,12 +77,33 @@ def default_registry() -> ToolRegistry:
         RenameSessionsTool,
         RenameSubjectsTool,
     )
+    from neuro_pipeline.neurobids.copilot.tools.audit import AuditDatasetTool
+    from neuro_pipeline.neurobids.copilot.tools.explain import ExplainMappingTool
     from neuro_pipeline.neurobids.copilot.tools.planning import ProposeBidsMappingTool
     from neuro_pipeline.neurobids.copilot.tools.readonly import (
         FindAcquisitionsTool,
         InspectDatasetTool,
         InspectSubjectTool,
         ListSubjectsTool,
+    )
+    from neuro_pipeline.neurobids.copilot.tools.reasoning import (
+        ClassifyAcquisitionsTool,
+        ClassifyAcquisitionTool,
+        InspectEntitiesTool,
+        ListAmbiguousAcquisitionsTool,
+        ListAnatomicalTool,
+        ListDwiTool,
+        ListFieldmapsTool,
+        ListFunctionalTool,
+        ListMultiechoTool,
+        ListSbrefTool,
+    )
+    from neuro_pipeline.neurobids.copilot.tools.rules import (
+        ApplyCurationRulesTool,
+        InspectCurationRuleTool,
+        ListCurationRulesTool,
+        ProposeCurationRuleTool,
+        SetCurationRuleEnabledTool,
     )
 
     registry = ToolRegistry()
@@ -91,7 +112,24 @@ def default_registry() -> ToolRegistry:
         ListSubjectsTool(),
         InspectSubjectTool(),
         FindAcquisitionsTool(),
+        ClassifyAcquisitionTool(),
+        ClassifyAcquisitionsTool(),
+        ListAnatomicalTool(),
+        ListFunctionalTool(),
+        ListDwiTool(),
+        ListFieldmapsTool(),
+        ListSbrefTool(),
+        ListMultiechoTool(),
+        InspectEntitiesTool(),
+        ListAmbiguousAcquisitionsTool(),
+        AuditDatasetTool(),
+        ExplainMappingTool(),
         ProposeBidsMappingTool(),
+        ListCurationRulesTool(),
+        InspectCurationRuleTool(),
+        ProposeCurationRuleTool(),
+        ApplyCurationRulesTool(),
+        SetCurationRuleEnabledTool(),
         RenameSubjectsTool(),
         RenameSessionsTool(),
         ExcludeAcquisitionsTool(),

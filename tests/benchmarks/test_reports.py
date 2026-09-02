@@ -48,6 +48,9 @@ def test_markdown_contains_failure_block() -> None:
     assert "SF-01" in md
     assert "safety preserved" in md
     assert "Overall: n/a" in md
+    assert "Accuracy:" in md
+    assert "Safety:" in md
+    assert "Hallucination:" in md
 
 
 def test_write_reports_timestamped(tmp_path: Path) -> None:

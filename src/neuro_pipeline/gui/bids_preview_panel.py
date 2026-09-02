@@ -60,6 +60,7 @@ class BIDSPreviewPanel(QGroupBox):
     plan_changed = Signal()
     continue_requested = Signal()
     status_message = Signal(str)
+    acquisition_selected = Signal(str)
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__("BIDS Preview", parent)
@@ -87,9 +88,9 @@ class BIDSPreviewPanel(QGroupBox):
         self.tree = QTreeWidget()
         self.tree.setHeaderLabels(["Planned BIDS structure"])
         self.tree.setMinimumHeight(120)
-        self.tree.setMaximumHeight(200)
         self.tree.setAnimated(True)
-        layout.addWidget(self.tree)
+        self.tree.itemClicked.connect(self._on_tree_clicked)
+        layout.addWidget(self.tree, stretch=1)
 
         self.table = QTableWidget(0, len(_COLUMNS))
         self.table.setHorizontalHeaderLabels(list(_COLUMNS))
@@ -98,7 +99,8 @@ class BIDSPreviewPanel(QGroupBox):
         self.table.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table.setMinimumHeight(140)
         self.table.itemChanged.connect(self._on_item_changed)
-        layout.addWidget(self.table)
+        self.table.itemSelectionChanged.connect(self._on_table_selection)
+        layout.addWidget(self.table, stretch=2)
 
         self.status = QLabel("No preview yet — select an input folder.")
         self.status.setObjectName("statusLabel")
@@ -177,6 +179,49 @@ class BIDSPreviewPanel(QGroupBox):
     def sync_edits_to_plan(self) -> None:
         """Flush table edits into the live :class:`BIDSConversionPlan`."""
         self._sync_table_into_plan()
+
+    def select_uid(self, uid: str) -> None:
+        """Select the table row for ``uid`` and emit ``acquisition_selected``."""
+        uid = (uid or "").strip()
+        if not uid:
+            return
+        self.table.blockSignals(True)
+        try:
+            for row in range(self.table.rowCount()):
+                cell = self.table.item(row, 0)
+                if cell and str(cell.data(Qt.ItemDataRole.UserRole) or "") == uid:
+                    self.table.selectRow(row)
+                    self.table.scrollToItem(cell)
+                    break
+        finally:
+            self.table.blockSignals(False)
+        self.acquisition_selected.emit(uid)
+
+    def focus_subject(self, subject: str) -> None:
+        """Expand the tree to ``subject`` and select its first table row."""
+        subject = (subject or "").strip()
+        target = f"sub-{subject.removeprefix('sub-')}" if subject else ""
+        for i in range(self.tree.topLevelItemCount()):
+            node = self.tree.topLevelItem(i)
+            if node is None:
+                continue
+            if not target or node.text(0) == target:
+                self.tree.setCurrentItem(node)
+                node.setExpanded(True)
+                if target:
+                    break
+        if not subject:
+            return
+        for row in range(self.table.rowCount()):
+            cell = self.table.item(row, 1)
+            if cell and (cell.text() or "").removeprefix("sub-") == subject.removeprefix("sub-"):
+                uid_cell = self.table.item(row, 0)
+                uid = str(uid_cell.data(Qt.ItemDataRole.UserRole) or "") if uid_cell else ""
+                if uid:
+                    self.select_uid(uid)
+                else:
+                    self.table.selectRow(row)
+                return
 
     def reload_display(self) -> None:
         """Repaint tree/table from the current plan (e.g. after ChangeSet.apply)."""
@@ -366,7 +411,9 @@ class BIDSPreviewPanel(QGroupBox):
             if dt_key not in datatypes:
                 datatypes[dt_key] = QTreeWidgetItem([item.datatype or "unknown"])
                 parent.addChild(datatypes[dt_key])
-            datatypes[dt_key].addChild(QTreeWidgetItem([item.intended_filename]))
+            leaf = QTreeWidgetItem([item.intended_filename])
+            leaf.setData(0, Qt.ItemDataRole.UserRole, item.source_series_uid)
+            datatypes[dt_key].addChild(leaf)
         self.tree.expandAll()
 
     def _populate_table(self) -> None:
@@ -440,3 +487,22 @@ class BIDSPreviewPanel(QGroupBox):
         # Lightweight: mark dirty; Refresh rebuilds filenames.
         self._plan.mark_validated(False)
         self.plan_changed.emit()
+
+    def _on_table_selection(self) -> None:
+        if self._updating:
+            return
+        items = self.table.selectedItems()
+        if not items:
+            return
+        uid = str(items[0].data(Qt.ItemDataRole.UserRole) or "")
+        if uid:
+            self.acquisition_selected.emit(uid)
+
+    def _on_tree_clicked(self, item: QTreeWidgetItem, _column: int = 0) -> None:
+        uid = str(item.data(0, Qt.ItemDataRole.UserRole) or "")
+        if uid:
+            self.select_uid(uid)
+            return
+        label = (item.text(0) or "").strip()
+        if label.startswith("sub-"):
+            self.focus_subject(label)

@@ -17,15 +17,15 @@ from neuro_pipeline.neurobids.copilot.tools.registry import default_registry
 
 def test_dataset_counts(benchmark_ground_truth) -> None:
     gt = benchmark_ground_truth
-    assert gt["n_subjects"] == 3
-    assert gt["subject_ids"] == ["001", "002", "003"]
-    assert gt["n_sessions"] == 4
+    assert gt["n_subjects"] == 4
+    assert gt["subject_ids"] == ["001", "002", "003", "004"]
+    assert gt["n_sessions"] == 5
     assert gt["multi_session_subjects"] == ["001"]
-    assert gt["single_session_subjects"] == ["002", "003"]
-    assert gt["n_acquisitions"] == 14
+    assert gt["single_session_subjects"] == ["002", "003", "004"]
+    assert gt["n_acquisitions"] == 24
     assert gt["modalities"] == ["MR"]
     assert gt["n_excluded"] == 1
-    assert gt["n_included"] == 13
+    assert gt["n_included"] == 23
 
 
 def test_dataset_covers_required_structure(benchmark_ground_truth) -> None:
@@ -47,8 +47,8 @@ def test_placeholder_dicom_is_not_real_pixels(benchmark_session) -> None:
         assert data == b"SYNTHETIC_DICOM_BYTES_NOT_PIXELS"
 
 
-def test_spec_has_fourteen_acquisitions() -> None:
-    assert len(acquisition_spec()) == 14
+def test_spec_has_expected_acquisitions() -> None:
+    assert len(acquisition_spec()) == 24
 
 
 def test_cases_reference_existing_uids(benchmark_cases, benchmark_ground_truth) -> None:

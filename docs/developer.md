@@ -15,6 +15,40 @@ pytest
 python -m neuro_pipeline
 ```
 
+### UI Preview / Demo Mode
+
+Launch the real NeuroBIDS `MainWindow` with a tiny synthetic dataset (no real DICOM, no API key):
+
+```bash
+python -m neuro_pipeline.gui.preview
+python -m neuro_pipeline.gui.preview --scenario audit
+python -m neuro_pipeline.gui.preview --scenario changeset
+```
+
+| Scenario | Behavior |
+|----------|----------|
+| `normal` | Map workspace + Copilot open; inspector seeded |
+| `audit` | Audit page focused; localizer left included for review |
+| `changeset` | Auto-asks sequential rename; Proposed Changes ready for Reject/Apply |
+
+Copilot uses `PreviewDemoProvider` (Fake LLM) so Ask → tool → ChangeSet → Reject/Apply works offline.
+
+### Production LLM (OpenAI-compatible)
+
+Optional. Configure via environment variables only (never commit keys):
+
+```bash
+export NEUROBIDS_LLM_PROVIDER=openai   # or azure | local | none
+export NEUROBIDS_LLM_MODEL=gpt-4o-mini
+export NEUROBIDS_LLM_API_KEY=...       # required except provider=local
+export NEUROBIDS_LLM_BASE_URL=https://api.openai.com/v1   # optional override
+export NEUROBIDS_LLM_TIMEOUT=60
+export NEUROBIDS_LLM_MAX_RETRIES=2
+```
+
+The HTTP client expects a JSON assistant object (`message` | `clarify` | `tool_call`).
+`CopilotAgent` still validates every tool name/arguments against `ToolRegistry` and never auto-applies mutations.
+
 ## Key modules
 
 | Module | Responsibility |

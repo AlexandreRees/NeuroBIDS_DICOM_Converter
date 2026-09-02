@@ -51,7 +51,7 @@ def run_app(argv: Sequence[str] | None = None) -> int:
             logging.basicConfig(level=logging.WARNING)
 
         app = QApplication(args)
-        app.setApplicationName("NeuroPipeline DICOM Converter")
+        app.setApplicationName("NeuroBIDS")
         app.setApplicationVersion(__version__)
         app.setOrganizationName("Alexandre Rees")
         app.setOrganizationDomain("neuropipeline.local")
@@ -67,7 +67,7 @@ def run_app(argv: Sequence[str] | None = None) -> int:
                     None,
                     "Unexpected error",
                     (
-                        "NeuroPipeline DICOM Converter encountered an unexpected error.\n\n"
+                        "NeuroBIDS encountered an unexpected error.\n\n"
                         f"{exc_type.__name__}: {exc}\n\n"
                         f"Please check the NeuroPipeline log file at:\n{hint}"
                     ),
@@ -101,7 +101,7 @@ def run_app(argv: Sequence[str] | None = None) -> int:
                 None,
                 "Startup failed",
                 (
-                    "NeuroPipeline DICOM Converter could not start.\n\n"
+                    "NeuroBIDS could not start.\n\n"
                     f"{exc}\n\n"
                     + (
                         f"Please check the NeuroPipeline log file at:\n{hint}"

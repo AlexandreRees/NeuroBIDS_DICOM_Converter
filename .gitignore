@@ -24,3 +24,5 @@ installer/build/
 Thumbs.db
 # Local acceptance / demo artifacts (screenshots, synthetic DICOM, reports)
 tmp_dev_demo/
+PRIVACY_AUDIT_REPORT.txt
+SECONDARY_SECURITY_FINDINGS.txt

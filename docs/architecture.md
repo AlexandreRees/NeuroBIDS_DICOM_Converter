@@ -74,6 +74,31 @@ DICOM folder
     → conversion_report.html
 ```
 
+## NeuroBIDS product architecture
+
+```text
+                NEUROBIDS
+                    │
+        ┌───────────┴───────────┐
+        │                       │
+   Deterministic Core       Copilot
+        │                       │
+   BIDS / DICOM / QC      Natural language
+   validation / export       reasoning
+        │                       │
+        └───────────┬───────────┘
+                    │
+                ChangeSet
+                    │
+             Human approval
+                    │
+                  Apply
+```
+
+GUI stages: Discover → Map → Audit → Protect → Release. Conversion / Queue / Settings / Logs remain tools. See `docs/neurobids_workflow.md`.
+
+The LLM never touches DICOM, the filesystem, or dcm2niix. It calls typed tools only.
+
 ## Design rules
 
 - No `subprocess` calls from the GUI.

@@ -1,8 +1,12 @@
 # BIDS Conversion Preview
 
-The Convert page includes an interactive **BIDS Preview** between Input analysis and
-Subject/Session. It lets you inspect and edit the planned BIDS layout **before** any
-DICOM conversion.
+The **Map** page is the central BIDS workspace (subjects · preview tree/table ·
+acquisition inspector). Conversion remains a tool page that still consumes the same
+in-memory `BIDSConversionPlan`. Copilot is a collapsible assistant beside the workspace,
+not a second planner.
+
+The preview lets you inspect and edit the planned BIDS layout **before** any DICOM
+conversion.
 
 ## Safety
 

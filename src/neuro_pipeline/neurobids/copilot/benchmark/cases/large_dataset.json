@@ -1,0 +1,414 @@
+{
+  "version": 1,
+  "category": "dataset_understanding",
+  "cases": [
+    {
+      "id": "LD-01",
+      "category": "dataset_understanding",
+      "tags": [
+        "large_dataset"
+      ],
+      "prompt": "Enumerate every acquisition in the dataset.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_matches": 24
+      },
+      "expected_acquisitions": [
+        "uid.001.01.t1w",
+        "uid.001.01.func",
+        "uid.001.01.dwi",
+        "uid.001.01.loc",
+        "uid.001.02.t1w",
+        "uid.001.02.func",
+        "uid.002.01.t1w",
+        "uid.002.01.func",
+        "uid.002.01.dwi",
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix",
+        "uid.003.01.t1w",
+        "uid.003.01.loc",
+        "uid.003.01.unmap",
+        "uid.004.01.t2w",
+        "uid.004.01.flair",
+        "uid.004.01.task",
+        "uid.004.01.sbref",
+        "uid.004.01.fmap_ap",
+        "uid.004.01.fmap_pa",
+        "uid.004.01.mecho1",
+        "uid.004.01.mecho2",
+        "uid.004.01.run02",
+        "uid.004.01.mixed"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "There are 24 acquisitions in the dataset."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "LD-02",
+      "category": "dataset_understanding",
+      "tags": [
+        "large_dataset"
+      ],
+      "prompt": "List all subjects in this full cohort.",
+      "expected_tools": [
+        "list_subjects"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_subjects": 4,
+        "derived.subject_ids": [
+          "001",
+          "002",
+          "003",
+          "004"
+        ]
+      },
+      "expected_subjects": [
+        "001",
+        "002",
+        "003",
+        "004"
+      ],
+      "level1_tool": "list_subjects",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_subjects",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "The subject IDs are 001, 002, 003, and 004."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "LD-03",
+      "category": "dataset_understanding",
+      "tags": [
+        "large_dataset"
+      ],
+      "prompt": "Give complete dataset counts: subjects, sessions, and acquisitions.",
+      "expected_tools": [
+        "inspect_dataset"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "summary.n_subjects": 4,
+        "summary.n_sessions": 5,
+        "summary.n_acquisitions": 24
+      },
+      "expected_answer_contains": [
+        "4 subject"
+      ],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "There are 4 subjects, 5 sessions, and 24 acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "LD-04",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "large_dataset"
+      ],
+      "prompt": "List every acquisition included in conversion.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "included": true
+      },
+      "expected_answer": {
+        "n_matches": 23
+      },
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "included": true
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "included": true
+          }
+        },
+        {
+          "type": "message",
+          "content": "23 acquisitions are included in conversion."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "LD-05",
+      "category": "dataset_understanding",
+      "tags": [
+        "large_dataset"
+      ],
+      "prompt": "Summarize BIDS datatype occupancy across the whole table.",
+      "expected_tools": [
+        "inspect_dataset"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "summary.datatype_summary": {
+          "unknown": 5,
+          "anat": 7,
+          "func": 8,
+          "dwi": 2,
+          "fmap": 2
+        }
+      },
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "Datatypes present: anat, func, dwi, fmap, and unknown."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "LD-06",
+      "category": "dataset_understanding",
+      "tags": [
+        "large_dataset",
+        "modality_edge"
+      ],
+      "prompt": "List every acquisition for the densest subject (004).",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "subject": "004"
+      },
+      "expected_answer": {
+        "n_matches": 10
+      },
+      "expected_acquisitions": [
+        "uid.004.01.t2w",
+        "uid.004.01.flair",
+        "uid.004.01.task",
+        "uid.004.01.sbref",
+        "uid.004.01.fmap_ap",
+        "uid.004.01.fmap_pa",
+        "uid.004.01.mecho1",
+        "uid.004.01.mecho2",
+        "uid.004.01.run02",
+        "uid.004.01.mixed"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "subject": "004"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "subject": "004"
+          }
+        },
+        {
+          "type": "message",
+          "content": "Subject 004 has 10 acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "LD-07",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "large_dataset"
+      ],
+      "prompt": "Find every acquisition whose session label is 01.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "session": "01"
+      },
+      "expected_answer": {
+        "n_matches": 22
+      },
+      "expected_acquisitions": [
+        "uid.001.01.t1w",
+        "uid.001.01.func",
+        "uid.001.01.dwi",
+        "uid.001.01.loc",
+        "uid.002.01.t1w",
+        "uid.002.01.func",
+        "uid.002.01.dwi",
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix",
+        "uid.003.01.t1w",
+        "uid.003.01.loc",
+        "uid.003.01.unmap",
+        "uid.004.01.t2w",
+        "uid.004.01.flair",
+        "uid.004.01.task",
+        "uid.004.01.sbref",
+        "uid.004.01.fmap_ap",
+        "uid.004.01.fmap_pa",
+        "uid.004.01.mecho1",
+        "uid.004.01.mecho2",
+        "uid.004.01.run02",
+        "uid.004.01.mixed"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "session": "01"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "session": "01"
+          }
+        },
+        {
+          "type": "message",
+          "content": "Session 01 has 22 acquisitions across subjects."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "LD-08",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "large_dataset"
+      ],
+      "prompt": "Find all MR-modality series in the full dataset.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "modality": "MR"
+      },
+      "expected_answer": {
+        "n_matches": 24
+      },
+      "expected_acquisitions": [
+        "uid.001.01.t1w",
+        "uid.001.01.func",
+        "uid.001.01.dwi",
+        "uid.001.01.loc",
+        "uid.001.02.t1w",
+        "uid.001.02.func",
+        "uid.002.01.t1w",
+        "uid.002.01.func",
+        "uid.002.01.dwi",
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix",
+        "uid.003.01.t1w",
+        "uid.003.01.loc",
+        "uid.003.01.unmap",
+        "uid.004.01.t2w",
+        "uid.004.01.flair",
+        "uid.004.01.task",
+        "uid.004.01.sbref",
+        "uid.004.01.fmap_ap",
+        "uid.004.01.fmap_pa",
+        "uid.004.01.mecho1",
+        "uid.004.01.mecho2",
+        "uid.004.01.run02",
+        "uid.004.01.mixed"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "modality": "MR"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "modality": "MR"
+          }
+        },
+        {
+          "type": "message",
+          "content": "There are 24 MR acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    }
+  ]
+}

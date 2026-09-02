@@ -105,6 +105,13 @@ def user_temp_root() -> Path:
     return _ensure_subdir("tmp")
 
 
+def user_copilot_provenance_root() -> Path:
+    """``user_data_root()/logs/copilot_provenance`` — Copilot audit JSONL."""
+    path = user_log_root() / "copilot_provenance"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
 def user_state_dir() -> Path:
     """Backward-compatible alias for :func:`user_state_root`."""
     return user_state_root()
@@ -173,6 +180,15 @@ def default_naming_rules_path() -> Path:
 def default_bids_naming_rules_json() -> Path:
     """User-editable BIDS smart naming rules (JSON) under user config root."""
     return user_config_root() / "naming_rules.json"
+
+
+def default_curation_rules_root() -> Path:
+    """Dataset-specific curation rules (JSON files) under user config root.
+
+    Never written into the DICOM dataset folder. The directory is created
+    when a store is saved, not on read.
+    """
+    return user_config_root() / "curation_rules"
 
 
 def default_conversion_queue_path() -> Path:

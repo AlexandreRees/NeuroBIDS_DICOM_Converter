@@ -98,6 +98,7 @@ def session_two_subjects(tmp_path: Path) -> CopilotSession:
         series_list=series,
         detection_method="patient_id",
         n_dicom_files=3,
+        curation_rules_path=tmp_path / "curation_rules.json",
     )
 
 
@@ -309,6 +310,9 @@ def test_to_llm_tools_exposes_kind_not_internals() -> None:
     assert "execute" not in by_name["rename_subjects"]
     assert "list_subjects" in by_name
     assert by_name["list_subjects"]["kind"] == "read_only"
+    assert "explain_mapping" in by_name
+    assert by_name["explain_mapping"]["mutates_data"] is False
+    assert by_name["explain_mapping"]["kind"] == "read_only"
 
 
 def test_argument_schema_validation_unit() -> None:
@@ -323,3 +327,28 @@ def test_argument_schema_validation_unit() -> None:
         validate_tool_arguments(schema, {})
     with pytest.raises(ToolArgumentValidationError):
         validate_tool_arguments(schema, {"subject_id": "01", "extra": 1})
+
+
+def test_ui_selection_is_passed_to_llm_context(session_two_subjects: CopilotSession) -> None:
+    session_two_subjects.set_ui_selection(
+        subject="patient_A",
+        session="01",
+        description="rest_AP",
+        datatype="func",
+    )
+    provider = FakeLLMProvider(
+        [
+            {"type": "tool_call", "tool_name": "list_subjects", "arguments": {}},
+            {"type": "message", "content": "ok"},
+        ]
+    )
+    result = CopilotAgent(session=session_two_subjects, provider=provider).handle(
+        "Why was this classified as func?"
+    )
+    assert result.ok
+    assert provider.calls
+    payload = provider.calls[0]["user_payload"]
+    assert "current_selection" in payload
+    assert "rest_AP" in payload
+    assert "PatientName" not in payload
+    assert session_two_subjects.as_tool_state()["ui_selection"]["datatype"] == "func"

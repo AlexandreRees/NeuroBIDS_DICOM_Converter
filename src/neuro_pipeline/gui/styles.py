@@ -213,10 +213,51 @@ QPushButton#primaryButton:hover {
     background: #334e68;
 }
 
-QPushButton#primaryButton:disabled {
-    background: #9fb3c8;
-    border-color: #9fb3c8;
-    color: #f0f4f8;
+QPushButton#dangerButton {
+    background: #ffffff;
+    color: #9b2c2c;
+    border: 1px solid #c53030;
+    font-weight: 600;
+    min-width: 110px;
+    padding: 7px 14px;
+}
+
+QPushButton#dangerButton:hover {
+    background: #fff5f5;
+}
+
+QPushButton#dangerButton:disabled {
+    color: #c4a8a8;
+    border-color: #e2c8c8;
+}
+
+QFrame#proposalBanner {
+    background: #fffbeb;
+    border: 1px solid #f6e05e;
+    border-radius: 4px;
+}
+
+QFrame#stateBanner {
+    background: #f7fafc;
+    border: 1px solid #d9e2ec;
+    border-radius: 4px;
+}
+
+QTextEdit#copilotConversation {
+    background: #f7fafc;
+    border: 1px solid #d9e2ec;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+QGroupBox#proposalBox {
+    border: 1px solid #d69e2e;
+    background: #fffdf7;
+}
+
+QSplitter::handle:horizontal {
+    background: #bcccdc;
+    width: 6px;
 }
 
 QToolButton#collapsibleToggle {

@@ -1,0 +1,538 @@
+{
+  "version": 1,
+  "category": "dataset_understanding",
+  "cases": [
+    {
+      "id": "MS-01",
+      "category": "dataset_understanding",
+      "tags": [
+        "multi_step"
+      ],
+      "prompt": "First inspect the dataset, then list every subject ID.",
+      "expected_tools": [
+        "inspect_dataset",
+        "list_subjects"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_subjects": 4,
+        "derived.subject_ids": [
+          "001",
+          "002",
+          "003",
+          "004"
+        ]
+      },
+      "expected_subjects": [
+        "001",
+        "002",
+        "003",
+        "004"
+      ],
+      "level1_tool": "list_subjects",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "list_subjects",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "The subject IDs are 001, 002, 003, and 004."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-02",
+      "category": "dataset_understanding",
+      "tags": [
+        "multi_step",
+        "longitudinal"
+      ],
+      "prompt": "Inspect subject 001, then list only session 02 acquisitions.",
+      "expected_tools": [
+        "inspect_subject",
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "subject": "001",
+        "session": "02"
+      },
+      "expected_answer": {
+        "n_matches": 2
+      },
+      "expected_acquisitions": [
+        "uid.001.02.t1w",
+        "uid.001.02.func"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "subject": "001",
+        "session": "02"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_subject",
+          "arguments": {
+            "subject_id": "001"
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "subject": "001",
+            "session": "02"
+          }
+        },
+        {
+          "type": "message",
+          "content": "Session 02 has 2 acquisitions (subject 001 only)."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-03",
+      "category": "mutations",
+      "tags": [
+        "multi_step"
+      ],
+      "prompt": "Find localizer series, then exclude them from conversion.",
+      "expected_tools": [
+        "find_acquisitions",
+        "exclude_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "series_uids": [
+          "uid.001.01.loc",
+          "uid.003.01.loc"
+        ]
+      },
+      "expected_change_set": {
+        "tool_name": "exclude_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [
+          {
+            "series_uid": "uid.001.01.loc",
+            "after": false
+          },
+          {
+            "series_uid": "uid.003.01.loc",
+            "after": false
+          }
+        ]
+      },
+      "apply_changeset": false,
+      "level1_tool": "exclude_acquisitions",
+      "level1_arguments": {
+        "series_uids": [
+          "uid.001.01.loc",
+          "uid.003.01.loc"
+        ]
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "sequence": "localizer"
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "exclude_acquisitions",
+          "arguments": {
+            "series_uids": [
+              "uid.001.01.loc",
+              "uid.003.01.loc"
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "mutation proposal",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-04",
+      "category": "bids_reasoning",
+      "tags": [
+        "multi_step",
+        "missing_metadata"
+      ],
+      "prompt": "Audit unmapped series, then propose a mapping for unknown_protocol.",
+      "expected_tools": [
+        "audit_dataset",
+        "propose_bids_mapping"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.003.01.unmap"
+      },
+      "expected_answer": {
+        "derived.ambiguous": true,
+        "derived.proposed.datatype": "unknown"
+      },
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {
+        "series_uid": "uid.003.01.unmap"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "audit_dataset",
+          "arguments": {
+            "code": "unmapped"
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "propose_bids_mapping",
+          "arguments": {
+            "series_uid": "uid.003.01.unmap"
+          }
+        },
+        {
+          "type": "message",
+          "content": "No confident BIDS mapping exists; the series is flagged for manual review."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-05",
+      "category": "modality_reasoning",
+      "tags": [
+        "multi_step",
+        "modality_edge"
+      ],
+      "prompt": "Inspect subject 004, then list its fieldmaps.",
+      "expected_tools": [
+        "inspect_subject",
+        "list_fieldmaps"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "n_matches": 2
+      },
+      "expected_acquisitions": [
+        "uid.004.01.fmap_ap",
+        "uid.004.01.fmap_pa"
+      ],
+      "level1_tool": "list_fieldmaps",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_subject",
+          "arguments": {
+            "subject_id": "004"
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "list_fieldmaps",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "list_fieldmaps reports 2 fieldmaps: uid.004.01.fmap_ap and uid.004.01.fmap_pa."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-06",
+      "category": "mutations",
+      "tags": [
+        "multi_step"
+      ],
+      "prompt": "Find the excluded Phoenix report, then propose including it.",
+      "expected_tools": [
+        "find_acquisitions",
+        "include_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "series_uids": [
+          "uid.002.01.phoenix"
+        ]
+      },
+      "expected_change_set": {
+        "tool_name": "include_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [
+          {
+            "series_uid": "uid.002.01.phoenix",
+            "after": true
+          }
+        ]
+      },
+      "apply_changeset": false,
+      "level1_tool": "include_acquisitions",
+      "level1_arguments": {
+        "series_uids": [
+          "uid.002.01.phoenix"
+        ]
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "included": false
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "include_acquisitions",
+          "arguments": {
+            "series_uids": [
+              "uid.002.01.phoenix"
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "mutation proposal",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-07",
+      "category": "bids_reasoning",
+      "tags": [
+        "multi_step",
+        "modality_edge"
+      ],
+      "prompt": "Classify the mixed mprage/tse series, then propose a BIDS mapping.",
+      "expected_tools": [
+        "classify_acquisition",
+        "propose_bids_mapping"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.mixed"
+      },
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.mixed"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "classify_acquisition",
+          "arguments": {
+            "series_uid": "uid.004.01.mixed"
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "propose_bids_mapping",
+          "arguments": {
+            "series_uid": "uid.004.01.mixed"
+          }
+        },
+        {
+          "type": "message",
+          "content": "The mprage description conflicts with protocol tse; mapping is ambiguous and needs review."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-08",
+      "category": "modality_reasoning",
+      "tags": [
+        "multi_step",
+        "modality_edge"
+      ],
+      "prompt": "List SBRef series, then inspect their BIDS entities.",
+      "expected_tools": [
+        "list_sbref",
+        "inspect_entities"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.004.01.sbref"
+      },
+      "expected_acquisitions": [
+        "uid.004.01.sbref"
+      ],
+      "level1_tool": "inspect_entities",
+      "level1_arguments": {
+        "series_uid": "uid.004.01.sbref"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_sbref",
+          "arguments": {}
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_entities",
+          "arguments": {
+            "series_uid": "uid.004.01.sbref"
+          }
+        },
+        {
+          "type": "message",
+          "content": "uid.004.01.sbref is the only SBRef; inspect_entities shows suffix sbref without a task entity."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-09",
+      "category": "modality_reasoning",
+      "tags": [
+        "multi_step"
+      ],
+      "prompt": "Find T1w series, then classify subject 001 session 01 T1w.",
+      "expected_tools": [
+        "find_acquisitions",
+        "classify_acquisition"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.001.01.t1w"
+      },
+      "expected_answer": {
+        "derived.label": "T1w",
+        "derived.datatype": "anat",
+        "derived.suffix": "T1w"
+      },
+      "expected_acquisitions": [
+        "uid.001.01.t1w"
+      ],
+      "level1_tool": "classify_acquisition",
+      "level1_arguments": {
+        "series_uid": "uid.001.01.t1w"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "sequence": "t1"
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "classify_acquisition",
+          "arguments": {
+            "series_uid": "uid.001.01.t1w"
+          }
+        },
+        {
+          "type": "message",
+          "content": "classify_acquisition reports label T1w, datatype anat, suffix T1w."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "MS-10",
+      "category": "mutations",
+      "tags": [
+        "multi_step"
+      ],
+      "prompt": "Inspect subject 003, then exclude its localizer.",
+      "expected_tools": [
+        "inspect_subject",
+        "exclude_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "series_uids": [
+          "uid.003.01.loc"
+        ]
+      },
+      "expected_change_set": {
+        "tool_name": "exclude_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [
+          {
+            "series_uid": "uid.003.01.loc",
+            "after": false
+          }
+        ]
+      },
+      "apply_changeset": false,
+      "level1_tool": "exclude_acquisitions",
+      "level1_arguments": {
+        "series_uids": [
+          "uid.003.01.loc"
+        ]
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_subject",
+          "arguments": {
+            "subject_id": "003"
+          }
+        },
+        {
+          "type": "tool_call",
+          "tool_name": "exclude_acquisitions",
+          "arguments": {
+            "series_uids": [
+              "uid.003.01.loc"
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "mutation proposal",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    }
+  ]
+}

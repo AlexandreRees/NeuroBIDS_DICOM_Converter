@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -81,6 +82,13 @@ class CaseResult:
     message: str = ""
     stopped_reason: str = ""
     notes: str = ""
+    latency_ms: float | None = None
+    prompt_tokens: int | None = None
+    completion_tokens: int | None = None
+    total_tokens: int | None = None
+    provider_name: str = ""
+    model_name: str = ""
+    tags: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -105,10 +113,18 @@ class CaseResult:
             "message": self.message,
             "stopped_reason": self.stopped_reason,
             "notes": self.notes,
+            "latency_ms": self.latency_ms,
+            "prompt_tokens": self.prompt_tokens,
+            "completion_tokens": self.completion_tokens,
+            "total_tokens": self.total_tokens,
+            "provider_name": self.provider_name,
+            "model_name": self.model_name,
+            "tags": list(self.tags),
         }
 
 
 def evaluate_level1(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
+    t0 = time.perf_counter()
     work = clone_benchmark_session(session)
     registry = RecordingToolRegistry()
     before_fp = plan_fingerprint(work.plan)
@@ -126,6 +142,7 @@ def evaluate_level1(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         expected_tool=list(case.expected_tools),
         expected_arguments=case.expected_tool_arguments,
         expected_mutation=case.expected_changes or case.expected_change_set,
+        tags=list(case.tags),
     )
 
     if case.level1_check == "skip":
@@ -133,6 +150,7 @@ def evaluate_level1(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         result.notes = "level1 skipped by case"
         result.passed = True
         result.checks["skipped"] = True
+        _seal(result, t0)
         return result
 
     if case.level1_check == "tool_not_registered":
@@ -148,7 +166,7 @@ def evaluate_level1(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         _finalize_behavior(result, case)
         _check_dicom(result, work, before_mtime, before_bytes)
         _check_auto_apply(result, case, work, before_fp)
-        _seal(result)
+        _seal(result, t0)
         return result
 
     tool_name = case.level1_tool or (case.expected_tools[0] if case.expected_tools else "")
@@ -156,7 +174,7 @@ def evaluate_level1(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         result.mismatches.append("level1_tool is required for execute checks")
         result.failure_categories.append(FailureCategory.WRONG_TOOL.value)
         result.observed_behavior = "error"
-        _seal(result)
+        _seal(result, t0)
         return result
 
     params = case.level1_arguments if case.level1_arguments is not None else {}
@@ -189,11 +207,12 @@ def evaluate_level1(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
     _check_dicom(result, work, before_mtime, before_bytes)
     _check_auto_apply(result, case, work, before_fp, applied_explicitly=case.apply_changeset)
     _finalize_behavior(result, case)
-    _seal(result)
+    _seal(result, t0)
     return result
 
 
 def evaluate_level2(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
+    t0 = time.perf_counter()
     work = clone_benchmark_session(session)
     registry = RecordingToolRegistry()
     before_fp = plan_fingerprint(work.plan)
@@ -211,13 +230,14 @@ def evaluate_level2(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         expected_tool=list(case.expected_tools),
         expected_arguments=case.expected_tool_arguments,
         expected_mutation=case.expected_changes or case.expected_change_set,
+        tags=list(case.tags),
     )
 
     responses = list(case.scripted_llm_responses or [])
     if not responses:
         result.mismatches.append("level2 requires scripted_llm_responses")
         result.observed_behavior = "error"
-        _seal(result)
+        _seal(result, t0)
         return result
 
     provider = FakeLLMProvider(responses)
@@ -279,12 +299,13 @@ def evaluate_level2(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
     _check_dicom(result, work, before_mtime, before_bytes)
     _check_auto_apply(result, case, work, before_fp, applied_explicitly=case.apply_changeset)
     _finalize_behavior(result, case)
-    _seal(result)
+    _seal(result, t0)
     return result
 
 
 def evaluate_level3(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
     """Controller-level GUI benchmark (no fragile widget timing)."""
+    t0 = time.perf_counter()
     work = clone_benchmark_session(session)
     before_fp = plan_fingerprint(work.plan)
     before_mtime = dicom_mtime_map(work)
@@ -302,6 +323,7 @@ def evaluate_level3(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         expected_tool=list(case.expected_tools),
         expected_arguments=case.expected_tool_arguments,
         expected_mutation=case.expected_changes or case.expected_change_set,
+        tags=list(case.tags),
     )
 
     try:
@@ -310,14 +332,14 @@ def evaluate_level3(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         result.mismatches.append(f"GUI controller unavailable: {exc}")
         result.failure_categories.append(FailureCategory.UI_FAILURE.value)
         result.observed_behavior = "error"
-        _seal(result)
+        _seal(result, t0)
         return result
 
     responses = list(case.scripted_llm_responses or [])
     if not responses:
         result.mismatches.append("level3 requires scripted_llm_responses")
         result.observed_behavior = "error"
-        _seal(result)
+        _seal(result, t0)
         return result
 
     controller = CopilotController()
@@ -332,7 +354,7 @@ def evaluate_level3(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
         result.mismatches.append("controller.ask did not start")
         result.failure_categories.append(FailureCategory.UI_FAILURE.value)
         result.observed_behavior = "error"
-        _seal(result)
+        _seal(result, t0)
         return result
 
     turn = captured[-1] if captured else None
@@ -394,7 +416,7 @@ def evaluate_level3(case: BenchmarkCase, session: CopilotSession) -> CaseResult:
 
     _check_dicom(result, work, before_mtime, before_bytes)
     _finalize_behavior(result, case)
-    _seal(result)
+    _seal(result, t0)
     return result
 
 
@@ -734,6 +756,15 @@ def _check_auto_apply(
 
 
 def _finalize_behavior(result: CaseResult, case: BenchmarkCase) -> None:
+    over = (
+        case.expected_behavior != ExpectedBehavior.CLARIFY.value
+        and result.observed_behavior == ExpectedBehavior.CLARIFY.value
+    )
+    result.checks["not_over_clarified"] = not over
+    if over:
+        result.mismatches.append("over-clarification: clarified when a decisive answer was expected")
+        result.failure_categories.append(FailureCategory.OVER_CLARIFICATION.value)
+
     result.checks["behavior"] = result.observed_behavior == case.expected_behavior
     if not result.checks["behavior"]:
         result.mismatches.append(
@@ -741,7 +772,7 @@ def _finalize_behavior(result: CaseResult, case: BenchmarkCase) -> None:
         )
         if case.expected_behavior == ExpectedBehavior.CLARIFY.value:
             result.failure_categories.append(FailureCategory.MISSING_CLARIFICATION.value)
-        elif case.category == "safety":
+        elif case.category == "safety" or "adversarial" in case.tags or "unsafe_mutation" in case.tags:
             result.failure_categories.append(FailureCategory.SAFETY_FAILURE.value)
         else:
             result.failure_categories.append(FailureCategory.WRONG_BEHAVIOR.value)
@@ -765,7 +796,9 @@ def _finalize_behavior(result: CaseResult, case: BenchmarkCase) -> None:
         result.safety_preserved = False
 
 
-def _seal(result: CaseResult) -> None:
+def _seal(result: CaseResult, t0: float | None = None) -> None:
+    if t0 is not None and result.latency_ms is None:
+        result.latency_ms = round((time.perf_counter() - t0) * 1000.0, 3)
     result.failure_categories = list(dict.fromkeys(result.failure_categories))
     if any(
         c in result.failure_categories
@@ -820,6 +853,82 @@ def _enrich_tool_data(data: dict[str, Any]) -> dict[str, Any]:
             for s in sessions
             if isinstance(s, dict)
         }
+    if isinstance(out.get("classification"), dict):
+        classification = out["classification"]
+        inferred = (
+            classification.get("inferred")
+            if isinstance(classification.get("inferred"), dict)
+            else {}
+        )
+        derived["label"] = inferred.get("label") or classification.get("label")
+        derived["confidence"] = classification.get("confidence")
+        derived["ambiguous"] = classification.get("ambiguous")
+        derived["unclassified"] = classification.get("unclassified")
+        derived["suffix"] = inferred.get("suffix") or classification.get("suffix")
+        derived["datatype"] = inferred.get("datatype") or inferred.get("coarse") or classification.get("datatype")
+        derived["phase_encoding"] = inferred.get("phase_encoding") or classification.get("phase_encoding")
+        derived["is_sbref"] = inferred.get("is_sbref") if inferred.get("is_sbref") is not None else classification.get("is_sbref")
+        derived["is_multiecho"] = inferred.get("is_multiecho") if inferred.get("is_multiecho") is not None else classification.get("is_multiecho")
+        derived["echo"] = inferred.get("echo") or (inferred.get("entities") or {}).get("echo")
+        derived["run"] = inferred.get("run") or (inferred.get("entities") or {}).get("run")
+        derived["task_kind"] = inferred.get("task_kind")
+        derived["series_uids"] = [classification.get("series_uid")] if classification.get("series_uid") else []
+    if isinstance(out.get("entities"), list) and out["entities"]:
+        first_ent = out["entities"][0] if isinstance(out["entities"][0], dict) else {}
+        derived.setdefault("run", first_ent.get("run"))
+        derived.setdefault("echo", first_ent.get("echo"))
+        derived.setdefault("acquisition", first_ent.get("acquisition"))
+        derived.setdefault("direction", first_ent.get("direction"))
+        derived.setdefault("task", first_ent.get("task"))
+    rows = None
+    if isinstance(out.get("classifications"), list):
+        rows = out["classifications"]
+    elif isinstance(out.get("entities"), list):
+        rows = out["entities"]
+    if isinstance(rows, list):
+        derived["n_matches"] = out.get("n_matches", len(rows))
+        derived["series_uids"] = [
+            a.get("series_uid") or a.get("uid") for a in rows if isinstance(a, dict)
+        ]
+        derived["labels"] = [
+            a.get("label") or ((a.get("inferred") or {}).get("label") if isinstance(a.get("inferred"), dict) else None)
+            for a in rows
+            if isinstance(a, dict)
+        ]
+        derived["phase_encodings"] = [
+            a.get("phase_encoding")
+            or ((a.get("inferred") or {}).get("phase_encoding") if isinstance(a.get("inferred"), dict) else None)
+            for a in rows
+            if isinstance(a, dict)
+        ]
+        if rows and isinstance(rows[0], dict):
+            inf0 = rows[0].get("inferred") if isinstance(rows[0].get("inferred"), dict) else {}
+            ents0 = inf0.get("entities") if isinstance(inf0.get("entities"), dict) else {}
+            derived.setdefault("run", rows[0].get("run") or inf0.get("run") or ents0.get("run"))
+            derived.setdefault("echo", rows[0].get("echo") or inf0.get("echo") or ents0.get("echo"))
+            derived.setdefault(
+                "acquisition",
+                rows[0].get("acquisition") or inf0.get("acquisition") or ents0.get("acquisition"),
+            )
+    if isinstance(out.get("findings"), list):
+        findings = out["findings"]
+        derived["n_findings"] = out.get("n_findings", len(findings))
+        derived["finding_codes"] = [
+            f.get("code") for f in findings if isinstance(f, dict) and f.get("code")
+        ]
+        derived["n_errors"] = out.get("n_errors")
+        derived["n_warnings"] = out.get("n_warnings")
+        derived["n_info"] = out.get("n_info")
+        derived["auto_applied"] = out.get("auto_applied", False)
+        uids: list[Any] = []
+        for finding in findings:
+            if not isinstance(finding, dict):
+                continue
+            for item in finding.get("affected") or []:
+                if isinstance(item, dict) and (item.get("series_uid") or item.get("uid")):
+                    uids.append(item.get("series_uid") or item.get("uid"))
+        if uids:
+            derived["series_uids"] = uids
     if isinstance(out.get("acquisitions"), list):
         derived["n_matches"] = out.get("n_matches", len(out["acquisitions"]))
         derived["series_uids"] = [
@@ -832,6 +941,14 @@ def _enrich_tool_data(data: dict[str, Any]) -> dict[str, Any]:
         derived["proposed"] = prop.get("proposed") if isinstance(prop, dict) else None
         derived["ambiguous"] = prop.get("ambiguous") if isinstance(prop, dict) else None
         derived["evidence"] = prop.get("evidence") if isinstance(prop, dict) else None
+    if isinstance(out.get("explanation"), dict):
+        expl = out["explanation"]
+        derived["decision"] = expl.get("decision")
+        derived["confidence"] = expl.get("confidence")
+        derived["changeset_id"] = expl.get("changeset_id")
+        derived["tools_consulted"] = expl.get("tools_consulted")
+        derived["evidence"] = expl.get("evidence")
+        derived["series_uids"] = expl.get("affected_acquisitions")
     if derived:
         out["derived"] = derived
     return out
@@ -885,6 +1002,9 @@ def _collect_issue_codes(data: dict[str, Any]) -> list[str]:
     codes: list[str] = []
     summary = data.get("summary") if isinstance(data.get("summary"), dict) else {}
     for issue in summary.get("issues") or []:
+        if isinstance(issue, dict) and issue.get("code"):
+            codes.append(str(issue["code"]))
+    for issue in data.get("findings") or []:
         if isinstance(issue, dict) and issue.get("code"):
             codes.append(str(issue["code"]))
     for issue in data.get("issues") or []:

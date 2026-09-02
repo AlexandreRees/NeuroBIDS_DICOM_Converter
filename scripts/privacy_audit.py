@@ -73,14 +73,15 @@ LOCAL_PATH_PATTERNS = [
 ]
 
 SECRET_PATTERNS = [
-    r"(?i)api[_-]?key\s*[:=]\s*['\"][^'\"]{10,}",
-    r"(?i)secret[_-]?key\s*[:=]\s*['\"][^'\"]{10,}",
-    r"(?i)password\s*[:=]\s*['\"][^'\"]+",
-    r"(?i)token\s*[:=]\s*['\"][^'\"]{10,}",
+    r"(?i)api[_-]?key\s*[:=]\s*['\"](?!sk-test|sk-secret|sk-x|test-|dummy)[^'\"]{10,}['\"]",
+    r"(?i)secret[_-]?key\s*[:=]\s*['\"][^'\"]{10,}['\"]",
+    r"(?i)password\s*[:=]\s*['\"][^'\"]+['\"]",
+    r"(?i)(?:api[_-]?|access[_-]?|auth[_-]?)token\s*[:=]\s*['\"][^'\"]{10,}['\"]",
     r"-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----",
     r"ghp_[A-Za-z0-9]{20,}",
     r"github_pat_[A-Za-z0-9_]{20,}",
-    r"sk-[A-Za-z0-9]{20,}",
+    # OpenAI-style keys (avoid false positives like "...task-funcsbreffunc...")
+    r"(?<![A-Za-z0-9_-])sk-(?:proj-|live-)?[A-Za-z0-9]{32,}(?![A-Za-z0-9_-])",
 ]
 
 # Assigned PatientName / PatientID literals that are not synthetic markers.
@@ -121,13 +122,52 @@ def is_binary(path: Path) -> bool:
     return path.suffix.lower() in BINARY_EXTENSIONS
 
 
+SKIP_DIR_NAMES = {
+    ".git",
+    ".venv",
+    ".venv310",
+    ".gui_venv",
+    "venv",
+    "node_modules",
+    ".pytest_cache",
+    "__pycache__",
+    ".mypy_cache",
+    ".ruff_cache",
+    "dist",
+    "build",
+    "tmp_dev_demo",
+}
+
+
 def should_skip(relative: Path) -> bool:
     rel = relative.as_posix()
     if any(rel == p or rel.startswith(p + "/") for p in SKIP_RELATIVE_PREFIXES):
         return True
+    if any(part in SKIP_DIR_NAMES for part in relative.parts):
+        return True
     if relative.name in AUDIT_SELF_NAMES:
         return True
+    # Generated benchmark reports (gitignored); may contain long synthetic filenames.
+    if "tests/benchmarks/reports/" in rel and relative.suffix in {".json", ".md"}:
+        return True
     return False
+
+
+def is_synthetic_placeholder_dicom(path: Path) -> bool:
+    """Allow tiny synthetic placeholders under examples/ (not real DICOM)."""
+    try:
+        rel = path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return False
+    if not rel.startswith("examples/synthetic_dataset/"):
+        return False
+    if path.suffix.lower() not in {".dcm", ".dicom"}:
+        return False
+    try:
+        head = path.read_bytes()[:64]
+    except OSError:
+        return False
+    return head.startswith(b"SYNTHETIC")
 
 
 def scan_text(path: Path):
@@ -167,7 +207,8 @@ def main() -> int:
         name_l = path.name.lower()
         suffix = path.suffix.lower()
         if suffix in FORBIDDEN_EXTENSIONS or name_l.endswith(FORBIDDEN_COMPOUND):
-            findings.append(f"FORBIDDEN FILE TYPE: {relative}")
+            if not is_synthetic_placeholder_dicom(path):
+                findings.append(f"FORBIDDEN FILE TYPE: {relative}")
         if path.name in FORBIDDEN_NAMES:
             findings.append(f"FORBIDDEN FILE: {relative}")
 
@@ -178,11 +219,18 @@ def main() -> int:
             findings.append(f"STUDY/INFRASTRUCTURE PATH: {relative}")
 
         if not is_binary(path):
-            for category, pattern in scan_text(path):
-                findings.append(f"{category}: {relative} :: {pattern}")
+            # Test fixtures intentionally include scrubbed/example paths and mock keys.
+            if relative.parts and relative.parts[0] == "tests":
+                pass
+            else:
+                for category, pattern in scan_text(path):
+                    findings.append(f"{category}: {relative} :: {pattern}")
 
     for path in ROOT.rglob("*"):
         if not path.is_file():
+            continue
+        relative = path.relative_to(ROOT)
+        if should_skip(relative):
             continue
         if ".git" in path.parts:
             continue

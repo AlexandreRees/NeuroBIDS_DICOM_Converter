@@ -1,15 +1,21 @@
 # Changelog
 
-## v1.0.0
+## v1.0.0 — NeuroBIDS Copilot V1
 
 Added:
 
+- NeuroBIDS Copilot (typed tools → ChangeSet Apply/Reject; never auto-applies)
+- Stale-plan and conversion-busy Apply protection
+- Privacy-safe Copilot provenance logging (schema v1, JSONL + export)
+- OpenAI-compatible LLM provider including local/Ollama
+- Deterministic Copilot benchmark suite + optional `--live` evaluation
+- UI Preview/Demo mode (`python -m neuro_pipeline.gui.preview`)
+- Synthetic example dataset (`examples/synthetic_dataset/`)
 - Windows desktop packaging (`build_windows.spec`, Inno Setup `setup.iss`)
-- Automated PowerShell build (`scripts/build_windows.ps1`)
+- macOS build helper (`scripts/build_macos.sh`)
+- Docs: Install, Configuration, Copilot, workflow guide
+- Automated PowerShell Windows build (`scripts/build_windows.ps1`)
 - Application icon + Windows version metadata
-- End-user docs (`README_WINDOWS.md`, `docs/user_manual.md`)
-- Auto `dcm2niix` discovery (bundled → PATH → user prompt)
-- GUI UX: START CONVERSION, Validate output, Open NIfTI/report/logs
 - PHI-safe conversion logging
 
 ## v0.2.0

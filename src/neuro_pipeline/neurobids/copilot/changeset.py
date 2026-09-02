@@ -20,6 +20,8 @@ from neuro_pipeline.neurobids.copilot.plan_ops import (
     plan_fingerprint,
     snapshot_items,
 )
+from neuro_pipeline.neurobids.curation.engine import validate_rule
+from neuro_pipeline.neurobids.curation.models import CurationRule, RULE_CATALOG_OPS
 
 
 class ChangeSetStatus(str, Enum):
@@ -81,9 +83,19 @@ class ChangeSet:
     affected_subjects: list[str] = field(default_factory=list)
     affected_sessions: list[str] = field(default_factory=list)
     affected_acquisitions: list[str] = field(default_factory=list)
+    # Auditable explanation provenance (optional; never required to apply).
+    evidence: list[str] = field(default_factory=list)
+    tools_consulted: list[str] = field(default_factory=list)
+    confidence: float | None = None
+    # Optional dataset curation rule persisted only after user approval.
+    rule_catalog_op: str = ""  # save | replace | enable | disable | ""
+    proposed_rule: CurationRule | None = None
+    target_rule_id: str = ""
     # Internal rollback snapshot (cloned PlannedAcquisition list)
     _rollback_items: list[Any] = field(default_factory=list, repr=False)
     _applied_fingerprint: str = field(default="", repr=False)
+    _rule_rollback: list[dict[str, Any]] = field(default_factory=list, repr=False)
+    _rule_applied: bool = field(default=False, repr=False)
 
     # ------------------------------------------------------------------
     # Construction helpers
@@ -98,6 +110,8 @@ class ChangeSet:
         tool_name: str,
         reason: str = "",
         warnings: list[str] | None = None,
+        proposed_rule: CurationRule | None = None,
+        rule_catalog_op: str = "",
     ) -> ChangeSet:
         """Build a DRAFT ChangeSet by simulating edits on a cloned plan."""
         if not edit_batches:
@@ -142,6 +156,65 @@ class ChangeSet:
             affected_subjects=sorted(subjects),
             affected_sessions=sorted(sessions),
             affected_acquisitions=sorted(acqs),
+            proposed_rule=proposed_rule,
+            rule_catalog_op=str(rule_catalog_op or "").strip().lower(),
+            target_rule_id=(proposed_rule.id if proposed_rule is not None else ""),
+            _rollback_items=[item.clone() for item in plan.items],
+        )
+
+    @classmethod
+    def for_rule(
+        cls,
+        plan: BIDSConversionPlan,
+        *,
+        rule: CurationRule,
+        operation: str,
+        tool_name: str,
+        reason: str = "",
+        edit_batches: list[tuple[str, dict[str, Any]]] | None = None,
+        warnings: list[str] | None = None,
+    ) -> ChangeSet:
+        """Build a ChangeSet that persists a catalog rule after approval.
+
+        Optional ``edit_batches`` apply the mapping first (decision → plan),
+        then save the rule. Catalog-only operations have no plan edits.
+        """
+        op = str(operation or "").strip().lower()
+        if op not in RULE_CATALOG_OPS:
+            raise ChangeSetError(
+                f"Unsupported rule catalog operation {operation!r}. "
+                f"Allowed: {', '.join(sorted(RULE_CATALOG_OPS))}."
+            )
+        batches = list(edit_batches or [])
+        if batches:
+            cs = cls.from_edit_batches(
+                plan,
+                batches,
+                tool_name=tool_name,
+                reason=reason,
+                warnings=warnings,
+                proposed_rule=rule,
+                rule_catalog_op=op,
+            )
+            cs.evidence = list(rule.evidence)
+            cs.confidence = float(rule.confidence)
+            return cs
+        before = snapshot_items(plan)
+        return cls(
+            reason=reason,
+            tool_name=tool_name,
+            status=ChangeSetStatus.DRAFT,
+            plan_fingerprint=plan_fingerprint(plan),
+            edits=[],
+            edit_batches=[],
+            before_snapshot=before,
+            after_snapshot=before,
+            warnings=list(warnings or []),
+            evidence=list(rule.evidence),
+            confidence=float(rule.confidence),
+            proposed_rule=rule,
+            rule_catalog_op=op,
+            target_rule_id=rule.id,
             _rollback_items=[item.clone() for item in plan.items],
         )
 
@@ -215,6 +288,8 @@ class ChangeSet:
                 "warnings": len(self.validation_result.warnings),
                 "summary": self.validation_result.summary(),
             },
+            "rule": None if self.proposed_rule is None else self.proposed_rule.to_llm_dict(),
+            "rule_catalog_op": self.rule_catalog_op or None,
         }
 
     def validate(
@@ -222,18 +297,19 @@ class ChangeSet:
         plan: BIDSConversionPlan,
         *,
         conversion_busy: bool = False,
+        rule_store: Any | None = None,
     ) -> PlanValidationResult:
-        """Validate proposed edits on a cloned plan without applying them."""
+        """Validate proposed edits / rule on a clone without applying them."""
         self._assert_can_operate(plan, conversion_busy=conversion_busy, require_draftish=True)
-        simulated = clone_plan(plan)
-        apply_edits_to_plan(simulated, self.edit_batches, refresh=True)
-        result = simulated.validate()
+        self._validate_rule_payload(rule_store=rule_store)
+        if self.edit_batches:
+            simulated = clone_plan(plan)
+            apply_edits_to_plan(simulated, self.edit_batches, refresh=True)
+            result = simulated.validate()
+        else:
+            result = PlanValidationResult(ok=True, issues=[])
         self.validation_result = result
-        if result.ok or result.errors:
-            # Still mark VALIDATED when we successfully ran validation;
-            # application may proceed with warnings (BIDS-invalid ≠ hard fail),
-            # but errors are recorded for the UI.
-            self.status = ChangeSetStatus.VALIDATED
+        self.status = ChangeSetStatus.VALIDATED
         if result.errors:
             self.warnings.append(
                 f"Plan validation reported {len(result.errors)} error(s); "
@@ -247,8 +323,9 @@ class ChangeSet:
         *,
         conversion_busy: bool = False,
         require_validated: bool = True,
+        rule_store: Any | None = None,
     ) -> None:
-        """Apply edits to the live plan. Never touches DICOM files."""
+        """Apply plan edits and/or persist a proposed rule. Never touches DICOM."""
         if conversion_busy:
             self.status = ChangeSetStatus.FAILED
             raise ChangeSetError("Cannot apply ChangeSet while conversion is running.")
@@ -260,8 +337,7 @@ class ChangeSet:
             ChangeSetStatus.VALIDATED,
             ChangeSetStatus.APPROVED,
         }:
-            # Auto-validate once if still DRAFT
-            self.validate(plan, conversion_busy=False)
+            self.validate(plan, conversion_busy=False, rule_store=rule_store)
         current_fp = plan_fingerprint(plan)
         if current_fp != self.plan_fingerprint:
             self.status = ChangeSetStatus.FAILED
@@ -269,11 +345,26 @@ class ChangeSet:
                 "Stale ChangeSet: the BIDS conversion plan changed since this "
                 "ChangeSet was created. Regenerate the ChangeSet."
             )
-        # Capture rollback snapshot at apply time (authoritative live state)
         self._rollback_items = [item.clone() for item in plan.items]
+        if self.rule_catalog_op:
+            if rule_store is None:
+                self.status = ChangeSetStatus.FAILED
+                raise ChangeSetError("Rule catalog operation requires a CurationRuleStore.")
+            self._rule_rollback = rule_store.snapshot()
         try:
-            apply_edits_to_plan(plan, self.edit_batches, refresh=True)
+            if self.edit_batches:
+                apply_edits_to_plan(plan, self.edit_batches, refresh=True)
+            if self.rule_catalog_op:
+                self._apply_rule_catalog(rule_store)
+                self._rule_applied = True
         except Exception as exc:  # noqa: BLE001
+            if self.edit_batches:
+                plan.items = [item.clone() for item in self._rollback_items]
+                plan._validated = False
+                plan.refresh_filenames()
+            if self._rule_rollback and rule_store is not None and self._rule_applied:
+                rule_store.restore(self._rule_rollback)
+                self._rule_applied = False
             self.status = ChangeSetStatus.FAILED
             raise ChangeSetError(f"Failed to apply ChangeSet: {exc}") from exc
         self.status = ChangeSetStatus.APPLIED
@@ -284,19 +375,26 @@ class ChangeSet:
         plan: BIDSConversionPlan,
         *,
         conversion_busy: bool = False,
+        rule_store: Any | None = None,
     ) -> None:
-        """Restore plan items captured before the last successful apply."""
+        """Restore plan items and rule catalog captured before the last apply."""
         if conversion_busy:
             raise ChangeSetError("Cannot rollback ChangeSet while conversion is running.")
         if self.status != ChangeSetStatus.APPLIED:
             raise ChangeSetError("Only APPLIED ChangeSets can be rolled back.")
         if not self.reversible:
             raise ChangeSetError("ChangeSet is not reversible.")
-        if not self._rollback_items:
+        if self.edit_batches and not self._rollback_items:
             raise ChangeSetError("No rollback snapshot available.")
-        plan.items = [item.clone() for item in self._rollback_items]
-        plan._validated = False
-        plan.refresh_filenames()
+        if self.edit_batches:
+            plan.items = [item.clone() for item in self._rollback_items]
+            plan._validated = False
+            plan.refresh_filenames()
+        if self._rule_applied:
+            if rule_store is None:
+                raise ChangeSetError("Rule catalog rollback requires a CurationRuleStore.")
+            rule_store.restore(self._rule_rollback)
+            self._rule_applied = False
         self.status = ChangeSetStatus.ROLLED_BACK
 
     def reject(self) -> None:
@@ -324,11 +422,71 @@ class ChangeSet:
             "affected_subjects": list(self.affected_subjects),
             "affected_sessions": list(self.affected_sessions),
             "affected_acquisitions": list(self.affected_acquisitions),
+            "evidence": list(self.evidence),
+            "tools_consulted": list(self.tools_consulted),
+            "confidence": self.confidence,
             "edits": [e.to_dict() for e in self.edits],
             "before_snapshot": list(self.before_snapshot),
             "after_snapshot": list(self.after_snapshot),
             "preview": self.preview(),
+            "rule_catalog_op": self.rule_catalog_op or None,
+            "proposed_rule": None if self.proposed_rule is None else self.proposed_rule.to_dict(),
         }
+
+    def _validate_rule_payload(self, *, rule_store: Any | None) -> None:
+        from neuro_pipeline.neurobids.curation.engine import validate_rule
+
+        op = (self.rule_catalog_op or "").strip().lower()
+        if not op:
+            return
+        if op not in RULE_CATALOG_OPS:
+            raise ChangeSetError(f"Unsupported rule catalog operation {op!r}.")
+        if op in {"save", "replace"}:
+            if self.proposed_rule is None:
+                raise ChangeSetError("Rule catalog save requires a proposed_rule.")
+            result = validate_rule(self.proposed_rule)
+            if not result.ok:
+                raise ChangeSetError(f"Invalid curation rule: {result.summary()}")
+            for issue in result.issues:
+                if issue.level == "warning" and issue.message not in self.warnings:
+                    self.warnings.append(issue.message)
+        elif op in {"enable", "disable"}:
+            rule_id = self.target_rule_id or (
+                self.proposed_rule.id if self.proposed_rule is not None else ""
+            )
+            if not rule_id:
+                raise ChangeSetError("enable/disable requires target_rule_id.")
+            if rule_store is not None and rule_store.get(rule_id) is None:
+                raise ChangeSetError(f"Unknown curation rule: {rule_id}")
+
+    def _apply_rule_catalog(self, rule_store: Any) -> None:
+        from datetime import datetime, timezone
+
+        op = (self.rule_catalog_op or "").strip().lower()
+        now = datetime.now(timezone.utc).isoformat()
+        if op in {"save", "replace"}:
+            if self.proposed_rule is None:
+                raise ChangeSetError("Rule catalog save requires a proposed_rule.")
+            rule = self.proposed_rule.clone()
+            rule.provenance.changeset_id = self.id
+            rule.provenance.approved_at = now
+            if not rule.provenance.tool_name:
+                rule.provenance.tool_name = self.tool_name
+            saved = rule_store.upsert(
+                rule,
+                replace_id=self.target_rule_id or None,
+            )
+            self.proposed_rule = saved
+            self.target_rule_id = saved.id
+            return
+        if op in {"enable", "disable"}:
+            rule_id = self.target_rule_id or (
+                self.proposed_rule.id if self.proposed_rule is not None else ""
+            )
+            saved = rule_store.set_enabled(rule_id, enabled=(op == "enable"))
+            self.proposed_rule = saved
+            return
+        raise ChangeSetError(f"Unsupported rule catalog operation {op!r}.")
 
     # ------------------------------------------------------------------
     # Guards

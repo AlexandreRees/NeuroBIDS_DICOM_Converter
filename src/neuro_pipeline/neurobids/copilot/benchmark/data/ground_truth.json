@@ -1,34 +1,38 @@
 {
-  "n_subjects": 3,
+  "n_subjects": 4,
   "subject_ids": [
     "001",
     "002",
-    "003"
+    "003",
+    "004"
   ],
-  "n_sessions": 4,
+  "n_sessions": 5,
   "multi_session_subjects": [
     "001"
   ],
   "single_session_subjects": [
     "002",
-    "003"
+    "003",
+    "004"
   ],
-  "n_acquisitions": 14,
-  "n_dicom_files": 14,
+  "n_acquisitions": 24,
+  "n_dicom_files": 24,
   "modalities": [
     "MR"
   ],
   "datatypes": [
     "anat",
     "dwi",
+    "fmap",
     "func",
     "unknown"
   ],
   "datatype_summary": {
+    "func": 8,
+    "anat": 7,
     "unknown": 5,
-    "anat": 4,
-    "func": 3,
-    "dwi": 2
+    "dwi": 2,
+    "fmap": 2
   },
   "t1w_uids": [
     "uid.001.01.t1w",
@@ -39,7 +43,12 @@
   "func_uids": [
     "uid.001.01.func",
     "uid.001.02.func",
-    "uid.002.01.func"
+    "uid.002.01.func",
+    "uid.004.01.task",
+    "uid.004.01.sbref",
+    "uid.004.01.mecho1",
+    "uid.004.01.mecho2",
+    "uid.004.01.run02"
   ],
   "dwi_uids": [
     "uid.001.01.dwi",
@@ -76,7 +85,17 @@
     "uid.002.01.ambig",
     "uid.003.01.t1w",
     "uid.003.01.loc",
-    "uid.003.01.unmap"
+    "uid.003.01.unmap",
+    "uid.004.01.t2w",
+    "uid.004.01.flair",
+    "uid.004.01.task",
+    "uid.004.01.sbref",
+    "uid.004.01.fmap_ap",
+    "uid.004.01.fmap_pa",
+    "uid.004.01.mecho1",
+    "uid.004.01.mecho2",
+    "uid.004.01.run02",
+    "uid.004.01.mixed"
   ],
   "subject_002_uids": [
     "uid.002.01.t1w",
@@ -94,7 +113,7 @@
     "manual_mapping_required",
     "missing_datatype"
   ],
-  "n_included": 13,
+  "n_included": 23,
   "n_excluded": 1,
   "acquisitions": [
     {
@@ -250,6 +269,116 @@
       "suffix": "protocol",
       "include": true,
       "requires_manual_mapping": true
+    },
+    {
+      "series_uid": "uid.004.01.t2w",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "t2_tse",
+      "sequence_type": "anat",
+      "datatype": "anat",
+      "suffix": "T2w",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.flair",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "t2_flair",
+      "sequence_type": "anat",
+      "datatype": "anat",
+      "suffix": "FLAIR",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.task",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "task_nback_bold",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "bold",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.sbref",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "func_sbref",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "sbref",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.fmap_ap",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "fmap_AP",
+      "sequence_type": "fmap",
+      "datatype": "fmap",
+      "suffix": "epi",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.fmap_pa",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "fmap_PA",
+      "sequence_type": "fmap",
+      "datatype": "fmap",
+      "suffix": "epi",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.mecho1",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "multiecho_bold_echo-1",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "bold",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.mecho2",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "multiecho_bold_echo-2",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "bold",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.run02",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "rest_bold_run-02",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "bold",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.004.01.mixed",
+      "subject_id": "004",
+      "session_id": "01",
+      "description": "mprage",
+      "sequence_type": "anat",
+      "datatype": "anat",
+      "suffix": "T1w",
+      "include": true,
+      "requires_manual_mapping": false
     }
   ],
   "longitudinal_inconsistencies": [
@@ -260,5 +389,5 @@
       "datatype": "dwi"
     }
   ],
-  "notes": "Subject 001 is longitudinal: ses-01 has DWI, ses-02 does not. uid.002.01.ambig and uid.003.01.unmap require manual mapping. uid.002.01.phoenix is excluded from conversion."
+  "notes": "Subject 001 is longitudinal: ses-01 has DWI, ses-02 does not. uid.002.01.ambig and uid.003.01.unmap require manual mapping. uid.002.01.phoenix is excluded from conversion. Subject 004 holds T2w, FLAIR, task BOLD, SBRef, fmap AP/PA, multi-echo, run-02, and a conflicting mprage/tse pair (description vs protocol)."
 }

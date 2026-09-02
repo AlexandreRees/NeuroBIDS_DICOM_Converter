@@ -7,6 +7,7 @@ Tools remain deterministic; the LLM only proposes structured tool calls.
 from neuro_pipeline.neurobids.copilot.llm.agent import CopilotAgent
 from neuro_pipeline.neurobids.copilot.llm.client import CopilotLLMClient
 from neuro_pipeline.neurobids.copilot.llm.config import LLMConfig
+from neuro_pipeline.neurobids.copilot.llm.openai_compatible import OpenAICompatibleProvider
 from neuro_pipeline.neurobids.copilot.llm.provider import (
     FakeLLMProvider,
     LLMProvider,
@@ -33,6 +34,7 @@ __all__ = [
     "LLMConfig",
     "LLMProvider",
     "LLMProviderError",
+    "OpenAICompatibleProvider",
     "StructuredAssistantResponse",
     "ToolCallRequest",
     "UnavailableLLMProvider",

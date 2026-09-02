@@ -11,6 +11,7 @@ class LLMConfig:
     """Provider settings for NeuroBIDS Copilot.
 
     NeuroBIDS remains fully usable when no API key is configured.
+    Secrets must come from the environment — never from source files.
     """
 
     provider: str = "none"
@@ -19,6 +20,8 @@ class LLMConfig:
     base_url: str = ""
     timeout_seconds: float = 60.0
     max_tool_calls: int = 5
+    max_retries: int = 2
+    retry_backoff_seconds: float = 0.5
 
     @property
     def is_configured(self) -> bool:
@@ -26,7 +29,13 @@ class LLMConfig:
             return False
         if self.provider in {"fake", "mock"}:
             return True
-        return bool(self.api_key) or self.provider in {"local"}
+        if self.provider in {"local"}:
+            return True
+        return bool(self.api_key)
+
+    @property
+    def uses_openai_compatible_http(self) -> bool:
+        return self.provider in {"openai", "compatible", "azure", "local"}
 
     @classmethod
     def from_env(cls) -> LLMConfig:
@@ -36,6 +45,8 @@ class LLMConfig:
         base_url = (os.environ.get("NEUROBIDS_LLM_BASE_URL") or "").strip()
         timeout_raw = (os.environ.get("NEUROBIDS_LLM_TIMEOUT") or "60").strip()
         max_calls_raw = (os.environ.get("NEUROBIDS_LLM_MAX_TOOL_CALLS") or "5").strip()
+        retries_raw = (os.environ.get("NEUROBIDS_LLM_MAX_RETRIES") or "2").strip()
+        backoff_raw = (os.environ.get("NEUROBIDS_LLM_RETRY_BACKOFF") or "0.5").strip()
         try:
             timeout = float(timeout_raw)
         except ValueError:
@@ -44,13 +55,26 @@ class LLMConfig:
             max_calls = max(1, int(max_calls_raw))
         except ValueError:
             max_calls = 5
+        try:
+            max_retries = max(0, int(retries_raw))
+        except ValueError:
+            max_retries = 2
+        try:
+            backoff = max(0.0, float(backoff_raw))
+        except ValueError:
+            backoff = 0.5
         return cls(
             provider=provider,
             model=model,
             api_key=api_key,
-            base_url=base_url,
-            timeout_seconds=timeout,
+            base_url=base_url
+            or ("http://localhost:11434/v1" if provider == "local" else ""),
+            timeout_seconds=timeout
+            if os.environ.get("NEUROBIDS_LLM_TIMEOUT")
+            else (300.0 if provider == "local" else timeout),
             max_tool_calls=max_calls,
+            max_retries=max_retries,
+            retry_backoff_seconds=backoff,
         )
 
 
@@ -60,3 +84,12 @@ def redact_secret(value: str) -> str:
     if len(value) <= 8:
         return "****"
     return value[:3] + "…" + value[-2:]
+
+
+def scrub_secrets(text: str, *secrets: str) -> str:
+    """Remove known secrets from an error/log string."""
+    out = str(text or "")
+    for secret in secrets:
+        if secret and secret in out:
+            out = out.replace(secret, redact_secret(secret))
+    return out

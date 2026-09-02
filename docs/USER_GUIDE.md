@@ -42,25 +42,38 @@ No Python install is required for the packaged Windows build.
 
 Left sidebar:
 
+**Dataset**
+
 | Page | Purpose |
 |------|---------|
-| **Convert** | Everyday one-folder conversion: analysis, BIDS preview, inventory, Convert |
+| **Discover** | Select a DICOM folder and see subject / session / acquisition / file counts |
+| **Map** | Central workspace: subjects, BIDS Preview, acquisition inspector |
+| **Audit** | Issues from the current plan and DatasetContext (no invented score) |
+| **Protect** | Original DICOM is read-only; PatientName is never exported |
+| **Release** | Release-readiness from the same deterministic checks |
+
+**Tools**
+
+| Page | Purpose |
+|------|---------|
+| **Conversion** | Inventory, Convert, advanced dcm2niix options |
 | **Queue** | Convert many subjects one after another; pause / retry / recover after restart |
-| **Settings** | dcm2niix path, defaults, custom **Naming Rules** |
+| **Settings** | dcm2niix path, defaults, custom **Naming Rules**, Copilot env-var help |
 | **Logs** | View conversion logs |
+
+Copilot is a collapsible side panel (**Ctrl+J**). **Ctrl+K** opens a command palette. See [NeuroBIDS workflow](neurobids_workflow.md).
 
 ---
 
-## Recommended everyday workflow (Convert)
+## Recommended everyday workflow
 
 ```
-Input folder  →  Output folder  →  Input analysis  →  BIDS Preview
-       →  Subject/Session (optional)  →  Convert
+Discover  →  Map (BIDS Preview)  →  Audit  →  Conversion
 ```
 
 ### 1. Select Input Folder
 
-Click **Browse…** next to **Input Folder**.
+On **Discover** (or Conversion), click **Select dataset…** / **Browse…**.
 
 Supported layouts:
 

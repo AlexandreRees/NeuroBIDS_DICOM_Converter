@@ -93,8 +93,17 @@ class CopilotTurnResult:
     provider: str = ""
     model: str = ""
     stopped_reason: str = ""
+    last_tool_data: dict[str, Any] | None = None
+    explanation: Any = None  # CopilotExplanation | None
+    provenance_turn_id: str = ""
 
     def to_dict(self) -> dict[str, Any]:
+        explanation = self.explanation
+        explanation_dict = None
+        if explanation is not None:
+            explanation_dict = (
+                explanation.to_dict() if hasattr(explanation, "to_dict") else explanation
+            )
         return {
             "ok": self.ok,
             "message": self.message,
@@ -110,6 +119,8 @@ class CopilotTurnResult:
             "provider": self.provider,
             "model": self.model,
             "stopped_reason": self.stopped_reason,
+            "provenance_turn_id": self.provenance_turn_id,
+            "explanation": explanation_dict,
         }
 
 

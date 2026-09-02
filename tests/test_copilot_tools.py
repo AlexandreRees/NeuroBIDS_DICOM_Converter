@@ -88,6 +88,7 @@ def session_two_subjects(tmp_path: Path) -> CopilotSession:
         series_list=series,
         detection_method="patient_id",
         n_dicom_files=3,
+        curation_rules_path=tmp_path / "curation_rules.json",
     )
 
 
@@ -107,7 +108,24 @@ def test_registry_lists_expected_tools(registry) -> None:
         "list_subjects",
         "inspect_subject",
         "find_acquisitions",
+        "classify_acquisition",
+        "classify_acquisitions",
+        "list_anatomical",
+        "list_functional",
+        "list_dwi",
+        "list_fieldmaps",
+        "list_sbref",
+        "list_multiecho",
+        "inspect_entities",
+        "list_ambiguous_acquisitions",
+        "audit_dataset",
+        "explain_mapping",
         "propose_bids_mapping",
+        "list_curation_rules",
+        "inspect_curation_rule",
+        "propose_curation_rule",
+        "apply_curation_rules",
+        "set_curation_rule_enabled",
         "rename_subjects",
         "rename_sessions",
         "exclude_acquisitions",
@@ -126,6 +144,7 @@ def test_inspect_dataset(session_two_subjects, registry) -> None:
     assert summary["n_subjects"] == 2
     assert summary["n_acquisitions"] == 3
     assert "MR" in summary["modalities"]
+    assert summary["n_curation_rules"] == 0
     assert "llm_context" in result.data
 
 
@@ -337,6 +356,9 @@ def test_dicom_never_modified_by_tools(session_two_subjects, registry) -> None:
     for tool_name, params in (
         ("inspect_dataset", {}),
         ("list_subjects", {}),
+        ("classify_acquisitions", {"kind": "t1w"}),
+        ("audit_dataset", {}),
+        ("explain_mapping", {"series_uid": "uid-a-t1"}),
         ("propose_bids_mapping", {"series_uids": ["uid-a-t1", "uid-b-t1"]}),
         ("rename_subjects", {"mode": "sequential", "start": 1, "width": 2}),
         ("exclude_acquisitions", {"series_uids": ["uid-a-t1"]}),

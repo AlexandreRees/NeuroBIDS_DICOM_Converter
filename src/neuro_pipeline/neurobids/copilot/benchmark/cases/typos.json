@@ -1,0 +1,458 @@
+{
+  "version": 1,
+  "category": "dataset_understanding",
+  "cases": [
+    {
+      "id": "TY-01",
+      "category": "dataset_understanding",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "How many subjetcs are in the datset?",
+      "expected_tools": [
+        "inspect_dataset"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "summary.n_subjects": 4
+      },
+      "expected_answer_contains": [
+        "4 subject"
+      ],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "There are 4 subjects in the dataset."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-02",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "Show all T1 weigted aquisitions.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "sequence": "t1"
+      },
+      "expected_answer": {
+        "n_matches": 4
+      },
+      "expected_acquisitions": [
+        "uid.001.01.t1w",
+        "uid.001.02.t1w",
+        "uid.002.01.t1w",
+        "uid.003.01.t1w"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "sequence": "t1"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "sequence": "t1"
+          }
+        },
+        {
+          "type": "message",
+          "content": "There are 4 T1w acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-03",
+      "category": "modality_reasoning",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "List funciontal BOLD restign-state scans.",
+      "expected_tools": [
+        "list_functional"
+      ],
+      "expected_tool_arguments": {
+        "subtype": "rest"
+      },
+      "expected_answer": {
+        "n_matches": 6
+      },
+      "expected_acquisitions": [
+        "uid.001.01.func",
+        "uid.001.02.func",
+        "uid.002.01.func",
+        "uid.004.01.mecho1",
+        "uid.004.01.mecho2",
+        "uid.004.01.run02"
+      ],
+      "level1_tool": "list_functional",
+      "level1_arguments": {
+        "subtype": "rest"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_functional",
+          "arguments": {
+            "subtype": "rest"
+          }
+        },
+        {
+          "type": "message",
+          "content": "list_functional reports 6 resting-state BOLD acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-04",
+      "category": "mutations",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "Exlcude localisers from convertion.",
+      "expected_tools": [
+        "exclude_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "series_uids": [
+          "uid.001.01.loc",
+          "uid.003.01.loc"
+        ]
+      },
+      "expected_change_set": {
+        "tool_name": "exclude_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [
+          {
+            "series_uid": "uid.001.01.loc",
+            "after": false
+          },
+          {
+            "series_uid": "uid.003.01.loc",
+            "after": false
+          }
+        ]
+      },
+      "level1_tool": "exclude_acquisitions",
+      "level1_arguments": {
+        "series_uids": [
+          "uid.001.01.loc",
+          "uid.003.01.loc"
+        ]
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "exclude_acquisitions",
+          "arguments": {
+            "series_uids": [
+              "uid.001.01.loc",
+              "uid.003.01.loc"
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "mutation proposal",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-05",
+      "category": "modality_reasoning",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "Whch aqusitions are FLAIR?",
+      "expected_tools": [
+        "list_anatomical"
+      ],
+      "expected_tool_arguments": {
+        "subtype": "flair"
+      },
+      "expected_answer": {
+        "n_matches": 1
+      },
+      "expected_acquisitions": [
+        "uid.004.01.flair"
+      ],
+      "level1_tool": "list_anatomical",
+      "level1_arguments": {
+        "subtype": "flair"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "list_anatomical",
+          "arguments": {
+            "subtype": "flair"
+          }
+        },
+        {
+          "type": "message",
+          "content": "list_anatomical reports 1 FLAIR acquisition: uid.004.01.flair."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-06",
+      "category": "dataset_understanding",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "How many sesions does subjet 001 have?",
+      "expected_tools": [
+        "inspect_subject"
+      ],
+      "expected_tool_arguments": {
+        "subject_id": "001"
+      },
+      "expected_answer": {
+        "derived.n_acquisitions": 6,
+        "derived.n_sessions": 2
+      },
+      "expected_sessions": [
+        "01",
+        "02"
+      ],
+      "level1_tool": "inspect_subject",
+      "level1_arguments": {
+        "subject_id": "001"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "inspect_subject",
+          "arguments": {
+            "subject_id": "001"
+          }
+        },
+        {
+          "type": "message",
+          "content": "Subject 001 has 6 acquisitions across 2 sessions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-07",
+      "category": "acquisition_retrieval",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "Find aquisitions for subjet 002.",
+      "expected_tools": [
+        "find_acquisitions"
+      ],
+      "expected_tool_arguments": {
+        "subject": "002"
+      },
+      "expected_answer": {
+        "n_matches": 5
+      },
+      "expected_acquisitions": [
+        "uid.002.01.t1w",
+        "uid.002.01.func",
+        "uid.002.01.dwi",
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix"
+      ],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {
+        "subject": "002"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "find_acquisitions",
+          "arguments": {
+            "subject": "002"
+          }
+        },
+        {
+          "type": "message",
+          "content": "Subject 002 has 5 acquisitions."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-08",
+      "category": "mutations",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "Rename subjetcs sequentally starting at 010.",
+      "expected_tools": [
+        "rename_subjects"
+      ],
+      "expected_tool_arguments": {
+        "mode": "sequential",
+        "start": 10,
+        "width": 3
+      },
+      "expected_change_set": {
+        "tool_name": "rename_subjects",
+        "status_not": "APPLIED",
+        "subject_renames": {
+          "001": "010",
+          "002": "011",
+          "003": "012",
+          "004": "013"
+        }
+      },
+      "apply_changeset": false,
+      "level1_tool": "rename_subjects",
+      "level1_arguments": {
+        "mode": "sequential",
+        "start": 10,
+        "width": 3
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "rename_subjects",
+          "arguments": {
+            "mode": "sequential",
+            "start": 10,
+            "width": 3
+          }
+        }
+      ],
+      "expected_behavior": "mutation proposal",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-09",
+      "category": "dataset_audit",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "Audit this datset and list problms.",
+      "expected_tools": [
+        "audit_dataset"
+      ],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "derived.auto_applied": false,
+        "derived.n_findings": 8
+      },
+      "level1_tool": "audit_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "audit_dataset",
+          "arguments": {}
+        },
+        {
+          "type": "message",
+          "content": "audit_dataset reports 8 finding types. Nothing was auto-applied."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    },
+    {
+      "id": "TY-10",
+      "category": "modality_reasoning",
+      "tags": [
+        "typo"
+      ],
+      "prompt": "Classfy the T1w of subjet 001 sesion 01.",
+      "expected_tools": [
+        "classify_acquisition"
+      ],
+      "expected_tool_arguments": {
+        "series_uid": "uid.001.01.t1w"
+      },
+      "expected_answer": {
+        "derived.label": "T1w",
+        "derived.datatype": "anat",
+        "derived.suffix": "T1w"
+      },
+      "expected_acquisitions": [
+        "uid.001.01.t1w"
+      ],
+      "level1_tool": "classify_acquisition",
+      "level1_arguments": {
+        "series_uid": "uid.001.01.t1w"
+      },
+      "scripted_llm_responses": [
+        {
+          "type": "tool_call",
+          "tool_name": "classify_acquisition",
+          "arguments": {
+            "series_uid": "uid.001.01.t1w"
+          }
+        },
+        {
+          "type": "message",
+          "content": "classify_acquisition reports label T1w, datatype anat, suffix T1w."
+        }
+      ],
+      "expected_behavior": "read-only response",
+      "expected_auto_apply": false,
+      "levels": [
+        "level1",
+        "level2"
+      ]
+    }
+  ]
+}

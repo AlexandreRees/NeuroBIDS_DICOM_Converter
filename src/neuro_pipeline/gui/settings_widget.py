@@ -83,6 +83,24 @@ class SettingsWidget(QWidget):
         opt_layout.addWidget(self.chk_compress)
         general_layout.addWidget(opt_box)
 
+        copilot_box = QGroupBox("NeuroBIDS Copilot")
+        copilot_layout = QVBoxLayout(copilot_box)
+        copilot_help = QLabel(
+            "Copilot is optional. NeuroBIDS remains fully usable without an LLM.\n\n"
+            "Configure via environment variables (never stored in this file):\n"
+            "  NEUROBIDS_LLM_PROVIDER  (openai | azure | local | none)\n"
+            "  NEUROBIDS_LLM_MODEL\n"
+            "  NEUROBIDS_LLM_API_KEY\n"
+            "  NEUROBIDS_LLM_BASE_URL\n"
+            "  NEUROBIDS_LLM_TIMEOUT / NEUROBIDS_LLM_MAX_RETRIES (optional)\n\n"
+            "The model can only call typed tools. It cannot access DICOM files, "
+            "the filesystem, or dcm2niix. Proposed edits require Apply."
+        )
+        copilot_help.setObjectName("statusLabel")
+        copilot_help.setWordWrap(True)
+        copilot_layout.addWidget(copilot_help)
+        general_layout.addWidget(copilot_box)
+
         cfg_box = QGroupBox("Config folder")
         cfg_layout = QHBoxLayout(cfg_box)
         self.config_edit = QLineEdit()

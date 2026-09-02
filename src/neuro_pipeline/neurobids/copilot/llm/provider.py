@@ -122,7 +122,7 @@ def build_provider_from_config(config: Any) -> LLMProvider:
     if provider in {"fake", "mock"}:
         # Empty fake — tests should inject FakeLLMProvider explicitly.
         return FakeLLMProvider([], model=config.model or "fake-model")
-    if provider in {"openai", "compatible"}:
+    if provider in {"openai", "compatible", "azure", "local"}:
         from neuro_pipeline.neurobids.copilot.llm.openai_compatible import OpenAICompatibleProvider
 
         return OpenAICompatibleProvider(config)
