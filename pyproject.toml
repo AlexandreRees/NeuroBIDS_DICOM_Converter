@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neuro-pipeline-dicom-converter"
+version = "1.0.0"
+description = "Windows desktop application for converting MRI DICOM datasets to NIfTI using dcm2niix."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+authors = [
+  { name = "Alexandre Rees" },
+]
+keywords = ["DICOM", "NIfTI", "dcm2niix", "MRI", "neuroimaging", "PySide6"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Win32 (MS Windows)",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+  "PySide6>=6.6",
+  "pydicom>=2.4",
+  "PyYAML>=6.0",
+  "nibabel>=5.0",
+  "numpy>=1.23",
+  "pydantic>=2.0",
+  "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "pytest-qt>=4.2",
+  "ruff>=0.4",
+  "pyinstaller>=6.0",
+]
+
+[project.scripts]
+neuro-pipeline-gui = "neuro_pipeline.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/AlexandreRees/neuro_pipeline"
+Repository = "https://github.com/AlexandreRees/neuro_pipeline"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+neuro_pipeline = [
+  "resources/*",
+  "neurobids/copilot/benchmark/cases/*.json",
+  "neurobids/copilot/benchmark/data/*.json",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

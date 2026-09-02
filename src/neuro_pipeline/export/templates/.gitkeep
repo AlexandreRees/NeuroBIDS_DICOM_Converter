@@ -1,0 +1,2 @@
+# Placeholder for optional profile note templates.
+# Profiles are implemented in Python (export/manager.py) to keep behavior testable.

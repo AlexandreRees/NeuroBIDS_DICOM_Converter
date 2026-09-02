@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "category": "mutations",
+  "cases": [
+    {
+      "id": "MU-01",
+      "category": "mutations",
+      "prompt": "Rename subjects sequentially starting at 010.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["rename_subjects"],
+      "expected_tool_arguments": {"mode": "sequential", "start": 10, "width": 3},
+      "expected_change_set": {
+        "tool_name": "rename_subjects",
+        "status_not": "APPLIED",
+        "subject_renames": {"001": "010", "002": "011", "003": "012"}
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {"subjects": ["010", "011", "012"]},
+      "apply_changeset": true,
+      "gui_action": "apply",
+      "levels": ["level1", "level2", "level3"],
+      "level1_tool": "rename_subjects",
+      "level1_arguments": {"mode": "sequential", "start": 10, "width": 3, "reason": "sequential rename"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "rename_subjects", "arguments": {"mode": "sequential", "start": 10, "width": 3, "preserve_sessions": true}}
+      ]
+    },
+    {
+      "id": "MU-02",
+      "category": "mutations",
+      "prompt": "Rename subjects using mapping 001→10, 002→20, 003→30.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["rename_subjects"],
+      "expected_tool_arguments": {
+        "mode": "mapping",
+        "mapping": {"001": "10", "002": "20", "003": "30"}
+      },
+      "expected_change_set": {
+        "tool_name": "rename_subjects",
+        "status_not": "APPLIED",
+        "subject_renames": {"001": "10", "002": "20", "003": "30"}
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {"subjects": ["10", "20", "30"]},
+      "apply_changeset": true,
+      "levels": ["level1", "level2"],
+      "level1_tool": "rename_subjects",
+      "level1_arguments": {
+        "mode": "mapping",
+        "mapping": {"001": "10", "002": "20", "003": "30"}
+      },
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "rename_subjects", "arguments": {"mode": "mapping", "mapping": {"001": "10", "002": "20", "003": "30"}}}
+      ]
+    },
+    {
+      "id": "MU-03",
+      "category": "mutations",
+      "prompt": "Rename sessions of subject 001 from 01/02 to pre/post.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["rename_sessions"],
+      "expected_tool_arguments": {
+        "mode": "mapping",
+        "subject_id": "001",
+        "mapping": {"01": "pre", "02": "post"}
+      },
+      "expected_change_set": {
+        "tool_name": "rename_sessions",
+        "status_not": "APPLIED",
+        "session_renames": {"01": "pre", "02": "post"}
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {
+        "fields": {
+          "uid.001.01.t1w": {"session": "pre"},
+          "uid.001.02.t1w": {"session": "post"},
+          "uid.002.01.t1w": {"session": "01"}
+        }
+      },
+      "apply_changeset": true,
+      "levels": ["level1", "level2"],
+      "level1_tool": "rename_sessions",
+      "level1_arguments": {
+        "mode": "mapping",
+        "subject_id": "001",
+        "mapping": {"01": "pre", "02": "post"}
+      },
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "rename_sessions", "arguments": {"mode": "mapping", "subject_id": "001", "mapping": {"01": "pre", "02": "post"}}}
+      ]
+    },
+    {
+      "id": "MU-04",
+      "category": "mutations",
+      "prompt": "Rename sessions of subject 001 sequentially starting at 03.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["rename_sessions"],
+      "expected_tool_arguments": {"mode": "sequential", "subject_id": "001", "start": 3, "width": 2},
+      "expected_change_set": {
+        "tool_name": "rename_sessions",
+        "status_not": "APPLIED",
+        "session_renames": {"01": "03", "02": "04"}
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {
+        "fields": {
+          "uid.001.01.t1w": {"session": "03"},
+          "uid.001.02.func": {"session": "04"},
+          "uid.003.01.t1w": {"session": "01"}
+        }
+      },
+      "apply_changeset": true,
+      "levels": ["level1", "level2"],
+      "level1_tool": "rename_sessions",
+      "level1_arguments": {"mode": "sequential", "subject_id": "001", "start": 3, "width": 2},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "rename_sessions", "arguments": {"mode": "sequential", "subject_id": "001", "start": 3, "width": 2}}
+      ]
+    },
+    {
+      "id": "MU-05",
+      "category": "mutations",
+      "prompt": "Exclude localizers from conversion.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["exclude_acquisitions"],
+      "expected_tool_arguments": {"series_uids": ["uid.001.01.loc", "uid.003.01.loc"]},
+      "expected_change_set": {
+        "tool_name": "exclude_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [
+          {"series_uid": "uid.001.01.loc", "after": false},
+          {"series_uid": "uid.003.01.loc", "after": false}
+        ]
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {
+        "include": {"uid.001.01.loc": false, "uid.003.01.loc": false, "uid.001.01.t1w": true}
+      },
+      "apply_changeset": true,
+      "gui_action": "apply",
+      "levels": ["level1", "level2", "level3"],
+      "level1_tool": "exclude_acquisitions",
+      "level1_arguments": {"series_uids": ["uid.001.01.loc", "uid.003.01.loc"], "reason": "exclude localizers"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "exclude_acquisitions", "arguments": {"series_uids": ["uid.001.01.loc", "uid.003.01.loc"], "reason": "exclude localizers"}}
+      ]
+    },
+    {
+      "id": "MU-06",
+      "category": "mutations",
+      "prompt": "Include the PhoenixZIPReport acquisition.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["include_acquisitions"],
+      "expected_tool_arguments": {"series_uids": ["uid.002.01.phoenix"]},
+      "expected_change_set": {
+        "tool_name": "include_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [{"series_uid": "uid.002.01.phoenix", "after": true}]
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {"include": {"uid.002.01.phoenix": true}},
+      "apply_changeset": true,
+      "gui_action": "reject",
+      "levels": ["level1", "level2", "level3"],
+      "level1_tool": "include_acquisitions",
+      "level1_arguments": {"series_uids": ["uid.002.01.phoenix"]},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "include_acquisitions", "arguments": {"series_uids": ["uid.002.01.phoenix"]}}
+      ]
+    },
+    {
+      "id": "MU-07",
+      "category": "mutations",
+      "prompt": "Set the rest_bold series of subject 001 session 01 to task movie run 02.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["apply_edit"],
+      "expected_tool_arguments": {"series_uid": "uid.001.01.func", "task": "movie", "run": "02"},
+      "expected_change_set": {
+        "tool_name": "apply_edit",
+        "status_not": "APPLIED",
+        "entity_changes": [
+          {"series_uid": "uid.001.01.func", "field": "task", "after": "movie"},
+          {"series_uid": "uid.001.01.func", "field": "run", "after": "02"}
+        ]
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {
+        "fields": {"uid.001.01.func": {"task": "movie", "run": "02"}}
+      },
+      "apply_changeset": true,
+      "levels": ["level1", "level2"],
+      "level1_tool": "apply_edit",
+      "level1_arguments": {"series_uid": "uid.001.01.func", "task": "movie", "run": "02"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "apply_edit", "arguments": {"series_uid": "uid.001.01.func", "task": "movie", "run": "02"}}
+      ]
+    },
+    {
+      "id": "MU-08",
+      "category": "mutations",
+      "prompt": "Apply a BIDS plan edit: map the ambiguous series to func bold task rest.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["apply_edit"],
+      "expected_tool_arguments": {
+        "series_uid": "uid.002.01.ambig",
+        "datatype": "func",
+        "suffix": "bold",
+        "task": "rest"
+      },
+      "expected_change_set": {
+        "tool_name": "apply_edit",
+        "status_not": "APPLIED",
+        "entity_changes": [
+          {"series_uid": "uid.002.01.ambig", "field": "datatype", "after": "func"},
+          {"series_uid": "uid.002.01.ambig", "field": "suffix", "after": "bold"},
+          {"series_uid": "uid.002.01.ambig", "field": "task", "after": "rest"}
+        ]
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {
+        "fields": {"uid.002.01.ambig": {"datatype": "func", "suffix": "bold", "task": "rest"}}
+      },
+      "apply_changeset": true,
+      "levels": ["level1", "level2"],
+      "level1_tool": "apply_edit",
+      "level1_arguments": {
+        "series_uid": "uid.002.01.ambig",
+        "datatype": "func",
+        "suffix": "bold",
+        "task": "rest"
+      },
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "apply_edit", "arguments": {"series_uid": "uid.002.01.ambig", "datatype": "func", "suffix": "bold", "task": "rest"}}
+      ]
+    },
+    {
+      "id": "MU-09",
+      "category": "mutations",
+      "prompt": "Exclude the T1w acquisition of subject 003.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["exclude_acquisitions"],
+      "expected_tool_arguments": {"series_uids": ["uid.003.01.t1w"]},
+      "expected_change_set": {
+        "tool_name": "exclude_acquisitions",
+        "status_not": "APPLIED",
+        "include_changes": [{"series_uid": "uid.003.01.t1w", "after": false}]
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {"include": {"uid.003.01.t1w": false}},
+      "apply_changeset": true,
+      "levels": ["level1", "level2"],
+      "level1_tool": "exclude_acquisitions",
+      "level1_arguments": {"series_uids": ["uid.003.01.t1w"]},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "exclude_acquisitions", "arguments": {"series_uids": ["uid.003.01.t1w"]}}
+      ]
+    },
+    {
+      "id": "MU-10",
+      "category": "mutations",
+      "prompt": "Move subject 003 T1w into session 02.",
+      "expected_behavior": "mutation proposal",
+      "expected_tools": ["apply_edit"],
+      "expected_tool_arguments": {"series_uid": "uid.003.01.t1w", "session": "02"},
+      "expected_change_set": {
+        "tool_name": "apply_edit",
+        "status_not": "APPLIED",
+        "session_renames": {"01": "02"}
+      },
+      "expected_auto_apply": false,
+      "expected_final_plan": {"fields": {"uid.003.01.t1w": {"session": "02", "subject": "003"}}},
+      "apply_changeset": true,
+      "levels": ["level1", "level2"],
+      "level1_tool": "apply_edit",
+      "level1_arguments": {"series_uid": "uid.003.01.t1w", "session": "02"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "apply_edit", "arguments": {"series_uid": "uid.003.01.t1w", "session": "02"}}
+      ]
+    }
+  ]
+}

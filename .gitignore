@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.spec.bak
+.venv/
+.venv310/
+.gui_venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+logs/*.log
+!logs/.gitkeep
+installer/dist/
+installer/build/
+*.nii
+*.nii.gz
+.DS_Store
+Thumbs.db
+# Local acceptance / demo artifacts (screenshots, synthetic DICOM, reports)
+tmp_dev_demo/

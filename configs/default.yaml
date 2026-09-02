@@ -1,0 +1,17 @@
+# NeuroPipeline DICOM Converter – default application settings
+dcm2niix_path: auto
+output_format: nii.gz
+compression: true
+one_folder_per_patient: true
+preserve_json: true
+smart_naming: true
+validate_output: true
+# nifti = classic folder layout; bids = optional BIDS dataset export
+output_layout: nifti
+threads: 4
+
+logging:
+  enabled: true
+
+# Optional absolute override for logs directory (empty = ./logs next to app)
+log_dir: ""

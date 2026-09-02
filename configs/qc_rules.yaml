@@ -1,0 +1,20 @@
+dwi:
+  require_bvec: true
+  require_bval: true
+  require_json: true
+  require_4d: true
+
+anat:
+  require_json: true
+
+func:
+  require_json: true
+  require_4d: true
+
+fmap:
+  require_json: true
+
+global:
+  fail_on_empty: true
+  fail_on_corrupt: true
+  warn_on_duplicate: true

@@ -1,0 +1,24 @@
+manufacturer: generic
+
+sequence_patterns:
+  T1:
+    - T1
+    - MPRAGE
+    - T1w
+  T2:
+    - T2
+    - FLAIR
+    - T2w
+  DWI:
+    - DWI
+    - DTI
+    - DIFF
+  FUNC:
+    - BOLD
+    - fMRI
+    - rest
+    - task
+  FMAP:
+    - fmap
+    - fieldmap
+    - phasediff

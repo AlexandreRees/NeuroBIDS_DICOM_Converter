@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "category": "bids_reasoning",
+  "cases": [
+    {
+      "id": "BR-01",
+      "category": "bids_reasoning",
+      "prompt": "Why is the rest_bold acquisition classified as func?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.001.01.func"},
+      "expected_answer": {"derived.proposed.datatype": "func", "derived.ambiguous": false},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["func"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.001.01.func"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.001.01.func"}},
+        {"type": "message", "content": "It is classified as func because sequence_type=func and the series description is rest_bold."}
+      ]
+    },
+    {
+      "id": "BR-02",
+      "category": "bids_reasoning",
+      "prompt": "Propose a BIDS mapping for the T1w acquisition of subject 001 session 01.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.001.01.t1w"},
+      "expected_answer": {"derived.proposed.datatype": "anat", "derived.proposed.suffix": "T1w"},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.001.01.t1w"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.001.01.t1w"}},
+        {"type": "message", "content": "Proposed mapping: datatype anat, suffix T1w."}
+      ]
+    },
+    {
+      "id": "BR-03",
+      "category": "bids_reasoning",
+      "prompt": "Propose a BIDS mapping for the DWI acquisition of subject 001 session 01.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.001.01.dwi"},
+      "expected_answer": {"derived.proposed.datatype": "dwi"},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.001.01.dwi"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.001.01.dwi"}},
+        {"type": "message", "content": "Proposed mapping: datatype dwi."}
+      ]
+    },
+    {
+      "id": "BR-04",
+      "category": "bids_reasoning",
+      "prompt": "Propose a BIDS mapping for the ambiguous ep2d_mixed acquisition.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.002.01.ambig"},
+      "expected_answer": {"derived.ambiguous": true, "derived.proposed.datatype": "unknown"},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.002.01.ambig"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.002.01.ambig"}},
+        {"type": "message", "content": "The mapping is ambiguous and requires manual review; fallback datatype is unknown."}
+      ]
+    },
+    {
+      "id": "BR-05",
+      "category": "bids_reasoning",
+      "prompt": "Which acquisitions should probably be reviewed?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"issue_code": "manual_mapping_required"},
+      "expected_answer": {"n_matches": 2},
+      "expected_acquisitions": ["uid.002.01.ambig", "uid.003.01.unmap"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"issue_code": "manual_mapping_required"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"issue_code": "manual_mapping_required"}},
+        {"type": "message", "content": "Review uid.002.01.ambig and uid.003.01.unmap; both require manual mapping."}
+      ]
+    },
+    {
+      "id": "BR-06",
+      "category": "bids_reasoning",
+      "prompt": "Explain the ambiguous mapping for uid.002.01.ambig.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.002.01.ambig"},
+      "expected_answer": {"derived.ambiguous": true},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["manual"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.002.01.ambig"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.002.01.ambig"}},
+        {"type": "message", "content": "The series is flagged as requiring manual mapping; sequence_type is unknown so the fallback is not a confident BIDS datatype."}
+      ]
+    },
+    {
+      "id": "BR-07",
+      "category": "bids_reasoning",
+      "prompt": "Identify longitudinal inconsistencies for subject 001.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_subject"],
+      "expected_tool_arguments": {"subject_id": "001"},
+      "expected_answer": {
+        "derived.n_sessions": 2,
+        "derived.session_datatypes.01": ["anat", "dwi", "func", "unknown"],
+        "derived.session_datatypes.02": ["anat", "func"]
+      },
+      "expected_session_datatypes": {"01": ["anat", "func", "dwi"], "02": ["anat", "func"]},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["DWI"],
+      "notes": "ses-01 has DWI; ses-02 does not.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_subject",
+      "level1_arguments": {"subject_id": "001"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_subject", "arguments": {"subject_id": "001"}},
+        {"type": "message", "content": "Subject 001 is longitudinal. Session 01 includes DWI; session 02 does not."}
+      ]
+    },
+    {
+      "id": "BR-08",
+      "category": "bids_reasoning",
+      "prompt": "Explain the mapping for the localizer of subject 001.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.001.01.loc"},
+      "expected_answer": {"derived.proposed.datatype": "unknown", "derived.ambiguous": true},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.001.01.loc"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.001.01.loc"}},
+        {"type": "message", "content": "The localizer has sequence_type unknown and only a fallback NIfTI name; it should be reviewed before conversion."}
+      ]
+    },
+    {
+      "id": "BR-09",
+      "category": "bids_reasoning",
+      "prompt": "Propose a BIDS mapping for the unmapped unknown_protocol series.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.003.01.unmap"},
+      "expected_answer": {"derived.ambiguous": true, "derived.proposed.datatype": "unknown"},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.003.01.unmap"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.003.01.unmap"}},
+        {"type": "message", "content": "No confident BIDS mapping exists; the series is flagged for manual review."}
+      ]
+    },
+    {
+      "id": "BR-10",
+      "category": "bids_reasoning",
+      "prompt": "What suffix should the T1w acquisition of subject 003 use?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["propose_bids_mapping"],
+      "expected_tool_arguments": {"series_uid": "uid.003.01.t1w"},
+      "expected_answer": {"derived.proposed.suffix": "T1w", "derived.proposed.datatype": "anat"},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "propose_bids_mapping",
+      "level1_arguments": {"series_uid": "uid.003.01.t1w"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "propose_bids_mapping", "arguments": {"series_uid": "uid.003.01.t1w"}},
+        {"type": "message", "content": "The proposed suffix is T1w under datatype anat."}
+      ]
+    }
+  ]
+}

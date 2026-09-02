@@ -1,0 +1,27 @@
+manufacturer: Siemens
+
+sequence_patterns:
+  T1:
+    - MPRAGE
+    - T1w
+    - t1_mprage
+    - mp2rage
+  T2:
+    - t2_space
+    - T2w
+    - SPACE
+    - FLAIR
+  DWI:
+    - DWI
+    - ep2d_diff
+    - EPI_DIFF
+    - DIFFUSION
+  FUNC:
+    - bold
+    - cmrr
+    - mbep2d
+    - rest
+  FMAP:
+    - gre_field
+    - field_map
+    - fmap

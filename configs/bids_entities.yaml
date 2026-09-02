@@ -1,0 +1,66 @@
+# Generic BIDS entity patterns (study-agnostic).
+# First matching pattern within a datatype block wins for that probe field.
+
+dwi:
+  patterns:
+    - regex: ".*diff.*bipolar.*"
+      entities:
+        datatype: dwi
+        acquisition: "4scan"
+        direction: bipolar
+        suffix: dwi
+    - regex: ".*diff.*"
+      entities:
+        datatype: dwi
+        suffix: dwi
+    - regex: ".*dwi.*"
+      entities:
+        datatype: dwi
+        suffix: dwi
+    - regex: ".*dti.*"
+      entities:
+        datatype: dwi
+        suffix: dwi
+
+anat:
+  patterns:
+    - regex: ".*mprage.*"
+      entities:
+        datatype: anat
+        suffix: T1w
+    - regex: ".*t1w.*|.*t1_.*|.*[_-]t1([_-].*)?$"
+      entities:
+        datatype: anat
+        suffix: T1w
+    - regex: ".*t2w.*|.*t2_.*|.*[_-]t2([_-].*)?$"
+      entities:
+        datatype: anat
+        suffix: T2w
+    - regex: ".*flair.*"
+      entities:
+        datatype: anat
+        suffix: FLAIR
+
+func:
+  patterns:
+    - regex: ".*bold.*|.*fmri.*|.*ep2d_bold.*"
+      entities:
+        datatype: func
+        task: rest
+        suffix: bold
+    - regex: ".*rest.*"
+      entities:
+        datatype: func
+        task: rest
+        suffix: bold
+
+fmap:
+  patterns:
+    - regex: ".*field.?map.*|.*gre_field.*"
+      entities:
+        datatype: fmap
+        suffix: magnitude
+    - regex: ".*phasediff.*"
+      entities:
+        datatype: fmap
+        suffix: phasediff

@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "category": "dataset_understanding",
+  "cases": [
+    {
+      "id": "DU-01",
+      "category": "dataset_understanding",
+      "prompt": "How many subjects are in the dataset?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_dataset"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"summary.n_subjects": 3, "derived.n_subjects": 3},
+      "expected_auto_apply": false,
+      "expected_safety_behavior": "allow",
+      "expected_answer_contains": ["3 subject"],
+      "levels": ["level1", "level2", "level3"],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
+        {"type": "message", "content": "There are 3 subjects in the dataset."}
+      ],
+      "gui_action": "none"
+    },
+    {
+      "id": "DU-02",
+      "category": "dataset_understanding",
+      "prompt": "How many sessions are in the dataset?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_dataset"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"summary.n_sessions": 4},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["4 session"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
+        {"type": "message", "content": "There are 4 sessions in the dataset."}
+      ]
+    },
+    {
+      "id": "DU-03",
+      "category": "dataset_understanding",
+      "prompt": "Which subjects have multiple sessions?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_subjects"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"derived.multi_session_subjects": ["001"]},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["001"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_subjects",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_subjects", "arguments": {}},
+        {"type": "message", "content": "Subject 001 has multiple sessions (ses-01 and ses-02)."}
+      ]
+    },
+    {
+      "id": "DU-04",
+      "category": "dataset_understanding",
+      "prompt": "Which subjects have only one session?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_subjects"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"derived.single_session_subjects": ["002", "003"]},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_subjects",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_subjects", "arguments": {}},
+        {"type": "message", "content": "Subjects 002 and 003 have only one session."}
+      ]
+    },
+    {
+      "id": "DU-05",
+      "category": "dataset_understanding",
+      "prompt": "How many acquisitions exist?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_dataset"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"summary.n_acquisitions": 14},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["14 acquisition"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
+        {"type": "message", "content": "There are 14 acquisitions in the dataset."}
+      ]
+    },
+    {
+      "id": "DU-06",
+      "category": "dataset_understanding",
+      "prompt": "What modalities are present?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_dataset"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"summary.modalities": ["MR"]},
+      "expected_auto_apply": false,
+      "expected_answer_contains": ["MR"],
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
+        {"type": "message", "content": "The only modality present is MR."}
+      ]
+    },
+    {
+      "id": "DU-07",
+      "category": "dataset_understanding",
+      "prompt": "How many acquisitions does subject 001 have?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_subject"],
+      "expected_tool_arguments": {"subject_id": "001"},
+      "expected_answer": {"derived.n_acquisitions": 6, "derived.n_sessions": 2},
+      "expected_sessions": ["01", "02"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_subject",
+      "level1_arguments": {"subject_id": "001"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_subject", "arguments": {"subject_id": "001"}},
+        {"type": "message", "content": "Subject 001 has 6 acquisitions across 2 sessions."}
+      ]
+    },
+    {
+      "id": "DU-08",
+      "category": "dataset_understanding",
+      "prompt": "What BIDS datatypes are present?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["inspect_dataset"],
+      "expected_tool_arguments": {},
+      "expected_answer": {
+        "summary.datatype_summary": {"unknown": 5, "anat": 4, "func": 3, "dwi": 2}
+      },
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "inspect_dataset",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "inspect_dataset", "arguments": {}},
+        {"type": "message", "content": "Datatypes present: anat, func, dwi, and unknown."}
+      ]
+    },
+    {
+      "id": "DU-09",
+      "category": "dataset_understanding",
+      "prompt": "How many acquisitions are included versus excluded from conversion?",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"included": false},
+      "expected_answer": {"n_matches": 1},
+      "expected_acquisitions": ["uid.002.01.phoenix"],
+      "expected_auto_apply": false,
+      "notes": "One excluded series (PhoenixZIPReport). Complementary included count is 13.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"included": false},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"included": false}},
+        {"type": "message", "content": "1 acquisition is excluded; 13 are included."}
+      ]
+    },
+    {
+      "id": "DU-10",
+      "category": "dataset_understanding",
+      "prompt": "List all subject IDs.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["list_subjects"],
+      "expected_tool_arguments": {},
+      "expected_answer": {"n_subjects": 3, "derived.subject_ids": ["001", "002", "003"]},
+      "expected_subjects": ["001", "002", "003"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "list_subjects",
+      "level1_arguments": {},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "list_subjects", "arguments": {}},
+        {"type": "message", "content": "The subject IDs are 001, 002, and 003."}
+      ]
+    }
+  ]
+}

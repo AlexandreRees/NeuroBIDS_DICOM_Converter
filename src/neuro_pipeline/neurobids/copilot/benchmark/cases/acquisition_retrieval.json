@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "category": "acquisition_retrieval",
+  "cases": [
+    {
+      "id": "AR-01",
+      "category": "acquisition_retrieval",
+      "prompt": "Show all T1w acquisitions.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"sequence": "t1"},
+      "expected_answer": {"n_matches": 4},
+      "expected_acquisitions": [
+        "uid.001.01.t1w",
+        "uid.001.02.t1w",
+        "uid.002.01.t1w",
+        "uid.003.01.t1w"
+      ],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"sequence": "t1"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"sequence": "t1"}},
+        {"type": "message", "content": "There are 4 T1w acquisitions."}
+      ]
+    },
+    {
+      "id": "AR-02",
+      "category": "acquisition_retrieval",
+      "prompt": "Show all functional acquisitions.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"datatype": "func"},
+      "expected_answer": {"n_matches": 3},
+      "expected_acquisitions": ["uid.001.01.func", "uid.001.02.func", "uid.002.01.func"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"datatype": "func"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"datatype": "func"}},
+        {"type": "message", "content": "There are 3 functional acquisitions."}
+      ]
+    },
+    {
+      "id": "AR-03",
+      "category": "acquisition_retrieval",
+      "prompt": "Show all DWI acquisitions.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"datatype": "dwi"},
+      "expected_answer": {"n_matches": 2},
+      "expected_acquisitions": ["uid.001.01.dwi", "uid.002.01.dwi"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"datatype": "dwi"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"datatype": "dwi"}},
+        {"type": "message", "content": "There are 2 DWI acquisitions."}
+      ]
+    },
+    {
+      "id": "AR-04",
+      "category": "acquisition_retrieval",
+      "prompt": "Find acquisitions for subject 002.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"subject": "002"},
+      "expected_answer": {"n_matches": 5},
+      "expected_acquisitions": [
+        "uid.002.01.t1w",
+        "uid.002.01.func",
+        "uid.002.01.dwi",
+        "uid.002.01.ambig",
+        "uid.002.01.phoenix"
+      ],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"subject": "002"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"subject": "002"}},
+        {"type": "message", "content": "Subject 002 has 5 acquisitions."}
+      ]
+    },
+    {
+      "id": "AR-05",
+      "category": "acquisition_retrieval",
+      "prompt": "Find acquisitions without a BIDS mapping.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"datatype": "unknown"},
+      "expected_answer": {"n_matches": 4},
+      "expected_acquisitions": [
+        "uid.001.01.loc",
+        "uid.002.01.ambig",
+        "uid.003.01.loc",
+        "uid.003.01.unmap"
+      ],
+      "expected_auto_apply": false,
+      "notes": "Included series with fallback datatype 'unknown'. The excluded Phoenix series has an empty datatype and is covered by AR-07.",
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"datatype": "unknown"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"datatype": "unknown"}},
+        {"type": "message", "content": "4 included acquisitions use the unknown/fallback mapping."}
+      ]
+    },
+    {
+      "id": "AR-06",
+      "category": "acquisition_retrieval",
+      "prompt": "Find ambiguous acquisitions.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"issue_code": "manual_mapping_required"},
+      "expected_answer": {"n_matches": 2},
+      "expected_acquisitions": ["uid.002.01.ambig", "uid.003.01.unmap"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"issue_code": "manual_mapping_required"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"issue_code": "manual_mapping_required"}},
+        {"type": "message", "content": "2 acquisitions require manual mapping: uid.002.01.ambig and uid.003.01.unmap."}
+      ]
+    },
+    {
+      "id": "AR-07",
+      "category": "acquisition_retrieval",
+      "prompt": "Find acquisitions excluded from conversion.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"included": false},
+      "expected_answer": {"n_matches": 1},
+      "expected_acquisitions": ["uid.002.01.phoenix"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"included": false},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"included": false}},
+        {"type": "message", "content": "The PhoenixZIPReport series is excluded from conversion."}
+      ]
+    },
+    {
+      "id": "AR-08",
+      "category": "acquisition_retrieval",
+      "prompt": "Find acquisitions in session 02.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"session": "02"},
+      "expected_answer": {"n_matches": 2},
+      "expected_acquisitions": ["uid.001.02.t1w", "uid.001.02.func"],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"session": "02"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"session": "02"}},
+        {"type": "message", "content": "Session 02 has 2 acquisitions (subject 001 only)."}
+      ]
+    },
+    {
+      "id": "AR-09",
+      "category": "acquisition_retrieval",
+      "prompt": "Find acquisitions for subject 001 session 01.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"subject": "001", "session": "01"},
+      "expected_answer": {"n_matches": 4},
+      "expected_acquisitions": [
+        "uid.001.01.t1w",
+        "uid.001.01.func",
+        "uid.001.01.dwi",
+        "uid.001.01.loc"
+      ],
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"subject": "001", "session": "01"},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"subject": "001", "session": "01"}},
+        {"type": "message", "content": "Subject 001 session 01 has 4 acquisitions."}
+      ]
+    },
+    {
+      "id": "AR-10",
+      "category": "acquisition_retrieval",
+      "prompt": "Find acquisitions included in conversion.",
+      "expected_behavior": "read-only response",
+      "expected_tools": ["find_acquisitions"],
+      "expected_tool_arguments": {"included": true},
+      "expected_answer": {"n_matches": 13},
+      "expected_auto_apply": false,
+      "levels": ["level1", "level2"],
+      "level1_tool": "find_acquisitions",
+      "level1_arguments": {"included": true},
+      "scripted_llm_responses": [
+        {"type": "tool_call", "tool_name": "find_acquisitions", "arguments": {"included": true}},
+        {"type": "message", "content": "13 acquisitions are included in conversion."}
+      ]
+    }
+  ]
+}

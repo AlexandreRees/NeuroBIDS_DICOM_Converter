@@ -1,0 +1,264 @@
+{
+  "n_subjects": 3,
+  "subject_ids": [
+    "001",
+    "002",
+    "003"
+  ],
+  "n_sessions": 4,
+  "multi_session_subjects": [
+    "001"
+  ],
+  "single_session_subjects": [
+    "002",
+    "003"
+  ],
+  "n_acquisitions": 14,
+  "n_dicom_files": 14,
+  "modalities": [
+    "MR"
+  ],
+  "datatypes": [
+    "anat",
+    "dwi",
+    "func",
+    "unknown"
+  ],
+  "datatype_summary": {
+    "unknown": 5,
+    "anat": 4,
+    "func": 3,
+    "dwi": 2
+  },
+  "t1w_uids": [
+    "uid.001.01.t1w",
+    "uid.001.02.t1w",
+    "uid.002.01.t1w",
+    "uid.003.01.t1w"
+  ],
+  "func_uids": [
+    "uid.001.01.func",
+    "uid.001.02.func",
+    "uid.002.01.func"
+  ],
+  "dwi_uids": [
+    "uid.001.01.dwi",
+    "uid.002.01.dwi"
+  ],
+  "localizer_uids": [
+    "uid.001.01.loc",
+    "uid.003.01.loc"
+  ],
+  "ambiguous_uids": [
+    "uid.002.01.ambig",
+    "uid.003.01.unmap"
+  ],
+  "unmapped_uids": [
+    "uid.001.01.loc",
+    "uid.002.01.ambig",
+    "uid.002.01.phoenix",
+    "uid.003.01.loc",
+    "uid.003.01.unmap"
+  ],
+  "excluded_uids": [
+    "uid.002.01.phoenix"
+  ],
+  "included_uids": [
+    "uid.001.01.t1w",
+    "uid.001.01.func",
+    "uid.001.01.dwi",
+    "uid.001.01.loc",
+    "uid.001.02.t1w",
+    "uid.001.02.func",
+    "uid.002.01.t1w",
+    "uid.002.01.func",
+    "uid.002.01.dwi",
+    "uid.002.01.ambig",
+    "uid.003.01.t1w",
+    "uid.003.01.loc",
+    "uid.003.01.unmap"
+  ],
+  "subject_002_uids": [
+    "uid.002.01.t1w",
+    "uid.002.01.func",
+    "uid.002.01.dwi",
+    "uid.002.01.ambig",
+    "uid.002.01.phoenix"
+  ],
+  "session_02_uids": [
+    "uid.001.02.t1w",
+    "uid.001.02.func"
+  ],
+  "issue_codes": [
+    "excluded",
+    "manual_mapping_required",
+    "missing_datatype"
+  ],
+  "n_included": 13,
+  "n_excluded": 1,
+  "acquisitions": [
+    {
+      "series_uid": "uid.001.01.t1w",
+      "subject_id": "001",
+      "session_id": "01",
+      "description": "t1_mprage",
+      "sequence_type": "anat",
+      "datatype": "anat",
+      "suffix": "T1w",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.001.01.func",
+      "subject_id": "001",
+      "session_id": "01",
+      "description": "rest_bold",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "bold",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.001.01.dwi",
+      "subject_id": "001",
+      "session_id": "01",
+      "description": "dwi_dir64",
+      "sequence_type": "dwi",
+      "datatype": "dwi",
+      "suffix": "dwi",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.001.01.loc",
+      "subject_id": "001",
+      "session_id": "01",
+      "description": "localizer",
+      "sequence_type": "unknown",
+      "datatype": "unknown",
+      "suffix": "localizer",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.001.02.t1w",
+      "subject_id": "001",
+      "session_id": "02",
+      "description": "t1_mprage",
+      "sequence_type": "anat",
+      "datatype": "anat",
+      "suffix": "T1w",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.001.02.func",
+      "subject_id": "001",
+      "session_id": "02",
+      "description": "rest_bold",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "bold",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.002.01.t1w",
+      "subject_id": "002",
+      "session_id": "01",
+      "description": "t1_mprage",
+      "sequence_type": "anat",
+      "datatype": "anat",
+      "suffix": "T1w",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.002.01.func",
+      "subject_id": "002",
+      "session_id": "01",
+      "description": "rest_bold",
+      "sequence_type": "func",
+      "datatype": "func",
+      "suffix": "bold",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.002.01.dwi",
+      "subject_id": "002",
+      "session_id": "01",
+      "description": "dwi_dir64",
+      "sequence_type": "dwi",
+      "datatype": "dwi",
+      "suffix": "dwi",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.002.01.ambig",
+      "subject_id": "002",
+      "session_id": "01",
+      "description": "ep2d_mixed",
+      "sequence_type": "unknown",
+      "datatype": "unknown",
+      "suffix": "mixed",
+      "include": true,
+      "requires_manual_mapping": true
+    },
+    {
+      "series_uid": "uid.002.01.phoenix",
+      "subject_id": "002",
+      "session_id": "01",
+      "description": "PhoenixZIPReport",
+      "sequence_type": "unknown",
+      "datatype": "",
+      "suffix": "",
+      "include": false,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.003.01.t1w",
+      "subject_id": "003",
+      "session_id": "01",
+      "description": "t1_mprage",
+      "sequence_type": "anat",
+      "datatype": "anat",
+      "suffix": "T1w",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.003.01.loc",
+      "subject_id": "003",
+      "session_id": "01",
+      "description": "localizer",
+      "sequence_type": "unknown",
+      "datatype": "unknown",
+      "suffix": "localizer",
+      "include": true,
+      "requires_manual_mapping": false
+    },
+    {
+      "series_uid": "uid.003.01.unmap",
+      "subject_id": "003",
+      "session_id": "01",
+      "description": "unknown_protocol",
+      "sequence_type": "unknown",
+      "datatype": "unknown",
+      "suffix": "protocol",
+      "include": true,
+      "requires_manual_mapping": true
+    }
+  ],
+  "longitudinal_inconsistencies": [
+    {
+      "subject": "001",
+      "present_in_session": "01",
+      "missing_in_session": "02",
+      "datatype": "dwi"
+    }
+  ],
+  "notes": "Subject 001 is longitudinal: ses-01 has DWI, ses-02 does not. uid.002.01.ambig and uid.003.01.unmap require manual mapping. uid.002.01.phoenix is excluded from conversion."
+}

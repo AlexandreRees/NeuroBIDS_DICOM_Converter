@@ -1,0 +1,26 @@
+manufacturer:
+  - GE
+  - GE MEDICAL SYSTEMS
+
+sequence_patterns:
+  T1:
+    - BRAVO
+    - FSPGR
+    - T1w
+    - MPRAGE
+  T2:
+    - CUBE
+    - FLAIR
+    - T2w
+  DWI:
+    - DWI
+    - epi2
+    - DIFFUSION
+  FUNC:
+    - BOLD
+    - fMRI
+    - rest
+  FMAP:
+    - fieldmap
+    - B0map
+    - fmap

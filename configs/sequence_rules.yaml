@@ -1,0 +1,103 @@
+# Advanced sequence recognition rules (study-agnostic).
+# Matching is case-insensitive substring against SeriesDescription + ProtocolName + ImageType.
+
+IGNORE:
+  patterns:
+    - ".*ADC.*"
+
+LOCALIZER:
+  patterns:
+    - localizer
+    - scout
+    - survey
+    - locator
+
+FLAIR:
+  patterns:
+    - flair
+    - t2_flair
+    - darkfluid
+
+DWI:
+  patterns:
+    - ep2d_diff
+    - diffusion
+    - dwi
+    - trace
+
+DTI:
+  patterns:
+    - dti
+    - tensor
+    - dir64
+    - dir30
+    - 64dir
+    - 30dir
+
+FMRI_REST:
+  patterns:
+    - rest
+    - resting
+    - rsfmri
+    - bold_rest
+
+FMRI_TASK:
+  patterns:
+    - task
+    - fmri
+    - bold
+    - movie
+    - mbep2d
+
+FMAP:
+  patterns:
+    - fieldmap
+    - field_map
+    - field map
+    - gre_field
+    - phasediff
+    - fmap
+    - topup
+    - b0map
+
+ASL:
+  patterns:
+    - asl
+    - arterial.?spin
+    - pcasl
+    - pasl
+
+PERFUSION:
+  patterns:
+    - perfusion
+    - dsc
+    - dce
+    - pwi
+
+SWI:
+  patterns:
+    - swi
+    - swan
+    - susceptibility
+    - venobold
+
+ANAT_T1:
+  patterns:
+    - mprage
+    - mp2rage
+    - t1w
+    - t1_
+    - "_t1"
+    - spgr
+    - fspgr
+    - fl3d
+    - tfl
+
+ANAT_T2:
+  patterns:
+    - t2w
+    - t2_
+    - "_t2"
+    - space
+    - tse
+    - haste

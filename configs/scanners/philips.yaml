@@ -1,0 +1,25 @@
+manufacturer: Philips
+
+sequence_patterns:
+  T1:
+    - T1W
+    - T1FFE
+    - 3D_T1
+    - MPRAGE
+  T2:
+    - T2W
+    - FLAIR
+    - 3D_T2
+  DWI:
+    - DWI
+    - DTI
+    - DIFFUSION
+  FUNC:
+    - FEEPI
+    - fMRI
+    - rest
+    - BOLD
+  FMAP:
+    - B0
+    - fieldmap
+    - fmap
