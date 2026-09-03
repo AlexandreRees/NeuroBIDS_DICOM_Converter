@@ -361,7 +361,7 @@ Smart naming rules live in `configs/naming_rules.yaml` (not hardcoded).
 
 End users: see [`README_WINDOWS.md`](README_WINDOWS.md) and [`docs/INSTALL.md`](docs/INSTALL.md).
 
-Developers (build machine):
+Developers (Windows build machine with Inno Setup 6):
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\build_windows.ps1
@@ -369,18 +369,28 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build_windows.ps1
 
 Produces:
 
-- `dist\NeuroPipeline_DICOM_Converter.exe`
-- `release\NeuroPipeline_DICOM_Converter_Setup.exe`
+- `dist\NeuroPipeline\NeuroPipeline.exe` (standalone onedir bundle; no Python required for end users)
+- `release\NeuroPipeline_DICOM_Converter_Setup.exe` (installer with Start Menu + optional desktop shortcut + uninstall)
+
+`dcm2niix` is bundled when `tools\dcm2niix.exe` is present at build time. Ollama / LLM models are **not** bundled — Copilot stays optional.
+
+Verify packaging inputs anytime:
+
+```bash
+PYTHONPATH=src python scripts/verify_packaging.py
+```
 
 Details: [`installer/BUILD_WINDOWS.md`](installer/BUILD_WINDOWS.md).
 
 ## Packaging (macOS)
 
-On a macOS build machine:
+On a macOS build machine only (`build_macos.sh` refuses other OS):
 
 ```bash
 bash scripts/build_macos.sh
 ```
+
+Produces `release/NeuroBIDS.app`. Codesigning/notarization is manual.
 
 ## Demo / Preview
 

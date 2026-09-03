@@ -31,10 +31,15 @@ All naming edits happen in an in-memory plan or in files you save **outside** th
 
 1. Run `NeuroPipeline_DICOM_Converter_Setup.exe`.
 2. Finish the installer (optional desktop shortcut).
-3. Launch **NeuroPipeline DICOM Converter**.
-4. If asked for **dcm2niix**, browse to `dcm2niix.exe` (or place it next to the app / on PATH).
+3. Launch **NeuroPipeline DICOM Converter** from the Start Menu.
+4. If asked for **dcm2niix**, browse to it in Settings (packaged builds usually bundle it).
 
-No Python install is required for the packaged Windows build.
+No Python install is required for the packaged Windows build.  
+Ollama / an LLM is **not** required. The Copilot is optional (Settings → NeuroBIDS Copilot).
+
+Uninstall via Start Menu → **Uninstall NeuroPipeline DICOM Converter**.
+
+macOS packaged builds produce `NeuroBIDS.app` via `bash scripts/build_macos.sh` (must run on a Mac). See [INSTALL.md](INSTALL.md).
 
 ---
 
@@ -58,7 +63,7 @@ Left sidebar:
 |------|---------|
 | **Conversion** | Inventory, Convert, advanced dcm2niix options |
 | **Queue** | Convert many subjects one after another; pause / retry / recover after restart |
-| **Settings** | dcm2niix path, defaults, custom **Naming Rules**, Copilot env-var help |
+| **Settings** | dcm2niix path, defaults, **Naming Rules**, Copilot provider (Disabled / Local AI / remote API) |
 | **Logs** | View conversion logs |
 
 Copilot is a collapsible side panel (**Ctrl+J**). **Ctrl+K** opens a command palette. See [NeuroBIDS workflow](neurobids_workflow.md).
@@ -68,8 +73,10 @@ Copilot is a collapsible side panel (**Ctrl+J**). **Ctrl+K** opens a command pal
 ## Recommended everyday workflow
 
 ```
-Discover  →  Map (BIDS Preview)  →  Audit  →  Conversion
+Discover  →  Map  →  Audit  →  Protect  →  Release  →  Conversion
 ```
+
+NeuroBIDS never modifies the original DICOM files. All naming edits happen in the in-memory plan or in output folders you choose.
 
 ### 1. Select Input Folder
 
@@ -282,13 +289,22 @@ ADC maps (when detected) may be kept under `derivatives/non-BIDS/` rather than t
 
 | Problem | What to try |
 |---------|-------------|
-| **dcm2niix not found** | Settings → set path, or place `dcm2niix.exe` next to the app |
+| **App does not launch** | Reinstall Setup.exe; check antivirus quarantine; see Logs after a developer launch |
+| **dcm2niix not found** | Settings → set path; ensure it was bundled at build time (`tools/dcm2niix.exe`) |
 | **No DICOM detected** | Confirm files are under Input; wait for scan to finish |
+| **Unreadable / corrupted DICOM** | Re-export the series; exclude it in Map if the rest is usable |
 | **Only 1 subject but 3 folders** | Use one parent Input with 3 patient subfolders; shared PatientID triggers folder grouping |
 | **Convert blocked by plan** | Preview → fix table or **Reset Changes** → **Validate Plan** |
-| **Conversion failed** | Open HTML report + Logs page |
+| **Invalid BIDS mapping** | Fix entities on Map; BIDS-invalid does not automatically mean conversion-invalid |
+| **Conversion failed** | Open HTML report + Logs; check disk space and permissions |
+| **Output folder exists / unavailable** | Choose an empty folder or another writable path |
+| **Permission denied** | Pick a folder you can write to; check network-share rights |
 | **Disk space** | Free space on the output drive and retry |
-| **Output not empty** | Confirm the dialog; existing files are not overwritten blindly |
+| **Copilot unavailable** | Expected when Disabled; Settings → enable Local AI or remote API |
+| **Ollama unavailable** | Start Ollama; Settings → Test connection; or leave Copilot Disabled |
+| **Remote API unavailable** | Check URL / model / API key; Test connection; review data policy |
+
+NeuroBIDS never modifies the original DICOM files.
 
 ---
 

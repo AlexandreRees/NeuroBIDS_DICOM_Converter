@@ -382,6 +382,30 @@ class CopilotWorker(QObject):
             self.finished.emit()
 
 
+class LLMConnectionTestWorker(QObject):
+    """Probe LLM provider connectivity off the GUI thread."""
+
+    finished_result = Signal(object)  # ConnectionProbeResult
+    failed = Signal(str)
+    finished = Signal()
+
+    def __init__(self, config: object, *, parent: QObject | None = None) -> None:
+        super().__init__(parent)
+        self._config = config
+
+    def run(self) -> None:
+        try:
+            from neuro_pipeline.neurobids.copilot.llm.connection import probe_llm_connection
+
+            result = probe_llm_connection(self._config)  # type: ignore[arg-type]
+            self.finished_result.emit(result)
+        except Exception as exc:  # noqa: BLE001
+            LOGGER.exception("LLM connection test failed")
+            self.failed.emit(str(exc))
+        finally:
+            self.finished.emit()
+
+
 def start_worker(worker: QObject, *, slot_name: str = "run") -> QThread:
     """Move ``worker`` onto a new ``QThread`` and start it."""
     thread = QThread()

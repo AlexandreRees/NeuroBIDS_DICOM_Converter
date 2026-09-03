@@ -470,15 +470,15 @@ def test_error_role_in_conversation(panel: NeuroBIDSCopilotPanel) -> None:
 
 
 def test_loading_shows_cancel_button(panel: NeuroBIDSCopilotPanel) -> None:
-    assert not panel.cancel_btn.isVisible()
+    assert panel.cancel_btn.isHidden()
     panel.controller._set_busy(True)
-    assert panel.cancel_btn.isVisible()
+    assert not panel.cancel_btn.isHidden()
     assert not panel.send_btn.isEnabled()
-    assert panel.loading_bar.isVisible()
+    assert not panel.loading_bar.isHidden()
     panel._on_cancel()
     assert not panel.controller.busy
     assert "cancelled" in panel.conversation.toPlainText().lower()
-    assert not panel.cancel_btn.isVisible()
+    assert panel.cancel_btn.isHidden()
 
 
 def test_cancel_does_not_apply_changeset(panel: NeuroBIDSCopilotPanel, session: CopilotSession) -> None:

@@ -23,11 +23,13 @@ User writable data lives under:
 
 ## Copilot LLM (optional)
 
-NeuroBIDS works **without** an LLM. When configured, the Copilot uses OpenAI-compatible Chat Completions.
+**Default: disabled.** NeuroBIDS works without an LLM and without Ollama.
+
+Configure in **Settings → NeuroBIDS Copilot**, or with environment variables (useful for packaged EXE launches via a shortcut or shell):
 
 | Variable | Example | Notes |
 |----------|---------|-------|
-| `NEUROBIDS_LLM_PROVIDER` | `openai` / `compatible` / `azure` / `local` / `none` | `local` needs no API key |
+| `NEUROBIDS_LLM_PROVIDER` | `none` / `local` / `openai` / `compatible` / `azure` | Default `none` |
 | `NEUROBIDS_LLM_MODEL` | `gpt-4o-mini` or `qwen3:30b` | Required for live use |
 | `NEUROBIDS_LLM_API_KEY` | *(secret)* | Required except `local` |
 | `NEUROBIDS_LLM_BASE_URL` | `http://localhost:11434/v1` | Ollama default for `local` |
@@ -45,7 +47,20 @@ export NEUROBIDS_LLM_MODEL=qwen3:30b
 export NEUROBIDS_LLM_BASE_URL=http://localhost:11434/v1
 ```
 
-Never commit API keys. The provider redacts secrets from logs/errors.
+### Remote OpenAI-compatible example
+
+```bash
+export NEUROBIDS_LLM_PROVIDER=openai
+export NEUROBIDS_LLM_MODEL=gpt-4o-mini
+export NEUROBIDS_LLM_API_KEY=...   # never commit
+export NEUROBIDS_LLM_BASE_URL=https://api.openai.com/v1
+```
+
+Never commit API keys. The provider redacts secrets from logs/errors. The GUI never displays the key value.
+
+### Windows packaged app
+
+Set variables in a shortcut, PowerShell session, or System Environment Variables before launching the EXE. Settings → Apply also sets them for the **current session** only.
 
 ## Provenance
 
@@ -53,23 +68,13 @@ When enabled, Copilot writes versioned JSONL under:
 
 `…/NeuroPipeline/logs/copilot_provenance/events.jsonl`
 
-Export:
-
-```python
-from neuro_pipeline.neurobids.copilot.provenance import CopilotProvenanceStore
-CopilotProvenanceStore().export_json("copilot_audit_export.json")
-```
-
 Records scrub API keys, absolute paths, PatientName, and binary/pixel payloads.
 
-## Benchmark
+## Benchmark (developers)
 
 ```bash
 # Deterministic FakeLLM (CI / release gate)
 PYTHONPATH=src python -m neuro_pipeline.neurobids.copilot.benchmark --no-level3
-
-# Optional live model (not a release gate)
-PYTHONPATH=src python -m neuro_pipeline.neurobids.copilot.benchmark --live
 ```
 
 See [`tests/benchmarks/README.md`](../tests/benchmarks/README.md).

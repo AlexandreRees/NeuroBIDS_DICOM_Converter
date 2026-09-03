@@ -32,8 +32,8 @@ LOGGER = logging.getLogger(__name__)
 # User-facing messages (no stack traces / secrets)
 _ERROR_MESSAGES = {
     "provider_unavailable": (
-        "No LLM provider is configured. Set NEUROBIDS_LLM_PROVIDER and credentials "
-        "if you want natural-language assistance. Preview editing still works."
+        "AI Copilot is not configured. NeuroBIDS still works without an AI provider. "
+        "Open Settings to choose Disabled, Local AI (Ollama), or an OpenAI-compatible API."
     ),
     "timeout": "The Copilot request timed out. Please try again.",
     "malformed_response": "The Copilot returned an unexpected response. Please try again.",
@@ -48,6 +48,12 @@ _ERROR_MESSAGES = {
         "Please generate a new proposal."
     ),
     "conversion_busy": "Conversion is running. Wait until it finishes before applying changes.",
+    "mutation_rejected": "The proposed change was rejected. The BIDS plan was not modified.",
+    "approval_required": "Proposed changes require your explicit Apply before anything is changed.",
+    "provider_http_error": "The LLM provider returned an error. Check Settings → Test connection.",
+    "provider_error": "The LLM provider is unavailable. Check Settings → Test connection.",
+    "model_unavailable": "The configured model is not available on the provider.",
+    "invalid_configuration": "Copilot configuration is incomplete. Review Settings → NeuroBIDS Copilot.",
 }
 
 
@@ -63,6 +69,7 @@ class CopilotController(QObject):
     error = Signal(str)
     changeset_updated = Signal()
     plan_applied = Signal()  # preview should refresh
+    connection_test_finished = Signal(object)  # ConnectionProbeResult
 
     def __init__(self, parent: QObject | None = None) -> None:
         super().__init__(parent)
@@ -79,6 +86,10 @@ class CopilotController(QObject):
         self._sync_plan: Callable[[], None] | None = None
         self._turn_id = 0
         self._provenance_store: CopilotProvenanceStore | None = default_provenance_store()
+        self._probe_thread = None
+        self._probe_worker = None
+        self.last_connection_status: str = ""
+        self.last_connection_message: str = ""
 
     @property
     def session(self) -> CopilotSession | None:
@@ -108,6 +119,67 @@ class CopilotController(QObject):
 
     def set_config(self, config: LLMConfig) -> None:
         self._config = config
+
+    def reload_config_from_env(self) -> LLMConfig:
+        """Reload LLM settings from the process environment and clear injected providers."""
+        self._config = LLMConfig.from_env()
+        # Drop injected providers so the next ask rebuilds from config,
+        # unless a test/demo provider was explicitly Unavailable-safe Fake.
+        self._provider = None
+        return self._config
+
+    def current_config(self) -> LLMConfig:
+        return self._config
+
+    def test_connection(self, *, sync: bool = False) -> bool:
+        """Probe the configured LLM provider without blocking the GUI (default)."""
+        from neuro_pipeline.neurobids.copilot.llm.connection import probe_llm_connection
+        from neuro_pipeline.workers import LLMConnectionTestWorker, start_worker
+
+        config = self._config or LLMConfig.from_env()
+        if sync:
+            result = probe_llm_connection(config)
+            self.connection_test_finished.emit(result)
+            return True
+        if self._probe_worker is not None:
+            self.error.emit("A connection test is already running.")
+            return False
+        self._probe_worker = LLMConnectionTestWorker(config)
+        self._probe_thread = start_worker(self._probe_worker)
+        assert self._probe_thread is not None and self._probe_worker is not None
+        self._probe_worker.finished_result.connect(
+            self._on_probe_finished,
+            type=Qt.ConnectionType.QueuedConnection,  # type: ignore[arg-type]
+        )
+        self._probe_worker.failed.connect(
+            self._on_probe_failed,
+            type=Qt.ConnectionType.QueuedConnection,  # type: ignore[arg-type]
+        )
+        self._probe_thread.finished.connect(self._probe_worker.deleteLater)
+        self._probe_thread.finished.connect(self._probe_thread.deleteLater)
+        self._probe_thread.finished.connect(self._clear_probe_handles)
+        self._probe_thread.start()
+        return True
+
+    def _on_probe_finished(self, result: object) -> None:
+        self.last_connection_status = str(getattr(result, "status", "") or "")
+        self.last_connection_message = str(getattr(result, "message", "") or "")
+        self.connection_test_finished.emit(result)
+
+    def _on_probe_failed(self, message: str) -> None:
+        from neuro_pipeline.neurobids.copilot.llm.connection import ConnectionProbeResult
+
+        result = ConnectionProbeResult(
+            status="provider_unavailable",
+            message=message or "Connection test failed.",
+        )
+        self.last_connection_status = result.status
+        self.last_connection_message = result.message
+        self.connection_test_finished.emit(result)
+
+    def _clear_probe_handles(self) -> None:
+        self._probe_worker = None
+        self._probe_thread = None
 
     def set_provenance_store(self, store: CopilotProvenanceStore | None) -> None:
         self._provenance_store = store
@@ -262,7 +334,22 @@ class CopilotController(QObject):
         self.response_ready.emit(turn)
 
     def _on_worker_error(self, message: str) -> None:
-        self.error.emit(message or friendly_copilot_error("malformed_response"))
+        text = (message or "").strip()
+        lower = text.lower()
+        if "provider_unavailable" in lower or "no llm provider" in lower:
+            self.error.emit(friendly_copilot_error("provider_unavailable"))
+            return
+        if "timed out" in lower or "timeout" in lower:
+            self.error.emit(friendly_copilot_error("timeout"))
+            return
+        if "malformed" in lower:
+            self.error.emit(friendly_copilot_error("malformed_response", text))
+            return
+        # Never dump stack traces into the conversation panel.
+        if "traceback" in lower:
+            self.error.emit(friendly_copilot_error("provider_error"))
+            return
+        self.error.emit(text or friendly_copilot_error("malformed_response"))
 
     def set_force_sync(self, enabled: bool) -> None:
         """When True, ``ask()`` runs on the calling thread (for unit tests)."""

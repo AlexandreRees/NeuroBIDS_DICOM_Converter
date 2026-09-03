@@ -77,6 +77,47 @@ class LLMConfig:
             retry_backoff_seconds=backoff,
         )
 
+    def apply_to_environ(self, *, include_api_key: bool = True) -> None:
+        """Write non-secret (and optional secret) settings into the process env.
+
+        Used by the Settings UI for the current session only. API keys are never
+        written to disk by NeuroBIDS.
+        """
+        provider = (self.provider or "none").strip().lower() or "none"
+        os.environ["NEUROBIDS_LLM_PROVIDER"] = provider
+        if self.model:
+            os.environ["NEUROBIDS_LLM_MODEL"] = self.model
+        else:
+            os.environ.pop("NEUROBIDS_LLM_MODEL", None)
+        if self.base_url:
+            os.environ["NEUROBIDS_LLM_BASE_URL"] = self.base_url
+        elif provider == "local":
+            os.environ["NEUROBIDS_LLM_BASE_URL"] = "http://localhost:11434/v1"
+        else:
+            os.environ.pop("NEUROBIDS_LLM_BASE_URL", None)
+        if include_api_key:
+            if self.api_key:
+                os.environ["NEUROBIDS_LLM_API_KEY"] = self.api_key
+            else:
+                os.environ.pop("NEUROBIDS_LLM_API_KEY", None)
+
+    @property
+    def api_key_configured(self) -> bool:
+        return bool(self.api_key)
+
+    @property
+    def provider_label(self) -> str:
+        provider = (self.provider or "none").strip().lower()
+        return {
+            "none": "Disabled",
+            "off": "Disabled",
+            "disabled": "Disabled",
+            "local": "Local AI (Ollama)",
+            "openai": "OpenAI-compatible API",
+            "compatible": "OpenAI-compatible API",
+            "azure": "OpenAI-compatible API (Azure)",
+        }.get(provider, provider or "Disabled")
+
 
 def redact_secret(value: str) -> str:
     if not value:

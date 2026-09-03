@@ -120,8 +120,12 @@ class MainWindow(QMainWindow):
         self.release_page = ReleasePage(self.convert_page)
         self.queue_page = ConversionQueueWidget(self.config)
         self.settings_page = SettingsWidget(
-            self.config, on_apply=self._on_settings_applied
+            self.config,
+            on_apply=self._on_settings_applied,
+            on_llm_apply=self._on_llm_settings_applied,
+            connection_tester=self._start_llm_connection_test,
         )
+        self.settings_page.llm_config_changed.connect(self._on_llm_settings_applied)
         self.log_page = LogWidget(self.config)
 
         self.stack = QStackedWidget()
@@ -164,6 +168,9 @@ class MainWindow(QMainWindow):
         )
         self.copilot_panel.configure_requested.connect(self._on_configure_copilot)
         self.copilot_panel.controller.changeset_updated.connect(self.refresh_workspace)
+        self.copilot_panel.controller.connection_test_finished.connect(
+            self._on_llm_connection_test_finished
+        )
         self.discover_page.ask_requested.connect(self._ask_copilot)
         self.discover_page.open_map_requested.connect(lambda: self.show_stage("map"))
         self.discover_page.open_copilot_requested.connect(lambda: self.set_copilot_visible(True))
@@ -318,6 +325,27 @@ class MainWindow(QMainWindow):
 
     def _on_configure_copilot(self) -> None:
         self.show_stage("settings")
+
+    def _on_llm_settings_applied(self, config=None) -> None:  # noqa: ANN001
+        controller = self.copilot_panel.controller
+        if config is not None:
+            controller.set_config(config)
+            controller.set_provider(None)
+        else:
+            controller.reload_config_from_env()
+        self.copilot_panel._refresh_availability()
+        self.copilot_panel._refresh_state_banner()
+
+    def _start_llm_connection_test(self) -> bool:
+        controller = self.copilot_panel.controller
+        controller.reload_config_from_env()
+        return controller.test_connection(sync=False)
+
+    def _on_llm_connection_test_finished(self, result: object) -> None:
+        status = getattr(result, "status", "provider_unavailable")
+        message = getattr(result, "message", "Connection test failed.")
+        self.settings_page.set_connection_result(str(status), str(message))
+        self.copilot_panel._refresh_availability()
 
     def refresh_workspace(self) -> None:
         convert = self.convert_page

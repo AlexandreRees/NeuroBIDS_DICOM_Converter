@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from PySide6.QtWidgets import QMessageBox, QWidget
+
+if TYPE_CHECKING:
+    from neuro_pipeline.gui.user_errors import UserFacingError
 
 
 def show_error(parent: QWidget | None, title: str, message: str) -> None:
@@ -26,3 +31,10 @@ def confirm(parent: QWidget | None, title: str, message: str) -> bool:
         QMessageBox.StandardButton.No,
     )
     return reply == QMessageBox.StandardButton.Yes
+
+
+def show_user_facing_error(parent: QWidget | None, error: "UserFacingError") -> None:
+    """Critical dialog with explanation, actions, and expandable details."""
+    from neuro_pipeline.gui.user_errors import show_user_error
+
+    show_user_error(parent, error)

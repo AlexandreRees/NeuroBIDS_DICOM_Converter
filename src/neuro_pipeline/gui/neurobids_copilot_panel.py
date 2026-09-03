@@ -213,13 +213,17 @@ class NeuroBIDSCopilotPanel(QGroupBox):
         self.unavailable_box.setObjectName("unavailableBanner")
         unavail = QVBoxLayout(self.unavailable_box)
         unavail.setContentsMargins(8, 8, 8, 8)
-        un_title = QLabel("Copilot is currently unavailable.")
-        un_title.setWordWrap(True)
-        unavail.addWidget(un_title)
-        un_body = QLabel("The rest of NeuroBIDS remains fully functional.")
-        un_body.setObjectName("statusLabel")
-        un_body.setWordWrap(True)
-        unavail.addWidget(un_body)
+        self._unavail_title = QLabel("AI Copilot is not configured")
+        self._unavail_title.setWordWrap(True)
+        unavail.addWidget(self._unavail_title)
+        self._unavail_body = QLabel(
+            "NeuroBIDS works without an AI provider. To enable the Copilot, "
+            "configure a local or remote LLM provider in Settings.\n\n"
+            "Choices: Disabled · Local AI (Ollama) · OpenAI-compatible API"
+        )
+        self._unavail_body.setObjectName("statusLabel")
+        self._unavail_body.setWordWrap(True)
+        unavail.addWidget(self._unavail_body)
         configure = QPushButton("Configure Copilot")
         configure.clicked.connect(self.configure_requested.emit)
         unavail.addWidget(configure)
@@ -405,8 +409,35 @@ class NeuroBIDSCopilotPanel(QGroupBox):
         layout.addWidget(self.proposal_box)
 
     def _refresh_availability(self) -> None:
+        cfg = self._controller.current_config()
+        provider = (cfg.provider or "none").lower()
         available = self._controller.is_llm_available()
-        self.unavailable_box.setVisible(not available)
+        probe = (self._controller.last_connection_status or "").strip()
+        show_local_down = (
+            provider == "local"
+            and available
+            and probe in {"provider_unavailable", "timeout", "model_unavailable"}
+        )
+        self.unavailable_box.setVisible((not available) or show_local_down)
+        if show_local_down:
+            self._unavail_title.setText("Ollama is not available")
+            detail = self._controller.last_connection_message or (
+                "Start Ollama, set a model in Settings, then use Test connection."
+            )
+            self._unavail_body.setText(
+                f"{detail}\n\n"
+                "NeuroBIDS still works without AI. Configure Local AI in Settings, "
+                "or choose Disabled / a remote API."
+            )
+        elif not available:
+            self._unavail_title.setText("AI Copilot is not configured")
+            self._unavail_body.setText(
+                "NeuroBIDS works without an AI provider. To enable the Copilot, "
+                "configure a local or remote LLM provider in Settings.\n\n"
+                "Choices: Disabled · Local AI (Ollama) · OpenAI-compatible API\n"
+                "Local AI keeps inference on your machine. Remote APIs may send prompts "
+                "to an external service."
+            )
 
     def _update_context_hint(self) -> None:
         sel = self._last_selection

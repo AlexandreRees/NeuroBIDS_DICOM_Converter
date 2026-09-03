@@ -14,6 +14,7 @@ __all__ = [
     "CopilotWorker",
     "FolderConvertWorker",
     "InventoryWorker",
+    "LLMConnectionTestWorker",
     "ScanWorker",
     "start_worker",
 ]
@@ -25,6 +26,7 @@ if TYPE_CHECKING:
         CopilotWorker,
         FolderConvertWorker,
         InventoryWorker,
+        LLMConnectionTestWorker,
         ScanWorker,
         start_worker,
     )

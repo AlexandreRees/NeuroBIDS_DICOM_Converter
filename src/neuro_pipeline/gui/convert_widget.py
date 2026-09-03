@@ -427,10 +427,21 @@ class ConvertWidget(QWidget):
         self._set_busy(False)
         # Soft-fail: empty folders are expected user feedback, not a hard crash dialog
         if "no dicom" not in message.lower():
-            dialogs.show_error(
+            from neuro_pipeline.gui.dialogs import show_user_facing_error
+            from neuro_pipeline.gui.user_errors import user_error_from_message
+
+            show_user_facing_error(
                 self,
-                "DICOM scan failed",
-                f"{message}\n\nPlease check the selected folder.",
+                user_error_from_message(
+                    message,
+                    title="DICOM scan could not be completed",
+                    actions=[
+                        "Confirm the folder still exists and is readable",
+                        "Confirm it contains DICOM files",
+                        "Open Logs for technical details",
+                    ],
+                    code="scan_failed",
+                ),
             )
         self._cleanup_scan()
         self.dataset_changed.emit()
@@ -757,7 +768,13 @@ class ConvertWidget(QWidget):
                         ),
                     )
         except NeuroPipelineError as exc:
-            dialogs.show_warning(self, "Cannot start conversion", str(exc))
+            from neuro_pipeline.gui.dialogs import show_user_facing_error
+            from neuro_pipeline.gui.user_errors import user_error_from_exception
+
+            show_user_facing_error(
+                self,
+                user_error_from_exception(exc, fallback_title="Cannot start conversion"),
+            )
             return
 
         from neuro_pipeline.converter import Converter
@@ -766,13 +783,25 @@ class ConvertWidget(QWidget):
         try:
             probe.verify()
         except (MissingDcm2niixError, Dcm2niixNotFoundError) as exc:
-            dialogs.show_warning(self, "dcm2niix not found", str(exc))
+            from neuro_pipeline.gui.dialogs import show_user_facing_error
+            from neuro_pipeline.gui.user_errors import user_error_from_exception
+
+            show_user_facing_error(
+                self,
+                user_error_from_exception(exc, fallback_title="dcm2niix unavailable"),
+            )
             chosen = self._prompt_for_dcm2niix()
             if not chosen:
                 return
             self._dcm2niix_override = chosen
         except Exception as exc:  # noqa: BLE001
-            dialogs.show_error(self, "Cannot start conversion", str(exc))
+            from neuro_pipeline.gui.dialogs import show_user_facing_error
+            from neuro_pipeline.gui.user_errors import user_error_from_exception
+
+            show_user_facing_error(
+                self,
+                user_error_from_exception(exc, fallback_title="Cannot start conversion"),
+            )
             return
 
         LOGGER.info(
@@ -877,17 +906,24 @@ class ConvertWidget(QWidget):
         self._converting = False
         self._set_busy(False)
         self.status_label.setText("Conversion aborted.")
-        if "dcm2niix" in message.lower():
-            dialogs.show_error(self, "Conversion failed", message)
+        from neuro_pipeline.gui.dialogs import show_user_facing_error
+        from neuro_pipeline.gui.user_errors import user_error_from_message
+
+        error = user_error_from_message(
+            message,
+            title="Conversion could not be completed",
+            actions=[
+                "Open Logs for technical details",
+                "Confirm the DICOM source is still accessible",
+                "Confirm the output folder is writable and has free space",
+            ],
+            code="conversion_failed",
+        )
+        show_user_facing_error(self, error)
+        if "dcm2niix" in (message or "").lower():
             chosen = self._prompt_for_dcm2niix()
             if chosen:
                 self._dcm2niix_override = chosen
-        else:
-            dialogs.show_error(
-                self,
-                "Conversion failed",
-                "Conversion failed.\nPlease check the report file.\n\n" + message,
-            )
         self._cleanup_convert()
 
     def _cleanup_convert(self) -> None:
