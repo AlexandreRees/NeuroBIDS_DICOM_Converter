@@ -20,7 +20,7 @@ def apply_preview_scenario(
     *,
     root: Path | None = None,
 ) -> None:
-    """Load synthetic data into the live Convert/Map/Audit/Copilot widgets."""
+    """Load synthetic data into the live Convert/Copilot widgets."""
     root = Path(root) if root is not None else Path("preview_demo")
     with_issues = scenario == "audit"
     series, plan = build_preview_plan(root=root, with_audit_issues=with_issues)
@@ -44,26 +44,28 @@ def apply_preview_scenario(
     window.setWindowTitle(f"NeuroBIDS — UI Preview ({scenario})")
     window.set_copilot_visible(True)
 
+    # All scenarios show Conversion; Copilot side panel is open.
+    window.show_stage("conversion")
+
     if scenario == "audit":
-        window.show_stage("audit")
+        # Select the first acquisition with issues so the BIDS Preview highlights it.
         item = plan.get(UID_002_01_LOC)
         series_obj = next((s for s in series if s.series_instance_uid == UID_002_01_LOC), None)
         if item is not None:
-            window.map_page.inspector.set_acquisition(item, series_obj, plan)
+            convert.preview_panel.select_uid(UID_002_01_LOC)
+            inspector = getattr(convert, "acquisition_inspector", None)
+            if inspector is not None:
+                inspector.set_acquisition(item, series_obj, plan)
     elif scenario == "changeset":
-        window.show_stage("map")
-        window.map_page.refresh_subjects()
         if plan.items:
-            window.convert_page.preview_panel.select_uid(plan.items[0].source_series_uid)
+            convert.preview_panel.select_uid(plan.items[0].source_series_uid)
         convert.copilot_panel.submit_prompt(
             "Rename the subjects sequentially starting from 001.",
             send=True,
         )
     else:
-        window.show_stage("map")
-        window.map_page.refresh_subjects()
         if plan.items:
-            window.convert_page.preview_panel.select_uid(plan.items[0].source_series_uid)
+            convert.preview_panel.select_uid(plan.items[0].source_series_uid)
 
     window.refresh_workspace()
 

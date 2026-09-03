@@ -92,10 +92,9 @@ def test_preview_window_normal_scenario(tmp_path) -> None:
         assert win.convert_page.preview_panel.plan is not None
         assert len(win.convert_page.preview_panel.plan.items) == 5
         assert win.copilot_is_visible()
-        assert win.current_stage() == "map"
+        assert win.current_stage() == "conversion"
         assert isinstance(win.copilot_panel.controller._provider, PreviewDemoProvider)
         assert win.convert_page.preview_panel.table.rowCount() == 5
-        assert win.map_page.inspector.current_uid()
     finally:
         win.close()
 
@@ -132,7 +131,7 @@ def test_preview_audit_scenario(tmp_path) -> None:
     config = load_app_config()
     win = build_preview_window(config, scenario="audit", root=tmp_path)
     try:
-        assert win.current_stage() == "audit"
+        assert win.current_stage() == "conversion"
         loc = win.convert_page.preview_panel.plan.get(UID_002_01_LOC)
         assert loc is not None
         assert loc.include_in_conversion is True

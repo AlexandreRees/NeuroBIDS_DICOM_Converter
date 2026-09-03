@@ -20,16 +20,11 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from neuro_pipeline.gui.audit_page import AuditPage
 from neuro_pipeline.gui.audit_summary import build_audit_report
 from neuro_pipeline.gui.command_palette import CommandPalette
 from neuro_pipeline.gui.convert_widget import ConvertWidget
 from neuro_pipeline.gui.conversion_queue_widget import ConversionQueueWidget
-from neuro_pipeline.gui.discover_page import DiscoverPage
 from neuro_pipeline.gui.log_widget import LogWidget
-from neuro_pipeline.gui.map_workspace import MapWorkspace
-from neuro_pipeline.gui.protect_page import ProtectPage
-from neuro_pipeline.gui.release_page import ReleasePage
 from neuro_pipeline.gui.settings_widget import SettingsWidget
 from neuro_pipeline.gui.workspace_status import WorkspaceStatusBar
 from neuro_pipeline.logging.privacy import safe_folder_label
@@ -40,11 +35,6 @@ LOGGER = logging.getLogger(__name__)
 
 # (stage_id, nav label, group)
 _NAV_ITEMS: tuple[tuple[str, str, str], ...] = (
-    ("discover", "① Discover", "DATASET"),
-    ("map", "② Map", "DATASET"),
-    ("audit", "③ Audit", "DATASET"),
-    ("protect", "④ Protect", "DATASET"),
-    ("release", "⑤ Release", "DATASET"),
     ("conversion", "Conversion", "TOOLS"),
     ("queue", "Queue", "TOOLS"),
     ("settings", "Settings", "TOOLS"),
@@ -110,14 +100,6 @@ class MainWindow(QMainWindow):
         right_layout.addWidget(header)
 
         self.convert_page = ConvertWidget(self.config, self._naming_engine)
-        self.discover_page = DiscoverPage(self.convert_page)
-        self.map_page = MapWorkspace(
-            self.convert_page.preview_panel,
-            self.convert_page.copilot_panel,
-        )
-        self.audit_page = AuditPage(self.convert_page)
-        self.protect_page = ProtectPage(self.convert_page)
-        self.release_page = ReleasePage(self.convert_page)
         self.queue_page = ConversionQueueWidget(self.config)
         self.settings_page = SettingsWidget(
             self.config,
@@ -130,11 +112,6 @@ class MainWindow(QMainWindow):
 
         self.stack = QStackedWidget()
         page_widgets: list[tuple[str, QWidget]] = [
-            ("discover", self.discover_page),
-            ("map", self.map_page),
-            ("audit", self.audit_page),
-            ("protect", self.protect_page),
-            ("release", self.release_page),
             ("conversion", self.convert_page),
             ("queue", self.queue_page),
             ("settings", self.settings_page),
@@ -162,25 +139,11 @@ class MainWindow(QMainWindow):
 
         self.convert_page.dataset_changed.connect(self.refresh_workspace)
         self.convert_page.busy_changed.connect(lambda _=False: self.refresh_workspace())
-        self.convert_page.open_map_requested.connect(lambda: self.show_stage("map"))
-        self.convert_page.preview_panel.continue_requested.connect(
-            lambda: self.show_stage("conversion")
-        )
         self.copilot_panel.configure_requested.connect(self._on_configure_copilot)
         self.copilot_panel.controller.changeset_updated.connect(self.refresh_workspace)
         self.copilot_panel.controller.connection_test_finished.connect(
             self._on_llm_connection_test_finished
         )
-        self.discover_page.ask_requested.connect(self._ask_copilot)
-        self.discover_page.open_map_requested.connect(lambda: self.show_stage("map"))
-        self.discover_page.open_copilot_requested.connect(lambda: self.set_copilot_visible(True))
-        self.map_page.ask_requested.connect(self._ask_copilot)
-        self.map_page.open_copilot_requested.connect(lambda: self.set_copilot_visible(True))
-        self.audit_page.ask_requested.connect(self._ask_copilot)
-        self.audit_page.review_requested.connect(lambda: self.show_stage("map"))
-        self.audit_page.open_copilot_requested.connect(lambda: self.set_copilot_visible(True))
-        self.release_page.review_requested.connect(lambda: self.show_stage("audit"))
-        self.release_page.ask_requested.connect(self._ask_copilot)
 
         self.palette = CommandPalette.install(self)
         self.palette.ask_requested.connect(self._ask_copilot)
@@ -188,7 +151,7 @@ class MainWindow(QMainWindow):
         self.palette.goto_requested.connect(self.show_stage)
 
         self._nav_buttons[0].setChecked(True)
-        self.show_stage("discover")
+        self.show_stage("conversion")
         self.set_copilot_visible(False)
 
     def _build_nav(self) -> QFrame:
@@ -258,16 +221,6 @@ class MainWindow(QMainWindow):
         stage = self.current_stage()
         if stage == "logs":
             self.log_page.refresh()
-        if stage == "discover":
-            self.discover_page.refresh()
-        elif stage == "map":
-            self.map_page.refresh_subjects()
-        elif stage == "audit":
-            self.audit_page.refresh()
-        elif stage == "protect":
-            self.protect_page.refresh()
-        elif stage == "release":
-            self.release_page.refresh()
 
     def set_copilot_visible(self, visible: bool) -> None:
         self._copilot_open = bool(visible)
@@ -383,16 +336,8 @@ class MainWindow(QMainWindow):
             has_dataset=bool(plan and plan.items),
             structure_ok=structure_ok,
         )
-        if self.current_stage() == "discover":
-            self.discover_page.refresh()
-        elif self.current_stage() == "map":
-            self.map_page.refresh_subjects()
-        elif self.current_stage() == "audit":
-            self.audit_page.refresh()
-        elif self.current_stage() == "protect":
-            self.protect_page.refresh()
-        elif self.current_stage() == "release":
-            self.release_page.refresh()
+        if self.current_stage() == "logs":
+            self.log_page.refresh()
 
     def _on_settings_applied(self, config: AppConfig) -> None:
         self.config = config

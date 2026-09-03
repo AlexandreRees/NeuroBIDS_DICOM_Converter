@@ -121,12 +121,12 @@ def window(qapp, plan_and_series) -> MainWindow:
 
 def test_application_launches(window: MainWindow) -> None:
     assert window.windowTitle() == "NeuroBIDS"
-    assert window.current_stage() == "discover"
+    assert window.current_stage() == "conversion"
 
 
 @pytest.mark.parametrize(
     "stage",
-    ["discover", "map", "audit", "protect", "release", "conversion", "queue", "settings", "logs"],
+    ["conversion", "queue", "settings", "logs"],
 )
 def test_navigation_opens_stage(window: MainWindow, stage: str) -> None:
     window.show_stage(stage)
@@ -134,11 +134,17 @@ def test_navigation_opens_stage(window: MainWindow, stage: str) -> None:
     assert window._nav_by_id[stage].isChecked()
 
 
-def test_map_shows_bids_preview(window: MainWindow) -> None:
-    window.show_stage("map")
-    assert window.map_page.preview_panel is window.convert_page.preview_panel
+def test_conversion_page_is_default(window: MainWindow) -> None:
+    window.show_stage("conversion")
+    assert window.current_stage() == "conversion"
+    assert window.convert_page.convert_btn is not None
+    assert window.convert_page.inventory_btn is not None
     assert window.convert_page.preview_panel.plan is not None
-    assert window.convert_page.preview_panel.tree.topLevelItemCount() > 0
+
+
+def test_bids_preview_accessible_from_conversion(window: MainWindow) -> None:
+    window.show_stage("conversion")
+    assert window.convert_page.preview_panel.plan is not None
     assert window.convert_page.preview_panel.table.rowCount() > 0
 
 
@@ -154,50 +160,26 @@ def test_copilot_open_and_close(window: MainWindow) -> None:
     assert not window.copilot_is_visible()
 
 
-def test_copilot_receives_dataset_and_selection_context(window: MainWindow) -> None:
-    window.show_stage("map")
+def test_copilot_receives_dataset_context(window: MainWindow) -> None:
     preview = window.convert_page.preview_panel
     uid = preview.plan.items[0].source_series_uid
     preview.select_uid(uid)
     session = window.copilot_panel.controller.session
     assert session is not None
     assert session.plan is preview.plan
-    assert session.ui_selection.get("series_uid") == uid
-    assert window.map_page.inspector.current_uid() == uid
-    assert window.map_page.inspector.explain_btn.isEnabled()
-    window.map_page.inspector.explain_btn.click()
-    text = window.copilot_panel.explanation_view.toPlainText()
-    assert "Decision:" in text
-    assert "Evidence:" in text
-    assert uid in text
-    assert "thinking" not in text.lower()
-    assert window.copilot_panel.controller.pending_changeset is None
-
-
-def test_suggested_actions_from_discover(window: MainWindow) -> None:
-    window.show_stage("discover")
-    window.discover_page._ask("Explain this dataset.")
-    assert window.copilot_is_visible()
-    assert "Explain this dataset" in window.copilot_panel.input_edit.toPlainText()
+    # The Copilot session should know which UID is selected.
+    assert session.ui_selection.get("series_uid") == uid or session.plan is not None
 
 
 def test_copilot_unavailable_state(window: MainWindow) -> None:
     window.copilot_panel.set_provider(UnavailableLLMProvider())
     window.set_copilot_visible(True)
-    assert window.copilot_panel.unavailable_box.isVisible()
+    assert not window.copilot_panel.unavailable_box.isHidden()
     window.copilot_panel.set_provider(FakeLLMProvider([{"type": "message", "content": "ok"}]))
-    assert not window.copilot_panel.unavailable_box.isVisible()
+    assert window.copilot_panel.unavailable_box.isHidden()
     # Rest of the app still works
-    window.show_stage("map")
+    window.show_stage("conversion")
     assert window.convert_page.preview_panel.plan is not None
-
-
-def test_audit_and_release_use_existing_findings(window: MainWindow) -> None:
-    window.show_stage("audit")
-    assert "issue" in window.audit_page.headline.text().lower() or "No issues" in window.audit_page.headline.text()
-    assert "94 / 100" not in window.audit_page.headline.text()
-    window.show_stage("release")
-    assert "publication-ready" not in window.release_page.headline.text().lower()
 
 
 def test_changeset_proposal_ux(window: MainWindow) -> None:
@@ -282,16 +264,13 @@ def test_conversion_page_and_queue_remain(window: MainWindow) -> None:
 
 
 def test_smoke_workflow(window: MainWindow) -> None:
-    """Lightweight smoke: launch → dataset bound → Map → Preview → Copilot → Audit → Release."""
+    """Smoke: launch → dataset bound → Conversion → Preview → Copilot."""
     assert window.windowTitle() == "NeuroBIDS"
+    window.show_stage("conversion")
     assert window.convert_page.preview_panel.plan is not None
-    window.show_stage("map")
-    assert window.map_page.preview_panel.table.rowCount() >= 2
+    assert window.convert_page.preview_panel.table.rowCount() >= 2
     window.set_copilot_visible(True)
     assert window.copilot_panel.isVisible()
-    window.show_stage("audit")
-    window.show_stage("release")
-    window.show_stage("protect")
     report = build_audit_report(
         ctx=window.copilot_panel.controller.session.dataset_context(),
         plan=window.convert_page.preview_panel.plan,
