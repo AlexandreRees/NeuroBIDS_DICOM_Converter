@@ -11,12 +11,14 @@ from PySide6.QtWidgets import (
     QCheckBox,
     QFileDialog,
     QFormLayout,
+    QFrame,
     QGroupBox,
     QHBoxLayout,
     QLabel,
     QLineEdit,
     QPushButton,
     QRadioButton,
+    QScrollArea,
     QTabWidget,
     QVBoxLayout,
     QWidget,
@@ -54,17 +56,30 @@ class SettingsWidget(QWidget):
 
     def _build_ui(self) -> None:
         root = QVBoxLayout(self)
-        root.setContentsMargins(12, 10, 12, 10)
-        root.setSpacing(8)
+        root.setContentsMargins(0, 0, 0, 0)
+        root.setSpacing(0)
 
         title = QLabel("Settings")
         title.setObjectName("titleLabel")
-        root.addWidget(title)
+        title_frame = QFrame()
+        title_layout = QVBoxLayout(title_frame)
+        title_layout.setContentsMargins(12, 10, 12, 4)
+        title_layout.addWidget(title)
+        root.addWidget(title_frame)
 
         tabs = QTabWidget()
-        general = QWidget()
-        general_layout = QVBoxLayout(general)
-        general_layout.setContentsMargins(0, 8, 0, 0)
+
+        # ── General tab: wrap in a scroll area so it never overflows ──
+        general_inner = QWidget()
+        general_layout = QVBoxLayout(general_inner)
+        general_layout.setContentsMargins(12, 8, 12, 12)
+        general_layout.setSpacing(8)
+
+        general_scroll = QScrollArea()
+        general_scroll.setWidgetResizable(True)
+        general_scroll.setFrameShape(QFrame.Shape.NoFrame)
+        general_scroll.setWidget(general_inner)
+        general = general_scroll  # used below for tabs.addTab
 
         dcm_box = QGroupBox("dcm2niix")
         dcm_layout = QHBoxLayout(dcm_box)
@@ -114,15 +129,16 @@ class SettingsWidget(QWidget):
         self.apply_btn.clicked.connect(self._apply)
         apply_row.addWidget(self.apply_btn)
         general_layout.addLayout(apply_row)
-        general_layout.addStretch(1)
 
         self.status_label = QLabel("")
         self.status_label.setObjectName("statusLabel")
         general_layout.addWidget(self.status_label)
 
-        tabs.addTab(general, "General")
+        general_layout.addStretch(1)
+
+        tabs.addTab(general_scroll, "General")
         self.naming_rules_panel = NamingRulesPanel()
-        tabs.addTab(self.naming_rules_panel, "Naming Rules")
+        tabs.addTab(self.naming_rules_panel, "Nomenclature BIDS")
         root.addWidget(tabs, 1)
 
     def _build_copilot_box(self) -> QGroupBox:

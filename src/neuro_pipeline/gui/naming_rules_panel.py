@@ -50,35 +50,36 @@ class NamingRulesPanel(QWidget):
 
         self.table = QTableWidget(0, 5)
         self.table.setHorizontalHeaderLabels(
-            ["Enabled", "Rule name", "Condition", "Action", "Priority"]
+            ["Activée", "Nom de la règle", "Condition", "Action", "Priorité"]
         )
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
+        self.table.doubleClicked.connect(self._edit)
         root.addWidget(self.table, 1)
 
-        row = QHBoxLayout()
-        self.add_btn = QPushButton("+ Add rule")
-        self.edit_btn = QPushButton("Edit")
-        self.dup_btn = QPushButton("Duplicate")
-        self.del_btn = QPushButton("Delete")
-        self.import_btn = QPushButton("Import JSON")
-        self.export_btn = QPushButton("Export JSON")
-        self.validate_btn = QPushButton("Validate")
-        self.save_btn = QPushButton("Save")
+        # Row 1: main editing actions
+        row1 = QHBoxLayout()
+        self.add_btn = QPushButton("+ Ajouter")
+        self.edit_btn = QPushButton("Modifier")
+        self.dup_btn = QPushButton("Dupliquer")
+        self.del_btn = QPushButton("Supprimer")
+        for b in (self.add_btn, self.edit_btn, self.dup_btn, self.del_btn):
+            row1.addWidget(b)
+        row1.addStretch(1)
+        root.addLayout(row1)
+
+        # Row 2: import / export / validate / save
+        row2 = QHBoxLayout()
+        self.import_btn = QPushButton("Importer JSON")
+        self.export_btn = QPushButton("Exporter JSON")
+        self.validate_btn = QPushButton("Valider")
+        self.save_btn = QPushButton("Enregistrer")
         self.save_btn.setObjectName("primaryButton")
-        for b in (
-            self.add_btn,
-            self.edit_btn,
-            self.dup_btn,
-            self.del_btn,
-            self.import_btn,
-            self.export_btn,
-            self.validate_btn,
-            self.save_btn,
-        ):
-            row.addWidget(b)
-        root.addLayout(row)
+        for b in (self.import_btn, self.export_btn, self.validate_btn, self.save_btn):
+            row2.addWidget(b)
+        row2.addStretch(1)
+        root.addLayout(row2)
 
         self.status = QLabel("")
         self.status.setObjectName("statusLabel")
@@ -126,10 +127,10 @@ class NamingRulesPanel(QWidget):
             self.engine.rules.append(rule)
             self._refresh_table()
 
-    def _edit(self) -> None:
+    def _edit(self, _index=None) -> None:  # accepts doubleClicked signal arg
         rule = self._selected_rule()
         if rule is None:
-            dialogs.show_warning(self, "Naming rules", "Select a rule to edit.")
+            dialogs.show_warning(self, "Règles de nomenclature", "Sélectionnez une règle à modifier.")
             return
         if NamingRuleDialog.edit(self, rule):
             self._refresh_table()
@@ -148,7 +149,7 @@ class NamingRulesPanel(QWidget):
         rule = self._selected_rule()
         if rule is None:
             return
-        if not dialogs.confirm(self, "Delete rule", f"Delete rule {rule.name!r}?"):
+        if not dialogs.confirm(self, "Supprimer la règle", f"Supprimer la règle {rule.name!r} ?"):
             return
         self.engine.rules = [r for r in self.engine.rules if r is not rule]
         self._refresh_table()
