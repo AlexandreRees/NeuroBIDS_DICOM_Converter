@@ -128,7 +128,7 @@ jobs:
           # Tag: v1.0.20250506
           # SHA256: 04ebd85205380c2a78b4a77b3b032bd8d8ff8f6f7c09feaf47f246f2a9efd282
           # tools\dcm2niix.exe is NOT committed to Git — see scripts/ensure_dcm2niix.ps1
-          powershell -ExecutionPolicy Bypass -File .\scripts\ensure_dcm2niix.ps1
+          .\scripts\ensure_dcm2niix.ps1
 
       - name: Install Inno Setup 6
         shell: pwsh
