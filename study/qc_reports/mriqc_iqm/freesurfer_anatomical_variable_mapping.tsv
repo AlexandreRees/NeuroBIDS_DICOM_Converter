@@ -1,0 +1,9 @@
+requested	column	freesurfer_source	unit	used_in_primary_model	notes
+ICV / estimated intracranial volume	icv_etiv	stats/aseg.stats # Measure EstimatedTotalIntraCranialVol, eTIV	mm^3	TRUE	Atlas-scaled eTIV. Not BrainSegVol.
+BrainSegVol	brainseg_vol	stats/aseg.stats # Measure BrainSeg, BrainSegVol	mm^3	FALSE	Extracted; not a default co-entered size term with eTIV.
+total cortical GM	total_cortical_gm	stats/aseg.stats # Measure Cortex, CortexVol	mm^3	FALSE	Cortical gray matter only (not TotalGrayVol, which includes subcortical GM).
+total WM	total_wm	stats/aseg.stats # Measure CerebralWhiteMatter, CerebralWhiteMatterVol	mm^3	TRUE	Cerebral white-matter volume.
+total CSF	total_csf	stats/aseg.stats table, StructName=CSF, Volume_mm3 (SegId 24)	mm^3	FALSE	FreeSurfer CSF label (extra-axial CSF), not a whole-intracranial CSF compartment. VentricleChoroidVol exists but is ventricular+choroid, not substituted here.
+mean cortical thickness	mean_cortical_thickness	stats/lh.aparc.stats and rh.aparc.stats # Measure Cortex, MeanThickness	mm	TRUE	Unweighted mean of the two hemisphere MeanThickness values.
+left hippocampal volume	left_hippocampal_volume	stats/aseg.stats table, StructName=Left-Hippocampus, Volume_mm3	mm^3	FALSE	Extracted; not entered in the primary anatomy set.
+right hippocampal volume	right_hippocampal_volume	stats/aseg.stats table, StructName=Right-Hippocampus, Volume_mm3	mm^3	FALSE	Extracted; not entered in the primary anatomy set.

@@ -1,0 +1,37 @@
+Cohort effects after acquisition adjustment (Model C, software_platform)
+generated_at: 2026-09-09T19:49:43.978825+00:00
+
+Primary Model C:
+  IQM ~ cohort + software_platform + age + sex + session + (1|subject_id)
+Reference cohort: Control. Session reference: ses-01.
+FDR: BH within each Control-vs-cohort family of 56 IQM tests.
+
+This does not establish disease effects, image-quality grades, or anatomy.
+Residual cohort associations may still reflect anatomy, tissue composition,
+unmeasured technical factors, or biology–image interactions.
+
+n observations=133  n subjects=83
+subjects per cohort: {'Control': 55, 'Glaucoma': 19, 'Data_ON': 7, 'Data_TON': 2}
+acquisitions per cohort: {'Control': 95, 'Glaucoma': 27, 'Data_ON': 8, 'Data_TON': 3}
+Data_TON n=2 subjects; Data_ON is small; do not generalize those coefficients.
+
+FDR-significant cohort associations after software-platform adjustment:
+  Control vs Glaucoma: 5/56
+    summary_bg_mean      family=intensity                coef=5.059 std=0.993 p=0.0002078 q=0.01163
+    summary_bg_p95       family=intensity                coef=14.24 std=0.9259 p=0.0004971 q=0.01392
+    summary_wm_p95       family=intensity                coef=6.703 std=0.8411 p=0.0008983 q=0.01677
+    summary_bg_mad       family=intensity                coef=2.213 std=0.8467 p=0.001821 q=0.0204
+    summary_bg_median    family=intensity                coef=1.492 std=0.8467 p=0.001821 q=0.0204
+  Control vs Data_ON: 1/56
+    fwhm_y               family=smoothness / sharpness   coef=-0.2933 std=-1.373 p=0.0005771 q=0.03232
+  Control vs Data_TON: 0/56
+    (none)
+
+Model A vs Model C classification counts (3 cohort contrasts × 56 IQMs):
+  retained=5  attenuated=0  lost=0  newly apparent=1
+  This is a descriptive comparison, not mediation or causality.
+
+Wrote /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/cohort_acquisition_adjusted_results.tsv
+Wrote /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/cohort_acquisition_adjusted_heatmap.png
+Wrote /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/cohort_acquisition_comparison.tsv
+Wrote /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/cohort_acquisition_comparison.png

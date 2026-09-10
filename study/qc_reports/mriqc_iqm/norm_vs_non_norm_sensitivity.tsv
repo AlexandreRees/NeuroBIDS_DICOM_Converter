@@ -1,0 +1,57 @@
+IQM	iqm_family	family_group	n_pairs	mean_NORM_minus_nonNORM	sd_difference	median_difference	pearson_paired
+cjv	contrast	contrast	123	-0.2852673982	0.06943839526	-0.292596768	0.3866164482
+cnr	contrast	contrast	123	0.6555848035	0.150689895	0.6683872437	0.7019469412
+efc	entropy	entropy / information	123	-0.006019512195	0.01011419761	-0.0063	0.9677383079
+fber	energy	entropy / information	123	7402.341972	2725.458326	6930.8774	0.8777925247
+fwhm_avg	smoothness	smoothness / sharpness	123	-0.04759444375	0.3020789807	-0.01422499962	0.3305150936
+fwhm_x	smoothness	smoothness / sharpness	123	-0.0007328252469	0.2997711071	0.008512500507	0.319985166
+fwhm_y	smoothness	smoothness / sharpness	123	0.02901971501	0.2789968625	0.06304999906	0.4608795714
+fwhm_z	smoothness	smoothness / sharpness	123	-0.171070221	0.3374809951	-0.1271874981	0.3224487724
+icvs_csf	tissue_fraction	morphology / tissue	123	0.01078925357	0.002981304734	0.0107721139	0.883557918
+icvs_gm	tissue_fraction	morphology / tissue	123	0.0118017478	0.002527287978	0.01215453374	0.9227716324
+icvs_wm	tissue_fraction	morphology / tissue	123	-0.02259100138	0.004160764476	-0.02301422873	0.7443495195
+inu_med	bias_field	homogeneity / bias field	123	-0.484223292	0.06738635333	-0.4892737865	0.05053648526
+inu_range	bias_field	homogeneity / bias field	123	-0.7106818712	0.1097089932	-0.7112865239	0.2631501503
+qi_2	artifact	artifact	123	-4.433172829e-05	0.0002668088593	-5.765006043e-05	0.8872481687
+rpve_csf	partial_volume	morphology / tissue	123	0.03505747368	0.006337087668	0.03520842802	0.999948364
+rpve_gm	partial_volume	morphology / tissue	123	0.09046321523	0.01657606793	0.09066889373	0.9996424084
+rpve_wm	partial_volume	morphology / tissue	123	0.08791044437	0.01839976815	0.0872732276	0.9995536483
+snr_csf	snr	signal / SNR	123	0.09650985397	0.02922333977	0.0937320133	0.9804930228
+snr_gm	snr	signal / SNR	123	1.024382174	0.2213399053	0.9990280469	0.938932897
+snr_total	snr	signal / SNR	123	0.9993217162	0.3815553857	0.9502067047	0.8115620966
+snr_wm	snr	signal / SNR	123	1.877073121	1.006633662	1.826756794	0.7152296841
+snrd_csf	snr_dietrich	signal / SNR	123	5.838110599	16.89829635	3.891179997	0.2992632541
+snrd_gm	snr_dietrich	signal / SNR	123	11.80833007	32.07711284	7.470102327	0.3064659183
+snrd_total	snr_dietrich	signal / SNR	123	11.86145441	30.35902736	7.419528853	0.3061771898
+snrd_wm	snr_dietrich	signal / SNR	123	17.93792257	42.21463735	10.68395193	0.3118400052
+summary_bg_k	intensity_summary	intensity	123	373.9973707	768.7272256	85.6278	0.9192178518
+summary_bg_mad	intensity_summary	intensity	123	-1.627243902	4.229425372	0	0.1799433187
+summary_bg_mean	intensity_summary	intensity	123	-9.901844715	6.334201365	-7.6946	0.8470977197
+summary_bg_median	intensity_summary	intensity	123	-1.097560976	2.852708331	0	0.1799433187
+summary_bg_p95	intensity_summary	intensity	123	-27.2601626	10.64851055	-24	0.9165766381
+summary_bg_stdv	intensity_summary	intensity	123	-34.70205447	29.05384238	-26.7024	0.9173504611
+summary_csf_k	intensity_summary	intensity	123	-0.2880146341	0.625731942	-0.1363	0.1670806942
+summary_csf_mad	intensity_summary	intensity	123	-17.40625691	7.10743988	-16.9008	0.8407963603
+summary_csf_mean	intensity_summary	intensity	123	-52.58906179	14.04858703	-53.1572	0.932746731
+summary_csf_median	intensity_summary	intensity	123	-46.63414634	15.30845062	-46	0.9542618922
+summary_csf_p05	intensity_summary	intensity	123	-3.87804878	6.154546987	-4	0.9892174471
+summary_csf_p95	intensity_summary	intensity	123	-109.6504065	28.61416127	-107	0.8523984435
+summary_csf_stdv	intensity_summary	intensity	123	-35.34379187	7.33784903	-34.3129	0.8884831004
+summary_gm_k	intensity_summary	intensity	123	-3.551389431	2.770979604	-3.2773	0.1777940494
+summary_gm_mad	intensity_summary	intensity	123	-7.823426829	4.013816678	-7.4718	0.5659865349
+summary_gm_mean	intensity_summary	intensity	123	-80.00077886	22.9524323	-78.3889	0.5409683573
+summary_gm_median	intensity_summary	intensity	123	-75.06504065	22.63818761	-76	0.4926639542
+summary_gm_p05	intensity_summary	intensity	123	-21.76422764	17.87849762	-22	0.9190130797
+summary_gm_p95	intensity_summary	intensity	123	-125.195122	30.97292804	-124	0.5911102009
+summary_gm_stdv	intensity_summary	intensity	123	-38.56852927	7.159209292	-38.7888	0.8760428084
+summary_wm_k	intensity_summary	intensity	123	-0.576503252	0.1901682146	-0.5613	0.4300555708
+summary_wm_mad	intensity_summary	intensity	123	-14.92465935	4.992153908	-14.847	0.7083469929
+summary_wm_mean	intensity_summary	intensity	123	-40.37817317	24.77517282	-41.5374	0.4069040575
+summary_wm_median	intensity_summary	intensity	123	-25.78861789	25.14621245	-27	0.3288786603
+summary_wm_p05	intensity_summary	intensity	123	-27.63414634	24.16652213	-30	0.6275538546
+summary_wm_p95	intensity_summary	intensity	123	-96	30.15234542	-95	0.2922674148
+summary_wm_stdv	intensity_summary	intensity	123	-18.33629431	7.265203287	-18.1598	0.5915147617
+tpm_overlap_csf	template_overlap	morphology / tissue	123	-0.01538941652	0.004669547709	-0.01559895439	0.9454399525
+tpm_overlap_gm	template_overlap	morphology / tissue	123	-1.113325949e-05	0.007897973561	0.00148870463	0.5309341609
+tpm_overlap_wm	template_overlap	morphology / tissue	123	0.01724004508	0.007997722461	0.01765294337	0.6776981802
+wm2max	intensity_ratio	intensity	123	0.4135379714	0.05717420868	0.4248634331	0.4392512428

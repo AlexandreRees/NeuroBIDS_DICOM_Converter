@@ -1,0 +1,74 @@
+T1w IQM cohort analysis report
+generated_at: 2026-09-09T18:52:00.480766+00:00
+
+SCOPE
+  sequence_group: T1w only
+  outlier/MRIQC-flag exclusions: none
+  FreeSurfer / anatomical volumes / extra PCA / ML: not used
+  source TSV: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  source sha256 before: 4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source sha256 after:  4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source unmodified: True
+
+DEPENDENCIES
+  scipy: 1.15.1
+  statsmodels: 0.14.6
+  If scipy is missing on Narval: module load scipy-stack/2025a
+
+MODELS
+  raw:      IQM ~ C(cohort, Treatment(Control))
+            global cohort test: nested OLS F-test vs intercept-only
+  adjusted: IQM ~ C(cohort, Treatment(Control)) + age + C(sex)
+            global cohort test: nested OLS F-test vs age + sex
+  mixed:    IQM ~ C(cohort, Treatment(Control)) + age + C(sex) + C(session)
+            + random intercept (1|subject_id) via MixedLM(groups=subject_id)
+            global cohort test: Wald test of cohort fixed effects
+            (REML coefficients; Wald avoids invalid REML LRTs for fixed effects)
+  mixed pseudo-R2: Nakagawa-style marginal/conditional using var(FE fitted),
+            random-intercept variance, and residual scale
+
+EXECUTED
+  raw: OLS IQM ~ cohort
+  adjusted: OLS IQM ~ cohort + age + sex
+  mixed: MixedLM IQM ~ cohort + age + sex + session + (1|subject_id)
+
+SAMPLE SIZE
+  n_subjects: 83
+  n_sessions: 132
+  n_acquisitions: 264
+  sessions_per_subject: {'1': 34, '2': 49}
+  acquisitions_per_subject min/median/max: 1/4.0/4
+  Control: subjects=55 sessions=94 acquisitions=190
+  Glaucoma: subjects=19 sessions=27 acquisitions=52
+  Data_ON: subjects=7 sessions=8 acquisitions=16
+  Data_TON: subjects=2 sessions=3 acquisitions=6
+
+COVARIATES
+  age available (complete): True  missing=0
+  sex available (complete): True  missing=0
+  session available: True
+  subject_id available: True
+  Missing covariates are not imputed.
+
+IQMs
+  n_used: 56
+  n_dropped_zero_variance: 2 ['qi_1', 'summary_bg_p05']
+  variables: cjv, cnr, efc, fber, fwhm_avg, fwhm_x, fwhm_y, fwhm_z, icvs_csf, icvs_gm, icvs_wm, inu_med, inu_range, qi_2, rpve_csf, rpve_gm, rpve_wm, snr_csf, snr_gm, snr_total, snr_wm, snrd_csf, snrd_gm, snrd_total, snrd_wm, summary_bg_k, summary_bg_mad, summary_bg_mean, summary_bg_median, summary_bg_p95, summary_bg_stdv, summary_csf_k, summary_csf_mad, summary_csf_mean, summary_csf_median, summary_csf_p05, summary_csf_p95, summary_csf_stdv, summary_gm_k, summary_gm_mad, summary_gm_mean, summary_gm_median, summary_gm_p05, summary_gm_p95, summary_gm_stdv, summary_wm_k, summary_wm_mad, summary_wm_mean, summary_wm_median, summary_wm_p05, summary_wm_p95, summary_wm_stdv, tpm_overlap_csf, tpm_overlap_gm, tpm_overlap_wm, wm2max
+
+FDR
+  Benjamini-Hochberg across the 56 IQMs, separately within each model,
+  applied to (1) the global cohort p-value and (2) each cohort contrast vs Control.
+  alpha=0.05
+  raw: IQMs fitted=56, status_ok=56, converged=56, FDR_q<0.05: 31
+  adjusted: IQMs fitted=56, status_ok=56, converged=56, FDR_q<0.05: 20
+  mixed: IQMs fitted=56, status_ok=56, converged=56, FDR_q<0.05: 0
+
+FIGURE
+  plotted IQMs: ['summary_bg_p95', 'summary_csf_k', 'summary_gm_mad', 'summary_bg_mean', 'summary_wm_p05', 'snr_csf']
+
+NOTES
+  Data_TON has very few subjects; mixed-model cohort contrasts for that
+  group are expected to be imprecise. Coefficients remain reported.
+  Multiple T1w runs within a session are retained; clustering is at subject_id.
+  A significant cohort term is a statistical association with IQMs, not a
+  biological or diagnostic interpretation.

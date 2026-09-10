@@ -1,0 +1,337 @@
+IQM	parameter	estimate	p	q	N	analysis	se	ci_low	ci_high	spearman_rho	method	status	note
+cjv	acquisition_block	109.6516716	1.168154488e-25	8.177081413e-25	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+cnr	acquisition_block	170.7161224	5.161311781e-39	4.817224329e-38	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+efc	acquisition_block	0.005728572822	0.9396678515	0.9396678515	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+fber	acquisition_block	32.49590655	1.194438526e-08	3.040388974e-08	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+fwhm_avg	acquisition_block	8.34639016	0.003864543636	0.005695116937	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+fwhm_x	acquisition_block	7.899190216	0.004945693347	0.007101508396	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+fwhm_y	acquisition_block	15.83640763	6.906082074e-05	0.0001137472342	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+fwhm_z	acquisition_block	3.076228631	0.07944454514	0.1034626634	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+icvs_csf	acquisition_block	59.17293925	1.444060965e-14	4.756906709e-14	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+icvs_gm	acquisition_block	122.407217	1.88004765e-28	1.50403812e-27	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+icvs_wm	acquisition_block	383.7553276	1.893990686e-85	3.535449281e-84	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+inu_med	acquisition_block	401.0308918	3.284907815e-89	9.197741881e-88	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+inu_range	acquisition_block	201.6783364	8.986463061e-46	1.258104829e-44	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+qi_2	acquisition_block	3.170576164	0.07497599259	0.09996799012	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+rpve_csf	acquisition_block	0.136531801	0.711753509	0.7381147501	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+rpve_gm	acquisition_block	0.3177580017	0.5729581292	0.6170318314	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+rpve_wm	acquisition_block	0.09413175595	0.7589887655	0.7727885613	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snr_csf	acquisition_block	15.11030673	0.0001014081179	0.0001622529887	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snr_gm	acquisition_block	48.84366128	2.771998407e-12	8.623995044e-12	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snr_total	acquisition_block	34.62625457	3.994818769e-09	1.065285005e-08	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snr_wm	acquisition_block	19.20755482	1.17248454e-05	2.051847946e-05	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snrd_csf	acquisition_block	0.7879832188	0.3747106533	0.4196759317	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snrd_gm	acquisition_block	1.092905533	0.2958283322	0.3380895225	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snrd_total	acquisition_block	1.294480514	0.2552238879	0.3140117615	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+snrd_wm	acquisition_block	1.721705718	0.1894736296	0.2411482558	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_bg_k	acquisition_block	0.3633305994	0.5466622992	0.6002566423	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_bg_mad	acquisition_block	1.250036084	0.2635455855	0.3140117615	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_bg_mean	acquisition_block	14.734731	0.0001237456266	0.0001924931969	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_bg_median	acquisition_block	1.250036084	0.2635455855	0.3140117615	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_bg_p95	acquisition_block	27.03707545	1.995902664e-07	4.657106217e-07	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_bg_stdv	acquisition_block	4.681609456	0.03048717222	0.04164101571	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_csf_k	acquisition_block	0.2366434302	0.6266409871	0.6621112317	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_csf_mad	acquisition_block	26.65535708	2.431756221e-07	5.237628784e-07	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_csf_mean	acquisition_block	45.3547574	1.643882125e-11	4.845126263e-11	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_csf_median	acquisition_block	21.08911348	4.384117728e-06	7.919696541e-06	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_csf_p05	acquisition_block	1.203673623	0.2725886738	0.3180201194	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_csf_p95	acquisition_block	79.0093523	6.181660513e-19	2.662869144e-18	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_csf_stdv	acquisition_block	85.41464798	2.419218363e-20	1.354762284e-19	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_gm_k	acquisition_block	24.30874644	8.206557827e-07	1.531890794e-06	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_gm_mad	acquisition_block	30.15800875	3.982392396e-08	9.696259747e-08	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_gm_mean	acquisition_block	68.82145795	1.077934257e-16	4.311737027e-16	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_gm_median	acquisition_block	66.02382918	4.455041496e-16	1.663215492e-15	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_gm_p05	acquisition_block	4.752323842	0.02925875637	0.04096225892	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_gm_p95	acquisition_block	80.28425368	3.242426654e-19	1.513132439e-18	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_gm_stdv	acquisition_block	91.55981542	1.0826948e-21	6.736767646e-21	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_wm_k	acquisition_block	80.85074732	2.434257641e-19	1.239258435e-18	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_wm_mad	acquisition_block	38.65131353	5.066914724e-10	1.418736123e-09	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_wm_mean	acquisition_block	24.45694892	7.598894217e-07	1.467372676e-06	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_wm_median	acquisition_block	11.04421756	0.0008896424173	0.001346485821	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_wm_p05	acquisition_block	25.3310246	4.828792466e-07	1.001527326e-06	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_wm_p95	acquisition_block	65.70523084	5.236669595e-16	1.832834358e-15	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+summary_wm_stdv	acquisition_block	26.91851074	2.12216608e-07	4.75365202e-07	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+tpm_overlap_csf	acquisition_block	25.2458204	5.046881913e-07	1.009376383e-06	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+tpm_overlap_gm	acquisition_block	17.10493953	3.537019375e-05	6.002214697e-05	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+tpm_overlap_wm	acquisition_block	195.6637841	1.845618907e-44	2.067093176e-43	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+wm2max	acquisition_block	712.3003017	6.323473047e-157	3.541144907e-155	132	multivariate					MixedLM	ok	"wald_df=1 terms=['C(software_platform, Treatment(""E11""))[T.XA30]']"
+cjv	software_platform	-0.2670178555	1.168154488e-25	8.177081413e-25	132	multivariate	0.02549955933	-0.3169960734	-0.2170396376		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+cnr	software_platform	0.5585383505	5.161311781e-39	4.817224329e-38	132	multivariate	0.04274799296	0.4747538238	0.6423228771		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+efc	software_platform	0.0006981684599	0.9396678515	0.9396678515	132	multivariate	0.009224376195	-0.01738127666	0.01877761358		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fber	software_platform	6965.675077	1.194438526e-08	3.040388974e-08	132	multivariate	1221.937193	4570.722188	9360.627966		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_avg	software_platform	0.3203159039	0.003864543636	0.005695116937	132	multivariate	0.1108738583	0.1030071347	0.5376246731		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_x	software_platform	0.3138762899	0.004945693347	0.007101508396	132	multivariate	0.1116778963	0.09499163525	0.5327609445		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_y	software_platform	0.4149053895	6.906082074e-05	0.0001137472342	132	multivariate	0.1042607249	0.2105581237	0.6192526554		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_z	software_platform	0.2262270333	0.07944454514	0.1034626634	132	multivariate	0.1289838082	-0.02657658546	0.479030652		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+icvs_csf	software_platform	0.01206709491	1.444060965e-14	4.756906709e-14	132	multivariate	0.001568704555	0.008992490484	0.01514169935		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+icvs_gm	software_platform	0.01252446212	1.88004765e-28	1.50403812e-27	132	multivariate	0.001132023836	0.01030573617	0.01474318807		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+icvs_wm	software_platform	-0.02368992245	1.893990686e-85	3.535449281e-84	132	multivariate	0.00120930662	-0.02606011987	-0.02131972503		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+inu_med	software_platform	-0.4627128474	3.284907815e-89	9.197741881e-88	132	multivariate	0.02310588694	-0.5079995537	-0.4174261412		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+inu_range	software_platform	-0.6412275576	8.986463061e-46	1.258104829e-44	132	multivariate	0.04515257819	-0.7297249846	-0.5527301305		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+qi_2	software_platform	0.0003750568716	0.07497599259	0.09996799012	132	multivariate	0.0002106337849	-3.777776068e-05	0.0007878915038		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+rpve_csf	software_platform	-0.01577069888	0.711753509	0.7381147501	132	multivariate	0.04268094532	-0.09942381453	0.06788241678		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+rpve_gm	software_platform	0.02445157513	0.5729581292	0.6170318314	132	multivariate	0.04337690818	-0.06056560265	0.1094687529		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+rpve_wm	software_platform	0.01345245534	0.7589887655	0.7727885613	132	multivariate	0.04384635329	-0.07248481796	0.09938972864		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_csf	software_platform	0.1581169773	0.0001014081179	0.0001622529887	132	multivariate	0.04067633947	0.07839281689	0.2378411377		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_gm	software_platform	0.8758160956	2.771998407e-12	8.623995044e-12	132	multivariate	0.1253166616	0.6301999522	1.121432239		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_total	software_platform	0.6787003994	3.994818769e-09	1.065285005e-08	132	multivariate	0.1153387781	0.4526405484	0.9047602504		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_wm	software_platform	1.079893903	1.17248454e-05	2.051847946e-05	132	multivariate	0.2464024652	0.5969539457	1.562833861		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_csf	software_platform	4.124175701	0.3747106533	0.4196759317	132	multivariate	4.645994322	-4.981805843	13.23015724		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_gm	software_platform	9.113797996	0.2958283322	0.3380895225	132	multivariate	8.71782378	-7.972822637	26.20041863		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_total	software_platform	9.186591182	0.2552238879	0.3140117615	132	multivariate	8.07433253	-6.638809777	25.01199214		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_wm	software_platform	14.29787376	0.1894736296	0.2411482558	132	multivariate	10.8966248	-7.059118406	35.65486593		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_k	software_platform	255.373215	0.5466622992	0.6002566423	132	multivariate	423.6667257	-574.9983089	1085.744739		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_mad	software_platform	-2.09404737	0.2635455855	0.3140117615	132	multivariate	1.872945874	-5.764953828	1.576859088		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_mean	software_platform	-11.23573803	0.0001237456266	0.0001924931969	132	multivariate	2.927052412	-16.97265534	-5.498820726		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_median	software_platform	-1.412415601	0.2635455855	0.3140117615	132	multivariate	1.263284685	-3.888408086	1.063576884		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_p95	software_platform	-33.80868811	1.995902664e-07	4.657106217e-07	132	multivariate	6.502022418	-46.55241788	-21.06495835		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_stdv	software_platform	-34.10981716	0.03048717222	0.04164101571	132	multivariate	15.76455807	-65.00778321	-3.211851108		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_k	software_platform	-0.07168802946	0.6266409871	0.6621112317	132	multivariate	0.1473667198	-0.3605214928	0.2171454339		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_mad	software_platform	-22.92712449	2.431756221e-07	5.237628784e-07	132	multivariate	4.440760351	-31.63085485	-14.22339414		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_mean	software_platform	-59.13363541	1.643882125e-11	4.845126263e-11	132	multivariate	8.780579011	-76.34325404	-41.92401679		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_median	software_platform	-47.59115433	4.384117728e-06	7.919696541e-06	132	multivariate	10.36327629	-67.90280262	-27.27950603		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_p05	software_platform	-7.113928443	0.2725886738	0.3180201194	132	multivariate	6.484180871	-19.82268942	5.594832532		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_p95	software_platform	-122.8531374	6.181660513e-19	2.662869144e-18	132	multivariate	13.82123977	-149.9422696	-95.76400525		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_stdv	software_platform	-41.55421503	2.419218363e-20	1.354762284e-19	132	multivariate	4.496233997	-50.36667173	-32.74175833		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_k	software_platform	-4.628110265	8.206557827e-07	1.531890794e-06	132	multivariate	0.9386904849	-6.467909808	-2.788310722		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_mad	software_platform	-7.524682035	3.982392396e-08	9.696259747e-08	132	multivariate	1.370209018	-10.21024236	-4.839121708		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_mean	software_platform	-84.5599609	1.077934257e-16	4.311737027e-16	132	multivariate	10.19301913	-104.5379113	-64.58201052		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_median	software_platform	-78.74786665	4.455041496e-16	1.663215492e-15	132	multivariate	9.691442936	-97.74274577	-59.75298754		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_p05	software_platform	-25.93409846	0.02925875637	0.04096225892	132	multivariate	11.89647076	-49.2507527	-2.617444223		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_p95	software_platform	-123.7436117	3.242426654e-19	1.513132439e-18	132	multivariate	13.8104427	-150.811582	-96.67564141		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_stdv	software_platform	-39.4661811	1.0826948e-21	6.736767646e-21	132	multivariate	4.124512748	-47.55007754	-31.38228466		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_k	software_platform	-0.5372661367	2.434257641e-19	1.239258435e-18	132	multivariate	0.05975131245	-0.6543765572	-0.4201557163		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_mad	software_platform	-13.03278067	5.066914724e-10	1.418736123e-09	132	multivariate	2.096307353	-17.14146758	-8.924093756		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_mean	software_platform	-50.96363437	7.598894217e-07	1.467372676e-06	132	multivariate	10.30526711	-71.16158676	-30.76568199		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_median	software_platform	-33.91767468	0.0008896424173	0.001346485821	132	multivariate	10.2060712	-53.92120666	-13.91414271		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_p05	software_platform	-49.98314613	4.828792466e-07	1.001527326e-06	132	multivariate	9.931096694	-69.44773798	-30.51855428		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_p95	software_platform	-98.99369108	5.236669595e-16	1.832834358e-15	132	multivariate	12.21258347	-122.9299148	-75.05746732		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_stdv	software_platform	-13.14877238	2.12216608e-07	4.75365202e-07	132	multivariate	2.53430974	-18.11592819	-8.181616561		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+tpm_overlap_csf	software_platform	-0.01682924191	5.046881913e-07	1.009376383e-06	132	multivariate	0.003349421542	-0.02339398751	-0.01026449632		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+tpm_overlap_gm	software_platform	0.006573608232	3.537019375e-05	6.002214697e-05	132	multivariate	0.001589436003	0.00345837091	0.009688845554		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+tpm_overlap_wm	software_platform	0.02826621616	1.845618907e-44	2.067093176e-43	132	multivariate	0.002020749367	0.02430562018	0.03222681214		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+wm2max	software_platform	0.4691237372	6.323473047e-157	3.541144907e-155	132	multivariate	0.01757744891	0.4346725704	0.5035749039		MixedLM	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+cjv	SAR	1.23327455	0.2946860919	0.3587482858	126	univariate	1.171925996	-1.086295273	3.552844373	0.1288008999	OLS	ok	
+cnr	SAR	-8.187054265	0.0003924172122	0.002783026547	126	univariate	2.246389158	-12.63328766	-3.74082087	-0.3417142857	OLS	ok	
+efc	SAR	4.54917537	1.638826987e-13	9.177431126e-12	126	univariate	0.549210695	3.462133561	5.636217178	0.5967750886	OLS	ok	
+fber	SAR	-337182.9059	1.937685351e-09	5.425518982e-08	126	univariate	52023.61648	-440152.2156	-234213.5962	-0.4737697788	OLS	ok	
+fwhm_avg	SAR	11.82643568	0.05419073908	0.1379400631	126	univariate	6.084336171	-0.2161699263	23.86904129	0.1874975628	OLS	ok	
+fwhm_x	SAR	6.887007882	0.2584770088	0.3216602776	126	univariate	6.066727702	-5.120745632	18.89476139	0.1039820022	OLS	ok	
+fwhm_y	SAR	15.84873616	0.008012528675	0.04079105508	126	univariate	5.880506324	4.209566921	27.4879054	0.2589606299	OLS	ok	
+fwhm_z	SAR	12.743563	0.06661789127	0.1492240765	126	univariate	6.886457444	-0.8866652968	26.37379129	0.152599925	OLS	ok	
+icvs_csf	SAR	-0.06063632735	0.5462442098	0.611793515	126	univariate	0.1002152404	-0.2589903601	0.1377177054	-0.04542932133	OLS	ok	
+icvs_gm	SAR	-0.1798811127	0.1058796757	0.1873824318	126	univariate	0.1104334327	-0.3984598102	0.03869758477	-0.1603809524	OLS	ok	
+icvs_wm	SAR	0.24051744	0.002739116479	0.01533905228	126	univariate	0.07867866118	0.08479033036	0.3962445497	0.2870851144	OLS	ok	
+inu_med	SAR	-0.3412730755	0.7516039263	0.809419613	126	univariate	1.07579661	-2.470575915	1.788029763	0.168911886	OLS	ok	
+inu_range	SAR	2.846058879	0.2517352457	0.3216602776	126	univariate	2.471574471	-2.045879327	7.737997085	0.2110686164	OLS	ok	
+qi_2	SAR	0.02187143107	0.0328291213	0.102135044	126	univariate	0.01013350136	0.001814393303	0.04192846883	0.2407649044	OLS	ok	
+rpve_csf	SAR	-41.79262764	0.0004196720105	0.002783026547	126	univariate	11.52782752	-64.60942743	-18.97582786	-0.3208308961	OLS	ok	
+rpve_gm	SAR	-41.82548395	0.0004257153477	0.002783026547	126	univariate	11.54992382	-64.68601851	-18.96494939	-0.3213888264	OLS	ok	
+rpve_wm	SAR	-41.51411053	0.0004472721236	0.002783026547	126	univariate	11.50893838	-64.29352342	-18.73469764	-0.3197390326	OLS	ok	
+snr_csf	SAR	4.998772276	0.07883263138	0.1697933599	126	univariate	2.820805733	-0.5843924238	10.58193698	0.1256692913	OLS	ok	
+snr_gm	SAR	-16.32437652	0.06019597256	0.1413308642	126	univariate	8.606800573	-33.35964576	0.7108927248	-0.1668901387	OLS	ok	
+snr_total	SAR	-0.02991095469	0.996340999	0.996340999	126	univariate	6.509246039	-12.91353221	12.8537103	-0.02391001125	OLS	ok	
+snr_wm	SAR	11.23587138	0.3969713043	0.4631331883	126	univariate	13.21889692	-14.92802846	37.39977122	0.06248518935	OLS	ok	
+snrd_csf	SAR	-252.0144119	0.22060763	0.2941435067	126	univariate	204.7032313	-657.1794475	153.1506237	-0.1751693666	OLS	ok	
+snrd_gm	SAR	-517.1052175	0.1755553075	0.2503127877	126	univariate	379.5671499	-1268.37493	234.1644952	-0.1813423322	OLS	ok	
+snrd_total	SAR	-472.8126005	0.1803819288	0.2503127877	126	univariate	350.9670822	-1167.474768	221.8495669	-0.1774908136	OLS	ok	
+snrd_wm	SAR	-649.3181722	0.170086457	0.2503127877	126	univariate	470.53898	-1580.646619	282.010275	-0.1775388076	OLS	ok	
+summary_bg_k	SAR	-39325.93709	0.04037774583	0.1130576883	126	univariate	18983.51114	-76899.62324	-1752.250947	-0.2726329209	OLS	ok	
+summary_bg_mad	SAR	197.3744237	0.03246523991	0.102135044	126	univariate	91.25318621	16.75880662	377.9900407	0.1676222643	OLS	ok	
+summary_bg_mean	SAR	824.7476294	2.017816156e-06	3.766590158e-05	126	univariate	165.3735393	497.4270714	1152.068188	0.4655808024	OLS	ok	
+summary_bg_median	SAR	133.1272249	0.03246523991	0.102135044	126	univariate	61.54943087	11.3036602	254.9507896	0.1676222643	OLS	ok	
+summary_bg_p95	SAR	1379.708785	0.0002016125214	0.00225806024	126	univariate	360.1389767	666.8928696	2092.524701	0.4285726656	OLS	ok	
+summary_bg_stdv	SAR	3857.322722	2.35240901e-05	0.0003293372614	126	univariate	877.658044	2120.191606	5594.453837	0.4042804649	OLS	ok	
+summary_csf_k	SAR	-4.821841953	0.6940704345	0.7621165555	126	univariate	12.23028032	-29.0289926	19.3853087	0.0989549275	OLS	ok	
+summary_csf_mad	SAR	-382.5183618	0.1364797469	0.2247901714	126	univariate	255.2247325	-887.6796001	122.6428765	-0.1102212223	OLS	ok	
+summary_csf_mean	SAR	989.0135856	0.1832647196	0.2503127877	126	univariate	739.0366727	-473.7470062	2451.774177	0.1318305212	OLS	ok	
+summary_csf_median	SAR	1021.716173	0.2570767862	0.3216602776	126	univariate	897.3665891	-754.4236741	2797.85602	0.09850273495	OLS	ok	
+summary_csf_p05	SAR	856.898368	0.1439920337	0.2303872539	126	univariate	582.7737618	-296.5741512	2010.370887	0.1440944687	OLS	ok	
+summary_csf_p95	SAR	896.8020867	0.369041337	0.439708827	126	univariate	994.7285964	-1072.044446	2865.648619	0.1119464106	OLS	ok	
+summary_csf_stdv	SAR	-42.25819744	0.8936414363	0.9267392673	126	univariate	315.4241725	-666.5709903	582.0545954	0.0594375703	OLS	ok	
+summary_gm_k	SAR	130.6639254	0.01512111756	0.0638700368	126	univariate	53.03510842	25.69258986	235.635261	0.2727289089	OLS	ok	
+summary_gm_mad	SAR	172.6958711	0.0159675092	0.0638700368	126	univariate	70.68544154	32.78958215	312.6021601	0.278536183	OLS	ok	
+summary_gm_mean	SAR	761.5050726	0.1598053001	0.2485860224	126	univariate	538.4656077	-304.2691982	1827.279343	0.1671181102	OLS	ok	
+summary_gm_median	SAR	831.0927525	0.1070756753	0.1873824318	126	univariate	511.9932376	-182.2852826	1844.470787	0.1763470517	OLS	ok	
+summary_gm_p05	SAR	-600.7030122	0.4470599379	0.5109256433	126	univariate	787.5470203	-2159.47917	958.0731459	0.02458579934	OLS	ok	
+summary_gm_p95	SAR	1761.007922	0.01832430007	0.06841072028	126	univariate	736.6321974	303.00646	3219.009383	0.2473424572	OLS	ok	
+summary_gm_stdv	SAR	697.128767	0.01252824941	0.05846516391	126	univariate	275.1282276	152.5729366	1241.684597	0.2588346457	OLS	ok	
+summary_wm_k	SAR	-6.753063457	0.09706413411	0.1873824318	126	univariate	4.039136514	-14.74764605	1.241519134	-0.1166104237	OLS	ok	
+summary_wm_mad	SAR	181.9067774	0.09867293664	0.1873824318	126	univariate	109.330568	-34.48904188	398.3025967	0.1716295463	OLS	ok	
+summary_wm_mean	SAR	1028.876427	0.05302955594	0.1379400631	126	univariate	526.7224379	-13.65482148	2071.407675	0.2212673416	OLS	ok	
+summary_wm_median	SAR	976.5894306	0.06057037037	0.1413308642	126	univariate	515.6548642	-44.03598912	1997.21485	0.2047833328	OLS	ok	
+summary_wm_p05	SAR	1133.328072	0.03691826323	0.1088117232	126	univariate	537.2673391	69.92551035	2196.730634	0.2133212566	OLS	ok	
+summary_wm_p95	SAR	1021.912593	0.1022837735	0.1873824318	126	univariate	620.8234776	-206.8709717	2250.696158	0.2072749651	OLS	ok	
+summary_wm_stdv	SAR	-11.2014348	0.9330632633	0.9500280499	126	univariate	133.0935512	-274.6308544	252.2279848	0.02447394076	OLS	ok	
+tpm_overlap_csf	SAR	0.4328912396	0.1024748432	0.1873824318	126	univariate	0.2631343295	-0.08792530681	0.953707786	0.1399655043	OLS	ok	
+tpm_overlap_gm	SAR	-0.207265317	0.1811319663	0.2503127877	126	univariate	0.1541190835	-0.5123101545	0.09777952042	-0.1517660292	OLS	ok	
+tpm_overlap_wm	SAR	-0.02991628542	0.8597634784	0.9084293357	126	univariate	0.1689775203	-0.3643701315	0.3045375606	-0.0270896138	OLS	ok	
+wm2max	SAR	-1.324549549	0.1161354813	0.1970783925	126	univariate	0.8371202916	-2.981445097	0.3323459993	-0.3236205474	OLS	ok	
+cjv	TxRefAmp	0.0001204964014	0.639598647	0.7163504847	126	univariate	0.0002566957861	-0.0003875764641	0.0006285692668	0.09863667042	OLS	ok	
+cnr	TxRefAmp	-0.002531398306	2.420796125e-07	2.375913237e-06	126	univariate	0.0004631016311	-0.003448006156	-0.001614790455	-0.4413618298	OLS	ok	
+efc	TxRefAmp	0.00128298169	4.399722049e-26	2.463844347e-24	126	univariate	9.510432219e-05	0.001094743596	0.001471219784	0.7781302353	OLS	ok	
+fber	TxRefAmp	-86.57677145	2.937706413e-13	8.225577958e-12	126	univariate	10.59044932	-107.5382372	-65.61530567	-0.5750851144	OLS	ok	
+fwhm_avg	TxRefAmp	0.002351446438	0.0798327747	0.1442140446	126	univariate	0.001331402017	-0.000283771101	0.004986663976	0.2077810274	OLS	ok	
+fwhm_x	TxRefAmp	0.001091456017	0.4125019983	0.5133358201	126	univariate	0.001327370508	-0.001535782036	0.003718694071	0.09101162355	OLS	ok	
+fwhm_y	TxRefAmp	0.003571819451	0.006133614743	0.02289882837	126	univariate	0.001280985558	0.001036390206	0.006107248696	0.3326434196	OLS	ok	
+fwhm_z	TxRefAmp	0.002391063844	0.1154858045	0.1902119132	126	univariate	0.001508442269	-0.000594565946	0.005376693635	0.1798005249	OLS	ok	
+icvs_csf	TxRefAmp	-6.713182647e-06	0.7596762674	0.7878124255	126	univariate	2.189690628e-05	-5.005329386e-05	3.662692856e-05	-0.04356955381	OLS	ok	
+icvs_gm	TxRefAmp	-4.98397861e-05	0.039451772	0.09205413466	126	univariate	2.394494947e-05	-9.723354848e-05	-2.446023722e-06	-0.1898372703	OLS	ok	
+icvs_wm	TxRefAmp	5.655296875e-05	0.001208533551	0.008459734857	126	univariate	1.706815611e-05	2.277030673e-05	9.033563077e-05	0.3034990626	OLS	ok	
+inu_med	TxRefAmp	-0.0002423688835	0.3020965513	0.4211656266	126	univariate	0.00023388765	-0.0007052980586	0.0002205602917	0.0817967754	OLS	ok	
+inu_range	TxRefAmp	0.0004823013173	0.3740260293	0.4760331282	126	univariate	0.0005405891618	-0.000587676062	0.001552278696	0.234135733	OLS	ok	
+qi_2	TxRefAmp	7.189704406e-06	0.001140274628	0.008459734857	126	univariate	2.158395114e-06	2.917635873e-06	1.146177294e-05	0.3332073491	OLS	ok	
+rpve_csf	TxRefAmp	-0.007862944957	0.002522972444	0.0114718221	126	univariate	0.002550090199	-0.01291028778	-0.002815602131	-0.2883869516	OLS	ok	
+rpve_gm	TxRefAmp	-0.007884895399	0.002497457057	0.0114718221	126	univariate	0.002554509663	-0.01294098558	-0.002828805216	-0.2878650169	OLS	ok	
+rpve_wm	TxRefAmp	-0.007805207477	0.00266310156	0.0114718221	126	univariate	0.00254570476	-0.01284387029	-0.002766544663	-0.2836175478	OLS	ok	
+snr_csf	TxRefAmp	0.001130145541	0.06855384629	0.1323798411	126	univariate	0.0006150986461	-8.730697881e-05	0.002347598061	0.2048653918	OLS	ok	
+snr_gm	TxRefAmp	-0.004657424296	0.01353487669	0.04737206842	126	univariate	0.001859104457	-0.008337112782	-0.0009777358102	-0.1786246719	OLS	ok	
+snr_total	TxRefAmp	-0.0008381836613	0.5557251897	0.6483460546	126	univariate	0.001418710182	-0.003646208516	0.001969841194	0.03757030371	OLS	ok	
+snr_wm	TxRefAmp	0.001012727771	0.7268062352	0.7827144071	126	univariate	0.002892114432	-0.004711576818	0.00673703236	0.1128068991	OLS	ok	
+snrd_csf	TxRefAmp	-0.09790115555	0.02817607796	0.07172092571	126	univariate	0.04408250538	-0.1851527819	-0.01064952917	-0.2663551051	OLS	ok	
+snrd_gm	TxRefAmp	-0.1842944908	0.02602540322	0.07172092571	126	univariate	0.08180450486	-0.3462085208	-0.02238046092	-0.2696452943	OLS	ok	
+snrd_total	TxRefAmp	-0.1699655566	0.02639801247	0.07172092571	126	univariate	0.07563576315	-0.3196699187	-0.02026119453	-0.265775778	OLS	ok	
+snrd_wm	TxRefAmp	-0.2277010235	0.02656799657	0.07172092571	126	univariate	0.1014448778	-0.4284888532	-0.02691319388	-0.2656917885	OLS	ok	
+summary_bg_k	TxRefAmp	-12.78437257	0.002028994023	0.0114718221	126	univariate	4.055031392	-20.81041558	-4.758329565	-0.3132898388	OLS	ok	
+summary_bg_mad	TxRefAmp	0.04042922908	0.04497848991	0.09618597994	126	univariate	0.01996163008	0.0009195715659	0.07993888658	0.1375086995	OLS	ok	
+summary_bg_mean	TxRefAmp	0.2542819478	1.467925411e-12	2.740127434e-11	126	univariate	0.03229045841	0.1903700855	0.3181938101	0.5846539183	OLS	ok	
+summary_bg_median	TxRefAmp	0.02726914142	0.04497848991	0.09618597994	126	univariate	0.01346393503	0.0006202425239	0.05391804032	0.1375086995	OLS	ok	
+summary_bg_p95	TxRefAmp	0.4072205445	2.545621325e-07	2.375913237e-06	126	univariate	0.07464941961	0.2594684326	0.5549726565	0.5383082479	OLS	ok	
+summary_bg_stdv	TxRefAmp	1.260766288	2.604076309e-11	3.645706833e-10	126	univariate	0.1720216751	0.9202872064	1.601245369	0.5465946757	OLS	ok	
+summary_csf_k	TxRefAmp	-0.004336632084	0.1033094948	0.1753130821	126	univariate	0.002642505735	-0.009566891144	0.0008936269759	0.06778273051	OLS	ok	
+summary_csf_mad	TxRefAmp	-0.100210773	0.07331712263	0.1368586289	126	univariate	0.05548244153	-0.2100260663	0.009604520374	-0.1267071616	OLS	ok	
+summary_csf_mean	TxRefAmp	0.08815199645	0.5879368171	0.671927791	126	univariate	0.1622695159	-0.2330248298	0.4093288227	0.1259212598	OLS	ok	
+summary_csf_median	TxRefAmp	0.07636381177	0.698603574	0.7670941205	126	univariate	0.1967605377	-0.3130804082	0.4658080317	0.09223287912	OLS	ok	
+summary_csf_p05	TxRefAmp	0.197438838	0.1227825801	0.1964521282	126	univariate	0.1270689981	-0.05406630348	0.4489439794	0.2193248017	OLS	ok	
+summary_csf_p95	TxRefAmp	-0.04483186091	0.8372407086	0.8524632669	126	univariate	0.2177822533	-0.4758839445	0.3862202227	0.05220985958	OLS	ok	
+summary_csf_stdv	TxRefAmp	-0.08599775421	0.2111145413	0.3195247111	126	univariate	0.06841483117	-0.2214098692	0.0494143608	-0.02164829396	OLS	ok	
+summary_gm_k	TxRefAmp	0.02582960371	0.0281200326	0.07172092571	126	univariate	0.01162621943	0.002818058764	0.04884114865	0.2382992126	OLS	ok	
+summary_gm_mad	TxRefAmp	0.01922461956	0.2230886412	0.328762208	126	univariate	0.01570010276	-0.01185028165	0.05029952077	0.1796745407	OLS	ok	
+summary_gm_mean	TxRefAmp	0.03762626898	0.7512220202	0.7878124255	126	univariate	0.1184210858	-0.1967622314	0.2720147694	0.1251893513	OLS	ok	
+summary_gm_median	TxRefAmp	0.06769660709	0.5493786664	0.6483460546	126	univariate	0.1127647335	-0.1554963878	0.290889602	0.1400827508	OLS	ok	
+summary_gm_p05	TxRefAmp	-0.3385485891	0.04809298997	0.09618597994	126	univariate	0.1695888529	-0.6742124336	-0.002884744535	-0.04149134898	OLS	ok	
+summary_gm_p95	TxRefAmp	0.2783035406	0.08933723618	0.1563401633	126	univariate	0.1625300366	-0.04338892917	0.5999960104	0.2065407014	OLS	ok	
+summary_gm_stdv	TxRefAmp	0.1715614298	0.00472427829	0.01889711316	126	univariate	0.0596260439	0.05354478663	0.2895780729	0.2347716535	OLS	ok	
+summary_wm_k	TxRefAmp	-0.002695417041	0.002101507613	0.0114718221	126	univariate	0.0008579700844	-0.00439358017	-0.0009972539124	-0.2491458568	OLS	ok	
+summary_wm_mad	TxRefAmp	0.04745554343	0.04787213802	0.09618597994	126	univariate	0.02374799111	0.0004516168161	0.09445947003	0.1333423322	OLS	ok	
+summary_wm_mean	TxRefAmp	0.1122706108	0.3361693444	0.4378019369	126	univariate	0.1162813067	-0.1178826674	0.3424238891	0.1699317585	OLS	ok	
+summary_wm_median	TxRefAmp	0.1143691915	0.3164287344	0.4219049793	126	univariate	0.1136998291	-0.1106746195	0.3394130025	0.1615284605	OLS	ok	
+summary_wm_p05	TxRefAmp	0.1215687501	0.3083534052	0.4211656266	126	univariate	0.1188488346	-0.113666385	0.3568038852	0.1755155528	OLS	ok	
+summary_wm_p95	TxRefAmp	0.09647437266	0.4816711389	0.586382256	126	univariate	0.1366988261	-0.1740908957	0.367039641	0.1380353108	OLS	ok	
+summary_wm_stdv	TxRefAmp	-0.001135209084	0.9688908019	0.9688908019	126	univariate	0.02904959634	-0.05863249752	0.05636207935	-0.05514210724	OLS	ok	
+tpm_overlap_csf	TxRefAmp	7.515502219e-05	0.1948575694	0.3031117746	126	univariate	5.766133113e-05	-3.897290402e-05	0.0001892829484	0.1566494188	OLS	ok	
+tpm_overlap_gm	TxRefAmp	-7.186326726e-05	0.03265598434	0.07951022274	126	univariate	3.326212237e-05	-0.0001376983247	-6.028209815e-06	-0.2545271841	OLS	ok	
+tpm_overlap_wm	TxRefAmp	-3.89823032e-05	0.290464861	0.4170777491	126	univariate	3.671912999e-05	-0.0001116597471	3.369514068e-05	-0.1125909261	OLS	ok	
+wm2max	TxRefAmp	-0.0004272534325	0.0194860305	0.06418927693	126	univariate	0.0001805121547	-0.0007845375511	-6.996931395e-05	-0.5171143607	OLS	ok	
+cjv	reconstruction_NORM	0.005699914713	0.9230000293	0.9230000293	132	univariate	0.05885712746	-0.110741873	0.1221417024		OLS	ok	sparse_minority_n=2
+cnr	reconstruction_NORM	-0.04328438397	0.7230588867	0.8606375819	132	univariate	0.1218791538	-0.2844077137	0.1978389458		OLS	ok	sparse_minority_n=2
+efc	reconstruction_NORM	0.08980615385	0.0001990777215	0.005574176202	132	univariate	0.02345350684	0.04340619547	0.1362061122		OLS	ok	sparse_minority_n=2
+fber	reconstruction_NORM	-5373.937149	0.02286311599	0.08339525471	132	univariate	2333.383298	-9990.256944	-757.6173543		OLS	ok	sparse_minority_n=2
+fwhm_avg	reconstruction_NORM	-0.1064957635	0.6353631912	0.8086440616	132	univariate	0.2240550604	-0.5497619046	0.3367703777		OLS	ok	sparse_minority_n=2
+fwhm_x	reconstruction_NORM	-0.05422489051	0.8064699232	0.8736554795	132	univariate	0.220891003	-0.4912313226	0.3827815416		OLS	ok	sparse_minority_n=2
+fwhm_y	reconstruction_NORM	-0.05165336461	0.8169376781	0.8736554795	132	univariate	0.2226869782	-0.4922129188	0.3889061895		OLS	ok	sparse_minority_n=2
+fwhm_z	reconstruction_NORM	-0.2136090353	0.3969874002	0.5904332502	132	univariate	0.2513579044	-0.7108905881	0.2836725175		OLS	ok	sparse_minority_n=2
+icvs_csf	reconstruction_NORM	0.0004208461017	0.9218409481	0.9230000293	132	univariate	0.004280992841	-0.008048586251	0.008890278455		OLS	ok	sparse_minority_n=2
+icvs_gm	reconstruction_NORM	-0.00483763738	0.2485915984	0.5354280582	132	univariate	0.004174072039	-0.01309553971	0.003420264953		OLS	ok	sparse_minority_n=2
+icvs_wm	reconstruction_NORM	0.004416791279	0.3234908237	0.5904332502	132	univariate	0.004456573224	-0.004400005864	0.01323358842		OLS	ok	sparse_minority_n=2
+inu_med	reconstruction_NORM	-0.2340828792	0.003316168141	0.03095090265	132	univariate	0.07823365151	-0.3888588024	-0.07930695606		OLS	ok	sparse_minority_n=2
+inu_range	reconstruction_NORM	-0.4448834072	0.0008669064347	0.009709352068	132	univariate	0.1304793989	-0.7030212933	-0.1867455211		OLS	ok	sparse_minority_n=2
+qi_2	reconstruction_NORM	-0.0003165620439	0.4109011292	0.5904332502	132	univariate	0.0003837265881	-0.001075719207	0.000442595119		OLS	ok	sparse_minority_n=2
+rpve_csf	reconstruction_NORM	-0.3925718123	0.3722974757	0.5904332502	132	univariate	0.4384954749	-1.260082668	0.4749390432		OLS	ok	sparse_minority_n=2
+rpve_gm	reconstruction_NORM	-0.3964635728	0.36867185	0.5904332502	132	univariate	0.4394893673	-1.265940725	0.4730135798		OLS	ok	sparse_minority_n=2
+rpve_wm	reconstruction_NORM	-0.3931897273	0.370743895	0.5904332502	132	univariate	0.4377570336	-1.259239665	0.4728602103		OLS	ok	sparse_minority_n=2
+snr_csf	reconstruction_NORM	0.04194584788	0.6902468395	0.8406803452	132	univariate	0.1050196301	-0.1658229304	0.2497146262		OLS	ok	sparse_minority_n=2
+snr_gm	reconstruction_NORM	-0.4353477765	0.1940462504	0.4346636009	132	univariate	0.3334855289	-1.095109012	0.2244134594		OLS	ok	sparse_minority_n=2
+snr_total	reconstruction_NORM	-0.2457499687	0.3518921991	0.5904332502	132	univariate	0.2630370625	-0.7661373391	0.2746374017		OLS	ok	sparse_minority_n=2
+snr_wm	reconstruction_NORM	-0.3438479776	0.5208755629	0.6945007505	132	univariate	0.5341378191	-1.400575773	0.7128798176		OLS	ok	sparse_minority_n=2
+snrd_csf	reconstruction_NORM	-6.827355677	0.3754712401	0.5904332502	132	univariate	7.677010182	-22.01540219	8.36069084		OLS	ok	sparse_minority_n=2
+snrd_gm	reconstruction_NORM	-11.82993458	0.4132794076	0.5904332502	132	univariate	14.41320249	-40.34473197	16.68486281		OLS	ok	sparse_minority_n=2
+snrd_total	reconstruction_NORM	-11.05125641	0.4096007645	0.5904332502	132	univariate	13.35872737	-37.47990088	15.37738806		OLS	ok	sparse_minority_n=2
+snrd_wm	reconstruction_NORM	-14.49647898	0.4237685849	0.5904332502	132	univariate	18.06571686	-50.23733923	21.24438128		OLS	ok	sparse_minority_n=2
+summary_bg_k	reconstruction_NORM	-760.1506069	0.2891672222	0.5904332502	132	univariate	714.2281637	-2173.165611	652.8643971		OLS	ok	sparse_minority_n=2
+summary_bg_mad	reconstruction_NORM	11.48444769	0.0004443788742	0.006221304239	132	univariate	3.186220195	5.180892092	17.78800329		OLS	ok	sparse_minority_n=2
+summary_bg_mean	reconstruction_NORM	18.37381385	0.005609391927	0.04487513542	132	univariate	6.523177613	5.468487076	31.27914062		OLS	ok	sparse_minority_n=2
+summary_bg_median	reconstruction_NORM	7.746153846	0.0004443788742	0.006221304239	132	univariate	2.149076079	3.494463842	11.99784385		OLS	ok	sparse_minority_n=2
+summary_bg_p95	reconstruction_NORM	67.88461538	9.333743768e-07	5.22689651e-05	132	univariate	13.17679458	41.81590319	93.95332758		OLS	ok	sparse_minority_n=2
+summary_bg_stdv	reconstruction_NORM	27.00608231	0.4322814868	0.5904332502	132	univariate	34.28289522	-40.81852585	94.83069046		OLS	ok	sparse_minority_n=2
+summary_csf_k	reconstruction_NORM	-0.2639423077	0.549153577	0.7151767515	132	univariate	0.4394660177	-1.133373266	0.6054886506		OLS	ok	sparse_minority_n=2
+summary_csf_mad	reconstruction_NORM	-20.58598769	0.03882162941	0.1144216446	132	univariate	9.862900142	-40.09855607	-1.073419311		OLS	ok	sparse_minority_n=2
+summary_csf_mean	reconstruction_NORM	-52.56565923	0.0695574979	0.1947609941	132	univariate	28.7261443	-109.3969002	4.265581783		OLS	ok	sparse_minority_n=2
+summary_csf_median	reconstruction_NORM	-51.14615385	0.1341442147	0.3265636851	132	univariate	33.93090676	-118.2743949	15.98208722		OLS	ok	sparse_minority_n=2
+summary_csf_p05	reconstruction_NORM	-4.276923077	0.8424534981	0.8736554795	132	univariate	21.47546561	-46.76356344	38.20971728		OLS	ok	sparse_minority_n=2
+summary_csf_p95	reconstruction_NORM	-91.65384615	0.02680561758	0.08339525471	132	univariate	40.92141547	-172.6119727	-10.69571963		OLS	ok	sparse_minority_n=2
+summary_csf_stdv	reconstruction_NORM	-30.44162615	0.02409863229	0.08339525471	132	univariate	13.33837964	-56.83001506	-4.053237243		OLS	ok	sparse_minority_n=2
+summary_gm_k	reconstruction_NORM	-1.764858462	0.3794170628	0.5904332502	132	univariate	2.00102528	-5.723647666	2.193930743		OLS	ok	sparse_minority_n=2
+summary_gm_mad	reconstruction_NORM	-2.73829	0.3420858072	0.5904332502	132	univariate	2.871707345	-8.419619542	2.943039542		OLS	ok	sparse_minority_n=2
+summary_gm_mean	reconstruction_NORM	-55.32962923	0.01510398377	0.07048525761	132	univariate	22.4684306	-99.78073206	-10.8785264		OLS	ok	sparse_minority_n=2
+summary_gm_median	reconstruction_NORM	-48.19230769	0.02497483095	0.08339525471	132	univariate	21.24823793	-90.22940525	-6.155210131		OLS	ok	sparse_minority_n=2
+summary_gm_p05	reconstruction_NORM	-72.32307692	0.01242640771	0.07048525761	132	univariate	28.52857016	-128.7634411	-15.88271272		OLS	ok	sparse_minority_n=2
+summary_gm_p95	reconstruction_NORM	-53.5	0.0917110596	0.2445628256	132	univariate	31.48911054	-115.7974393	8.797439284		OLS	ok	sparse_minority_n=2
+summary_gm_stdv	reconstruction_NORM	3.185094615	0.7772235799	0.8736554795	132	univariate	11.23381419	-19.03966325	25.40985248		OLS	ok	sparse_minority_n=2
+summary_wm_k	reconstruction_NORM	-0.2870061538	0.1064330131	0.2709203971	132	univariate	0.1765419441	-0.6362732767	0.06226096905		OLS	ok	sparse_minority_n=2
+summary_wm_mad	reconstruction_NORM	6.615581538	0.139955865	0.3265636851	132	univariate	4.454837175	-2.197781037	15.42894411		OLS	ok	sparse_minority_n=2
+summary_wm_mean	reconstruction_NORM	-49.83046385	0.01317979768	0.07048525761	132	univariate	19.82606711	-89.05396652	-10.60696117		OLS	ok	sparse_minority_n=2
+summary_wm_median	reconstruction_NORM	-46.4	0.01472381351	0.07048525761	132	univariate	18.76934931	-83.53291289	-9.26708711		OLS	ok	sparse_minority_n=2
+summary_wm_p05	reconstruction_NORM	-47.13846154	0.02060839329	0.08339525471	132	univariate	20.11257299	-86.92878184	-7.348141238		OLS	ok	sparse_minority_n=2
+summary_wm_p95	reconstruction_NORM	-59.23846154	0.02612604677	0.08339525471	132	univariate	26.32753425	-111.3243394	-7.152583657		OLS	ok	sparse_minority_n=2
+summary_wm_stdv	reconstruction_NORM	-1.157921538	0.8304059007	0.8736554795	132	univariate	5.395411217	-11.83209737	9.516254293		OLS	ok	sparse_minority_n=2
+tpm_overlap_csf	reconstruction_NORM	-0.003410659863	0.7376893559	0.8606375819	132	univariate	0.01016189977	-0.02351476324	0.01669344352		OLS	ok	sparse_minority_n=2
+tpm_overlap_gm	reconstruction_NORM	-0.001596632739	0.7801785465	0.8736554795	132	univariate	0.005709077961	-0.01289136071	0.009698095231		OLS	ok	sparse_minority_n=2
+tpm_overlap_wm	reconstruction_NORM	0.002869936773	0.690558855	0.8406803452	132	univariate	0.007193093453	-0.01136073837	0.01710061191		OLS	ok	sparse_minority_n=2
+wm2max	reconstruction_NORM	0.2026103965	0.006795343993	0.04756740795	132	univariate	0.07365758242	0.05688767871	0.3483331143		OLS	ok	sparse_minority_n=2
+cjv	software_platform	-0.2686900631	1.954840883e-19	1.824518158e-18	132	univariate	0.0252214804	-0.3185877457	-0.2187923804		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+cnr	software_platform	0.572931108	5.975029558e-21	6.692033105e-20	132	univariate	0.05087883826	0.4722734113	0.6735888046		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+efc	software_platform	0.0008857142857	0.9514159496	0.9638851697	132	univariate	0.01450885262	-0.02781831544	0.02958974401		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fber	software_platform	6256.897	3.125497045e-06	7.955810659e-06	132	univariate	1283.652549	3717.343949	8796.450051		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_avg	software_platform	0.1910576862	0.1454052765	0.2087870637	132	univariate	0.1304376927	-0.06699768913	0.4491130615		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_x	software_platform	0.1784384414	0.1677192905	0.2339722515	132	univariate	0.1286213752	-0.07602356713	0.4329004498		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_y	software_platform	0.3057586264	0.01819931677	0.02911890683	132	univariate	0.1278378032	0.05284682152	0.5586704313		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+fwhm_z	software_platform	0.08897599074	0.5477062933	0.6014029888	132	univariate	0.1476098184	-0.2030523816	0.3810043631		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+icvs_csf	software_platform	0.01538008949	3.095946742e-11	1.926366862e-10	132	univariate	0.002117493113	0.01119088261	0.01956929637		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+icvs_gm	software_platform	0.006955479268	0.004152264877	0.007046267671	132	univariate	0.002383644916	0.002239722873	0.01167123566		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+icvs_wm	software_platform	-0.02233556876	8.829756807e-25	1.236165953e-23	132	univariate	0.001744880062	-0.02578760528	-0.01888353223		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+inu_med	software_platform	-0.4720674453	2.458003346e-42	6.88240937e-41	132	univariate	0.02314480982	-0.5178566835	-0.426278207		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+inu_range	software_platform	-0.6886145898	1.040762706e-25	1.942757051e-24	132	univariate	0.05225993325	-0.7920046177	-0.5852245619		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+qi_2	software_platform	0.0002343453154	0.2988839844	0.3591298487	132	univariate	0.0002246839046	-0.0002101649189	0.0006788555498		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+rpve_csf	software_platform	0.05336393726	0.8363993185	0.867377071	132	univariate	0.2579016309	-0.4568635958	0.5635914704		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+rpve_gm	software_platform	0.09973478077	0.7001415564	0.7539985992	132	univariate	0.2583928656	-0.4114646014	0.6109341629		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+rpve_wm	software_platform	0.09160270735	0.722498783	0.7633949405	132	univariate	0.257389511	-0.4176116577	0.6008170724		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_csf	software_platform	0.09854478157	0.1087252526	0.160226688	132	univariate	0.06101670753	-0.02216947701	0.2192590402		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_gm	software_platform	0.6651649309	0.0005596724207	0.001080746743	132	univariate	0.188004512	0.2932204882	1.037109374		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_total	software_platform	0.7284024795	8.728656242e-07	2.572656577e-06	132	univariate	0.1409732118	0.4495038396	1.007301119		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snr_wm	software_platform	1.421497726	2.38327399e-06	6.355397306e-06	132	univariate	0.2879052397	0.8519116412	1.991083811		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_csf	software_platform	3.56299862	0.4304413394	0.4820943001	132	univariate	4.504977507	-5.349560608	12.47555785		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_gm	software_platform	9.245311666	0.2751054099	0.3446568102	132	univariate	8.43551055	-7.443337116	25.93396045		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_total	software_platform	9.10444033	0.2460958442	0.3281277922	132	univariate	7.814031748	-6.354686968	24.56356763		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+snrd_wm	software_platform	14.50501071	0.1713011127	0.2339722515	132	univariate	10.54425034	-6.355527556	35.36554897		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_k	software_platform	352.1542548	0.4027955106	0.4699280957	132	univariate	419.5395608	-477.8545916	1182.163101		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_mad	software_platform	-2.129766667	0.2769563653	0.3446568102	132	univariate	1.950758506	-5.98910907	1.729575736		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_mean	software_platform	-11.67621429	0.00261815135	0.00472956373	132	univariate	3.805078677	-19.20410738	-4.148321191		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_median	software_platform	-1.436507937	0.2769563653	0.3446568102	132	univariate	1.315768586	-4.039598725	1.166582852		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_p95	software_platform	-32.27777778	9.152303256e-05	0.0002135537426	132	univariate	7.993144617	-48.09125847	-16.46429709		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_bg_stdv	software_platform	-39.07533571	0.05124248826	0.07755619845	132	univariate	19.85934825	-78.36468116	0.2140097287		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_k	software_platform	-0.2666642857	0.3014125516	0.3591298487	132	univariate	0.2570171257	-0.7751419311	0.2418133596		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_mad	software_platform	-22.06344603	0.0001167404863	0.0002536243602	132	univariate	5.55261386	-33.04862849	-11.07826357		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_mean	software_platform	-75.58663254	4.147140531e-06	1.009738564e-05	132	univariate	15.72123175	-106.6892094	-44.4840557		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_median	software_platform	-73.02380952	0.000192142355	0.000398517477	132	univariate	19.02244315	-110.6574383	-35.39018074		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_p05	software_platform	-0.5714285714	0.9638851697	0.9638851697	132	univariate	12.59595694	-25.49102297	24.34816583		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_p95	software_platform	-139.7857143	9.223222354e-10	3.443336345e-09	132	univariate	21.16182784	-181.6518598	-97.91956873		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_csf_stdv	software_platform	-48.42864127	5.003077659e-11	2.801723489e-10	132	univariate	6.752580006	-61.78781324	-35.0694693		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_k	software_platform	-3.338292063	0.004025003911	0.007043756844	132	univariate	1.139994571	-5.593634984	-1.082949143		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_mad	software_platform	-7.87413254	1.147544377e-06	3.213124256e-06	132	univariate	1.542422166	-10.92563033	-4.822634749		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_mean	software_platform	-81.37051111	6.727586645e-11	3.139540434e-10	132	univariate	11.43616053	-103.995587	-58.7454352		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_median	software_platform	-74.51587302	2.804429144e-10	1.121771657e-09	132	univariate	10.89519475	-96.07071283	-52.9610332		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_p05	software_platform	-39.17460317	0.02117974715	0.03294627334	132	univariate	16.79101626	-72.39362073	-5.955585619		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_p95	software_platform	-112.9920635	5.883771792e-11	2.995374731e-10	132	univariate	15.82330283	-144.2965758	-81.68755123		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_gm_stdv	software_platform	-31.40608016	6.139775642e-07	2.022514329e-06	132	univariate	5.986753834	-43.25015664	-19.56200368		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_k	software_platform	-0.6751111111	1.492729731e-12	1.194183784e-11	132	univariate	0.08620199879	-0.8456514564	-0.5045707658		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_mad	software_platform	-12.45444921	7.71118442e-07	2.399035153e-06	132	univariate	2.397457211	-17.19753158	-7.711366837		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_mean	software_platform	-44.65045635	0.0001177541672	0.0002536243602	132	univariate	11.24352813	-66.8944321	-22.4064806		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_median	software_platform	-27.96825397	0.01211978028	0.01996199106	132	univariate	10.99254161	-49.7156829	-6.220825038		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_p05	software_platform	-37.28571429	0.001633230595	0.003048697111	132	univariate	11.58893795	-60.21304204	-14.35838653		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_p95	software_platform	-98.13492063	1.163630198e-11	8.145411387e-11	132	univariate	13.17513801	-124.2003555	-72.06948575		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+summary_wm_stdv	software_platform	-15.63967143	2.087563106e-07	7.306470872e-07	132	univariate	2.851937659	-21.28188901	-9.997453846		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+tpm_overlap_csf	software_platform	-0.02162656066	0.0002011816769	0.0004023633539	132	univariate	0.005652182276	-0.03280872732	-0.010444394		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+tpm_overlap_gm	software_platform	-0.002738154342	0.4138873814	0.4730141501	132	univariate	0.003340434141	-0.009346803793	0.003870495108		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+tpm_overlap_wm	software_platform	0.02536833551	8.403039144e-11	3.619770708e-10	132	univariate	0.003586888669	0.01827210525	0.03246456577		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"
+wm2max	software_platform	0.4639792582	2.402963151e-53	1.345659365e-51	132	univariate	0.01784705339	0.4286709975	0.499287519		OLS	ok	"C(software_platform, Treatment(""E11""))[T.XA30]"

@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-09-09T18:02:35.160166+00:00",
+  "scratch": "/lustre07/scratch/alexrees",
+  "release_root": "/lustre07/scratch/alexrees/release_dataset",
+  "metrics_file": "/lustre07/scratch/alexrees/release_dataset/docs/quality_control/mriqc/mriqc_metrics.csv",
+  "mriqc_dir": "/lustre07/scratch/alexrees/derivatives/mriqc",
+  "n_rows": 380,
+  "n_subjects": 83,
+  "n_sessions": 132,
+  "n_t1w": 264,
+  "n_wmn": 116,
+  "n_by_cohort": {
+    "Control": 277,
+    "Data_ON": 21,
+    "Data_TON": 8,
+    "Glaucoma": 74
+  },
+  "n_by_session": {
+    "ses-01": 230,
+    "ses-02": 150
+  },
+  "n_by_sequence_group": {
+    "T1w": 264,
+    "WMn": 116
+  },
+  "n_duplicated_mappings": 0,
+  "n_unmapped_mriqc_files": 4,
+  "documented_unmapped_mriqc_stems": [
+    "sub-066_ses-01_run-01_T1w",
+    "sub-066_ses-01_run-03_T1w",
+    "sub-076_ses-01_run-01_T1w",
+    "sub-084_ses-01_run-03_T1w"
+  ],
+  "unexpected_unmapped_mriqc_stems": [],
+  "iqm_without_packaged_acquisition": [],
+  "packaged_without_iqm_known_failures": [
+    "sub-039/ses-02/anat/sub-039_ses-02_run-03_T1w.nii.gz",
+    "sub-058/ses-01/anat/sub-058_ses-01_run-03_T1w.nii.gz"
+  ],
+  "packaged_without_iqm_unexpected": [],
+  "sessions_without_anat_t1w_inventory": [
+    {
+      "subject_id": "sub-049",
+      "session": "ses-02"
+    },
+    {
+      "subject_id": "sub-055",
+      "session": "ses-01"
+    },
+    {
+      "subject_id": "sub-078",
+      "session": "ses-02"
+    }
+  ],
+  "missing_value_counts": {
+    "coil": 15
+  },
+  "n_norm_reconstructions": 240,
+  "all_missing_columns_dropped": [
+    "aor",
+    "aqi",
+    "dummy_trs",
+    "dvars_nstd",
+    "dvars_std",
+    "dvars_vstd",
+    "fd_mean",
+    "fd_num",
+    "fd_perc",
+    "gcor",
+    "gsr_x",
+    "gsr_y",
+    "size_t",
+    "snr",
+    "spacing_tr",
+    "summary_fg_k",
+    "summary_fg_mad",
+    "summary_fg_mean",
+    "summary_fg_median",
+    "summary_fg_n",
+    "summary_fg_p05",
+    "summary_fg_p95",
+    "summary_fg_stdv",
+    "tsnr"
+  ],
+  "mapping_assumptions": [
+    "Anatomical IQMs are suffix=T1w rows from the packaged MRIQC metrics table.",
+    "sequence_group is ProtocolName from the BIDS sidecar, never inferred from run.",
+    "T1w_MPR including NORM reconstructions are sequence_group=T1w.",
+    "WMn_MPRAGE_sagittal is sequence_group=WMn.",
+    "BOLD/fMRI IQMs are excluded.",
+    "Uniqueness key is subject_id + session + sequence_group + run.",
+    "Cohorts are normalized to Control, Glaucoma, Data_ON, Data_TON.",
+    "Age is joined from metadata/participants.tsv.",
+    "MRIQC originals are never modified."
+  ]
+}

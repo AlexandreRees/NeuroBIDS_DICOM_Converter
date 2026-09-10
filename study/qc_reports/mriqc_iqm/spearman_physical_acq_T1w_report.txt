@@ -1,0 +1,8 @@
+Physical-acquisition T1w Spearman correlations
+generated_at: 2026-09-09T19:32:44.985737+00:00
+n physical acquisitions: 133
+n IQMs: 58
+outliers: not removed
+mean |Δρ| vs original 264-row matrix (off-diagonal): 0.2738
+max |Δρ|: 1.2791
+Original spearman_T1w.tsv was not modified.

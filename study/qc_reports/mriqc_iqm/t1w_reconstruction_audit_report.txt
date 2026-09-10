@@ -1,0 +1,89 @@
+T1w reconstruction audit (MRIQC / PCA analysis set)
+
+Scope: sequence_group == T1w rows from mriqc_iqm_clean.tsv.
+MRIQC was not rerun. PCA was not recomputed. No rows were removed.
+Existing PCA and clean tables were not modified.
+
+Sources (read-only):
+  clean_tsv: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  release_root: /lustre07/scratch/alexrees/release_dataset
+  bids_root: /lustre07/scratch/alexrees/bids
+  session_mapping: /lustre07/scratch/alexrees/metadata/session_mapping.csv
+
+What Siemens NORM is in these metadata
+------------------------------------------------------------------------
+ImageType token NORM is a Siemens reconstruction flag (Prescan Normalize), not a protocol name and not a BIDS acq- entity. In this dataset ProtocolName is T1w_MPR for every audited T1w. The BIDS run- index distinguishes files, not necessarily independent scans. Conclusion about independence is based on acquisition fingerprints (SAR, shim, TxRefAmp, sequence timing), consecutive SeriesNumber, AcquisitionNumber, DICOM series_time, and ImageType/SeriesDescription differences — not on the presence of NORM alone.
+
+Volume and session counts
+------------------------------------------------------------------------
+T1w volumes in the clean/PCA set: 264
+Sessions represented: 132
+Sessions with 1 T1w: 2
+Sessions with 2 T1w: 129
+Sessions with >2 T1w: 1
+Sessions presenting NORM + non-NORM (exactly one of each, n_t1w=2): 123
+
+Session pattern (from metadata, not from IQMs)
+------------------------------------------------------------------------
+PAIRED_NORM_NON_NORM: 123
+PAIRED_RECONSTRUCTIONS_OTHER (no NORM token pair): 6
+SINGLE_VOLUME: 2
+INDEPENDENT_SCANS_EACH_WITH_RECON_PAIRS: 1
+INDEPENDENT_ACQUISITIONS: 0
+UNRESOLVED: 0
+
+Do the 2 T1w in a session correspond systematically to NORM + non-NORM?
+------------------------------------------------------------------------
+Among 129 dual-T1w sessions, 123 are exactly one NORM and one non-NORM. That is the usual pattern, but it is not universal.
+6 dual-T1w sessions have no NORM token in either ImageType (ImageType uses M,NONE). Those pairs still look like two reconstructions of one scan: consecutive SeriesNumber, identical acquisition parameters, SeriesDescription T1w_MPR vs T1w_MPR_ND, and DICOM series_time differences of tens of milliseconds.
+  sub-054 ses-02: runs 1,3; SeriesDescription=T1w_MPR;T1w_MPR_ND; ImageType=ORIGINAL,PRIMARY,M,NONE
+  sub-056 ses-01: runs 1,2; SeriesDescription=T1w_MPR;T1w_MPR_ND; ImageType=ORIGINAL,PRIMARY,M,NONE
+  sub-061 ses-01: runs 1,2; SeriesDescription=T1w_MPR;T1w_MPR_ND; ImageType=ORIGINAL,PRIMARY,M,NONE
+  sub-062 ses-01: runs 2,3; SeriesDescription=T1w_MPR;T1w_MPR_ND; ImageType=ORIGINAL,PRIMARY,M,NONE
+  sub-063 ses-01: runs 1,2; SeriesDescription=T1w_MPR;T1w_MPR_ND; ImageType=ORIGINAL,PRIMARY,M,NONE
+  sub-081 ses-02: runs 2,3; SeriesDescription=T1w_MPR;T1w_MPR_ND; ImageType=ORIGINAL,PRIMARY,M,NONE
+
+Are NORM / non-NORM reconstructions of the same scan?
+------------------------------------------------------------------------
+Yes for the dual-T1w majority. Evidence against two independent MPRAGE scans:
+- Same acquisition parameters (TR/TE/TI/FA/matrix/bandwidth/sequence) in 130 of 130 sessions with ≥2 T1w.
+- Consecutive SeriesNumber in 129 of 129 dual-T1w sessions.
+- AcquisitionNumber is 1 for 264/264 volumes; pairs share this value.
+- Same SeriesInstanceUID: 0 sessions. Different UIDs are expected: Siemens writes each reconstruction as a new series, so a new SeriesInstanceUID does not mean a new acquisition.
+- DICOM series_time delta: n=129, min=0.015s, median=0.285s, max=40.374s. 129 pairs differ by < 120s; 0 differ by ≥ 120s. A second T1w_MPR would take several minutes (TR=2.5 s, 3D MPRAGE), not a fraction of a second.
+- Sidecar fields that differ inside a typical pair are ImageType (addition of NORM) and SeriesNumber. ProtocolName, timing, shim, SAR, and coil are the same.
+SeriesInstanceUID in BIDS JSON: 0/264 volumes. SeriesInstanceUID from DICOM inventory after join: 264/264.
+
+Do both images have the same acquisition parameters?
+------------------------------------------------------------------------
+Yes in 130/130 multi-T1w sessions for TR, TE, TI, flip angle, slice thickness, matrix, bandwidth, and sequence name from the BIDS sidecar.
+
+Are there cases that look like true independent acquisitions?
+------------------------------------------------------------------------
+  sub-043 ses-02: n_t1w=4, acquisition clusters=2, pattern=INDEPENDENT_SCANS_EACH_WITH_RECON_PAIRS, runs=1,2,3,4
+Independent scans are identified by a different acquisition fingerprint (SAR + ShimSetting + TxRefAmp), not by run- labels or by NORM.
+
+Sessions with 1 T1w (pair member not in the clean table):
+  sub-066 ses-01: run 2, NORM_status=NORM, SeriesNumber=48
+  sub-076 ses-01: run 2, NORM_status=NORM, SeriesNumber=48
+These match excluded_t1w leftovers (the other reconstruction was withdrawn before the master/clean tables), not a protocol that acquired only one recon.
+
+Sessions with >2 T1w:
+  sub-043 ses-02: n=4, clusters=2, pattern=INDEPENDENT_SCANS_EACH_WITH_RECON_PAIRS, runs=1,2,3,4, NORM=non-NORM,non-NORM,NORM,NORM
+
+Methodological conclusion
+------------------------------------------------------------------------
+MIXED_CASE
+
+The dominant structure is paired reconstructions of one T1w_MPR per session (123 NORM+non-NORM pairs; 6 reconstruction pairs without a NORM token). This is not a dataset of two independent T1w scans per session.
+1 session(s) contain more than one physical acquisition, each still written as NORM + non-NORM reconstructions. 2 session(s) retain a single reconstruction because the other file was excluded earlier. Those exceptions prevent a uniform PAIRED_RECONSTRUCTIONS label for the whole table, hence MIXED_CASE.
+Selection strategy: keep one reconstruction per physical acquisition (one row per acquisition fingerprint). Apply the same rule in every session (for example always the non-NORM / non-normalized series, or always the NORM series). For sessions with two independent scans, keep one reconstruction from each scan. Do not treat BIDS run-01 vs run-02 as independent repeats of T1w_MPR.
+
+Impact on the existing T1w IQM PCA
+------------------------------------------------------------------------
+The PCA used 264 T1w rows and 132 sessions. Physical acquisitions estimated here: 133.
+Because most sessions contribute two reconstructions of the same scan, the PCA sample is pseudoreplicated: paired rows share the same anatomy, motion state, and k-space, and differ mainly by intensity-normalization reconstruction. IQMs that track intensity, bias field, and contrast (including those loading on PC1) are expected to split along the NORM/non-NORM axis. Standard errors and apparent sample size are optimistic if rows are treated as independent.
+Recommendation: rerun PCA and subsequent statistical analyses after selecting one reconstruction per acquisition (about 133 rows instead of 264). Do not drop outliers or rerun MRIQC for that correction. Until then, interpret the current PCA as a description of IQM covariance across reconstructions, not as 264 independent T1w acquisitions.
+Exception: sessions classified INDEPENDENT_SCANS_EACH_WITH_RECON_PAIRS should contribute one row per independent scan after recon-deduplication, not one row for the whole session.
+
+This audit did not modify mriqc_iqm_clean.tsv, PCA scores, PCA loadings, or other existing results.

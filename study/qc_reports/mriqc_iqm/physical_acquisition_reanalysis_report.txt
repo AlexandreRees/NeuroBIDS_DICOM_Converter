@@ -1,0 +1,72 @@
+Physical-acquisition MRIQC reanalysis — global report
+generated_at: 2026-09-09T19:34:17.070851+00:00
+
+1. Why the original 264 observations were pseudoreplicated
+  Most sessions contributed two T1w files that are Siemens reconstructions
+  of one T1w_MPR (NORM vs non-NORM Prescan Normalize), not two scans.
+  run-01/run-02 labels files, not independent acquisitions.
+
+2. How physical acquisitions were identified
+  Reconstruction audit (sidecar + DICOM inventory): consecutive SeriesNumber,
+  identical TR/TE/FA, AcquisitionNumber=1, series_time deltas of milliseconds,
+  ImageType differing by NORM. Clusters for the exception session use SAR+shim.
+  IQM values were never used to choose a reconstruction.
+
+3. Physical acquisitions retained: 133 (expected 133)
+  sessions: 132
+  subjects: 83
+
+4. Which reconstruction was selected, and why
+  Prefer NORM when present (Siemens intensity-normalized recon of the same k-space).
+  For T1w_MPR vs T1w_MPR_ND pairs without a NORM token, prefer SeriesDescription T1w_MPR.
+  Singletons kept as-is. sub-043 ses-02: one recon from each of two independent scans.
+  selection_rule counts: {'prefer_NORM': 127, 'prefer_SeriesDescription_T1w_MPR_over_T1w_MPR_ND': 6}
+
+5. PCA original vs corrected
+  N: 264 vs 133
+  PC1 variance: 41.11% vs 26.60%
+  Mean sign-aligned loading cosine PC1–PC10: 0.439
+  See pca_physical_acq_comparison_report.txt.
+
+6. Correlation heatmaps
+Physical-acquisition T1w Spearman correlations
+generated_at: 2026-09-09T19:32:44.985737+00:00
+n physical acquisitions: 133
+n IQMs: 58
+outliers: not removed
+mean |Δρ| vs original 264-row matrix (off-diagonal): 0.2738
+max |Δρ|: 1.2791
+Original spearman_T1w.tsv was not modified.
+
+7. Cohort tests original vs corrected (FDR q<0.05)
+  Raw OLS: ['PC2', 'PC3', 'PC4', 'PC5', 'PC7', 'PC8']  vs  ['PC1', 'PC2', 'PC5']
+  Adjusted OLS: ['PC2', 'PC9']  vs  ['PC2']
+  MixedLM primary: none  vs  none
+  Robust: MixedLM still finds no FDR-significant PC (same as original primary model).
+  OLS-only: Naive OLS FDR PCs original=['PC2', 'PC3', 'PC4', 'PC5', 'PC7', 'PC8'] vs physical-acq=['PC1', 'PC2', 'PC5']. OLS hits are not interpreted as robust cohort quality effects.
+
+8. Longitudinal interaction original vs session-level vs physical-acq
+  264-row acquisition-level: ['rpve_csf', 'summary_csf_p05']
+  session-level FreeSurfer-selected: ['rpve_gm', 'rpve_wm']
+  physical-acquisition-level: none
+  still FDR-significant in both 264-row and physical-acq: none
+  lost after physical-acq correction: ['rpve_csf', 'summary_csf_p05']
+  new after correction: none
+  Data_ON/Data_TON longitudinal n=1; do not treat those trajectories as population effects.
+
+9. NORM vs non-NORM descriptive pairs: 123
+  See norm_vs_non_norm_sensitivity_report.txt. Not independent observations.
+
+10. Conclusions that remain robust
+  Dual T1w files in a session are usually paired reconstructions.
+  MixedLM cohort tests on PCA scores remain non-significant after FDR.
+  Data_ON / Data_TON n is too small for population inference.
+  PCs remain IQM covariance axes, not quality scores.
+
+11. Conclusions that do not survive (or were never primary)
+  Treating 264 T1w rows as independent acquisitions.
+  Naive OLS cohort 'hits' on PCA scores (already non-robust in the original MixedLM).
+  Longitudinal interaction hits that are not shared across 264-row, session-level,
+  and physical-acq analyses: lost=['rpve_csf', 'summary_csf_p05']; session-only=['rpve_gm', 'rpve_wm'].
+
+Original files were not deleted or overwritten. MRIQC and FreeSurfer were not rerun.

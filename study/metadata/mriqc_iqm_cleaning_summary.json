@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-09-09T18:02:45.491685+00:00",
+  "n_subjects": 83,
+  "n_sessions": 132,
+  "n_t1w": 264,
+  "n_wmn": 116,
+  "n_iqms": 58,
+  "n_iqms_retained": 58,
+  "n_iqms_excluded": 10,
+  "n_missing_values": 0,
+  "n_potential_outliers": 217,
+  "n_outlier_value_flags": 544,
+  "n_unmapped_mriqc_files": 4,
+  "n_duplicated_mappings": 0,
+  "zero_variance_iqms": [
+    "qi_1",
+    "summary_bg_p05"
+  ],
+  "t1w_vs_wmn": {
+    "common_iqms": 55,
+    "spearman_mean_abs_diff": 0.3169881340337299,
+    "spearman_frobenius_diff": 23.132149604971808,
+    "note": "T1w and WM-nulled Spearman matrices are compared on shared IQMs. A large mean absolute difference supports keeping the two sequence groups in separate later analyses (PCA / models). No biological interpretation is made here."
+  },
+  "outliers_removed": false
+}

@@ -1,0 +1,66 @@
+MRIQC anatomical IQM master dataframe — QC report
+generated_at: 2026-09-09T18:02:35.160166+00:00
+
+COUNTS
+  n_rows (acquisitions): 380
+  n_subjects: 83
+  n_sessions: 132
+  n_T1w: 264
+  n_WMn: 116
+  n_by_cohort: {'Control': 277, 'Data_ON': 21, 'Data_TON': 8, 'Glaucoma': 74}
+  n_by_session: {'ses-01': 230, 'ses-02': 150}
+  n_duplicated_mappings: 0
+  n_unmapped_mriqc_files: 4
+
+DUPLICATES
+  uniqueness key: subject_id, session, sequence_group, run
+  ambiguous duplicates: none (script would have failed)
+
+MISSING METADATA
+  subject_id: 0
+  session: 0
+  cohort: 0
+  sex: 0
+  age: 0
+  sequence_group: 0
+  run: 0
+  mriqc_source_file: 0
+
+MISSING / EMPTY IQM-LIKE COLUMNS (non-zero only)
+  none
+
+ACQUISITIONS WITHOUT IQMs (documented MRIQC failures)
+  sub-039/ses-02/anat/sub-039_ses-02_run-03_T1w.nii.gz
+  sub-058/ses-01/anat/sub-058_ses-01_run-03_T1w.nii.gz
+
+MRIQC FILES NOT IN MASTER (withdrawn T1w listed in excluded_t1w.tsv)
+  sub-066_ses-01_run-01_T1w
+  sub-066_ses-01_run-03_T1w
+  sub-076_ses-01_run-01_T1w
+  sub-084_ses-01_run-03_T1w
+
+IQMs WITHOUT PACKAGED ACQUISITION
+  none (script would have failed)
+
+SESSIONS IN INVENTORY WITHOUT ANAT T1w (not treated as mapping failures)
+  sub-049 ses-02
+  sub-055 ses-01
+  sub-078 ses-02
+
+MAPPING ASSUMPTIONS
+  - Anatomical IQMs are suffix=T1w rows from the packaged MRIQC metrics table.
+  - sequence_group is ProtocolName from the BIDS sidecar, never inferred from run.
+  - T1w_MPR including NORM reconstructions are sequence_group=T1w.
+  - WMn_MPRAGE_sagittal is sequence_group=WMn.
+  - BOLD/fMRI IQMs are excluded.
+  - Uniqueness key is subject_id + session + sequence_group + run.
+  - Cohorts are normalized to Control, Glaucoma, Data_ON, Data_TON.
+  - Age is joined from metadata/participants.tsv.
+  - MRIQC originals are never modified.
+
+SOURCES (read-only)
+  metrics: /lustre07/scratch/alexrees/release_dataset/docs/quality_control/mriqc/mriqc_metrics.csv
+  mriqc_dir: /lustre07/scratch/alexrees/derivatives/mriqc
+  release_root: /lustre07/scratch/alexrees/release_dataset
+
+No original MRIQC files were modified.

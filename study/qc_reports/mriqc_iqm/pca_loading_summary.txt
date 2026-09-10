@@ -1,0 +1,268 @@
+T1w MRIQC IQM PCA — loading summary (PC1–PC10)
+
+Built from existing PCA tables only. PCA was not rerun.
+Each PC is a covariance pattern among IQMs, not a measure of image quality.
+
+Source files:
+  loadings: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_loadings.tsv
+  variance: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_variance.tsv
+  family: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_PC1_PC10_family_contributions.tsv
+  top10: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_PC1_PC10_top10.tsv
+
+==============================================================================
+PC1
+Variance explained: 41.11%
+Dominant family: intensity (59.9% of this PC via squared loadings)
+Top-5 IQM concentration: 19.6% of this PC
+Top-10 IQM concentration: 38.5% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  summary_gm_p95             +0.200523    0.200523  intensity_summary
+     2  summary_wm_p95             +0.199244    0.199244  intensity_summary
+     3  inu_range                  +0.198725    0.198725  bias_field
+     4  wm2max                     -0.196450    0.196450  intensity_ratio
+     5  inu_med                    +0.196003    0.196003  bias_field
+     6  summary_gm_median          +0.195638    0.195638  intensity_summary
+     7  summary_gm_mean            +0.195427    0.195427  intensity_summary
+     8  icvs_wm                    +0.194490    0.194490  tissue_fraction
+     9  cjv                        +0.192248    0.192248  contrast
+    10  cnr                        -0.192161    0.192161  contrast
+
+Interpretation:
+  PC1 is primarily characterized by intensity and tissue-contrast-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC2
+Variance explained: 11.42%
+Dominant family: intensity (40.0% of this PC via squared loadings)
+Top-5 IQM concentration: 25.4% of this PC
+Top-10 IQM concentration: 46.3% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  snr_total                  +0.236399    0.236399  snr
+     2  snr_wm                     +0.230171    0.230171  snr
+     3  summary_wm_p05             +0.224683    0.224683  intensity_summary
+     4  rpve_csf                   -0.220043    0.220043  partial_volume
+     5  summary_gm_p05             +0.215079    0.215079  intensity_summary
+     6  rpve_gm                    -0.211208    0.211208  partial_volume
+     7  summary_csf_median         +0.210902    0.210902  intensity_summary
+     8  rpve_wm                    -0.210858    0.210858  partial_volume
+     9  summary_wm_mad             -0.195473    0.195473  intensity_summary
+    10  summary_wm_stdv            -0.191860    0.191860  intensity_summary
+
+Interpretation:
+  PC2 is primarily characterized by intensity and signal-to-noise-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC3
+Variance explained: 9.59%
+Dominant family: intensity (39.2% of this PC via squared loadings)
+Top-5 IQM concentration: 36.4% of this PC
+Top-10 IQM concentration: 60.1% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  snrd_csf                   +0.282424    0.282424  snr_dietrich
+     2  snrd_total                 +0.272129    0.272129  snr_dietrich
+     3  snrd_gm                    +0.271350    0.271350  snr_dietrich
+     4  snrd_wm                    +0.267541    0.267541  snr_dietrich
+     5  summary_gm_p05             +0.254604    0.254604  intensity_summary
+     6  efc                        -0.247893    0.247893  entropy
+     7  summary_csf_mad            +0.236617    0.236617  intensity_summary
+     8  qi_2                       -0.218208    0.218208  artifact
+     9  summary_csf_stdv           +0.205678    0.205678  intensity_summary
+    10  rpve_gm                    +0.173907    0.173907  partial_volume
+
+Interpretation:
+  PC3 is primarily characterized by intensity and signal-to-noise-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC4
+Variance explained: 7.35%
+Dominant family: smoothness / sharpness (55.6% of this PC via squared loadings)
+Top-5 IQM concentration: 59.5% of this PC
+Top-10 IQM concentration: 74.1% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  fwhm_avg                   +0.385770    0.385770  smoothness
+     2  fwhm_y                     +0.375576    0.375576  smoothness
+     3  fwhm_x                     +0.368595    0.368595  smoothness
+     4  fwhm_z                     +0.360471    0.360471  smoothness
+     5  summary_bg_median          +0.198491    0.198491  intensity_summary
+     6  summary_bg_mad             +0.198491    0.198491  intensity_summary
+     7  snrd_gm                    +0.166376    0.166376  snr_dietrich
+     8  snrd_wm                    +0.163447    0.163447  snr_dietrich
+     9  snrd_total                 +0.161121    0.161121  snr_dietrich
+    10  summary_csf_median         -0.160715    0.160715  intensity_summary
+
+Interpretation:
+  PC4 is primarily characterized by smoothness / sharpness and intensity-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC5
+Variance explained: 6.57%
+Dominant family: signal / SNR (34.7% of this PC via squared loadings)
+Top-5 IQM concentration: 36.2% of this PC
+Top-10 IQM concentration: 62.2% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  snr_csf                    +0.295419    0.295419  snr
+     2  summary_csf_p05            +0.286526    0.286526  intensity_summary
+     3  snrd_csf                   +0.266878    0.266878  snr_dietrich
+     4  snrd_total                 +0.247770    0.247770  snr_dietrich
+     5  snrd_gm                    +0.244507    0.244507  snr_dietrich
+     6  snrd_wm                    +0.241692    0.241692  snr_dietrich
+     7  summary_bg_mad             +0.238848    0.238848  intensity_summary
+     8  summary_bg_median          +0.238848    0.238848  intensity_summary
+     9  summary_csf_mad            -0.225544    0.225544  intensity_summary
+    10  tpm_overlap_gm             -0.190802    0.190802  template_overlap
+
+Interpretation:
+  PC5 is primarily characterized by signal-to-noise and intensity-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC6
+Variance explained: 4.95%
+Dominant family: intensity (70.6% of this PC via squared loadings)
+Top-5 IQM concentration: 45.2% of this PC
+Top-10 IQM concentration: 65.9% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  summary_bg_median          +0.332123    0.332123  intensity_summary
+     2  summary_bg_mad             +0.332123    0.332123  intensity_summary
+     3  summary_bg_mean            +0.298321    0.298321  intensity_summary
+     4  summary_bg_stdv            +0.280158    0.280158  intensity_summary
+     5  summary_bg_p95             +0.253233    0.253233  intensity_summary
+     6  tpm_overlap_gm             +0.230166    0.230166  template_overlap
+     7  summary_bg_k               -0.202945    0.202945  intensity_summary
+     8  qi_2                       +0.199736    0.199736  artifact
+     9  efc                        +0.197814    0.197814  entropy
+    10  icvs_gm                    +0.182821    0.182821  tissue_fraction
+
+Interpretation:
+  PC6 is primarily characterized by intensity and tissue-morphology-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC7
+Variance explained: 3.68%
+Dominant family: intensity (50.9% of this PC via squared loadings)
+Top-5 IQM concentration: 34.1% of this PC
+Top-10 IQM concentration: 57.4% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  tpm_overlap_gm             -0.307670    0.307670  template_overlap
+     2  summary_wm_p05             +0.256398    0.256398  intensity_summary
+     3  snr_csf                    -0.251200    0.251200  snr
+     4  summary_csf_k              -0.243188    0.243188  intensity_summary
+     5  tpm_overlap_csf            -0.241509    0.241509  template_overlap
+     6  summary_csf_p05            -0.225496    0.225496  intensity_summary
+     7  summary_wm_median          +0.223681    0.223681  intensity_summary
+     8  summary_bg_k               -0.219526    0.219526  intensity_summary
+     9  snr_wm                     +0.210397    0.210397  snr
+    10  fwhm_z                     -0.199708    0.199708  smoothness
+
+Interpretation:
+  PC7 is primarily characterized by intensity and tissue-morphology-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC8
+Variance explained: 2.60%
+Dominant family: morphology / tissue (57.8% of this PC via squared loadings)
+Top-5 IQM concentration: 60.7% of this PC
+Top-10 IQM concentration: 78.6% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  rpve_wm                    +0.390264    0.390264  partial_volume
+     2  rpve_gm                    +0.386070    0.386070  partial_volume
+     3  rpve_csf                   +0.384289    0.384289  partial_volume
+     4  tpm_overlap_gm             -0.315664    0.315664  template_overlap
+     5  snr_csf                    +0.240906    0.240906  snr
+     6  summary_csf_mad            -0.219171    0.219171  intensity_summary
+     7  snr_wm                     +0.193804    0.193804  snr
+     8  summary_wm_stdv            -0.188639    0.188639  intensity_summary
+     9  summary_wm_p05             +0.178943    0.178943  intensity_summary
+    10  fber                       -0.160647    0.160647  energy
+
+Interpretation:
+  PC8 is primarily characterized by tissue-morphology and intensity-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC9
+Variance explained: 2.05%
+Dominant family: intensity (62.5% of this PC via squared loadings)
+Top-5 IQM concentration: 77.0% of this PC
+Top-10 IQM concentration: 87.8% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  summary_csf_k              +0.520001    0.520001  intensity_summary
+     2  summary_bg_k               -0.493720    0.493720  intensity_summary
+     3  tpm_overlap_wm             -0.372785    0.372785  template_overlap
+     4  fber                       +0.248870    0.248870  energy
+     5  tpm_overlap_gm             -0.235182    0.235182  template_overlap
+     6  efc                        -0.183026    0.183026  entropy
+     7  qi_2                       +0.177799    0.177799  artifact
+     8  summary_wm_median          -0.139304    0.139304  intensity_summary
+     9  summary_wm_mean            -0.110640    0.110640  intensity_summary
+    10  summary_csf_p05            -0.106261    0.106261  intensity_summary
+
+Interpretation:
+  PC9 is primarily characterized by intensity and tissue-morphology-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+PC10
+Variance explained: 1.71%
+Dominant family: intensity (47.0% of this PC via squared loadings)
+Top-5 IQM concentration: 55.3% of this PC
+Top-10 IQM concentration: 71.4% of this PC
+
+Top 10 IQMs by absolute loading:
+  rank  IQM                          loading   |loading|  family
+     1  summary_bg_k               +0.457036    0.457036  intensity_summary
+     2  tpm_overlap_wm             -0.331647    0.331647  template_overlap
+     3  tpm_overlap_gm             -0.312785    0.312785  template_overlap
+     4  qi_2                       -0.271480    0.271480  artifact
+     5  icvs_csf                   -0.251027    0.251027  tissue_fraction
+     6  summary_wm_median          -0.206717    0.206717  intensity_summary
+     7  summary_bg_p95             +0.186052    0.186052  intensity_summary
+     8  summary_bg_median          +0.175019    0.175019  intensity_summary
+     9  summary_bg_mad             +0.175019    0.175019  intensity_summary
+    10  summary_gm_mad             -0.149618    0.149618  intensity_summary
+
+Interpretation:
+  PC10 is primarily characterized by intensity and tissue-morphology-related variation.
+  This describes covariance among IQMs on this axis, not a direct image-quality score.
+
+==============================================================================
+Summary (PC1–PC10)
+
+PC        var%  dominant family               leading IQM             top-10 conc.
+------------------------------------------------------------------------------
+PC1     41.11%  intensity                     summary_gm_p95                38.5%
+PC2     11.42%  intensity                     snr_total                     46.3%
+PC3      9.59%  intensity                     snrd_csf                      60.1%
+PC4      7.35%  smoothness / sharpness        fwhm_avg                      74.1%
+PC5      6.57%  signal / SNR                  snr_csf                       62.2%
+PC6      4.95%  intensity                     summary_bg_median             65.9%
+PC7      3.68%  intensity                     tpm_overlap_gm                57.4%
+PC8      2.60%  morphology / tissue           rpve_wm                       78.6%
+PC9      2.05%  intensity                     summary_csf_k                 87.8%
+PC10     1.71%  intensity                     summary_bg_k                  71.4%
+
+Loadings are associations with a covariance axis. They are not causal effects and do not measure image quality.

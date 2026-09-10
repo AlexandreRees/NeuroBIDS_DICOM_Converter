@@ -1,0 +1,29 @@
+NORM vs non-NORM reconstruction sensitivity (descriptive)
+generated_at: 2026-09-09T19:33:00.980590+00:00
+
+n paired sessions (NORM+non-NORM): 123
+These are two reconstructions of the same scan, not independent acquisitions.
+Differences are not quality grades.
+
+Mean |paired difference| by IQM family:
+  signal / SNR: 6.43039
+  contrast: 0.470426
+  intensity: 46.0856
+  homogeneity / bias field: 0.597453
+  artifact: 4.43317e-05
+  entropy / information: 3701.17
+  morphology / tissue: 0.0323615
+  smoothness / sharpness: 0.0621043
+
+Largest |mean Δ| IQMs:
+  fber (entropy / information): mean Δ=7402.34  paired r=0.878
+  summary_bg_k (intensity): mean Δ=373.997  paired r=0.919
+  summary_gm_p95 (intensity): mean Δ=-125.195  paired r=0.591
+  summary_csf_p95 (intensity): mean Δ=-109.65  paired r=0.852
+  summary_wm_p95 (intensity): mean Δ=-96  paired r=0.292
+  summary_gm_mean (intensity): mean Δ=-80.0008  paired r=0.541
+  summary_gm_median (intensity): mean Δ=-75.065  paired r=0.493
+  summary_csf_mean (intensity): mean Δ=-52.5891  paired r=0.933
+
+Intensity, bias-field (inu_*), and contrast IQMs are expected to move with Prescan Normalize. SNR/CNR often follow intensity scaling. Smoothness and morphology/tissue IQMs typically change less if geometry is shared.
+No hypothesis tests were used as discovery claims.

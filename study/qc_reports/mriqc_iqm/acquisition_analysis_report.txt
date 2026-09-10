@@ -1,0 +1,215 @@
+T1w IQM acquisition-parameter analysis report
+generated_at: 2026-09-09T19:21:06.785802+00:00
+
+1. PURPOSE
+  Quantify how the 56 session-level T1w MRIQC IQMs associate with
+  available BIDS/JSON acquisition metadata.
+  An association means IQM sensitivity to an acquisition or
+  reconstruction characteristic. It is not a quality grade and is
+  not an anatomical or biological interpretation.
+
+2. MRIQC METADATA RATIONALE
+  MRIQC's anatomical IQM workflow includes an explicit metadata
+  step that copies BIDS sidecar fields into the IQM JSON
+  (bids_meta). Voxel size from the image header also enters
+  spatial IQMs (for example FWHM in millimetres). Jointly auditing
+  acquisition metadata with IQMs is therefore part of the IQM
+  measurement model, not a post-hoc covariate hunt.
+
+3. INPUTS (read-only)
+  session table: on-disk /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_session_t1w.tsv
+  clean TSV: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  roles TSV: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_column_roles.tsv
+  BIDS JSON root: /lustre07/scratch/alexrees/release_dataset
+  clean sha256: 4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  session sha256: c4a19c8271f77b8a4b4c921e640581d91147d01739dbac72e370f69354a4595a
+  scipy 1.15.1  statsmodels 0.14.6
+  MRIQC / PCA / FreeSurfer were not rerun. Outliers were not removed.
+
+4. SESSION-LEVEL DATASET
+  rows (subject × session): 132
+  subjects: 83
+  IQMs used: 56  dropped zero-variance: ['qi_1', 'summary_bg_p05']
+  Unit of analysis: one FreeSurfer-selected T1w_MPR per session.
+
+5. ACQUISITION PARAMETER AUDIT
+  parameter  origin  kind  n_unique  n_missing  status  values
+  AcquisitionDuration              present_not_an_acquisition_setting numeric      unique=   1 missing=126 constant  min=411.922 max=411.922
+  AcquisitionMatrixPE              bids_json          numeric      unique=   1 missing=  6 constant  min=300 max=300
+  AcquisitionNumber                present_not_an_acquisition_setting numeric      unique=   1 missing=  0 constant  min=1 max=1
+  BaseResolution                   bids_json          numeric      unique=   1 missing=  6 constant  min=320 max=320
+  BodyPartExamined                 present_not_an_acquisition_setting categorical  unique=   1 missing=  0 constant  BRAIN=132
+  CoilCombinationMethod            bids_json          categorical  unique=   1 missing=  6 constant  Adaptive Combine=126
+  ConsistencyInfo                  present_not_an_acquisition_setting categorical  unique=   1 missing=  6 constant  N4_VE11C_LATEST_20160120=126
+  ConversionSoftware               present_not_an_acquisition_setting categorical  unique=   1 missing=  0 constant  dcm2niix=132
+  ConversionSoftwareVersion        present_not_an_acquisition_setting categorical  unique=   1 missing=  0 constant  v1.0.20230411=132
+  EchoTime                         bids_json          numeric      unique=   1 missing=  0 constant  min=0.00222 max=0.00222
+  FlipAngle                        bids_json          numeric      unique=   1 missing=  0 constant  min=8 max=8
+  ImageOrientationPatientDICOM     present_not_an_acquisition_setting categorical  unique=   1 missing=  0 constant  [0, 1, 0, 0, 0, -1]=132
+  InPlanePhaseEncodingDirectionDICOM bids_json          categorical  unique=   1 missing=  0 constant  ROW=132
+  InversionTime                    bids_json          numeric      unique=   1 missing=  0 constant  min=1 max=1
+  MRAcquisitionType                bids_json          categorical  unique=   1 missing=  0 constant  3D=132
+  MagneticFieldStrength            bids_json          numeric      unique=   1 missing=  0 constant  min=3 max=3
+  Manufacturer                     bids_json          categorical  unique=   1 missing=  0 constant  Siemens=132
+  MatrixCoilMode                   bids_json          categorical  unique=   1 missing=  6 constant  GRAPPA=126
+  Modality                         present_not_an_acquisition_setting categorical  unique=   1 missing=  0 constant  MR=132
+  NonlinearGradientCorrection      bids_json          numeric      unique=   1 missing=  6 constant  min=0 max=0
+  ParallelReductionFactorInPlane   bids_json          numeric      unique=   1 missing=  0 constant  min=2 max=2
+  PartialFourier                   bids_json          numeric      unique=   1 missing=  6 constant  min=1 max=1
+  PatientPosition                  present_not_an_acquisition_setting categorical  unique=   1 missing=  0 constant  HFS=132
+  PercentPhaseFOV                  bids_json          numeric      unique=   1 missing=  0 constant  min=93.75 max=93.75
+  PercentSampling                  bids_json          numeric      unique=   1 missing=  0 constant  min=100 max=100
+  PhaseResolution                  bids_json          numeric      unique=   1 missing=  6 constant  min=1 max=1
+  PixelBandwidth                   bids_json          numeric      unique=   1 missing=  0 constant  min=220 max=220
+  ProtocolName                     bids_json          categorical  unique=   1 missing=  0 constant  T1w_MPR=132
+  PulseSequenceDetails             bids_json          categorical  unique=   1 missing=  6 constant  %SiemensSeq%\tfl=126
+  ReceiveCoilName                  bids_json          categorical  unique=   1 missing=  6 constant  HeadNeck_64=126
+  ReconMatrixPE                    bids_json          numeric      unique=   1 missing=  0 constant  min=300 max=300
+  RefLinesPE                       bids_json          numeric      unique=   1 missing=  6 constant  min=32 max=32
+  RepetitionTime                   bids_json          numeric      unique=   1 missing=  0 constant  min=2.5 max=2.5
+  ScanOptions                      bids_json          categorical  unique=   1 missing=  6 constant  IR\WE=126
+  ScanningSequence                 bids_json          categorical  unique=   1 missing=  6 constant  GR\IR=126
+  SequenceName                     bids_json          categorical  unique=   1 missing=  6 constant  *tfl3d1_16ns=126
+  SequenceVariant                  bids_json          categorical  unique=   1 missing=  6 constant  SK\SP\MP=126
+  SeriesDescription                present_not_an_acquisition_setting categorical  unique=   1 missing=  0 constant  T1w_MPR=132
+  SliceThickness                   bids_json          numeric      unique=   1 missing=  0 constant  min=0.8 max=0.8
+  SpoilingState                    bids_json          numeric      unique=   1 missing=  6 constant  min=1 max=1
+  coil                             session_table      categorical  unique=   1 missing=  6 constant  HeadNeck_64=126
+  flip_angle_deg                   session_table      numeric      unique=   1 missing=  0 constant  min=8 max=8
+  protocol_name                    session_table      categorical  unique=   1 missing=  0 constant  T1w_MPR=132
+  size_x                           session_table      numeric      unique=   1 missing=  0 constant  min=208 max=208
+  size_y                           session_table      numeric      unique=   1 missing=  0 constant  min=300 max=300
+  size_z                           session_table      numeric      unique=   1 missing=  0 constant  min=320 max=320
+  spacing_x                        session_table      numeric      unique=   1 missing=  0 constant  min=0.79999995 max=0.80000001
+  spacing_y                        session_table      numeric      unique=   1 missing=  0 constant  min=0.80000001 max=0.80000001
+  spacing_z                        session_table      numeric      unique=   1 missing=  0 constant  min=0.80000001 max=0.80000001
+  te_s                             session_table      numeric      unique=   1 missing=  0 constant  min=0.00222 max=0.00222
+  ti_s                             session_table      numeric      unique=   1 missing=  0 constant  min=1 max=1
+  tr_s                             session_table      numeric      unique=   1 missing=  0 constant  min=2.5 max=2.5
+  voxel_size_x_mm                  derived            numeric      unique=   1 missing=  0 constant  min=0.79999995 max=0.80000001
+  voxel_size_y_mm                  derived            numeric      unique=   1 missing=  0 constant  min=0.80000001 max=0.80000001
+  voxel_size_z_mm                  derived            numeric      unique=   1 missing=  0 constant  min=0.80000001 max=0.80000001
+  voxel_volume_mm3                 derived            numeric      unique=   1 missing=  0 constant  min=0.51199998 max=0.51200002
+  ImageType_str                    reconstruction     categorical  unique=   3 missing=  0 variable  ORIGINAL,PRIMARY,M,ND=124, ORIGINAL,PRIMARY,M,NONE=6, ORIGINAL,PRIMARY,M,ND,NORM=2
+  ImagingFrequency                 present_not_an_acquisition_setting numeric      unique=  82 missing=  0 variable  min=123.25778 max=123.25802
+  ManufacturersModelName           bids_json          categorical  unique=   2 missing=  0 variable  Prisma=126, MAGNETOM Prisma=6
+  PhaseEncodingSteps               bids_json          numeric      unique=   2 missing=  0 variable  min=299 max=300
+  ReceiveCoilActiveElements        bids_json          categorical  unique=   2 missing=  6 variable  HC1-7;NC1,2=125, HC2,4,6,7;NC2=1
+  SAR                              bids_json          numeric      unique= 126 missing=  6 variable  min=0.0305655 max=0.0561143
+  SeriesNumber                     present_not_an_acquisition_setting numeric      unique=  12 missing=  0 variable  min=2 max=56
+  ShimSetting                      present_not_an_acquisition_setting categorical  unique= 126 missing=  6 variable  [-1552, 1330, -11325, 313, 34, -296, 35, 49]=1, [-1560, 1303, -11203, 450, 34, -111, 20, 39]=1, [-1546, 1299, -11232, 434, 36, 48, -53, 12]=1, [-1562, 1277, -11226, 462, 14, -218, -31, -3]=1, [-1567, 1314, -11288, 412, 11, -105, 24, 12]=1, [-1547, 1340, -11200, 448, 45, 47, -12, 3]=1, [-1571, 1269, -11275, 120, 42, -412, -49, 31]=1, [-1569, 1289, -11271, 196, 100, -256, -6, -14]=1
+  SoftwareVersions                 bids_json          categorical  unique=   2 missing=  0 variable  syngo MR E11=126, syngo MR XA30=6
+  TxRefAmp                         bids_json          numeric      unique= 126 missing=  6 variable  min=207.539 max=301.336
+  is_norm                          session_table      numeric      unique=   2 missing=  0 variable  min=0 max=1
+  reconstruction_NORM              derived            numeric      unique=   2 missing=  0 variable  min=0 max=1
+  scanner                          session_table      categorical  unique=   2 missing=  0 variable  Prisma=126, MAGNETOM Prisma=6
+  software_platform                derived            categorical  unique=   2 missing=  0 variable  E11=126, XA30=6
+
+  n_parameters_audited=70  constant=56  variable=14
+
+6. TESTABLE PARAMETERS AND REDUNDANCY
+  software_platform: testable=True unique=2 missing=0 minority=6 reason=ok aliases=['SoftwareVersions', 'ManufacturersModelName', 'scanner', 'PhaseEncodingSteps', 'ReceiveCoilName', 'coil']
+  reconstruction_NORM: testable=True unique=2 missing=0 minority=2 reason=ok aliases=['is_norm']
+  SAR: testable=True unique=126 missing=6 minority=126 reason=ok aliases=[]
+  TxRefAmp: testable=True unique=126 missing=6 minority=126 reason=ok aliases=[]
+  ReceiveCoilActiveElements: testable=False unique=2 missing=6 minority=1 reason=minority_n=1 aliases=[]
+  ProtocolName: testable=False unique=1 missing=0 minority=132 reason=constant aliases=['protocol_name']
+  RepetitionTime: testable=False unique=1 missing=0 minority=132 reason=constant aliases=['tr_s']
+  EchoTime: testable=False unique=1 missing=0 minority=132 reason=constant aliases=['te_s']
+  FlipAngle: testable=False unique=1 missing=0 minority=132 reason=constant aliases=['flip_angle_deg']
+  SliceThickness: testable=False unique=1 missing=0 minority=132 reason=constant aliases=[]
+  voxel_size_mm: testable=False unique=1 missing=0 minority=132 reason=constant aliases=['spacing_x', 'spacing_y', 'spacing_z', 'voxel_volume_mm3']
+
+7. MODELS
+  Univariate (per testable parameter): OLS  IQM ~ parameter
+  Numeric univariate also records Spearman rho (descriptive; FDR uses OLS p).
+  Multivariate, when possible:
+    IQM ~ C(software_platform, Treatment("E11")) + C(session, Treatment("ses-01")) + age + C(sex) + (1|subject_id)
+    MixedLM random intercept (1|subject_id) when subjects contribute
+    both sessions; OLS otherwise. Age/sex/session are covariates,
+    not acquisition parameters.
+  Multivariate acquisition terms: software_platform
+  Perfectly collinear aliases are represented by one term.
+  A parameter is omitted from the multivariate model if adding it
+  makes a previously selected term constant in complete cases,
+  if missingness exceeds 10%, or if the minority class has n<5.
+
+8. FDR
+  Benjamini–Hochberg is applied separately to the 56 IQM tests
+  within each (analysis, parameter) family.
+  alpha=0.05
+
+9. RESULTS BY ANALYSIS
+  multivariate / acquisition_block: tested=56/56  FDR q<0.05: 41  min q=3.54114e-155  top IQM=wm2max
+  multivariate / software_platform: tested=56/56  FDR q<0.05: 41  min q=3.54114e-155  top IQM=wm2max
+  univariate / SAR: tested=56/56  FDR q<0.05: 11  min q=9.17743e-12  top IQM=efc
+  univariate / TxRefAmp: tested=56/56  FDR q<0.05: 16  min q=2.46384e-24  top IQM=efc
+  univariate / reconstruction_NORM: tested=56/56  FDR q<0.05: 8  min q=5.2269e-05  top IQM=summary_bg_p95
+  univariate / software_platform: tested=56/56  FDR q<0.05: 36  min q=1.34566e-51  top IQM=wm2max
+
+10. IQMs MOST STRONGLY ASSOCIATED WITH ACQUISITION PARAMETERS
+  112 IQM×parameter rows with FDR q < 0.05 (acquisition_block omitted here when it duplicates a single term).
+  multivariate:
+    software_platform      wm2max               estimate=0.469124 p=6.32347e-157 q=3.54114e-155 N=132
+    software_platform      inu_med              estimate=-0.462713 p=3.28491e-89 q=9.19774e-88 N=132
+    software_platform      icvs_wm              estimate=-0.0236899 p=1.89399e-85 q=3.53545e-84 N=132
+    software_platform      inu_range            estimate=-0.641228 p=8.98646e-46 q=1.2581e-44 N=132
+    software_platform      tpm_overlap_wm       estimate=0.0282662 p=1.84562e-44 q=2.06709e-43 N=132
+    software_platform      cnr                  estimate=0.558538 p=5.16131e-39 q=4.81722e-38 N=132
+    software_platform      icvs_gm              estimate=0.0125245 p=1.88005e-28 q=1.50404e-27 N=132
+    software_platform      cjv                  estimate=-0.267018 p=1.16815e-25 q=8.17708e-25 N=132
+    software_platform      summary_gm_stdv      estimate=-39.4662 p=1.08269e-21 q=6.73677e-21 N=132
+    software_platform      summary_csf_stdv     estimate=-41.5542 p=2.41922e-20 q=1.35476e-19 N=132
+    software_platform      summary_wm_k         estimate=-0.537266 p=2.43426e-19 q=1.23926e-18 N=132
+    software_platform      summary_gm_p95       estimate=-123.744 p=3.24243e-19 q=1.51313e-18 N=132
+    software_platform      summary_csf_p95      estimate=-122.853 p=6.18166e-19 q=2.66287e-18 N=132
+    software_platform      summary_gm_mean      estimate=-84.56 p=1.07793e-16 q=4.31174e-16 N=132
+    software_platform      summary_gm_median    estimate=-78.7479 p=4.45504e-16 q=1.66322e-15 N=132
+    ... 26 additional FDR-significant rows in the TSV
+  univariate:
+    software_platform      wm2max               estimate=0.463979 p=2.40296e-53 q=1.34566e-51 N=132
+    software_platform      inu_med              estimate=-0.472067 p=2.458e-42 q=6.88241e-41 N=132
+    software_platform      inu_range            estimate=-0.688615 p=1.04076e-25 q=1.94276e-24 N=132
+    TxRefAmp               efc                  estimate=0.00128298 p=4.39972e-26 q=2.46384e-24 N=126
+    software_platform      icvs_wm              estimate=-0.0223356 p=8.82976e-25 q=1.23617e-23 N=132
+    software_platform      cnr                  estimate=0.572931 p=5.97503e-21 q=6.69203e-20 N=132
+    software_platform      cjv                  estimate=-0.26869 p=1.95484e-19 q=1.82452e-18 N=132
+    TxRefAmp               fber                 estimate=-86.5768 p=2.93771e-13 q=8.22558e-12 N=126
+    SAR                    efc                  estimate=4.54918 p=1.63883e-13 q=9.17743e-12 N=126
+    software_platform      summary_wm_k         estimate=-0.675111 p=1.49273e-12 q=1.19418e-11 N=132
+    TxRefAmp               summary_bg_mean      estimate=0.254282 p=1.46793e-12 q=2.74013e-11 N=126
+    software_platform      summary_wm_p95       estimate=-98.1349 p=1.16363e-11 q=8.14541e-11 N=132
+    software_platform      icvs_csf             estimate=0.0153801 p=3.09595e-11 q=1.92637e-10 N=132
+    software_platform      summary_csf_stdv     estimate=-48.4286 p=5.00308e-11 q=2.80172e-10 N=132
+    software_platform      summary_gm_p95       estimate=-112.992 p=5.88377e-11 q=2.99537e-10 N=132
+    ... 56 additional FDR-significant rows in the TSV
+
+  Smallest q per analysis/parameter (whether or not FDR-significant):
+    multivariate  software_platform      top=wm2max               q=3.54114e-155
+    univariate    SAR                    top=efc                  q=9.17743e-12
+    univariate    TxRefAmp               top=efc                  q=2.46384e-24
+    univariate    reconstruction_NORM    top=summary_bg_p95       q=5.2269e-05
+    univariate    software_platform      top=wm2max               q=1.34566e-51
+
+11. INTERPRETATION LIMITATIONS
+  Protocol contrast settings (ProtocolName, TR, TE, TI, flip angle,
+  slice thickness, voxel size, field strength) are constant in this
+  FreeSurfer-selected T1w_MPR session-level table. They cannot be
+  statistically tested here; constancy is itself the finding.
+  Siemens reconstruction flag NORM is present on only two sessions;
+  univariate tests are reported but are not a basis for inference.
+  Software platform E11 vs XA30 is collinear with scanner label
+  (Prisma vs MAGNETOM Prisma), PhaseEncodingSteps 299 vs 300,
+  ImageType ND vs NONE, and missing coil metadata. One term
+  represents that cluster.
+  SAR and TxRefAmp are scan-instance RF metadata in bids_meta, not
+  operator-chosen protocol fields; they are missing on XA30 rows,
+  so they cannot enter the same complete-case model as software.
+  No anatomical, tissue, or disease interpretation is made.
+  FreeSurfer morphometry is reserved for a later step.
+
+12. OUTPUT FILES
+  /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/acquisition_results.tsv
+  /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/acquisition_analysis_report.txt
+  Columns: IQM, parameter, estimate (effect), p, q, N
+  plus analysis, se, CI, Spearman rho (numeric univariate), method, status.

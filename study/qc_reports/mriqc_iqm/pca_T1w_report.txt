@@ -1,0 +1,51 @@
+MRIQC T1w IQM exploratory PCA report
+generated_at: 2026-09-09T18:39:51.709647+00:00
+
+SCOPE
+  sequence_group: T1w only
+  WM-nulled: not analysed
+  outliers: not removed
+  MRIQC flags: not used as exclusions
+  cohort tests / inferential statistics / ML / t-SNE / UMAP: not run
+  biological interpretation: not made
+  source TSV: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  source sha256 before: 4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source sha256 after:  4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source unmodified: True
+
+DEPENDENCY
+  scikit-learn available: False
+  scikit-learn detail: ModuleNotFoundError: No module named 'sklearn'
+  PCA backend: numpy.linalg.svd (sklearn unavailable; implementation matches sklearn full SVD)
+  standardization: column z-score, population SD (ddof=0), matching StandardScaler
+  SVD sign convention: sklearn svd_flip (max |U| per component)
+
+MATRIX
+  n_acquisitions: 264
+  n_retained_iqms_in_table: 58
+  n_iqms_dropped_zero_variance: 2 ['qi_1', 'summary_bg_p05']
+  n_iqms_used: 56
+  n_components: 56
+  scores_shape: 264 x 56
+  loadings_shape: 56 x 56
+  n_missing_values_in_pca_matrix: 0
+  max_abs_standardized_feature_mean: 2.250e-14
+  max_abs_standardized_feature_sd_minus_1: 1.332e-15
+  reproducibility_max_abs_score_delta: 0.0
+
+IQMs USED
+  cjv, cnr, efc, fber, fwhm_avg, fwhm_x, fwhm_y, fwhm_z, icvs_csf, icvs_gm, icvs_wm, inu_med, inu_range, qi_2, rpve_csf, rpve_gm, rpve_wm, snr_csf, snr_gm, snr_total, snr_wm, snrd_csf, snrd_gm, snrd_total, snrd_wm, summary_bg_k, summary_bg_mad, summary_bg_mean, summary_bg_median, summary_bg_p95, summary_bg_stdv, summary_csf_k, summary_csf_mad, summary_csf_mean, summary_csf_median, summary_csf_p05, summary_csf_p95, summary_csf_stdv, summary_gm_k, summary_gm_mad, summary_gm_mean, summary_gm_median, summary_gm_p05, summary_gm_p95, summary_gm_stdv, summary_wm_k, summary_wm_mad, summary_wm_mean, summary_wm_median, summary_wm_p05, summary_wm_p95, summary_wm_stdv, tpm_overlap_csf, tpm_overlap_gm, tpm_overlap_wm, wm2max
+
+VARIANCE THRESHOLDS (smallest k with cumulative ratio >= threshold)
+  80%: 6 components (0.809928)
+  90%: 10 components (0.910303)
+  95%: 14 components (0.954878)
+  PC1 variance ratio: 0.411099
+
+OUTPUTS
+  pca_T1w_scores.tsv
+  pca_T1w_loadings.tsv
+  pca_T1w_variance.tsv
+  pca_T1w_variance.png/.pdf
+  pca_T1w_loadings.png/.pdf
+  pca_T1w_report.txt

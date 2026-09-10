@@ -1,0 +1,13 @@
+cohort	longitudinal_status	n_subjects
+Control	ses01_only	15
+Control	ses02_only	1
+Control	both_sessions	39
+Glaucoma	ses01_only	11
+Glaucoma	ses02_only	0
+Glaucoma	both_sessions	8
+Data_ON	ses01_only	6
+Data_ON	ses02_only	0
+Data_ON	both_sessions	1
+Data_TON	ses01_only	1
+Data_TON	ses02_only	0
+Data_TON	both_sessions	1

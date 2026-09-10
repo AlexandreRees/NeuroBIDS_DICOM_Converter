@@ -1,0 +1,58 @@
+Physical-acquisition IQM explained-variation report
+generated_utc: 2026-09-09T20:34:22.417937+00:00
+
+Models (MixedLM, random intercept subject_id):
+  Acquisition: IQM ~ software_platform + age + sex + session + (1|subject_id)
+  Cohort:      IQM ~ cohort + age + sex + session + (1|subject_id)
+  Full:        IQM ~ cohort + software_platform + age + sex + session + (1|subject_id)
+
+Acquisition variable: software_platform only (E11 vs XA30).
+SAR/TxRefAmp were not combined with software_platform: 6/133 missing
+(exactly the XA30 rows) and they are near-unique per scan.
+is_norm is collinear with software_platform in this selected table
+(all XA30 rows are the 6 non-NORM reconstructions without a NORM pair).
+
+R² is Nakagawa & Schielzeth marginal R² (fixed-effect share of variation).
+Conditional R² (fixed + subject intercept) is reported separately.
+These quantities are model-explained variation, not causal variance.
+Cohort R² is NOT biology R²: FreeSurfer anatomy is not in the model.
+
+N observations=133  N subjects=83  N IQMs=56
+mean R2_acquisition=0.1324  median=0.1137
+mean R2_cohort=0.1695  median=0.1563
+mean R2_full=0.1763  median=0.1626
+IQMs with R2_acquisition > R2_cohort: 9/56
+IQMs with R2_cohort > R2_acquisition: 47/56
+
+Highest acquisition R²:
+  icvs_gm (morphology / tissue): 0.3394
+  efc (entropy / information): 0.3249
+  summary_gm_p95 (intensity): 0.3129
+  icvs_wm (morphology / tissue): 0.2815
+  summary_csf_p05 (intensity): 0.2815
+  rpve_gm (morphology / tissue): 0.2580
+  summary_gm_stdv (intensity): 0.2577
+  rpve_csf (morphology / tissue): 0.2565
+Highest cohort R²:
+  icvs_gm (morphology / tissue): 0.3762
+  efc (entropy / information): 0.3618
+  summary_gm_p95 (intensity): 0.3571
+  icvs_wm (morphology / tissue): 0.3427
+  summary_csf_p05 (intensity): 0.3128
+  summary_gm_stdv (intensity): 0.2962
+  rpve_gm (morphology / tissue): 0.2649
+  cnr (contrast): 0.2643
+
+By family (mean marginal R²):
+  signal / SNR: acq=0.142  cohort=0.168  full=0.169  n=8
+  contrast: acq=0.211  cohort=0.263  full=0.262  n=2
+  intensity: acq=0.106  cohort=0.158  full=0.159  n=28
+  homogeneity / bias field: acq=0.076  cohort=0.126  full=0.128  n=2
+  artifact: acq=0.113  cohort=0.093  full=0.118  n=1
+  entropy / information: acq=0.191  cohort=0.224  full=0.227  n=2
+  morphology / tissue: acq=0.218  cohort=0.246  full=0.246  n=9
+  smoothness / sharpness: acq=0.069  cohort=0.047  full=0.127  n=4
+
+Planned FreeSurfer extension (not implemented):
+  IQM ~ acquisition + anatomy + cohort + age + sex + session + (1|subject_id)
+  compare R2_acquisition / R2_anatomy / R2_cohort / R2_full

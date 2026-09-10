@@ -1,0 +1,88 @@
+Physical-acquisition IQM acquisition-effect report
+generated_at: 2026-09-09T19:49:43.971600+00:00
+
+Input: study/metadata/mriqc_iqm_physical_acquisition.tsv
+Unit of observation: physical acquisition (one reconstruction per physical scan).
+NORM/non-NORM is not modeled: it is not an independent acquisition factor.
+Anatomy: not included. MRIQC was not rerun.
+
+SoftwareVersions and TxRefAmp were read from BIDS sidecars of the 133
+already-selected reconstructions. This does not reconstruct the 264-row table.
+
+Acquisition inventory:
+  software_platform: present=True kind=categorical unique=2 missing=0 status=candidate E11=127, XA30=6
+  SoftwareVersions: present=True kind=categorical unique=2 missing=0 status=candidate syngo MR E11=127, syngo MR XA30=6
+  scanner: present=True kind=categorical unique=2 missing=0 status=candidate Prisma=127, MAGNETOM Prisma=6
+  ManufacturersModelName: present=True kind=categorical unique=2 missing=0 status=candidate Prisma=127, MAGNETOM Prisma=6
+  SAR: present=True kind=numeric unique=127 missing=6 status=candidate min=0.0305655 max=0.0561143
+  TxRefAmp: present=True kind=numeric unique=127 missing=6 status=candidate min=207.539 max=301.336
+  coil: present=True kind=categorical unique=1 missing=6 status=constant HeadNeck_64=127
+  ProtocolName: present=True kind=categorical unique=1 missing=0 status=constant T1w_MPR=133
+  protocol_name: present=True kind=categorical unique=1 missing=0 status=constant T1w_MPR=133
+  RepetitionTime: present=True kind=numeric unique=1 missing=0 status=constant min=2.5 max=2.5
+  EchoTime: present=True kind=numeric unique=1 missing=0 status=constant min=0.00222 max=0.00222
+  InversionTime: present=False kind= unique=0 missing=133 status=absent absent_from_table
+  FlipAngle: present=True kind=numeric unique=1 missing=0 status=constant min=8 max=8
+  te_s: present=True kind=numeric unique=1 missing=0 status=constant min=0.00222 max=0.00222
+  tr_s: present=True kind=numeric unique=1 missing=0 status=constant min=2.5 max=2.5
+  ti_s: present=True kind=numeric unique=1 missing=0 status=constant min=1 max=1
+  flip_angle_deg: present=True kind=numeric unique=1 missing=0 status=constant min=8 max=8
+  SliceThickness: present=True kind=numeric unique=1 missing=0 status=constant min=0.8 max=0.8
+  spacing_x: present=True kind=numeric unique=1 missing=0 status=constant min=0.79999995 max=0.80000001
+  spacing_y: present=True kind=numeric unique=1 missing=0 status=constant min=0.80000001 max=0.80000001
+  spacing_z: present=True kind=numeric unique=1 missing=0 status=constant min=0.80000001 max=0.80000001
+  size_x: present=True kind=numeric unique=1 missing=0 status=constant min=208 max=208
+  size_y: present=True kind=numeric unique=1 missing=0 status=constant min=300 max=300
+  size_z: present=True kind=numeric unique=1 missing=0 status=constant min=320 max=320
+  voxel_size: present=True kind=categorical unique=1 missing=0 status=constant 0.8x0.8x0.8=133
+  SeriesDescription: present=True kind=categorical unique=1 missing=0 status=inventoried_not_modeled_NORM_or_identifier T1w_MPR=133
+  ImageType: present=True kind=categorical unique=2 missing=0 status=inventoried_not_modeled_NORM_or_identifier ORIGINAL,PRIMARY,M,ND,NORM=127, ORIGINAL,PRIMARY,M,NONE=6
+  NORM_status: present=True kind=categorical unique=2 missing=0 status=inventoried_not_modeled_NORM_or_identifier NORM=127, non-NORM=6
+  is_norm: present=True kind=numeric unique=2 missing=0 status=inventoried_not_modeled_NORM_or_identifier min=0 max=1
+  ShimSetting: present=True kind=categorical unique=127 missing=6 status=inventoried_not_modeled_NORM_or_identifier -1552,1330,-11325,313,34,-296,35,49=1, -1560,1303,-11203,450,34,-111,20,39=1, -1546,1299,-11232,434,36,48,-53,12=1, -1562,1277,-11226,462,14,-218,-31,-3=1, -1567,1314,-11288,412,11,-105,24,12=1, -1547,1340,-11200,448,45,47,-12,3=1, -1571,1269,-11275,120,42,-412,-49,31=1, -1569,1289,-11271,196,100,-256,-6,-14=1
+
+Inferential acquisition variables (separate models; collinear aliases not co-entered):
+  software_platform: usable=True n_complete=133 missing=0 minority=6 exploratory=True XA30 n=6; do not interpret as a causal scanner effect
+  SAR: usable=True n_complete=127 missing=6 minority=127 exploratory=False ok
+  TxRefAmp: usable=True n_complete=127 missing=6 minority=127 exploratory=False ok
+
+Collinearity notes:
+  software_platform == scanner == ManufacturersModelName partition.
+  In this selected table, XA30 is also aliased with non-NORM (6 rows).
+  SAR and TxRefAmp are correlated (r≈0.70) but not treated as interchangeable.
+  SAR and TxRefAmp are missing on the 6 XA30 rows, so those models use n=127 E11-only.
+
+FDR: BH within each Model B family of 56 IQM tests, alpha=0.05.
+
+Model B FDR-significant IQMs (q<0.05):
+  software_platform: 5/56
+    fwhm_z               family=smoothness / sharpness   coef=0.247 std=1.259 p=9.122e-06 q=0.0005108 n=133
+    fwhm_avg             family=smoothness / sharpness   coef=0.2292 std=1.219 p=8.978e-05 q=0.002514 n=133
+    fwhm_y               family=smoothness / sharpness   coef=0.2548 std=1.193 p=0.000364 q=0.006794 n=133
+    fwhm_x               family=smoothness / sharpness   coef=0.1825 std=1.009 p=0.001124 q=0.01573 n=133
+    wm2max               family=intensity                coef=0.06487 std=0.9737 p=0.003286 q=0.03681 n=133
+  SAR: 23/56
+    efc                  family=entropy / information    coef=3.337 std=0.3888 p=7.659e-12 q=4.289e-10 n=127
+    inu_range            family=homogeneity / bias field coef=5.766 std=0.4886 p=6.108e-09 q=1.710e-07 n=127
+    fber                 family=entropy / information    coef=-5.039e+05 std=-0.439 p=6.791e-08 q=1.268e-06 n=127
+    inu_med              family=homogeneity / bias field coef=5.625 std=0.4248 p=5.039e-07 q=7.054e-06 n=127
+    icvs_wm              family=morphology / tissue      coef=0.444 std=0.2905 p=7.590e-06 q=8.501e-05 n=127
+    summary_bg_mean      family=intensity                coef=427.5 std=0.3777 p=1.606e-05 q=0.0001499 n=127
+    cnr                  family=contrast                 coef=-10.55 std=-0.2178 p=0.0002292 q=0.001834 n=127
+    wm2max               family=intensity                coef=-3.825 std=-0.2618 p=0.0002706 q=0.001894 n=127
+  TxRefAmp: 27/56
+    efc                  family=entropy / information    coef=0.001288 std=0.6881 p=1.221e-35 q=6.837e-34 n=127
+    inu_range            family=homogeneity / bias field coef=0.001583 std=0.6152 p=7.468e-15 q=2.091e-13 n=127
+    inu_med              family=homogeneity / bias field coef=0.001646 std=0.5698 p=6.046e-11 q=1.129e-09 n=127
+    fber                 family=entropy / information    coef=-140.9 std=-0.563 p=1.260e-10 q=1.763e-09 n=127
+    wm2max               family=intensity                coef=-0.001646 std=-0.5166 p=3.272e-10 q=3.665e-09 n=127
+    summary_bg_mean      family=intensity                coef=0.1371 std=0.5554 p=5.526e-10 q=5.158e-09 n=127
+    summary_bg_stdv      family=intensity                coef=0.5185 std=0.4542 p=7.855e-08 q=6.284e-07 n=127
+    summary_bg_p95       family=intensity                coef=0.3388 std=0.4537 p=1.406e-06 q=9.842e-06 n=127
+
+software_platform XA30 (n=6) results are exploratory associations with
+acquisition/software platform, not causal scanner effects.
+
+Wrote /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/acquisition_physical_acq_results.tsv
+Wrote /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/acquisition_physical_acq_top_iqms.tsv
+Wrote /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/acquisition_physical_acq_heatmap.png

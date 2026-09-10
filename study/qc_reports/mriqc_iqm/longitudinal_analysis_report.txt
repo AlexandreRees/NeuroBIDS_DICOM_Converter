@@ -1,0 +1,108 @@
+T1w IQM longitudinal analysis report
+generated_at: 2026-09-09T18:57:50.754265+00:00
+
+TWO QUESTIONS (do not conflate)
+  Session main effect: do IQMs change globally between ses-01 and ses-02?
+  Interaction cohort × session: does that change differ by cohort?
+  The interaction is the primary longitudinal result.
+
+SCOPE
+  sequence_group: T1w only; 56 non-constant IQMs; outliers not removed
+  FreeSurfer / extra PCA / previous cohort script: not modified, not rerun
+  source TSV: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  source sha256 before: 4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source sha256 after:  4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source unmodified: True
+
+1. LONGITUDINAL STRUCTURE
+  n_subjects: 83
+  n_sessions (subject×session cells): 132
+  n_acquisitions: 264
+  ses01_only subjects: 33
+  ses02_only subjects: 1
+  both_sessions (truly longitudinal): 49
+  subject×session cells with >1 T1w run: 130 / 132
+  acquisitions per subject×session: {'1': 2, '2': 129, '4': 1}
+  Multiple T1w runs in the same session were KEPT in MixedLM (not dropped).
+  Trajectories in the figure use the mean of those runs for display only.
+
+2. COUNTS BY COHORT
+  Control: subjects=55 sessions=94 acq=190 | ses01_only=15 ses02_only=1 both=39
+  Glaucoma: subjects=19 sessions=27 acq=52 | ses01_only=11 ses02_only=0 both=8
+  Data_ON: subjects=7 sessions=8 acq=16 | ses01_only=6 ses02_only=0 both=1
+  Data_TON: subjects=2 sessions=3 acq=6 | ses01_only=1 ses02_only=0 both=1
+  cohort × longitudinal_status:
+    Control     ses01_only      n=15
+    Control     ses02_only      n=1
+    Control     both_sessions   n=39
+    Glaucoma    ses01_only      n=11
+    Glaucoma    ses02_only      n=0
+    Glaucoma    both_sessions   n=8
+    Data_ON     ses01_only      n=6
+    Data_ON     ses02_only      n=0
+    Data_ON     both_sessions   n=1
+    Data_TON    ses01_only      n=1
+    Data_TON    ses02_only      n=0
+    Data_TON    both_sessions   n=1
+
+  Missing values in model covariates:
+    {'age': 0, 'sex': 0, 'session': 0, 'cohort': 0, 'subject_id': 0}
+
+3. METHOD
+  scipy 1.15.1  statsmodels 0.14.6
+  MixedLM: IQM ~ C(cohort, Treatment(Control)) * C(session, Treatment(ses-01))
+            + age + C(sex), groups=subject_id, REML
+  Session term: model-based change ses-02 − ses-01 for the Control reference.
+  Cohort terms: main-effect contrasts vs Control at ses-01.
+  Interaction terms: additional change (ses-02 − ses-01) vs Control.
+  Global tests: Wald on the corresponding blocks of fixed effects.
+  FDR Benjamini-Hochberg applied separately to 56 cohort tests, 56 session
+  tests, and 56 interaction tests (three families, not pooled).
+
+4. PREVIOUS COHORT MODELS (not recomputed)
+  raw IQM ~ cohort: 31/56 FDR < 0.05
+  adjusted IQM ~ cohort + age + sex: 20/56 FDR < 0.05
+  mixed without interaction: 0/56 FDR < 0.05
+
+5. COHORT MAIN EFFECT (this model, at ses-01 vs Control)
+  N FDR q<0.05: 0 / 56
+  min q: 0.0980882
+
+6. SESSION MAIN EFFECT (overall ses-02 vs ses-01, Control coding)
+  N FDR q<0.05: 0 / 56
+  min q: 0.275927
+
+7. INTERACTION COHORT × SESSION (PRIMARY)
+  N tested: 56
+  N FDR q<0.05: 2
+  min q: 2.59863e-05
+  IQM with min q: rpve_csf
+
+  FDR-significant interactions:
+    rpve_csf: Wald=32.25 p=4.64e-07 q=2.599e-05
+      C(cohort, Treatment("Control"))[T.Data_ON]:C(session, Treatment("ses-01"))[T.ses-02]: est=-0.184858 SE=0.0347621 CI=[-0.252991,-0.116726] p=1.05e-07 || C(cohort, Treatment("Control"))[T.Data_TON]:C(session, Treatment("ses-01"))[T.ses-02]: est=-0.0283682 SE=0.0347677 CI=[-0.0965115,0.0397752] p=0.4145 || C(cohort, Treatment("Control"))[T.Glaucoma]:C(session, Treatment("ses-01"))[T.ses-02]: est=-0.0304794 SE=0.0135619 CI=[-0.0570602,-0.00389864] p=0.02461
+      model-based Δ (ses-02 − ses-01): Control=0.01546 Glaucoma=-0.01502 Data_ON=-0.1694 Data_TON=-0.01291
+    summary_csf_p05: Wald=16.8 p=0.000778 q=0.02178
+      C(cohort, Treatment("Control"))[T.Data_ON]:C(session, Treatment("ses-01"))[T.ses-02]: est=-18.2846 SE=6.27867 CI=[-30.5905,-5.97861] p=0.003589 || C(cohort, Treatment("Control"))[T.Data_TON]:C(session, Treatment("ses-01"))[T.ses-02]: est=17.6282 SE=6.29722 CI=[5.28584,29.9705] p=0.00512 || C(cohort, Treatment("Control"))[T.Glaucoma]:C(session, Treatment("ses-01"))[T.ses-02]: est=-0.604544 SE=2.45477 CI=[-5.41581,4.20672] p=0.8055
+      model-based Δ (ses-02 − ses-01): Control=2.206 Glaucoma=1.602 Data_ON=-16.08 Data_TON=19.83
+
+8. SMALLEST INTERACTION q-VALUES (plotted)
+  rpve_csf: interaction_p=4.64e-07 q=2.599e-05 session_est=0.01546 [0.004683,0.02623]
+  summary_csf_p05: interaction_p=0.000778 q=0.02178 session_est=2.206 [0.2518,4.161]
+  rpve_wm: interaction_p=0.00752 q=0.1404 session_est=0.01615 [-0.00265,0.03494]
+  rpve_gm: interaction_p=0.01237 q=0.1731 session_est=0.01589 [-0.003228,0.03501]
+  qi_2: interaction_p=0.03655 q=0.4094 session_est=-8.542e-05 [-0.000173,2.113e-06]
+  fwhm_avg: interaction_p=0.7795 q=0.9931 session_est=-0.01282 [-0.07213,0.04648]
+
+9. LIMITATIONS
+  Data_ON has only 1 subject with both sessions; Data_TON has only 1.
+  Interaction coefficients for those cohorts are extremely imprecise.
+  Do not draw strong conclusions from Data_TON (or Data_ON) trajectories.
+  Control has 39 longitudinal subjects; Glaucoma has 8.
+  Multiple T1w runs per session inflate N_observations relative to N_sessions.
+  Age is a between-subject covariate (not time-varying in this table).
+
+10. CONVERGENCE
+  fitted_ok: 56  converged: 56  failed: 0  / 56
+  IQMs used: 56  dropped zero-variance: ['qi_1', 'summary_bg_p05']
+  plotted: ['rpve_csf', 'summary_csf_p05', 'rpve_wm', 'rpve_gm', 'qi_2', 'fwhm_avg']

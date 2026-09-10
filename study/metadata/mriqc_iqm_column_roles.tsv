@@ -1,0 +1,102 @@
+column	role	family	retained_for_statistics
+cjv	iqm	contrast	True
+cnr	iqm	contrast	True
+efc	iqm	entropy	True
+fber	iqm	energy	True
+fwhm_avg	iqm	smoothness	True
+fwhm_x	iqm	smoothness	True
+fwhm_y	iqm	smoothness	True
+fwhm_z	iqm	smoothness	True
+icvs_csf	iqm	tissue_fraction	True
+icvs_gm	iqm	tissue_fraction	True
+icvs_wm	iqm	tissue_fraction	True
+inu_med	iqm	bias_field	True
+inu_range	iqm	bias_field	True
+qi_1	iqm	artifact	True
+qi_2	iqm	artifact	True
+rpve_csf	iqm	partial_volume	True
+rpve_gm	iqm	partial_volume	True
+rpve_wm	iqm	partial_volume	True
+snr_csf	iqm	snr	True
+snr_gm	iqm	snr	True
+snr_total	iqm	snr	True
+snr_wm	iqm	snr	True
+snrd_csf	iqm	snr_dietrich	True
+snrd_gm	iqm	snr_dietrich	True
+snrd_total	iqm	snr_dietrich	True
+snrd_wm	iqm	snr_dietrich	True
+summary_bg_k	iqm	intensity_summary	True
+summary_bg_mad	iqm	intensity_summary	True
+summary_bg_mean	iqm	intensity_summary	True
+summary_bg_median	iqm	intensity_summary	True
+summary_bg_p05	iqm	intensity_summary	True
+summary_bg_p95	iqm	intensity_summary	True
+summary_bg_stdv	iqm	intensity_summary	True
+summary_csf_k	iqm	intensity_summary	True
+summary_csf_mad	iqm	intensity_summary	True
+summary_csf_mean	iqm	intensity_summary	True
+summary_csf_median	iqm	intensity_summary	True
+summary_csf_p05	iqm	intensity_summary	True
+summary_csf_p95	iqm	intensity_summary	True
+summary_csf_stdv	iqm	intensity_summary	True
+summary_gm_k	iqm	intensity_summary	True
+summary_gm_mad	iqm	intensity_summary	True
+summary_gm_mean	iqm	intensity_summary	True
+summary_gm_median	iqm	intensity_summary	True
+summary_gm_p05	iqm	intensity_summary	True
+summary_gm_p95	iqm	intensity_summary	True
+summary_gm_stdv	iqm	intensity_summary	True
+summary_wm_k	iqm	intensity_summary	True
+summary_wm_mad	iqm	intensity_summary	True
+summary_wm_mean	iqm	intensity_summary	True
+summary_wm_median	iqm	intensity_summary	True
+summary_wm_p05	iqm	intensity_summary	True
+summary_wm_p95	iqm	intensity_summary	True
+summary_wm_stdv	iqm	intensity_summary	True
+tpm_overlap_csf	iqm	template_overlap	True
+tpm_overlap_gm	iqm	template_overlap	True
+tpm_overlap_wm	iqm	template_overlap	True
+wm2max	iqm	intensity_ratio	True
+size_x	technical		False
+size_y	technical		False
+size_z	technical		False
+spacing_x	technical		False
+spacing_y	technical		False
+spacing_z	technical		False
+summary_bg_n	technical		False
+summary_csf_n	technical		False
+summary_gm_n	technical		False
+summary_wm_n	technical		False
+subject_id	metadata		False
+session	metadata		False
+cohort	metadata		False
+sex	metadata		False
+age	metadata		False
+modality	metadata		False
+sequence	metadata		False
+sequence_group	metadata		False
+protocol_name	metadata		False
+acquisition	metadata		False
+run	metadata		False
+is_norm	metadata		False
+filename	metadata		False
+bids_name	metadata		False
+input_file	metadata		False
+mriqc_source_file	metadata		False
+mriqc_source_stem	metadata		False
+mriqc_version	metadata		False
+ImageType	metadata		False
+te_s	metadata		False
+tr_s	metadata		False
+ti_s	metadata		False
+flip_angle_deg	metadata		False
+scanner	metadata		False
+coil	metadata		False
+series_number	metadata		False
+inventory_n_series	metadata		False
+inventory_n_dicom	metadata		False
+inventory_cohort	metadata		False
+inventory_exclusion_status	metadata		False
+has_anat_T1w	metadata		False
+mapping_ok	metadata		False
+mapping_notes	metadata		False

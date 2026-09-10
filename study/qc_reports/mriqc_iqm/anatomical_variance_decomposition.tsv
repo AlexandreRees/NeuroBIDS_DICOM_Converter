@@ -1,0 +1,57 @@
+iqm	family_group	n_obs	R2_A	R2_B	R2_C	delta_R2_anatomy	variance_class	anatomy_sensitive_by_construction	selected_anatomy
+cjv	contrast	132	0.0012443661750254353	0.1866123490924002	0.2800247145694188	0.09341236547701859	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+cnr	contrast	132	0.004832083553027666	0.18117811946969842	0.26134786159360657	0.08016974212390815	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+efc	entropy / information	132	0.0014421536450957007	0.3148120119520811	0.39729393366001065	0.08248192170792956	low-explained-variance	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+fber	entropy / information	132	0.001954851558329196	0.0562820996192136	0.1281292752631944	0.0718471756439808	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+fwhm_avg	smoothness / sharpness	132	0.07052179032196026	0.07726020895971031	0.13532472819469787	0.058064519234987566	mixed	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+fwhm_x	smoothness / sharpness	132	0.04395943633922683	0.059316763024932495	0.10621005952127271	0.04689329649634022	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+fwhm_y	smoothness / sharpness	132	0.0734935179442977	0.0793646968750723	0.14092845825618616	0.06156376138111386	mixed	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+fwhm_z	smoothness / sharpness	132	0.07566012841882941	0.08197927077940104	0.13337840258916345	0.05139913180976241	mixed	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+icvs_csf	morphology / tissue	132	0.02561364186740589	0.11139339749048549	0.18389440822180325	0.07250101073131776	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+icvs_gm	morphology / tissue	132	0.021374142105662464	0.3058518591712729	0.48411984544934894	0.17826798627807605	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+icvs_wm	morphology / tissue	132	2.8919964613516314e-05	0.2657347825853149	0.3782616301118903	0.11252684752657538	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+inu_med	homogeneity / bias field	132	0.00022561983272373354	0.02861673410258747	0.05860165870009726	0.029984924597509788	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+inu_range	homogeneity / bias field	132	0.0021484548423789107	0.056283257423180855	0.07510951132068233	0.018826253897501477	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+qi_2	artifact	132	0.010828940787114605	0.11402108638004171	0.18607870732266785	0.07205762094262613	low-explained-variance	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+rpve_csf	morphology / tissue	132	5.3550983334482716e-05	0.2323449134055081	0.7718983346796928	0.5395534212741847	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+rpve_gm	morphology / tissue	132	2.0577307204283635e-05	0.2334450043539108	0.7658005195059614	0.5323555151520506	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+rpve_wm	morphology / tissue	132	7.243894982522647e-06	0.22951184127153834	0.7615216516255997	0.5320098103540614	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snr_csf	signal / SNR	132	3.155896498985289e-05	0.1899890882322659	0.2887390561928086	0.0987499679605427	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snr_gm	signal / SNR	132	0.015246222764507378	0.18013119007395018	0.35593988846517854	0.17580869839122837	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snr_total	signal / SNR	132	0.008343443365995351	0.026510187051622447	0.13126244094930373	0.10475225389768128	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snr_wm	signal / SNR	132	0.004596379676747753	0.005498026480326823	0.12264143867813337	0.11714341219780655	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snrd_csf	signal / SNR	132	0.0008990347580090097	0.1666953800979163	0.24860932760370968	0.0819139475057934	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snrd_gm	signal / SNR	132	0.0003298833492828557	0.17548975908984066	0.2633186849286767	0.08782892583883606	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snrd_total	signal / SNR	132	0.00040881039653573037	0.17440290064876685	0.2607761753297878	0.08637327468102096	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+snrd_wm	signal / SNR	132	0.0003200952707429483	0.1755966392408893	0.2621408653541253	0.08654422611323598	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_bg_k	intensity	132	2.049507727586164e-05	0.015480491944165897	0.05619609938062531	0.04071560743645941	low-explained-variance	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+summary_bg_mad	intensity	132	0.001861961430295822	0.014975042662848215	0.11872293959313363	0.10374789693028541	anatomy-associated	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+summary_bg_mean	intensity	132	0.006335725454540642	0.032545451658856694	0.08795255136019975	0.055407099701343054	low-explained-variance	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+summary_bg_median	intensity	132	0.0018619614302961551	0.014975042662848437	0.11872293959313329	0.10374789693028486	anatomy-associated	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+summary_bg_p95	intensity	132	0.005636362029353026	0.006468120925787968	0.07219417126868033	0.06572605034289236	low-explained-variance	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+summary_bg_stdv	intensity	132	0.0017635843222353342	0.15948988529130537	0.2174290839615598	0.05793919867025443	low-explained-variance	FALSE	icv_etiv+total_wm+mean_cortical_thickness
+summary_csf_k	intensity	132	0.0005705680424312742	0.15718780211434913	0.26472352969631807	0.10753572758196894	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_csf_mad	intensity	132	0.007738349632483543	0.16081454459353983	0.2722957788848943	0.11148123429135448	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_csf_mean	intensity	132	0.025430690321160743	0.1617438749729312	0.27018060562769497	0.10843673065476378	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_csf_median	intensity	132	0.024023052559768665	0.14397183767246335	0.22973255669849013	0.08576071902602678	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_csf_p05	intensity	132	0.0006709555943185119	0.2662842064826635	0.40843756436595213	0.14215335788328864	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_csf_p95	intensity	132	0.04492737255720691	0.11966049738206797	0.22044181442880184	0.10078131704673388	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_csf_stdv	intensity	132	0.04942917342635467	0.17474510035683166	0.2568145268706823	0.08206942651385063	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_gm_k	intensity	132	0.014643450129204094	0.08674817508221722	0.10405833869649206	0.017310163614274843	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_gm_mad	intensity	132	4.463243130914396e-05	0.12567993356191176	0.37111102636781934	0.24543109280590758	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_gm_mean	intensity	132	0.002542312372251998	0.0744612755997418	0.1730536103174548	0.098592334717713	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_gm_median	intensity	132	0.00022492707149435187	0.11572049644166293	0.19925834305012646	0.08353784660846353	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_gm_p05	intensity	132	0.018039728891686924	0.09145489580798905	0.2323805428036153	0.14092564699562626	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_gm_p95	intensity	132	0.01004761378414154	0.28274348407397465	0.4371956020154184	0.15445211794144376	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_gm_stdv	intensity	132	0.012969643392738983	0.22033613254831363	0.3978358971715684	0.17749976462325479	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_wm_k	intensity	132	0.03197189618752072	0.07007266970642745	0.12512673876070102	0.05505406905427357	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_wm_mad	intensity	132	0.00434613275527973	0.062083386494782844	0.18243170988586832	0.12034832339108548	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_wm_mean	intensity	132	0.0055838070326152955	0.013049902990323048	0.15617038555257312	0.14312048256225007	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_wm_median	intensity	132	0.001932854466173639	0.03826472054361996	0.13472577802665076	0.0964610574830308	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_wm_p05	intensity	132	0.006038263884703854	0.007380076399938762	0.1602890565423446	0.15290898014240584	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_wm_p95	intensity	132	0.009067148960267502	0.01754811359378905	0.12137638383035876	0.10382827023656971	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+summary_wm_stdv	intensity	132	0.0035050719867941726	0.004406715007357231	0.13343680726509666	0.12903009225773943	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+tpm_overlap_csf	morphology / tissue	132	0.009055755528151188	0.27299033082761726	0.3763431402501036	0.10335280942248637	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+tpm_overlap_gm	morphology / tissue	132	0.004408182980361941	0.16740561189770053	0.25555432805176037	0.08814871615405984	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+tpm_overlap_wm	morphology / tissue	132	0.027621565847071095	0.11137500333754202	0.2223702302931425	0.11099522695560049	anatomy-associated	TRUE	icv_etiv+total_wm+mean_cortical_thickness
+wm2max	intensity	132	0.030844762981090512	0.19114749297948108	0.20175176289612184	0.010604269916640763	low-explained-variance	TRUE	icv_etiv+total_wm+mean_cortical_thickness

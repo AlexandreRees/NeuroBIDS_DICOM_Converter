@@ -1,0 +1,303 @@
+T1w IQM PCA detailed interpretation (PC1–PC10)
+generated_at: 2026-09-09T18:52:40.153297+00:00
+
+SCOPE
+  Existing PCA loadings and variance were read only. PCA was not recomputed.
+  Source PCA files were not rewritten. Cohorts were not analysed.
+  FreeSurfer was not used. No statistical tests and no machine learning.
+  Components are not renamed as quality, motion, or disease.
+
+INPUTS (read-only)
+  loadings: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_loadings.tsv
+  loadings sha256: 41b674ebc31260479d642d2b2de4e287b3a84f778d801c459d79afa864887748
+  variance: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_variance.tsv
+  variance sha256: d2aa51fd8bc399e4002ce59a3cab5c857ae70213e735ea4d8f37d9f510b18f60
+
+DEFINITIONS
+  loading: signed weight of a z-scored IQM on a principal component.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+  loading_squared: loading^2.
+  contribution: loading_squared / sum(loading_squared) on that PC.
+  The global sign of a PC is arbitrary (SVD sign flip); relative signs
+  within one PC remain interpretable as opposite directions on that axis.
+
+FAMILY MAPPING (conservative, MRIQC 24.0.2 anatomical taxonomy)
+  signal / SNR            snr_*, snrd_*
+  contrast                cjv, cnr
+  intensity               summary_*, wm2max
+  homogeneity / bias field inu_* (INU)
+  artifact                qi_* (QI2; QI1 was zero-variance and not in PCA)
+  entropy / information   efc, fber
+  morphology / tissue     icvs_*, rpve_*, tpm_overlap_*
+  smoothness / sharpness  fwhm_* (MRIQC: sharpness / blurriness)
+  other                   unused fallback; no IQM was forced into a family
+  Fine-grained iqm_family labels from mriqc_iqm_lib are kept in the TSV.
+
+CHECKS
+  - PC1–PC10 present in loadings: yes (PC1, PC2, PC3, PC4, PC5, PC6, PC7, PC8, PC9, PC10)
+  - N IQMs in loadings: 56 (expected 56)
+  - Unexpected missing loadings on PC1–PC10: none
+  - PC1 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC2 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC3 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC4 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC5 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC6 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC7 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC8 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC9 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - PC10 sum(loading^2)=1.00000000; sum(relative contribution)=1.0000000000
+  - Relative contributions sum to ~100% on every PC1–PC10: yes
+  - Family contributions sum to ~100% on every PC1–PC10: yes
+  - PCA was not recomputed.
+  - Source PCA file hashes unchanged after write: yes
+
+COMPONENT NOTES
+
+PC1 — explained variance 41.11% (cumulative 41.11%)
+  Dominant family by squared-loading share: intensity (59.9%).
+  Families with contribution > 8%: intensity (59.9%); morphology / tissue (13.2%); signal / SNR (8.3%).
+  Top 5 contribution: 19.6%. Top 10 contribution: 38.5%.
+  IQMs needed for 50/75/90% of this PC: 14/25/33.
+  Contribution is dispersed across many IQMs (50% requires 14 IQMs; 90% requires 33; Top 10 share 38.5%).
+  Among the Top 10, 8 loading(s) are positive and 2 are negative.
+  Leading positive loadings: summary_gm_p95, summary_wm_p95, inu_range, inu_med, summary_gm_median.
+  Leading negative loadings: wm2max, cnr.
+  Top 10 IQMs by |loading|:
+     1. summary_gm_p95      loading=+0.2005  contribution=4.02%  [intensity]
+     2. summary_wm_p95      loading=+0.1992  contribution=3.97%  [intensity]
+     3. inu_range           loading=+0.1987  contribution=3.95%  [homogeneity / bias field]
+     4. wm2max              loading=-0.1965  contribution=3.86%  [intensity]
+     5. inu_med             loading=+0.1960  contribution=3.84%  [homogeneity / bias field]
+     6. summary_gm_median   loading=+0.1956  contribution=3.83%  [intensity]
+     7. summary_gm_mean     loading=+0.1954  contribution=3.82%  [intensity]
+     8. icvs_wm             loading=+0.1945  contribution=3.78%  [morphology / tissue]
+     9. cjv                 loading=+0.1922  contribution=3.70%  [contrast]
+    10. cnr                 loading=-0.1922  contribution=3.69%  [contrast]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue or background intensity-summary IQMs. Leading weights mix high-percentile GM/WM intensities, INU magnitude, WM-to-max intensity, WM volume fraction, and opposite CJV vs CNR signs. That is a joint intensity–, contrast–, and bias-field-related combination, not a demonstration that PC1 equals image quality. The single largest |loading| is summary_gm_p95 [intensity; loading=+0.201].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC2 — explained variance 11.42% (cumulative 52.53%)
+  Dominant family by squared-loading share: intensity (40.0%).
+  Families with contribution > 8%: intensity (40.0%); signal / SNR (23.5%); morphology / tissue (20.6%); smoothness / sharpness (9.1%).
+  Top 5 contribution: 25.4%. Top 10 contribution: 46.3%.
+  IQMs needed for 50/75/90% of this PC: 12/22/31.
+  Contribution is dispersed across many IQMs (50% requires 12 IQMs; 90% requires 31; Top 10 share 46.3%).
+  Among the Top 10, 5 loading(s) are positive and 5 are negative.
+  Leading positive loadings: snr_total, snr_wm, summary_wm_p05, summary_gm_p05, summary_csf_median.
+  Leading negative loadings: rpve_csf, rpve_gm, rpve_wm, summary_wm_mad, summary_wm_stdv.
+  Top 10 IQMs by |loading|:
+     1. snr_total           loading=+0.2364  contribution=5.59%  [signal / SNR]
+     2. snr_wm              loading=+0.2302  contribution=5.30%  [signal / SNR]
+     3. summary_wm_p05      loading=+0.2247  contribution=5.05%  [intensity]
+     4. rpve_csf            loading=-0.2200  contribution=4.84%  [morphology / tissue]
+     5. summary_gm_p05      loading=+0.2151  contribution=4.63%  [intensity]
+     6. rpve_gm             loading=-0.2112  contribution=4.46%  [morphology / tissue]
+     7. summary_csf_median  loading=+0.2109  contribution=4.45%  [intensity]
+     8. rpve_wm             loading=-0.2109  contribution=4.45%  [morphology / tissue]
+     9. summary_wm_mad      loading=-0.1955  contribution=3.82%  [intensity]
+    10. summary_wm_stdv     loading=-0.1919  contribution=3.68%  [intensity]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue or background intensity-summary IQMs. Standard SNR IQMs load in one direction while residual partial-volume IQMs (rpve_*) load in the opposite direction among the leaders. This describes co-variation along the axis, not a motion or disease score. The single largest |loading| is snr_total [signal / SNR; loading=+0.236].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC3 — explained variance 9.59% (cumulative 62.12%)
+  Dominant family by squared-loading share: intensity (39.2%).
+  Families with contribution > 8%: intensity (39.2%); signal / SNR (35.0%); morphology / tissue (13.8%).
+  Top 5 contribution: 36.4%. Top 10 contribution: 60.1%.
+  IQMs needed for 50/75/90% of this PC: 8/16/26.
+  Contribution is moderately concentrated (50% by 8 IQMs; 75% by 16; 90% by 26; Top 10 share 60.1%).
+  Among the Top 10, 8 loading(s) are positive and 2 are negative.
+  Leading positive loadings: snrd_csf, snrd_total, snrd_gm, snrd_wm, summary_gm_p05.
+  Leading negative loadings: efc, qi_2.
+  Top 10 IQMs by |loading|:
+     1. snrd_csf            loading=+0.2824  contribution=7.98%  [signal / SNR]
+     2. snrd_total          loading=+0.2721  contribution=7.41%  [signal / SNR]
+     3. snrd_gm             loading=+0.2713  contribution=7.36%  [signal / SNR]
+     4. snrd_wm             loading=+0.2675  contribution=7.16%  [signal / SNR]
+     5. summary_gm_p05      loading=+0.2546  contribution=6.48%  [intensity]
+     6. efc                 loading=-0.2479  contribution=6.15%  [entropy / information]
+     7. summary_csf_mad     loading=+0.2366  contribution=5.60%  [intensity]
+     8. qi_2                loading=-0.2182  contribution=4.76%  [artifact]
+     9. summary_csf_stdv    loading=+0.2057  contribution=4.23%  [intensity]
+    10. rpve_gm             loading=+0.1739  contribution=3.02%  [morphology / tissue]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue or background intensity-summary IQMs. Dietrich SNR IQMs (snrd_*) share the same sign among the leaders, while EFC and QI2 take the opposite sign. That is consistent with a noise-model / information-theory contrast on this axis, not a quality grade. The single largest |loading| is snrd_csf [signal / SNR; loading=+0.282].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC4 — explained variance 7.35% (cumulative 69.47%)
+  Dominant family by squared-loading share: smoothness / sharpness (55.6%).
+  Families with contribution > 8%: smoothness / sharpness (55.6%); intensity (21.9%); signal / SNR (12.6%).
+  Top 5 contribution: 59.5%. Top 10 contribution: 74.1%.
+  IQMs needed for 50/75/90% of this PC: 4/11/20.
+  Contribution is moderately concentrated (50% by 4 IQMs; 75% by 11; 90% by 20; Top 10 share 74.1%).
+  Among the Top 10, 9 loading(s) are positive and 1 are negative.
+  Leading positive loadings: fwhm_avg, fwhm_y, fwhm_x, fwhm_z, summary_bg_median.
+  Leading negative loadings: summary_csf_median.
+  Top 10 IQMs by |loading|:
+     1. fwhm_avg            loading=+0.3858  contribution=14.88%  [smoothness / sharpness]
+     2. fwhm_y              loading=+0.3756  contribution=14.11%  [smoothness / sharpness]
+     3. fwhm_x              loading=+0.3686  contribution=13.59%  [smoothness / sharpness]
+     4. fwhm_z              loading=+0.3605  contribution=12.99%  [smoothness / sharpness]
+     5. summary_bg_median   loading=+0.1985  contribution=3.94%  [intensity]
+     6. summary_bg_mad      loading=+0.1985  contribution=3.94%  [intensity]
+     7. snrd_gm             loading=+0.1664  contribution=2.77%  [signal / SNR]
+     8. snrd_wm             loading=+0.1634  contribution=2.67%  [signal / SNR]
+     9. snrd_total          loading=+0.1611  contribution=2.60%  [signal / SNR]
+    10. summary_csf_median  loading=-0.1607  contribution=2.58%  [intensity]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by spatial smoothness / FWHM IQMs. The four FWHM IQMs occupy the top ranks with the same sign, so the axis is closely aligned with spatial smoothness / sharpness metrics. The single largest |loading| is fwhm_avg [smoothness / sharpness; loading=+0.386].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC5 — explained variance 6.57% (cumulative 76.04%)
+  Dominant family by squared-loading share: signal / SNR (34.7%).
+  Families with contribution > 8%: signal / SNR (34.7%); intensity (34.4%); morphology / tissue (17.5%); smoothness / sharpness (10.3%).
+  Top 5 contribution: 36.2%. Top 10 contribution: 62.2%.
+  IQMs needed for 50/75/90% of this PC: 8/14/21.
+  Contribution is moderately concentrated (50% by 8 IQMs; 75% by 14; 90% by 21; Top 10 share 62.2%).
+  Among the Top 10, 8 loading(s) are positive and 2 are negative.
+  Leading positive loadings: snr_csf, summary_csf_p05, snrd_csf, snrd_total, snrd_gm.
+  Leading negative loadings: summary_csf_mad, tpm_overlap_gm.
+  Top 10 IQMs by |loading|:
+     1. snr_csf             loading=+0.2954  contribution=8.73%  [signal / SNR]
+     2. summary_csf_p05     loading=+0.2865  contribution=8.21%  [intensity]
+     3. snrd_csf            loading=+0.2669  contribution=7.12%  [signal / SNR]
+     4. snrd_total          loading=+0.2478  contribution=6.14%  [signal / SNR]
+     5. snrd_gm             loading=+0.2445  contribution=5.98%  [signal / SNR]
+     6. snrd_wm             loading=+0.2417  contribution=5.84%  [signal / SNR]
+     7. summary_bg_mad      loading=+0.2388  contribution=5.70%  [intensity]
+     8. summary_bg_median   loading=+0.2388  contribution=5.70%  [intensity]
+     9. summary_csf_mad     loading=-0.2255  contribution=5.09%  [intensity]
+    10. tpm_overlap_gm      loading=-0.1908  contribution=3.64%  [morphology / tissue]
+  Descriptive reading: This component appears to capture a multivariate axis on which signal-to-noise IQMs (including Dietrich SNR where present) have large weights. CSF-related SNR and CSF intensity percentiles appear among the leaders together with Dietrich SNR. This remains a description of metric co-variation. The single largest |loading| is snr_csf [signal / SNR; loading=+0.295].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC6 — explained variance 4.95% (cumulative 80.99%)
+  Dominant family by squared-loading share: intensity (70.6%).
+  Families with contribution > 8%: intensity (70.6%); morphology / tissue (14.6%).
+  Top 5 contribution: 45.2%. Top 10 contribution: 65.9%.
+  IQMs needed for 50/75/90% of this PC: 6/14/24.
+  Contribution is moderately concentrated (50% by 6 IQMs; 75% by 14; 90% by 24; Top 10 share 65.9%).
+  Among the Top 10, 9 loading(s) are positive and 1 are negative.
+  Leading positive loadings: summary_bg_median, summary_bg_mad, summary_bg_mean, summary_bg_stdv, summary_bg_p95.
+  Leading negative loadings: summary_bg_k.
+  Top 10 IQMs by |loading|:
+     1. summary_bg_median   loading=+0.3321  contribution=11.03%  [intensity]
+     2. summary_bg_mad      loading=+0.3321  contribution=11.03%  [intensity]
+     3. summary_bg_mean     loading=+0.2983  contribution=8.90%  [intensity]
+     4. summary_bg_stdv     loading=+0.2802  contribution=7.85%  [intensity]
+     5. summary_bg_p95      loading=+0.2532  contribution=6.41%  [intensity]
+     6. tpm_overlap_gm      loading=+0.2302  contribution=5.30%  [morphology / tissue]
+     7. summary_bg_k        loading=-0.2029  contribution=4.12%  [intensity]
+     8. qi_2                loading=+0.1997  contribution=3.99%  [artifact]
+     9. efc                 loading=+0.1978  contribution=3.91%  [entropy / information]
+    10. icvs_gm             loading=+0.1828  contribution=3.34%  [morphology / tissue]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue or background intensity-summary IQMs. Background-intensity summaries (summary_bg_*) occupy most of the top ranks. The axis is therefore largely an intensity-summary combination in air/background. The single largest |loading| is summary_bg_median [intensity; loading=+0.332].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC7 — explained variance 3.68% (cumulative 84.67%)
+  Dominant family by squared-loading share: intensity (50.9%).
+  Families with contribution > 8%: intensity (50.9%); morphology / tissue (18.6%); smoothness / sharpness (13.4%); signal / SNR (12.7%).
+  Top 5 contribution: 34.1%. Top 10 contribution: 57.4%.
+  IQMs needed for 50/75/90% of this PC: 9/16/24.
+  Contribution is moderately concentrated (50% by 9 IQMs; 75% by 16; 90% by 24; Top 10 share 57.4%).
+  Among the Top 10, 3 loading(s) are positive and 7 are negative.
+  Leading positive loadings: summary_wm_p05, summary_wm_median, snr_wm.
+  Leading negative loadings: tpm_overlap_gm, snr_csf, summary_csf_k, tpm_overlap_csf, summary_csf_p05.
+  Top 10 IQMs by |loading|:
+     1. tpm_overlap_gm      loading=-0.3077  contribution=9.47%  [morphology / tissue]
+     2. summary_wm_p05      loading=+0.2564  contribution=6.57%  [intensity]
+     3. snr_csf             loading=-0.2512  contribution=6.31%  [signal / SNR]
+     4. summary_csf_k       loading=-0.2432  contribution=5.91%  [intensity]
+     5. tpm_overlap_csf     loading=-0.2415  contribution=5.83%  [morphology / tissue]
+     6. summary_csf_p05     loading=-0.2255  contribution=5.08%  [intensity]
+     7. summary_wm_median   loading=+0.2237  contribution=5.00%  [intensity]
+     8. summary_bg_k        loading=-0.2195  contribution=4.82%  [intensity]
+     9. snr_wm              loading=+0.2104  contribution=4.43%  [signal / SNR]
+    10. fwhm_z              loading=-0.1997  contribution=3.99%  [smoothness / sharpness]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue or background intensity-summary IQMs. Template-overlap IQMs appear together with mixed SNR and intensity summaries. No single MRIQC construct is exclusive on this axis. The single largest |loading| is tpm_overlap_gm [morphology / tissue; loading=-0.308].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC8 — explained variance 2.60% (cumulative 87.27%)
+  Dominant family by squared-loading share: morphology / tissue (57.8%).
+  Families with contribution > 8%: morphology / tissue (57.8%); intensity (23.0%); signal / SNR (11.7%).
+  Top 5 contribution: 60.7%. Top 10 contribution: 78.6%.
+  IQMs needed for 50/75/90% of this PC: 4/9/18.
+  Contribution is moderately concentrated (50% by 4 IQMs; 75% by 9; 90% by 18; Top 10 share 78.6%).
+  Among the Top 10, 6 loading(s) are positive and 4 are negative.
+  Leading positive loadings: rpve_wm, rpve_gm, rpve_csf, snr_csf, snr_wm.
+  Leading negative loadings: tpm_overlap_gm, summary_csf_mad, summary_wm_stdv, fber.
+  Top 10 IQMs by |loading|:
+     1. rpve_wm             loading=+0.3903  contribution=15.23%  [morphology / tissue]
+     2. rpve_gm             loading=+0.3861  contribution=14.91%  [morphology / tissue]
+     3. rpve_csf            loading=+0.3843  contribution=14.77%  [morphology / tissue]
+     4. tpm_overlap_gm      loading=-0.3157  contribution=9.96%  [morphology / tissue]
+     5. snr_csf             loading=+0.2409  contribution=5.80%  [signal / SNR]
+     6. summary_csf_mad     loading=-0.2192  contribution=4.80%  [intensity]
+     7. snr_wm              loading=+0.1938  contribution=3.76%  [signal / SNR]
+     8. summary_wm_stdv     loading=-0.1886  contribution=3.56%  [intensity]
+     9. summary_wm_p05      loading=+0.1789  contribution=3.20%  [intensity]
+    10. fber                loading=-0.1606  contribution=2.58%  [entropy / information]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue-fraction, residual partial-volume, and/or template-overlap IQMs. The three residual partial-volume IQMs lead with the same sign, so the axis is closely aligned with rpve_* co-variation. The single largest |loading| is rpve_wm [morphology / tissue; loading=+0.390].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC9 — explained variance 2.05% (cumulative 89.32%)
+  Dominant family by squared-loading share: intensity (62.5%).
+  Families with contribution > 8%: intensity (62.5%); morphology / tissue (20.3%); entropy / information (9.5%).
+  Top 5 contribution: 77.0%. Top 10 contribution: 87.8%.
+  IQMs needed for 50/75/90% of this PC: 2/5/13.
+  Contribution is concentrated: a small subset of IQMs accounts for most of this axis (50% by 2 IQMs; 90% by 13; Top 10 share 87.8%).
+  Among the Top 10, 3 loading(s) are positive and 7 are negative.
+  Leading positive loadings: summary_csf_k, fber, qi_2.
+  Leading negative loadings: summary_bg_k, tpm_overlap_wm, tpm_overlap_gm, efc, summary_wm_median.
+  Top 10 IQMs by |loading|:
+     1. summary_csf_k       loading=+0.5200  contribution=27.04%  [intensity]
+     2. summary_bg_k        loading=-0.4937  contribution=24.38%  [intensity]
+     3. tpm_overlap_wm      loading=-0.3728  contribution=13.90%  [morphology / tissue]
+     4. fber                loading=+0.2489  contribution=6.19%  [entropy / information]
+     5. tpm_overlap_gm      loading=-0.2352  contribution=5.53%  [morphology / tissue]
+     6. efc                 loading=-0.1830  contribution=3.35%  [entropy / information]
+     7. qi_2                loading=+0.1778  contribution=3.16%  [artifact]
+     8. summary_wm_median   loading=-0.1393  contribution=1.94%  [intensity]
+     9. summary_wm_mean     loading=-0.1106  contribution=1.22%  [intensity]
+    10. summary_csf_p05     loading=-0.1063  contribution=1.13%  [intensity]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue or background intensity-summary IQMs. Intensity-distribution kurtosis (summary_csf_k vs summary_bg_k) and template-overlap IQMs dominate. Opposite signs among kurtosis IQMs describe an opposition along this axis, not a clinical label. The single largest |loading| is summary_csf_k [intensity; loading=+0.520].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+PC10 — explained variance 1.71% (cumulative 91.03%)
+  Dominant family by squared-loading share: intensity (47.0%).
+  Families with contribution > 8%: intensity (47.0%); morphology / tissue (30.7%); signal / SNR (11.1%).
+  Top 5 contribution: 55.3%. Top 10 contribution: 71.4%.
+  IQMs needed for 50/75/90% of this PC: 5/12/21.
+  Contribution is moderately concentrated (50% by 5 IQMs; 75% by 12; 90% by 21; Top 10 share 71.4%).
+  Among the Top 10, 4 loading(s) are positive and 6 are negative.
+  Leading positive loadings: summary_bg_k, summary_bg_p95, summary_bg_median, summary_bg_mad.
+  Leading negative loadings: tpm_overlap_wm, tpm_overlap_gm, qi_2, icvs_csf, summary_wm_median.
+  Top 10 IQMs by |loading|:
+     1. summary_bg_k        loading=+0.4570  contribution=20.89%  [intensity]
+     2. tpm_overlap_wm      loading=-0.3316  contribution=11.00%  [morphology / tissue]
+     3. tpm_overlap_gm      loading=-0.3128  contribution=9.78%  [morphology / tissue]
+     4. qi_2                loading=-0.2715  contribution=7.37%  [artifact]
+     5. icvs_csf            loading=-0.2510  contribution=6.30%  [morphology / tissue]
+     6. summary_wm_median   loading=-0.2067  contribution=4.27%  [intensity]
+     7. summary_bg_p95      loading=+0.1861  contribution=3.46%  [intensity]
+     8. summary_bg_median   loading=+0.1750  contribution=3.06%  [intensity]
+     9. summary_bg_mad      loading=+0.1750  contribution=3.06%  [intensity]
+    10. summary_gm_mad      loading=-0.1496  contribution=2.24%  [intensity]
+  Descriptive reading: This component appears to capture a multivariate axis dominated by tissue or background intensity-summary IQMs. Background kurtosis, template overlap, and QI2 appear among the leaders. The axis is mixed rather than a single named artifact construct. The single largest |loading| is summary_bg_k [intensity; loading=+0.457].  Family shares are sums of loading². The intensity group contains 28 IQMs (summary_* and wm2max), so it can rank first even when the largest individual loadings belong to another group.
+  A loading is an association with a PCA axis after IQM z-scoring. It is not a causal effect, not a quality grade, and not an MRIQC pass/fail.
+
+CAVEATS
+  Do not read PC1 as 'quality', PC2 as 'motion', or later PCs as disease.
+  Those labels are not demonstrated by loadings alone.
+  Family contributions are sums of loading². A large family (intensity
+  summaries) can dominate the family table without being the largest
+  individual loading. Compare the family table with the Top 10 IQMs.
+  Family contributions describe which MRIQC metric groups have large
+  squared weights on an axis in this T1w sample.
+
+OUTPUTS (new files only)
+  pca_T1w_PC1_PC10_detailed.tsv
+  pca_T1w_PC1_PC10_top10.tsv
+  pca_T1w_PC1_PC10_family_contributions.tsv
+  pca_T1w_PC1_PC10_summary.tsv
+  pca_T1w_PC1_PC10_detailed_report.txt
+  pca_T1w_PC1_PC10_top_loadings.png
+  pca_T1w_PC1_PC10_family_contributions.png

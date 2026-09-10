@@ -1,0 +1,133 @@
+Physical-acquisition MRIQC IQM acquisition/cohort analysis
+generated_at: 2026-09-09T19:49:44.039462+00:00
+
+1. Objective
+  Determine which of 56 MRIQC T1w IQMs associate with measurable
+  acquisition characteristics and which cohort associations remain
+  after acquisition, demographic, and repeated-subject adjustment.
+  Anatomy is not included. This is a baseline before FreeSurfer.
+
+2. Dataset
+  /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_physical_acquisition.tsv
+  sha256: be1d89fd0359fe86eb478fb9fda5a2e8fbd98e0c203229a81011792d00a2692a
+  n=133 physical acquisitions from 83 subjects.
+  The 264-row reconstruction table was not used as the analysis unit.
+  MRIQC, PCA, and previous cohort/longitudinal files were not modified.
+
+3. Unit of observation
+  One representative reconstruction per physical T1w acquisition.
+  Unique physical_acquisition_id: 133.
+  Unique subject×session except the documented sub-043 ses-02 case
+  (two independent physical scans in one session).
+  Repeated measures are modeled with (1|subject_id), not as independent rows.
+
+4. Acquisition variables
+  Inventoried from the physical table plus sidecars of the selected 133 files.
+  software_platform: E11 n=127, XA30 n=6 (exploratory).
+  Described as association with acquisition/software platform, not a causal scanner effect.
+  SAR: n_missing=6 (the 6 XA30 rows). Modeled on n=127.
+  TxRefAmp: n_missing=6 (the 6 XA30 rows). Modeled on n=127.
+  scanner / SoftwareVersions / ManufacturersModelName share the E11 vs XA30 partition
+  and are not entered together.
+  NORM/non-NORM is not an inferential predictor. In this selected table the 6 XA30
+  rows are exactly the 6 non-NORM reconstructions, so platform and NORM are aliased.
+  Protocol timing/geometry fields are constant (T1w_MPR 0.8 mm) and are not modeled.
+
+5. Statistical models
+  MixedLM, REML, random intercept (1|subject_id).
+  Model A: IQM ~ cohort + age + sex + session + (1|subject_id)
+  Model B: IQM ~ acquisition + age + sex + session + (1|subject_id)
+  Model C: IQM ~ cohort + acquisition + age + sex + session + (1|subject_id)
+  Acquisition variables are fit in separate B/C models (not a joint collinear block).
+  Session is categorical with reference ses-01. Cohort reference is Control.
+  Age is continuous. Sex is categorical.
+
+6. FDR correction
+  Benjamini–Hochberg, alpha=0.05, separately for each family of 56 IQM tests.
+  Families are defined by model × focal predictor (e.g. Model A Glaucoma,
+  Model B SAR, Model C software_platform Glaucoma).
+  Unrelated families are not pooled.
+
+7. Acquisition effects
+  Model B software_platform: 5/56 IQMs with q<0.05
+  Model B SAR: 23/56 IQMs with q<0.05
+  Model B TxRefAmp: 27/56 IQMs with q<0.05
+  See acquisition_physical_acq_report.txt and acquisition_physical_acq_top_iqms.tsv.
+  Standardized coefficients are used for ranking and heatmaps because IQMs have different scales.
+
+8. Cohort effects before acquisition adjustment
+  Model A Control vs Glaucoma: 5/56 IQMs with q<0.05
+  Model A Control vs Data_ON: 0/56 IQMs with q<0.05
+  Model A Control vs Data_TON: 0/56 IQMs with q<0.05
+
+9. Cohort effects after acquisition adjustment
+  Primary adjustment uses software_platform (complete n=133).
+  Model C Control vs Glaucoma: 5/56 IQMs with q<0.05
+  Model C Control vs Data_ON: 1/56 IQMs with q<0.05
+  Model C Control vs Data_TON: 0/56 IQMs with q<0.05
+  A vs C (3×56 cells): retained=5, attenuated=0, lost=0, newly apparent=1.
+  Residual cohort coefficients are not interpreted as disease or biology.
+
+10. IQM-family interpretation
+  Taxonomy is descriptive, not biological.
+  Acquisition-sensitive (Model B q<0.05, any modeled acquisition variable): 33
+    snr_gm, cjv, cnr, summary_bg_k, summary_bg_mad, summary_bg_mean, summary_bg_median, summary_bg_p95, summary_bg_stdv, summary_csf_p95, summary_csf_stdv, summary_gm_mean, summary_gm_median, summary_gm_p95, summary_gm_stdv, summary_wm_k, summary_wm_mad, summary_wm_median, summary_wm_p95, wm2max, inu_med, inu_range, qi_2, efc, fber, icvs_csf, icvs_gm, icvs_wm, tpm_overlap_csf, fwhm_avg, fwhm_x, fwhm_y, fwhm_z
+  Cohort-associated after demographics (Model A q<0.05, any cohort): 5
+    summary_bg_mad, summary_bg_mean, summary_bg_median, summary_bg_p95, summary_wm_p95
+  Acquisition-adjusted cohort-associated (Model C software_platform q<0.05): 6
+    summary_bg_mad, summary_bg_mean, summary_bg_median, summary_bg_p95, summary_wm_p95, fwhm_y
+  Neither in the current models: 23
+
+11. Small-sample limitations
+  total physical acquisitions=133
+  total subjects=83
+  repeated subjects=50
+  acquisitions per cohort={'Control': 95, 'Glaucoma': 27, 'Data_ON': 8, 'Data_TON': 3}
+  subjects per cohort={'Control': 55, 'Glaucoma': 19, 'Data_ON': 7, 'Data_TON': 2}
+  E11 n=127  XA30 n=6
+  SAR missing=6  TxRefAmp missing=6
+  XA30 n=6: exploratory; do not make strong claims.
+  Data_TON n=2 subjects: do not use as evidence for general cohort effects.
+  Data_ON is also small.
+  SAR/TxRefAmp models cannot estimate a platform contrast because XA30 rows are missing those fields.
+
+12. What can be concluded now
+  Whether measurable acquisition variables (software platform, SAR, TxRefAmp)
+  are associated with MRIQC IQMs after age, sex, session, and repeated-subject structure.
+  Whether cohort associations persist after those acquisition adjustments.
+  Which IQMs are robustly associated with acquisition characteristics (FDR q<0.05).
+
+13. What cannot yet be concluded
+  Whether residual cohort effects are anatomical.
+  Whether an IQM difference represents worse or better image quality.
+  Whether an IQM is caused by disease.
+  Causal relationships of any kind.
+  That a non-significant acquisition test means no acquisition effect.
+  cohort effect ≠ disease effect; IQM difference ≠ image-quality difference.
+
+14. Planned FreeSurfer/anatomy analysis
+  Planned anatomy-adjusted analysis
+  The current full non-anatomical model is
+    IQM ~ cohort + acquisition + age + sex + session + (1|subject_id).
+  After recon-all completes, anatomical variables can be added as
+    IQM ~ cohort + acquisition + anatomy + age + sex + session + (1|subject_id).
+  The purpose is to test whether residual cohort-associated IQM variation
+  is accounted for by anatomical variation. Candidate FreeSurfer variables
+  include intracranial volume, total GM/WM/CSF, hippocampal volume,
+  regional cortical volumes, and cortical thickness. Not all will necessarily
+  be used; selection will depend on completeness, collinearity, and a
+  pre-specified anatomical rationale. This script does not implement that model.
+
+15. Output files
+  acquisition_physical_acq_results.tsv
+  acquisition_physical_acq_report.txt
+  acquisition_physical_acq_heatmap.png
+  acquisition_physical_acq_top_iqms.tsv
+  cohort_acquisition_adjusted_results.tsv
+  cohort_acquisition_adjusted_report.txt
+  cohort_acquisition_adjusted_heatmap.png
+  cohort_acquisition_comparison.tsv
+  cohort_acquisition_comparison.png
+  /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/acquisition_cohort_physical_acq_report.txt
+
+scipy 1.15.1  statsmodels 0.14.6

@@ -1,0 +1,57 @@
+IQM	family_group	mean_coefficient	median_coefficient	coefficient_sd	nonzero_fraction	sign_consistency
+cjv	contrast	0.004858983994	0	0.01086501851	0.2	0.2
+cnr	contrast	-0.01259543127	0	0.02816424054	0.2	0.2
+efc	entropy / information	0.4136956963	0.1790683114	0.4943010688	1	1
+fber	entropy / information	-0.06800859935	0	0.09695714682	0.4	0.4
+fwhm_avg	smoothness / sharpness	0	0	0	0	0
+fwhm_x	smoothness / sharpness	-0.1673954173	0	0.3743075322	0.2	0.2
+fwhm_y	smoothness / sharpness	0	0	0	0	0
+fwhm_z	smoothness / sharpness	-0.0961813274	0	0.2150679862	0.2	0.2
+icvs_csf	morphology / tissue	-0.06006902049	0	0.1343184132	0.2	0.2
+icvs_gm	morphology / tissue	-0.0893388134	-0.09892061075	0.08808410105	0.6	0.6
+icvs_wm	morphology / tissue	0.301907169	0.2043847793	0.3118309384	1	1
+inu_med	homogeneity / bias field	0.0008556762723	0	0.001913350312	0.2	0.2
+inu_range	homogeneity / bias field	0	0	0	0	0
+qi_2	artifact	-0.02800274939	0	0.04979508101	0.4	0.4
+rpve_csf	morphology / tissue	0.01404844758	0	0.03141328377	0.2	0.2
+rpve_gm	morphology / tissue	0	0	0	0	0
+rpve_wm	morphology / tissue	0	0	0	0	0
+snr_csf	signal / SNR	-0.04319604097	0	0.09658928397	0.2	0.2
+snr_gm	signal / SNR	-0.03302786806	0	0.05430624341	0.4	0.4
+snr_total	signal / SNR	-0.02706748475	0	0.06052473589	0.2	0.2
+snr_wm	signal / SNR	0	0	0	0	0
+snrd_csf	signal / SNR	0	0	0	0	0
+snrd_gm	signal / SNR	0.01737453597	0	0.03885064351	0.2	0.2
+snrd_total	signal / SNR	0	0	0	0	0
+snrd_wm	signal / SNR	0.01214929446	0	0.02716664829	0.2	0.2
+summary_bg_k	intensity	0.01415142085	0	0.031643539	0.2	0.2
+summary_bg_mad	intensity	0	0	0	0	0
+summary_bg_mean	intensity	0.1986016816	0	0.4001672296	0.4	0.4
+summary_bg_median	intensity	0	0	0	0	0
+summary_bg_p95	intensity	0.001226028083	0	0.002741482136	0.2	0.2
+summary_bg_stdv	intensity	0.1768762795	0	0.3538371783	0.4	0.4
+summary_csf_k	intensity	-0.005267096121	0	0.01177758497	0.2	0.2
+summary_csf_mad	intensity	0.19575163	0.03204393492	0.3666058247	0.8	0.8
+summary_csf_mean	intensity	-0.0296865657	0	0.06638117892	0.2	0.2
+summary_csf_median	intensity	-0.08103847105	0	0.1753253895	0.4	0.4
+summary_csf_p05	intensity	0.01532619447	0	0.03427041267	0.2	0.2
+summary_csf_p95	intensity	-0.0356530896	0	0.07972273195	0.2	0.2
+summary_csf_stdv	intensity	0	0	0	0	0
+summary_gm_k	intensity	0	0	0	0	0
+summary_gm_mad	intensity	0.04450739391	0	0.08491541324	0.4	0.4
+summary_gm_mean	intensity	0.007933937974	0	0.01774082464	0.2	0.2
+summary_gm_median	intensity	0.009412923968	0	0.02104793786	0.2	0.2
+summary_gm_p05	intensity	-0.04390332933	0	0.09817082881	0.2	0.2
+summary_gm_p95	intensity	0.2135591417	0.2124666384	0.05302882673	1	1
+summary_gm_stdv	intensity	0.07137769569	0.01350663803	0.1142313216	0.6	0.6
+summary_wm_k	intensity	0.1883840574	0	0.4212395582	0.2	0.2
+summary_wm_mad	intensity	0	0	0	0	0
+summary_wm_mean	intensity	0	0	0	0	0
+summary_wm_median	intensity	0	0	0	0	0
+summary_wm_p05	intensity	0	0	0	0	0
+summary_wm_p95	intensity	0.2211964535	0.04934039968	0.4156886951	0.6	0.6
+summary_wm_stdv	intensity	0	0	0	0	0
+tpm_overlap_csf	morphology / tissue	0.01193825746	0	0.02669475521	0.2	0.2
+tpm_overlap_gm	morphology / tissue	-0.7331365763	-0.6629790135	0.6869961201	1	1
+tpm_overlap_wm	morphology / tissue	0.3037521101	0	0.6792103666	0.2	0.2
+wm2max	intensity	0.01327017477	0	0.02967301287	0.2	0.2

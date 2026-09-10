@@ -1,0 +1,15 @@
+row_type	item	n	n_missing	n_invalid	n_outlier_iqr	min	p05	median	p95	max	note
+check	n_subject_session_rows	132									one FreeSurfer recon-all per MRIQC subject×session
+check	n_subjects	83									
+check	n_duplicate_subject_session	0									must be 0 in the anatomy table
+check	n_FS_success	131									
+check	n_without_complete_freesurfer	1									
+variable	icv_etiv	131	1	0	1	1055863.118684	1240043.852182	1517374.527879	1795961.474772	1891532.575371	ICV > 0; IQR outliers documented, not dropped
+variable	brainseg_vol	131	1	0	1	381644	953320	1125080	1337146	1435414	BrainSegVol > 0; IQR outliers documented, not dropped
+variable	total_cortical_gm	131	1	0	1	189807.111637	394174.183995	470656.999288	545041.863205	567321.907213	GM > 0; IQR outliers documented, not dropped
+variable	total_wm	131	1	0	4	130758	363908	440503	537676.5	627268	WM > 0; IQR outliers documented, not dropped
+variable	total_csf	131	1	0	5	144.4	648.7	1016.8	1462.05	1704.2	CSF >= 0; IQR outliers documented, not dropped
+variable	mean_cortical_thickness	131	1	0	5	2.05836	2.347208	2.47273	2.623125	2.69898	cortical thickness > 0; IQR outliers documented, not dropped
+variable	left_hippocampal_volume	131	1	0	1	1388.3	3520.15	4082.6	4711.5	4983.9	left hippocampus > 0; IQR outliers documented, not dropped
+variable	right_hippocampal_volume	131	1	0	2	1981.8	3429.45	4093.5	4736.4	4980.1	right hippocampus > 0; IQR outliers documented, not dropped
+missing_freesurfer	sub-019/ses-01	1	1								FAILED

@@ -1,0 +1,66 @@
+Physical-acquisition IQM-family robustness
+generated_utc: 2026-09-09T20:35:38.066413+00:00
+
+Model (all subsets):
+  IQM ~ C(cohort, Treatment(Control)) + C(software_platform, Treatment(E11))
+        + age + C(sex) + C(session) + (1|subject_id)
+Acquisition variable: software_platform (E11=Prisma vs XA30=MAGNETOM Prisma).
+Not combined with scanner/coil/SoftwareVersions/is_norm: they partition the
+same 6 XA30 rows in this selected physical-acquisition table.
+BH-FDR is within each subset, separately for cohort and acquisition Wald tests.
+IQMs are not interpreted as pure image-quality scores.
+
+N observations=133  N subjects=83
+
+Subsets (existing family taxonomy):
+  FULL_56: n=56  families=artifact, contrast, entropy / information, homogeneity / bias field, intensity, morphology / tissue, signal / SNR, smoothness / sharpness
+  CORE_QUALITY: n=16  families=contrast, entropy / information, signal / SNR, smoothness / sharpness
+  TISSUE_SENSITIVE: n=37  families=intensity, morphology / tissue
+
+Cohort omnibus (primary):
+  FULL_56: significant IQMs=3/56  min q=0.0181513
+    summary_wm_p95 (intensity): q=0.01815*  Glaucoma coef=6.703
+    fwhm_y (smoothness / sharpness): q=0.04054*  Glaucoma coef=-0.003838
+    summary_bg_mean (intensity): q=0.04054*  Glaucoma coef=5.059
+    summary_bg_p95 (intensity): q=0.08714  Glaucoma coef=14.24
+    summary_bg_mad (intensity): q=0.1225  Glaucoma coef=2.213
+  CORE_QUALITY: significant IQMs=1/16  min q=0.0309402
+    fwhm_y (smoothness / sharpness): q=0.03094*  Glaucoma coef=-0.003838
+    fwhm_avg (smoothness / sharpness): q=0.1419  Glaucoma coef=-0.0249
+    cjv (contrast): q=0.147  Glaucoma coef=0.04655
+    cnr (contrast): q=0.147  Glaucoma coef=-0.1527
+    efc (entropy / information): q=0.147  Glaucoma coef=0.02465
+  TISSUE_SENSITIVE: significant IQMs=2/37  min q=0.0119928
+    summary_wm_p95 (intensity): q=0.01199*  Glaucoma coef=6.703
+    summary_bg_mean (intensity): q=0.04018*  Glaucoma coef=5.059
+    summary_bg_p95 (intensity): q=0.07676  Glaucoma coef=14.24
+    summary_bg_mad (intensity): q=0.09443  Glaucoma coef=2.213
+    summary_bg_median (intensity): q=0.09443  Glaucoma coef=1.492
+
+Acquisition (software_platform XA30 vs E11):
+  FULL_56: significant IQMs=4/56  min q=6.94611e-05
+    fwhm_avg: q=6.946e-05  XA30 coef=0.2847
+    fwhm_y: q=6.946e-05  XA30 coef=0.3455
+    fwhm_z: q=6.946e-05  XA30 coef=0.2835
+    fwhm_x: q=0.001849  XA30 coef=0.2246
+    wm2max: q=0.1906  XA30 coef=0.05611
+  CORE_QUALITY: significant IQMs=4/16  min q=1.9846e-05
+    fwhm_avg: q=1.985e-05  XA30 coef=0.2847
+    fwhm_y: q=1.985e-05  XA30 coef=0.3455
+    fwhm_z: q=1.985e-05  XA30 coef=0.2835
+    fwhm_x: q=0.0005282  XA30 coef=0.2246
+    snr_csf: q=0.7921  XA30 coef=0.04542
+  TISSUE_SENSITIVE: significant IQMs=0/37  min q=0.629755
+    wm2max: q=0.6298  XA30 coef=0.05611
+    icvs_csf: q=0.9986  XA30 coef=-0.001252
+    icvs_gm: q=0.9986  XA30 coef=0.000518
+    icvs_wm: q=0.9986  XA30 coef=0.0002699
+    rpve_csf: q=0.9986  XA30 coef=-0.05167
+
+Cohort finding class: ROBUST_ACROSS_FAMILIES
+Acquisition finding class: FAMILY_DEPENDENT
+ROBUST_ACROSS_FAMILIES = FDR hits in both CORE_QUALITY and TISSUE_SENSITIVE. FAMILY_DEPENDENT = hits confined to one family subset. SINGLE_IQM_DRIVEN = a single IQM. NOT_REPLICATED = no FDR hit.
+The cohort label does not mean a broad quality-metric effect: CORE_QUALITY contributes one smoothness IQM (fwhm_y); TISSUE_SENSITIVE contributes intensity summaries. Acquisition FDR hits are confined to FWHM (CORE_QUALITY).
+
+Future anatomy extension (not implemented):
+  IQM ~ acquisition + anatomy + cohort + age + sex + session + (1|subject_id)

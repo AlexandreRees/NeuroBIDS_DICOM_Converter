@@ -1,0 +1,148 @@
+T1w MRIQC PCA cohort analysis report
+generated_at: 2026-09-09T19:11:46.840634+00:00
+
+1. PURPOSE
+  Exploratory/statistical analysis of whether existing T1w MRIQC PCA scores
+  differ by cohort (Control, Glaucoma, Data_ON, Data_TON).
+  PCA was not recomputed. Scores were not re-standardized.
+
+2. EXISTING PCA USED
+  scores:    /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_scores.tsv
+  loadings:  /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_loadings.tsv
+  variance:  /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_variance.tsv
+  covariates joined (read-only) from: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  scores sha256 before/after: a2c04de882d253aaf3d9ffd42b610dcd2c2e9de582847fc1d79d6fa3d0a19ae9 / a2c04de882d253aaf3d9ffd42b610dcd2c2e9de582847fc1d79d6fa3d0a19ae9
+  loadings unmodified: True
+  variance unmodified: True
+  clean TSV unmodified: True
+  Note: PCA TSV files live under qc_reports/mriqc_iqm/ (not metadata/).
+  The scores table does not itself contain cohort/age/sex; those columns
+  were joined from metadata/mriqc_iqm_clean.tsv on bids_name+subject+session+run.
+  scipy 1.15.1  statsmodels 0.14.6
+
+3. NUMBER OF PCs
+  Analysed: PC1, PC2, PC3, PC4, PC5, PC6, PC7, PC8, PC9, PC10
+  Cumulative variance at PC10: 91.03%
+  (matches the previous PCA report: ~90% by 10 components).
+
+4. COHORT COUNTS (T1w acquisitions in the existing PCA scores)
+  Control: subjects=55  sessions=94  acquisitions=190
+  Glaucoma: subjects=19  sessions=27  acquisitions=52
+  Data_ON: subjects=7  sessions=8  acquisitions=16
+  Data_TON: subjects=2  sessions=3  acquisitions=6
+  Total subjects=83  sessions=132  acquisitions=264
+  Subjects with both ses-01 and ses-02: 49
+  Data_ON and Data_TON have very small sample sizes. They are shown
+  in plots for completeness but do not support reliable population-level
+  cluster estimates or strong pairwise conclusions.
+
+5. PC1–PC2 (AND PC1–PC3 / PC2–PC3) VISUALIZATION
+  Scatterplots colour points by cohort and mark cohort centroids (X).
+  No confidence ellipses were drawn: ellipses would overstate certainty,
+  especially for Data_ON / Data_TON. Visual separation is not a test.
+
+6. RAW COHORT ANALYSIS  (naive OLS: PC ~ cohort)
+  Observations are not independent (multiple runs/sessions per subject).
+  This model is reported only as a baseline. Omnibus F from nested OLS.
+  FDR Benjamini–Hochberg across PC1–PC10.
+  PC1  var=41.11%  F=2.728  p=0.0445  q=0.0636  N_obs=264 N_subj=83
+  PC2  var=11.42%  F=11.947  p=2.36e-07  q=2.36e-06  N_obs=264 N_subj=83
+  PC3  var=9.59%  F=9.923  p=3.24e-06  q=1.62e-05  N_obs=264 N_subj=83
+  PC4  var=7.35%  F=3.533  p=0.0154  q=0.0257  N_obs=264 N_subj=83
+  PC5  var=6.57%  F=4.090  p=0.0073  q=0.0183  N_obs=264 N_subj=83
+  PC6  var=4.95%  F=1.085  p=0.3559  q=0.3559  N_obs=264 N_subj=83
+  PC7  var=3.68%  F=3.749  p=0.0116  q=0.0231  N_obs=264 N_subj=83
+  PC8  var=2.60%  F=5.816  p=0.0007  q=0.0024  N_obs=264 N_subj=83
+  PC9  var=2.05%  F=2.341  p=0.0738  q=0.0922  N_obs=264 N_subj=83
+  PC10  var=1.71%  F=1.149  p=0.3297  q=0.3559  N_obs=264 N_subj=83
+
+7. AGE/SEX-ADJUSTED ANALYSIS  (OLS: PC ~ cohort + age + sex)
+  Still treats rows as independent. Cohort omnibus = nested F vs age+sex only.
+  PC1  cohort p=0.2643 q=0.2643  age p=0.3839  sex p=0.0157  N=264
+  PC2  cohort p=1.07e-05 q=0.0001  age p=0.0563  sex p=8.65e-06  N=264
+  PC3  cohort p=0.0617 q=0.1123  age p=0.0858  sex p=2.07e-11  N=264
+  PC4  cohort p=0.1995 q=0.2493  age p=0.1152  sex p=0.9094  N=264
+  PC5  cohort p=0.1694 q=0.2420  age p=0.5561  sex p=0.0001  N=264
+  PC6  cohort p=0.0674 q=0.1123  age p=7.77e-06  sex p=0.9091  N=264
+  PC7  cohort p=0.0151 q=0.0504  age p=0.0160  sex p=0.0157  N=264
+  PC8  cohort p=0.0347 q=0.0868  age p=1.85e-06  sex p=0.6937  N=264
+  PC9  cohort p=0.0099 q=0.0493  age p=0.0001  sex p=0.9846  N=264
+  PC10  cohort p=0.2427 q=0.2643  age p=0.3049  sex p=0.8692  N=264
+
+8. MIXED-EFFECTS ANALYSIS  (PRIMARY)
+  MixedLM: PC ~ cohort + age + sex + session + (1 | subject_id)
+  No cohort × session interaction (already tested at the IQM level).
+  Cohort omnibus = Wald test of all cohort fixed-effect contrasts vs Control.
+  mixed_estimate / CI in the results TSV = Glaucoma vs Control (Treatment coding),
+  because that is the only non-reference contrast with a non-tiny sample.
+  FDR across the 10 mixed cohort omnibus tests.
+  PC1  Wald=3.989  p=0.2626 q=0.4876  Glaucoma-Control=+1.123 [-0.592, +2.837]  converged=True  N_subj=83 N_obs=264
+  PC2  Wald=8.897  p=0.0307 q=0.1535  Glaucoma-Control=-0.612 [-1.939, +0.716]  converged=True  N_subj=83 N_obs=264
+  PC3  Wald=3.346  p=0.3413 q=0.4876  Glaucoma-Control=-0.791 [-1.930, +0.347]  converged=True  N_subj=83 N_obs=264
+  PC4  Wald=2.092  p=0.5536 q=0.6286  Glaucoma-Control=+0.621 [-0.451, +1.693]  converged=True  N_subj=83 N_obs=264
+  PC5  Wald=1.609  p=0.6574 q=0.6574  Glaucoma-Control=+0.503 [-0.485, +1.491]  converged=True  N_subj=83 N_obs=264
+  PC6  Wald=4.275  p=0.2332 q=0.4876  Glaucoma-Control=+0.728 [-0.177, +1.633]  converged=True  N_subj=83 N_obs=264
+  PC7  Wald=4.725  p=0.1931 q=0.4876  Glaucoma-Control=+0.353 [-0.371, +1.076]  converged=True  N_subj=83 N_obs=264
+  PC8  Wald=3.684  p=0.2977 q=0.4876  Glaucoma-Control=+0.157 [-0.504, +0.818]  converged=True  N_subj=83 N_obs=264
+  PC9  Wald=9.448  p=0.0239 q=0.1535  Glaucoma-Control=+0.385 [-0.170, +0.941]  converged=True  N_subj=83 N_obs=264
+  PC10  Wald=2.032  p=0.5658 q=0.6286  Glaucoma-Control=+0.286 [-0.189, +0.762]  converged=True  N_subj=83 N_obs=264
+
+9. FDR RESULTS (q < 0.05)
+  Raw OLS: PC2, PC3, PC4, PC5, PC7, PC8
+  Adjusted OLS: PC2, PC9
+  MixedLM (primary): none
+
+10. PCs SHOWING COHORT-ASSOCIATED VARIATION
+  Interpret significant mixed-model PCs as cohort-associated variation
+  in the multivariate MRIQC IQM space — not as differences in image quality.
+  Naive OLS found several PCs with q<0.05; after age/sex, PC2 and PC9
+  remained. After MixedLM (primary), no PC survived FDR.
+  Apparent visual/OLS separation therefore does not survive the primary
+  repeated-measures test.
+  No mixed-model FDR-significant PC; pairwise tests were not performed.
+
+11. TOP IQMs ON PCs WITH FDR-SIGNIFICANT COHORT EFFECTS
+  Table lists Top 10 |loading| IQMs for every PC with q<0.05 in any model
+  (raw OLS, age/sex-adjusted OLS, or mixed). MixedLM is primary; these IQMs
+  are large weights on the axis, not causal drivers of cohort differences.
+  Mixed FDR-significant PCs: none.
+  Adjusted FDR-significant PCs: PC2, PC9.
+  PC2 (adjusted q<0.05, raw q<0.05) families among Top 10 |loading|: intensity_summary, partial_volume, snr
+    snr_total (+0.236); snr_wm (+0.230); summary_wm_p05 (+0.225); rpve_csf (-0.220); summary_gm_p05 (+0.215); rpve_gm (-0.211); summary_csf_median (+0.211); rpve_wm (-0.211); summary_wm_mad (-0.195); summary_wm_stdv (-0.192)
+    These IQMs have large weights on that axis; they are not causal drivers.
+  PC3 (raw q<0.05) families among Top 10 |loading|: artifact, entropy, intensity_summary, partial_volume, snr_dietrich
+    snrd_csf (+0.282); snrd_total (+0.272); snrd_gm (+0.271); snrd_wm (+0.268); summary_gm_p05 (+0.255); efc (-0.248); summary_csf_mad (+0.237); qi_2 (-0.218); summary_csf_stdv (+0.206); rpve_gm (+0.174)
+    These IQMs have large weights on that axis; they are not causal drivers.
+  PC4 (raw q<0.05) families among Top 10 |loading|: intensity_summary, smoothness, snr_dietrich
+    fwhm_avg (+0.386); fwhm_y (+0.376); fwhm_x (+0.369); fwhm_z (+0.360); summary_bg_median (+0.198); summary_bg_mad (+0.198); snrd_gm (+0.166); snrd_wm (+0.163); snrd_total (+0.161); summary_csf_median (-0.161)
+    These IQMs have large weights on that axis; they are not causal drivers.
+  PC5 (raw q<0.05) families among Top 10 |loading|: intensity_summary, snr, snr_dietrich, template_overlap
+    snr_csf (+0.295); summary_csf_p05 (+0.287); snrd_csf (+0.267); snrd_total (+0.248); snrd_gm (+0.245); snrd_wm (+0.242); summary_bg_mad (+0.239); summary_bg_median (+0.239); summary_csf_mad (-0.226); tpm_overlap_gm (-0.191)
+    These IQMs have large weights on that axis; they are not causal drivers.
+  PC7 (raw q<0.05) families among Top 10 |loading|: intensity_summary, smoothness, snr, template_overlap
+    tpm_overlap_gm (-0.308); summary_wm_p05 (+0.256); snr_csf (-0.251); summary_csf_k (-0.243); tpm_overlap_csf (-0.242); summary_csf_p05 (-0.225); summary_wm_median (+0.224); summary_bg_k (-0.220); snr_wm (+0.210); fwhm_z (-0.200)
+    These IQMs have large weights on that axis; they are not causal drivers.
+  PC8 (raw q<0.05) families among Top 10 |loading|: energy, intensity_summary, partial_volume, snr, template_overlap
+    rpve_wm (+0.390); rpve_gm (+0.386); rpve_csf (+0.384); tpm_overlap_gm (-0.316); snr_csf (+0.241); summary_csf_mad (-0.219); snr_wm (+0.194); summary_wm_stdv (-0.189); summary_wm_p05 (+0.179); fber (-0.161)
+    These IQMs have large weights on that axis; they are not causal drivers.
+  PC9 (adjusted q<0.05) families among Top 10 |loading|: artifact, energy, entropy, intensity_summary, template_overlap
+    summary_csf_k (+0.520); summary_bg_k (-0.494); tpm_overlap_wm (-0.373); fber (+0.249); tpm_overlap_gm (-0.235); efc (-0.183); qi_2 (+0.178); summary_wm_median (-0.139); summary_wm_mean (-0.111); summary_csf_p05 (-0.106)
+    These IQMs have large weights on that axis; they are not causal drivers.
+
+12. LIMITATIONS
+  • Data_ON and Data_TON n is very small; centroids and pairwise tests for
+    those groups are unstable.
+  • Multiple T1w runs per session remain in the mixed model (as in the IQM-level analysis).
+  • OLS models ignore within-subject dependence; mixed models are primary.
+  • PCA is unsupervised and was fit on the pooled T1w sample.
+  • No FreeSurfer, no outlier removal, no PCA rerun.
+  • Possible sources of cohort-associated IQM variation include acquisition/
+    protocol differences, anatomy, tissue composition, atrophy, brain volume,
+    contrast, segmentation effects, and biology. This analysis cannot separate them.
+
+13. INTERPRETATION
+  A loading or a PC score is not a quality grade. PCA axes represent
+  multivariate MRIQC IQM structure. If cohorts occupy different regions of
+  this space, that is cohort-associated variation in the multivariate IQM
+  space, not proof of different image quality, and not a causal claim.
+

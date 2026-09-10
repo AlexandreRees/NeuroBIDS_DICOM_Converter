@@ -1,0 +1,36 @@
+MRIQC anatomical IQM cleaning — QC report
+generated_at: 2026-09-09T18:02:45.495799+00:00
+
+COLUMN ROLES
+  IQMs retained for statistics: 58
+  technical excluded from statistics (kept in tables): 10
+  metadata: 33
+  bold_excluded: 0
+
+MISSINGNESS
+  IQMs with >0% missing: none
+  IQMs with >5% missing: none
+  IQMs with >10% missing: none
+  total missing IQM values: 0
+
+VARIANCE
+  zero variance: ['qi_1', 'summary_bg_p05']
+  near-zero variance: none
+
+OUTLIERS (documented, not removed; flags computed within sequence_group)
+  n_iqm_value_flags: 544
+  n_acquisitions_with_any_flag: 217
+  methods: Tukey IQR (k=1.5) and robust z-score (MAD, |z|>3.5)
+
+T1w vs WM-nulled availability
+  T1w rows: 264
+  WMn rows: 116
+  IQMs available in both groups: 58
+  Spearman mean |Δr|: 0.3169881340337299
+  Spearman Frobenius |R_T1w - R_WMn|: 23.132149604971808
+  T1w and WM-nulled Spearman matrices are compared on shared IQMs. A large mean absolute difference supports keeping the two sequence groups in separate later analyses (PCA / models). No biological interpretation is made here.
+
+NOT DONE (later steps)
+  PCA, ICA, t-SNE, UMAP, Elastic Net, cohort tests, longitudinal models.
+
+No original MRIQC files were modified. Outliers were not deleted.

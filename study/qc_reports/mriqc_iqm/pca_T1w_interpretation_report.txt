@@ -1,0 +1,157 @@
+T1w IQM PCA interpretation report (PC1–PC10)
+generated_at: 2026-09-09T18:43:29.274455+00:00
+
+SCOPE
+  PCA was not recomputed. Loadings and variance were read from existing files.
+  Cohorts, FreeSurfer, statistical tests, and ML were not used.
+  Principal components were not assigned biological names.
+
+INPUTS (read-only)
+  loadings: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_loadings.tsv
+  loadings sha256: 41b674ebc31260479d642d2b2de4e287b3a84f778d801c459d79afa864887748
+  variance: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/pca_T1w_variance.tsv
+  variance sha256: d2aa51fd8bc399e4002ce59a3cab5c857ae70213e735ea4d8f37d9f510b18f60
+
+DEFINITIONS
+  loading: weight of an IQM on a principal component after z-scoring.
+  A loading describes an association with that PCA axis. It is not a
+  causal effect, not a quality grade, and not a direct MRIQC pass/fail.
+  contribution: loading^2 / sum(loading^2) on that component
+  (relative share of that axis; sums to 1 per PC).
+  sign: retained from the original loading; the global PC sign is
+  arbitrary (SVD sign flip) but relative signs within a PC are meaningful.
+
+MATRIX: 56 IQMs, characterizing 10 components, top 10 listed per PC.
+
+PC1  variance_ratio=0.411099  cumulative=0.411099  top10_contribution_sum=0.3846
+   1. summary_gm_p95      family=intensity_summary   loading=+0.2005  contribution=0.0402
+   2. summary_wm_p95      family=intensity_summary   loading=+0.1992  contribution=0.0397
+   3. inu_range           family=bias_field          loading=+0.1987  contribution=0.0395
+   4. wm2max              family=intensity_ratio     loading=-0.1965  contribution=0.0386
+   5. inu_med             family=bias_field          loading=+0.1960  contribution=0.0384
+   6. summary_gm_median   family=intensity_summary   loading=+0.1956  contribution=0.0383
+   7. summary_gm_mean     family=intensity_summary   loading=+0.1954  contribution=0.0382
+   8. icvs_wm             family=tissue_fraction     loading=+0.1945  contribution=0.0378
+   9. cjv                 family=contrast            loading=+0.1922  contribution=0.0370
+  10. cnr                 family=contrast            loading=-0.1922  contribution=0.0369
+
+PC2  variance_ratio=0.114229  cumulative=0.525328  top10_contribution_sum=0.4626
+   1. snr_total           family=snr                 loading=+0.2364  contribution=0.0559
+   2. snr_wm              family=snr                 loading=+0.2302  contribution=0.0530
+   3. summary_wm_p05      family=intensity_summary   loading=+0.2247  contribution=0.0505
+   4. rpve_csf            family=partial_volume      loading=-0.2200  contribution=0.0484
+   5. summary_gm_p05      family=intensity_summary   loading=+0.2151  contribution=0.0463
+   6. rpve_gm             family=partial_volume      loading=-0.2112  contribution=0.0446
+   7. summary_csf_median  family=intensity_summary   loading=+0.2109  contribution=0.0445
+   8. rpve_wm             family=partial_volume      loading=-0.2109  contribution=0.0445
+   9. summary_wm_mad      family=intensity_summary   loading=-0.1955  contribution=0.0382
+  10. summary_wm_stdv     family=intensity_summary   loading=-0.1919  contribution=0.0368
+
+PC3  variance_ratio=0.095918  cumulative=0.621246  top10_contribution_sum=0.6014
+   1. snrd_csf            family=snr_dietrich        loading=+0.2824  contribution=0.0798
+   2. snrd_total          family=snr_dietrich        loading=+0.2721  contribution=0.0741
+   3. snrd_gm             family=snr_dietrich        loading=+0.2713  contribution=0.0736
+   4. snrd_wm             family=snr_dietrich        loading=+0.2675  contribution=0.0716
+   5. summary_gm_p05      family=intensity_summary   loading=+0.2546  contribution=0.0648
+   6. efc                 family=entropy             loading=-0.2479  contribution=0.0615
+   7. summary_csf_mad     family=intensity_summary   loading=+0.2366  contribution=0.0560
+   8. qi_2                family=artifact            loading=-0.2182  contribution=0.0476
+   9. summary_csf_stdv    family=intensity_summary   loading=+0.2057  contribution=0.0423
+  10. rpve_gm             family=partial_volume      loading=+0.1739  contribution=0.0302
+
+PC4  variance_ratio=0.073468  cumulative=0.694715  top10_contribution_sum=0.7407
+   1. fwhm_avg            family=smoothness          loading=+0.3858  contribution=0.1488
+   2. fwhm_y              family=smoothness          loading=+0.3756  contribution=0.1411
+   3. fwhm_x              family=smoothness          loading=+0.3686  contribution=0.1359
+   4. fwhm_z              family=smoothness          loading=+0.3605  contribution=0.1299
+   5. summary_bg_median   family=intensity_summary   loading=+0.1985  contribution=0.0394
+   6. summary_bg_mad      family=intensity_summary   loading=+0.1985  contribution=0.0394
+   7. snrd_gm             family=snr_dietrich        loading=+0.1664  contribution=0.0277
+   8. snrd_wm             family=snr_dietrich        loading=+0.1634  contribution=0.0267
+   9. snrd_total          family=snr_dietrich        loading=+0.1611  contribution=0.0260
+  10. summary_csf_median  family=intensity_summary   loading=-0.1607  contribution=0.0258
+
+PC5  variance_ratio=0.065668  cumulative=0.760383  top10_contribution_sum=0.6216
+   1. snr_csf             family=snr                 loading=+0.2954  contribution=0.0873
+   2. summary_csf_p05     family=intensity_summary   loading=+0.2865  contribution=0.0821
+   3. snrd_csf            family=snr_dietrich        loading=+0.2669  contribution=0.0712
+   4. snrd_total          family=snr_dietrich        loading=+0.2478  contribution=0.0614
+   5. snrd_gm             family=snr_dietrich        loading=+0.2445  contribution=0.0598
+   6. snrd_wm             family=snr_dietrich        loading=+0.2417  contribution=0.0584
+   7. summary_bg_mad      family=intensity_summary   loading=+0.2388  contribution=0.0570
+   8. summary_bg_median   family=intensity_summary   loading=+0.2388  contribution=0.0570
+   9. summary_csf_mad     family=intensity_summary   loading=-0.2255  contribution=0.0509
+  10. tpm_overlap_gm      family=template_overlap    loading=-0.1908  contribution=0.0364
+
+PC6  variance_ratio=0.049545  cumulative=0.809928  top10_contribution_sum=0.6588
+   1. summary_bg_median   family=intensity_summary   loading=+0.3321  contribution=0.1103
+   2. summary_bg_mad      family=intensity_summary   loading=+0.3321  contribution=0.1103
+   3. summary_bg_mean     family=intensity_summary   loading=+0.2983  contribution=0.0890
+   4. summary_bg_stdv     family=intensity_summary   loading=+0.2802  contribution=0.0785
+   5. summary_bg_p95      family=intensity_summary   loading=+0.2532  contribution=0.0641
+   6. tpm_overlap_gm      family=template_overlap    loading=+0.2302  contribution=0.0530
+   7. summary_bg_k        family=intensity_summary   loading=-0.2029  contribution=0.0412
+   8. qi_2                family=artifact            loading=+0.1997  contribution=0.0399
+   9. efc                 family=entropy             loading=+0.1978  contribution=0.0391
+  10. icvs_gm             family=tissue_fraction     loading=+0.1828  contribution=0.0334
+
+PC7  variance_ratio=0.036770  cumulative=0.846698  top10_contribution_sum=0.5742
+   1. tpm_overlap_gm      family=template_overlap    loading=-0.3077  contribution=0.0947
+   2. summary_wm_p05      family=intensity_summary   loading=+0.2564  contribution=0.0657
+   3. snr_csf             family=snr                 loading=-0.2512  contribution=0.0631
+   4. summary_csf_k       family=intensity_summary   loading=-0.2432  contribution=0.0591
+   5. tpm_overlap_csf     family=template_overlap    loading=-0.2415  contribution=0.0583
+   6. summary_csf_p05     family=intensity_summary   loading=-0.2255  contribution=0.0508
+   7. summary_wm_median   family=intensity_summary   loading=+0.2237  contribution=0.0500
+   8. summary_bg_k        family=intensity_summary   loading=-0.2195  contribution=0.0482
+   9. snr_wm              family=snr                 loading=+0.2104  contribution=0.0443
+  10. fwhm_z              family=smoothness          loading=-0.1997  contribution=0.0399
+
+PC8  variance_ratio=0.026015  cumulative=0.872713  top10_contribution_sum=0.7857
+   1. rpve_wm             family=partial_volume      loading=+0.3903  contribution=0.1523
+   2. rpve_gm             family=partial_volume      loading=+0.3861  contribution=0.1491
+   3. rpve_csf            family=partial_volume      loading=+0.3843  contribution=0.1477
+   4. tpm_overlap_gm      family=template_overlap    loading=-0.3157  contribution=0.0996
+   5. snr_csf             family=snr                 loading=+0.2409  contribution=0.0580
+   6. summary_csf_mad     family=intensity_summary   loading=-0.2192  contribution=0.0480
+   7. snr_wm              family=snr                 loading=+0.1938  contribution=0.0376
+   8. summary_wm_stdv     family=intensity_summary   loading=-0.1886  contribution=0.0356
+   9. summary_wm_p05      family=intensity_summary   loading=+0.1789  contribution=0.0320
+  10. fber                family=energy              loading=-0.1606  contribution=0.0258
+
+PC9  variance_ratio=0.020463  cumulative=0.893176  top10_contribution_sum=0.8784
+   1. summary_csf_k       family=intensity_summary   loading=+0.5200  contribution=0.2704
+   2. summary_bg_k        family=intensity_summary   loading=-0.4937  contribution=0.2438
+   3. tpm_overlap_wm      family=template_overlap    loading=-0.3728  contribution=0.1390
+   4. fber                family=energy              loading=+0.2489  contribution=0.0619
+   5. tpm_overlap_gm      family=template_overlap    loading=-0.2352  contribution=0.0553
+   6. efc                 family=entropy             loading=-0.1830  contribution=0.0335
+   7. qi_2                family=artifact            loading=+0.1778  contribution=0.0316
+   8. summary_wm_median   family=intensity_summary   loading=-0.1393  contribution=0.0194
+   9. summary_wm_mean     family=intensity_summary   loading=-0.1106  contribution=0.0122
+  10. summary_csf_p05     family=intensity_summary   loading=-0.1063  contribution=0.0113
+
+PC10  variance_ratio=0.017127  cumulative=0.910303  top10_contribution_sum=0.7144
+   1. summary_bg_k        family=intensity_summary   loading=+0.4570  contribution=0.2089
+   2. tpm_overlap_wm      family=template_overlap    loading=-0.3316  contribution=0.1100
+   3. tpm_overlap_gm      family=template_overlap    loading=-0.3128  contribution=0.0978
+   4. qi_2                family=artifact            loading=-0.2715  contribution=0.0737
+   5. icvs_csf            family=tissue_fraction     loading=-0.2510  contribution=0.0630
+   6. summary_wm_median   family=intensity_summary   loading=-0.2067  contribution=0.0427
+   7. summary_bg_p95      family=intensity_summary   loading=+0.1861  contribution=0.0346
+   8. summary_bg_median   family=intensity_summary   loading=+0.1750  contribution=0.0306
+   9. summary_bg_mad      family=intensity_summary   loading=+0.1750  contribution=0.0306
+  10. summary_gm_mad      family=intensity_summary   loading=-0.1496  contribution=0.0224
+
+READING NOTE
+  Dominant IQMs are those with the largest |loading| on an axis.
+  Opposite signs mean those IQMs co-vary in opposite directions along
+  that axis in this T1w sample. That is a description of the linear
+  combination, not evidence that one metric causes another, and not a
+  statement about clinical image quality.
+
+OUTPUTS
+  pca_T1w_interpretation.tsv  (all IQMs × PC1–PC10)
+  pca_T1w_top_loadings.tsv    (10 largest |loading| per PC)
+  pca_T1w_top_loadings_PC1-PC6.png/.pdf
+  pca_T1w_interpretation_report.txt

@@ -1,0 +1,54 @@
+MRIQC anatomical IQM Spearman correlation report
+generated_at: 2026-09-09T18:25:28.615683+00:00
+
+SCOPE
+  method: Spearman rank correlation (average ranks for ties)
+  p-values: two-sided t approximation, df = n_pairwise - 2
+  pairwise complete observations; no listwise deletion of acquisitions
+  outliers: not removed
+  T1w and WM-nulled: separate matrices, never pooled
+  PCA / cohort tests / ML: not run
+  source TSV: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  source sha256 before: 4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source sha256 after:  4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  source unmodified: True
+
+IQMs IN EVERY MATRIX
+  n_iqms: 58
+  variables: cjv, cnr, efc, fber, fwhm_avg, fwhm_x, fwhm_y, fwhm_z, icvs_csf, icvs_gm, icvs_wm, inu_med, inu_range, qi_1, qi_2, rpve_csf, rpve_gm, rpve_wm, snr_csf, snr_gm, snr_total, snr_wm, snrd_csf, snrd_gm, snrd_total, snrd_wm, summary_bg_k, summary_bg_mad, summary_bg_mean, summary_bg_median, summary_bg_p05, summary_bg_p95, summary_bg_stdv, summary_csf_k, summary_csf_mad, summary_csf_mean, summary_csf_median, summary_csf_p05, summary_csf_p95, summary_csf_stdv, summary_gm_k, summary_gm_mad, summary_gm_mean, summary_gm_median, summary_gm_p05, summary_gm_p95, summary_gm_stdv, summary_wm_k, summary_wm_mad, summary_wm_mean, summary_wm_median, summary_wm_p05, summary_wm_p95, summary_wm_stdv, tpm_overlap_csf, tpm_overlap_gm, tpm_overlap_wm, wm2max
+
+T1w
+  n_acquisitions: 264
+  matrix_shape: 58 x 58
+  n_iqms_usable: 56
+  n_iqms_zero_variance: 2 ['qi_1', 'summary_bg_p05']
+  n_iqms_all_missing: 0 []
+  n_missing_values_total: 0
+  missing_by_column: none
+  pairwise_n_min: 264
+  pairwise_n_max: 264
+  off_diagonal_finite_rho: 3080
+  off_diagonal_nan_rho: 226
+
+WMn
+  n_acquisitions: 116
+  matrix_shape: 58 x 58
+  n_iqms_usable: 55
+  n_iqms_zero_variance: 3 ['qi_1', 'summary_bg_p05', 'summary_wm_p05']
+  n_iqms_all_missing: 0 []
+  n_missing_values_total: 0
+  missing_by_column: none
+  pairwise_n_min: 116
+  pairwise_n_max: 116
+  off_diagonal_finite_rho: 2970
+  off_diagonal_nan_rho: 336
+
+OUTPUTS
+  spearman_T1w.tsv / spearman_T1w_pvalues.tsv
+  spearman_WMn.tsv / spearman_WMn_pvalues.tsv
+  spearman_T1w.png/.pdf, spearman_T1w_pvalues.png/.pdf
+  spearman_WMn.png/.pdf, spearman_WMn_pvalues.png/.pdf
+
+Constant IQMs remain in the 58 x 58 matrices as NaN (except a NaN
+diagonal p-value). They are listed above and were not dropped from
+the source table.

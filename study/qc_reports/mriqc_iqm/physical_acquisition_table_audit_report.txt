@@ -1,0 +1,55 @@
+Physical-acquisition MRIQC T1w table — QC audit
+generated_at: 2026-09-10T13:10:33.293843+00:00
+
+SCOPE
+  Unit of observation: one physical T1w acquisition (not a Siemens reconstruction pair).
+  Canonical source is read-only. IQMs were not recalculated. MRIQC was not rerun.
+  PCA, MixedLM, Elastic Net and FreeSurfer were not run. No rows were dropped.
+  The 264-row reconstruction-level table is not the analytical reference.
+
+SOURCE (unchanged)
+  path: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_physical_acquisition.tsv
+  sha256: be1d89fd0359fe86eb478fb9fda5a2e8fbd98e0c203229a81011792d00a2692a
+
+COUNTS
+  n_rows: 133
+  n_subjects: 83
+  n_sessions: 132
+  n_acquisitions: 133
+  n_cohorts: 4
+  n_by_cohort: {Control=95, Glaucoma=27, Data_ON=8, Data_TON=3}
+  n_subjects_by_cohort: {Control=55, Glaucoma=19, Data_ON=7, Data_TON=2}
+  n_by_session: {ses-01=82, ses-02=51}
+  subjects with ses-01 and ses-02: 49
+  subject×session cells with 2 physical acquisitions: [('sub-043', 'ses-02')]
+
+ONE PHYSICAL ACQUISITION = ONE ANALYTICAL ROW
+  unique physical_acquisition_id: yes
+  unique bids_name / filename: yes
+  unique subject_id + session + run: yes
+  Expected exception kept: sub-043 ses-02 contributes two independent scans.
+  Duplicate keys: none
+  missing identifiers: {'physical_acquisition_id': 0, 'subject_id': 0, 'session': 0, 'cohort': 0, 'bids_name': 0}
+
+IQMs
+  retained IQMs in column-role catalog: 58
+  non-constant IQMs: 56
+  zero variance: ['qi_1', 'summary_bg_p05']
+  near-zero variance: none
+  missing values by IQM:
+  none
+  Zero-variance IQMs were documented, not deleted.
+
+NON-IQM CONSTANT COLUMNS (documented, not dropped)
+  n: 35
+  names: ['acq', 'selected_series_description', 'iqm_used_for_selection', 'ProtocolName', 'SeriesDescription', 'AcquisitionNumber', 'RepetitionTime', 'EchoTime', 'FlipAngle', 'sequence_group', 'modality', 'sequence', 'protocol_name', 'acquisition', 'mriqc_version', 'te_s', 'tr_s', 'ti_s', 'flip_angle_deg', 'inventory_exclusion_status', 'has_anat_T1w', 'mapping_ok', 'mapping_notes', 'size_x', 'size_y', 'size_z', 'spacing_y', 'spacing_z', 'SliceThickness', 'voxel_size', 'size_x_audit', 'size_y_audit', 'size_z_audit', 'same_acquisition_parameters', 'same_SeriesInstanceUID']
+
+WORKING COPY
+  path: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_physical_acquisition_analytic.tsv
+  rows: same 133 physical acquisitions as the canonical table
+  columns: all source columns plus software_platform (E11/XA30 from scanner)
+  silent deletions: none
+  IQM missingness/variance table: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/physical_acquisition_table_audit_iqms.tsv
+
+NOT DONE
+  PCA, MixedLM, Elastic Net, FreeSurfer join, MRIQC rerun.

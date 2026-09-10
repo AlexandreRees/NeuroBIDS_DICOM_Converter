@@ -1,0 +1,159 @@
+MRIQC session-level longitudinal validation report
+generated_at: 2026-09-09T19:15:11.817082+00:00
+
+1. PURPOSE
+  Repeat the MixedLM IQM ~ cohort * session + age + sex + (1|subject_id)
+  using exactly one FreeSurfer-selected T1w per subject × session.
+  Validation, not discovery. No averaging of IQMs within session.
+
+2. INPUT FILES
+  MRIQC: metadata/mriqc_iqm_clean.tsv sha256=4fb4cee6ffb1fad2107fae382dbaf2e117ac749b83eeb2404c38747270b86dd4
+  FreeSurfer manifest: ../metadata/freesurfer_manifest.tsv sha256=e97db1a871d9e63de095a3ea048459f3845b29d2f971df8be3f204592d5f7737
+  previous longitudinal results: qc_reports/mriqc_iqm/longitudinal_results.tsv sha256=aef4b3fb1d13e67a9c1527ae5f2f902ca40d72215a5a8980361adce4425e4a9b
+  software: scipy 1.15.1  statsmodels 0.14.6
+
+3. INPUT SCHEMA
+  mriqc_iqm_clean.tsv: 380 rows, 101 columns
+  id/metadata columns present: ['subject_id', 'session', 'run', 'bids_name', 'filename', 'input_file', 'cohort', 'age', 'sex', 'sequence_group', 'protocol_name']
+  freesurfer_manifest.tsv: 132 rows, columns=['subject_id', 'session', 't1w_path', 'freesurfer_id', 'run', 'protocol_name', 'series_description', 'selection_reason']
+  Matching keys: subject_id + session + normalized run, confirmed by bids_name vs t1w_path stem.
+  sequence_group == T1w is the MRIQC anatomical MPRAGE subset (WM-nulled is sequence_group=WMn).
+
+4. FREESURFER-TO-MRIQC MATCHING
+  Authoritative key: subject_id + session + normalized run from the manifest.
+  Confirmed with bids_name == stem(t1w_path). Ambiguous matches fail the run.
+  Lowest MRIQC run is used only when the FreeSurfer manifest selected it.
+
+5. SESSION-LEVEL DATASET CONSTRUCTION
+  Final unique subject×session rows: 132
+  IQMs used: 56  dropped zero-variance: ['qi_1', 'summary_bg_p05']
+  Original IQM values preserved (no outlier removal, no aggregation).
+
+6. MATCHING AUDIT
+  FreeSurfer sessions: 132 subjects=83 ses-01=82 ses-02=50
+  match_status: {'MATCHED': 132}
+  matched=132 unmatched=0 ambiguous=0
+  sessions with multiple MRIQC T1w candidates: 130
+  sessions with missing IQMs: 0 (the script fails if any matched row has NA IQMs)
+  MRIQC T1w acquisitions: 264 in 132 subject×session cells
+  acquisitions not selected (collapsed away): 132
+
+7. FINAL SESSION COUNTS
+  rows=132 subjects=83 ses-01=82 ses-02=50
+  cohort × session cells: Control ses-01=54, Control ses-02=40, Data_ON ses-01=7, Data_ON ses-02=1, Data_TON ses-01=2, Data_TON ses-02=1, Glaucoma ses-01=19, Glaucoma ses-02=8
+  (task mentioned ~132 sessions / 83 subjects / 82 ses-01 / 50 ses-02;
+  those figures are compared here, not hard-coded as filters)
+
+8. LONGITUDINAL SUBJECT STRUCTURE
+  ses01_only=33 ses02_only=1 both=49
+  Control: subjects=55 sessions=94 ses01_only=15 ses02_only=1 both=39
+  Glaucoma: subjects=19 sessions=27 ses01_only=11 ses02_only=0 both=8
+  Data_ON: subjects=7 sessions=8 ses01_only=6 ses02_only=0 both=1
+  Data_TON: subjects=2 sessions=3 ses01_only=1 ses02_only=0 both=1
+  Data_ON and Data_TON longitudinal n remains 1 each; no population-level inference.
+
+9. DUPLICATE CHECKS
+  unique(subject_id, session) == n_rows: True (otherwise the script fails)
+  unique(subject_id, session, run): True
+  unique(subject_id, session, bids_name): True
+
+10. MIXEDLM SPECIFICATION
+  IQM ~ C(cohort, Treatment(Control)) * C(session, Treatment(ses-01))
+       + age + C(sex) + (1|subject_id)   [statsmodels MixedLM, REML]
+  Includes cohort main effect, session main effect, and cohort:session.
+  FDR BH separately for 56 cohort tests, 56 session tests, 56 interactions.
+  Cohort and interaction p-values are 3-df Wald tests (same as acquisition-level).
+  cohort_effect / interaction_se columns store the Glaucoma named coefficient
+  (estimate, SE, 95% CI) for reporting; FDR remains on the Wald p-values.
+
+11. COHORT EFFECTS
+  N FDR q<0.05: 6 / 56   min q=0.00014941
+  FDR hits: ['fber', 'icvs_wm', 'inu_med', 'summary_bg_p95', 'summary_csf_k', 'wm2max']
+  Named estimate = Glaucoma vs Control at ses-01; FDR uses the 3-df Wald.
+  Acquisition-level cohort FDR was 0/56. The session-level count is reported
+  for completeness; this script is a unit-of-analysis check, not a discovery screen.
+
+12. SESSION EFFECTS
+  N FDR q<0.05: 0 / 56   min q=0.424735
+
+13. COHORT × SESSION INTERACTIONS
+  N FDR q<0.05: 2 / 56
+  min q=0.0327717  top IQM=rpve_gm
+  FDR hits: ['rpve_gm', 'rpve_wm']
+  Interaction = differential longitudinal trajectory of the IQM by cohort.
+  It is not a quality-deterioration claim.
+
+14. ACQUISITION-LEVEL VS SESSION-LEVEL
+  significant in BOTH: none
+  significant ONLY acquisition-level: ['rpve_csf', 'summary_csf_p05']
+  significant ONLY session-level: ['rpve_gm', 'rpve_wm']
+  Session-level-only FDR hits are listed for comparison only.
+  They are not treated as new discoveries.
+  rpve_csf: previous rank=1 session-level rank=3
+  summary_csf_p05: previous rank=2 session-level rank=4
+
+15. rpve_csf ROBUSTNESS
+  rpve_csf robustness class: ATTENUATED_BUT_PRESENT
+  Rule: REVERSED_DIRECTION if Glaucoma×session coefficient signs differ;
+        ROBUST if both FDR q<0.05 (same direction);
+        ATTENUATED_BUT_PRESENT if previous q<0.05, session q≥0.05, but session p<0.05;
+        NO_LONGER_SIGNIFICANT if previous q<0.05 and session p≥0.05.
+  Wald statistic is the 3-df cohort×session test (same as the previous script).
+  Named estimate below is the Glaucoma additional change vs Control (ses-02 − ses-01).
+    acquisition-level Wald=32.2478 p=4.64041e-07 q=2.59863e-05
+    acquisition-level Glaucoma coef=-0.0304794 95% CI=[-0.0570602, -0.00389864]
+    session-level Wald=14.164 p=0.00269018 q=0.0502167
+    session-level Glaucoma coef=-0.033309 95% CI=[-0.0738614, 0.00724339]
+    A significant cohort×session term is a differential longitudinal
+    trajectory of the IQM, not evidence of image-quality deterioration.
+    rpve_csf / summary_csf_p05 can also track tissue-composition change;
+    anatomical interpretation is deferred to FreeSurfer.
+
+16. summary_csf_p05 ROBUSTNESS
+  summary_csf_p05 robustness class: NO_LONGER_SIGNIFICANT
+  Rule: REVERSED_DIRECTION if Glaucoma×session coefficient signs differ;
+        ROBUST if both FDR q<0.05 (same direction);
+        ATTENUATED_BUT_PRESENT if previous q<0.05, session q≥0.05, but session p<0.05;
+        NO_LONGER_SIGNIFICANT if previous q<0.05 and session p≥0.05.
+  Wald statistic is the 3-df cohort×session test (same as the previous script).
+  Named estimate below is the Glaucoma additional change vs Control (ses-02 − ses-01).
+    acquisition-level Wald=16.797 p=0.000778028 q=0.0217848
+    acquisition-level Glaucoma coef=-0.604544 95% CI=[-5.41581, 4.20672]
+    session-level Wald=7.31291 p=0.0625655 q=0.875917
+    session-level Glaucoma coef=-3.22775 95% CI=[-10.7365, 4.28096]
+    A significant cohort×session term is a differential longitudinal
+    trajectory of the IQM, not evidence of image-quality deterioration.
+    rpve_csf / summary_csf_p05 can also track tissue-composition change;
+    anatomical interpretation is deferred to FreeSurfer.
+
+17. SENSITIVITY (descriptive; both-session subjects only; not the primary model)
+  rpve_csf mean Δ (ses-02 − ses-01) among subjects with both sessions:
+    Control: n=39 meanΔ=0.0167494 sd=0.0571098
+    Glaucoma: n=8 meanΔ=-0.0163455 sd=0.0243025
+    Data_ON: n=1 meanΔ=-0.173332 sd=nan
+    Data_TON: n=1 meanΔ=-0.0137253 sd=nan
+  summary_csf_p05 mean Δ (ses-02 − ses-01) among subjects with both sessions:
+    Control: n=39 meanΔ=2.30769 sd=9.55911
+    Glaucoma: n=8 meanΔ=-0.5 sd=11.9403
+    Data_ON: n=1 meanΔ=-16 sd=nan
+    Data_TON: n=1 meanΔ=20 sd=nan
+
+18. INTERPRETATION LIMITATIONS
+  Data_ON and Data_TON still have n_longitudinal=1; do not treat those
+  trajectories as population estimates.
+  Session-level selection follows the FreeSurfer T1w_MPR run, typically the
+  lowest remaining MPRAGE run, not WM-nulled.
+  Anatomical meaning of rpve_csf / summary_csf_p05 is not tested here.
+  The 3-df interaction Wald can be influenced by Data_ON/Data_TON n=1;
+  the Glaucoma named coefficient for summary_csf_p05 was already compatible
+  with zero at acquisition level.
+
+19. OUTPUT FILES
+  metadata/mriqc_iqm_session_t1w.tsv
+  qc_reports/mriqc_iqm_session_level_matching.tsv
+  qc_reports/mriqc_iqm_session_level_report.txt
+  qc_reports/mriqc_iqm/longitudinal_session_level_results.tsv
+  qc_reports/mriqc_iqm/longitudinal_session_vs_acquisition.tsv
+  qc_reports/mriqc_iqm/mixed_longitudinal_session_level_top_interactions.png/.pdf
+  plotted IQMs: ['rpve_gm', 'rpve_wm', 'rpve_csf', 'summary_csf_p05', 'inu_range', 'snrd_gm']
+  Previous longitudinal_results.tsv was not overwritten.

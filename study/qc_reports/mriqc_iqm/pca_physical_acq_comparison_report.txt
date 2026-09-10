@@ -1,0 +1,26 @@
+Original vs physical-acquisition T1w IQM PCA
+generated_at: 2026-09-09T19:32:38.846131+00:00
+
+Original PCA: 264 reconstruction-level T1w rows.
+Physical-acq PCA: 133 rows. Score correlation uses the 133 selected files' original scores vs new scores.
+PCA signs were aligned per PC (cosine of loadings).
+PCs are not quality scores.
+
+  PC  var_original  var_physical  var_delta  loading_cosine_raw  sign_flip  loading_cosine_aligned  score_pearson_aligned  n_scores_compared
+ PC1        0.4111        0.2660    -0.1451              0.4512          0                  0.4512                 0.6705                133
+ PC2        0.1142        0.1894     0.0751              0.6168          0                  0.6168                 0.7436                133
+ PC3        0.0959        0.1096     0.0137              0.2292          0                  0.2292                 0.1401                133
+ PC4        0.0735        0.0965     0.0230             -0.0588          1                  0.0588                -0.0248                133
+ PC5        0.0657        0.0720     0.0064              0.4841          0                  0.4841                 0.5012                133
+ PC6        0.0495        0.0486    -0.0009              0.3083          0                  0.3083                 0.3017                133
+ PC7        0.0368        0.0410     0.0042              0.4625          0                  0.4625                 0.4222                133
+ PC8        0.0260        0.0326     0.0066              0.7146          0                  0.7146                 0.7870                133
+ PC9        0.0205        0.0252     0.0048             -0.5729          1                  0.5729                 0.6330                133
+PC10        0.0171        0.0177     0.0006             -0.4942          1                  0.4942                 0.4428                133
+
+Mean sign-aligned loading cosine PC1–PC10: 0.439
+Minimum: 0.059
+PC1 score Pearson (aligned): 0.670
+
+Does NORM/non-NORM pseudoreplication substantially change PCA structure?
+Yes: loadings of leading PCs changed enough that the original 264-row PCA should not be treated as interchangeable with the physical-acquisition PCA.

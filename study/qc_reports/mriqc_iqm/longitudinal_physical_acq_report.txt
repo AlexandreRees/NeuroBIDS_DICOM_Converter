@@ -1,0 +1,25 @@
+Physical-acquisition T1w IQM longitudinal analysis
+generated_at: 2026-09-09T19:33:59.173005+00:00
+
+Model: IQM ~ C(cohort)*C(session) + age + C(sex) + (1|subject_id)
+Primary test: cohort × session interaction. BH FDR on 56 IQMs.
+Data_ON longitudinal n=1; Data_TON longitudinal n=1 — not population inference.
+PCs/IQMs are not quality scores.
+
+n physical acquisitions: 133
+n subjects: 83
+n sessions: 132
+both sessions: 49
+subject×session cells with >1 physical acq: 1
+
+Interaction FDR q<0.05: 0 / 56  none
+Session FDR q<0.05: 0 / 56
+Cohort FDR q<0.05: 7 / 56
+
+Comparison of interaction FDR hits:
+  acquisition-level (264 rows): ['rpve_csf', 'summary_csf_p05']
+  session-level FreeSurfer-selected: ['rpve_gm', 'rpve_wm']
+  physical-acquisition-level: none
+
+plotted IQMs: ['summary_csf_stdv', 'rpve_csf', 'summary_wm_p95', 'rpve_wm', 'rpve_gm', 'summary_csf_p95']
+Original longitudinal_results.tsv was not modified.

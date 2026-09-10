@@ -1,0 +1,32 @@
+MRIQC T1w IQM PCA — physical-acquisition level
+generated_at: 2026-09-09T19:32:11.300808+00:00
+
+This PCA is a new analysis. Original pca_T1w_* files were not overwritten.
+PCs are covariance axes among IQMs, not quality scores.
+
+N original T1w rows (acquisition/reconstruction-level): 264
+N physical acquisitions: 133
+IQMs: the same 56 as pca_T1w_loadings.tsv
+backend: numpy.linalg.svd matching sklearn full SVD + svd_flip
+standardization: column z-score, ddof=0 (StandardScaler)
+outliers: not removed; no imputation; T1w only
+reproducibility max |Δ scores|: 0.0
+
+VARIANCE PC1–PC10 (physical-acq vs original)
+  PC1: physical=26.60%  original=41.11%  Δ=-14.51 pp
+  PC2: physical=18.94%  original=11.42%  Δ=+7.51 pp
+  PC3: physical=10.96%  original=9.59%  Δ=+1.37 pp
+  PC4: physical=9.65%  original=7.35%  Δ=+2.30 pp
+  PC5: physical=7.20%  original=6.57%  Δ=+0.64 pp
+  PC6: physical=4.86%  original=4.95%  Δ=-0.09 pp
+  PC7: physical=4.10%  original=3.68%  Δ=+0.42 pp
+  PC8: physical=3.26%  original=2.60%  Δ=+0.66 pp
+  PC9: physical=2.52%  original=2.05%  Δ=+0.48 pp
+  PC10: physical=1.77%  original=1.71%  Δ=+0.06 pp
+
+  80% variance: physical PC7 vs original PC6
+  90% variance: physical PC11 vs original PC10
+  95% variance: physical PC15 vs original PC14
+  PC1 original ratio: 0.411099
+
+OUTPUTS: pca_physical_acq_scores/loadings/variance .tsv and variance/loadings figures.

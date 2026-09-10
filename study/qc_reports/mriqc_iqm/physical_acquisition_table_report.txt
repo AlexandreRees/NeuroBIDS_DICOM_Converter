@@ -1,0 +1,36 @@
+Physical-acquisition T1w table
+generated_at: 2026-09-09T19:26:53.887447+00:00
+
+Sources (read-only):
+  clean: /lustre07/scratch/alexrees/study/metadata/mriqc_iqm_clean.tsv
+  audit: /lustre07/scratch/alexrees/study/qc_reports/mriqc_iqm/t1w_reconstruction_audit.tsv
+
+Selection never used IQM values. Rules, in order within a physical cluster:
+  1. If any reconstruction has ImageType NORM, keep NORM.
+  2. Else if SeriesDescription is T1w_MPR vs T1w_MPR_ND, keep T1w_MPR.
+  3. Else keep the higher SeriesNumber, then the higher run.
+Physical clusters are SAR + ShimSetting from the audit, not IQMs.
+sub-043 ses-02 yields two clusters (two independent scans).
+
+n original T1w rows: 264
+n sessions: 132
+n physical acquisitions: 133
+n NORM+non-NORM reconstructed pairs (sessions): 123
+n reconstructed pairs without NORM token (sessions): 6
+n singleton sessions: 2
+n independent physical scans in exception session: 2
+n reconstructions excluded: 131
+selection rules used: {'prefer_NORM': 127, 'prefer_SeriesDescription_T1w_MPR_over_T1w_MPR_ND': 6}
+count check: 133 matches the expected 133.
+
+Arithmetic: 123 NORM pairs + 6 other recon pairs + 2 singletons + 2 independent
+scans in sub-043 ses-02 = 133 physical acquisitions. 264 − 133 = 131 excluded
+reconstructions (one leftover from each of 129 dual sessions plus two leftovers
+from the four-volume exception session: 129 + 2 = 131).
+
+iqm_used_for_selection is False for every row.
+unique subjects: 83
+sessions with 2 physical acquisitions: 1
+
+This table does not replace mriqc_iqm_clean.tsv. Previous PCA/cohort/
+longitudinal outputs were not modified.
