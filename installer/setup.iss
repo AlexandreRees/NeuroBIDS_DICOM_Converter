@@ -1,4 +1,5 @@
 ; Inno Setup script — NeuroPipeline DICOM Converter
+; Classic / Main only (NO Copilot).
 ; Build the EXE first (pyinstaller build_windows.spec), then compile this script.
 ;
 ; Output: release\NeuroPipeline_DICOM_Converter_Setup.exe
@@ -6,14 +7,14 @@
 #define MyAppName "NeuroPipeline DICOM Converter"
 #define MyAppVersion "1.0.0"
 #define MyAppPublisher "Alexandre Rees"
-#define MyAppURL "https://github.com/AlexandreRees/neuro_pipeline"
+#define MyAppURL "https://github.com/AlexandreRees/NeuroBIDS_DICOM_Converter"
 #define MyAppExeName "NeuroPipeline_DICOM_Converter.exe"
 
 [Setup]
 AppId={{A7C41E2F-9B18-4D55-9F0E-2E6C8A1B4D90}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName={#MyAppName} {#MyAppVersion}
+AppVerName={#MyAppName} {#MyAppVersion} (Classic / Main)
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 DefaultDirName={autopf}\NeuroPipeline DICOM Converter
@@ -31,7 +32,7 @@ PrivilegesRequired=admin
 ArchitecturesInstallIn64BitMode=x64compatible
 VersionInfoVersion=1.0.0
 VersionInfoCompany={#MyAppPublisher}
-VersionInfoDescription=Medical imaging DICOM to NIfTI converter
+VersionInfoDescription=NeuroBIDS DICOM Converter — Classic / Main
 VersionInfoProductName={#MyAppName}
 
 [Languages]
@@ -49,9 +50,8 @@ Source: "..\configs\*"; DestDir: "{app}\configs"; Flags: ignoreversion recursesu
 Source: "..\docs\user_manual.md"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "..\README_WINDOWS.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\README.md"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
-; Optional bundled dcm2niix
-Source: "tools\dcm2niix.exe"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
-Source: "..\tools\dcm2niix.exe"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
+; Required bundled dcm2niix (PI must not install it separately)
+Source: "..\tools\dcm2niix.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\{#MyAppExeName}"

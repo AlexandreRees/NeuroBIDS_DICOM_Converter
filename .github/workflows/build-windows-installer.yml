@@ -1,0 +1,169 @@
+# Build NeuroPipeline_DICOM_Converter_Setup.exe for Classic / Main only.
+#
+# Product: NeuroBIDS DICOM Converter — Classic / Main
+# Branch:  main
+# Copilot: NO
+# Ollama:  NOT REQUIRED
+#
+# Produces a GitHub Actions ARTIFACT only.
+# Does NOT create tags, releases, or push anything.
+
+name: Build Windows Installer (Classic / Main)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "installer/**"
+      - "scripts/build_windows.ps1"
+      - "scripts/verify_windows_package.ps1"
+      - "scripts/ensure_dcm2niix.ps1"
+      - "build_windows.spec"
+      - "requirements.txt"
+      - "pyproject.toml"
+      - "tools/**"
+      - ".github/workflows/build-windows-installer.yml"
+
+concurrency:
+  group: classic-windows-installer-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  guard-classic-main:
+    name: Guard Classic / Main only
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refuse Copilot / wrong refs
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "========================================"
+          echo "NeuroBIDS DICOM Converter"
+          echo "Windows Installer Build"
+          echo "Classic / Main"
+          echo "========================================"
+          echo "Branch: ${GITHUB_REF_NAME}"
+          echo "Commit SHA: ${GITHUB_SHA}"
+          echo "Version: 1.0.0"
+          echo "Build channel: Classic / Main"
+          echo "Copilot enabled: NO"
+          REF_BLOB="${GITHUB_REF:-} ${GITHUB_REF_NAME:-} ${GITHUB_HEAD_REF:-} ${GITHUB_BASE_REF:-}"
+          echo "Ref blob: ${REF_BLOB}"
+          if echo "${REF_BLOB}" | grep -Eiq 'neurobids-copilot-v1\.0\.0|neurobids-copilot-v1([^0-9]|$)'; then
+            echo "::error::Refused: do not build Classic installer from neurobids-copilot-v1.0.0"
+            exit 1
+          fi
+          if [ "${GITHUB_REF_NAME}" != "main" ]; then
+            echo "::error::Refused: Classic Windows installer workflow runs only on branch main (got: ${GITHUB_REF_NAME})"
+            exit 1
+          fi
+
+  windows-installer:
+    name: Windows Classic installer
+    needs: guard-classic-main
+    runs-on: windows-latest
+    steps:
+      - name: Checkout main only (clean tree)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          clean: true
+
+      - name: Build identity + Classic guards
+        shell: pwsh
+        run: |
+          $sha = (git rev-parse HEAD).Trim()
+          Write-Host "========================================"
+          Write-Host "NeuroBIDS DICOM Converter"
+          Write-Host "Windows Installer Build"
+          Write-Host "Classic / Main"
+          Write-Host "========================================"
+          Write-Host "Branch:              $env:GITHUB_REF_NAME"
+          Write-Host "Commit SHA:          $sha"
+          Write-Host "Version:             1.0.0"
+          Write-Host "Build channel:       Classic / Main"
+          Write-Host "Copilot enabled:     NO"
+          Write-Host "========================================"
+          if ($env:GITHUB_REF_NAME -ne "main") {
+            throw "Refused: expected branch main"
+          }
+          $blob = "$env:GITHUB_REF $env:GITHUB_REF_NAME $sha"
+          if ($blob -match "neurobids-copilot-v1\.0\.0") {
+            throw "Refused: neurobids-copilot-v1.0.0 detected"
+          }
+          if (Test-Path "src\neuro_pipeline\neurobids") {
+            throw "Refused: Copilot package tree detected under src\neuro_pipeline\neurobids"
+          }
+          $nav = Get-Content -Raw "src\neuro_pipeline\gui\main_window.py"
+          if ($nav -match "Copilot|DiscoverPage|neurobids") {
+            throw "Refused: Copilot/Discover markers in main_window.py"
+          }
+          if ($nav -notmatch '"Convert"' -or $nav -notmatch '"Queue"') {
+            throw "Refused: Classic Convert/Queue navigation missing"
+          }
+          # Never reuse stale packaging dirs from a previous step/cache
+          foreach ($p in @("build", "dist")) {
+            if (Test-Path $p) { Remove-Item -Recurse -Force $p }
+          }
+          if (Test-Path "release") {
+            Get-ChildItem "release" -File -ErrorAction SilentlyContinue |
+              Where-Object { $_.Extension -in ".exe", ".msi", ".zip" } |
+              Remove-Item -Force
+          }
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ensure / validate tools/dcm2niix.exe (pinned Windows PE)
+        shell: pwsh
+        run: |
+          # Pinned only: https://github.com/rordenlab/dcm2niix/releases/download/v1.0.20250506/dcm2niix_win.zip
+          # Tag: v1.0.20250506
+          # SHA256: 04ebd85205380c2a78b4a77b3b032bd8d8ff8f6f7c09feaf47f246f2a9efd282
+          # tools\dcm2niix.exe is NOT committed to Git — see scripts/ensure_dcm2niix.ps1
+          powershell -ExecutionPolicy Bypass -File .\scripts\ensure_dcm2niix.ps1
+
+      - name: Install Inno Setup 6
+        shell: pwsh
+        run: |
+          choco install innosetup -y --no-progress
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) { throw "ISCC.exe missing after Chocolatey install" }
+          & $iscc /? | Select-Object -First 5
+
+      - name: Build Classic installer
+        shell: pwsh
+        run: |
+          powershell -ExecutionPolicy Bypass -File .\scripts\build_windows.ps1
+
+      - name: Confirm artifact files
+        shell: pwsh
+        run: |
+          $setup = "release\NeuroPipeline_DICOM_Converter_Setup.exe"
+          $exe = "dist\NeuroPipeline_DICOM_Converter.exe"
+          $dcm = "tools\dcm2niix.exe"
+          foreach ($p in @($setup, $exe, $dcm)) {
+            if (-not (Test-Path $p)) { throw "Missing required output: $p" }
+            $item = Get-Item $p
+            if ($item.Length -le 0) { throw "Empty file: $p" }
+            Get-Item $p | Format-List FullName, Length, LastWriteTime
+          }
+          Write-Host "Build channel: Classic / Main"
+          Write-Host "Copilot enabled: NO"
+          Write-Host "Runtime Python required: NO"
+          Write-Host "Runtime Ollama required: NO"
+
+      - name: Upload Setup.exe artifact (no Release)
+        uses: actions/upload-artifact@v4
+        with:
+          name: NeuroPipeline_DICOM_Converter_Setup
+          path: release/NeuroPipeline_DICOM_Converter_Setup.exe
+          if-no-files-found: error
+          retention-days: 30
