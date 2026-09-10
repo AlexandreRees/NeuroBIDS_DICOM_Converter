@@ -105,7 +105,7 @@ if (-not (Test-Path $Target)) {
 
 $info = Get-Item $Target
 if ($info.Length -lt 100KB) {
-    throw ("dcm2niix.exe unexpectedly small ({0} bytes)" -f $info.Length)
+    throw "dcm2niix.exe unexpectedly small"
 }
 if (-not (Test-IsWindowsPe $Target)) {
     throw "dcm2niix.exe is not a Windows PE executable (missing MZ header): $Target"
