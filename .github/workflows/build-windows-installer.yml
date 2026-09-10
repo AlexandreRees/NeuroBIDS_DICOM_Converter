@@ -141,7 +141,7 @@ jobs:
       - name: Build Classic installer
         shell: pwsh
         run: |
-          powershell -ExecutionPolicy Bypass -File .\scripts\build_windows.ps1
+          .\scripts\build_windows.ps1
 
       - name: Confirm artifact files
         shell: pwsh
