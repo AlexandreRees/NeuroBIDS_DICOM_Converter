@@ -130,7 +130,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host "==> 4/6 dcm2niix + PyInstaller" -ForegroundColor Yellow
-& powershell -ExecutionPolicy Bypass -File (Join-Path $Root "scripts\ensure_dcm2niix.ps1")
+& (Join-Path $Root "scripts\ensure_dcm2niix.ps1")
 if ($LASTEXITCODE -ne 0) { throw "ensure_dcm2niix.ps1 failed." }
 $dcm = Join-Path $Root "tools\dcm2niix.exe"
 if (-not (Test-Path $dcm)) {
