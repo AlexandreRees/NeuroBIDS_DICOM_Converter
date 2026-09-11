@@ -72,8 +72,14 @@ if ($iss -notmatch "Classic / Main") {
 if ($iss -match "neurobids-copilot|Ollama") {
     throw "installer\setup.iss contains Copilot/Ollama markers"
 }
-# "Copilot" substring alone should not appear as a feature name
-if ($iss -match "(?i)copilot") {
+# Ignore Inno Setup comment lines so Classic documentation may mention
+# that Copilot is excluded.
+$issCode = @(
+    $iss -split "`r?`n" |
+    Where-Object { $_ -notmatch '^\s*;' }
+) -join "`n"
+
+if ($issCode -match "(?i)copilot") {
     throw "installer\setup.iss unexpectedly mentions Copilot"
 }
 
