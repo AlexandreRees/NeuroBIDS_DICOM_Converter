@@ -4,11 +4,26 @@
   <img src="docs/assets/logo.png" alt="NeuroPipeline logo" width="88" />
 </p>
 
+<p align="center">
+  <a href="../../releases/latest/download/NeuroPipeline_DICOM_Converter_Setup.exe"><img src="https://img.shields.io/badge/Download-Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows" /></a>
+  <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/AlexandreRees/NeuroBIDS_DICOM_Converter?style=for-the-badge&label=Latest%20release" alt="Latest release" /></a>
+</p>
+
 Windows desktop application for converting MRI DICOM datasets to NIfTI / BIDS with [dcm2niix](https://github.com/rordenlab/dcm2niix).
 
 Designed for researchers with no programming experience. Built as a modular foundation for a future neuroimaging platform (BIDS, QC, MRIQC, reports).
 
 **Version:** 1.0.0
+
+## Download
+
+**[Download for Windows](../../releases/latest/download/NeuroPipeline_DICOM_Converter_Setup.exe)** — latest Classic/Main installer (`NeuroPipeline_DICOM_Converter_Setup.exe`).
+
+- No Python install required for end users
+- `dcm2niix` is bundled
+- Copilot / Ollama are **not** required
+
+All releases: [Releases](../../releases)
 
 ## For end users
 

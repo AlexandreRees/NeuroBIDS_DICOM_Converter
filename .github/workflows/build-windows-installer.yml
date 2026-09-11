@@ -1,12 +1,16 @@
 # Build NeuroPipeline_DICOM_Converter_Setup.exe for Classic / Main only.
 #
 # Product: NeuroBIDS DICOM Converter — Classic / Main
-# Branch:  main
 # Copilot: NO
 # Ollama:  NOT REQUIRED
 #
-# Produces a GitHub Actions ARTIFACT only.
-# Does NOT create tags, releases, or push anything.
+# Triggers:
+#   - push to main (packaging paths) → build + Actions artifact only
+#   - workflow_dispatch → build + Actions artifact only
+#   - push of SemVer tags v* → build + verify + GitHub Release (Setup.exe asset)
+#
+# A GitHub Release is created ONLY after the Windows build + verify succeed.
+# Releases are never created on a plain push to main.
 
 name: Build Windows Installer (Classic / Main)
 
@@ -14,17 +18,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - "src/**"
-      - "installer/**"
-      - "scripts/build_windows.ps1"
-      - "scripts/verify_windows_package.ps1"
-      - "scripts/ensure_dcm2niix.ps1"
-      - "build_windows.spec"
-      - "requirements.txt"
-      - "pyproject.toml"
-      - "tools/**"
-      - ".github/workflows/build-windows-installer.yml"
+    # SemVer tags always trigger a full Classic build; Release job runs only for tags.
+    # (No paths filter here: path filters can skip tag pushes.)
+    tags: ["v*"]
 
 concurrency:
   group: classic-windows-installer-${{ github.ref }}
@@ -47,9 +43,8 @@ jobs:
           echo "Windows Installer Build"
           echo "Classic / Main"
           echo "========================================"
-          echo "Branch: ${GITHUB_REF_NAME}"
+          echo "Branch/Tag: ${GITHUB_REF_NAME}"
           echo "Commit SHA: ${GITHUB_SHA}"
-          echo "Version: 1.0.0"
           echo "Build channel: Classic / Main"
           echo "Copilot enabled: NO"
           REF_BLOB="${GITHUB_REF:-} ${GITHUB_REF_NAME:-} ${GITHUB_HEAD_REF:-} ${GITHUB_BASE_REF:-}"
@@ -58,8 +53,13 @@ jobs:
             echo "::error::Refused: do not build Classic installer from neurobids-copilot-v1.0.0"
             exit 1
           fi
-          if [ "${GITHUB_REF_NAME}" != "main" ]; then
-            echo "::error::Refused: Classic Windows installer workflow runs only on branch main (got: ${GITHUB_REF_NAME})"
+          # Allow main, workflow_dispatch on main, or SemVer tags v*
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            echo "Guard OK: main"
+          elif [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            echo "Guard OK: version tag ${GITHUB_REF_NAME}"
+          else
+            echo "::error::Refused: Classic Windows installer runs only on main or tags v* (got: ${GITHUB_REF_NAME})"
             exit 1
           fi
 
@@ -68,31 +68,32 @@ jobs:
     needs: guard-classic-main
     runs-on: windows-latest
     steps:
-      - name: Checkout main only (clean tree)
+      - name: Checkout triggering ref (main or tag)
         uses: actions/checkout@v4
         with:
-          ref: main
           clean: true
 
       - name: Build identity + Classic guards
         shell: pwsh
         run: |
           $sha = (git rev-parse HEAD).Trim()
+          $refName = $env:GITHUB_REF_NAME
           Write-Host "========================================"
           Write-Host "NeuroBIDS DICOM Converter"
           Write-Host "Windows Installer Build"
           Write-Host "Classic / Main"
           Write-Host "========================================"
-          Write-Host "Branch:              $env:GITHUB_REF_NAME"
+          Write-Host "Branch/Tag:          $refName"
           Write-Host "Commit SHA:          $sha"
-          Write-Host "Version:             1.0.0"
           Write-Host "Build channel:       Classic / Main"
           Write-Host "Copilot enabled:     NO"
           Write-Host "========================================"
-          if ($env:GITHUB_REF_NAME -ne "main") {
-            throw "Refused: expected branch main"
+          $isMain = ($refName -eq "main")
+          $isVersionTag = $env:GITHUB_REF -like "refs/tags/v*"
+          if (-not $isMain -and -not $isVersionTag) {
+            throw "Refused: expected main or tag v* (got: $refName)"
           }
-          $blob = "$env:GITHUB_REF $env:GITHUB_REF_NAME $sha"
+          $blob = "$env:GITHUB_REF $refName $sha"
           if ($blob -match "neurobids-copilot-v1\.0\.0") {
             throw "Refused: neurobids-copilot-v1.0.0 detected"
           }
@@ -160,10 +161,56 @@ jobs:
           Write-Host "Runtime Python required: NO"
           Write-Host "Runtime Ollama required: NO"
 
-      - name: Upload Setup.exe artifact (no Release)
+      - name: Upload Setup.exe artifact (debug / audit)
         uses: actions/upload-artifact@v4
         with:
           name: NeuroPipeline_DICOM_Converter_Setup
           path: release/NeuroPipeline_DICOM_Converter_Setup.exe
           if-no-files-found: error
           retention-days: 30
+
+  publish-release:
+    name: Publish GitHub Release (tags v* only)
+    needs: windows-installer
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download verified Setup.exe artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: NeuroPipeline_DICOM_Converter_Setup
+          path: dist-release
+
+      - name: Confirm asset present
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXE="dist-release/NeuroPipeline_DICOM_Converter_Setup.exe"
+          ls -la dist-release
+          test -f "$EXE"
+          test -s "$EXE"
+          echo "Asset ready: $EXE ($(wc -c < "$EXE") bytes)"
+
+      - name: Create GitHub Release (fail if Release already exists)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+          EXE="dist-release/NeuroPipeline_DICOM_Converter_Setup.exe"
+          TITLE="NeuroPipeline DICOM Converter ${TAG}"
+
+          if gh release view "${TAG}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            echo "::error::Release ${TAG} already exists. Refusing to overwrite."
+            exit 1
+          fi
+
+          gh release create "${TAG}" "${EXE}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "${TITLE}" \
+            --generate-notes
+
+          echo "Published Release ${TAG} with asset NeuroPipeline_DICOM_Converter_Setup.exe"
