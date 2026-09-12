@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "NeuroBIDS DICOM Converter"
+message: "If you use this software, please cite it as below."
+type: software
+
+authors:
+  - family-names: "Rees"
+    given-names: "Alexandre"
+    orcid: "https://orcid.org/0009-0005-7980-9500
+
+version: "1.0.1"
+date-released: "2026-09-12"
+
+repository-code: "https://github.com/AlexandreRees/NeuroBIDS_DICOM_Converter"
+license: "MIT"
+
+abstract: >
+  NeuroBIDS DICOM Converter is a deterministic and fail-closed
+  workflow for converting DICOM data to BIDS.
+
+keywords:
+  - DICOM
+  - BIDS
+  - neuroimaging
+  - MRI
+  - reproducibility
+  - open science
