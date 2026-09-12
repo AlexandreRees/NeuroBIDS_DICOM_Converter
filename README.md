@@ -4,6 +4,8 @@
 
 <p align="center"> <a href="https://github.com/AlexandreRees/NeuroBIDS_DICOM_Converter/releases/download/v1.0.0/NeuroPipeline_DICOM_Converter_Setup.exe"><img src="https://img.shields.io/badge/Download-Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows" /></a> <a href="https://github.com/AlexandreRees/NeuroBIDS_DICOM_Converter/releases/latest"><img src="https://img.shields.io/github/v/release/AlexandreRees/NeuroBIDS_DICOM_Converter?style=for-the-badge&label=Latest%20release" alt="Latest release" /></a> </p>
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22727800.svg)](https://doi.org/10.5281/zenodo.22727800)
+
 Windows desktop application for converting MRI DICOM datasets to NIfTI / BIDS with [dcm2niix](https://github.com/rordenlab/dcm2niix).
 
 Designed for researchers with no programming experience. Built as a modular foundation for a future neuroimaging platform (BIDS, QC, MRIQC, reports).
@@ -19,6 +21,31 @@ Designed for researchers with no programming experience. Built as a modular foun
 - Copilot / Ollama are **not** required
 
 All releases: [Releases](https://github.com/AlexandreRees/NeuroBIDS_DICOM_Converter/releases)
+
+## How to cite
+
+If you use **NeuroBIDS DICOM Converter** in your research, please cite the software:
+
+> Rees, A. (2026). *NeuroBIDS DICOM Converter*. Zenodo.
+> DOI: [10.5281/zenodo.22727800](https://doi.org/10.5281/zenodo.22727800)
+
+### BibTeX
+
+```bibtex
+@software{rees_neurobids_dicom_converter,
+  author    = {Rees, Alexandre},
+  title     = {NeuroBIDS DICOM Converter},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22727800},
+  url       = {https://doi.org/10.5281/zenodo.22727800}
+}
+```
+
+The recommended citation metadata are also provided in the
+[`CITATION.cff`](CITATION.cff) file.
+
+
 
 ## For end users
 
