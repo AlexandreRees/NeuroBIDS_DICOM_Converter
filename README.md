@@ -76,7 +76,7 @@ If you use this repository, please cite the associated Scientific Data publicati
 ```bibtex
 @software{shmuel_mri_pipeline,
   title = {Shmuel Lab MRI Dataset Processing Pipeline},
-  version = {1.0.0},
+  version = {1.0.1},
   url = {https://github.com/AlexandreRees/neuro_pipeline},
   year = {2026}
 }
